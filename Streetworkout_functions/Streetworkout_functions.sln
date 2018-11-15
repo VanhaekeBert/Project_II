@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streetworkout_functions", "Streetworkout_functions\Streetworkout_functions.csproj", "{981952AE-B74B-4A2B-8D42-3F19EC24B658}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{981952AE-B74B-4A2B-8D42-3F19EC24B658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981952AE-B74B-4A2B-8D42-3F19EC24B658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981952AE-B74B-4A2B-8D42-3F19EC24B658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981952AE-B74B-4A2B-8D42-3F19EC24B658}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C6560C6-A37E-4C47-AA13-192CC78D4F20}
+	EndGlobalSection
+EndGlobal
