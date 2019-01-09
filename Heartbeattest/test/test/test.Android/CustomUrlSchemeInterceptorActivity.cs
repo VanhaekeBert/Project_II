@@ -31,9 +31,9 @@ namespace test.Droid
             var auth = PolarAuthenticator.GetPolarAuth();
 
             var polarCode = uri.ToString().Split('&')[1].Split('=')[1];
-            var token = new PolarToken();
+            var token = new PolarCode();
 
-            PolarToken.Code = polarCode;
+            PolarCode.Code = polarCode;
             // Load redirectUrl page
             auth.OnPageLoading(uri);
 
