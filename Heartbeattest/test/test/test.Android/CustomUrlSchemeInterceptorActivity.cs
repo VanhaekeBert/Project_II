@@ -30,6 +30,10 @@ namespace test.Droid
             // Convert Android.Net.Url to Uri
             var uri = new Uri(Intent.Data.ToString());
             var auth = PolarAuthenticator.GetPolarAuth();
+
+            var polarCode = uri.ToString().Split('&')[1].Split('=')[1];
+            var polarToken = new PolarToken() { code = polarCode };
+
             // Load redirectUrl page
             auth.OnPageLoading(uri);
 

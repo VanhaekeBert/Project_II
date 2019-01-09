@@ -27,13 +27,13 @@ namespace test.Model
             return auth;
         }
 
-        public static async Task GetPolarToken(string code)
+        public static async Task GetPolarToken(PolarToken token)
         {
             try
             {
                 HttpClient client = new HttpClient();
-                client.DefaultRequestHeaders.Add("Accept", "application/json");
-                var jsonString = JsonConvert.SerializeObject(config);
+                client.DefaultRequestHeaders.Add("Accept", "application/json;charset=UTF-8");
+                var jsonString = JsonConvert.SerializeObject(token);
                 Debug.WriteLine(jsonString);
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
                 string url = "https://polarremote.com/v2/oauth2/token";
