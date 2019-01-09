@@ -74,10 +74,15 @@ namespace test
                 Debug.WriteLine("-------------------------------------------------------");
                 Debug.WriteLine(ee.Account);
                 Debug.WriteLine("-------------------------------------------------------");
-
+                RequestToken();
 
 
             };
+        }
+
+        public async Task RequestToken()
+        {
+            await PolarAuthenticator.GetPolarToken();
         }
     }
 }

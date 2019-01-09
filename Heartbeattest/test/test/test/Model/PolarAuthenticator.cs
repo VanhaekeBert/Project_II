@@ -16,8 +16,8 @@ namespace test.Model
         {
 
             var auth = new OAuth2Authenticator(
-               clientId: "b8f68549-94d1-49ed-a502-47c773bf3cca",
-               clientSecret: "c9d759e9-8acf-4145-bda9-cdb9fcff6ee4",
+               clientId: "3bef4750-06d5-471f-884c-961db3df1607",
+               clientSecret: "db15f74c-cf12-4c7c-97cd-5ce1cb79adc7",
                scope: "accesslink.read_all",
                authorizeUrl: new Uri("https://flow.polar.com/oauth2/authorization"),
                redirectUrl: new Uri("com.companyname.test:/oauth2redirect"),
@@ -27,12 +27,15 @@ namespace test.Model
             return auth;
         }
 
-        public static async Task GetPolarToken(PolarToken token)
+        public static async Task GetPolarToken()
         {
             try
             {
                 HttpClient client = new HttpClient();
-                client.DefaultRequestHeaders.Add("Accept", "application/json;charset=UTF-8");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Basic M2JlZjQ3NTAtMDZkNS00NzFmLTg4NGMtOTYxZGIzZGYxNjA3OmRiMTVmNzRjLWNmMTItNGM3Yy05N2NkLTVjZTFjYjc5YWRjNw==");
+                PolarToken token = new PolarToken();
+                token.code = Token.Code;
                 var jsonString = JsonConvert.SerializeObject(token);
                 Debug.WriteLine(jsonString);
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
