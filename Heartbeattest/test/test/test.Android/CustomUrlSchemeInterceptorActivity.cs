@@ -33,7 +33,7 @@ namespace test.Droid
             var polarCode = uri.ToString().Split('&')[1].Split('=')[1];
             var token = new PolarToken();
 
-            PolarToken.code = polarCode;
+            PolarToken.Code = polarCode;
             // Load redirectUrl page
             auth.OnPageLoading(uri);
 

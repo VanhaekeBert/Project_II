@@ -36,7 +36,7 @@ namespace test.Model
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("Authorization", "Basic M2JlZjQ3NTAtMDZkNS00NzFmLTg4NGMtOTYxZGIzZGYxNjA3OmRiMTVmNzRjLWNmMTItNGM3Yy05N2NkLTVjZTFjYjc5YWRjNw==");
                 
-                var jsonString = $"grant_type={PolarToken.grant_type}&code={PolarToken.code}&redirect_uri={PolarToken.redirect_uri}";
+                var jsonString = $"grant_type={PolarToken.Grant_type}&code={PolarToken.Code}&redirect_uri={PolarToken.Redirect_uri}";
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
                 string url = "https://polarremote.com/v2/oauth2/token";
                 var message = await client.PostAsync(url, httpContent);

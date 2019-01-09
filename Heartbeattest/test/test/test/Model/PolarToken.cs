@@ -7,9 +7,9 @@ namespace test.Model
 {
     public class PolarToken
     {
-        public static string grant_type { get; set; } = "authorization_code";
-        public static string code { get; set; }
-        public static string redirect_uri { get; set; } = new Uri("com.companyname.test:/oauth2redirect").ToString();
+        public static string Grant_type { get; set; } = "authorization_code";
+        public static string Code { get; set; }
+        public static string Redirect_uri { get; set; } = new Uri("com.companyname.test:/oauth2redirect").ToString();
 
 
     }
