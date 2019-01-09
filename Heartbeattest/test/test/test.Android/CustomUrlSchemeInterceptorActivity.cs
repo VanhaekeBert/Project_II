@@ -26,14 +26,14 @@ namespace test.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             // Convert Android.Net.Url to Uri
             var uri = new Uri(Intent.Data.ToString());
             var auth = PolarAuthenticator.GetPolarAuth();
 
             var polarCode = uri.ToString().Split('&')[1].Split('=')[1];
-            var polarToken = new PolarToken() { code = polarCode };
+            var token = new PolarToken();
 
+            PolarToken.code = polarCode;
             // Load redirectUrl page
             auth.OnPageLoading(uri);
 

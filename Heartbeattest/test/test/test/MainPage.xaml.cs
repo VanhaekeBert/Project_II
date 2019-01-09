@@ -18,10 +18,10 @@ namespace test
 
             InitializeComponent();
 
-            Task.Run(async () =>
-            {
-                await PolarAsync();
-            });
+            //Task.Run(async () =>
+            //{
+                 PolarAsync();
+            //});
         }
         public async Task FitBitAsync()
         {
@@ -46,23 +46,12 @@ namespace test
         }
 
                           
-        public async Task PolarAsync()
+        public void PolarAsync()
         {
-
             var auth = PolarAuthenticator.GetPolarAuth();
             auth.AllowCancel = true;           
             var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
             presenter.Login(auth);
-
-            //async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
-            //{
-            //    Debug.WriteLine("COMPLETED");
-            //    if (e.IsAuthenticated)
-            //    {
-            //        Debug.WriteLine("Authenticated");
-
-            //    }
-            //}
             presenter.Completed += (s, ee) =>
             {
                 Debug.WriteLine("COMPLETED");
@@ -71,13 +60,8 @@ namespace test
                     Debug.WriteLine("Authenticated");
 
                 }
-                Debug.WriteLine("-------------------------------------------------------");
-                Debug.WriteLine(ee.Account);
-                Debug.WriteLine("-------------------------------------------------------");
-
-
-
-            };
+                PolarAuthenticator.GetPolarToken();
+            };  
         }
     }
 }

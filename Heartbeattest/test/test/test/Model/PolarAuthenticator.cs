@@ -11,13 +11,14 @@ namespace test.Model
 {
     public class PolarAuthenticator
     {
-
+        readonly static string ClientId = "3bef4750-06d5-471f-884c-961db3df1607";
+        readonly static string ClientSecret = "db15f74c-cf12-4c7c-97cd-5ce1cb79adc7";
         public static Xamarin.Auth.OAuth2Authenticator GetPolarAuth()
         {
 
             var auth = new OAuth2Authenticator(
-               clientId: "b8f68549-94d1-49ed-a502-47c773bf3cca",
-               clientSecret: "c9d759e9-8acf-4145-bda9-cdb9fcff6ee4",
+               clientId: ClientId,
+               clientSecret: ClientSecret,
                scope: "accesslink.read_all",
                authorizeUrl: new Uri("https://flow.polar.com/oauth2/authorization"),
                redirectUrl: new Uri("com.companyname.test:/oauth2redirect"),
@@ -27,21 +28,19 @@ namespace test.Model
             return auth;
         }
 
-        public static async Task GetPolarToken(PolarToken token)
+        public static async void GetPolarToken()
         {
             try
             {
                 HttpClient client = new HttpClient();
-                client.DefaultRequestHeaders.Add("Accept", "application/json;charset=UTF-8");
-                var jsonString = JsonConvert.SerializeObject(token);
-                Debug.WriteLine(jsonString);
-                var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Basic M2JlZjQ3NTAtMDZkNS00NzFmLTg4NGMtOTYxZGIzZGYxNjA3OmRiMTVmNzRjLWNmMTItNGM3Yy05N2NkLTVjZTFjYjc5YWRjNw==");
+                
+                var jsonString = $"grant_type={PolarToken.grant_type}&code={PolarToken.code}&redirect_uri={PolarToken.redirect_uri}";
+                var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
                 string url = "https://polarremote.com/v2/oauth2/token";
                 var message = await client.PostAsync(url, httpContent);
-
-
                 var responseString = await message.Content.ReadAsStringAsync();
-
                 Debug.WriteLine(responseString);
 
             }
