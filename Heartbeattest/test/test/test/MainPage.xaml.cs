@@ -49,22 +49,20 @@ namespace test
         public async Task PolarAsync()
         {
 
-            //var auth = new OAuth2Authenticator(
-            //   clientId: "b8f68549-94d1-49ed-a502-47c773bf3cca",
-            //   clientSecret: "c9d759e9-8acf-4145-bda9-cdb9fcff6ee4",
-            //   scope: "accesslink.read_all",
-            //   authorizeUrl: new Uri("https://flow.polar.com/oauth2/authorization"),
-            //   redirectUrl: new Uri("com.companyname.test:/oauth2redirect"),
-            //   accessTokenUrl: new Uri("https://polarremote.com/v2/oauth2/token"),
-            //   isUsingNativeUI: true);
             var auth = PolarAuthenticator.GetPolarAuth();
-            auth.AllowCancel = true;
-           
-            // If authorization succeeds or is canceled, .Completed will be fired.
-
-
+            auth.AllowCancel = true;           
             var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
             presenter.Login(auth);
+
+            //async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
+            //{
+            //    Debug.WriteLine("COMPLETED");
+            //    if (e.IsAuthenticated)
+            //    {
+            //        Debug.WriteLine("Authenticated");
+
+            //    }
+            //}
             presenter.Completed += (s, ee) =>
             {
                 Debug.WriteLine("COMPLETED");
@@ -73,6 +71,10 @@ namespace test
                     Debug.WriteLine("Authenticated");
 
                 }
+                Debug.WriteLine("-------------------------------------------------------");
+                Debug.WriteLine(ee.Account);
+                Debug.WriteLine("-------------------------------------------------------");
+
 
 
             };

@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Auth;
 
 namespace test.Model
@@ -21,6 +25,31 @@ namespace test.Model
                isUsingNativeUI: true);
 
             return auth;
+        }
+
+        public static async Task GetPolarToken(string code)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var jsonString = JsonConvert.SerializeObject(config);
+                Debug.WriteLine(jsonString);
+                var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                string url = "https://polarremote.com/v2/oauth2/token";
+                var message = await client.PostAsync(url, httpContent);
+
+
+                var responseString = await message.Content.ReadAsStringAsync();
+
+                Debug.WriteLine(responseString);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+                throw ex;
+            }
         }
     }
 }
