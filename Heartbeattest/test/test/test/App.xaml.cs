@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,19 +13,20 @@ namespace test
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+          
         }
-        public static Action SuccesfullLoginAction
-        {
-            get
-            {
-                return new Action(() =>
-                {
-                    var TestPage = new MainPage();
+        //public static Action SuccesfullLoginAction
+        //{
+        //    get
+        //    {
+        //        return new Action(() =>
+        //        {
+        //            var TestPage = new MainPage();
 
 
-                });
-            }
-        }
+        //        });
+        //    }
+        //}
         protected override void OnStart()
         {
             // Handle when your app starts
