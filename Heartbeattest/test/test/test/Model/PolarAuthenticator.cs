@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,7 +37,32 @@ namespace test.Model
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("Authorization", "Basic M2JlZjQ3NTAtMDZkNS00NzFmLTg4NGMtOTYxZGIzZGYxNjA3OmRiMTVmNzRjLWNmMTItNGM3Yy05N2NkLTVjZTFjYjc5YWRjNw==");
                 
-                var jsonString = $"grant_type={PolarToken.Grant_type}&code={PolarToken.Code}&redirect_uri={PolarToken.Redirect_uri}";
+                var jsonString = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
+                var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
+                string url = "https://polarremote.com/v2/oauth2/token";
+                var message = await client.PostAsync(url, httpContent);
+                var responseString = await message.Content.ReadAsStringAsync();
+                var token = JsonConvert.DeserializeObject<PolarToken>(responseString);
+                GetPolarData(token);
+                Debug.WriteLine(responseString);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+                throw ex;
+            }
+        }
+        public static async void GetPolarData(PolarToken token)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.Acces_token);
+                client.DefaultRequestHeaders.Add("Authorization", "Basic M2JlZjQ3NTAtMDZkNS00NzFmLTg4NGMtOTYxZGIzZGYxNjA3OmRiMTVmNzRjLWNmMTItNGM3Yy05N2NkLTVjZTFjYjc5YWRjNw==");
+
+                var jsonString = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
                 string url = "https://polarremote.com/v2/oauth2/token";
                 var message = await client.PostAsync(url, httpContent);

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace test.Model
 {
-    public class PolarToken
+    public class PolarCode
     {
         public static string Grant_type { get; set; } = "authorization_code";
         public static string Code { get; set; }
