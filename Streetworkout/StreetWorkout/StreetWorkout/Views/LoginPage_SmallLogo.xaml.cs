@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkout
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage_SmallLogo : ContentPage
 	{
 		public LoginPage_SmallLogo()

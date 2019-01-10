@@ -14,9 +14,6 @@
             </Grid.RowDefinitions>
 
             <Image Grid.Row="0" x:Name="Main_Logo" Margin="30, 50, 30, 20"></Image>
-            <!--<Grid Grid.Row="0">
-                <StackLayout></StackLayout>
-            </Grid>-->
             <StackLayout Grid.Row="1" Orientation="Vertical"   >
                 <Label Text="STREETBEAT" HorizontalTextAlignment="Center" VerticalOptions="Start" TextColor="White" FontSize="24" FontAttributes="Bold"></Label>
                 <Grid Margin="0,40,0,0" VerticalOptions="CenterAndExpand" RowSpacing="32">
