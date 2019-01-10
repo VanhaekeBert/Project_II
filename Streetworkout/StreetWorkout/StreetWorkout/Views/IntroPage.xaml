@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreetWorkout.IntroPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#303C41">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="275" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="300" />
+            </Grid.RowDefinitions>
+
+            <!--<BoxView Grid.Row="0" BackgroundColor="Red"></BoxView>-->
+            <Image Grid.Row="0" x:Name="Main_Logo" Margin="30, 50, 30, 20"></Image>
+            <Label Grid.Row="1" Text="STREETBEAT" HorizontalTextAlignment="Center" VerticalOptions="Start" TextColor="White" FontSize="24" FontAttributes="Bold"></Label>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical"   >
+
+                <Button Clicked="Button_Login_Clicked" Text="LOGIN" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="250" Margin="20" BorderColor="#00B0F0" BorderWidth="2" BorderRadius="7" BackgroundColor="#2C3437" Padding="15" FontSize="16" TextColor="White"></Button>
+                <Button Text="REGISTREREN" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="250" Margin="20" BorderColor="#00B0F0" BorderWidth="2" BorderRadius="7" BackgroundColor="#2C3437" Padding="15" FontSize="16" TextColor="White"></Button>
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
