@@ -43,7 +43,7 @@ namespace test.Model
                 var responseString = await message.Content.ReadAsStringAsync();
                 Debug.WriteLine(responseString);
                 var token = JsonConvert.DeserializeObject<PolarToken>(responseString);
-                Debug.WriteLine(token.Acces_token);
+                Debug.WriteLine(token.X_user_id);
             }
             catch (Exception ex)
             {
