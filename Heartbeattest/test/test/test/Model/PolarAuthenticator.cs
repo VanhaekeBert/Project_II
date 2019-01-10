@@ -32,10 +32,10 @@ namespace test.Model
         {
             try
             {
-
+                var base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{ClientId}:{ClientSecret}"));
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                client.DefaultRequestHeaders.Add("Authorization", "Basic M2JlZjQ3NTAtMDZkNS00NzFmLTg4NGMtOTYxZGIzZGYxNjA3OmRiMTVmNzRjLWNmMTItNGM3Yy05N2NkLTVjZTFjYjc5YWRjNw==");
+                client.DefaultRequestHeaders.Add("Authorization", $"Basic {base64}");
                 var jsonString = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
                 string url = "https://polarremote.com/v2/oauth2/token";
