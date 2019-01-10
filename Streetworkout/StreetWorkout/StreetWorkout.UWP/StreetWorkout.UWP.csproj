@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{AAA49969-4780-4DF8-AC72-5923CD596F7D}</ProjectGuid>
+    <ProjectGuid>{693008C3-6C27-4681-AC73-4887E64AB9C8}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StreetWorkout.UWP</RootNamespace>
@@ -143,12 +143,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StreetWorkout\StreetWorkout.csproj">
-      <Project>{532A246D-8F17-4EC3-B733-DCEDA7252D40}</Project>
+      <Project>{BA344721-605E-4051-8088-3463D1B4DBB2}</Project>
       <Name>StreetWorkout</Name>
     </ProjectReference>
   </ItemGroup>

@@ -9,15 +9,15 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkout
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
-    {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class LoginPage : ContentPage
+	{
         public LoginPage()
         {
             InitializeComponent();
             Task.Run(async () =>
             {
-              await InitAsync();
+                await InitAsync();
             });
         }
         public async Task InitAsync()
