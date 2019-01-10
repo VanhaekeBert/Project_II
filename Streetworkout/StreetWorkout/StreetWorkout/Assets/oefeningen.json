@@ -1,511 +1,575 @@
-[{
-	"oefening": "Biceprows",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Neem de bar vast in regular grip (handrug naar grond toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, onder de bar. Vanuit deze startpositie houdt je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging.",
-	"herhalingen": 15,
-	"afbeeldingen": ["biceprows_easy_1.jpg","biceprows_easy_2.jpg"]
-}, {
-	"oefening": "Biceprows",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Neem de bar vast in regular grip (handrug naar grond toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, voorbij de bar. Vanuit deze startpositie houdt je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging.",
-	"herhalingen": 30,
-	"afbeeldingen": ["biceprows_medium_1.jpg","biceprows_medium_2.jpg"]
-}, {
-	"oefening": "Biceprows",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Neem de bar vast in reverze grip (handrug naar boven toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, voorbij de bar. Vanuit deze startpositie houdt je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging. Je kan de oefening extra zwaar maken door de voeten nog verder te plaatsen waardoor het lichaam meer horizontaal komt te staan.",
-	"herhalingen": 45,
-	"afbeeldingen": ["biceprows_hard_1.jpg","biceprows_hard_2.jpg"]
-}, {
-	"oefening": "Assisted Chin-up",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Bevestig een rekker aan de bar zoals zichtbaar op de afbeelding. Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen naar jezelf gericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-	"herhalingen": 8,
-	"afbeeldingen": ["assisted_chin-up_easy_1.jpg","assisted_chin-up_easy_2.jpg"]
-}, {
-	"oefening": "Negative Chin-up",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Start op de grond onder de bar. Spring op tot je met je kin boven de bar kan blijven hangen. Vanuit deze positie laat je jezelf zo traag mogelijk zakken tot je terug op de grond staat. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-	"herhalingen": 8,
-	"afbeeldingen": []
-}, {
-	"oefening": "Chin-up",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen naar jezelf gericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-	"herhalingen": 15,
-	"afbeeldingen": ["chin-up_medium_1.jpg","chin-up_medium_2.jpg"]
-}, {
-	"oefening": "Reverse Chin-up",
-	"spiergroep": "Biceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen van jezelf weggericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-	"herhalingen": 20,
-	"afbeeldingen": ["reverse_chin-up_hard_1.jpg","reverse_chin-up_hard_2.jpg"]
-}, {
-	"oefening": "Bridge",
-	"spiergroep": "Billen",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-	"herhalingen": 15,
-	"afbeeldingen": ["bridge_easy_1.jpg","bridge_easy_2.jpg"]
-}, {
-	"oefening": "Bridge",
-	"spiergroep": "Billen",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-	"herhalingen": 25,
-	"afbeeldingen": ["bridge_medium_1.jpg","bridge_medium_2.jpg"]
-}, {
-	"oefening": "Bridge",
-	"spiergroep": "Billen",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Strek afwisselend je linker – en rechterbeen uit terwijl de bovenbenen gelijk blijven. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-	"herhalingen": 40,
-	"afbeeldingen": ["bridge_hard_1.jpg","bridge_hard_2.jpg"]
-}, {
-	"oefening": "4 point leg extention",
-	"spiergroep": "Billen",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Zoek steun aan een verticaal vlak (muur/bar). Houd je handen tegenover je schouders tegen het verticale vlak. Strek afwisselend het linker – en rechterbeen naar achter uit. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
-	"herhalingen": 10,
-	"afbeeldingen": ["4_point_leg_extention_easy_1.jpg","4_point_leg_extention_easy_2.jpg"]
-}, {
-	"oefening": "4 point leg extention",
-	"spiergroep": "Billen",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Start vanuit een vierpuntspositie. Handen recht onder schouders en heupen recht boven knieën. Strek afwisselend het linker – en rechterbeen uit. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
-	"herhalingen": 20,
-	"afbeeldingen": ["4_point_leg_extention_medium_1.jpg","4_point_leg_extention_medium_2.jpg"]
-}, {
-	"oefening": "4 point leg extention",
-	"spiergroep": "Billen",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Start vanuit een vierpuntspositie. Handen recht onder schouders en heupen recht boven knieën. Strek afwisselend het linker – en rechterbeen uit terwijl je partner tegendruk bied op het been dat je uitstrekt. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
-	"herhalingen": 30,
-	"afbeeldingen": ["4_point_leg_extention_hard_1.jpg","4_point_leg_extention_hard_2.jpg"]
-}, {
-	"oefening": "Dip",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Plaats de rekker dwars over de barren en houdt deze op zijn plaats door je handen erop te plaatsen. Op die manier kan je de knieën op de rekker plaatsen waardoor de rekker ondersteuning kan bieden. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
-	"herhalingen": 10,
-	"afbeeldingen": ["dip_easy_1.jpg"]
-}, {
-	"oefening": "Dip negative",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zo traag mogelijk zakken tot je niet meer kan en de voeten op de grond moet plaatsen. Keer terug naar de startpositie. Herhaal de beweging.",
-	"herhalingen": 10,
-	"afbeeldingen": []
-}, {
-	"oefening": "Dip",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
-	"herhalingen": 20,
-	"afbeeldingen": ["dip_medium_1.jpg","dip_medium_2.jpg"]
-}, {
-	"oefening": "Dip",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Leg de rekker zoals op de foto dwars over je schouders en houdt deze op zijn plaats met je handen. De rekker staat lichtjes onder spanning. Ospringen tot steun (startpositie). De spanning in de rekker is voelbaar. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
-	"herhalingen": 30,
-	"afbeeldingen": ["dip_hard_1.jpg"]
-}, {
-	"oefening": "Push up",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Steun op je knieën in kniesteun. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
-	"herhalingen": 10,
-	"afbeeldingen": ["push_up_easy_1.jpg","push_up_easy_2.jpg"]
-}, {
-	"oefening": "Push up",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Plaats de bal van de voet in de grond. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
-	"herhalingen": 20,
-	"afbeeldingen": ["push_up_medium_1.jpg","push_up_medium_2.jpg"]
-}, {
-	"oefening": "Archer push up",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Plaats de bal van de voet in de grond. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken door je linker arm en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken door je rechter arm en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
-	"herhalingen": 30,
-	"afbeeldingen": ["archer_push_up_hard_1.jpg","archer_push_up_hard_2.jpg"]
-}, {
-	"oefening": "Clap push up",
-	"spiergroep": "Borst",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Plaats de bal van de voet in de grond. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. In de vlucht breng je je handen naar elkaar en klap je. Zak daarna terug en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
-	"herhalingen": 30,
-	"afbeeldingen": ["clap_push_up_hard_1.jpg","clap_push_up_hard_2.jpg","clap_push_up_hard_3.jpg"]
-}, {
-	"oefening": "Plank",
-	"spiergroep": "Buikspier",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Behoud een rechte rug. Houdt deze positie aan. Las pauzes in door je knieën regelmatig op de grond te plaatsen.",
-	"herhalingen": 20,
-	"afbeeldingen": ["plank_easy_1.jpg","plank_easy_2.jpg"]
-}, {
-	"oefening": "Plank",
-	"spiergroep": "Buikspier",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Behoud een rechte rug. Houdt deze positie aan.",
-	"herhalingen": 30,
-	"afbeeldingen": ["plank_medium_1.jpg"]
-}, {
-	"oefening": "Side plank",
-	"spiergroep": "Buikspier",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga op je zij gaan liggen met je elleboog recht onder je schouder. Duw jezelf op en steun op de zijkant van je voet. Zorg ervoor dat je elleboog zich steeds onder je schouder bevindt en ga niet doorhangen. Behoud een rechte lijn, nek in verlengde van rug.",
-	"herhalingen": 30,
-	"afbeeldingen": ["side_plank_medium_1.jpg"]
-}, {
-	"oefening": "Uneven plank",
-	"spiergroep": "Buikspier",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Strek 1 arm schuin voor je uit. Houdt deze positie aan.",
-	"herhalingen": 30,
-	"afbeeldingen": ["uneven_plank_medium_1.jpg"]
-}, {
-	"oefening": "Around the world plank",
-	"spiergroep": "Buikspier",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Strek 1 arm uit vooruit. Daarna zijwaarts. Keer terug naar beginpositie. Herhaal dit met de andere arm.",
-	"herhalingen": 45,
-	"afbeeldingen": ["around_the_world_plank_hard_1.jpg"]
-}, {
-	"oefening": "Schommelplank",
-	"spiergroep": "Buikspier",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Breng je tenen van 1 voet op de hiel van je andere voet. Schommel lichtjes van voor naar achter.",
-	"herhalingen": 45,
-	"afbeeldingen": ["schommelplank_hard_1.jpg"]
-}, {
-	"oefening": "Twisted crunches",
-	"spiergroep": "Schuine buikspieren",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Start in ruglig, met de benen en heupen in een hoek van 90° graden. Handen ter hoogte van de slaap. Hef de schouders van de grond door de buikspieren lichtjes aan te spannen. Voor een crunch uit door je buikspieren maximaal aan te spannen waardoor je bovenlichaam naar de knieën wordt toegetrokken. Tip: helemaal rechtzitten hoeft niet, de buikspieren maximaal aanspannen waardoor je een kleine opwaartse beweging uitvoert is voldoende. Tip: trek je navel in.",
-	"herhalingen": 15,
-	"afbeeldingen": ["twisted_crunches_easy_1.jpg","twisted_crunches_easy_2.jpg"]
-}, {
-	"oefening": "Twisted crunches",
-	"spiergroep": "Schuine buikspieren",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Start in ruglig. Handen ter hoogte van de slapen. Breng je schouders van de grond door de buikspieren op te spannen. Breng afwisselend de rechter – of linkerknie naar de borst terwijl het andere been uitstrekt. Terwijl tracht je om met de tegenovergestelde elleboog de knie aan te tikken. Let op! Rechterknie naar borst wil dus zeggen linker elleboog naar knie, linkerknie naar borst wil dus zeggen rechter elleboog naar knie. Maak een afwisselende ‘fietsbeweging’. Houd je buikspieren opgespannen tijdens de hele oefening.",
-	"herhalingen": 25,
-	"afbeeldingen": ["twisted_crunches_medium_1.jpg","twisted_crunches_medium_2.jpg"]
-}, {
-	"oefening": "Twisted crunches",
-	"spiergroep": "Schuine buikspieren",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Start vanuit een push up-positie. Span het lichaam maximaal op zodat je lichaam in een plankhouding blijft staan. Probeer met de rechterknie de linkerelleboog aan te tikken en keer rustig terug naar de startpositie. Herhaal dit aan de tegenovergestelde zijde, linkerknie tegen de rechterelleboog. Herhaal de beweging aan beide kanten.",
-	"herhalingen": 35,
-	"afbeeldingen": ["twisted_crunches_hard_1.jpg","twisted_crunches_hard_2.jpg"]
-}, {
-	"oefening": "Hammstring lowering",
-	"spiergroep": "Hammstring",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Start in kniezit, rechtop, trotse houding. De voeten zijn gefixeerd (vast onder toestel of tegen de grond gedrukt door partner). Handen ter hoogte van de borst brengen, ongeveer zoals bij een push-up, zorg dat de handen zich voor het lichaam bevinden zodat deze de schok straks kunnen opvangen. Uw partner houdt uw voeten tegen en biedt zo tegendruk. Vanuit deze startpositie ga je jezelf laten vallen in plankhouding naar voor. Dit doe je zo traag en gecontroleerd mogelijk door de hammstrings en de bilspieren maximaal op te spannen. Vanaf het moment waarop je de spanning niet meer kan aanhouden, laat je jezelf rustig doorvallen en vang je jezelf op door je handen op de grond te plaatsen. Herhaal de oefening.",
-	"herhalingen": 5,
-	"afbeeldingen": ["hammstring_lowering_easy_1.jpg","hammstring_lowering_easy_2.jpg"]
-}, {
-	"oefening": "Hammstring lowering",
-	"spiergroep": "Hammstring",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Start in kniezit, rechtop, trotse houding. De voeten zijn gefixeerd (vast onder toestel of tegen de grond gedrukt door partner). Handen ter hoogte van de borst brengen, ongeveer zoals bij een push-up, zorg dat de handen zich voor het lichaam bevinden zodat deze de schok straks kunnen opvangen. Plaats resistance band lichtjes onder spanning rond de borst om ondersteuning te bieden tijdens het zakken (zie afbeelding en handleiding om de band te bevestigen). Vanuit deze startpositie ga je jezelf laten vallen in plankhouding naar voor. Dit doe je zo traag en gecontroleerd mogelijk door de hammstrings en de bilspieren maximaal op te spannen. Vanaf het moment waarop je de spanning niet meer kan aanhouden, laat je jezelf rustig doorvallen en vang je jezelf op door je handen op de grond te plaatsen. Herhaal de oefening.",
-	"herhalingen": 10,
-	"afbeeldingen": ["hammstring_lowering_medium_1.jpg","hammstring_lowering_medium_2.jpg"]
-}, {
-	"oefening": "Hammstring lowering",
-	"spiergroep": "Hammstring",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Start in kniezit, rechtop, trotse houding. De voeten zijn gefixeerd (vast onder toestel of tegen de grond gedrukt door partner). Handen ter hoogte van de borst brengen, ongeveer zoals bij een push-up, zorg dat de handen zich voor het lichaam bevinden zodat deze de schok straks kunnen opvangen. Vanuit deze startpositie ga je jezelf laten vallen in plankhouding naar voor. Dit doe je zo traag en gecontroleerd mogelijk door de hammstrings en de bilspieren maximaal op te spannen. Vanaf het moment waarop je de spanning niet meer kan aanhouden, laat je jezelf rustig doorvallen en vang je jezelf op door je handen op de grond te plaatsen. Herhaal de oefening.",
-	"herhalingen": 15,
-	"afbeeldingen": ["hammstring_lowering_hard_1.jpg","hammstring_lowering_hard_2.jpg"]
-}, {
-	"oefening": "Single leg calf raises",
-	"spiergroep": "Kuiten",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga op een verhoog staan. Houd je goed vast. Ga op beide benen staan, steun op bal van de voeten (brede zone van de voetzool net achter tenen). Laat je gecontroleerd zakken tot onder het verhoog. Hef je hiel omhoog zo ver je kan door maximaal uit te duwen op de tenen/bal van de voet, al dan niet met steun door armen. Keer gecontroleerd terug naar de startpositie. Herhaal de beweging OF houd de spanning aan.",
-	"herhalingen": 15,
-	"afbeeldingen": ["single_leg_calf_raises_easy_1.jpg"]
-}, {
-	"oefening": "Single leg calf raises",
-	"spiergroep": "Kuiten",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga op een verhoog staan. Houd je goed vast. Ga op 1 been gaan staan, steun op bal van de voet (brede zone van de voetzool net achter tenen). Laat je gecontroleerd zakken tot onder het verhoog. Hef je hiel omhoog zo ver je kan door maximaal uit te duwen op de tenen/bal van de voet. Keer gecontroleerd terug naar de startpositie. Herhaal de beweging OF houd de spanning aan.",
-	"herhalingen": 30,
-	"afbeeldingen": ["single_leg_calf_raises_medium_1.jpg","single_leg_calf_raises_medium_2.jpg"]
-}, {
-	"oefening": "Single leg calf raises",
-	"spiergroep": "Kuiten",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga op een verhoog staan. Houd je goed vast. Ga op beide benen staan, zet beide voeten plat op de grond op heupbreedte. Spring vanuit de enkels. Explosief en maximaal opduwen vanuit de kuit, enkel beweging in de enkels, de rest van het lichaam blijft volledig in spanning. Tenen/bal van de voet zo hard mogelijk de grond induwen om kracht te ontwikkelen. Herhaal de beweging OF houd de spanning aan.",
-	"herhalingen": 40,
-	"afbeeldingen": ["single_leg_calf_raises_hard_1.jpg","single_leg_calf_raises_hard_2.jpg"]
-}, {
-	"oefening": "Bridge rug",
-	"spiergroep": "Onderrug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Plaats een voorwerp onder het zitvlak terwijl het bekken van de grond wordt getild. Houd de spanning zo lang mogelijk aan.",
-	"herhalingen": 15,
-	"afbeeldingen": ["bridge_rug_easy_1.jpg"]
-}, {
-	"oefening": "Bridge rug",
-	"spiergroep": "Onderrug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op de grond waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-	"herhalingen": 30,
-	"afbeeldingen": ["bridge_rug_medium_1.jpg","bridge_rug_medium_2.jpg"]
-}, {
-	"oefening": "Bridge rug",
-	"spiergroep": "Onderrug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Indien haalbaar: strek afwisselend je linker – en rechterbeen uit terwijl de bovenbenen gelijk blijven. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-	"herhalingen": 45,
-	"afbeeldingen": ["bridge_rug_hard_1.jpg","bridge_rug_hard_2.jpg"]
-}, {
-	"oefening": "Schelp",
-	"spiergroep": "Onderrug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga op de buik liggen met de armen gestrekt boven het hoofd of de benen gestrekt, voorhoofd steunt op de grond, duimen wijzen opwaarts. Trek je navel in, span je buikspieren op. Vanuit deze startpositie hef je de armen of de benen zo gestrekt mogelijk van de grond door de bil-en onderrugspieren maximaal op te spannen, op deze manier vorm je een kommmetje/schelp. Houd de nek gestrekt in het verlengde van de rug. Houd de spanning aan OF herhaal de beweging.",
-	"herhalingen": 15,
-	"afbeeldingen": ["schelp_easy_1.jpg","schelp_easy_2.jpg"]
-}, {
-	"oefening": "Schelp",
-	"spiergroep": "Onderrug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga op de buik liggen met de armen gestrekt boven het hoofd en de benen gestrekt, voorhoofd steunt op de grond, duimen wijzen opwaarts. Trek je navel in, span je buikspieren op. Vanuit deze startpositie hef je de armen en de benen zo gestrekt mogelijk van de grond door de bil-en onderrugspieren maximaal op te spannen, op deze manier vorm je een kommmetje/schelp. Houd de nek gestrekt in het verlengde van de rug. Houd de spanning aan OF herhaal de beweging.",
-	"herhalingen": 30,
-	"afbeeldingen": ["schelp_medium_1.jpg","schelp_medium_2.jpg"]
-}, {
-	"oefening": "Schelp",
-	"spiergroep": "Onderrug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Ga op de buik liggen met de armen gestrekt boven het hoofd en de benen gestrekt, voorhoofd steunt op de grond, duimen wijzen opwaarts. Trek je navel in, span je buikspieren op. Vanuit deze startpositie hef je de armen en de benen zo gestrekt mogelijk van de grond door de bil-en onderrugspieren maximaal op te spannen, op deze manier vorm je een kommmetje/schelp. Tijdens het heffen van armen en benen beweegt u uw armen en benen open/toe net als een sneeuwengel. Houd de nek gestrekt in het verlengde van de rug. Houd de spanning aan OF herhaal de beweging.",
-	"herhalingen": 45,
-	"afbeeldingen": ["schelp_hard_1.jpg","schelp_hard_2.jpg"]
-}, {
-	"oefening": "Reuzenpas",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Leg een bepaalde afstand af in zo weinig mogelijk stappen. Hef de knie hoog op en val ver uit naar voor. Probeer om het evenwicht te bewaren, handen niet op de grond plaatsen.",
-	"herhalingen": 10,
-	"afbeeldingen": ["reuzenpas_easy_1.jpg","reuzenpas_easy_2.jpg"]
-}, {
-	"oefening": "Lunges",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Sta rechtop met de voeten op schouderbreedte (plaats de handen in de heupen ter ondersteuning). Trek de knie hoog op en zet een grote pas voorwaarts. Maak een neerwaartse beweging, de knie van het achterste been plooit. Het voorste been is je steunbeen, probeer de knie niet voorbij te tenen te laten glijden tijdens de uitvoering. Zoek met de knie van het achterste been naar de grond. Wanneer de grond lichtjes wordt aangetikt, duw je jezelf explosief terug op. Herhaal de beweging, deze keer aan de andere kant. TIP: trotse houding behouden, rug lang, borst open.",
-	"herhalingen": 20,
-	"afbeeldingen": ["lunges_medium_1.jpg","lunges_medium_2.jpg"]
-}, {
-	"oefening": "Lunges",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Plaats je achterste voet op een verhoog. Sta rechtop met de voeten op schouderbreedte (plaats de handen in de heupen ter ondersteuning). Trek de knie hoog op en zet een grote pas voorwaarts. Maak een neerwaartse beweging, de knie van het achterste been plooit. Het voorste been is je steunbeen, probeer de knie niet voorbij te tenen te laten glijden tijdens de uitvoering. Zoek met de knie van het achterste been naar de grond. Wanneer de grond lichtjes wordt aangetikt, duw je jezelf explosief terug op. Herhaal de beweging, deze keer aan de andere kant. TIP: trotse houding behouden, rug lang, borst open.",
-	"herhalingen": 30,
-	"afbeeldingen": ["lunges_hard_1.jpg","lunges_hard_2.jpg"]
-}, {
-	"oefening": "Jump lunges",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Plaats je achterste voet op een verhoog. Sta rechtop met de voeten op schouderbreedte (plaats de handen in de heupen ter ondersteuning). Trek de knie hoog op en zet een grote pas voorwaarts. Maak een neerwaartse beweging, de knie van het achterste been plooit. Het voorste been is je steunbeen, probeer de knie niet voorbij te tenen te laten glijden tijdens de uitvoering. Zoek met de knie van het achterste been naar de grond. Wanneer de grond lichtjes wordt aangetikt, duw je jezelf explosief terug op zodat je van de grond afkomt. Terwijl je in de lucht bent, wissel je van been. TIP: trotse houding behouden, rug lang, borst open.",
-	"herhalingen": 30,
-	"afbeeldingen": ["jump_lunges_hard_1.jpg","jump_lunges_hard_2.jpg","jump_lunges_hard_3.jpg"]
-}, {
-	"oefening": "Squats",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Plaats de voeten op schouderbreedte en evenwijdig met elkaar. Trotse houding (Steek je schouderbladen in je achterzak). Zet een verhoog achter je dat ongeveer tot op kniehoogte komt. De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
-	"herhalingen": 15,
-	"afbeeldingen": ["squats_easy_1.jpg","squats_easy_2.jpg"]
-}, {
-	"oefening": "Squats",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Plaats de voeten op schouderbreedte en evenwijdig met elkaar. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
-	"herhalingen": 25,
-	"afbeeldingen": ["squats_medium_1.jpg","squats_medium_2.jpg"]
-}, {
-	"oefening": "Squats",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Plaats de voeten op schouderbreedte en evenwijdig met elkaar. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken waardoor je een jump maakt vooraleer in de startpositie terecht te komen en herhalen.",
-	"herhalingen": 30,
-	"afbeeldingen": ["squats_hard_1.jpg","squats_hard_2.jpg"]
-}, {
-	"oefening": "Sumo squats",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). Zet een verhoog achter je dat ongeveer tot op kniehoogte komt. De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
-	"herhalingen": 15,
-	"afbeeldingen": []
-}, {
-	"oefening": "Sumo squats",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
-	"herhalingen": 25,
-	"afbeeldingen": ["sumo_squats_medium_1.jpg","sumo_squats_medium_2.jpg"]
-}, {
-	"oefening": "Sumo squats",
-	"spiergroep": "Quadriceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken waardoor je een jump maakt vooraleer in de startpositie terecht te komen en herhalen.",
-	"herhalingen": 30,
-	"afbeeldingen": []
-}, {
-	"oefening": "Pull-up",
-	"spiergroep": "Rug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Hang aan de bar (handrug naar je toe) met de voet in de rekker geplaatst zodat deze ondersteuning kan bieden bij het uitvoeren van de oefening. Span de buikspieren aan, niet schommelen. Optrekken: Breng je schouderbladen naar elkaar toe, tracht om de bar te buigen waardoor de ellebogen gaan plooien en het bovenlichaam naar de bar toe wordt getrokken (adem uit). Voer de beweging uit, tot de kin of zeker de ogen boven de bar zijn (explosief). Zak gecontroleerd terug naar de startpositie, armen zo goed als gestrekt (adem in).",
-	"herhalingen": 5,
-	"afbeeldingen": ["pull-up_easy_1.jpg"]
-}, {
-	"oefening": "Pull-up",
-	"spiergroep": "Rug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Hang aan de bar (handrug naar je toe). Span de buikspieren aan, niet schommelen. Optrekken: Breng je schouderbladen naar elkaar toe, tracht om de bar te buigen waardoor de ellebogen gaan plooien en het bovenlichaam naar de bar toe wordt getrokken (adem uit). Voer de beweging uit, tot de kin of zeker de ogen boven de bar zijn (explosief). Zak gecontroleerd terug naar de startpositie, armen zo goed als gestrekt (adem in).",
-	"herhalingen": 10,
-	"afbeeldingen": ["pull-up_medium_1.jpg","pull-up_medium_2.jpg"]
-}, {
-	"oefening": "Muscle-up",
-	"spiergroep": "Rug",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Hang aan de bar (handrug naar je toe). Span de buikspieren aan, niet schommelen. Optrekken: Breng je schouderbladen naar elkaar toe, tracht om de bar te buigen waardoor de ellebogen gaan plooien en het bovenlichaam naar de bar toe wordt getrokken (adem uit). Voer de beweging uit, tot de kin of zeker de ogen boven de bar zijn (explosief). Vanaf het moment dat de ellebogen ter hoogte van de bar zijn, kantel je de polsen en breng je de ellebogen boven de bar. Het moment dat je het bovenlichaam boven de bar hebt gebracht, duw je krachtig uit tot steun. Keer gecontroleerd terug naar de startpositie.",
-	"herhalingen": 15,
-	"afbeeldingen": ["pull-up_hard_1.jpg","pull-up_hard_2.jpg","pull-up_hard_3.jpg"]
-}, {
-	"oefening": "Pike push-up",
-	"spiergroep": "Schouders",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Ga op handen en voeten staan met de heupen in een hoek van 90°, hierbij staan je handen op een verhoog. Hou deze lichaamspositie aan terwijl je door de ellebogen buigt (benen blijven zo gestrekt mogelijk). Met het voorhoofd probeer je net over de handen het verhoog te tikken. Traag zakken, explosief terugkeren naar startpositie. Herhaal de beweging.",
-	"herhalingen": 10,
-	"afbeeldingen": ["pike_push-up_easy_1.jpg","pike_push-up_easy_2.jpg"]
-}, {
-	"oefening": "Pike push-up",
-	"spiergroep": "Schouders",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Ga op handen en voeten staan met de heupen in een hoek van 90°. Hou deze lichaamspositie aan terwijl je door de ellebogen buigt (benen blijven zo gestrekt mogelijk). Met het voorhoofd probeer je net over de handen de grond te tikken. Traag zakken, explosief terugkeren naar startpositie. Herhaal de beweging.",
-	"herhalingen": 20,
-	"afbeeldingen": ["pike_push-up_medium_1.jpg","pike_push-up_medium_2.jpg"]
-}, {
-	"oefening": "Handstand push-up",
-	"spiergroep": "Schouders",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Zwaai op naar handenstand (eventueel steun met voeten aan muur/paal/..). Zorg eerst voor een stabiele positie. Wanneer het lichaam volledig in evenwicht is, probeer je om door de ellebogen te zakken. Tijdens het zakken probeer je met je voorhoofd de grond te tikken. Na het bijna tikken van de grond duw je explosief terug uit naar de startpositie.",
-	"herhalingen": 30,
-	"afbeeldingen": ["handstand_push-up_hard_1.jpg","handstand_push-up_hard_2.jpg"]
-}, {
-	"oefening": "TRX-shoulder straight arm up",
-	"spiergroep": "Schouders",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Neem de TRX vast bij de handvaten (handrug naar je toe). Positioneer zodanig dat het lichaam lichtjes voorover helt terwijl de TRX onder spanning staat met gestrekte armen, de TRX loopt over je schouders (zie foto). Vanuit deze positie tracht je om het lichaam verder naar voor te laten vallen terwijl je in een plankhouding blijft. Dit door de armen gestrekt opwaarts te bewegen vanuit de schouders. Keer explosief terug naar de startpositie. Herhaal de beweging.",
-	"herhalingen": 8,
-	"afbeeldingen": ["trx-shoulder_straight_arm_up_easy_1.jpg","trx-shoulder_straight_arm_up_easy_2.jpg"]
-}, {
-	"oefening": "TRX-shoulder straight arm up",
-	"spiergroep": "Schouders",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Neem de TRX vast bij de handvaten (handrug naar je toe). Positioneer zodanig dat het lichaam lichtjes achterover helt terwijl de TRX onder spanning staat met gestrekte armen (zie foto). Vanuit deze positie tracht je om het lichaam terug rechtop te zetten door de armen gestrekt opwaarts te brengen. Focus op een beweging vanuit de schouders. Het lichaam is volledig opgespannen, de armen blijven steeds gestrekt, enkel beweging in het schoudergewricht.",
-	"herhalingen": 15,
-	"afbeeldingen": ["trx-shoulder_straight_arm_up_medium_1.jpg","trx-shoulder_straight_arm_up_medium_2.jpg"]
-}, {
-	"oefening": "TRX-shoulder straight arm up",
-	"spiergroep": "Schouders",
-	"toestel": "",
-	"moeilijkheidsgraad": "Hard",
-	"beschrijving": "Neem de TRX vast bij de handvaten (duimen opwaarts). Positioneer zodanig dat het lichaam lichtjes achterover helt terwijl de TRX onder spanning staat met gestrekte armen (zie foto). Het lichaam is in plankhouding. Vanuit deze positie breng je het lichaam explosief omhoog door de schouderbladen naar elkaar toe te trekken. Focus op de schouders en houd de armen zo goed als gestrekt, houd je nek lang. Keer rustig terug naar de startpositie. Herhaal de beweging.",
-	"herhalingen": 20,
-	"afbeeldingen": ["trx-shoulder_straight_arm_up_hard_1.jpg","trx-shoulder_straight_arm_up_hard_2.jpg"]
-}, {
-	"oefening": "Mini dips",
-	"spiergroep": "Triceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Easy",
-	"beschrijving": "Steun met je armen op een verhoog, vingers over de rand (zie foto). Strek je armen en plaats je hielen op de grond, zorg er voor dat je hierbij een lichte hoek maakt van tussen je boven en onderlichaam. Span je buik- en bilspieren aan. Buig de armen tot je een hoek van 90 graden maakt in je ellebooggewricht. Druk jezelf omhoog en kom terug in de uitgangspositie. Tip: ellebogen smal, niet naar buiten. Tip: zak zo dicht mogelijk langs het steunvlak.",
-	"herhalingen": 15,
-	"afbeeldingen": ["mini_dips_easy_1.jpg","mini_dips_easy_2.jpg"]
-}, {
-	"oefening": "Mini dips",
-	"spiergroep": "Triceps",
-	"toestel": "",
-	"moeilijkheidsgraad": "Medium",
-	"beschrijving": "Steun met je armen op een verhoog, vingers over de rand (zie foto). Strek je armen en plaats je hielen op een verhoog, zorg er voor dat je hierbij een lichte hoek maakt van tussen je boven en onderlichaam. Span je buik- en bilspieren aan. Buig de armen tot je een hoek van 90 graden maakt in je ellebooggewricht. Druk jezelf omhoog en kom terug in de uitgangspositie. Tip: ellebogen smal, niet naar buiten. Tip: zak zo dicht mogelijk langs het steunvlak.",
-	"herhalingen": 30,
-	"afbeeldingen": ["mini_dips_medium_1.jpg","mini_dips_medium_2.jpg"]
-}, {
+[
+  {
+    "oefening": "Biceprows",
+    "spiergroep": "Biceps",
+    "toestel": "",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Neem de bar vast in regular grip (handrug naar grond toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, onder de bar. Vanuit deze startpositie houdt je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "biceprows_easy_1.jpg", "biceprows_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Biceprows",
+    "spiergroep": "Biceps",
+    "toestel": "",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Neem de bar vast in regular grip (handrug naar grond toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, voorbij de bar. Vanuit deze startpositie houdt je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "biceprows_medium_1.jpg", "biceprows_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Biceprows",
+    "spiergroep": "Biceps",
+    "toestel": "Parallel Bars",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Neem de bar vast in reverze grip (handrug naar boven toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, voorbij de bar. Vanuit deze startpositie houdt je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging. Je kan de oefening extra zwaar maken door de voeten nog verder te plaatsen waardoor het lichaam meer horizontaal komt te staan.",
+    "herhalingen": 45,
+    "afbeeldingen": [ "biceprows_hard_1.jpg", "biceprows_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Assisted Chin-up",
+    "spiergroep": "Biceps",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Bevestig een rekker aan de bar zoals zichtbaar op de afbeelding. Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen naar jezelf gericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
+    "herhalingen": 8,
+    "afbeeldingen": [ "assisted_chin-up_easy_1.jpg", "assisted_chin-up_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Negative Chin-up",
+    "spiergroep": "Biceps",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Start op de grond onder de bar. Spring op tot je met je kin boven de bar kan blijven hangen. Vanuit deze positie laat je jezelf zo traag mogelijk zakken tot je terug op de grond staat. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
+    "herhalingen": 8,
+    "afbeeldingen": []
+  },
+  {
+    "oefening": "Chin-up",
+    "spiergroep": "Biceps",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen naar jezelf gericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "chin-up_medium_1.jpg", "chin-up_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Reverse Chin-up",
+    "spiergroep": "Biceps",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen van jezelf weggericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "reverse_chin-up_hard_1.jpg", "reverse_chin-up_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Bridge",
+    "spiergroep": "Billen",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "bridge_easy_1.jpg", "bridge_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Bridge",
+    "spiergroep": "Billen",
+    "toestel": "Push Up Bars",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
+    "herhalingen": 25,
+    "afbeeldingen": [ "bridge_medium_1.jpg", "bridge_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Bridge",
+    "spiergroep": "Billen",
+    "toestel": "Push Up Bars",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Strek afwisselend je linker – en rechterbeen uit terwijl de bovenbenen gelijk blijven. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
+    "herhalingen": 40,
+    "afbeeldingen": [ "bridge_hard_1.jpg", "bridge_hard_2.jpg" ]
+  },
+  {
+    "oefening": "4 point leg extention",
+    "spiergroep": "Billen",
+    "toestel": "Incline Press",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Zoek steun aan een verticaal vlak (muur/bar). Houd je handen tegenover je schouders tegen het verticale vlak. Strek afwisselend het linker – en rechterbeen naar achter uit. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
+    "herhalingen": 10,
+    "afbeeldingen": [ "4_point_leg_extention_easy_1.jpg", "4_point_leg_extention_easy_2.jpg" ]
+  },
+  {
+    "oefening": "4 point leg extention",
+    "spiergroep": "Billen",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Start vanuit een vierpuntspositie. Handen recht onder schouders en heupen recht boven knieën. Strek afwisselend het linker – en rechterbeen uit. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "4_point_leg_extention_medium_1.jpg", "4_point_leg_extention_medium_2.jpg" ]
+  },
+  {
+    "oefening": "4 point leg extention",
+    "spiergroep": "Billen",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Start vanuit een vierpuntspositie. Handen recht onder schouders en heupen recht boven knieën. Strek afwisselend het linker – en rechterbeen uit terwijl je partner tegendruk bied op het been dat je uitstrekt. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "4_point_leg_extention_hard_1.jpg", "4_point_leg_extention_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Dip",
+    "spiergroep": "Borst",
+    "toestel": "Parallel Bars",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Plaats de rekker dwars over de barren en houdt deze op zijn plaats door je handen erop te plaatsen. Op die manier kan je de knieën op de rekker plaatsen waardoor de rekker ondersteuning kan bieden. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
+    "herhalingen": 10,
+    "afbeeldingen": [ "dip_easy_1.jpg" ]
+  },
+  {
+    "oefening": "Dip negative",
+    "spiergroep": "Borst",
+    "toestel": "Parallel Bars",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zo traag mogelijk zakken tot je niet meer kan en de voeten op de grond moet plaatsen. Keer terug naar de startpositie. Herhaal de beweging.",
+    "herhalingen": 10,
+    "afbeeldingen": []
+  },
+  {
+    "oefening": "Dip",
+    "spiergroep": "Borst",
+    "toestel": "Parallel Bars",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "dip_medium_1.jpg", "dip_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Dip",
+    "spiergroep": "Borst",
+    "toestel": "Parallel Bars",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Leg de rekker zoals op de foto dwars over je schouders en houdt deze op zijn plaats met je handen. De rekker staat lichtjes onder spanning. Ospringen tot steun (startpositie). De spanning in de rekker is voelbaar. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "dip_hard_1.jpg" ]
+  },
+  {
+    "oefening": "Push up",
+    "spiergroep": "Borst",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Steun op je knieën in kniesteun. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
+    "herhalingen": 10,
+    "afbeeldingen": [ "push_up_easy_1.jpg", "push_up_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Push up",
+    "spiergroep": "Borst",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Plaats de bal van de voet in de grond. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "push_up_medium_1.jpg", "push_up_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Archer push up",
+    "spiergroep": "Borst",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Plaats de bal van de voet in de grond. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken door je linker arm en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. Laat je daarna weer langzaam terug zakken door je rechter arm en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "archer_push_up_hard_1.jpg", "archer_push_up_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Clap push up",
+    "spiergroep": "Borst",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga met je buik op de grond liggen met de handen plat op de grond ter hoogte van de schouder, iets breder dan schouderbreedte. Plaats de bal van de voet in de grond. Duw explosief op vanuit de armen. Span je lichaam maximaal op waardoor je een plankhouding aanneemt. In de vlucht breng je je handen naar elkaar en klap je. Zak daarna terug en houd gedurende de hele oefening je lichaam in vormspanning, niet doorhangen in de rug. Herhaal de beweging.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "clap_push_up_hard_1.jpg", "clap_push_up_hard_2.jpg", "clap_push_up_hard_3.jpg" ]
+  },
+  {
+    "oefening": "Plank",
+    "spiergroep": "Buikspier",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Behoud een rechte rug. Houdt deze positie aan. Las pauzes in door je knieën regelmatig op de grond te plaatsen.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "plank_easy_1.jpg", "plank_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Plank",
+    "spiergroep": "Buikspier",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Behoud een rechte rug. Houdt deze positie aan.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "plank_medium_1.jpg" ]
+  },
+  {
+    "oefening": "Side plank",
+    "spiergroep": "Buikspier",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga op je zij gaan liggen met je elleboog recht onder je schouder. Duw jezelf op en steun op de zijkant van je voet. Zorg ervoor dat je elleboog zich steeds onder je schouder bevindt en ga niet doorhangen. Behoud een rechte lijn, nek in verlengde van rug.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "side_plank_medium_1.jpg" ]
+  },
+  {
+    "oefening": "Uneven plank",
+    "spiergroep": "Buikspier",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Strek 1 arm schuin voor je uit. Houdt deze positie aan.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "uneven_plank_medium_1.jpg" ]
+  },
+  {
+    "oefening": "Around the world plank",
+    "spiergroep": "Buikspier",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Strek 1 arm uit vooruit. Daarna zijwaarts. Keer terug naar beginpositie. Herhaal dit met de andere arm.",
+    "herhalingen": 45,
+    "afbeeldingen": [ "around_the_world_plank_hard_1.jpg" ]
+  },
+  {
+    "oefening": "Schommelplank",
+    "spiergroep": "Buikspier",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga in ellebogensteun gaan liggen met voeten op schouderbreedte. Trek je navel naar je toe. Breng je tenen van 1 voet op de hiel van je andere voet. Schommel lichtjes van voor naar achter.",
+    "herhalingen": 45,
+    "afbeeldingen": [ "schommelplank_hard_1.jpg" ]
+  },
+  {
+    "oefening": "Twisted crunches",
+    "spiergroep": "Schuine buikspieren",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Start in ruglig, met de benen en heupen in een hoek van 90° graden. Handen ter hoogte van de slaap. Hef de schouders van de grond door de buikspieren lichtjes aan te spannen. Voor een crunch uit door je buikspieren maximaal aan te spannen waardoor je bovenlichaam naar de knieën wordt toegetrokken. Tip: helemaal rechtzitten hoeft niet, de buikspieren maximaal aanspannen waardoor je een kleine opwaartse beweging uitvoert is voldoende. Tip: trek je navel in.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "twisted_crunches_easy_1.jpg", "twisted_crunches_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Twisted crunches",
+    "spiergroep": "Schuine buikspieren",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Start in ruglig. Handen ter hoogte van de slapen. Breng je schouders van de grond door de buikspieren op te spannen. Breng afwisselend de rechter – of linkerknie naar de borst terwijl het andere been uitstrekt. Terwijl tracht je om met de tegenovergestelde elleboog de knie aan te tikken. Let op! Rechterknie naar borst wil dus zeggen linker elleboog naar knie, linkerknie naar borst wil dus zeggen rechter elleboog naar knie. Maak een afwisselende ‘fietsbeweging’. Houd je buikspieren opgespannen tijdens de hele oefening.",
+    "herhalingen": 25,
+    "afbeeldingen": [ "twisted_crunches_medium_1.jpg", "twisted_crunches_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Twisted crunches",
+    "spiergroep": "Schuine buikspieren",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Start vanuit een push up-positie. Span het lichaam maximaal op zodat je lichaam in een plankhouding blijft staan. Probeer met de rechterknie de linkerelleboog aan te tikken en keer rustig terug naar de startpositie. Herhaal dit aan de tegenovergestelde zijde, linkerknie tegen de rechterelleboog. Herhaal de beweging aan beide kanten.",
+    "herhalingen": 35,
+    "afbeeldingen": [ "twisted_crunches_hard_1.jpg", "twisted_crunches_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Hammstring lowering",
+    "spiergroep": "Grond",
+    "toestel": "Decline Bench",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Start in kniezit, rechtop, trotse houding. De voeten zijn gefixeerd (vast onder toestel of tegen de grond gedrukt door partner). Handen ter hoogte van de borst brengen, ongeveer zoals bij een push-up, zorg dat de handen zich voor het lichaam bevinden zodat deze de schok straks kunnen opvangen. Uw partner houdt uw voeten tegen en biedt zo tegendruk. Vanuit deze startpositie ga je jezelf laten vallen in plankhouding naar voor. Dit doe je zo traag en gecontroleerd mogelijk door de hammstrings en de bilspieren maximaal op te spannen. Vanaf het moment waarop je de spanning niet meer kan aanhouden, laat je jezelf rustig doorvallen en vang je jezelf op door je handen op de grond te plaatsen. Herhaal de oefening.",
+    "herhalingen": 5,
+    "afbeeldingen": [ "hammstring_lowering_easy_1.jpg", "hammstring_lowering_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Hammstring lowering",
+    "spiergroep": "Hammstring",
+    "toestel": "Decline Bench",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Start in kniezit, rechtop, trotse houding. De voeten zijn gefixeerd (vast onder toestel of tegen de grond gedrukt door partner). Handen ter hoogte van de borst brengen, ongeveer zoals bij een push-up, zorg dat de handen zich voor het lichaam bevinden zodat deze de schok straks kunnen opvangen. Plaats resistance band lichtjes onder spanning rond de borst om ondersteuning te bieden tijdens het zakken (zie afbeelding en handleiding om de band te bevestigen). Vanuit deze startpositie ga je jezelf laten vallen in plankhouding naar voor. Dit doe je zo traag en gecontroleerd mogelijk door de hammstrings en de bilspieren maximaal op te spannen. Vanaf het moment waarop je de spanning niet meer kan aanhouden, laat je jezelf rustig doorvallen en vang je jezelf op door je handen op de grond te plaatsen. Herhaal de oefening.",
+    "herhalingen": 10,
+    "afbeeldingen": [ "hammstring_lowering_medium_1.jpg", "hammstring_lowering_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Hammstring lowering",
+    "spiergroep": "Hammstring",
+    "toestel": "Decline Bench",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Start in kniezit, rechtop, trotse houding. De voeten zijn gefixeerd (vast onder toestel of tegen de grond gedrukt door partner). Handen ter hoogte van de borst brengen, ongeveer zoals bij een push-up, zorg dat de handen zich voor het lichaam bevinden zodat deze de schok straks kunnen opvangen. Vanuit deze startpositie ga je jezelf laten vallen in plankhouding naar voor. Dit doe je zo traag en gecontroleerd mogelijk door de hammstrings en de bilspieren maximaal op te spannen. Vanaf het moment waarop je de spanning niet meer kan aanhouden, laat je jezelf rustig doorvallen en vang je jezelf op door je handen op de grond te plaatsen. Herhaal de oefening.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "hammstring_lowering_hard_1.jpg", "hammstring_lowering_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Single leg calf raises",
+    "spiergroep": "Kuiten",
+    "toestel": "Overhead Ladder",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga op een verhoog staan. Houd je goed vast. Ga op beide benen staan, steun op bal van de voeten (brede zone van de voetzool net achter tenen). Laat je gecontroleerd zakken tot onder het verhoog. Hef je hiel omhoog zo ver je kan door maximaal uit te duwen op de tenen/bal van de voet, al dan niet met steun door armen. Keer gecontroleerd terug naar de startpositie. Herhaal de beweging OF houd de spanning aan.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "single_leg_calf_raises_easy_1.jpg" ]
+  },
+  {
+    "oefening": "Single leg calf raises",
+    "spiergroep": "Kuiten",
+    "toestel": "Overhead Ladder",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga op een verhoog staan. Houd je goed vast. Ga op 1 been gaan staan, steun op bal van de voet (brede zone van de voetzool net achter tenen). Laat je gecontroleerd zakken tot onder het verhoog. Hef je hiel omhoog zo ver je kan door maximaal uit te duwen op de tenen/bal van de voet. Keer gecontroleerd terug naar de startpositie. Herhaal de beweging OF houd de spanning aan.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "single_leg_calf_raises_medium_1.jpg", "single_leg_calf_raises_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Single leg calf raises",
+    "spiergroep": "Kuiten",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga op een verhoog staan. Houd je goed vast. Ga op beide benen staan, zet beide voeten plat op de grond op heupbreedte. Spring vanuit de enkels. Explosief en maximaal opduwen vanuit de kuit, enkel beweging in de enkels, de rest van het lichaam blijft volledig in spanning. Tenen/bal van de voet zo hard mogelijk de grond induwen om kracht te ontwikkelen. Herhaal de beweging OF houd de spanning aan.",
+    "herhalingen": 40,
+    "afbeeldingen": [ "single_leg_calf_raises_hard_1.jpg", "single_leg_calf_raises_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Bridge rug",
+    "spiergroep": "Onderrug",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Plaats een voorwerp onder het zitvlak terwijl het bekken van de grond wordt getild. Houd de spanning zo lang mogelijk aan.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "bridge_rug_easy_1.jpg" ]
+  },
+  {
+    "oefening": "Bridge rug",
+    "spiergroep": "Onderrug",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op de grond waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "bridge_rug_medium_1.jpg", "bridge_rug_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Bridge rug",
+    "spiergroep": "Onderrug",
+    "toestel": "Push Up Bars",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Indien haalbaar: strek afwisselend je linker – en rechterbeen uit terwijl de bovenbenen gelijk blijven. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
+    "herhalingen": 45,
+    "afbeeldingen": [ "bridge_rug_hard_1.jpg", "bridge_rug_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Schelp",
+    "spiergroep": "Onderrug",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga op de buik liggen met de armen gestrekt boven het hoofd of de benen gestrekt, voorhoofd steunt op de grond, duimen wijzen opwaarts. Trek je navel in, span je buikspieren op. Vanuit deze startpositie hef je de armen of de benen zo gestrekt mogelijk van de grond door de bil-en onderrugspieren maximaal op te spannen, op deze manier vorm je een kommmetje/schelp. Houd de nek gestrekt in het verlengde van de rug. Houd de spanning aan OF herhaal de beweging.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "schelp_easy_1.jpg", "schelp_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Schelp",
+    "spiergroep": "Onderrug",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga op de buik liggen met de armen gestrekt boven het hoofd en de benen gestrekt, voorhoofd steunt op de grond, duimen wijzen opwaarts. Trek je navel in, span je buikspieren op. Vanuit deze startpositie hef je de armen en de benen zo gestrekt mogelijk van de grond door de bil-en onderrugspieren maximaal op te spannen, op deze manier vorm je een kommmetje/schelp. Houd de nek gestrekt in het verlengde van de rug. Houd de spanning aan OF herhaal de beweging.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "schelp_medium_1.jpg", "schelp_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Schelp",
+    "spiergroep": "Onderrug",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Ga op de buik liggen met de armen gestrekt boven het hoofd en de benen gestrekt, voorhoofd steunt op de grond, duimen wijzen opwaarts. Trek je navel in, span je buikspieren op. Vanuit deze startpositie hef je de armen en de benen zo gestrekt mogelijk van de grond door de bil-en onderrugspieren maximaal op te spannen, op deze manier vorm je een kommmetje/schelp. Tijdens het heffen van armen en benen beweegt u uw armen en benen open/toe net als een sneeuwengel. Houd de nek gestrekt in het verlengde van de rug. Houd de spanning aan OF herhaal de beweging.",
+    "herhalingen": 45,
+    "afbeeldingen": [ "schelp_hard_1.jpg", "schelp_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Reuzenpas",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Leg een bepaalde afstand af in zo weinig mogelijk stappen. Hef de knie hoog op en val ver uit naar voor. Probeer om het evenwicht te bewaren, handen niet op de grond plaatsen.",
+    "herhalingen": 10,
+    "afbeeldingen": [ "reuzenpas_easy_1.jpg", "reuzenpas_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Lunges",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Sta rechtop met de voeten op schouderbreedte (plaats de handen in de heupen ter ondersteuning). Trek de knie hoog op en zet een grote pas voorwaarts. Maak een neerwaartse beweging, de knie van het achterste been plooit. Het voorste been is je steunbeen, probeer de knie niet voorbij te tenen te laten glijden tijdens de uitvoering. Zoek met de knie van het achterste been naar de grond. Wanneer de grond lichtjes wordt aangetikt, duw je jezelf explosief terug op. Herhaal de beweging, deze keer aan de andere kant. TIP: trotse houding behouden, rug lang, borst open.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "lunges_medium_1.jpg", "lunges_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Lunges",
+    "spiergroep": "Quadriceps",
+    "toestel": "Push Up Bars",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Plaats je achterste voet op een verhoog. Sta rechtop met de voeten op schouderbreedte (plaats de handen in de heupen ter ondersteuning). Trek de knie hoog op en zet een grote pas voorwaarts. Maak een neerwaartse beweging, de knie van het achterste been plooit. Het voorste been is je steunbeen, probeer de knie niet voorbij te tenen te laten glijden tijdens de uitvoering. Zoek met de knie van het achterste been naar de grond. Wanneer de grond lichtjes wordt aangetikt, duw je jezelf explosief terug op. Herhaal de beweging, deze keer aan de andere kant. TIP: trotse houding behouden, rug lang, borst open.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "lunges_hard_1.jpg", "lunges_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Jump lunges",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Plaats je achterste voet op een verhoog. Sta rechtop met de voeten op schouderbreedte (plaats de handen in de heupen ter ondersteuning). Trek de knie hoog op en zet een grote pas voorwaarts. Maak een neerwaartse beweging, de knie van het achterste been plooit. Het voorste been is je steunbeen, probeer de knie niet voorbij te tenen te laten glijden tijdens de uitvoering. Zoek met de knie van het achterste been naar de grond. Wanneer de grond lichtjes wordt aangetikt, duw je jezelf explosief terug op zodat je van de grond afkomt. Terwijl je in de lucht bent, wissel je van been. TIP: trotse houding behouden, rug lang, borst open.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "jump_lunges_hard_1.jpg", "jump_lunges_hard_2.jpg", "jump_lunges_hard_3.jpg" ]
+  },
+  {
+    "oefening": "Squats",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Plaats de voeten op schouderbreedte en evenwijdig met elkaar. Trotse houding (Steek je schouderbladen in je achterzak). Zet een verhoog achter je dat ongeveer tot op kniehoogte komt. De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "squats_easy_1.jpg", "squats_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Squats",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Plaats de voeten op schouderbreedte en evenwijdig met elkaar. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
+    "herhalingen": 25,
+    "afbeeldingen": [ "squats_medium_1.jpg", "squats_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Squats",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Plaats de voeten op schouderbreedte en evenwijdig met elkaar. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken waardoor je een jump maakt vooraleer in de startpositie terecht te komen en herhalen.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "squats_hard_1.jpg", "squats_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Sumo squats",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). Zet een verhoog achter je dat ongeveer tot op kniehoogte komt. De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
+    "herhalingen": 15,
+    "afbeeldingen": []
+  },
+  {
+    "oefening": "Sumo squats",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
+    "herhalingen": 25,
+    "afbeeldingen": [ "sumo_squats_medium_1.jpg", "sumo_squats_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Sumo squats",
+    "spiergroep": "Quadriceps",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken waardoor je een jump maakt vooraleer in de startpositie terecht te komen en herhalen.",
+    "herhalingen": 30,
+    "afbeeldingen": []
+  },
+  {
+    "oefening": "Pull-up",
+    "spiergroep": "Rug",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Hang aan de bar (handrug naar je toe) met de voet in de rekker geplaatst zodat deze ondersteuning kan bieden bij het uitvoeren van de oefening. Span de buikspieren aan, niet schommelen. Optrekken: Breng je schouderbladen naar elkaar toe, tracht om de bar te buigen waardoor de ellebogen gaan plooien en het bovenlichaam naar de bar toe wordt getrokken (adem uit). Voer de beweging uit, tot de kin of zeker de ogen boven de bar zijn (explosief). Zak gecontroleerd terug naar de startpositie, armen zo goed als gestrekt (adem in).",
+    "herhalingen": 5,
+    "afbeeldingen": [ "pull-up_easy_1.jpg" ]
+  },
+  {
+    "oefening": "Pull-up",
+    "spiergroep": "Rug",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Hang aan de bar (handrug naar je toe). Span de buikspieren aan, niet schommelen. Optrekken: Breng je schouderbladen naar elkaar toe, tracht om de bar te buigen waardoor de ellebogen gaan plooien en het bovenlichaam naar de bar toe wordt getrokken (adem uit). Voer de beweging uit, tot de kin of zeker de ogen boven de bar zijn (explosief). Zak gecontroleerd terug naar de startpositie, armen zo goed als gestrekt (adem in).",
+    "herhalingen": 10,
+    "afbeeldingen": [ "pull-up_medium_1.jpg", "pull-up_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Muscle-up",
+    "spiergroep": "Rug",
+    "toestel": "Pull Up Station",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Hang aan de bar (handrug naar je toe). Span de buikspieren aan, niet schommelen. Optrekken: Breng je schouderbladen naar elkaar toe, tracht om de bar te buigen waardoor de ellebogen gaan plooien en het bovenlichaam naar de bar toe wordt getrokken (adem uit). Voer de beweging uit, tot de kin of zeker de ogen boven de bar zijn (explosief). Vanaf het moment dat de ellebogen ter hoogte van de bar zijn, kantel je de polsen en breng je de ellebogen boven de bar. Het moment dat je het bovenlichaam boven de bar hebt gebracht, duw je krachtig uit tot steun. Keer gecontroleerd terug naar de startpositie.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "pull-up_hard_1.jpg", "pull-up_hard_2.jpg", "pull-up_hard_3.jpg" ]
+  },
+  {
+    "oefening": "Pike push-up",
+    "spiergroep": "Schouders",
+    "toestel": "Push Up Bars",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Ga op handen en voeten staan met de heupen in een hoek van 90°, hierbij staan je handen op een verhoog. Hou deze lichaamspositie aan terwijl je door de ellebogen buigt (benen blijven zo gestrekt mogelijk). Met het voorhoofd probeer je net over de handen het verhoog te tikken. Traag zakken, explosief terugkeren naar startpositie. Herhaal de beweging.",
+    "herhalingen": 10,
+    "afbeeldingen": [ "pike_push-up_easy_1.jpg", "pike_push-up_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Pike push-up",
+    "spiergroep": "Schouders",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Ga op handen en voeten staan met de heupen in een hoek van 90°. Hou deze lichaamspositie aan terwijl je door de ellebogen buigt (benen blijven zo gestrekt mogelijk). Met het voorhoofd probeer je net over de handen de grond te tikken. Traag zakken, explosief terugkeren naar startpositie. Herhaal de beweging.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "pike_push-up_medium_1.jpg", "pike_push-up_medium_2.jpg" ]
+  },
+  {
+    "oefening": "Handstand push-up",
+    "spiergroep": "Schouders",
+    "toestel": "Grond",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Zwaai op naar handenstand (eventueel steun met voeten aan muur/paal/..). Zorg eerst voor een stabiele positie. Wanneer het lichaam volledig in evenwicht is, probeer je om door de ellebogen te zakken. Tijdens het zakken probeer je met je voorhoofd de grond te tikken. Na het bijna tikken van de grond duw je explosief terug uit naar de startpositie.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "handstand_push-up_hard_1.jpg", "handstand_push-up_hard_2.jpg" ]
+  },
+  {
+    "oefening": "TRX-shoulder straight arm up",
+    "spiergroep": "Schouders",
+    "toestel": "Overhead Ladder",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Neem de TRX vast bij de handvaten (handrug naar je toe). Positioneer zodanig dat het lichaam lichtjes voorover helt terwijl de TRX onder spanning staat met gestrekte armen, de TRX loopt over je schouders (zie foto). Vanuit deze positie tracht je om het lichaam verder naar voor te laten vallen terwijl je in een plankhouding blijft. Dit door de armen gestrekt opwaarts te bewegen vanuit de schouders. Keer explosief terug naar de startpositie. Herhaal de beweging.",
+    "herhalingen": 8,
+    "afbeeldingen": [ "trx-shoulder_straight_arm_up_easy_1.jpg", "trx-shoulder_straight_arm_up_easy_2.jpg" ]
+  },
+  {
+    "oefening": "TRX-shoulder straight arm up",
+    "spiergroep": "Schouders",
+    "toestel": "Overhead Ladder",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Neem de TRX vast bij de handvaten (handrug naar je toe). Positioneer zodanig dat het lichaam lichtjes achterover helt terwijl de TRX onder spanning staat met gestrekte armen (zie foto). Vanuit deze positie tracht je om het lichaam terug rechtop te zetten door de armen gestrekt opwaarts te brengen. Focus op een beweging vanuit de schouders. Het lichaam is volledig opgespannen, de armen blijven steeds gestrekt, enkel beweging in het schoudergewricht.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "trx-shoulder_straight_arm_up_medium_1.jpg", "trx-shoulder_straight_arm_up_medium_2.jpg" ]
+  },
+  {
+    "oefening": "TRX-shoulder straight arm up",
+    "spiergroep": "Schouders",
+    "toestel": "Overhead Ladder",
+    "moeilijkheidsgraad": "Hard",
+    "beschrijving": "Neem de TRX vast bij de handvaten (duimen opwaarts). Positioneer zodanig dat het lichaam lichtjes achterover helt terwijl de TRX onder spanning staat met gestrekte armen (zie foto). Het lichaam is in plankhouding. Vanuit deze positie breng je het lichaam explosief omhoog door de schouderbladen naar elkaar toe te trekken. Focus op de schouders en houd de armen zo goed als gestrekt, houd je nek lang. Keer rustig terug naar de startpositie. Herhaal de beweging.",
+    "herhalingen": 20,
+    "afbeeldingen": [ "trx-shoulder_straight_arm_up_hard_1.jpg", "trx-shoulder_straight_arm_up_hard_2.jpg" ]
+  },
+  {
+    "oefening": "Mini dips",
+    "spiergroep": "Triceps",
+    "toestel": "Push Up Bars",
+    "moeilijkheidsgraad": "Easy",
+    "beschrijving": "Steun met je armen op een verhoog, vingers over de rand (zie foto). Strek je armen en plaats je hielen op de grond, zorg er voor dat je hierbij een lichte hoek maakt van tussen je boven en onderlichaam. Span je buik- en bilspieren aan. Buig de armen tot je een hoek van 90 graden maakt in je ellebooggewricht. Druk jezelf omhoog en kom terug in de uitgangspositie. Tip: ellebogen smal, niet naar buiten. Tip: zak zo dicht mogelijk langs het steunvlak.",
+    "herhalingen": 15,
+    "afbeeldingen": [ "mini_dips_easy_1.jpg", "mini_dips_easy_2.jpg" ]
+  },
+  {
+    "oefening": "Mini dips",
+    "spiergroep": "Triceps",
+    "toestel": "Parallel Bars",
+    "moeilijkheidsgraad": "Medium",
+    "beschrijving": "Steun met je armen op een verhoog, vingers over de rand (zie foto). Strek je armen en plaats je hielen op een verhoog, zorg er voor dat je hierbij een lichte hoek maakt van tussen je boven en onderlichaam. Span je buik- en bilspieren aan. Buig de armen tot je een hoek van 90 graden maakt in je ellebooggewricht. Druk jezelf omhoog en kom terug in de uitgangspositie. Tip: ellebogen smal, niet naar buiten. Tip: zak zo dicht mogelijk langs het steunvlak.",
+    "herhalingen": 30,
+    "afbeeldingen": [ "mini_dips_medium_1.jpg", "mini_dips_medium_2.jpg" ]
+  },
+{
 	"oefening": "Hard dips",
 	"spiergroep": "Triceps",
-	"toestel": "",
+	"toestel": "Parallel Bars",
 	"moeilijkheidsgraad": "Hard",
 	"beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
 	"herhalingen": 45,
@@ -513,7 +577,7 @@
 }, {
 	"oefening": "Triceps extensions",
 	"spiergroep": "Triceps",
-	"toestel": "",
+	"toestel": "Incline Press",
 	"moeilijkheidsgraad": "Easy",
 	"beschrijving": "Ga voor een muur staan. Plaats de handen op schouderbreedte tegen de muur. Zet de voeten op schouderbreedte. Laat je gecontroleerd zakken tot het hoofd de muur net niet raakt. Scharnier in de ellebogen en niet in de schouders. Zorg dat je een rechte rug behoudt. Duw je gecontroleerd weer op. Hoe verder je van de muur staat met je voeten, hoe lastiger.",
 	"herhalingen": 10,
@@ -521,7 +585,7 @@
 }, {
 	"oefening": "Triceps extensions",
 	"spiergroep": "Triceps",
-	"toestel": "",
+	"toestel": "Parallel Bars",
 	"moeilijkheidsgraad": "Medium",
 	"beschrijving": "Ga voor een lage bar staan (max.: borsthoogte, hoe lager de handen hoe zwaarder de oefening). Plaats de handen op schouderbreedte op de bar. Zet de voeten op schouderbreedte, plaats de voeten zodanig achteruit totdat je volledige lichaam in een plank staat, handen nog steeds aan de bar met gestrekte armen. Laat je gecontroleerd zakken door de ellebogen en breng je voorhoofd tussen je handen net onder de bar. Behoud de lichaamsspanning gedurende de hele oefening, de plank blijf je aanhouden. Focus op de armen, houd de ellebogen evenwijdig en niet te veel naar buiten. Duw jezelf explosief op naar de startpositie en herhaal.",
 	"herhalingen": 20,
@@ -529,7 +593,7 @@
 }, {
 	"oefening": "Triceps extensions",
 	"spiergroep": "Triceps",
-	"toestel": "",
+	"toestel": "Grond",
 	"moeilijkheidsgraad": "Hard",
 	"beschrijving": "Ga voor een lage bar staan (max.: borsthoogte, hoe lager de handen hoe zwaarder de oefening). Plaats de handen op schouderbreedte op de bar. Zet de voeten op schouderbreedte, plaats de voeten zodanig achteruit totdat je volledige lichaam in een plank staat, handen nog steeds aan de bar met gestrekte armen. Duw vanuit de polsen je lichaam naar achter zodat je op je ellebogen terecht komt, met je voeten ga je meer naar achter zodat je lichaam in een plankhouding blijft. Houd de ellebogen dicht maar niet tegen het lichaam. Keer terug door een voorwaartse beweging te maken en uit te duwen vanuit de armen tot de startpositie.",
 	"herhalingen": 30,
