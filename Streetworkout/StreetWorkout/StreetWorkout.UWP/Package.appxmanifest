@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="9f5f1ac0-83af-4137-bae3-c38fc8d9e2f6"
-    Publisher="CN=64b86f60-30af-4b0c-8f83-b89a66e449b0"
+    Name="8b9eac01-e8c7-430e-a48b-27edf0671f1d"
+    Publisher="CN=8769683f-1d5a-42e9-983f-e953a8720896"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>StreetWorkout.UWP</DisplayName>
-    <PublisherDisplayName>64b86f60-30af-4b0c-8f83-b89a66e449b0</PublisherDisplayName>
+    <PublisherDisplayName>8769683f-1d5a-42e9-983f-e953a8720896</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
