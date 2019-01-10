@@ -130,6 +130,8 @@
     <None Remove="Assets\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <None Remove="Assets\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <None Remove="Assets\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
+    <None Remove="Assets\Svg\workout.jpg" />
+    <None Remove="Assets\Svg\workout.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -252,6 +254,8 @@
     <EmbeddedResource Include="Assets\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <EmbeddedResource Include="Assets\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Assets\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
+    <EmbeddedResource Include="Assets\Svg\workout.jpg" />
+    <EmbeddedResource Include="Assets\Svg\workout.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -263,7 +267,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="LoginPage.xaml">
+    <EmbeddedResource Update="Views\HubPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

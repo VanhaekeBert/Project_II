@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StreetWorkout.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 
 namespace StreetWorkout
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
         public MainPage()
         {

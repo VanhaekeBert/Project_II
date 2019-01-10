@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StreetWorkout.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace StreetWorkout
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
