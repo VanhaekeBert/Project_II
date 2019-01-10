@@ -7,7 +7,7 @@ namespace test.Model
 {
     public class PolarToken
     {
-        [JsonProperty(PropertyName = "acces_token")]
+        [JsonProperty(PropertyName = "access_token")]
         public string Acces_token { get; set; }
         [JsonProperty(PropertyName = "token_type")]
         public string Token_type { get; set; }

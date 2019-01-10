@@ -15,37 +15,26 @@ namespace test
     {
         public MainPage()
         {
-
             InitializeComponent();
-
             //Task.Run(async () =>
             //{
-                 PolarAsync();
+            //    await FitBitAsync();
             //});
+            PolarAsync();
         }
+
         public async Task FitBitAsync()
         {
-
-            var scopes = new[]
-            {
-                    "activity nutrition heartrate location"
-             };
+            var scopes = new[] { "activity nutrition heartrate location" };
             var api = new FitBitApi("google", "22D9J5", "8889b872288980d53e2cad3a2043955b", true)
-
             {
                 Scopes = scopes
             };
-
-
-            var account = (SimpleAuth.OAuthAccount)await api.Authenticate();           
-            Debug.WriteLine(account.Token);
-
-            var song = await api.Get<HeartRateSeries>("https://api.fitbit.com/1/user/-/activities/heart/date/today/7d.json", new Dictionary<string, string> { ["Authorization"] = "Bearer "+ account.Token });
-            Debug.WriteLine(song.FullJson);
-                       
+            var account = (SimpleAuth.OAuthAccount)await api.Authenticate();
+            var response = await api.Get<HeartRateSeries>("https://api.fitbit.com/1/user/-/activities/heart/date/today/7d.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}"});
+            Debug.WriteLine(response.FullJson);
         }
-
-                          
+         
         public void PolarAsync()
         {
             var auth = PolarAuthenticator.GetPolarAuth();
@@ -54,12 +43,6 @@ namespace test
             presenter.Login(auth);
             presenter.Completed += (s, ee) =>
             {
-                Debug.WriteLine("COMPLETED");
-                if (ee.IsAuthenticated)
-                {
-                    Debug.WriteLine("Authenticated");
-
-                }
                 PolarAuthenticator.GetPolarToken();
             };  
         }
