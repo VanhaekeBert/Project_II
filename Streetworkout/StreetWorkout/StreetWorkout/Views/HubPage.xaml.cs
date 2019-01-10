@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkout.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HubPage : ContentPage
-	{
-        public HubPage ()
-		{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class HubPage : ContentPage
+    {
+        public HubPage()
+        {
             InitializeComponent();
             BackgroundColor = Color.FromHex("#303C41");
             Title = "Mainpage";

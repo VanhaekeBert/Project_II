@@ -16,7 +16,7 @@ namespace StreetWorkout.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
+
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
