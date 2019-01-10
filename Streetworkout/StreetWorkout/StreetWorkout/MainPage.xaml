@@ -6,8 +6,11 @@
              x:Class="StreetWorkout.MainPage"
              BackgroundColor="#303C41">
     <MasterDetailPage.Master>
-        <ContentPage Title="Trello boards">
-            <Label Text="Menupage"/>
+        <ContentPage Title="Menu options" BackgroundColor="#303C41">
+            <Grid>
+                <Label Text="Menupage" TextColor="White"/>
+                <Label VerticalOptions="End" TextColor="white" Text="Bert en derest"/>
+            </Grid>
         </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>

@@ -130,8 +130,6 @@
     <None Remove="Assets\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <None Remove="Assets\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <None Remove="Assets\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
-    <None Remove="Assets\Svg\workout.jpg" />
-    <None Remove="Assets\Svg\workout.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -254,8 +252,6 @@
     <EmbeddedResource Include="Assets\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <EmbeddedResource Include="Assets\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Assets\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
-    <EmbeddedResource Include="Assets\Svg\workout.jpg" />
-    <EmbeddedResource Include="Assets\Svg\workout.svg" />
   </ItemGroup>
 
   <ItemGroup>
