@@ -3,7 +3,6 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace StreetWorkout
 {
     public partial class App : Application
@@ -12,7 +11,11 @@ namespace StreetWorkout
         {
             InitializeComponent();
 
+<<<<<<< HEAD
             MainPage = new MainPage();
+=======
+            MainPage = new NavigationPage(new IntroPage());
+>>>>>>> de0c5a84f4cc5fa827e59cdce9c4341fa9747e94
         }
 
         protected override void OnStart()

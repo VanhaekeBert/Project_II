@@ -36,14 +36,15 @@ namespace test.Model
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("Authorization", $"Basic {base64}");
-                var jsonString = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
-                var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
+                var request = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
+                var httpContent = new StringContent(request, Encoding.UTF8, "application/x-www-form-urlencoded");
                 string url = "https://polarremote.com/v2/oauth2/token";
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseString);
                 var token = JsonConvert.DeserializeObject<PolarToken>(responseString);
-                Debug.WriteLine(token.X_user_id);
+                PostUserAuthorize(token);
+                //GetUserData(token);
+                //DeleteUserAuthorize(token);
             }
             catch (Exception ex)
             {
@@ -52,18 +53,57 @@ namespace test.Model
             }
         }
 
-        public static void GetPolarData(PolarToken token)
+        public static async Task PostUserAuthorize(PolarToken token)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.Acces_token);
-                //var jsonString = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
-                //var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/x-www-form-urlencoded");
-                //string url = "https://polarremote.com/v2/oauth2/token";
-                //var message = await client.PostAsync(url, httpContent);
-                //var responseString = await message.Content.ReadAsStringAsync();
+                var request = "{\"member-id\": \"" + token.X_user_id + "\"}";
+                var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+                string url = "https://www.polaraccesslink.com/v3/users";
+                var message = await client.PostAsync(url, httpContent);
+                var responseString = await message.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+                throw ex;
+            }
+        }
+
+        public static async Task GetUserData(PolarToken token)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.Acces_token);
+                string url = $"https://www.polaraccesslink.com/v3/users/{token.X_user_id}";
+                var message = await client.GetAsync(url);
+                var responseString = await message.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+                throw ex;
+            }
+        }
+
+        public static async Task DeleteUserAuthorize(PolarToken token)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.Acces_token);
+                string url = $"https://www.polaraccesslink.com/v3/users/{token.X_user_id}";
+                var message = await client.DeleteAsync(url);
+                var responseString = await message.Content.ReadAsStringAsync();
+                Debug.WriteLine(message.StatusCode.ToString());
             }
             catch (Exception ex)
             {

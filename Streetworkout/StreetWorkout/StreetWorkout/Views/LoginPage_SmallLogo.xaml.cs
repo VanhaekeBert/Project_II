@@ -9,10 +9,10 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkout
 {
-	public partial class IntroPage : ContentPage
+	public partial class LoginPage_SmallLogo : ContentPage
 	{
-        public IntroPage()
-        {
+		public LoginPage_SmallLogo()
+		{
             InitializeComponent();
             Task.Run(async () =>
             {
@@ -22,11 +22,6 @@ namespace StreetWorkout
         public async Task InitAsync()
         {
             Main_Logo.Source = ImageSource.FromResource("StreetWorkout.Assets.Logo_Main.png");
-        }
-
-        private void Button_Login_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new LoginPage());
         }
     }
 }
