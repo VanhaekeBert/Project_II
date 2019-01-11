@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="StreetWorkoutV2_Bert.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StreetWorkoutV2_Bert.UWP"
+    RequestedTheme="Light">
+</Application>
