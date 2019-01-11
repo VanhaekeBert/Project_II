@@ -1,14 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:StreetWorkout.Views"
              xmlns:local="clr-namespace:StreetWorkout"
-             x:Class="StreetWorkout.MainPage">
+             x:Class="StreetWorkout.MainPage"
+             BackgroundColor="#303C41">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu options" BackgroundColor="#303C41">
+            <Grid>
+                <Label Text="Menupage" TextColor="White"/>
+                <Label VerticalOptions="End" TextColor="white" Text="Bert en derest"/>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage x:Name="NavPage">
+            <x:Arguments>
+                <view:HubPage x:Name="DetailPage"/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-
-</ContentPage>
+</MasterDetailPage>
