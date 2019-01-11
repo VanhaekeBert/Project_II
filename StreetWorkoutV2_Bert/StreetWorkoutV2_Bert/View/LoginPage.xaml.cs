@@ -16,6 +16,7 @@ namespace StreetWorkoutV2_Bert.View
 		{
 			InitializeComponent ();
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Background.png");
+            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
         }
 	}
 }

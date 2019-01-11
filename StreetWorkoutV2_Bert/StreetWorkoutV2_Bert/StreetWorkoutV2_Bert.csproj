@@ -12,11 +12,15 @@
   <ItemGroup>
     <None Remove="Asset\Background.png" />
     <None Remove="Asset\Background.svg" />
+    <None Remove="Asset\eye-off.png" />
+    <None Remove="Asset\eye.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Asset\Background.png" />
     <EmbeddedResource Include="Asset\Background.svg" />
+    <EmbeddedResource Include="Asset\eye-off.png" />
+    <EmbeddedResource Include="Asset\eye.png" />
   </ItemGroup>
 
   <ItemGroup>
