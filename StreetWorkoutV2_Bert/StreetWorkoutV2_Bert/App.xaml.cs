@@ -1,8 +1,10 @@
-﻿using System;
+﻿using StreetWorkoutV2_Bert.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace StreetWorkout
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+namespace StreetWorkoutV2_Bert
 {
     public partial class App : Application
     {
@@ -10,8 +12,7 @@ namespace StreetWorkout
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new IntroPage());
-            MainPage = new NavigationPage(new IntroPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
