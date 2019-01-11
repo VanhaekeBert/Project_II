@@ -43,7 +43,10 @@ namespace test
             presenter.Login(auth);
             presenter.Completed += (s, ee) =>
             {
-                PolarAuthenticator.GetPolarToken();
+                Task.Run(async () =>
+                {
+                    await PolarAuthenticator.GetPolarToken();
+                });
             };  
         }
     }
