@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreetWorkoutV2_Bert.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                    <On Platform="Android" Value="Product-Sans-Bold.ttf#Product Sans" />
+                    <On Platform="iOS" Value="Product-Sans-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                    <On Platform="Android" Value="Product-Sans-Regular.ttf#Product Sans" />
+                    <On Platform="iOS" Value="Product-Sans-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="ItalicBoldFont">
+                <On Platform="Android" Value="Product-Sans-Bold-Italic.ttf#Product Sans" />
+                <On Platform="iOS" Value="Product-Sans-Bold-Italic" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="ItalicFont">
+                <On Platform="Android" Value="Product-Sans-Italic.ttf#Product Sans" />
+                <On Platform="iOS" Value="Product-Sans-Italic" />
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

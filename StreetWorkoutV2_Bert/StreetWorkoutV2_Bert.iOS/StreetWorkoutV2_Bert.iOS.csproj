@@ -90,11 +90,16 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\Product-Sans-Regular.ttf" />
+    <BundleResource Include="Resources\Product-Sans-Bold-Italic.ttf" />
+    <BundleResource Include="Resources\Product-Sans-Bold.ttf" />
+    <BundleResource Include="Resources\Product-Sans-Italic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
