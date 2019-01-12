@@ -17,6 +17,7 @@
     <None Remove="Asset\BackgroundSettings.png" />
     <None Remove="Asset\eye-off.png" />
     <None Remove="Asset\eye.png" />
+    <None Remove="Asset\Forgot-Password_Background.png" />
     <None Remove="Asset\Login_Background.png" />
   </ItemGroup>
 
@@ -28,6 +29,7 @@
     <EmbeddedResource Include="Asset\BackgroundSettings.png" />
     <EmbeddedResource Include="Asset\eye-off.png" />
     <EmbeddedResource Include="Asset\eye.png" />
+    <EmbeddedResource Include="Asset\Forgot-Password_Background.png" />
     <EmbeddedResource Include="Asset\Login_Background.png" />
   </ItemGroup>
 
@@ -43,6 +45,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\DashboardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ForgotPasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\LoginPage.xaml">

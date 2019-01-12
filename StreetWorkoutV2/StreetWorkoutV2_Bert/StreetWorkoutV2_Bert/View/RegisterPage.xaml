@@ -31,7 +31,7 @@
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="3" VerticalOptions="CenterAndExpand" RowSpacing="20" >
-                    <Button Grid.Row="0" Text="Registreren" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40"/>
+                    <Button Grid.Row="0" Text="Registreren" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" Clicked="Button_Clicked"/>
                     <Label LineBreakMode="WordWrap" Grid.Row="1" HorizontalOptions="Center" x:Name="Login">
                         <Label.FormattedText>
                             <FormattedString>
