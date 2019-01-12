@@ -20,7 +20,10 @@
     <None Remove="Asset\eye.png" />
     <None Remove="Asset\Forgot-Password_Background.png" />
     <None Remove="Asset\Login_Background.png" />
+    <None Remove="Asset\qr.png" />
+    <None Remove="Asset\spier.png" />
     <None Remove="Asset\StartWorkout.png" />
+    <None Remove="Asset\toestel.png" />
     <None Remove="Asset\Vuur.png" />
   </ItemGroup>
 
@@ -35,7 +38,10 @@
     <EmbeddedResource Include="Asset\eye.png" />
     <EmbeddedResource Include="Asset\Forgot-Password_Background.png" />
     <EmbeddedResource Include="Asset\Login_Background.png" />
+    <EmbeddedResource Include="Asset\qr.png" />
+    <EmbeddedResource Include="Asset\spier.png" />
     <EmbeddedResource Include="Asset\StartWorkout.png" />
+    <EmbeddedResource Include="Asset\toestel.png" />
     <EmbeddedResource Include="Asset\Vuur.png" />
   </ItemGroup>
 
@@ -61,6 +67,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Picker_Toestel_Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\QrPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\RegisterPage.xaml">

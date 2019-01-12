@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkoutV2_Bert.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
-	{
-		public LoginPage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
+    {
+        public LoginPage()
+        {
+            InitializeComponent();
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
             backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
@@ -36,7 +36,7 @@ namespace StreetWorkoutV2_Bert.View
 
         private void OnTap(Xamarin.Forms.View arg1, object arg2)
         {
-           if (PasswordEntry.IsPassword == true)
+            if (PasswordEntry.IsPassword == true)
             {
                 PasswordEntry.IsPassword = false;
                 eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
@@ -50,7 +50,7 @@ namespace StreetWorkoutV2_Bert.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (PasswordEntry != null && UserNameEntry != null )
+            if (PasswordEntry != null && UserNameEntry != null)
             {
                 await Navigation.PushAsync(new LoginPage());
             }
