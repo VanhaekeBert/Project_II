@@ -1,12 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StreetWorkoutV2_Bert.View.Picker_Toestel_Page">
+             x:Class="StreetWorkoutV2_Bert.View.Picker_Toestel_Page"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RelativeLayout Padding="0">
+            <!-- Background -->
+            <Image
+            x:Name="BackgroundImage"
+            Aspect="AspectFill"
+            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            </Image>
+            <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" x:Name="BackDashboard">
+                    <Image HeightRequest="5" WidthRequest="15" HorizontalOptions="Start" x:Name="backbutton"/>
+                    <Label Text="Dashboard" FontFamily="{StaticResource BoldFont}" FontSize="14" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,12,0">
+                    <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
+                    <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="14" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand">
+                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="Toestellen" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                </StackLayout>
+                <ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame OutlineColor="Gray" HasShadow="True" Margin="24,0,24,0" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}">
+                                    <Frame.Content>
+                                        <Grid RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="4*"/>
+                                                <ColumnDefinition Width="6*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="50"/>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}"
+                                                           FontFamily="{StaticResource NormalFont}"
+                                                           FontSize="22"
+                                                           TextColor="{StaticResource LightColor}"
+                                                           VerticalOptions="End"
+                                                           Margin="12,0,0,0"/>
+                                            <Label Grid.Row="1"  Grid.Column="1" Text="{Binding Aantal_Oefeningen, StringFormat='Oefeningen: {0:F0}'}"
+                                                           FontFamily="{StaticResource NormalFont}"
+                                                           FontSize="16"
+                                                           TextColor="{StaticResource LightColor}"
+                                                           VerticalOptions="Start"
+                                                           Margin="12,0,0,0"/>
+                                            <Image Grid.Column="3" Grid.RowSpan="2" Source="{Binding Go_To_button}" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="25" x:Name="GoToOefeningen"/>
+                                        </Grid>
+                                    </Frame.Content>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
