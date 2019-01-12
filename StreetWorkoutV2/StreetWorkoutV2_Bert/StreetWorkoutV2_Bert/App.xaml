@@ -4,6 +4,10 @@
              x:Class="StreetWorkoutV2_Bert.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="Maincolor">#EE4444</Color>
+            <Color x:Key="MainDarkColor">#2B3049</Color>
+            <Color x:Key="LightColor">#FFFFFF</Color>
+            <Color x:Key="Darkcolor">#000000</Color>
             <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
                     <On Platform="Android" Value="Product-Sans-Bold.ttf#Product Sans" />
                     <On Platform="iOS" Value="Product-Sans-Bold" />

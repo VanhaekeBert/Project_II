@@ -10,23 +10,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Asset\Backbutton.png" />
     <None Remove="Asset\Background.png" />
-    <None Remove="Asset\Background.svg" />
     <None Remove="Asset\BackgroundDashboard.png" />
     <None Remove="Asset\BackgroundProfile.png" />
     <None Remove="Asset\BackgroundSettings.png" />
     <None Remove="Asset\eye-off.png" />
     <None Remove="Asset\eye.png" />
+    <None Remove="Asset\Login_Background.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Asset\Backbutton.png" />
     <EmbeddedResource Include="Asset\Background.png" />
-    <EmbeddedResource Include="Asset\Background.svg" />
     <EmbeddedResource Include="Asset\BackgroundDashboard.png" />
     <EmbeddedResource Include="Asset\BackgroundProfile.png" />
     <EmbeddedResource Include="Asset\BackgroundSettings.png" />
     <EmbeddedResource Include="Asset\eye-off.png" />
     <EmbeddedResource Include="Asset\eye.png" />
+    <EmbeddedResource Include="Asset\Login_Background.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +46,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\SettingsPage.xaml">
