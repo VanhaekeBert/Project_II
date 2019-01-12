@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Auth;
 
 namespace StreetWorkoutV2_Bert.Droid
 {
@@ -19,6 +20,8 @@ namespace StreetWorkoutV2_Bert.Droid
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 199, 41, 48));
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);
+            CustomTabsConfiguration.CustomTabsClosingMessage = null;
             LoadApplication(new App());
         }
     }

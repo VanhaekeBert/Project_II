@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.View;
+﻿using StreetWorkoutV2_Bert.Model;
+using StreetWorkoutV2_Bert.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
