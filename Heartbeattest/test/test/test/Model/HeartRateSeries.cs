@@ -8,7 +8,7 @@ namespace test.Model
 {
     public class HeartRateSeries
     {   
-        [JsonProperty(propertyName:"activities-heart")]
-        public JArray FullJson { get; set; }
+        [JsonProperty(propertyName:"user")]
+        public JObject FullJson { get; set; }
     }
 }
