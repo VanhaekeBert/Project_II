@@ -21,6 +21,12 @@ namespace StreetWorkoutV2_Bert.View
             PasswordEntry.IsPassword = true;
             eyeimage.GestureRecognizers.Add(new TapGestureRecognizer(OnTap));
             BackRegister.GestureRecognizers.Add(new TapGestureRecognizer(OnTapRegister));
+            Password_reset.GestureRecognizers.Add(new TapGestureRecognizer(OnTapPassword_reset));
+        }
+
+        private async void OnTapPassword_reset(Xamarin.Forms.View arg1, object arg2)
+        {
+            await Navigation.PushAsync(new ForgotPasswordPage());
         }
 
         private async void OnTapRegister(Xamarin.Forms.View arg1, object arg2)
