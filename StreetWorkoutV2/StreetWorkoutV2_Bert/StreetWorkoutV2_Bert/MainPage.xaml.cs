@@ -26,6 +26,7 @@ namespace StreetWorkoutV2_Bert
             Children.Add(new SettingsPage());
             Children.Add(navDashboard);
             Children.Add(navAcccount);
+            CurrentPage = Children[1];
        
         }
     }
