@@ -19,9 +19,12 @@ namespace StreetWorkoutV2_Bert.View
             ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Vuur.png");
             ImgWater.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Beker.png");
             ImgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.StartWorkout.png");
-            imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.qr.png");
+            ImgStartWorkout_Cover.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.StartWorkout_Cover.png");
+            imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.qrcode.png");
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.toestel.png");
+            Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
+
         }
 
         private async Task QrTapGestureRecognizer_Tapped(object sender, EventArgs e)
