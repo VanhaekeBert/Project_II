@@ -24,10 +24,10 @@
                 <Grid Grid.Row="1" RowSpacing="20" Margin="0,35,0,0">
                     <local1:CustomEntry Margin="24,0,24,0" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Gebruikersnaam" TextColor="Black" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
                     <local1:CustomEntry Margin="24,0,24,0" Grid.Row="1" HorizontalOptions="FillAndExpand" Placeholder="Email" TextColor="Black" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
-                    <FlexLayout Grid.Row="2"  Margin="24,0,24,0" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                        <local1:CustomEntry Placeholder="Password" TextColor="Black" FontSize="14" FontFamily="{StaticResource NormalFont}"/>
-                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage"/>
-                    </FlexLayout>
+                    <Grid Grid.Row="2">
+                        <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord" TextColor="Black" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="PasswordEntry"/>
+                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage" Margin="0,0,42,0"/>
+                    </Grid>
                 </Grid>
                 <Grid Grid.Row="2" VerticalOptions="CenterAndExpand" RowSpacing="20" Margin="0,60,0,0">
                     <Button Grid.Row="0" Text="Registreren" BackgroundColor="#2B3049" TextColor="White" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="#D74144" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40"/>

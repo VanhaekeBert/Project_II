@@ -32,8 +32,10 @@ namespace StreetWorkoutV2_Bert.Droid
                 gd.SetColor(global::Android.Graphics.Color.White);
                 gd.SetCornerRadius(100);
                 gd.SetStroke(2, global::Android.Graphics.Color.LightGray);
+                Control.Elevation = 6.0f;
+                Control.TranslationY = 3.0f;
                 this.Control.SetBackgroundDrawable(gd);
-                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Argb(99,0,0,0)));
+                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Argb(99, 0,0,0)));
                 Control.SetPadding(60, 50, 0, 0);
             }
         }
