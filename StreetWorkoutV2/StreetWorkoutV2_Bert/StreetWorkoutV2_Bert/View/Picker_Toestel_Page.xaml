@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreetWorkoutV2_Bert.View.Picker_Toestel_Page"
+             xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
+             xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -38,33 +40,37 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame OutlineColor="Gray" HasShadow="True" Margin="24,0,24,0" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}">
+                                <Frame HasShadow="False" Margin="24,0,24,0" CornerRadius="10" BackgroundColor="Transparent" Padding="0">
                                     <Frame.Content>
-                                        <Grid RowSpacing="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="4*"/>
-                                                <ColumnDefinition Width="6*"/>
-                                                <ColumnDefinition Width="1*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="50"/>
-                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}"
-                                                           FontFamily="{StaticResource NormalFont}"
-                                                           FontSize="22"
-                                                           TextColor="{StaticResource LightColor}"
-                                                           VerticalOptions="End"
-                                                           Margin="12,0,0,0"/>
-                                            <Label Grid.Row="1"  Grid.Column="1" Text="{Binding Aantal_Oefeningen, StringFormat='Oefeningen: {0:F0}'}"
-                                                           FontFamily="{StaticResource NormalFont}"
-                                                           FontSize="16"
-                                                           TextColor="{StaticResource LightColor}"
-                                                           VerticalOptions="Start"
-                                                           Margin="12,0,0,0"/>
-                                            <Image Grid.Column="3" Grid.RowSpan="2" Source="{Binding Go_To_button}" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="25" x:Name="GoToOefeningen"/>
-                                        </Grid>
+                                        <renderers:GradientLayout
+                                            ColorsList="#484E6D,#2D324B"
+                                            Mode="ToTopLeft">
+                                            <Grid RowSpacing="0" Padding="0,13,0,13">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="4*"/>
+                                                    <ColumnDefinition Width="6*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="50"/>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}"
+                                                               FontFamily="{StaticResource NormalFont}"
+                                                               FontSize="22"
+                                                               TextColor="{StaticResource LightColor}"
+                                                               VerticalOptions="End"
+                                                               Margin="12,0,0,0"/>
+                                                <Label Grid.Row="1"  Grid.Column="1" Text="{Binding Aantal_Oefeningen, StringFormat='Oefeningen: {0:F0}'}"
+                                                               FontFamily="{StaticResource NormalFont}"
+                                                               FontSize="16"
+                                                               TextColor="{StaticResource LightColor}"
+                                                               VerticalOptions="Start"
+                                                               Margin="12,0,0,0"/>
+                                                <Image Grid.Column="3" Grid.RowSpan="2" Source="{Binding Go_To_button}" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="25" x:Name="GoToOefeningen" Margin="0,0,8,0"/>
+                                            </Grid>
+                                        </renderers:GradientLayout>
                                     </Frame.Content>
                                 </Frame>
                             </ViewCell>
