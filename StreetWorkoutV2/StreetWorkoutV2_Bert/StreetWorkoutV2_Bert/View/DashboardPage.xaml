@@ -78,31 +78,50 @@
                     </StackLayout>             
                 </Grid>
 
-                <Grid Grid.Row="2">
-                    
-                </Grid>
-                <Frame Grid.Row="2" Margin="20,40,20,0" HeightRequest="200">
-                    <Image  Aspect="AspectFill"
-                        x:Name="ImgStartWorkout"
-                        
-                        
+                <Grid Grid.Row="2" Margin="20,40,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>                        
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Frame Padding="0" Margin="0" CornerRadius="10">
+                        <Image Grid.Row="0" Aspect="AspectFill"
+                        x:Name="ImgStartWorkout"                        
                         RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
                         RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
-                </Frame>
-                
-                
-                <Grid Grid.Row="2" VerticalOptions="Center"  Margin="20,40,20,0">
+                    </Frame>
+                    
+                       
+                    
+                </Grid>
+                <Grid Grid.Row="2" Margin="20,40,20,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
-                        <RowDefinition Height="120"/>                        
-                    </Grid.RowDefinitions>                    
-
-                    <Label Grid.Row="0" TextColor="White"  Text="HOI"/>
-                    <Label Grid.Row="1" TextColor="White" Text="HOI"/>
+                        <RowDefinition Height="120"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0">
+                        <Label FontFamily="{StaticResource NormalFont}" FontSize="24"  Text="Start nieuwe workout" TextColor="White" Margin="15,5,0,0"/>
+                        <Label FontFamily="{StaticResource NormalFont}" FontSize="14"  Text="Maak selectie via:" TextColor="White" Margin="15,0,0,0"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Spacing="50">
+                        <Image x:Name="imgQr"  WidthRequest="66">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="QrTapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>                            
+                        <Image x:Name="imgToestel" WidthRequest="52"/>
+                        <Image x:Name="imgSpier"  WidthRequest="82"/>                        
+                    </StackLayout>
                 </Grid>
+                
 
-                
-                
+
+
+
+
+
 
 
 
