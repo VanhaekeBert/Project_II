@@ -12,9 +12,12 @@
   <ItemGroup>
     <None Remove="Asset\Backbutton.png" />
     <None Remove="Asset\Background.png" />
+    <None Remove="Asset\BackgroundAccount_2x.png" />
     <None Remove="Asset\BackgroundDashboard.png" />
+    <None Remove="Asset\BackgroundDashboard_2x.png" />
     <None Remove="Asset\BackgroundProfile.png" />
     <None Remove="Asset\BackgroundSettings.png" />
+    <None Remove="Asset\BackgroundSettings_2x.png" />
     <None Remove="Asset\Beker.png" />
     <None Remove="Asset\eye-off.png" />
     <None Remove="Asset\eye.png" />
@@ -34,6 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Asset\BackgroundAccount_2x.png" />
+    <EmbeddedResource Include="Asset\BackgroundDashboard_2x.png" />
+    <EmbeddedResource Include="Asset\BackgroundSettings_2x.png" />
     <EmbeddedResource Include="Asset\StartWorkout_Cover.png" />
   </ItemGroup>
 

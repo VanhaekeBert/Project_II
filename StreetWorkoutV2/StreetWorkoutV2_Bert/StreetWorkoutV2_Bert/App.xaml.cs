@@ -12,7 +12,7 @@ namespace StreetWorkoutV2_Bert
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Picker_Toestel_Page());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

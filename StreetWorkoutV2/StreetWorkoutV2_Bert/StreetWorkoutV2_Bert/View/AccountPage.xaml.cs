@@ -15,7 +15,7 @@ namespace StreetWorkoutV2_Bert.View
 		public AccountPage ()
 		{
 			InitializeComponent ();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundProfile.png");
+            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundAccount_2x.png");
         }
 	}
 }
