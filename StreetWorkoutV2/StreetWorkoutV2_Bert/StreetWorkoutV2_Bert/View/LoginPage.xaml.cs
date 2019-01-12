@@ -44,7 +44,10 @@ namespace StreetWorkoutV2_Bert.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            if (PasswordEntry != null && UserNameEntry != null )
+            {
+                await Navigation.PushAsync(new LoginPage());
+            }
         }
     }
 }

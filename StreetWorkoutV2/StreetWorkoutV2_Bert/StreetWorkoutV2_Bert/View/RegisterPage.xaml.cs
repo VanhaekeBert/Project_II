@@ -14,7 +14,7 @@ namespace StreetWorkoutV2_Bert.View
 	{
 		public RegisterPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
             PasswordEntry.IsPassword = true;
@@ -40,5 +40,12 @@ namespace StreetWorkoutV2_Bert.View
         {
             await Navigation.PushAsync(new LoginPage());
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            if (PasswordEntry != null && UserNameEntry != null && EmailEntry != null)
+            {
+            }
+            }
     }
 }
