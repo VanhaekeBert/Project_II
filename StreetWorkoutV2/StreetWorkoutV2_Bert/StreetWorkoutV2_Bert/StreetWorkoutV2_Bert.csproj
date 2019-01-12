@@ -15,10 +15,13 @@
     <None Remove="Asset\BackgroundDashboard.png" />
     <None Remove="Asset\BackgroundProfile.png" />
     <None Remove="Asset\BackgroundSettings.png" />
+    <None Remove="Asset\Beker.png" />
     <None Remove="Asset\eye-off.png" />
     <None Remove="Asset\eye.png" />
     <None Remove="Asset\Forgot-Password_Background.png" />
     <None Remove="Asset\Login_Background.png" />
+    <None Remove="Asset\StartWorkout.png" />
+    <None Remove="Asset\Vuur.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,16 +30,20 @@
     <EmbeddedResource Include="Asset\BackgroundDashboard.png" />
     <EmbeddedResource Include="Asset\BackgroundProfile.png" />
     <EmbeddedResource Include="Asset\BackgroundSettings.png" />
+    <EmbeddedResource Include="Asset\Beker.png" />
     <EmbeddedResource Include="Asset\eye-off.png" />
     <EmbeddedResource Include="Asset\eye.png" />
     <EmbeddedResource Include="Asset\Forgot-Password_Background.png" />
     <EmbeddedResource Include="Asset\Login_Background.png" />
+    <EmbeddedResource Include="Asset\StartWorkout.png" />
+    <EmbeddedResource Include="Asset\Vuur.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Clancey.SimpleAuth" Version="1.0.49" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Xamarin.Auth" Version="1.6.0.4" />
+    <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView" Version="1.0.0.7" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
 

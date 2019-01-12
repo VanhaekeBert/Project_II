@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DevsDNA.GradientBoxView">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView">
+      <Version>1.0.0.7</Version>
+    </PackageReference>
     <PackageReference Include="Clancey.SimpleAuth">
       <Version>1.0.49</Version>
     </PackageReference>
@@ -112,13 +118,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\account.png" />
+    <AndroidResource Include="Resources\drawable\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dashboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\drawable\account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

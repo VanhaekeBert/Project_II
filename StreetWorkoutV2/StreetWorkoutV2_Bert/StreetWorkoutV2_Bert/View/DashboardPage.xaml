@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreetWorkoutV2_Bert.View.DashboardPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+             >
     <ContentPage.Content>
         <RelativeLayout Padding="0">
             <!-- Background -->
@@ -13,16 +15,100 @@
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             </Image>
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                                           >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="250"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                
                 <StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand">
-                    <Label  FontSize="30"  Text="Dashboard" TextColor="White" Margin="20,0,0,0"/>
-                    <Label FontSize="18" Text="Hallo, Bert" TextColor="White" Margin="20,0,0,0"/>
+                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="30"  Text="Dashboard" TextColor="White" Margin="20,0,0,0"/>
+                    <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo, Bert" TextColor="White" Margin="20,0,0,0"/>
                 </StackLayout>
+
+                <Grid Grid.Row="1" VerticalOptions="Center">
+                    <StackLayout  HorizontalOptions="CenterAndExpand" Spacing="18" Orientation="Horizontal">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="110"/>                                                               
+                            </Grid.RowDefinitions>
+
+                            <abstractions:RoundedBoxView CornerRadius="10" Grid.Row="0" WidthRequest="175" BackgroundColor="#EE9F44" />
+                            <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="0">
+                                <Image  Grid.Row="0" x:Name="ImgCal" HeightRequest="32" Margin="15,0,10,0"/>
+                                <StackLayout Grid.Row="0" Spacing="0" VerticalOptions="CenterAndExpand">
+                                    <Label TextColor="White">
+                                        <Label.FormattedText >
+                                            <FormattedString>
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="312" />
+                                                <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" kcal"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="14" Text="Calorieën verbrand" TextColor="White"/>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="110"/>
+                            </Grid.RowDefinitions>
+                            <abstractions:RoundedBoxView CornerRadius="10" Grid.Row="0" WidthRequest="175" BackgroundColor="#44C4EC"/>
+                            <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="0">
+                                <Image  Grid.Row="0" x:Name="ImgWater" HeightRequest="32" Margin="15,0,10,0"/>
+                                <StackLayout Grid.Row="0" Spacing="0"  VerticalOptions="CenterAndExpand">
+                                    <Label TextColor="White">
+                                        <Label.FormattedText >
+                                            <FormattedString>
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="1300" />
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="/2000 " />
+                                                <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text="ml"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="14" Text="Water gedronken" TextColor="White"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+
+
+                    </StackLayout>             
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    
+                </Grid>
+                <Frame Grid.Row="2" Margin="20,40,20,0" HeightRequest="200">
+                    <Image  Aspect="AspectFill"
+                        x:Name="ImgStartWorkout"
+                        
+                        
+                        RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                        RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                </Frame>
+                
+                
+                <Grid Grid.Row="2" VerticalOptions="Center"  Margin="20,40,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="120"/>                        
+                    </Grid.RowDefinitions>                    
+
+                    <Label Grid.Row="0" TextColor="White"  Text="HOI"/>
+                    <Label Grid.Row="1" TextColor="White" Text="HOI"/>
+                </Grid>
+
+                
+                
+
+
+
+
+
+
 
             </Grid>
         </RelativeLayout>
