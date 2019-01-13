@@ -18,9 +18,9 @@ namespace StreetWorkoutV2_Bert.View
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundSettings_2x.png");
         }
 
-        private void Sign_Out_Button_Clicked(object sender, EventArgs e)
+        private async Task Sign_Out_Button_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new LoginPage());
         }
     }
 }
