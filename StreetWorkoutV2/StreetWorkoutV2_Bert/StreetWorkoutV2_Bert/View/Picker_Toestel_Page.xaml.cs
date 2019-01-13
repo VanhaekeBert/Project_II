@@ -24,7 +24,6 @@ namespace StreetWorkoutV2_Bert.View
             toestel1.Aantal_Oefeningen = 7;
             toestel1.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Parallel_Bars.png");
             toestel1.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
-            toestel1.Background_Frame = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Frame_Background.png");
             List<Toestel> Toestellijst = new List<Toestel>();
             Toestellijst.Add(toestel1);
             Toestellen.ItemsSource = Toestellijst;

@@ -19,6 +19,8 @@
     <None Remove="Asset\BackgroundSettings.png" />
     <None Remove="Asset\BackgroundSettings_2x.png" />
     <None Remove="Asset\Beker.png" />
+    <None Remove="Asset\energy_empty.png" />
+    <None Remove="Asset\energy_fill.png" />
     <None Remove="Asset\eye-off.png" />
     <None Remove="Asset\eye.png" />
     <None Remove="Asset\Forgot-Password_Background.png" />
@@ -27,6 +29,7 @@
     <None Remove="Asset\Heart.png" />
     <None Remove="Asset\Login_Background.png" />
     <None Remove="Asset\oefeningen.json" />
+    <None Remove="Asset\Oefeningen_Background.png" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />
@@ -160,8 +163,9 @@
     <EmbeddedResource Include="Asset\BackgroundAccount_2x.png" />
     <EmbeddedResource Include="Asset\BackgroundDashboard_2x.png" />
     <EmbeddedResource Include="Asset\BackgroundSettings_2x.png" />
-    <EmbeddedResource Include="Asset\profile_pic.png" />
-    <EmbeddedResource Include="Asset\oefeningen.json" />
+    <EmbeddedResource Include="Asset\energy_empty.png" />
+    <EmbeddedResource Include="Asset\energy_fill.png" />
+    <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />
@@ -280,6 +284,8 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
+    <EmbeddedResource Include="Asset\oefeningen.json" />
+    <EmbeddedResource Include="Asset\profile_pic.png" />
     <EmbeddedResource Include="Asset\StartWorkout_Cover.png" />
   </ItemGroup>
 
@@ -318,6 +324,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\DashboardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ExercisePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ForgotPasswordPage.xaml">
