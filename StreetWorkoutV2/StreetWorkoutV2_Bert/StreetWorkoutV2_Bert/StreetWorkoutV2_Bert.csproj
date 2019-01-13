@@ -149,6 +149,7 @@
     <None Remove="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
     <None Remove="Asset\Parallel_Bars.png" />
+    <None Remove="Asset\Profile_BackCover.png" />
     <None Remove="Asset\profile_pic.png" />
     <None Remove="Asset\qr.png" />
     <None Remove="Asset\qrcode.png" />
@@ -166,6 +167,9 @@
     <EmbeddedResource Include="Asset\energy_empty.png" />
     <EmbeddedResource Include="Asset\energy_fill.png" />
     <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
+    <EmbeddedResource Include="Asset\Profile_BackCover.png" />
+    <EmbeddedResource Include="Asset\profile_pic.png" />
+    <EmbeddedResource Include="Asset\oefeningen.json" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />

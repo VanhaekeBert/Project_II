@@ -16,8 +16,11 @@ namespace StreetWorkoutV2_Bert.View
 		{
 			InitializeComponent ();
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundDashboard.png");
+
+            //Back button + heartbeat
             backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
+            // =========================
         }
 	}
 }
