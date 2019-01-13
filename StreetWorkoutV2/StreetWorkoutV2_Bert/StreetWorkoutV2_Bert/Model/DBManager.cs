@@ -14,6 +14,7 @@ namespace StreetWorkoutV2_Bert.Model
     public static class DBManager
     {
         const string SendGrid_API = "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";
+        //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
         public static async Task<bool> RegistrerenAsync(string email, string naam, string wachtwoord)
         {
             Registreren reg = new Registreren();
@@ -126,14 +127,14 @@ namespace StreetWorkoutV2_Bert.Model
                 {
                     var chars = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
                     Random rnd3 = new Random();
-                    int index = rnd.Next(0, chars.Length+1);
+                    int index = rnd.Next(0, chars.Length);
                     wachtwoord += chars[index];
                 }
                 else if (number % 5 == 0)
                 {
                     var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
                     Random rnd3 = new Random();
-                    int index = rnd.Next(0, chars.Length + 1);
+                    int index = rnd.Next(0, chars.Length);
                     wachtwoord += chars[index];
                 }
             }
@@ -142,7 +143,7 @@ namespace StreetWorkoutV2_Bert.Model
             var subject = "Aanvraag voorlopig wachtwoord";
             var to = new EmailAddress(email, naam);
             var plainTextContent = $"Beste {naam}\nU heeft een nieuw wachtwoord aangevraagd in de app StreetBeat.\nVolgend wachtwoord is uw nieuw voorlopig wachtwoord: {wachtwoord}\nWe raden u tensterkste aan om uw wachtwoord te veranderen na het gebruiken van dit wachtwoord.\n\nGroeten support StreetBeat.";
-            var htmlContent = $"Beste {naam}\nU heeft een nieuw wachtwoord aangevraagd in de app StreetBeat.\nVolgend wachtwoord is uw nieuw voorlopig wachtwoord: {wachtwoord}\nWe raden u tensterkste aan om uw wachtwoord te veranderen na het gebruiken van dit wachtwoord.\n\nGroeten support StreetBeat.";
+            var htmlContent = $"Beste {naam}{Environment.NewLine}U heeft een nieuw wachtwoord aangevraagd in de app StreetBeat.{Environment.NewLine}Volgend wachtwoord is uw nieuw voorlopig wachtwoord: {wachtwoord}{Environment.NewLine}We raden u tensterkste aan om uw wachtwoord te veranderen na het gebruiken van dit wachtwoord.{Environment.NewLine}{Environment.NewLine}Groeten support StreetBeat.";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
         }
