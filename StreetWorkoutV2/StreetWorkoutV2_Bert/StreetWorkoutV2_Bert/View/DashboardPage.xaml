@@ -27,9 +27,9 @@
                         <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
                         <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                     </StackLayout>
-                <StackLayout VerticalOptions="StartAndExpand" Grid.Row="1" Orientation="Vertical" Margin="0,14,0,0">
-                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Dashboard" TextColor="White" Margin="24,0,0,0"/>
-                    <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo, Bert" TextColor="White" Margin="24,0,0,0"/>
+                <StackLayout VerticalOptions="StartAndExpand" Grid.Row="1" Orientation="Vertical" Margin="24,14,24,0">
+                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Dashboard" TextColor="White"/>
+                    <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo, Bert" TextColor="White" />
                 </StackLayout>
                 <Grid VerticalOptions="CenterAndExpand" Grid.Row="2"  Margin="24,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
