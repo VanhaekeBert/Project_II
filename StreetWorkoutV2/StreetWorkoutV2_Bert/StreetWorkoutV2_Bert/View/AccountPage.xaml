@@ -34,7 +34,7 @@
                                         <RowDefinition Height="140"/>
                                         <RowDefinition Height="60"/>
                                     </Grid.RowDefinitions>
-                                    <Image Aspect="AspectFill" x:Name="imgProfile"></Image>
+                                    <Image Aspect="AspectFill" x:Name="imgProfile"/>
                                 </Grid>
 
                             </Frame>

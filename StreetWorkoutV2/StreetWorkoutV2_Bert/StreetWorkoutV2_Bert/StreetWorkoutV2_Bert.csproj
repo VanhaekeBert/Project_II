@@ -31,6 +31,7 @@
     <None Remove="Asset\oefeningen.json" />
     <None Remove="Asset\oefeningenV2.json" />
     <None Remove="Asset\Oefeningen_Background.png" />
+    <None Remove="Asset\Oefening_Background.png" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />
@@ -170,6 +171,7 @@
     <EmbeddedResource Include="Asset\energy_fill.png" />
     <EmbeddedResource Include="Asset\oefeningenV2.json" />
     <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
+    <EmbeddedResource Include="Asset\Oefening_Background.png" />
     <EmbeddedResource Include="Asset\Profile_BackCover.png" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
