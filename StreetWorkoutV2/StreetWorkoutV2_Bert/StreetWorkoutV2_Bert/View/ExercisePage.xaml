@@ -8,12 +8,6 @@
              BackgroundColor="{StaticResource MainDarkColor}">
     <ContentPage.Content>
         <RelativeLayout Padding="0">
-            <!-- Background -->
-            <!--<Image
-            x:Name="BackgroundImage"
-            Aspect="AspectFill"
-            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"></Image>-->
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
                 <Grid.RowDefinitions>
@@ -35,13 +29,13 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <!--Back button + heartbeat-->
+                                    <!--Back button + heartbeat +10px down -->
                                     <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,10,0,0" x:Name="BackButton">
                                         <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="BackButtonImage"/>
                                         <Label Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                                     </StackLayout>
-                                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,10,24,0">
-                                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,12,24,0">
+                                        <Image HeightRequest="24" WidthRequest="24" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
                                         <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                                     </StackLayout>
                                     <!-- ================= -->
@@ -56,14 +50,12 @@
                                 <ColumnDefinition Width="6*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            
                             <Label Text="Moeilijkheidsgraad" HorizontalOptions="StartAndExpand" Margin="48,0,0,0" Grid.Column="0" TextColor="{StaticResource LightColor}" FontSize="22" FontFamily="{StaticResource NormalFont}"/>
                             <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,0,48,0">
                                 <Image x:Name="Moeilijkheidsgraad1" HorizontalOptions="End" HeightRequest="25" />
                                 <Image x:Name="Moeilijkheidsgraad2" HorizontalOptions="Center" HeightRequest="25" />
                                 <Image x:Name="Moeilijkheidsgraad3" HorizontalOptions="Start" HeightRequest="25" />
                             </StackLayout>
-                           
                         </Grid>
                     </renderers:GradientLayout>
                 </Frame>
@@ -71,26 +63,18 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame CornerRadius="10" BackgroundColor="Transparent" Padding="0">
-                                    <Frame.Content>
-                                        <RelativeLayout Padding="0,10">
-                                            <Image  Aspect="AspectFill" Source="{Binding Image}"
-                                                    RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                                                    RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
-                                            <Grid VerticalOptions="CenterAndExpand">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="6*"/>
-                                                    <ColumnDefinition Width="1*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Label Grid.Column="0" Text="{Binding Name}"
-                                                               FontFamily="{StaticResource NormalFont}"
-                                                               FontSize="22"
-                                                               TextColor="{StaticResource LightColor}"
-                                                               Margin="24,0,0,0"/>
-                                                <Image Grid.Column="1" Source="{Binding Go_To_button}" HeightRequest="25" x:Name="GoToOefeningen" Margin="0,0,8,0"/>
-                                            </Grid>
-                                        </RelativeLayout>
-                                    </Frame.Content>
+                                <Frame CornerRadius="10"  Padding="0" HeightRequest="100" BackgroundColor="#484E6D" Margin="0,0,0,22">
+                                    <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                        <Image Source="{Binding Image}" Aspect="AspectFill" Opacity="0.6"/>
+                                        <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="EndAndExpand"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                            <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="1" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
+                                        </Grid>
+                                    </Grid>
                                 </Frame>
                             </ViewCell>
                         </DataTemplate>

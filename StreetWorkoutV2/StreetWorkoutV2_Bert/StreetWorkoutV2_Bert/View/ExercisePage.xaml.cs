@@ -26,7 +26,17 @@ namespace StreetWorkoutV2_Bert.View
             toestel.Name = "Biceprows";
             toestel.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.biceprows_easy_1.jpg");
             toestel.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
+            ToestelOefening toestel2 = new ToestelOefening();
+            toestel2.Name = "4 Point leg extension";
+            toestel2.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.4_point_leg_extention_medium_2.jpg");
+            toestel2.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
+            ToestelOefening toestel3 = new ToestelOefening();
+            toestel3.Name = "Bridge";
+            toestel3.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.bridge_medium_1.jpg");
+            toestel3.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
             toestelOefenings.Add(toestel);
+            toestelOefenings.Add(toestel2);
+            toestelOefenings.Add(toestel3);
             Oefeningen.ItemsSource = toestelOefenings;
             BackButton.GestureRecognizers.Add(new TapGestureRecognizer(ontap));
 
