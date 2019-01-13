@@ -9,13 +9,18 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkoutV2_Bert.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SettingsPage : ContentPage
-	{
-		public SettingsPage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SettingsPage : ContentPage
+    {
+        public SettingsPage()
+        {
+            InitializeComponent();
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundSettings_2x.png");
         }
-	}
+
+        private void Sign_Out_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

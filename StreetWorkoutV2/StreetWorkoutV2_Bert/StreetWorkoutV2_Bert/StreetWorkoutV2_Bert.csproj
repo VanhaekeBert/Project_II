@@ -31,7 +31,6 @@
     <None Remove="Asset\oefeningen.json" />
     <None Remove="Asset\oefeningenV2.json" />
     <None Remove="Asset\Oefeningen_Background.png" />
-    <None Remove="Asset\Oefening_Background.png" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />
@@ -151,6 +150,7 @@
     <None Remove="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
     <None Remove="Asset\Parallel_Bars.png" />
+    <None Remove="Asset\Picker_Background.png" />
     <None Remove="Asset\Profile_BackCover.png" />
     <None Remove="Asset\profile_pic.png" />
     <None Remove="Asset\Profile_Picture.png" />
@@ -171,7 +171,7 @@
     <EmbeddedResource Include="Asset\energy_fill.png" />
     <EmbeddedResource Include="Asset\oefeningenV2.json" />
     <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
-    <EmbeddedResource Include="Asset\Oefening_Background.png" />
+    <EmbeddedResource Include="Asset\Picker_Background.png" />
     <EmbeddedResource Include="Asset\Profile_BackCover.png" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />

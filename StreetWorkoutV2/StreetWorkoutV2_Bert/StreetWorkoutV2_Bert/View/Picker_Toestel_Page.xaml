@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreetWorkoutV2_Bert.View.Picker_Toestel_Page"
-             xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
-             xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
+    xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
+    xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -12,14 +13,13 @@
             x:Name="BackgroundImage"
             Aspect="Fill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            </Image>
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"></Image>
             <!-- ================= -->
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -37,9 +37,9 @@
                 </StackLayout>
                 <!-- ================= -->
                 <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand">
-                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="Toestellen" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34" Text="Toestellen" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                 </StackLayout>
-                <ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand">
+                <!--<ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -75,6 +75,32 @@
                                             </Grid>
                                         </renderers:GradientLayout>
                                     </Frame.Content>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                <ListView Margin="24,35" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="10"  Padding="0" HeightRequest="100" BackgroundColor="#484E6D" Margin="0,0,0,22">
+                                    <renderers:GradientLayout
+                                            ColorsList="#484E6D,#2D324B"
+                                            Mode="ToTopLeft">
+                                        <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                            <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="0.5*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Column="0" Source="{Binding Image}" Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                                <Label Margin="22,2,0,0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                                <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="2" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
+                                            </Grid>
+                                        </Grid>
+                                    </renderers:GradientLayout>
                                 </Frame>
                             </ViewCell>
                         </DataTemplate>
