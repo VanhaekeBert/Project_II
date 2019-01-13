@@ -39,8 +39,6 @@
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Kevin Uyttenhove" TextColor="White" Margin="0,16,0,0" HorizontalOptions="CenterAndExpand"/>
                         </Grid>
                         <!-- Historiek-->
-                        <StackLayout>
-                        <!-- Historiek-->
                         <StackLayout Spacing="0">
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Historiek" TextColor="White"/>
                             <Frame CornerRadius="10" HeightRequest="160" Margin="0,24,0,24">
@@ -177,7 +175,7 @@
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                     <StackLayout VerticalOptions="Start" Spacing="0">
-                                        <Label Margin="0,-8,0,0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="" TextColor="White"/>
+                                        <Label Margin="0,-8,0,0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="test" TextColor="White"/>
                                     </StackLayout>
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
