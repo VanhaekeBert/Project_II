@@ -45,7 +45,7 @@ namespace StreetWorkoutV2_Bert.View
         {
             if (PasswordEntry != null && UserNameEntry != null && EmailEntry != null)
             {
-            await Navigation.PushAsync(new LoginPage());
+                await Navigation.PushAsync(new LoginPage());
             }
         }
     }

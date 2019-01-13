@@ -73,8 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomEntryRenderer.cs" />
+    <Compile Include="CustomFrameRenderer.cs" />
     <Compile Include="CustomUrlSchemeInterceptorActivity.cs" />
+    <Compile Include="GradientLayoutRenderer.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MaterialFrameRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
