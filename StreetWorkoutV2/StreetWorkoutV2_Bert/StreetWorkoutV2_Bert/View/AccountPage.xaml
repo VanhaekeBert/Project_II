@@ -12,6 +12,7 @@
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             </Image>
+            <!-- ================= -->
 
         </RelativeLayout>
     </ContentPage.Content>

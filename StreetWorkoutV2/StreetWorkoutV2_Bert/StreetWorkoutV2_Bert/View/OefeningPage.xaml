@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreetWorkoutV2_Bert.View.OefeningPage"
+                          NavigationPage.HasNavigationBar="False"
+>
+    <ContentPage.Content>
+        <RelativeLayout Padding="0">
+            <!-- Background -->
+            <Image
+            x:Name="BackgroundImage"
+            Aspect="Fill"
+            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            </Image>
+            <!-- ================= -->
+            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+<!--Back button + heartbeat-->
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" x:Name="BackDashboard">
+                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbutton"/>
+                    <Label Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,24,0">
+                    <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
+                    <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                </StackLayout>
+<!-- ================= -->
+            </Grid>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
