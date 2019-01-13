@@ -34,7 +34,7 @@
                 </StackLayout>
                 <!-- ================= -->      
                 <!-- frame with foto or video -->
-                <Frame Grid.Row="1" CornerRadius="10" Padding="0" Margin="24,0,24,0">
+                <Frame Grid.Row="1" CornerRadius="10" Grid.ColumnSpan="2" Padding="0" Margin="24,0,24,0">
                     <renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft"> 
                         <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
                             <Image x:Name="OefeningImage" Aspect="AspectFill"/>
@@ -49,7 +49,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Margin="0,2,0,0" Grid.Row="0" Grid.ColumnSpan="2" Text="Triceps Extensions" FontFamily="{StaticResource BoldFont}"  FontSize="34" TextColor="{StaticResource LightColor}" />
                                 <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Text="10 Herhalingen" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
-                                <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="1" Text="1/3" FontFamily="{StaticResource BoldFont}" FontSize="18" HorizontalOptions="EndAndExpand"/>
+                                <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="1" Text="1/3" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}"  HorizontalOptions="EndAndExpand"/>
                             </Grid>
                         </Grid>
                     </renderers:GradientLayout>
