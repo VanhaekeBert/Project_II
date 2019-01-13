@@ -12,7 +12,7 @@ namespace StreetWorkoutV2_Bert
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ExercisePage());
+            MainPage = new NavigationPage(new OefeningPage());
         }
 
         protected override void OnStart()
