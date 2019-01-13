@@ -1,19 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
              x:Class="StreetWorkoutV2_Bert.View.AccountPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <RelativeLayout Padding="0">
-            <!-- Background -->
-            <Image
+      
+            <RelativeLayout Padding="0">
+                <!-- Background -->
+                <Image
             x:Name="BackgroundImage"
             Aspect="Fill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            </Image>
-            <!-- ================= -->
-
+                </Image>
+            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <ScrollView>
+                    <StackLayout Spacing="0" Margin="24,16,24,24">
+                        <!-- Icon + Naam-->
+                        <Grid HeightRequest="240" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140"/>
+                                <RowDefinition Height="60"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Frame CornerRadius="90" Margin="0" Padding="0" HeightRequest="132" WidthRequest="132" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Image Aspect="AspectFill" x:Name="imgProfile"> </Image>
+                            </Frame>
+                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Kevin Uyttenhove" TextColor="White" Margin="0,16,0,0" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+                        <!-- Hiestoriek-->
+                        <StackLayout>
+                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Historiek" TextColor="White"/>
+                            <Frame CornerRadius="10" HeightRequest="155" Margin="0,24,0,24">
+                                <renderers:GradientLayout
+                                            ColorsList="#484E6D,#2B3049"
+                                            Mode="ToTopLeft">
+                                    
+                                </renderers:GradientLayout>
+                            </Frame>
+                        </StackLayout>
+                        
+                        
+                        <BoxView BackgroundColor="Orange" HeightRequest="400"></BoxView>
+                        <BoxView BackgroundColor="Black" HeightRequest="500"></BoxView>
+                    </StackLayout>
+                        
+               
+                </ScrollView>
+                
+            </Grid>
+                
+            
         </RelativeLayout>
+        
+       
     </ContentPage.Content>
 </ContentPage>
