@@ -15,6 +15,8 @@ namespace StreetWorkoutV2_Bert
         {
             InitializeComponent();
 
+            DBManager.CheckUserNameAsync("Brent");
+
             var navAcccount = new NavigationPage(new AccountPage());
             navAcccount.Icon = "account.png";
             navAcccount.Title = "Account";

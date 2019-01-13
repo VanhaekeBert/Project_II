@@ -1,6 +1,9 @@
-﻿using System;
+﻿using StreetWorkoutV2_Bert.Model;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,11 +44,49 @@ namespace StreetWorkoutV2_Bert.View
             await Navigation.PushAsync(new LoginPage());
         }
 
+        private string Encrypt(string raw)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(raw));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (PasswordEntry != null && UserNameEntry != null && EmailEntry != null)
+            if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
             {
-                await Navigation.PushAsync(new LoginPage());
+                if (EmailEntry.Text.ToLower().Contains('@'))
+                {
+                    bool UserNameCheck = await DBManager.CheckUserNameAsync(UserNameEntry.Text);
+                    bool EmailCheck = await DBManager.CheckEmailAsync(EmailEntry.Text);
+                    if (UserNameCheck == false && EmailCheck == false)
+                    {
+                        var response = await DBManager.RegistrerenAsync(EmailEntry.Text, UserNameEntry.Text, Encrypt(PasswordEntry.Text));
+                        if (response == true)
+                        {
+                            await Navigation.PushAsync(new LoginPage());
+                        }
+                    }
+                    else
+                    {
+                        //popup naam of email al genomen
+                    }
+                }
+                else
+                {
+                    //@tje please
+                }
+            }
+            else
+            {
+                //vult de shit aan
             }
         }
     }

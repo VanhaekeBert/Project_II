@@ -1,6 +1,8 @@
-﻿using System;
+﻿using StreetWorkoutV2_Bert.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,11 +50,37 @@ namespace StreetWorkoutV2_Bert.View
             }
         }
 
+        private string Encrypt(string raw)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(raw));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (PasswordEntry != null && UserNameEntry != null)
+            if (PasswordEntry.Text != null && UserNameEntry.Text != null)
             {
-                await Navigation.PushAsync(new LoginPage());
+                bool login = await DBManager.LoginAsync(UserNameEntry.Text, Encrypt(PasswordEntry.Text));
+                if (login == true)
+                {
+                    await Navigation.PushAsync(new DashboardPage());
+                }
+                else
+                {
+                    //ej al account, vult et juste in
+                }
+            }
+            else
+            {
+                // vult het in a.u.b.
             }
         }
     }
