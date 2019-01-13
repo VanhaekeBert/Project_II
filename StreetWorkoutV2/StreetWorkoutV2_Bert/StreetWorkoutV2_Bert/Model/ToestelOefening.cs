@@ -5,10 +5,9 @@ using Xamarin.Forms;
 
 namespace StreetWorkoutV2_Bert.Model
 {
-    public class Toestel
+    public class ToestelOefening
     {
         public string Name { get; set; }
-        public int Aantal_Oefeningen { get; set; }
         public ImageSource Image { get; set; }
         public ImageSource Go_To_button { get; set; }
     }
