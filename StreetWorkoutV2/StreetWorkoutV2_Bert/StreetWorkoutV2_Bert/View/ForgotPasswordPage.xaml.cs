@@ -1,5 +1,7 @@
-﻿using System;
+﻿using StreetWorkoutV2_Bert.Model;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +27,34 @@ namespace StreetWorkoutV2_Bert.View
             await Navigation.PushAsync(new LoginPage());
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-
+            if (EmailEntry.Text != null)
+            {
+                if (EmailEntry.Text.ToLower().Contains("@"))
+                {
+                    bool EmailCheck = await DBManager.CheckEmailAsync(EmailEntry.Text);
+                    if (EmailCheck == true)
+                    {
+                        string naam = await DBManager.WachtwoordVergetenAsync(EmailEntry.Text);
+                        await DBManager.MailService(EmailEntry.Text, naam);
+                        await Navigation.PopAsync();
+                        //message da mailtje verstuurd is
+                    }
+                    else
+                    {
+                        //email nie geregistreerd
+                    }
+                }
+                else
+                {
+                    //vul ne email adres in
+                }
+            }
+            else
+            {
+                //vult ne twuk in
+            }
         }
     }
 }
