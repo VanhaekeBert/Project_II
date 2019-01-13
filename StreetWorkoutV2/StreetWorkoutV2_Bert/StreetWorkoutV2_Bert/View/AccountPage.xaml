@@ -6,18 +6,20 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
       
-            <RelativeLayout Padding="0">
-            <!-- Background -->
-            <Image
-            x:Name="BackgroundImage"
-            Aspect="AspectFit"
-            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            </Image>
+           
             <!-- ================= -->
             <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-                <ScrollView>
+                <ScrollView >
+                <RelativeLayout Padding="0">
+                    <!-- Background -->
+                    <Image
+                    x:Name="BackgroundImage"
+                    Aspect="AspectFill"
+                    HorizontalOptions="FillAndExpand"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    VerticalOptions="Start"
+                    HeightRequest="250"/>
                     <StackLayout Spacing="0" Margin="24,16,24,24">
                         <!-- Icon + Naam-->
                         <Grid HeightRequest="240" RowSpacing="0">
@@ -38,6 +40,7 @@
                             </Frame>
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Kevin Uyttenhove" TextColor="White" Margin="0,16,0,0" HorizontalOptions="CenterAndExpand"/>
                         </Grid>
+
                         <!-- Historiek-->
                         <StackLayout Spacing="0">
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Historiek" TextColor="White"/>
@@ -182,9 +185,9 @@
                             </Frame>
                         </StackLayout>
                     </StackLayout>
+                </RelativeLayout>
 
-                </ScrollView>
+            </ScrollView>
             </Grid>
-        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
