@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using Rg.Plugins.Popup.Services;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,6 +42,7 @@ namespace StreetWorkoutV2_Bert.View
                         string ww = DBManager.Encrypt(await DBManager.MailService(email, naam));
                         if (ww != null)
                         {
+                            PopupNavigation.Instance.PushAsync(new PopupView2());
                             await DBManager.WachtwoordReset(email, ww);
                             await Navigation.PopAsync();
                             //message da mailtje verstuurd is

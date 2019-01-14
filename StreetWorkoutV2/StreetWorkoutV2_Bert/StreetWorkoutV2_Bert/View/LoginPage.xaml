@@ -21,7 +21,7 @@
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="185"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="20"/>
                     <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
                 <!--Back button -->
@@ -39,6 +39,8 @@
                     </Grid>
                     <Label Grid.Row="3" Text="" TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="ErrorLabel" FontFamily="{StaticResource NormalFont}" FontSize="16" WidthRequest="175" HorizontalOptions="Start" Margin="32,-70,32,0"/>
                 </Grid>
+                <ActivityIndicator x:Name="LoadingIndicator" Grid.Row="3" Color="White" IsRunning="false" HeightRequest="20" />
+
                 <Grid Grid.Row="4" VerticalOptions="CenterAndExpand" RowSpacing="20" >
                     <Button Grid.Row="0" Text="Log in" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" Clicked="Button_Clicked"/>
                     <Label LineBreakMode="WordWrap" Grid.Row="1" HorizontalOptions="Center" x:Name="Password_reset">

@@ -156,6 +156,9 @@
     <PackageReference Include="DevsDNA.GradientBoxView">
       <Version>1.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.1.5.180</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView">
       <Version>1.0.0.7</Version>
     </PackageReference>

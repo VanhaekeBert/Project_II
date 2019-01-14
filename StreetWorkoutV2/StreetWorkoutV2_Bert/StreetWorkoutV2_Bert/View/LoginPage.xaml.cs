@@ -54,6 +54,8 @@ namespace StreetWorkoutV2_Bert.View
         {
             if (PasswordEntry.Text != null && UserNameEntry.Text != null)
             {
+                LoadingIndicator.IsRunning = true;
+
                 bool login = await DBManager.LoginAsync(UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
                 if (login == true)
                 {
@@ -64,6 +66,8 @@ namespace StreetWorkoutV2_Bert.View
                 else
                 {
                     //ej al account, vult et juste in
+                    LoadingIndicator.IsRunning = false;
+
                     ErrorLabel.Text = "Onjuiste ingave.";
                     ErrorLabel.IsVisible = true;
                 }
@@ -71,6 +75,8 @@ namespace StreetWorkoutV2_Bert.View
             else
             {
                 // vult het in a.u.b.
+                LoadingIndicator.IsRunning = false;
+
                 ErrorLabel.Text = "Vul alle gegevens in.";
                 ErrorLabel.IsVisible = true;
             }

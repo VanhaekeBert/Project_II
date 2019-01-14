@@ -36,7 +36,7 @@
                     <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>
                 <!-- ================= -->
-                <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand">
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
                     <Label  FontFamily="{StaticResource BoldFont}" FontSize="34" Text="Toestellen" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                 </StackLayout>
                 <!--<ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand">
@@ -80,15 +80,15 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>-->
-                <ListView Margin="24,35" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand" ItemTapped="Toestellen_ItemTapped">
+                <ListView Margin="24,35" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="FillAndExpand" ItemTapped="Toestellen_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame CornerRadius="10"  Padding="0" HeightRequest="100" BackgroundColor="#484E6D" Margin="0,0,0,22">
+                                <Frame CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,0,0,22">
                                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#2D324B"
                                             Mode="ToTopLeft">
-                                        <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                        <Grid Padding="0" Margin="0" RowSpacing="0" HeightRequest="100" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
                                             <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*"/>
@@ -96,7 +96,7 @@
                                                     <ColumnDefinition Width="0.5*"/>
                                                 </Grid.ColumnDefinitions>
                                                 <Image Grid.Column="0" Source="{Binding Image}" Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                                                <Label Margin="22,2,0,0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                                <Label Margin="10,2,0,0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
                                                 <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="2" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
                                             </Grid>
                                         </Grid>

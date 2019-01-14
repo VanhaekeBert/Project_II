@@ -42,14 +42,11 @@ namespace StreetWorkoutV2_Bert.View
             foreach(Oefening duts in Oefeningslijst)
             {
                 Toestel toestel = new Toestel() { Name = duts.Toestel };
-                if (Filteredlist.Contains(toestel.Name))
-                {
-                        
-                }
-                else
+                if (!Filteredlist.Contains(toestel.Name))
                 {
                     Filteredlist.Add(toestel.Name);
                 }
+           
             }
 
 

@@ -1,4 +1,4 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +25,7 @@ namespace StreetWorkoutV2_Bert.View
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
+
         }
 
         private async Task QrTapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -41,11 +42,15 @@ namespace StreetWorkoutV2_Bert.View
         }
 
 
-        
-        protected override bool OnBackButtonPressed() {
+
+        protected override bool OnBackButtonPressed()
+        {
             return true;
         }
 
-     
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            PopupNavigation.Instance.PushAsync(new PopupView2());
+        }
     }
 }
