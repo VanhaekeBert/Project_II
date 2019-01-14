@@ -8,6 +8,7 @@
     <ContentPage.Content>
         <RelativeLayout Padding="0">
             <!-- Background -->
+            <!-- KEJT BERT -->
             <Image
             x:Name="BackgroundImage"
             Aspect="AspectFill"
