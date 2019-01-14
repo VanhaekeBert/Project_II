@@ -50,20 +50,6 @@ namespace StreetWorkoutV2_Bert.View
             }
         }
 
-        private string Encrypt(string raw)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(raw));
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
-
         private async void Button_Clicked(object sender, EventArgs e)
         {
             if (PasswordEntry.Text != null && UserNameEntry.Text != null)
@@ -71,7 +57,9 @@ namespace StreetWorkoutV2_Bert.View
                 bool login = await DBManager.LoginAsync(UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
                 if (login == true)
                 {
-                    await Navigation.PushAsync(new NavigationPage(new MainPage()));
+                    Application.Current.Properties["Naam"] = UserNameEntry.Text;
+                    await Application.Current.SavePropertiesAsync ();
+                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else
                 {

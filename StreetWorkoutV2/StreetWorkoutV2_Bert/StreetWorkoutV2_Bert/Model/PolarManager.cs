@@ -14,21 +14,23 @@ namespace StreetWorkoutV2_Bert.Model
         const string ClientId = "3bef4750-06d5-471f-884c-961db3df1607";
         const string ClientSecret = "db15f74c-cf12-4c7c-97cd-5ce1cb79adc7";
 
-        public static void PolarAsync()
+        public static PolarUser PolarAsync()
         {
             try
             {
                 var auth = GetPolarAuth();
                 auth.AllowCancel = true;
+                PolarUser user = new PolarUser();
                 var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
                 presenter.Login(auth);
                 presenter.Completed += (s, ee) =>
                 {
                     Task.Run(async () =>
                     {
-                        await GetPolarToken();
+                        user = await GetPolarToken();
                     });
                 };
+                return user;
             }
             catch (Exception ex)
             {
@@ -58,7 +60,7 @@ namespace StreetWorkoutV2_Bert.Model
             }
         }
 
-        public static async Task GetPolarToken()
+        public static async Task<PolarUser> GetPolarToken()
         {
             try
             {
@@ -72,7 +74,8 @@ namespace StreetWorkoutV2_Bert.Model
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
                 var acces = JsonConvert.DeserializeObject<PolarAcces>(responseString);
-                await GetUserData(acces);
+                PolarUser user =  await GetUserData(acces);
+                return user;
             }
             catch (Exception ex)
             {
@@ -81,7 +84,7 @@ namespace StreetWorkoutV2_Bert.Model
             }
         }
 
-        public static async Task GetUserData(PolarAcces acces)
+        public static async Task<PolarUser> GetUserData(PolarAcces acces)
         {
             try
             {
@@ -91,8 +94,9 @@ namespace StreetWorkoutV2_Bert.Model
                 string url = $"https://www.polaraccesslink.com/v3/users/{acces.X_user_id}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
-                var user = JsonConvert.DeserializeObject<PolarUser>(responseString);
-                Debug.WriteLine(user.Leeftijd);
+                PolarUser user = JsonConvert.DeserializeObject<PolarUser>(responseString);
+                user.API = "Polar";
+                return user;
             }
             catch (Exception ex)
             {

@@ -159,7 +159,31 @@ namespace StreetWorkoutV2_Bert.Model
             client.DefaultRequestHeaders.Add("Accept", "application/string");
             var request = JsonConvert.SerializeObject(CFA);
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/WachtwoordReset";
+            string url = "https://streetworkout.azurewebsites.net/api/CheckAPI";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return responseString.ToString();
+        }
+
+        public static async Task<string> UpdateAPIFB(FitBitUser user)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/APIUpdate";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return responseString.ToString();
+        }
+
+        public static async Task<string> UpdateAPIP(PolarUser user)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/APIUpdate";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
             return responseString.ToString();

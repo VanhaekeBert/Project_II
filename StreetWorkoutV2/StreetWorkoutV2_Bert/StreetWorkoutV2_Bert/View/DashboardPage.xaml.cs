@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StreetWorkoutV2_Bert.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,6 @@ namespace StreetWorkoutV2_Bert.View
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
-
         }
 
         private async Task QrTapGestureRecognizer_Tapped(object sender, EventArgs e)

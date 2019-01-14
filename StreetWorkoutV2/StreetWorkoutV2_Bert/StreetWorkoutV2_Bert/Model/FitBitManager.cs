@@ -9,7 +9,7 @@ namespace StreetWorkoutV2_Bert.Model
 {
     public class FitBitManager
     {
-        public static async Task FitBitAsync()
+        public static async Task<FitBitUser> FitBitAsync()
         {
             var scopes = new[] { "profile" };
             var api = new FitBitApi("google", "22D9J5", "8889b872288980d53e2cad3a2043955b", true)
@@ -18,7 +18,7 @@ namespace StreetWorkoutV2_Bert.Model
             };
             var account = (SimpleAuth.OAuthAccount)await api.Authenticate();
             var response = await api.Get<FitBitUser>("https://api.fitbit.com/1/user/-/profile.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}" });
-            Debug.WriteLine(response.Gewicht);
+            return response;
         }
     }
 }

@@ -35,23 +35,25 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Frame CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0">
+                    <Frame CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0" x:Name="FraFB">
                         <renderers:GradientLayout
                                             ColorsList="#00B09B,#70D3D8"
-                                            Mode="ToTopLeft">
+                                            Mode="ToTopLeft"
+                                            x:Name="colFB">
                             <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                 <Label FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Fitbit" TextColor="White"/>
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White"/>
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White" x:Name="lblFBverbonden"/>
                             </StackLayout>
                         </renderers:GradientLayout>
                     </Frame>
-                    <Frame CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110"  Padding="0">
+                    <Frame CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110"  Padding="0" x:Name="FraP">
                         <renderers:GradientLayout
                                             ColorsList="#DC483F,#EE3A43"
-                                            Mode="ToTopLeft">
+                                            Mode="ToTopLeft"
+                                            x:Name="colP">
                             <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                 <Label FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Polar" TextColor="White"/>
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White"/>
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White" x:Name="lblPverbonden"/>
                             </StackLayout>
                         </renderers:GradientLayout>
                     </Frame>
