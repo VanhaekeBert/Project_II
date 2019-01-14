@@ -64,16 +64,22 @@ namespace StreetWorkoutV2_Bert.View
                     else
                     {
                         //popup naam of email al genomen
+                        ErrorLabel.Text = "Gebruikersnaam of Email al in gebruik.";
+                        ErrorLabel.IsVisible = true;
                     }
                 }
                 else
                 {
                     //@tje please
+                    ErrorLabel.Text = "Email onjuist.";
+                    ErrorLabel.IsVisible = true;
                 }
             }
             else
             {
                 //vult de shit aan
+                ErrorLabel.Text = "Vul alle gegevens in.";
+                ErrorLabel.IsVisible = true;
             }
         }
     }

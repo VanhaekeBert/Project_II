@@ -76,11 +76,15 @@ namespace StreetWorkoutV2_Bert.View
                 else
                 {
                     //ej al account, vult et juste in
+                    ErrorLabel.Text = "Onjuiste ingave.";
+                    ErrorLabel.IsVisible = true;
                 }
             }
             else
             {
                 // vult het in a.u.b.
+                ErrorLabel.Text = "Vul alle gegevens in.";
+                ErrorLabel.IsVisible = true;
             }
         }
     }

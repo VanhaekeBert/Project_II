@@ -48,21 +48,29 @@ namespace StreetWorkoutV2_Bert.View
                         else
                         {
                             //iets mis bij mailtje verzenden
+                            ErrorLabel.Text = "Probleem bij verzenden. Probeer later opnieuw.";
+                            ErrorLabel.IsVisible = true;
                         }
                     }
                     else
                     {
                         //email nie geregistreerd
+                        ErrorLabel.Text = "Account is nog niet geregistreerd.";
+                        ErrorLabel.IsVisible = true;
                     }
                 }
                 else
                 {
                     //vul ne email adres in
+                    ErrorLabel.Text = "Uw email is onjuist.";
+                    ErrorLabel.IsVisible = true;
                 }
             }
             else
             {
                 //vult ne twuk in
+                    ErrorLabel.Text = "Geliewe uw email in te voeren";
+                    ErrorLabel.IsVisible = true;
             }
         }
     }
