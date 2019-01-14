@@ -15,12 +15,19 @@ namespace StreetWorkoutV2_Bert.View
 		public OefeningPage ()
 		{
 			InitializeComponent ();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Profile_BackCover.png");
+            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Background.png");
+            OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Cover.png");
             OefeningImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.triceps_extensions_easy_1.jpg");
             //Back button + heartbeat
-            backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
+            BackButtonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
+            //Pause_Button.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Background.png");
             // =========================
         }
-	}
+
+        private void Button_Pause_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
