@@ -44,7 +44,7 @@ namespace StreetWorkoutV2_Bert.View
 
         private async void ontap(Xamarin.Forms.View arg1, object arg2)
         {
-            await Navigation.PushAsync(new Picker_Toestel_Page());
+            await Navigation.PopAsync();
         }
     }
 }
