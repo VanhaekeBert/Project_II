@@ -24,15 +24,15 @@
                     <RowDefinition Height="25*"/>
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
-                <StackLayout   Grid.Row="0" Orientation="Horizontal" Margin="0,0,24,0">
-                    <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,24,0">
+                    <Image HeightRequest="32"  HorizontalOptions="EndAndExpand" x:Name="Heart" Margin="0,4,-8,0"/>
                     <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>
-                <StackLayout VerticalOptions="StartAndExpand" Grid.Row="1" Orientation="Vertical" Margin="24,14,24,0">
+                <StackLayout VerticalOptions="StartAndExpand" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="24,14,24,0">
                     <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Dashboard" TextColor="White"/>
                     <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo, Bert" TextColor="White" />
                 </StackLayout>
-                <Grid VerticalOptions="CenterAndExpand" Grid.Row="2"  Margin="24,0" ColumnSpacing="10">
+                <Grid VerticalOptions="CenterAndExpand" Grid.Row="2" Grid.ColumnSpan="2"  Margin="24,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -57,7 +57,7 @@
                             </StackLayout>
                         </renderers:GradientLayout>
                     </Frame>
-                    <Frame CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110"  Padding="0">
+                    <Frame CornerRadius="10"  Grid.Column="1"  HorizontalOptions="Fill" HeightRequest="110"  Padding="0">
                         <renderers:GradientLayout
                                             ColorsList="#447DEE,#44C5EE"
                                             Mode="ToTopLeft">
@@ -83,7 +83,7 @@
 
                     </Frame>
                 </Grid>
-                <Frame CornerRadius="10"  Grid.Row="3" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="190" BackgroundColor="#44C4EC" Margin="24" Padding="0">
+                <Frame CornerRadius="10"  Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="190" BackgroundColor="#44C4EC" Margin="24" Padding="0">
                     <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0">
                         <Image x:Name="ImgStartWorkout" Aspect="AspectFill"/>
                         <Image x:Name="ImgStartWorkout_Cover" Aspect="AspectFill"/>

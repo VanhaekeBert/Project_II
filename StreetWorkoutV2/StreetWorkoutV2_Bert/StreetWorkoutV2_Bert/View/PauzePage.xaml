@@ -32,7 +32,7 @@
                     <Label Text="Oefeningen" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,12,24,0">
-                    <Image HeightRequest="24" WidthRequest="24" HorizontalOptions="EndAndExpand" x:Name="Heart"/>
+                    <Image HeightRequest="32"  HorizontalOptions="EndAndExpand" x:Name="Heart" Margin="0,4,-8,0"/>
                     <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>
                 <!-- ================= -->
