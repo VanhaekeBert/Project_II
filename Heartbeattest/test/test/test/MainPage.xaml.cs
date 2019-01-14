@@ -16,11 +16,11 @@ namespace test
         public MainPage()
         {
             InitializeComponent();
-            Task.Run(async () =>
-            {
-                await FitBitAsync();
-            });
-            //PolarAsync();
+            //Task.Run(async () =>
+            //{
+            //    await FitBitAsync();
+            //});
+            PolarAsync();
         }
 
         public async Task FitBitAsync()

@@ -18,6 +18,7 @@ namespace StreetWorkoutV2_Bert.Model
             };
             var account = (SimpleAuth.OAuthAccount)await api.Authenticate();
             var response = await api.Get<FitBitUser>("https://api.fitbit.com/1/user/-/profile.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}" });
+            response.API = "FitBit";
             return response;
         }
     }

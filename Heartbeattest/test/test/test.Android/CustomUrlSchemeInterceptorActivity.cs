@@ -21,14 +21,21 @@ namespace test.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-            var uri = new Uri(Intent.Data.ToString());
-            var auth = PolarAuthenticator.GetPolarAuth();
-            var polarCode = uri.ToString().Split('&')[1].Split('=')[1];
-            var token = new PolarCode();
-            PolarCode.Code = polarCode;
-            auth.OnPageLoading(uri);
-            Finish();
+            try
+            {
+                base.OnCreate(savedInstanceState);
+                var uri = new Uri(Intent.Data.ToString());
+                var auth = PolarAuthenticator.GetPolarAuth();
+                var polarCode = uri.ToString().Split('&')[1].Split('=')[1];
+                var token = new PolarCode();
+                PolarCode.Code = polarCode;
+                auth.OnPageLoading(uri);
+                Finish();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

@@ -38,7 +38,7 @@ namespace StreetWorkoutV2_Bert.View
                     bool EmailCheck = await DBManager.CheckEmailAsync(email);
                     if (EmailCheck == true)
                     {
-                        string naam = await DBManager.UserName(email);
+                        string naam = await DBManager.GetUserName(email);
                         string ww = DBManager.Encrypt(await DBManager.MailService(email, naam));
                         if (ww != null)
                         {

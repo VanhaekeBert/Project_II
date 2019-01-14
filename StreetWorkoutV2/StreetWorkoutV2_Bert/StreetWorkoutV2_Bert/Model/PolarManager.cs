@@ -14,27 +14,27 @@ namespace StreetWorkoutV2_Bert.Model
         const string ClientId = "3bef4750-06d5-471f-884c-961db3df1607";
         const string ClientSecret = "db15f74c-cf12-4c7c-97cd-5ce1cb79adc7";
 
-        public static PolarUser PolarAsync()
+        public static PolarAcces PolarAsync()
         {
             try
             {
                 var auth = GetPolarAuth();
                 auth.AllowCancel = true;
-                PolarUser user = new PolarUser();
+                PolarAcces acces = new PolarAcces();
                 var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
                 presenter.Login(auth);
                 presenter.Completed += (s, ee) =>
                 {
                     Task.Run(async () =>
                     {
-                        user = await GetPolarToken();
+                        acces = await GetPolarToken();
                     });
                 };
-                return user;
+                return acces;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error: " + ex.Message);
+                Debug.WriteLine("Error PolarAsync: " + ex.Message);
                 throw ex;
             }
         }
@@ -55,12 +55,12 @@ namespace StreetWorkoutV2_Bert.Model
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error: " + ex.Message);
+                Debug.WriteLine("Error GetPolarAuth: " + ex.Message);
                 throw ex;
             }
         }
 
-        public static async Task<PolarUser> GetPolarToken()
+        public static async Task<PolarAcces> GetPolarToken()
         {
             try
             {
@@ -74,12 +74,11 @@ namespace StreetWorkoutV2_Bert.Model
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
                 var acces = JsonConvert.DeserializeObject<PolarAcces>(responseString);
-                PolarUser user =  await GetUserData(acces);
-                return user;
+                return acces;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error: " + ex.Message);
+                Debug.WriteLine("Error GetPolarToken: " + ex.Message);
                 throw ex;
             }
         }
@@ -100,7 +99,7 @@ namespace StreetWorkoutV2_Bert.Model
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error: " + ex.Message);
+                Debug.WriteLine("Error GetUserData: " + ex.Message);
                 throw ex;
             }
         }

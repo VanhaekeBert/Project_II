@@ -12,8 +12,8 @@ namespace test.Model
 {
     public class PolarAuthenticator
     {
-        const string ClientId = "3bef4750-06d5-471f-884c-961db3df1607";
-        const string ClientSecret = "db15f74c-cf12-4c7c-97cd-5ce1cb79adc7";
+        const string ClientId = "5b0f8bfb-cea6-4166-a13b-73ed6b2d7f41";
+        const string ClientSecret = "f4406d7c-95ca-4ab4-b946-a7de6e796ab3";
 
         public static OAuth2Authenticator GetPolarAuth()
         {
@@ -36,20 +36,22 @@ namespace test.Model
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("Authorization", $"Basic {base64}");
+                Debug.WriteLine("polarcode " + PolarCode.Code);
                 var request = $"grant_type={PolarCode.Grant_type}&code={PolarCode.Code}&redirect_uri={PolarCode.Redirect_uri}";
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/x-www-form-urlencoded");
                 string url = "https://polarremote.com/v2/oauth2/token";
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseString);
+                Debug.WriteLine("response token: " + responseString);
                 var token = JsonConvert.DeserializeObject<PolarToken>(responseString);
-                Debug.WriteLine(token.Acces_token);
-                //GetUserData(token);
+                Debug.WriteLine("acces token: " + token.Acces_token);
+                await PostUserAuthorize(token);
+                await GetUserData(token);
                 //DeleteUserAuthorize(token);
                 //PostUserAuthorize(token);
                 //await PostTransactionTD(token);
                 //await PostTransactionDA(token);
-                await PostTransactionPI(token);
+                //await PostTransactionPI(token);
                 
             }
             catch (Exception ex)

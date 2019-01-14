@@ -43,7 +43,6 @@ namespace StreetWorkoutV2_Bert.View
                 {
                     FitBitUser user = await FitBitManager.FitBitAsync();
                     user.Naam = Application.Current.Properties["Naam"].ToString();
-                    user.Naam = "FitBit";
                     await DBManager.UpdateAPIFB(user);
                     string api = await DBManager.CheckForAPI(Application.Current.Properties["Naam"].ToString());
                     if (api == "FitBit")
@@ -65,10 +64,11 @@ namespace StreetWorkoutV2_Bert.View
             };
             var tapGestureRecognizerP = new TapGestureRecognizer();
             tapGestureRecognizerP.Tapped += (s, e) => {
-                    PolarUser user = PolarManager.PolarAsync();
-                    user.Naam = Application.Current.Properties["Naam"].ToString();
                 Task.Run(async () =>
                 {
+                    PolarUser user = await PolarManager.GetUserData(PolarManager.PolarAsync());
+                    user.Naam = Application.Current.Properties["Naam"].ToString();
+                    Debug.WriteLine(user.Leeftijd);
                     await DBManager.UpdateAPIP(user);
                 });
                 Task.Run(async () =>
@@ -91,8 +91,13 @@ namespace StreetWorkoutV2_Bert.View
                     }
                 });
             };
+            var tapGestureRecognizerWWR = new TapGestureRecognizer();
+            tapGestureRecognizerWWR.Tapped += (s, e) => {
+                Navigation.PushAsync(new WachtwoordResetPage());
+            };
             FraFB.GestureRecognizers.Add(tapGestureRecognizerFB);
             FraP.GestureRecognizers.Add(tapGestureRecognizerP);
+            FraWWR.GestureRecognizers.Add(tapGestureRecognizerWWR);
         }
 
         private async Task Sign_Out_Button_Clicked(object sender, EventArgs e)

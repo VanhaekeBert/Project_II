@@ -106,7 +106,7 @@ namespace StreetWorkoutV2_Bert.Model
             }
         }
 
-        public static async Task<string> UserName(string email)
+        public static async Task<string> GetUserName(string email)
         {
             JObject ver = new JObject();
             ver["Email"] = email;
@@ -115,6 +115,20 @@ namespace StreetWorkoutV2_Bert.Model
             var request = JsonConvert.SerializeObject(ver);
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
             string url = "https://streetworkout.azurewebsites.net/api/GetUserName";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return responseString.ToString();
+        }
+
+        public static async Task<string> GetEmail(string naam)
+        {
+            JObject ver = new JObject();
+            ver["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(ver);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/GetEmail";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
             return responseString.ToString();
