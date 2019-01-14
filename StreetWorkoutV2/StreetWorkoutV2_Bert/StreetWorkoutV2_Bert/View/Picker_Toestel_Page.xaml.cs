@@ -29,7 +29,16 @@ namespace StreetWorkoutV2_Bert.View
             Toestellen.ItemsSource = Toestellijst;
             this.BackgroundColor = Color.FromHex("2B3049");
 
+            BackDashboard.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () => { await Navigation.PopAsync(); })
+            });
+        }
 
+        private async Task Toestellen_ItemTapped(object sender, ItemTappedEventArgs e)
+        {    
+            await Navigation.PushAsync(new ExercisePage()); //pass content if you want to pass the clicked item object to another page
         }
     }
 }

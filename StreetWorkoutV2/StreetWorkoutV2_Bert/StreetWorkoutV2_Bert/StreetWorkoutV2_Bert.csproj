@@ -326,7 +326,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Sendgrid" Version="9.10.0" />
     <PackageReference Include="Xamarin.Auth" Version="1.6.0.4" />
-    <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView" Version="1.0.0.7" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
 
@@ -353,6 +352,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\OefeningPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\PauzePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Picker_Toestel_Page.xaml">

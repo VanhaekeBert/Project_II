@@ -25,11 +25,19 @@ namespace StreetWorkoutV2_Bert
             navDashboard.Icon = "dashboard.png";
             navDashboard.Title = "Dashboard";
 
+            //var navSettingsPage = new NavigationPage(new SettingsPage());
+            //navSettingsPage.Icon = "settings.png";
+            //navSettingsPage.Title = "Settings";
+
+
             Children.Add(new SettingsPage());
             Children.Add(navDashboard);
             Children.Add(navAcccount);
             CurrentPage = Children[1];
+
+
        
         }
+       
     }
 }

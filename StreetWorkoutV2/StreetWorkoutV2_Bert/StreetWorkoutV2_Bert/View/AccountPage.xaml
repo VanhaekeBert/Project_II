@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
+             xmlns:local="clr-namespace:StreetWorkoutV2_Bert.Model"
              x:Class="StreetWorkoutV2_Bert.View.AccountPage"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-      
-           
-            <!-- ================= -->
+
+        
             <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-                <ScrollView >
+            <ScrollView >
                 <RelativeLayout Padding="0">
                     <!-- Background -->
                     <Image
@@ -195,16 +196,16 @@
                                         <Label  Grid.Row="1" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Lengte" TextColor="White" VerticalOptions="CenterAndExpand" />
                                         <Label  Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Leeftijd" TextColor="White" VerticalOptions="CenterAndExpand" />
                                         <Label  Grid.Row="3" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Water Doel" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        
-                                        
-                                        
+
+
+
                                         <!--<Label  Grid.Row="0" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="56" TextColor="White" />
                                         <Label  Grid.Row="1" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="174" TextColor="White" />
                                         <Label  Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="22" TextColor="White" />
                                         <Label  Grid.Row="3" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="2000" TextColor="White" />-->
 
                                         <Frame Padding="0" Margin="0,0,0,8" Grid.Row="0" Grid.Column="1" CornerRadius="100" BackgroundColor="White" >
-                                            <Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="56" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"> </Label>
+                                            <Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="56" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
                                         </Frame>
                                         <Frame Padding="0" Margin="0,0,0,8" Grid.Row="1" Grid.Column="1" CornerRadius="100" BackgroundColor="White" >
                                             <Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="174" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
@@ -221,15 +222,20 @@
                                         <Label  Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="yr" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                                         <Label Grid.Row="3" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="ml" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                                     </Grid>
-                                    
+
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
                             </Frame>
+
+                            <Button Grid.Row="4" Text="Opslaan" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Button_Clicked"/>
+
                         </StackLayout>
                     </StackLayout>
                 </RelativeLayout>
-
+                    
+                
             </ScrollView>
             </Grid>
+        
     </ContentPage.Content>
 </ContentPage>
