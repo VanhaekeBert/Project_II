@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,14 +14,25 @@ namespace StreetWorkoutV2_Bert.Model
 {
     public static class DBManager
     {
-        const string SendGrid_API = "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";
-        //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
+        public static string Encrypt(string raw)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(raw));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
         public static async Task<bool> RegistrerenAsync(string email, string naam, string wachtwoord)
         {
-            Registreren reg = new Registreren();
-            reg.Email = email;
-            reg.Naam = naam;
-            reg.Wachtwoord = wachtwoord;
+            JObject reg = new JObject();
+            reg["Email"] = email;
+            reg["Naam"] = naam;
+            reg["Wachtwoord"] = wachtwoord;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
             var request = JsonConvert.SerializeObject(reg);
@@ -32,8 +44,8 @@ namespace StreetWorkoutV2_Bert.Model
 
         public static async Task<bool> CheckUserNameAsync(string naam)
         {
-            CheckNaam checkNaam = new CheckNaam();
-            checkNaam.Naam = naam;
+            JObject checkNaam = new JObject();
+            checkNaam["Naam"] = naam;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
             var request = JsonConvert.SerializeObject(checkNaam);
@@ -53,8 +65,8 @@ namespace StreetWorkoutV2_Bert.Model
 
         public static async Task<bool> CheckEmailAsync(string email)
         {
-            CheckEmail checkEmail = new CheckEmail();
-            checkEmail.Email = email;
+            JObject checkEmail = new JObject();
+            checkEmail["Email"] = email;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
             var request = JsonConvert.SerializeObject(checkEmail);
@@ -74,9 +86,9 @@ namespace StreetWorkoutV2_Bert.Model
 
         public static async Task<bool> LoginAsync(string naam, string wachtwoord)
         {
-            Login log = new Login();
-            log.Naam = naam;
-            log.Wachtwoord = wachtwoord;
+            JObject log = new JObject();
+            log["Naam"] = naam;
+            log["Wachtwoord"] = wachtwoord;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
             var request = JsonConvert.SerializeObject(log);
@@ -94,10 +106,10 @@ namespace StreetWorkoutV2_Bert.Model
             }
         }
 
-        public static async Task<string> WachtwoordVergetenAsync(string email)
+        public static async Task<string> UserName(string email)
         {
-            EmailVer ver = new EmailVer();
-            ver.Email = email;
+            JObject ver = new JObject();
+            ver["Email"] = email;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
             var request = JsonConvert.SerializeObject(ver);
@@ -108,44 +120,49 @@ namespace StreetWorkoutV2_Bert.Model
             return responseString.ToString();
         }
 
-        public static async Task MailService(string email, string naam)
+        public static async Task<string> MailService(string email, string naam)
         {
-            Random rnd = new Random();
-            int length = rnd.Next(10, 15);
-            string wachtwoord = "";
-            for (int i = 0; i < length; i++)
-            {
-                Random rnd2 = new Random();
-                int number = rnd.Next(3, 6);
-                if (number % 3 == 0)
-                {
-                    Random rnd3 = new Random();
-                    string element = rnd.Next(0, 10).ToString();
-                    wachtwoord += element;
-                }
-                else if (number % 4 == 0)
-                {
-                    var chars = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-                    Random rnd3 = new Random();
-                    int index = rnd.Next(0, chars.Length);
-                    wachtwoord += chars[index];
-                }
-                else if (number % 5 == 0)
-                {
-                    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-                    Random rnd3 = new Random();
-                    int index = rnd.Next(0, chars.Length);
-                    wachtwoord += chars[index];
-                }
-            }
-            var client = new SendGridClient(SendGrid_API);
-            var from = new EmailAddress("nmctstreetworkout@outlook.com", "StreetWorkout");
-            var subject = "Aanvraag voorlopig wachtwoord";
-            var to = new EmailAddress(email, naam);
-            var plainTextContent = $"Beste {naam}\nU heeft een nieuw wachtwoord aangevraagd in de app StreetBeat.\nVolgend wachtwoord is uw nieuw voorlopig wachtwoord: {wachtwoord}\nWe raden u tensterkste aan om uw wachtwoord te veranderen na het gebruiken van dit wachtwoord.\n\nGroeten support StreetBeat.";
-            var htmlContent = $"Beste {naam}{Environment.NewLine}U heeft een nieuw wachtwoord aangevraagd in de app StreetBeat.{Environment.NewLine}Volgend wachtwoord is uw nieuw voorlopig wachtwoord: {wachtwoord}{Environment.NewLine}We raden u tensterkste aan om uw wachtwoord te veranderen na het gebruiken van dit wachtwoord.{Environment.NewLine}{Environment.NewLine}Groeten support StreetBeat.";
-            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
-            var response = await client.SendEmailAsync(msg);
+            JObject reg = new JObject();
+            reg["Email"] = email;
+            reg["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(reg);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/MailService";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            Debug.WriteLine(responseString.ToString());
+            return (responseString.ToString());
+        }
+
+        public static async Task<string> WachtwoordReset(string email, string wachtwoord)
+        {
+            JObject wwr = new JObject();
+            wwr["Email"] = email;
+            wwr["Wachtwoord"] = wachtwoord;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(wwr);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/WachtwoordReset";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return responseString.ToString();
+        }
+
+        public static async Task<string> CheckForAPI(string naam)
+        {
+            JObject CFA = new JObject();
+            CFA["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(CFA);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/WachtwoordReset";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return responseString.ToString();
         }
     }
 }

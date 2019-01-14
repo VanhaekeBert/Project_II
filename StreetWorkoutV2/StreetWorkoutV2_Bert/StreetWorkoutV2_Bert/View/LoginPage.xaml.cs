@@ -68,10 +68,10 @@ namespace StreetWorkoutV2_Bert.View
         {
             if (PasswordEntry.Text != null && UserNameEntry.Text != null)
             {
-                bool login = await DBManager.LoginAsync(UserNameEntry.Text, Encrypt(PasswordEntry.Text));
+                bool login = await DBManager.LoginAsync(UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
                 if (login == true)
                 {
-                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+                    await Navigation.PushAsync(new NavigationPage(new MainPage()));
                 }
                 else
                 {

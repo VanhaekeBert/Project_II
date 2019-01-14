@@ -33,13 +33,22 @@ namespace StreetWorkoutV2_Bert.View
             {
                 if (EmailEntry.Text.ToLower().Contains("@"))
                 {
-                    bool EmailCheck = await DBManager.CheckEmailAsync(EmailEntry.Text);
+                    string email = EmailEntry.Text.Replace(" ", "");
+                    bool EmailCheck = await DBManager.CheckEmailAsync(email);
                     if (EmailCheck == true)
                     {
-                        string naam = await DBManager.WachtwoordVergetenAsync(EmailEntry.Text);
-                        await DBManager.MailService(EmailEntry.Text, naam);
-                        await Navigation.PopAsync();
-                        //message da mailtje verstuurd is
+                        string naam = await DBManager.UserName(email);
+                        string ww = DBManager.Encrypt(await DBManager.MailService(email, naam));
+                        if (ww != null)
+                        {
+                            await DBManager.WachtwoordReset(email, ww);
+                            await Navigation.PopAsync();
+                            //message da mailtje verstuurd is
+                        }
+                        else
+                        {
+                            //iets mis bij mailtje verzenden
+                        }
                     }
                     else
                     {
