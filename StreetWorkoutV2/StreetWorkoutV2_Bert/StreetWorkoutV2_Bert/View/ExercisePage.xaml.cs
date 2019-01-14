@@ -1,7 +1,10 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using Newtonsoft.Json;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,23 +24,24 @@ namespace StreetWorkoutV2_Bert.View
             Moeilijkheidsgraad2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_empty.png");
             Moeilijkheidsgraad3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_empty.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
-            List<ToestelOefening> toestelOefenings = new List<ToestelOefening>();
-            ToestelOefening toestel = new ToestelOefening();
-            toestel.Name = "Biceprows";
-            toestel.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.biceprows_easy_1.jpg");
-            toestel.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
-            ToestelOefening toestel2 = new ToestelOefening();
-            toestel2.Name = "4 Point leg extension";
-            toestel2.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.4_point_leg_extention_medium_2.jpg");
-            toestel2.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
-            ToestelOefening toestel3 = new ToestelOefening();
-            toestel3.Name = "Bridge";
-            toestel3.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.bridge_medium_1.jpg");
-            toestel3.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
-            toestelOefenings.Add(toestel);
-            toestelOefenings.Add(toestel2);
-            toestelOefenings.Add(toestel3);
-            Oefeningen.ItemsSource = toestelOefenings;
+
+            //Inlezen JSON
+            List<Oefening> Oefeningslijst = new List<Oefening>();
+
+            //bestandnaam? , Pad?
+            // opgelet bovenaan -> using System.Reflection; toevoegen
+            var assembly = typeof(Oefening).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2_Bert.Asset.oefeningenV2.json");
+
+            //bytes uit het bestand gaan inlezen en verwerken
+            StreamReader oSR = new StreamReader(stream);
+
+            string json = oSR.ReadToEnd();
+            Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+            
+            //Listview opvullen
+            Oefeningen.ItemsSource = Oefeningslijst;
+
             BackButton.GestureRecognizers.Add(new TapGestureRecognizer(ontap));
 
         }

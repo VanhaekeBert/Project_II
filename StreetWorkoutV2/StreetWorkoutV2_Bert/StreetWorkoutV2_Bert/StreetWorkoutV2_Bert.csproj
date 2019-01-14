@@ -165,6 +165,13 @@
     <None Remove="Asset\StartWorkout.png" />
     <None Remove="Asset\StartWorkout_Cover.png" />
     <None Remove="Asset\toestel.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Decline_Bench.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Grond.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Incline_Press.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Overhead_Ladder.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Parallel_Bars.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Pull_Up_Station.png" />
+    <None Remove="Asset\Toestel_Afbeeldingen\Push_Up_Bars.png" />
     <None Remove="Asset\Vuur.png" />
   </ItemGroup>
 
@@ -327,6 +334,13 @@
     <EmbeddedResource Include="Asset\spier.png" />
     <EmbeddedResource Include="Asset\StartWorkout.png" />
     <EmbeddedResource Include="Asset\toestel.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Decline_Bench.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Grond.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Incline_Press.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Overhead_Ladder.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Parallel_Bars.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Pull_Up_Station.png" />
+    <EmbeddedResource Include="Asset\Toestel_Afbeeldingen\Push_Up_Bars.png" />
     <EmbeddedResource Include="Asset\Vuur.png" />
   </ItemGroup>
 

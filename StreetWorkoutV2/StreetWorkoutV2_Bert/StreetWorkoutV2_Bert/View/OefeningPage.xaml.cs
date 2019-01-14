@@ -23,6 +23,7 @@ namespace StreetWorkoutV2_Bert.View
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             //Pause_Button.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Background.png");
             // =========================
+
         }
 
         private void Button_Pause_Clicked(object sender, EventArgs e)

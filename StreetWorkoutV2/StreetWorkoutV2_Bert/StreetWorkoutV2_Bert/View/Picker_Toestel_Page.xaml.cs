@@ -1,7 +1,10 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using Newtonsoft.Json;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,14 +22,48 @@ namespace StreetWorkoutV2_Bert.View
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Picker_Background.png");
             backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
-            Toestel toestel1 = new Toestel();
-            toestel1.Name = "Parallel Bars";
-            toestel1.Aantal_Oefeningen = 7;
-            toestel1.Image = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Parallel_Bars.png");
-            toestel1.Go_To_button = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
-            List<Toestel> Toestellijst = new List<Toestel>();
-            Toestellijst.Add(toestel1);
-            Toestellen.ItemsSource = Toestellijst;
+
+            //Inlezen JSON
+            List<Oefening> Oefeningslijst = new List<Oefening>();
+
+            //bestandnaam? , Pad?
+            // opgelet bovenaan -> using System.Reflection; toevoegen
+            var assembly = typeof(Oefening).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2_Bert.Asset.oefeningenV2.json");
+
+            //bytes uit het bestand gaan inlezen en verwerken
+            StreamReader oSR = new StreamReader(stream);
+
+            string json = oSR.ReadToEnd();
+            Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+
+            List<string> Filteredlist = new List<string>();
+
+            foreach(Oefening duts in Oefeningslijst)
+            {
+                Toestel toestel = new Toestel() { Name = duts.Toestel };
+                if (Filteredlist.Contains(toestel.Name))
+                {
+                        
+                }
+                else
+                {
+                    Filteredlist.Add(toestel.Name);
+                }
+            }
+
+
+            List<Toestel> toestels = new List<Toestel>();
+
+            foreach(string toestel in Filteredlist)
+            {
+                Toestel toestelname = new Toestel() { Name = toestel };
+                toestels.Add(toestelname);
+            }
+
+            //Listview opvullen
+            Toestellen.ItemsSource =  toestels;
+
             this.BackgroundColor = Color.FromHex("2B3049");
 
             BackDashboard.GestureRecognizers.Add(

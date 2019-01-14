@@ -36,15 +36,6 @@
     "afbeeldingen": ["assisted_chin-up_easy_1.jpg", "assisted_chin-up_easy_2.jpg"]
   },
   {
-    "oefening": "Negative Chin-up",
-    "spiergroep": "Biceps",
-    "toestel": "Pull Up Station",
-    "moeilijkheidsgraad": "Easy",
-    "beschrijving": "Start op de grond onder de bar. Spring op tot je met je kin boven de bar kan blijven hangen. Vanuit deze positie laat je jezelf zo traag mogelijk zakken tot je terug op de grond staat. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-    "herhalingen": 8,
-    "afbeeldingen": []
-  },
-  {
     "oefening": "Chin-up",
     "spiergroep": "Biceps",
     "toestel": "Pull Up Station",
@@ -124,15 +115,6 @@
     "beschrijving": "Plaats de rekker dwars over de barren en houdt deze op zijn plaats door je handen erop te plaatsen. Op die manier kan je de knie�n op de rekker plaatsen waardoor de rekker ondersteuning kan bieden. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
     "herhalingen": 10,
     "afbeeldingen": ["dip_easy_1.jpg"]
-  },
-  {
-    "oefening": "Dip negative",
-    "spiergroep": "Borst",
-    "toestel": "Parallel Bars",
-    "moeilijkheidsgraad": "Easy",
-    "beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zo traag mogelijk zakken tot je niet meer kan en de voeten op de grond moet plaatsen. Keer terug naar de startpositie. Herhaal de beweging.",
-    "herhalingen": 10,
-    "afbeeldingen": []
   },
   {
     "oefening": "Dip",
@@ -444,28 +426,10 @@
     "oefening": "Sumo squats",
     "spiergroep": "Quadriceps",
     "toestel": "Grond",
-    "moeilijkheidsgraad": "Easy",
-    "beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). Zet een verhoog achter je dat ongeveer tot op kniehoogte komt. De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
-    "herhalingen": 15,
-    "afbeeldingen": []
-  },
-  {
-    "oefening": "Sumo squats",
-    "spiergroep": "Quadriceps",
-    "toestel": "Grond",
     "moeilijkheidsgraad": "Medium",
     "beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken tot starthouding en herhalen.",
     "herhalingen": 25,
     "afbeeldingen": ["sumo_squats_medium_1.jpg", "sumo_squats_medium_2.jpg"]
-  },
-  {
-    "oefening": "Sumo squats",
-    "spiergroep": "Quadriceps",
-    "toestel": "Grond",
-    "moeilijkheidsgraad": "Hard",
-    "beschrijving": "Plaats je benen gespreid en je voeten lichtjes naar buiten gedraaid. Trotse houding (Steek je schouderbladen in je achterzak). De squatbeweging start uit de heup, doe alsof je op een stoel gaat zitten. Gecontroleerd zakken totdat de bovenbenen horizontaal zijn, is voldoende. Trotse houding bewaren, rechte rug, borst open. Explosief benen strekken waardoor je een jump maakt vooraleer in de startpositie terecht te komen en herhalen.",
-    "herhalingen": 30,
-    "afbeeldingen": []
   },
   {
     "oefening": "Pull-up",
