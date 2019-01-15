@@ -334,7 +334,7 @@
     <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Quadriceps.png" />
     <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Rug.png" />
     <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Schouders.png" />
-    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Schuine_Buikspieren.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Schuine_buikspieren.png" />
     <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Triceps.png" />
     <EmbeddedResource Include="Asset\StartWorkout_Cover.png" />
   </ItemGroup>

@@ -17,7 +17,7 @@ namespace StreetWorkoutV2_Bert.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Picker_Toestel_Page : ContentPage
     {
-        public Picker_Toestel_Page()
+        public Picker_Toestel_Page(string uitvoering)
         {
             InitializeComponent();
             BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Picker_Background.png");
@@ -40,55 +40,58 @@ namespace StreetWorkoutV2_Bert.View
             //-----------------------------------------------
 
 
-            //-----TOESTEL---------------------
-            //List<string> Filteredlist = new List<string>();
-
-            //foreach (Oefening duts in Oefeningslijst)
-            //{
-            //    Toestel toestel = new Toestel() { Name = duts.Toestel };
-            //    if (!Filteredlist.Contains(toestel.Name))
-            //    {
-            //        Filteredlist.Add(toestel.Name);
-            //    }
-
-            //}
-            //List<Toestel> toestels = new List<Toestel>();
-
-            //foreach (string toestel in Filteredlist)
-            //{
-            //    Toestel toestelname = new Toestel() { Name = toestel };
-            //    toestels.Add(toestelname);
-            //}
-            ////Listview opvullen
-            //Toestellen.ItemsSource = toestels;
-
-            //----------------------------------------------------------
-
-
-            //-----SPIER---------------------
-            List<string> Filteredlist = new List<string>();
-
-            foreach (Oefening duts in Oefeningslijst)
+            if (uitvoering == "Toestel")
             {
-                Spiergroep toestel = new Spiergroep() { Name = duts.Spiergroep };
-                if (!Filteredlist.Contains(toestel.Name))
+                //-----TOESTEL---------------------
+                List<string> Filteredlisttoestel = new List<string>();
+
+                foreach (Oefening duts in Oefeningslijst)
                 {
-                    Filteredlist.Add(toestel.Name);
+                    Toestel toestel = new Toestel() { Name = duts.Toestel };
+                    if (!Filteredlisttoestel.Contains(toestel.Name))
+                    {
+                        Filteredlisttoestel.Add(toestel.Name);
+                    }
+
                 }
+                List<Toestel> toestels = new List<Toestel>();
 
+                foreach (string toestel in Filteredlisttoestel)
+                {
+                    Toestel toestelname = new Toestel() { Name = toestel };
+                    toestels.Add(toestelname);
+                }
+                //Listview opvullen
+                Toestellen.ItemsSource = toestels;
+                //----------------------------------------------------------
             }
-            List<Spiergroep> spiergroeps = new List<Spiergroep>();
 
-            foreach (string spiergroepen in Filteredlist)
+            else
             {
-                Spiergroep spiergroep = new Spiergroep() { Name = spiergroepen };
-                spiergroeps.Add(spiergroep);
+                //-----SPIER---------------------
+                List<string> Filteredlist = new List<string>();
+
+                foreach (Oefening duts in Oefeningslijst)
+                {
+                    Spiergroep toestel = new Spiergroep() { Name = duts.Spiergroep };
+                    if (!Filteredlist.Contains(toestel.Name))
+                    {
+                        Filteredlist.Add(toestel.Name);
+                    }
+
+                }
+                List<Spiergroep> spiergroeps = new List<Spiergroep>();
+
+                foreach (string spiergroepen in Filteredlist)
+                {
+                    Spiergroep spiergroep = new Spiergroep() { Name = spiergroepen };
+                    spiergroeps.Add(spiergroep);
+                }
+                //Listview opvullen
+                Toestellen.ItemsSource = spiergroeps;
+
+                //----------------------------------------------------------
             }
-            //Listview opvullen
-            Toestellen.ItemsSource = spiergroeps;
-
-            //----------------------------------------------------------
-
             this.BackgroundColor = Color.FromHex("2B3049");
 
             BackDashboard.GestureRecognizers.Add(

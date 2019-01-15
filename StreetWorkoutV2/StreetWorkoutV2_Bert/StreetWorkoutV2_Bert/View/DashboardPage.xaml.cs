@@ -35,11 +35,11 @@ namespace StreetWorkoutV2_Bert.View
         }
         private async Task SpierTapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QrPage());
+            await Navigation.PushAsync(new Picker_Toestel_Page("Spiergroep"));
         }
         private async Task ToestelTapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Picker_Toestel_Page());
+            await Navigation.PushAsync(new Picker_Toestel_Page("Toestel"));
         }
 
 
