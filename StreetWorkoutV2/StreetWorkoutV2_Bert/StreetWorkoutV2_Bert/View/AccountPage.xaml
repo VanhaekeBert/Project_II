@@ -3,16 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
              xmlns:local="clr-namespace:StreetWorkoutV2_Bert.Model"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="StreetWorkoutV2_Bert.View.AccountPage"
              xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
 
-        
-            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+
+        <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             <ScrollView >
                 <RelativeLayout Padding="0">
+
                     <!-- Background -->
                     <Image
                     x:Name="BckgrImage"
@@ -21,6 +23,7 @@
                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                     VerticalOptions="Start"
                     HeightRequest="250"/>
+
                     <StackLayout Spacing="0" Margin="24,16,24,24">
                         <!-- Icon + Naam-->
                         <Grid HeightRequest="240" RowSpacing="0">
@@ -50,7 +53,8 @@
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                     <StackLayout VerticalOptions="Start" Spacing="0">
-                                        <Label Margin="0,-8,0,0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Kcal verbrand / dag" TextColor="White"/>
+                                        <Label Margin="0,-8,0,14" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Kcal verbrand / dag" TextColor="White"/>
+                                        <forms:ChartView x:Name="chartKcal" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                                     </StackLayout>
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
@@ -113,7 +117,8 @@
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                     <StackLayout VerticalOptions="Start" Spacing="0">
-                                        <Label Margin="0,-8,0,0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Oefeningen uitgevoerd / dag" TextColor="White"/>
+                                        <Label Margin="0,-8,0,14" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Oefeningen uitgevoerd / dag" TextColor="White"/>
+                                        <forms:ChartView x:Name="chartOef" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                                     </StackLayout>
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
@@ -236,10 +241,10 @@
                         </StackLayout>
                     </StackLayout>
                 </RelativeLayout>
-                    
-                
+
+
             </ScrollView>
-            </Grid>
-        
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
