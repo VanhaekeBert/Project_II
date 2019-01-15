@@ -1,4 +1,5 @@
-﻿using Rg.Plugins.Popup.Services;
+﻿using Newtonsoft.Json.Linq;
+using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
@@ -34,20 +35,20 @@ namespace StreetWorkoutV2_Bert.View
         {
             if (EmailEntry.Text != null)
             {
-                await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
-                await Navigation.PopModalAsync();
                 if (EmailEntry.Text.ToLower().Contains("@"))
                 {
                     string email = EmailEntry.Text.Replace(" ", "");
-                    bool EmailCheck = await DBManager.CheckEmailAsync(email);
+                    bool EmailCheck = await DBManager.CheckUserData(email, "Email");
                     if (EmailCheck == true)
                     {
-                        string naam = await DBManager.GetUserName(email);
-                        string ww = DBManager.Encrypt(await DBManager.MailService(email, naam));
+                        JObject data = await DBManager.GetUserData(email, "Email");
+                        string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Naam"].ToString()));
                         if (ww != null)
                         {
-                            PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
-                            await DBManager.WachtwoordReset(email, ww);
+                            JObject gegevens = new JObject();
+                            gegevens["Wachtwoord"] = ww;
+                            await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
+                            await DBManager.PutUserData(email, "Email", gegevens);
                             await Navigation.PopAsync();
                             //message da mailtje verstuurd is
                         }

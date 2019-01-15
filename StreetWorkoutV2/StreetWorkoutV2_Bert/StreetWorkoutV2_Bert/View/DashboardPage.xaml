@@ -71,8 +71,8 @@
                                         <Label.FormattedText >
                                             <FormattedString>
 
-                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="1300" />
-                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="/2000 " />
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblWaterGedronken"/>
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text=" / -- " x:Name="lblWaterTotaal"/>
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text="ml"/>
                                             </FormattedString>
                                         </Label.FormattedText>

@@ -64,8 +64,8 @@ namespace StreetWorkoutV2_Bert.View
                 if (EmailEntry.Text.ToLower().Contains('@'))
                 {
                     string email = EmailEntry.Text.Replace(" ", "");
-                    bool UserNameCheck = await DBManager.CheckUserNameAsync(UserNameEntry.Text);
-                    bool EmailCheck = await DBManager.CheckEmailAsync(email);
+                    bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
+                    bool EmailCheck = await DBManager.CheckUserData(email, "Email");
                     if (UserNameCheck == false && EmailCheck == false)
                     {
                         var response = await DBManager.RegistrerenAsync(email, UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));

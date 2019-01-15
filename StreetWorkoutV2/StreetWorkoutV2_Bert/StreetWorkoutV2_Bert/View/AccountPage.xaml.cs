@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using StreetWorkoutV2_Bert.Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -26,6 +28,14 @@ namespace StreetWorkoutV2_Bert.View
             MakeEntriesKcal();
             MakeEntriesOef();
 
+            Task.Run(async () =>
+            {
+                var data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                weightInput.Placeholder = data["Gewicht"].ToString();
+                ageInput.Placeholder = data["Leeftijd"].ToString();
+                heightInput.Placeholder = data["Lengte"].ToString();
+                waterInput.Placeholder = data["WaterDoel"].ToString();
+            });
         }
 
         private void MakeEntriesKcal()
@@ -102,7 +112,19 @@ namespace StreetWorkoutV2_Bert.View
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Debug.WriteLine("Saved");
+            Task.Run(async () =>
+            {
+                JObject user = new JObject();
+                user["Lengte"] = heightInput.Text.ToString();
+                user["Gewicht"] = weightInput.Text.ToString();
+                user["Leeftijd"] = ageInput.Text.ToString();
+                user["WaterDoel"] = waterInput.Text.ToString();
+                weightInput.Placeholder = user["Gewicht"].ToString();
+                ageInput.Placeholder = user["Leeftijd"].ToString();
+                heightInput.Placeholder = user["Lengte"].ToString();
+                waterInput.Placeholder = user["WaterDoel"].ToString();
+                await DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
+            });
         }
 
 

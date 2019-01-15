@@ -10,7 +10,22 @@ namespace StreetWorkoutV2_Bert.Model
     {
         [JsonProperty(propertyName: "user")]
         public JObject FullJson { get; set; }
-        public string Leeftijd { get { return FullJson["age"].ToString(); } }
+        private string _leeftijd;
+        public string Leeftijd
+        {
+            get
+            {
+                if (_leeftijd == null)
+                {
+                    return FullJson["age"].ToString();
+                }
+                else
+                {
+                    return _leeftijd;
+                };
+            }
+            set { _leeftijd = value; }
+        }
         private string _naam;
 
         public string Naam
@@ -27,8 +42,39 @@ namespace StreetWorkoutV2_Bert.Model
                 }; }
             set { _naam = value; }
         }
-        public string Lengte { get { return FullJson["height"].ToString(); } }
-        public string Gewicht { get { return FullJson["weight"].ToString(); } }
+        private string _lengte;
+        public string Lengte
+        {
+            get
+            {
+                if (_lengte == null)
+                {
+                    return FullJson["height"].ToString();
+                }
+                else
+                {
+                    return _lengte;
+                };
+            }
+            set { _lengte = value; }
+        }
+        private string _gewicht;
+        public string Gewicht
+        {
+            get
+            {
+                if (_gewicht == null)
+                {
+                    return FullJson["weight"].ToString();
+                }
+                else
+                {
+                    return _gewicht;
+                };
+            }
+            set { _gewicht = value; }
+        }
         public string API { get; set; }
+        public string WaterDoel { get; set; }
     }
 }

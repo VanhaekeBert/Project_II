@@ -27,6 +27,23 @@ namespace StreetWorkoutV2_Bert.Model
                 return builder.ToString();
             }
         }
+
+        public static async Task<string> MailService(string email, string naam)
+        {
+            JObject reg = new JObject();
+            reg["Email"] = email;
+            reg["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(reg);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/MailService";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            Debug.WriteLine(responseString.ToString());
+            return (responseString.ToString());
+        }
+
         public static async Task<bool> RegistrerenAsync(string email, string naam, string wachtwoord)
         {
             JObject reg = new JObject();
@@ -40,48 +57,6 @@ namespace StreetWorkoutV2_Bert.Model
             string url = "https://streetworkout.azurewebsites.net/api/Registreren";
             var message = await client.PostAsync(url, httpContent);
             return message.IsSuccessStatusCode;
-        }
-
-        public static async Task<bool> CheckUserNameAsync(string naam)
-        {
-            JObject checkNaam = new JObject();
-            checkNaam["Naam"] = naam;
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(checkNaam);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/CheckUserName";
-            var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
-            if (responseString.ToString() == "true")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static async Task<bool> CheckEmailAsync(string email)
-        {
-            JObject checkEmail = new JObject();
-            checkEmail["Email"] = email;
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(checkEmail);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/CheckMail";
-            var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
-            if (responseString.ToString() == "true")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         public static async Task<bool> LoginAsync(string naam, string wachtwoord)
@@ -106,98 +81,53 @@ namespace StreetWorkoutV2_Bert.Model
             }
         }
 
-        public static async Task<string> GetUserName(string email)
+
+        public static async Task<bool> CheckUserData(string value, string referentie)
         {
-            JObject ver = new JObject();
-            ver["Email"] = email;
+            JObject checkUserData = new JObject();
+            checkUserData[referentie] = value;
+            checkUserData["Referentie"] = referentie;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(ver);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/GetUserName";
+            string request = JsonConvert.SerializeObject(checkUserData);
+            StringContent httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/CheckUserData";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
-            return responseString.ToString();
+            if (responseString.ToString() == "true")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-
-        public static async Task<string> GetEmail(string naam)
+        public static async Task<JObject> GetUserData(string value, string referentie)
         {
-            JObject ver = new JObject();
-            ver["Naam"] = naam;
+            JObject userData = new JObject();
+            userData[referentie] = value;
+            userData["Referentie"] = referentie;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(ver);
+            var request = JsonConvert.SerializeObject(userData);
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/GetEmail";
+            string url = "https://streetworkout.azurewebsites.net/api/GetUserData";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
-            return responseString.ToString();
+            JObject gegevens = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
+            return gegevens;
         }
 
-        public static async Task<string> MailService(string email, string naam)
+        public static async Task<string> PutUserData(string value, string referentie, JObject data)
         {
-            JObject reg = new JObject();
-            reg["Email"] = email;
-            reg["Naam"] = naam;
+            data[referentie] = value;
+            data["Referentie"] = referentie;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(reg);
+            var request = JsonConvert.SerializeObject(data);
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/MailService";
-            var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
-            Debug.WriteLine(responseString.ToString());
-            return (responseString.ToString());
-        }
-
-        public static async Task<string> WachtwoordReset(string email, string wachtwoord)
-        {
-            JObject wwr = new JObject();
-            wwr["Email"] = email;
-            wwr["Wachtwoord"] = wachtwoord;
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(wwr);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/WachtwoordReset";
-            var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
-            return responseString.ToString();
-        }
-
-        public static async Task<string> CheckForAPI(string naam)
-        {
-            JObject CFA = new JObject();
-            CFA["Naam"] = naam;
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(CFA);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/CheckAPI";
-            var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
-            return responseString.ToString();
-        }
-
-        public static async Task<string> UpdateAPIFB(FitBitUser user)
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(user);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/APIUpdate";
-            var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
-            return responseString.ToString();
-        }
-
-        public static async Task<string> UpdateAPIP(PolarUser user)
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(user);
-            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-            string url = "https://streetworkout.azurewebsites.net/api/APIUpdate";
+            string url = "https://streetworkout.azurewebsites.net/api/PutUserData";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
             return responseString.ToString();

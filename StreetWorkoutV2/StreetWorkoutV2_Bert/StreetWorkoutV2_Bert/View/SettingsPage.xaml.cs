@@ -1,4 +1,6 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,13 +21,13 @@ namespace StreetWorkoutV2_Bert.View
             InitializeComponent();
             Task.Run(async () =>
             {
-                string api = await DBManager.CheckForAPI(Application.Current.Properties["Naam"].ToString());
-                if (api == "FitBit")
+                JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                if (data["API"].ToString() == "FitBit")
                 {
                     lblFBverbonden.Text = "Verbonden";
                     lblPverbonden.Text = "Niet Verbonden";
                 }
-                else if (api == "Polar")
+                else if (data["API"].ToString() == "Polar")
                 {
                     lblFBverbonden.Text = "Niet Verbonden";
                     lblPverbonden.Text = "Verbonden";
@@ -43,14 +45,17 @@ namespace StreetWorkoutV2_Bert.View
                 {
                     FitBitUser user = await FitBitManager.FitBitAsync();
                     user.Naam = Application.Current.Properties["Naam"].ToString();
-                    await DBManager.UpdateAPIFB(user);
-                    string api = await DBManager.CheckForAPI(Application.Current.Properties["Naam"].ToString());
-                    if (api == "FitBit")
+                    string text = JsonConvert.SerializeObject(user);
+                    JObject data = JsonConvert.DeserializeObject<JObject>(text);
+                    Debug.WriteLine(user.Leeftijd);
+                    await DBManager.PutUserData(user.Naam, "Naam", data);
+                    JObject api = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                    if (api["API"].ToString() == "FitBit")
                     {
                         lblFBverbonden.Text = "Verbonden";
                         lblPverbonden.Text = "Niet Verbonden";
                     }
-                    else if (api == "Polar")
+                    else if (api["API"].ToString() == "Polar")
                     {
                         lblFBverbonden.Text = "Niet Verbonden";
                         lblPverbonden.Text = "Verbonden";
@@ -68,15 +73,17 @@ namespace StreetWorkoutV2_Bert.View
                 {
                     PolarUser user = await PolarManager.GetUserData(PolarManager.PolarAsync());
                     user.Naam = Application.Current.Properties["Naam"].ToString();
+                    string text = JsonConvert.SerializeObject(user);
+                    JObject data = JsonConvert.DeserializeObject<JObject>(text);
                     Debug.WriteLine(user.Leeftijd);
-                    await DBManager.UpdateAPIP(user);
-                    string api = await DBManager.CheckForAPI(Application.Current.Properties["Naam"].ToString());
-                if (api == "FitBit")
+                    await DBManager.PutUserData(user.Naam, "Naam", data);
+                    JObject api = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                    if (api["API"].ToString() == "FitBit")
                     {
                         lblFBverbonden.Text = "Verbonden";
                         lblPverbonden.Text = "Niet Verbonden";
                     }
-                    else if (api == "Polar")
+                    else if (api["API"].ToString() == "Polar")
                     {
                         lblFBverbonden.Text = "Niet Verbonden";
                         lblPverbonden.Text = "Verbonden";

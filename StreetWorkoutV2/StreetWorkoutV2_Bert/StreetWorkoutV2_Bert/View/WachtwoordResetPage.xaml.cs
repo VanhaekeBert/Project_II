@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using Newtonsoft.Json.Linq;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -77,8 +78,10 @@ namespace StreetWorkoutV2_Bert.View
                 bool CheckOldWW = await DBManager.LoginAsync(Application.Current.Properties["Naam"].ToString(), DBManager.Encrypt(OldPasswordEntry.Text));
                 if (CheckOldWW)
                 {
-                    string email = await DBManager.GetEmail(Application.Current.Properties["Naam"].ToString());
-                    await DBManager.WachtwoordReset(email, DBManager.Encrypt(NewPasswordEntry.Text));
+                    JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                        JObject gegevens = new JObject();
+                        gegevens["Wachtwoord"] = DBManager.Encrypt(NewPasswordEntry.Text);
+                    await DBManager.PutUserData(data["Email"].ToString(), "Email", gegevens);
                     await Navigation.PopAsync();
                     //je wachtwoord is succesvol veranderd
                 }

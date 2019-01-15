@@ -1,4 +1,6 @@
-﻿using Rg.Plugins.Popup.Services;
+﻿using Newtonsoft.Json.Linq;
+using Rg.Plugins.Popup.Services;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,12 @@ namespace StreetWorkoutV2_Bert.View
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
-            //lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            Task.Run(async () =>
+            {
+                JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
+            });
 
             imgQr.GestureRecognizers.Add(new TapGestureRecognizer
             {
