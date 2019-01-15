@@ -162,6 +162,18 @@
     <None Remove="Asset\qr.png" />
     <None Remove="Asset\qrcode.png" />
     <None Remove="Asset\spier.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Biceps.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Billen.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Borst.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Buikspier.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Hamstring.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Kuiten.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Onderrug.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Quadriceps.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Rug.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Schouders.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Schuine_Buikspieren.png" />
+    <None Remove="Asset\Spier_Afbeeldingen\Triceps.png" />
     <None Remove="Asset\StartWorkout.png" />
     <None Remove="Asset\StartWorkout_Cover.png" />
     <None Remove="Asset\toestel.png" />
@@ -312,6 +324,18 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Profile_Picture.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Biceps.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Billen.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Borst.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Buikspier.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Hamstring.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Kuiten.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Onderrug.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Quadriceps.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Rug.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Schouders.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Schuine_Buikspieren.png" />
+    <EmbeddedResource Include="Asset\Spier_Afbeeldingen\Triceps.png" />
     <EmbeddedResource Include="Asset\StartWorkout_Cover.png" />
   </ItemGroup>
 
