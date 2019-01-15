@@ -39,31 +39,35 @@ namespace StreetWorkoutV2_Bert.View
             string json = oSR.ReadToEnd();
             Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
             //-----------------------------------------------
-
-
             if (uitvoering == "Toestel")
             {
                 //-----TOESTEL---------------------
                 List<string> Filteredlisttoestel = new List<string>();
+                Dictionary<string, int> Toestel = new Dictionary<string, int>();
                 lblTitle.Text = "Toestellen";
-                foreach (Oefening duts in Oefeningslijst)
+                foreach (Oefening oefening in Oefeningslijst)
                 {
-                    PickerClass toestel = new PickerClass() { Name = duts.Toestel };
+                    PickerClass toestel = new PickerClass() { Name = oefening.Toestel };
                     if (!Filteredlisttoestel.Contains(toestel.Name))
                     {
                         Filteredlisttoestel.Add(toestel.Name);
+                        Toestel.Add(toestel.Name, toestel.AantalOefeningen);
                     }
-
+                    else
+                    {
+                        Toestel[toestel.Name] += 1;
+                    }
                 }
-                List<PickerClass> toestels = new List<PickerClass>();
+                List<PickerClass> toestellen = new List<PickerClass>();
 
-                foreach (string toestel in Filteredlisttoestel)
+                
+                foreach (var toestel in Toestel)
                 {
-                    PickerClass toestelname = new PickerClass() { Name = toestel, Type = uitvoering };
-                    toestels.Add(toestelname);
+                    PickerClass toestelname = new PickerClass() { Name = toestel.Key, AantalOefeningen = toestel.Value, Type = "Toestel" };
+                    toestellen.Add(toestelname);
                 }
                 //Listview opvullen
-                Toestellen.ItemsSource = toestels;
+                Toestellen.ItemsSource = toestellen;
                 //----------------------------------------------------------
             }
 
@@ -71,26 +75,32 @@ namespace StreetWorkoutV2_Bert.View
             {
                 //-----SPIER---------------------
                 List<string> Filteredlist = new List<string>();
+                Dictionary<string, int> Spier = new Dictionary<string, int>();
                 lblTitle.Text = "Spiergroepen";
+                
                 foreach (Oefening duts in Oefeningslijst)
                 {
                     PickerClass toestel = new PickerClass() { Name = duts.Spiergroep };
                     if (!Filteredlist.Contains(toestel.Name))
                     {
+                        
                         Filteredlist.Add(toestel.Name);
+                        Spier.Add(toestel.Name, toestel.AantalOefeningen);
                     }
-
+                    else
+                    {
+                        Spier[toestel.Name] += 1;
+                    }
                 }
-                List<PickerClass> spiergroeps = new List<PickerClass>();
+                List<PickerClass> spiergroepen = new List<PickerClass>();
 
-                foreach (string spiergroepen in Filteredlist)
+                foreach (var spier in Spier)
                 {
-                    PickerClass spiergroep = new PickerClass() { Name = spiergroepen, Type = uitvoering };
-                    spiergroeps.Add(spiergroep);
+                    PickerClass spiernaam = new PickerClass() { Name = spier.Key, AantalOefeningen=spier.Value , Type = uitvoering };
+                    spiergroepen.Add(spiernaam);
                 }
                 //Listview opvullen
-                Toestellen.ItemsSource = spiergroeps;
-
+                Toestellen.ItemsSource = spiergroepen;
                 //----------------------------------------------------------
             }
             this.BackgroundColor = Color.FromHex("2B3049");
