@@ -26,6 +26,7 @@ namespace StreetWorkoutV2_Bert.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microcharts.Droid.Resource.String.library_name = global::StreetWorkoutV2_Bert.Droid.Resource.String.library_name;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.slide_out_left;
 			global::Xamarin.Auth.Resource.Attribute.font = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.font;
@@ -127,6 +128,7 @@ namespace StreetWorkoutV2_Bert.Droid
 			global::Xamarin.Auth.Resource.Layout.notification_template_media_custom = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_media_custom;
 			global::Xamarin.Auth.Resource.Layout.notification_template_part_chronometer = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_part_chronometer;
 			global::Xamarin.Auth.Resource.Layout.notification_template_part_time = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Auth.Resource.String.library_name = global::StreetWorkoutV2_Bert.Droid.Resource.String.library_name;
 			global::Xamarin.Auth.Resource.String.status_bar_notification_info_overflow = global::StreetWorkoutV2_Bert.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::Xamarin.Auth.Resource.String.title_activity_webview = global::StreetWorkoutV2_Bert.Droid.Resource.String.title_activity_webview;
 			global::Xamarin.Auth.Resource.Style.TextAppearance_Compat_Notification = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification;
@@ -4210,6 +4212,9 @@ namespace StreetWorkoutV2_Bert.Droid
 			
 			// aapt resource value: 0x7f080036
 			public const int character_counter_pattern = 2131230774;
+			
+			// aapt resource value: 0x7f08003d
+			public const int library_name = 2131230781;
 			
 			// aapt resource value: 0x7f080001
 			public const int mr_button_content_description = 2131230721;
