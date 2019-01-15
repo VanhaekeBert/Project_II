@@ -3,6 +3,7 @@ using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -44,7 +45,7 @@ namespace StreetWorkoutV2_Bert.View
             {
                 //-----TOESTEL---------------------
                 List<string> Filteredlisttoestel = new List<string>();
-
+                lblTitle.Text = "Toestellen";
                 foreach (Oefening duts in Oefeningslijst)
                 {
                     Toestel toestel = new Toestel() { Name = duts.Toestel };
@@ -70,7 +71,7 @@ namespace StreetWorkoutV2_Bert.View
             {
                 //-----SPIER---------------------
                 List<string> Filteredlist = new List<string>();
-
+                lblTitle.Text = "Spiergroepen";
                 foreach (Oefening duts in Oefeningslijst)
                 {
                     Spiergroep toestel = new Spiergroep() { Name = duts.Spiergroep };

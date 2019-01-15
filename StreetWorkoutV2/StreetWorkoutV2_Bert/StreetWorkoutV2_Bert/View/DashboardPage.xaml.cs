@@ -42,13 +42,5 @@ namespace StreetWorkoutV2_Bert.View
             await Navigation.PushAsync(new Picker_Toestel_Page("Toestel"));
         }
 
-
-
-        protected override bool OnBackButtonPressed()
-        {
-            return true;
-        }
-
-
     }
 }

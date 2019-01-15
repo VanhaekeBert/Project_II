@@ -37,7 +37,7 @@
                 </StackLayout>
                 <!-- ================= -->
                 <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
-                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34" Text="Toestellen" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34" x:Name="lblTitle" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                 </StackLayout>
                 <!--<ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="StartAndExpand">
                     <ListView.ItemTemplate>
