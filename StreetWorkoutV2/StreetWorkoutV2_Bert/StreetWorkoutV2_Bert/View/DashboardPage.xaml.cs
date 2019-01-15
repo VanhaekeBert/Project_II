@@ -16,7 +16,7 @@ namespace StreetWorkoutV2_Bert.View
         public DashboardPage()
         {
             InitializeComponent();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundDashboard_2x.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundDashboard_2x.png");
             ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Vuur.png");
             ImgWater.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Beker.png");
             ImgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.StartWorkout.png");
@@ -27,20 +27,38 @@ namespace StreetWorkoutV2_Bert.View
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             //lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
 
+            imgQr.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    await Navigation.PushAsync(new QrPage());
+                })
+            });
+            imgSpier.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                await Navigation.PushAsync(new Picker_Toestel_Page("Spiergroep"));  
+                })
+            });
+            imgToestel.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                await Navigation.PushAsync(new Picker_Toestel_Page("Toestel"));  
+                })
+            });
         }
 
-        private async Task QrTapGestureRecognizer_Tapped(object sender, EventArgs e)
+         
+
+
+
+        protected override bool OnBackButtonPressed()
         {
-            await Navigation.PushAsync(new QrPage());
-        }
-        private async Task SpierTapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Picker_Toestel_Page("Spiergroep"));
-        }
-        private async Task ToestelTapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Picker_Toestel_Page("Toestel"));
+            return true;
         }
 
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    PopupNavigation.Instance.PushAsync(new PopupView2());
+        //}
     }
 }

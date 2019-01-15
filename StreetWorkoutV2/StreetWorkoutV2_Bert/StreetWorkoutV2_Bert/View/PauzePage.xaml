@@ -10,7 +10,7 @@
             <!-- Background -->
             <!-- KEJT BERT -->
             <Image
-            x:Name="BackgroundImage"
+            x:Name="BckgrImage"
             Aspect="AspectFill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
@@ -56,7 +56,7 @@
                                     <RowDefinition Height="22"/>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" Text="Verstreken Tijd" VerticalOptions="Center"/>
-                                <Label Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="36" TextColor="{StaticResource LightColor}" Text="00 : 45 / 01 : 00" VerticalOptions="Center"/>
+                                <Label Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="36" TextColor="{StaticResource LightColor}" Text="00 : 45 / 01 : 00" VerticalOptions="Center" x:Name="TimerText"/>
                                 <Frame Grid.Row="2" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="275" HeightRequest="5" BackgroundColor="#2B3049" CornerRadius="100" BorderColor="{StaticResource Maincolor}" Margin="0,12,0,0"/>
                                 <Frame Grid.Row="2" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" HeightRequest="5" BackgroundColor="{StaticResource Maincolor}" CornerRadius="100" Margin="0,12,0,0" />
                             </Grid>

@@ -15,7 +15,7 @@
                 <RelativeLayout Padding="0">
                     <!-- Background -->
                     <Image
-                    x:Name="BackgroundImage"
+                    x:Name="BckgrImage"
                     Aspect="AspectFill"
                     HorizontalOptions="FillAndExpand"
                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"

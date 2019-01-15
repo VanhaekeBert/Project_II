@@ -10,7 +10,7 @@
         <RelativeLayout Padding="0">
             <!-- Background -->
             <Image
-            x:Name="BackgroundImage"
+            x:Name="BckgrImage"
             Aspect="Fill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">

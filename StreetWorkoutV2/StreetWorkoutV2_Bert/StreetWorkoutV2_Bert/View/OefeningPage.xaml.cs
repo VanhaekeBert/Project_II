@@ -15,7 +15,7 @@ namespace StreetWorkoutV2_Bert.View
 		public OefeningPage ()
 		{
 			InitializeComponent ();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Background.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Background.png");
             OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Cover.png");
             OefeningImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.triceps_extensions_easy_1.jpg");
             //Back button + heartbeat

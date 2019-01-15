@@ -17,51 +17,63 @@ namespace StreetWorkoutV2_Bert.View
 		public WachtwoordResetPage ()
 		{
             InitializeComponent();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
             eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
             eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
             backbuttonimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             NewPasswordEntry.IsPassword = true;
-            eyeimagenew.GestureRecognizers.Add(new TapGestureRecognizer(NewPasswordEye));
-            eyeimageold.GestureRecognizers.Add(new TapGestureRecognizer(OldPasswordEye));
-            backbutton.GestureRecognizers.Add(new TapGestureRecognizer(OnTapBack));
+
+
+            eyeimagenew.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command( () => {
+                    if (NewPasswordEntry.IsPassword == true)
+                    {
+                        NewPasswordEntry.IsPassword = false;
+                        eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
+                    }
+                    else
+                    {
+                        NewPasswordEntry.IsPassword = true;
+                        eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
+                    }
+                })
+            });
+
+            eyeimageold.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command( () => {
+                    if (OldPasswordEntry.IsPassword == true)
+                    {
+                        OldPasswordEntry.IsPassword = false;
+                        eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
+                    }
+                    else
+                    {
+                        OldPasswordEntry.IsPassword = true;
+                        eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
+                    }
+                })
+            });
+
+            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    await Navigation.PopAsync();
+                })
+            });
+
             //Password_reset.GestureRecognizers.Add(new TapGestureRecognizer(OnTapPassword_reset));
         }
-        private async void OnTapBack(Xamarin.Forms.View arg1, object arg2)
-        {
-            await Navigation.PopAsync( );
-        }
-        private void NewPasswordEye(Xamarin.Forms.View arg1, object arg2)
-        {
-            if (NewPasswordEntry.IsPassword == true)
-            {
-                NewPasswordEntry.IsPassword = false;
-                eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
-            }
-            else
-            {
-                NewPasswordEntry.IsPassword = true;
-                eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
-            }
-        }
-        private void OldPasswordEye(Xamarin.Forms.View arg1, object arg2)
-        {
-            if (OldPasswordEntry.IsPassword == true)
-            {
-                OldPasswordEntry.IsPassword = false;
-                eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
-            }
-            else
-            {
-                OldPasswordEntry.IsPassword = true;
-                eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
-            }
-        }
+
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
             if (OldPasswordEntry.Text != null && NewPasswordEntry.Text != null)
             {
+                if (NewPasswordEntry.Text.Length >= 8)
+                {
+              
                 bool CheckOldWW = await DBManager.LoginAsync(Application.Current.Properties["Naam"].ToString(), DBManager.Encrypt(OldPasswordEntry.Text));
                 if (CheckOldWW)
                 {
@@ -72,12 +84,24 @@ namespace StreetWorkoutV2_Bert.View
                 }
                 else
                 {
+
                     //dit is nie je oud wachtwoord
+                    ErrorLabel.Text = "Uw oude wachtwoord is niet correct";
+                    ErrorLabel.IsVisible = true;
+                }
+            }
+                else
+                {
+                    //vult de shit aan
+                    ErrorLabel.Text = "Uw nieuw wachtwoord moet minstens 8 tekens bevatten";
+                    ErrorLabel.IsVisible = true;
                 }
             }
             else
             {
                 //vult de shit aan
+                ErrorLabel.Text = "vult de shit aan";
+                ErrorLabel.IsVisible = true;
             }
         }
     }

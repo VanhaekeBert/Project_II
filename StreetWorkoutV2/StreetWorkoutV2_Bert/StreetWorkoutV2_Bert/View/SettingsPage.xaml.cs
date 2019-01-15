@@ -36,7 +36,7 @@ namespace StreetWorkoutV2_Bert.View
                     lblPverbonden.Text = "Niet Verbonden";
                 }
             });
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundSettings_2x.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundSettings_2x.png");
             var tapGestureRecognizerFB = new TapGestureRecognizer();
             tapGestureRecognizerFB.Tapped += (s, e) => {
                 Task.Run(async () =>

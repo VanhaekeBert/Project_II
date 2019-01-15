@@ -99,13 +99,18 @@ namespace StreetWorkoutV2_Bert.View
             //Listview opvullen
             Oefeningen.ItemsSource = Finallijst;
 
-            BackButton.GestureRecognizers.Add(new TapGestureRecognizer(ontap));
+            BackButton.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new  Command(async() => {
+                   await Navigation.PopAsync();
+                })
+            });
 
         }
 
-        private async void ontap(Xamarin.Forms.View arg1, object arg2)
-        {
-            await Navigation.PopAsync();
-        }
+        //private async void ontap(Xamarin.Forms.View arg1, object arg2)
+        //{
+            
+        //}
     }
 }

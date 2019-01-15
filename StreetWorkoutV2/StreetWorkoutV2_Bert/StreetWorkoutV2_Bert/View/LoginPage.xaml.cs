@@ -17,43 +17,56 @@ namespace StreetWorkoutV2_Bert.View
         public LoginPage()
         {
             InitializeComponent();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
             backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             PasswordEntry.IsPassword = true;
-            eyeimage.GestureRecognizers.Add(new TapGestureRecognizer(OnTap));
-            BackRegister.GestureRecognizers.Add(new TapGestureRecognizer(OnTapRegister));
-            Password_reset.GestureRecognizers.Add(new TapGestureRecognizer(OnTapPassword_reset));
+
+            Password_reset.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    await Navigation.PushAsync(new ForgotPasswordPage());
+                })
+            });
+
+            BackRegister.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    await Navigation.PushAsync(new RegisterPage());
+                })
+            });
+
+            eyeimage.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => {
+                    if (PasswordEntry.IsPassword == true)
+                    {
+                        PasswordEntry.IsPassword = false;
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
+                    }
+                    else
+                    {
+                        PasswordEntry.IsPassword = true;
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
+                    }
+                })
+            });
+
+
+
+
         }
 
-        private async void OnTapPassword_reset(Xamarin.Forms.View arg1, object arg2)
-        {
-            await Navigation.PushAsync(new ForgotPasswordPage());
-        }
 
-        private async void OnTapRegister(Xamarin.Forms.View arg1, object arg2)
-        {
-            await Navigation.PushAsync(new RegisterPage());
-        }
+
+
 
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
 
-        private void OnTap(Xamarin.Forms.View arg1, object arg2)
-        {
-            if (PasswordEntry.IsPassword == true)
-            {
-                PasswordEntry.IsPassword = false;
-                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
-            }
-            else
-            {
-                PasswordEntry.IsPassword = true;
-                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
-            }
-        }
+
 
         private async void Button_Clicked(object sender, EventArgs e)
         {

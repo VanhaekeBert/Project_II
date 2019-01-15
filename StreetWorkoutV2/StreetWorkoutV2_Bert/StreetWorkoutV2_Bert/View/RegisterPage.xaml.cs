@@ -18,25 +18,38 @@ namespace StreetWorkoutV2_Bert.View
 		public RegisterPage ()
 		{
 			InitializeComponent();
-            BackgroundImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
             PasswordEntry.IsPassword = true;
-            eyeimage.GestureRecognizers.Add(new TapGestureRecognizer(OnTap));
-            Login.GestureRecognizers.Add(new TapGestureRecognizer(LoginTap));
+
+            eyeimage.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command( () => {
+                    if (PasswordEntry.IsPassword == true)
+                    {
+                        PasswordEntry.IsPassword = false;
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
+                    }
+                    else
+                    {
+                        PasswordEntry.IsPassword = true;
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
+                    }
+                })
+            });
+            Login.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async() => {
+                    await Navigation.PushAsync(new LoginPage());
+                })
+            });
+
+
         }
 
         private void OnTap(Xamarin.Forms.View arg1, object arg2)
         {
-            if (PasswordEntry.IsPassword == true)
-            {
-                PasswordEntry.IsPassword = false;
-                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye-off.png");
-            }
-            else
-            {
-                PasswordEntry.IsPassword = true;
-                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
-            }
+           
         }
 
         private async void LoginTap(Xamarin.Forms.View arg1, object arg2)

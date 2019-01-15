@@ -36,9 +36,10 @@ namespace StreetWorkoutV2_Bert.Droid
                 var radius = Element.CornerRadius;
                 var borderThickness = 1f;
                 float strokeWidth = 0f;
+                
                 if (borderThickness > 0)
                 {
-                    var logicalDensity = Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density;
+                    var logicalDensity = Forms.Context.Resources.DisplayMetrics.Density;
                     strokeWidth = (float)Math.Ceiling(borderThickness * logicalDensity + .5f);
                 }
 
@@ -68,8 +69,9 @@ namespace StreetWorkoutV2_Bert.Droid
                 path.Dispose();
                 return result;
             }
-            catch (Exception ex)
+            catch 
             {
+                
             }
             return base.DrawChild(canvas, child, drawingTime);
         }

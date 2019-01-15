@@ -23,6 +23,11 @@ namespace StreetWorkoutV2_Bert.Droid
 {
     public class CustomEntryRenderer : EntryRenderer
     {
+        public CustomEntryRenderer(Context context)
+           : base(context)
+        {
+        }
+
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
@@ -34,7 +39,7 @@ namespace StreetWorkoutV2_Bert.Droid
                 gd.SetStroke(2, global::Android.Graphics.Color.LightGray);
                 Control.Elevation = 6.0f;
                 Control.TranslationY = 3.0f;
-                this.Control.SetBackgroundDrawable(gd);
+                this.Control.SetBackground(gd);
                 Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Argb(99, 0,0,0)));
                 Control.SetPadding(60, 50, 0, 0);
 
