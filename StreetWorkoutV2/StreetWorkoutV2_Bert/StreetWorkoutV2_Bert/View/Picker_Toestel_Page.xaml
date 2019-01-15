@@ -92,11 +92,14 @@
                                             <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*"/>
-                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="2.5*"/>
                                                     <ColumnDefinition Width="0.5*"/>
                                                 </Grid.ColumnDefinitions>
                                                 <Image Grid.Column="0" Source="{Binding Image}" Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                                                <Label Margin="10,2,0,0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                                <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                    <Label Margin="10,2,0,0"  HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                                    <Label Margin="10,0,0,0"  HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding AantalOefeningen, StringFormat='Aantal oefeningen: {0}'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                </StackLayout>
                                                 <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="2" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
                                             </Grid>
                                         </Grid>

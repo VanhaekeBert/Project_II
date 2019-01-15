@@ -21,6 +21,8 @@ namespace StreetWorkoutV2_Bert.Model
         [JsonProperty("afbeeldingen")]
         public List<string> Afbeeldingen { get; set; }
 
+        public int AantalOefeningen { get; set; } = 1;
+
 
         public List<ImageSource> AfbeeldingenResource
         {

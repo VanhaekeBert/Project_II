@@ -45,6 +45,7 @@ namespace StreetWorkoutV2_Bert.View
             {
                 //-----TOESTEL---------------------
                 List<string> Filteredlisttoestel = new List<string>();
+                Dictionary<string, int> Toestel = new Dictionary<string, int>();
                 lblTitle.Text = "Toestellen";
                 foreach (Oefening duts in Oefeningslijst)
                 {
@@ -52,19 +53,25 @@ namespace StreetWorkoutV2_Bert.View
                     if (!Filteredlisttoestel.Contains(toestel.Name))
                     {
                         Filteredlisttoestel.Add(toestel.Name);
+                        Toestel.Add(toestel.Name, toestel.AantalOefeningen);
+                    }
+                    else
+                    {
+                        Toestel[toestel.Name] += 1;
                     }
 
                 }
-                List<Toestel> toestels = new List<Toestel>();
 
-                foreach (string toestel in Filteredlisttoestel)
+                List<Toestel> toestellen = new List<Toestel>();
+                foreach (var toestel in Toestel)
                 {
-                    Toestel toestelname = new Toestel() { Name = toestel };
-                    toestels.Add(toestelname);
+                    Toestel toestelname = new Toestel() { Name = toestel.Key, AantalOefeningen = toestel.Value  };
+
+                    toestellen.Add(toestelname);
                 }
-                //Listview opvullen
-                Toestellen.ItemsSource = toestels;
-                //----------------------------------------------------------
+                Toestellen.ItemsSource = toestellen;
+                
+                
             }
 
             else
