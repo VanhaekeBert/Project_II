@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace StreetWorkoutV2_Bert
 {
-    public class CustomEntry : Entry
+    public class CustomSmallEntry:Entry
     {
 
     }

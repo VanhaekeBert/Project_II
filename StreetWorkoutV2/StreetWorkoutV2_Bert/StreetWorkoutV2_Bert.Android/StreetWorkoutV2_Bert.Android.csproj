@@ -75,6 +75,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomSmallEntryRenderer.cs" />
     <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="CustomFrameRenderer.cs" />
     <Compile Include="CustomUrlSchemeInterceptorActivity.cs" />

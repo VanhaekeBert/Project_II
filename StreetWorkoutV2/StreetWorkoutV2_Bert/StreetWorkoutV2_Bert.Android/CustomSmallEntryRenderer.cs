@@ -17,11 +17,11 @@ using StreetWorkoutV2_Bert.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
+[assembly: ExportRenderer(typeof(CustomSmallEntry), typeof(CustomSmallEntryRenderer))]
 
 namespace StreetWorkoutV2_Bert.Droid
 {
-    public class CustomEntryRenderer : EntryRenderer
+    public class CustomSmallEntryRenderer : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
@@ -30,13 +30,14 @@ namespace StreetWorkoutV2_Bert.Droid
             {
                 GradientDrawable gd = new GradientDrawable();
                 gd.SetColor(global::Android.Graphics.Color.White);
-                gd.SetCornerRadius(100);
+                gd.SetCornerRadius(1000);
                 gd.SetStroke(2, global::Android.Graphics.Color.LightGray);
                 Control.Elevation = 6.0f;
                 Control.TranslationY = 3.0f;
                 this.Control.SetBackgroundDrawable(gd);
                 Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Argb(99, 0,0,0)));
-                Control.SetPadding(60, 50, 0, 0);
+                Control.SetPadding(0, 28, 0, 0);
+                Control.SetHintTextColor(global::Android.Graphics.Color.Gray);
 
             }
         }
