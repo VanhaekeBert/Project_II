@@ -25,7 +25,7 @@ namespace StreetWorkoutV2_Bert.View
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             GoToOefeningen.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
             OefeningImage.Source = oefening.AfbeeldingenResource[0];
-            TimerStarter();
+            
             if (Aantal_keeper == "1/3")
             {
                 Aantal_keeper = "2/3";
@@ -34,6 +34,7 @@ namespace StreetWorkoutV2_Bert.View
             {
                 Aantal_keeper = "3/3";
             }
+
             Next_exercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {

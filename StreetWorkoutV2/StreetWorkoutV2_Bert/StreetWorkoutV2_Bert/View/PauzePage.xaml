@@ -62,7 +62,7 @@
                         </renderers:GradientLayout>
                     </custom:CustomFrame>
 
-                    <custom:CustomFrame Grid.Row="3" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}" Padding="0" Margin="0,30,0,0">
+                    <custom:CustomFrame x:Name="Next_exercise" Grid.Row="3" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}" Padding="0" Margin="0,30,0,0">
                         <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
                             <Grid RowSpacing="0" ColumnSpacing="0" >
                                 <Grid.RowDefinitions>
