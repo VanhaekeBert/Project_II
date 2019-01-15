@@ -43,12 +43,12 @@
                 <ListView Margin="24,40,24,0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <custom:CustomFrame CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,0,0,22">
+                            <ViewCell >
+                                <custom:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,0,0,22">
                                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#2D324B"
                                             Mode="ToTopLeft">
-                                        <Grid Padding="0" Margin="0" RowSpacing="0" HeightRequest="100" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                        <Grid  Padding="0" Margin="0" RowSpacing="0" HeightRequest="100" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
                                             <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="2*"/>
@@ -60,7 +60,7 @@
                                                     <Label Margin="10,2,0,0"  HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding Name}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
                                                     <Label Margin="10,-5,0,0"  HorizontalOptions="Start" VerticalOptions="Center"  Text="{Binding AantalOefeningen, StringFormat='Aantal oefeningen: {0}'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                 </StackLayout>
-                                                <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="2" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
+                                                <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="2"  VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
                                             </Grid>
                                         </Grid>
                                     </renderers:GradientLayout>

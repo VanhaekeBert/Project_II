@@ -6,118 +6,117 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
-using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using StreetWorkoutV2_Bert;
 using StreetWorkoutV2_Bert.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using static Java.Util.ResourceBundle;
 
 [assembly: ExportRenderer(typeof(CustomFrame), typeof(CustomFrameRenderer))]
 namespace StreetWorkoutV2_Bert.Droid
 {
-    public class CustomFrameRenderer:FrameRenderer
+    public class CustomFrameRenderer : Xamarin.Forms.Platform.Android.AppCompat.FrameRenderer
     {
-        public CustomFrameRenderer(Context context) : base(context)
+        public CustomFrameRenderer(Context context)
+          : base(context)
         {
-        }
-
-        protected override bool DrawChild(Canvas canvas, Android.Views.View child, long drawingTime)
-        {
-
-            try
-            {
-
-                var radius = Element.CornerRadius;
-                var borderThickness = 1f;
-                float strokeWidth = 0f;
-                
-                if (borderThickness > 0)
-                {
-                    var logicalDensity = Forms.Context.Resources.DisplayMetrics.Density;
-                    strokeWidth = (float)Math.Ceiling(borderThickness * logicalDensity + .5f);
-                }
-
-                radius -= strokeWidth / 2f;
-
-                var path = new Path();
-
-                var rect = new RectF(0, 0, Width, Height);
-                float rx = Forms.Context.ToPixels(Element.CornerRadius);
-                float ry = Forms.Context.ToPixels(Element.CornerRadius);
-                path.AddRoundRect(rect, rx, ry, Path.Direction.Ccw);
-
-                canvas.Save();
-                canvas.ClipPath(path);
-
-                //can add code for filling canvas - frame background here, gradient whatever
-
-                //clip children
-                var result = base.DrawChild(canvas, child, drawingTime);
-
-                rect.Dispose();
-                path.Dispose();
-                canvas.Restore();
-
-                //can add code to stroke frame border here, look as image circle plugin renderer for more info
-
-                path.Dispose();
-                return result;
-            }
-            catch 
-            {
-                
-            }
-            return base.DrawChild(canvas, child, drawingTime);
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
             base.OnElementChanged(e);
 
-            if (Element == null)
+            if (e.NewElement != null)
             {
-                return;
+                var drawable = new GradientDrawable();
+                UpdateBackgroundColor(drawable);
+                UpdateCornerRadius(drawable);
+                UpdateOutlineColor(drawable);
+                UpdateShadow();
             }
-
-            UpdateBackground();
-            UpdateElevation();
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (string.Equals(e.PropertyName, "BackgroundColor"))
-            {
-                UpdateBackground();
-            }
-            else if (string.Equals(e.PropertyName, "HasShadow"))
-            {
-
-                UpdateElevation();
-            }
+          
         }
 
-        private void UpdateBackground()
+       
+
+        private void UpdateCornerRadius(GradientDrawable drawable)
         {
-            //int[] colors = { Element.BackgroundColor.ToAndroid(), Element.BackgroundColor.ToAndroid() };
-            int[] colors = { Android.Graphics.Color.Red, Android.Graphics.Color.Red };
-            var gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LeftRight, colors);
-            
-            this.SetBackground(gradientDrawable);
+            drawable.SetCornerRadius(Element.CornerRadius);
         }
 
-        private void UpdateElevation()
+        private void UpdateOutlineColor(GradientDrawable drawable)
         {
-            
-            this.Elevation = 25;
-            
+            drawable.SetStroke(1, Element.OutlineColor.ToAndroid());
         }
+
+        private void UpdateBackgroundColor(GradientDrawable drawable)
+        {
+            drawable.SetColor(Element.BackgroundColor.ToAndroid());
+        }
+
+        private void UpdateShadow()
+        {
+     
+            if (Element.HasShadow)
+            {
+                Elevation = 10;
+            }
+            else
+            {
+                Elevation = 0;
+            }
+        }
+        //public CustomFrameRenderer(Context context)
+        //  : base(context)
+        //{
+        //}
+
+        //protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
+        //{
+
+        //    base.OnElementChanged(e);
+        //    if (e.NewElement == null)
+        //        return;
+        //    SetBackgroundResource(Resource.Drawable.shadow);
+        //    Frame frame = Element as Frame;
+        //    frame.CornerRadius = 100;
+
+        //    UpdateElevation();
+        //}
+
+
+        //private void UpdateElevation()
+        //{
+
+
+        //    // we need to reset the StateListAnimator to override the setting of Elevation on touch down and release.
+        //  //
+
+        //    // set the elevation manually
+        //    ViewCompat.SetElevation(this, 50);
+
+
+        //}
+
+        //protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        //{
+        //    base.OnElementPropertyChanged(sender, e);
+        //    if (e.PropertyName == "Elevation")
+        //    {
+        //        UpdateElevation();
+        //    }
+        //}
+
     }
 }

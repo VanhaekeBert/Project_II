@@ -33,6 +33,7 @@ namespace StreetWorkoutV2_Bert.View
             var assembly = typeof(Oefening).GetTypeInfo().Assembly;
             Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2_Bert.Asset.oefeningenV2.json");
 
+            
             //bytes uit het bestand gaan inlezen en verwerken
             StreamReader oSR = new StreamReader(stream);
 

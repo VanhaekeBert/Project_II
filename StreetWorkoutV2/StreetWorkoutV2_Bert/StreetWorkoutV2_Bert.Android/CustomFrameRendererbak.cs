@@ -11,14 +11,20 @@ using Android.Runtime;
 using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
+using StreetWorkoutV2_Bert;
+using StreetWorkoutV2_Bert.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: ExportRenderer(typeof(CustomFrame), typeof(CustomFrameRendererbak))]
 namespace StreetWorkoutV2_Bert.Droid
 {
-    public class MaterialFrameRenderer: Xamarin.Forms.Platform.Android.AppCompat.FrameRenderer
+    public class CustomFrameRendererbak : Xamarin.Forms.Platform.Android.AppCompat.FrameRenderer
     {
-  
+        public CustomFrameRendererbak(Context context)
+          : base(context)
+        {
+        }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
@@ -32,14 +38,15 @@ namespace StreetWorkoutV2_Bert.Droid
 
         private void UpdateElevation()
         {
-            var materialFrame = (MaterialFrame)Element;
+          
 
             // we need to reset the StateListAnimator to override the setting of Elevation on touch down and release.
             Control.StateListAnimator = new Android.Animation.StateListAnimator();
 
             // set the elevation manually
-            ViewCompat.SetElevation(this, materialFrame.Elevation);
-            ViewCompat.SetElevation(Control, materialFrame.Elevation);
+            ViewCompat.SetElevation(this, 20);
+            ViewCompat.SetElevation(Control, 20);
+
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -50,5 +57,6 @@ namespace StreetWorkoutV2_Bert.Droid
                 UpdateElevation();
             }
         }
+
     }
 }

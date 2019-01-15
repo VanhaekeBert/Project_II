@@ -53,7 +53,7 @@
                                     <RowDefinition Height="22"/>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" Text="Verstreken Tijd" VerticalOptions="Center"/>
-                                <Label Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="36" TextColor="{StaticResource LightColor}" Text="00 : 45 / 01 : 00" VerticalOptions="Center" x:Name="TimerText"/>
+                                <Label Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="36" TextColor="{StaticResource LightColor}" Text="00 : 00 / 01 : 00" VerticalOptions="Center" x:Name="TimerText"/>
                                 <!--<Frame Grid.Row="2" HorizontalOptions="Start" VerticalOptions="Center" x:Name="TimerBarOuter" WidthRequest="275" HeightRequest="5" BackgroundColor="#2B3049" CornerRadius="100" BorderColor="{StaticResource Maincolor}" Margin="0,12,0,0"/>-->
 
                                 <ProgressBar ProgressColor="{StaticResource Maincolor}" Grid.Row="2"  Progress="0.0" HorizontalOptions="Center" VerticalOptions="Center" x:Name="TimerBarInner" WidthRequest="310" HeightRequest="10"  Margin="0,12,0,0"></ProgressBar>
