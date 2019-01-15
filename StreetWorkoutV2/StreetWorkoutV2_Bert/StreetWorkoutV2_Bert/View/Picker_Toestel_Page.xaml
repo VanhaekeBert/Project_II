@@ -40,7 +40,7 @@
                     <Label  FontFamily="{StaticResource BoldFont}" FontSize="34" x:Name="lblTitle" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                 </StackLayout>
                
-                <ListView Margin="24,35" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="Center" >
+                <ListView Margin="24,40,24,0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
