@@ -4,6 +4,7 @@
              xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
              xmlns:custom="clr-namespace:StreetWorkoutV2_Bert"
              x:Class="StreetWorkoutV2_Bert.View.Oefening_Complete_Page"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -41,12 +42,13 @@
                     <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Oefening compleet" TextColor="White"/>
                     <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Reflectie" TextColor="White" />
                 </StackLayout>
-                <Frame CornerRadius="10" HeightRequest="120" Grid.Row="2" Grid.ColumnSpan="2" Margin="24,0">
+                <Frame CornerRadius="10" HeightRequest="160" Grid.Row="2" Grid.ColumnSpan="2" Margin="24,0">
                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                         <StackLayout VerticalOptions="Start" Spacing="0">
-                            <Label Margin="0,-8,0,0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hartslag doorheen de oefening" TextColor="White"/>
+                            <Label Margin="0,-8,0,14" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hartslag doorheen de oefening" TextColor="White"/>
+                            <forms:ChartView x:Name="chartHartslag" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
                         <!-- Grafiek-->
                     </renderers:GradientLayout>
