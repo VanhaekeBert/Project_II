@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
@@ -39,27 +40,29 @@ namespace StreetWorkoutV2_Bert.View
 
             List<string> Filteredlist = new List<string>();
 
-            foreach(Oefening duts in Oefeningslijst)
+            foreach (Oefening duts in Oefeningslijst)
             {
                 Toestel toestel = new Toestel() { Name = duts.Toestel };
                 if (!Filteredlist.Contains(toestel.Name))
                 {
                     Filteredlist.Add(toestel.Name);
                 }
-           
+
             }
 
 
             List<Toestel> toestels = new List<Toestel>();
 
-            foreach(string toestel in Filteredlist)
+            foreach (string toestel in Filteredlist)
             {
                 Toestel toestelname = new Toestel() { Name = toestel };
                 toestels.Add(toestelname);
             }
 
             //Listview opvullen
-            Toestellen.ItemsSource =  toestels;
+            Toestellen.ItemsSource = toestels;
+
+
 
             this.BackgroundColor = Color.FromHex("2B3049");
 
@@ -68,11 +71,19 @@ namespace StreetWorkoutV2_Bert.View
             {
                 Command = new Command(async () => { await Navigation.PopAsync(); })
             });
+
+            Toestellen.ItemTapped += async (o, e) =>
+            {
+                var myList = (ListView)o;
+                //var myAction = (myList.SelectedItem as League);
+                await PopupNavigation.Instance.PushAsync(new PopupView2());
+                //await popupView.PushAsync(new ExercisePage());
+                myList.SelectedItem = null;
+            };
+
         }
 
-        private async Task Toestellen_ItemTapped(object sender, ItemTappedEventArgs e)
-        {    
-            await Navigation.PushAsync(new ExercisePage()); //pass content if you want to pass the clicked item object to another page
-        }
+
     }
+    
 }

@@ -34,7 +34,7 @@
                 <Grid Grid.Row="2" RowSpacing="20" VerticalOptions="Start">
                     <Grid Grid.Row="0">
                         <local1:CustomEntry x:Name="OldPasswordEntry" Margin="24,0,24,0"  HorizontalOptions="FillAndExpand" Placeholder="Oude Wachtwoord" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
-                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimageold" Margin="0,0,42,0"/>
+                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End"  x:Name="eyeimageold" Margin="0,0,42,0"/>
                     </Grid>
                     <Grid Grid.Row="1">
                         <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Nieuwe Wachtwoord" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="NewPasswordEntry"/>
