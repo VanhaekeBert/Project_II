@@ -80,7 +80,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>-->
-                <ListView Margin="24,35" Grid.Row="2" Grid.ColumnSpan="2" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="Center" >
+                <ListView Grid.Row="2"  Grid.ColumnSpan="2" Margin="24,40,24,0" x:Name="Toestellen" HasUnevenRows="True" VerticalOptions="FillAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
