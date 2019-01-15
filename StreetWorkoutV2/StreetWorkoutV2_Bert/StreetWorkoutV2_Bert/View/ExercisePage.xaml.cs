@@ -16,7 +16,7 @@ namespace StreetWorkoutV2_Bert.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ExercisePage : ContentPage
 	{
-		public ExercisePage ()
+		public ExercisePage (PickerClass picker, string moeilijkheidsgraad)
 		{
 			InitializeComponent ();
             BackButtonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
@@ -24,7 +24,7 @@ namespace StreetWorkoutV2_Bert.View
             Moeilijkheidsgraad2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_empty.png");
             Moeilijkheidsgraad3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_empty.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
-
+            Titlelabel.Text = picker.Name;
             //Inlezen JSON
             List<Oefening> Oefeningslijst = new List<Oefening>();
 
@@ -38,9 +38,66 @@ namespace StreetWorkoutV2_Bert.View
 
             string json = oSR.ReadToEnd();
             Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
-            
+            List<Oefening> Semifinallijst = new List<Oefening>();
+            switch (moeilijkheidsgraad)
+            {
+                case "gemakkelijk":
+                    foreach (Oefening oefening in Oefeningslijst)
+                    {
+                        if (oefening.Moeilijkheidsgraad.Contains("Easy"))
+                        {
+                            Semifinallijst.Add(oefening);
+                        }
+                    }
+                    break;
+                case "gemiddeld":
+                    foreach (Oefening oefening in Oefeningslijst)
+                    {
+                        if (oefening.Moeilijkheidsgraad.Contains("Medium"))
+                        {
+                            Semifinallijst.Add(oefening);
+                        }
+                    }
+                    break;
+                case "moeilijk":
+                    foreach (Oefening oefening in Oefeningslijst)
+                    {
+                        if (oefening.Moeilijkheidsgraad.Contains("Hard"))
+                        {
+                            Semifinallijst.Add(oefening);
+                        }
+                    }
+                    break;
+                default:
+                    Semifinallijst = Oefeningslijst;
+                        break;
+            }
+
+            List<Oefening> Finallijst = new List<Oefening>();
+            if (picker.Type == "Spiergroep")
+            {
+                foreach (Oefening oefening in Semifinallijst)
+                {
+                    if (oefening.Spiergroep == picker.Name)
+                    {
+                        Finallijst.Add(oefening);
+                    }
+                }
+            }
+            else if (picker.Type == "Toestel")
+            {
+                foreach (Oefening oefening in Semifinallijst)
+                {
+                    if (oefening.Toestel == picker.Name)
+                    {
+                        Finallijst.Add(oefening);
+                    }
+                }
+            }
+
+
             //Listview opvullen
-            Oefeningen.ItemsSource = Oefeningslijst;
+            Oefeningen.ItemsSource = Finallijst;
 
             BackButton.GestureRecognizers.Add(new TapGestureRecognizer(ontap));
 

@@ -45,33 +45,26 @@ namespace StreetWorkoutV2_Bert.View
             {
                 //-----TOESTEL---------------------
                 List<string> Filteredlisttoestel = new List<string>();
-                Dictionary<string, int> Toestel = new Dictionary<string, int>();
                 lblTitle.Text = "Toestellen";
                 foreach (Oefening duts in Oefeningslijst)
                 {
-                    Toestel toestel = new Toestel() { Name = duts.Toestel };
+                    PickerClass toestel = new PickerClass() { Name = duts.Toestel };
                     if (!Filteredlisttoestel.Contains(toestel.Name))
                     {
                         Filteredlisttoestel.Add(toestel.Name);
-                        Toestel.Add(toestel.Name, toestel.AantalOefeningen);
-                    }
-                    else
-                    {
-                        Toestel[toestel.Name] += 1;
                     }
 
                 }
+                List<PickerClass> toestels = new List<PickerClass>();
 
-                List<Toestel> toestellen = new List<Toestel>();
-                foreach (var toestel in Toestel)
+                foreach (string toestel in Filteredlisttoestel)
                 {
-                    Toestel toestelname = new Toestel() { Name = toestel.Key, AantalOefeningen = toestel.Value  };
-
-                    toestellen.Add(toestelname);
+                    PickerClass toestelname = new PickerClass() { Name = toestel, Type = uitvoering };
+                    toestels.Add(toestelname);
                 }
-                Toestellen.ItemsSource = toestellen;
-                
-                
+                //Listview opvullen
+                Toestellen.ItemsSource = toestels;
+                //----------------------------------------------------------
             }
 
             else
@@ -81,18 +74,18 @@ namespace StreetWorkoutV2_Bert.View
                 lblTitle.Text = "Spiergroepen";
                 foreach (Oefening duts in Oefeningslijst)
                 {
-                    Spiergroep toestel = new Spiergroep() { Name = duts.Spiergroep };
+                    PickerClass toestel = new PickerClass() { Name = duts.Spiergroep };
                     if (!Filteredlist.Contains(toestel.Name))
                     {
                         Filteredlist.Add(toestel.Name);
                     }
 
                 }
-                List<Spiergroep> spiergroeps = new List<Spiergroep>();
+                List<PickerClass> spiergroeps = new List<PickerClass>();
 
                 foreach (string spiergroepen in Filteredlist)
                 {
-                    Spiergroep spiergroep = new Spiergroep() { Name = spiergroepen };
+                    PickerClass spiergroep = new PickerClass() { Name = spiergroepen, Type = uitvoering };
                     spiergroeps.Add(spiergroep);
                 }
                 //Listview opvullen
@@ -111,8 +104,8 @@ namespace StreetWorkoutV2_Bert.View
             Toestellen.ItemTapped += async (o, e) =>
             {
                 var myList = (ListView)o;
-                //var myAction = (myList.SelectedItem as League);
-                await PopupNavigation.Instance.PushAsync(new PopupView2());
+                var myAction = (myList.SelectedItem as PickerClass);
+                await PopupNavigation.Instance.PushAsync(new PopupView2(myAction));
                 //await popupView.PushAsync(new ExercisePage());
                 myList.SelectedItem = null;
             };
@@ -121,5 +114,5 @@ namespace StreetWorkoutV2_Bert.View
 
 
     }
-    
+
 }

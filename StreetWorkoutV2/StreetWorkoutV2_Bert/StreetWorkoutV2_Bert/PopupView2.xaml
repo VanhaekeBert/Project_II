@@ -29,9 +29,9 @@
                     <Label Grid.Row="0"  Grid.ColumnSpan="3" HorizontalTextAlignment="Center" Text="Selecteer de moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
 
 
-                    <Button Grid.Row="1" Grid.Column="0" Text="Makkelijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" />
-                    <Button Grid.Row="1" Grid.Column="1" Text="Gemiddeld" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" />
-                    <Button Grid.Row="1" Grid.Column="2" Text="Moeilijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" />
+                    <Button Grid.Row="1" Grid.Column="0" Text="Makkelijk" x:Name="makkelijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="10" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="makkelijk_Clicked"/>
+                    <Button Grid.Row="1" Grid.Column="1" Text="Gemiddeld" x:Name="gemiddeld" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="10" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="gemiddeld_Clicked"/>
+                    <Button Grid.Row="1" Grid.Column="2" Text="Moeilijk" x:Name="moeilijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="10" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="moeilijk_Clicked"/>
 
                 </Grid>
                

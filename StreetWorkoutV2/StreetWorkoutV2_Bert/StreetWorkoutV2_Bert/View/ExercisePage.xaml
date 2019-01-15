@@ -40,7 +40,7 @@
                                     </StackLayout>
                                     <!-- ================= -->
                                     <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
-                                        <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="Biceps" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                                        <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="" x:Name="Titlelabel" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                                     </StackLayout>
                                 </Grid>
                             </renderers:GradientLayout>
