@@ -1,10 +1,10 @@
 ﻿using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -39,24 +39,24 @@ namespace StreetWorkoutV2_Bert.View
             {
                 Command = new Command(async () => { await Navigation.PushAsync(new OefeningPage(oefeningKeeper, Aantal_keeper)); })
             });
-        }
-        public void TimerStarter()
-        {
-            Task.Delay(1000);
+            OefeningImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.triceps_extensions_easy_1.jpg");
+            int countdownremaining = 0;
+            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+                countdownremaining += 1;
+                Device.BeginInvokeOnMainThread(() => {
+                    TimerText.Text = (countdownremaining / 60).ToString("00") + " : " + (countdownremaining % 60).ToString("00") + " /  01 : 00 ";
 
-            int timerduration = 0;
+                    TimerBarInner.Progress = ((100.0/60.0)*countdownremaining)/100.0;
+                });
+                if (countdownremaining == 60)
+                {
+                    return false;
+                }
+                return true;
+            });
+            
            
-            while (timerduration <= 30)
-            {
-                TimerText.Text = timerduration.ToString();
-                 Task.Delay(1000);
-                 
-                timerduration += 1;
-            }
-        }
-        public static int TimerCounter(int input)
-        {
-            return input + 1;
+            
         }
 
         protected override bool OnBackButtonPressed()

@@ -99,22 +99,25 @@ namespace StreetWorkoutV2_Bert.Droid
             }
             else if (string.Equals(e.PropertyName, "HasShadow"))
             {
+
                 UpdateElevation();
             }
         }
 
         private void UpdateBackground()
         {
-            int[] colors = { Element.BackgroundColor.ToAndroid(), Element.BackgroundColor.ToAndroid() };
+            //int[] colors = { Element.BackgroundColor.ToAndroid(), Element.BackgroundColor.ToAndroid() };
+            int[] colors = { Android.Graphics.Color.Red, Android.Graphics.Color.Red };
             var gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LeftRight, colors);
-
+            
             this.SetBackground(gradientDrawable);
         }
 
         private void UpdateElevation()
         {
-            if (Build.VERSION.SdkInt >= (BuildVersionCodes)21)
-                this.Elevation = Element.HasShadow ? 6 : 0;
+            
+            this.Elevation = 25;
+            
         }
     }
 }

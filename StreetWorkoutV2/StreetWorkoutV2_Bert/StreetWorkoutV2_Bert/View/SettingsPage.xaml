@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
-             x:Class="StreetWorkoutV2_Bert.View.SettingsPage"
+    xmlns:streetworkoutv2_bert="clr-namespace:StreetWorkoutV2_Bert"
+    x:Class="StreetWorkoutV2_Bert.View.SettingsPage"
              Icon="settings.png" Title="Settings"
                  NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
@@ -35,7 +36,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Frame CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0" x:Name="FraFB">
+                    <streetworkoutv2_bert:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0" x:Name="FraFB">
                         <renderers:GradientLayout
                                             ColorsList="#00B09B,#70D3D8"
                                             Mode="ToTopLeft"
@@ -45,8 +46,8 @@
                                 <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White" x:Name="lblFBverbonden"/>
                             </StackLayout>
                         </renderers:GradientLayout>
-                    </Frame>
-                    <Frame CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110"  Padding="0" x:Name="FraP">
+                        </streetworkoutv2_bert:CustomFrame>
+                    <streetworkoutv2_bert:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110"  Padding="0" x:Name="FraP">
                         <renderers:GradientLayout
                                             ColorsList="#DC483F,#EE3A43"
                                             Mode="ToTopLeft"
@@ -56,7 +57,7 @@
                                 <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White" x:Name="lblPverbonden"/>
                             </StackLayout>
                         </renderers:GradientLayout>
-                    </Frame>
+                    </streetworkoutv2_bert:CustomFrame>
                 </Grid>
                 <StackLayout Grid.Row="3"  Margin="24" Orientation="Vertical">
                     <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Account" TextColor="White" Margin="5,0,0,0" />
@@ -65,7 +66,7 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <Frame CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="FraWWR">
+                        <streetworkoutv2_bert:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="FraWWR">
                             <renderers:GradientLayout
                                             ColorsList="#484E6D,#2D324B"
                                             Mode="ToTopLeft">
@@ -73,15 +74,15 @@
                                     <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Wachtwoord resetten" TextColor="White"/>
                                 </StackLayout>
                             </renderers:GradientLayout>
-                        </Frame>
-                        <Frame CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
+                        </streetworkoutv2_bert:CustomFrame>
+                        <streetworkoutv2_bert:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
 
                             <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
                                 <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                     <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Account verwijderen" TextColor="White"/>
                                 </StackLayout>
                             </renderers:GradientLayout>
-                        </Frame>
+                        </streetworkoutv2_bert:CustomFrame>
                     </Grid>
                 </StackLayout>
                 <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Sign_Out_Button_Clicked"/>
