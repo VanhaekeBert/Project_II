@@ -25,7 +25,7 @@ namespace StreetWorkoutV2_Bert.View
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
-            lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            //lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
 
         }
 
@@ -49,9 +49,6 @@ namespace StreetWorkoutV2_Bert.View
             return true;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            PopupNavigation.Instance.PushAsync(new PopupView2());
-        }
+
     }
 }
