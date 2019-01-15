@@ -25,6 +25,7 @@ namespace StreetWorkoutV2_Bert.View
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
+            lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
 
         }
 

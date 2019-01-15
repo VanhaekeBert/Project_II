@@ -70,9 +70,6 @@ namespace StreetWorkoutV2_Bert.View
                     user.Naam = Application.Current.Properties["Naam"].ToString();
                     Debug.WriteLine(user.Leeftijd);
                     await DBManager.UpdateAPIP(user);
-                });
-                Task.Run(async () =>
-                {
                     string api = await DBManager.CheckForAPI(Application.Current.Properties["Naam"].ToString());
                 if (api == "FitBit")
                     {
