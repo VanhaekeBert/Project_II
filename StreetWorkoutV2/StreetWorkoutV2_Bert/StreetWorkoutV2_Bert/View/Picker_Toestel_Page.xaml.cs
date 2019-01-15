@@ -24,7 +24,7 @@ namespace StreetWorkoutV2_Bert.View
             backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
 
-            //Inlezen JSON
+            //------------------Inlezen JSON-----------------
             List<Oefening> Oefeningslijst = new List<Oefening>();
 
             //bestandnaam? , Pad?
@@ -37,32 +37,57 @@ namespace StreetWorkoutV2_Bert.View
 
             string json = oSR.ReadToEnd();
             Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+            //-----------------------------------------------
 
+
+            //-----TOESTEL---------------------
+            //List<string> Filteredlist = new List<string>();
+
+            //foreach (Oefening duts in Oefeningslijst)
+            //{
+            //    Toestel toestel = new Toestel() { Name = duts.Toestel };
+            //    if (!Filteredlist.Contains(toestel.Name))
+            //    {
+            //        Filteredlist.Add(toestel.Name);
+            //    }
+
+            //}
+            //List<Toestel> toestels = new List<Toestel>();
+
+            //foreach (string toestel in Filteredlist)
+            //{
+            //    Toestel toestelname = new Toestel() { Name = toestel };
+            //    toestels.Add(toestelname);
+            //}
+            ////Listview opvullen
+            //Toestellen.ItemsSource = toestels;
+
+            //----------------------------------------------------------
+
+
+            //-----SPIER---------------------
             List<string> Filteredlist = new List<string>();
 
             foreach (Oefening duts in Oefeningslijst)
             {
-                Toestel toestel = new Toestel() { Name = duts.Toestel };
+                Spiergroep toestel = new Spiergroep() { Name = duts.Spiergroep };
                 if (!Filteredlist.Contains(toestel.Name))
                 {
                     Filteredlist.Add(toestel.Name);
                 }
 
             }
+            List<Spiergroep> spiergroeps = new List<Spiergroep>();
 
-
-            List<Toestel> toestels = new List<Toestel>();
-
-            foreach (string toestel in Filteredlist)
+            foreach (string spiergroepen in Filteredlist)
             {
-                Toestel toestelname = new Toestel() { Name = toestel };
-                toestels.Add(toestelname);
+                Spiergroep spiergroep = new Spiergroep() { Name = spiergroepen };
+                spiergroeps.Add(spiergroep);
             }
-
             //Listview opvullen
-            Toestellen.ItemsSource = toestels;
+            Toestellen.ItemsSource = spiergroeps;
 
-
+            //----------------------------------------------------------
 
             this.BackgroundColor = Color.FromHex("2B3049");
 
