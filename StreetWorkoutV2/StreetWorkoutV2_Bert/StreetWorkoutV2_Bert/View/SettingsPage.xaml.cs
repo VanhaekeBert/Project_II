@@ -104,7 +104,7 @@ namespace StreetWorkoutV2_Bert.View
         {
             Application.Current.Properties["Naam"] = "";
             await Application.Current.SavePropertiesAsync();
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
     }
 }

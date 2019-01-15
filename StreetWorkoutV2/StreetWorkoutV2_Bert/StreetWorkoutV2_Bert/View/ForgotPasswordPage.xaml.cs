@@ -32,41 +32,43 @@ namespace StreetWorkoutV2_Bert.View
         {
             if (EmailEntry.Text != null)
             {
-                if (EmailEntry.Text.ToLower().Contains("@"))
-                {
-                    string email = EmailEntry.Text.Replace(" ", "");
-                    bool EmailCheck = await DBManager.CheckEmailAsync(email);
-                    if (EmailCheck == true)
-                    {
-                        string naam = await DBManager.GetUserName(email);
-                        string ww = DBManager.Encrypt(await DBManager.MailService(email, naam));
-                        if (ww != null)
-                        {
-                            PopupNavigation.Instance.PushAsync(new PopupView2());
-                            await DBManager.WachtwoordReset(email, ww);
-                            await Navigation.PopAsync();
-                            //message da mailtje verstuurd is
-                        }
-                        else
-                        {
-                            //iets mis bij mailtje verzenden
-                            ErrorLabel.Text = "Probleem bij verzenden. Probeer later opnieuw.";
-                            ErrorLabel.IsVisible = true;
-                        }
-                    }
-                    else
-                    {
-                        //email nie geregistreerd
-                        ErrorLabel.Text = "Account is nog niet geregistreerd.";
-                        ErrorLabel.IsVisible = true;
-                    }
-                }
-                else
-                {
-                    //vul ne email adres in
-                    ErrorLabel.Text = "Uw email is onjuist.";
-                    ErrorLabel.IsVisible = true;
-                }
+                await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
+                await Navigation.PopModalAsync();
+                //if (EmailEntry.Text.ToLower().Contains("@"))
+                //{
+                //    string email = EmailEntry.Text.Replace(" ", "");
+                //    bool EmailCheck = await DBManager.CheckEmailAsync(email);
+                //    if (EmailCheck == true)
+                //    {
+                //        string naam = await DBManager.GetUserName(email);
+                //        string ww = DBManager.Encrypt(await DBManager.MailService(email, naam));
+                //        if (ww != null)
+                //        {
+                //            PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
+                //            await DBManager.WachtwoordReset(email, ww);
+                //            await Navigation.PopAsync();
+                //            //message da mailtje verstuurd is
+                //        }
+                //        else
+                //        {
+                //            //iets mis bij mailtje verzenden
+                //            ErrorLabel.Text = "Probleem bij verzenden. Probeer later opnieuw.";
+                //            ErrorLabel.IsVisible = true;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        //email nie geregistreerd
+                //        ErrorLabel.Text = "Account is nog niet geregistreerd.";
+                //        ErrorLabel.IsVisible = true;
+                //    }
+                //}
+                //else
+                //{
+                //    //vul ne email adres in
+                //    ErrorLabel.Text = "Uw email is onjuist.";
+                //    ErrorLabel.IsVisible = true;
+                //}
             }
             else
             {

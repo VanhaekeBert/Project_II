@@ -24,8 +24,12 @@ namespace StreetWorkoutV2_Bert.View
             NewPasswordEntry.IsPassword = true;
             eyeimagenew.GestureRecognizers.Add(new TapGestureRecognizer(NewPasswordEye));
             eyeimageold.GestureRecognizers.Add(new TapGestureRecognizer(OldPasswordEye));
-            //BackRegister.GestureRecognizers.Add(new TapGestureRecognizer(OnTapRegister));
+            backbutton.GestureRecognizers.Add(new TapGestureRecognizer(OnTapBack));
             //Password_reset.GestureRecognizers.Add(new TapGestureRecognizer(OnTapPassword_reset));
+        }
+        private async void OnTapBack(Xamarin.Forms.View arg1, object arg2)
+        {
+            await Navigation.PopAsync( );
         }
         private void NewPasswordEye(Xamarin.Forms.View arg1, object arg2)
         {

@@ -354,12 +354,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="PopUp_ForgotPassword.xaml.cs">
+      <DependentUpon>PopUp_ForgotPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\OefeningPage - Copy.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="PopUp_ForgotPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="PopupView2.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

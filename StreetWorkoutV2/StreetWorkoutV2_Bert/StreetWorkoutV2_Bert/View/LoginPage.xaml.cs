@@ -36,6 +36,11 @@ namespace StreetWorkoutV2_Bert.View
             await Navigation.PushAsync(new RegisterPage());
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
         private void OnTap(Xamarin.Forms.View arg1, object arg2)
         {
             if (PasswordEntry.IsPassword == true)

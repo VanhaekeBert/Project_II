@@ -4,7 +4,6 @@
              xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
              xmlns:local="clr-namespace:StreetWorkoutV2_Bert.Model"
              x:Class="StreetWorkoutV2_Bert.View.AccountPage"
-             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
