@@ -44,11 +44,8 @@
                                             Mode="ToTopLeft">
                             <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                 <Image   x:Name="ImgCal" HeightRequest="36" Margin="15,0,10,0"/>
-                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
-                                    <Button Clicked="Button_Clicked" Margin="24" Text="Pop"></Button>
-
+                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">  
                                     <Label TextColor="White">
-
                                         <Label.FormattedText >
                                             <FormattedString>
                                                 <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="312" />
