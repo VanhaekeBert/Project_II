@@ -27,10 +27,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <!--Back button + heartbeat +10px down -->
-                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,10,0,0" x:Name="BackButton">
-                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="BackButtonImage"/>
-                    <Label Text="Oefeningen" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,12,24,0">
                     <Image HeightRequest="32"  HorizontalOptions="EndAndExpand" x:Name="Heart" Margin="0,4,-8,0"/>
                     <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
@@ -70,7 +66,7 @@
                                     <RowDefinition Height="100"/>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="16"  Margin="24,12" TextColor="{StaticResource LightColor}" Text="Ga meteen door naar volgende reeks" VerticalOptions="Center"/>
-                                <Frame CornerRadius="10" Grid.Row="1" Padding="0" HeightRequest="100" BackgroundColor="#484E6D" Margin="0">
+                                <Frame CornerRadius="10" Grid.Row="1" Padding="0" HeightRequest="100" BackgroundColor="#484E6D" Margin="0" x:Name="Next_exercise">
                                     <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
                                         <Image x:Name="OefeningImage" Aspect="AspectFill" Opacity="0.6"/>
                                         <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >

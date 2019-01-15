@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,15 @@ namespace StreetWorkoutV2_Bert.View
                 })
             });
 
+
+            Oefeningen.ItemTapped += async (o, e) =>
+            {
+                var myList = (ListView)o;
+                var myAction = (myList.SelectedItem as Oefening);
+                await Navigation.PushAsync(new OefeningPage(myAction, "1/3"));
+                //await popupView.PushAsync(new ExercisePage());
+                myList.SelectedItem = null;
+            };
         }
 
         //private async void ontap(Xamarin.Forms.View arg1, object arg2)

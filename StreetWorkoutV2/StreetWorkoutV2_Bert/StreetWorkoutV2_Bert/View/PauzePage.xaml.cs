@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StreetWorkoutV2_Bert.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,32 @@ namespace StreetWorkoutV2_Bert.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PauzePage : ContentPage
     {
-        public PauzePage()
+        string Aantal_keeper = "";
+        Oefening oefeningKeeper = new Oefening();
+        public PauzePage(string aantal, Oefening oefening)
         {
             InitializeComponent();
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Complete_Background.png");
             //Back button + heartbeat
-            
-            BackButtonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
+            Aantal_keeper = aantal;
+            oefeningKeeper = oefening;
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             GoToOefeningen.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Go_To_Button.png");
-            OefeningImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.triceps_extensions_easy_1.jpg");
+            OefeningImage.Source = oefening.AfbeeldingenResource[0];
             TimerStarter();
+            if (Aantal_keeper == "1/3")
+            {
+                Aantal_keeper = "2/3";
+            }
+            if (Aantal_keeper == "2/3")
+            {
+                Aantal_keeper = "3/3";
+            }
+            Next_exercise.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () => { await Navigation.PushAsync(new OefeningPage(oefeningKeeper, Aantal_keeper)); })
+            });
         }
         public void TimerStarter()
         {
@@ -41,6 +57,11 @@ namespace StreetWorkoutV2_Bert.View
         public static int TimerCounter(int input)
         {
             return input + 1;
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

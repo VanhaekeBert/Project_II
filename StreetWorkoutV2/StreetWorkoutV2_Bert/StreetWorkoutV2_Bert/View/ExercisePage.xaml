@@ -71,7 +71,7 @@
                                                 <ColumnDefinition Width="Auto"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="EndAndExpand"  Text="{Binding Toestel}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="EndAndExpand"  Text="{Binding Oefeningnaam}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
                                             <Image Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="1" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
                                         </Grid>
                                     </Grid>
