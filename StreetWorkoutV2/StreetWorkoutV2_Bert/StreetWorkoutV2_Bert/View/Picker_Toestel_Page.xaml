@@ -91,8 +91,8 @@
                                         <Grid Padding="0" Margin="0" RowSpacing="0" HeightRequest="100" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
                                             <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="1*"/>
-                                                    <ColumnDefinition Width="2.5*"/>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="4*"/>
                                                     <ColumnDefinition Width="0.5*"/>
                                                 </Grid.ColumnDefinitions>
                                                 <Image Grid.Column="0" Source="{Binding Image}" Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
