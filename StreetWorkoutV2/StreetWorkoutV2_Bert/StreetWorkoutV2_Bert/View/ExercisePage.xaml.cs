@@ -139,7 +139,7 @@ namespace StreetWorkoutV2_Bert.View
         private async void Makkelijk_Clicked(object sender, EventArgs e)
         {
             Popup.IsEnabled = false;
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "makkelijk"), true);
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemakkelijk"), true);
             Popup.IsVisible = false;
         }
 
@@ -159,7 +159,7 @@ namespace StreetWorkoutV2_Bert.View
             // Popup.FadeTo(0, 250);
 
             Popup.IsEnabled = false;
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"));
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"), true);
             Popup.IsVisible = false;
 
         }
