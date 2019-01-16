@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using FormsControls.Base;
+using StreetWorkoutV2_Bert.Model;
 using StreetWorkoutV2_Bert.View;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,11 @@ namespace StreetWorkoutV2_Bert
         {
             InitializeComponent();
 
-            var navAcccount = new NavigationPage(new AccountPage());
+            var navAcccount = new AnimationNavigationPage(new AccountPage());
             navAcccount.Icon = "account.png";
             navAcccount.Title = "Account";
 
-            var navDashboard = new NavigationPage(new DashboardPage());
+            var navDashboard = new AnimationNavigationPage(new DashboardPage());
             navDashboard.Icon = "dashboard.png";
             navDashboard.Title = "Dashboard";
 

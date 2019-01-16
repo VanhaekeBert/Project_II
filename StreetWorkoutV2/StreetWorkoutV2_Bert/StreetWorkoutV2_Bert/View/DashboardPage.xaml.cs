@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using FormsControls.Base;
+using Newtonsoft.Json.Linq;
 using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
@@ -13,7 +14,7 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2_Bert.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DashboardPage : ContentPage
+    public partial class DashboardPage : AnimationPage
     {
         public DashboardPage()
         {

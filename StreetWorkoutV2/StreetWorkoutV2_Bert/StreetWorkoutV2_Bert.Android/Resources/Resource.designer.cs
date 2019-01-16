@@ -26,6 +26,2495 @@ namespace StreetWorkoutV2_Bert.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::FormsControls.Droid.Resource.Animation.abc_fade_in = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_fade_in;
+			global::FormsControls.Droid.Resource.Animation.abc_fade_out = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_fade_out;
+			global::FormsControls.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::FormsControls.Droid.Resource.Animation.abc_popup_enter = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_popup_enter;
+			global::FormsControls.Droid.Resource.Animation.abc_popup_exit = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_popup_exit;
+			global::FormsControls.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::FormsControls.Droid.Resource.Animation.abc_slide_in_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::FormsControls.Droid.Resource.Animation.abc_slide_in_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_slide_in_top;
+			global::FormsControls.Droid.Resource.Animation.abc_slide_out_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::FormsControls.Droid.Resource.Animation.abc_slide_out_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.abc_slide_out_top;
+			global::FormsControls.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::FormsControls.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::FormsControls.Droid.Resource.Animation.design_snackbar_in = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.design_snackbar_in;
+			global::FormsControls.Droid.Resource.Animation.design_snackbar_out = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.design_snackbar_out;
+			global::FormsControls.Droid.Resource.Animation.tooltip_enter = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.tooltip_enter;
+			global::FormsControls.Droid.Resource.Animation.tooltip_exit = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.tooltip_exit;
+			global::FormsControls.Droid.Resource.Animator.design_appbar_state_list_animator = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::FormsControls.Droid.Resource.Animator.empty_Animation = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.empty_Animation;
+			global::FormsControls.Droid.Resource.Animator.empty_Animation_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.empty_Animation_long;
+			global::FormsControls.Droid.Resource.Animator.empty_Animation_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.empty_Animation_short;
+			global::FormsControls.Droid.Resource.Animator.enter_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.enter_from_bottom_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_bottom_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.enter_from_bottom_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_bottom_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.enter_from_bottom_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_bottom_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_left;
+			global::FormsControls.Droid.Resource.Animator.enter_from_left_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_left_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.enter_from_left_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_left_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.enter_from_left_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_left_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_right;
+			global::FormsControls.Droid.Resource.Animator.enter_from_right_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_right_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.enter_from_right_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_right_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.enter_from_right_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_right_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_top;
+			global::FormsControls.Droid.Resource.Animator.enter_from_top_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_top_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.enter_from_top_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_top_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.enter_from_top_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_from_top_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_bottom_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_bottom_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_bottom_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_bottom_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_bottom_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_bottom_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_left;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_left_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_left_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_left_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_left_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_left_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_left_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_right;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_right_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_right_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_right_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_right_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_right_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_right_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_top;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_top_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_top_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_top_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_top_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_from_top_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_from_top_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_long;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_short;
+			global::FormsControls.Droid.Resource.Animator.enter_landing_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_landing_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_bottom_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_bottom_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_bottom_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_bottom_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_bottom_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_bottom_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_left;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_left_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_left_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_left_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_left_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_left_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_left_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_right;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_right_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_right_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_right_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_right_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_right_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_right_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_top;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_top_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_top_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_top_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_top_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.enter_roll_from_top_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_roll_from_top_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_bottom_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_bottom_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_bottom_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_bottom_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_bottom_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_bottom_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_left;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_left_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_left_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_left_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_left_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_left_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_left_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_right;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_right_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_right_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_right_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_right_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_right_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_right_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_top;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_top_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_top_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_top_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_top_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_from_top_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_from_top_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_long;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_short;
+			global::FormsControls.Droid.Resource.Animator.enter_rotate_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_rotate_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_bottom_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_bottom_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_bottom_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_bottom_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_bottom_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_bottom_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_left;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_left_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_left_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_left_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_left_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_left_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_left_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_right;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_right_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_right_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_right_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_right_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_right_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_right_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_top;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_top_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_top_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_top_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_top_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_from_top_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_from_top_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_long;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_short;
+			global::FormsControls.Droid.Resource.Animator.enter_scale_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.enter_scale_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_landing = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_left;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_right;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_top;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_long;
+			global::FormsControls.Droid.Resource.Animator.exit_landing_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_landing_short;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_bottom;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_left;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_left_long;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_left_short;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_right;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_right_long;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_right_short;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_top;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_top_long;
+			global::FormsControls.Droid.Resource.Animator.exit_roll_to_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_roll_to_top_short;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_long;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_short;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_bottom;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_left;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_left_long;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_left_short;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_right;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_right_long;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_right_short;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_top;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_top_long;
+			global::FormsControls.Droid.Resource.Animator.exit_rotate_to_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_rotate_to_top_short;
+			global::FormsControls.Droid.Resource.Animator.exit_scale = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_bottom;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_left;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_left_long;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_left_short;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_right;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_right_long;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_right_short;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_top;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_top_long;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_from_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_from_top_short;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_long;
+			global::FormsControls.Droid.Resource.Animator.exit_scale_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_scale_short;
+			global::FormsControls.Droid.Resource.Animator.exit_to_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_bottom;
+			global::FormsControls.Droid.Resource.Animator.exit_to_bottom_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_bottom_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_bottom_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_bottom_long;
+			global::FormsControls.Droid.Resource.Animator.exit_to_bottom_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_bottom_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_bottom_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_bottom_short;
+			global::FormsControls.Droid.Resource.Animator.exit_to_bottom_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_bottom_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_left;
+			global::FormsControls.Droid.Resource.Animator.exit_to_left_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_left_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_left_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_left_long;
+			global::FormsControls.Droid.Resource.Animator.exit_to_left_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_left_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_left_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_left_short;
+			global::FormsControls.Droid.Resource.Animator.exit_to_left_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_left_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_right;
+			global::FormsControls.Droid.Resource.Animator.exit_to_right_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_right_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_right_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_right_long;
+			global::FormsControls.Droid.Resource.Animator.exit_to_right_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_right_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_right_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_right_short;
+			global::FormsControls.Droid.Resource.Animator.exit_to_right_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_right_short_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_top = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_top;
+			global::FormsControls.Droid.Resource.Animator.exit_to_top_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_top_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_top_long = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_top_long;
+			global::FormsControls.Droid.Resource.Animator.exit_to_top_long_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_top_long_bounce;
+			global::FormsControls.Droid.Resource.Animator.exit_to_top_short = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_top_short;
+			global::FormsControls.Droid.Resource.Animator.exit_to_top_short_bounce = global::StreetWorkoutV2_Bert.Droid.Resource.Animator.exit_to_top_short_bounce;
+			global::FormsControls.Droid.Resource.Attribute.actionBarDivider = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarDivider;
+			global::FormsControls.Droid.Resource.Attribute.actionBarItemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarItemBackground;
+			global::FormsControls.Droid.Resource.Attribute.actionBarPopupTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::FormsControls.Droid.Resource.Attribute.actionBarSize = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarSize;
+			global::FormsControls.Droid.Resource.Attribute.actionBarSplitStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionBarTabBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionBarTabStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarTabStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionBarTabTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionBarTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarTheme;
+			global::FormsControls.Droid.Resource.Attribute.actionBarWidgetTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::FormsControls.Droid.Resource.Attribute.actionButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionDropDownStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionDropDownStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionLayout;
+			global::FormsControls.Droid.Resource.Attribute.actionMenuTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.actionMenuTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionMenuTextColor;
+			global::FormsControls.Droid.Resource.Attribute.actionModeBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeBackground;
+			global::FormsControls.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionModeCloseDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModeCopyDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModeCutDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModeFindDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModePasteDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModePopupWindowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModeShareDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionModeSplitBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::FormsControls.Droid.Resource.Attribute.actionModeStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::FormsControls.Droid.Resource.Attribute.actionOverflowButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionOverflowMenuStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::FormsControls.Droid.Resource.Attribute.actionProviderClass = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionProviderClass;
+			global::FormsControls.Droid.Resource.Attribute.actionViewClass = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.actionViewClass;
+			global::FormsControls.Droid.Resource.Attribute.activityChooserViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::FormsControls.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::FormsControls.Droid.Resource.Attribute.alertDialogCenterButtons = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::FormsControls.Droid.Resource.Attribute.alertDialogStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.alertDialogStyle;
+			global::FormsControls.Droid.Resource.Attribute.alertDialogTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.alertDialogTheme;
+			global::FormsControls.Droid.Resource.Attribute.allowStacking = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.allowStacking;
+			global::FormsControls.Droid.Resource.Attribute.alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.alpha;
+			global::FormsControls.Droid.Resource.Attribute.alphabeticModifiers = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.alphabeticModifiers;
+			global::FormsControls.Droid.Resource.Attribute.arrowHeadLength = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.arrowHeadLength;
+			global::FormsControls.Droid.Resource.Attribute.arrowShaftLength = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.arrowShaftLength;
+			global::FormsControls.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::FormsControls.Droid.Resource.Attribute.autoSizeMaxTextSize = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::FormsControls.Droid.Resource.Attribute.autoSizeMinTextSize = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::FormsControls.Droid.Resource.Attribute.autoSizePresetSizes = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::FormsControls.Droid.Resource.Attribute.autoSizeStepGranularity = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::FormsControls.Droid.Resource.Attribute.autoSizeTextType = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.autoSizeTextType;
+			global::FormsControls.Droid.Resource.Attribute.background = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.background;
+			global::FormsControls.Droid.Resource.Attribute.backgroundSplit = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.backgroundSplit;
+			global::FormsControls.Droid.Resource.Attribute.backgroundStacked = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.backgroundStacked;
+			global::FormsControls.Droid.Resource.Attribute.backgroundTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.backgroundTint;
+			global::FormsControls.Droid.Resource.Attribute.backgroundTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.backgroundTintMode;
+			global::FormsControls.Droid.Resource.Attribute.barLength = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.barLength;
+			global::FormsControls.Droid.Resource.Attribute.behavior_autoHide = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.behavior_autoHide;
+			global::FormsControls.Droid.Resource.Attribute.behavior_hideable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.behavior_hideable;
+			global::FormsControls.Droid.Resource.Attribute.behavior_overlapTop = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.behavior_overlapTop;
+			global::FormsControls.Droid.Resource.Attribute.behavior_peekHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.behavior_peekHeight;
+			global::FormsControls.Droid.Resource.Attribute.behavior_skipCollapsed = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::FormsControls.Droid.Resource.Attribute.borderWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.borderWidth;
+			global::FormsControls.Droid.Resource.Attribute.borderlessButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.bottomSheetDialogTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::FormsControls.Droid.Resource.Attribute.bottomSheetStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.bottomSheetStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonBarButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonBarStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonGravity;
+			global::FormsControls.Droid.Resource.Attribute.buttonPanelSideLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::FormsControls.Droid.Resource.Attribute.buttonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonStyle;
+			global::FormsControls.Droid.Resource.Attribute.buttonStyleSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonStyleSmall;
+			global::FormsControls.Droid.Resource.Attribute.buttonTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonTint;
+			global::FormsControls.Droid.Resource.Attribute.buttonTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.buttonTintMode;
+			global::FormsControls.Droid.Resource.Attribute.cardBackgroundColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.cardBackgroundColor;
+			global::FormsControls.Droid.Resource.Attribute.cardCornerRadius = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.cardCornerRadius;
+			global::FormsControls.Droid.Resource.Attribute.cardElevation = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.cardElevation;
+			global::FormsControls.Droid.Resource.Attribute.cardMaxElevation = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.cardMaxElevation;
+			global::FormsControls.Droid.Resource.Attribute.cardPreventCornerOverlap = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::FormsControls.Droid.Resource.Attribute.cardUseCompatPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::FormsControls.Droid.Resource.Attribute.checkboxStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.checkboxStyle;
+			global::FormsControls.Droid.Resource.Attribute.checkedTextViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::FormsControls.Droid.Resource.Attribute.closeIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.closeIcon;
+			global::FormsControls.Droid.Resource.Attribute.closeItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.closeItemLayout;
+			global::FormsControls.Droid.Resource.Attribute.collapseContentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.collapseContentDescription;
+			global::FormsControls.Droid.Resource.Attribute.collapseIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.collapseIcon;
+			global::FormsControls.Droid.Resource.Attribute.collapsedTitleGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::FormsControls.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.color = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.color;
+			global::FormsControls.Droid.Resource.Attribute.colorAccent = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorAccent;
+			global::FormsControls.Droid.Resource.Attribute.colorBackgroundFloating = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::FormsControls.Droid.Resource.Attribute.colorButtonNormal = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorButtonNormal;
+			global::FormsControls.Droid.Resource.Attribute.colorControlActivated = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorControlActivated;
+			global::FormsControls.Droid.Resource.Attribute.colorControlHighlight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorControlHighlight;
+			global::FormsControls.Droid.Resource.Attribute.colorControlNormal = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorControlNormal;
+			global::FormsControls.Droid.Resource.Attribute.colorError = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorError;
+			global::FormsControls.Droid.Resource.Attribute.colorPrimary = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorPrimary;
+			global::FormsControls.Droid.Resource.Attribute.colorPrimaryDark = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorPrimaryDark;
+			global::FormsControls.Droid.Resource.Attribute.colorSwitchThumbNormal = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::FormsControls.Droid.Resource.Attribute.commitIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.commitIcon;
+			global::FormsControls.Droid.Resource.Attribute.contentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentDescription;
+			global::FormsControls.Droid.Resource.Attribute.contentInsetEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentInsetEnd;
+			global::FormsControls.Droid.Resource.Attribute.contentInsetEndWithActions = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::FormsControls.Droid.Resource.Attribute.contentInsetLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentInsetLeft;
+			global::FormsControls.Droid.Resource.Attribute.contentInsetRight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentInsetRight;
+			global::FormsControls.Droid.Resource.Attribute.contentInsetStart = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentInsetStart;
+			global::FormsControls.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::FormsControls.Droid.Resource.Attribute.contentPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentPadding;
+			global::FormsControls.Droid.Resource.Attribute.contentPaddingBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentPaddingBottom;
+			global::FormsControls.Droid.Resource.Attribute.contentPaddingLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentPaddingLeft;
+			global::FormsControls.Droid.Resource.Attribute.contentPaddingRight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentPaddingRight;
+			global::FormsControls.Droid.Resource.Attribute.contentPaddingTop = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentPaddingTop;
+			global::FormsControls.Droid.Resource.Attribute.contentScrim = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.contentScrim;
+			global::FormsControls.Droid.Resource.Attribute.controlBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.controlBackground;
+			global::FormsControls.Droid.Resource.Attribute.counterEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.counterEnabled;
+			global::FormsControls.Droid.Resource.Attribute.counterMaxLength = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.counterMaxLength;
+			global::FormsControls.Droid.Resource.Attribute.counterOverflowTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.counterTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.counterTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.customNavigationLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.customNavigationLayout;
+			global::FormsControls.Droid.Resource.Attribute.defaultQueryHint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.defaultQueryHint;
+			global::FormsControls.Droid.Resource.Attribute.dialogPreferredPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::FormsControls.Droid.Resource.Attribute.dialogTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dialogTheme;
+			global::FormsControls.Droid.Resource.Attribute.displayOptions = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.displayOptions;
+			global::FormsControls.Droid.Resource.Attribute.divider = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.divider;
+			global::FormsControls.Droid.Resource.Attribute.dividerHorizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dividerHorizontal;
+			global::FormsControls.Droid.Resource.Attribute.dividerPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dividerPadding;
+			global::FormsControls.Droid.Resource.Attribute.dividerVertical = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dividerVertical;
+			global::FormsControls.Droid.Resource.Attribute.drawableSize = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.drawableSize;
+			global::FormsControls.Droid.Resource.Attribute.drawerArrowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.drawerArrowStyle;
+			global::FormsControls.Droid.Resource.Attribute.dropDownListViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::FormsControls.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::FormsControls.Droid.Resource.Attribute.editTextBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.editTextBackground;
+			global::FormsControls.Droid.Resource.Attribute.editTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.editTextColor;
+			global::FormsControls.Droid.Resource.Attribute.editTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.editTextStyle;
+			global::FormsControls.Droid.Resource.Attribute.elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.elevation;
+			global::FormsControls.Droid.Resource.Attribute.errorEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.errorEnabled;
+			global::FormsControls.Droid.Resource.Attribute.errorTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.errorTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::FormsControls.Droid.Resource.Attribute.expanded = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expanded;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleGravity;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleMargin = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleMargin;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleMarginBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleMarginEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleMarginStart = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleMarginTop = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::FormsControls.Droid.Resource.Attribute.expandedTitleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.externalRouteEnabledDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::FormsControls.Droid.Resource.Attribute.fabSize = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fabSize;
+			global::FormsControls.Droid.Resource.Attribute.fastScrollEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fastScrollEnabled;
+			global::FormsControls.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::FormsControls.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::FormsControls.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::FormsControls.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::FormsControls.Droid.Resource.Attribute.font = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.font;
+			global::FormsControls.Droid.Resource.Attribute.fontFamily = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontFamily;
+			global::FormsControls.Droid.Resource.Attribute.fontProviderAuthority = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontProviderAuthority;
+			global::FormsControls.Droid.Resource.Attribute.fontProviderCerts = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontProviderCerts;
+			global::FormsControls.Droid.Resource.Attribute.fontProviderFetchStrategy = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::FormsControls.Droid.Resource.Attribute.fontProviderFetchTimeout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::FormsControls.Droid.Resource.Attribute.fontProviderPackage = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontProviderPackage;
+			global::FormsControls.Droid.Resource.Attribute.fontProviderQuery = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontProviderQuery;
+			global::FormsControls.Droid.Resource.Attribute.fontStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontStyle;
+			global::FormsControls.Droid.Resource.Attribute.fontWeight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.fontWeight;
+			global::FormsControls.Droid.Resource.Attribute.foregroundInsidePadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::FormsControls.Droid.Resource.Attribute.gapBetweenBars = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.gapBetweenBars;
+			global::FormsControls.Droid.Resource.Attribute.goIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.goIcon;
+			global::FormsControls.Droid.Resource.Attribute.headerLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.headerLayout;
+			global::FormsControls.Droid.Resource.Attribute.height = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.height;
+			global::FormsControls.Droid.Resource.Attribute.hideOnContentScroll = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.hideOnContentScroll;
+			global::FormsControls.Droid.Resource.Attribute.hintAnimationEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::FormsControls.Droid.Resource.Attribute.hintEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.hintEnabled;
+			global::FormsControls.Droid.Resource.Attribute.hintTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.hintTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.homeAsUpIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::FormsControls.Droid.Resource.Attribute.homeLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.homeLayout;
+			global::FormsControls.Droid.Resource.Attribute.icon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.icon;
+			global::FormsControls.Droid.Resource.Attribute.iconTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.iconTint;
+			global::FormsControls.Droid.Resource.Attribute.iconTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.iconTintMode;
+			global::FormsControls.Droid.Resource.Attribute.iconifiedByDefault = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.iconifiedByDefault;
+			global::FormsControls.Droid.Resource.Attribute.imageButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.imageButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.indeterminateProgressStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::FormsControls.Droid.Resource.Attribute.initialActivityCount = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.initialActivityCount;
+			global::FormsControls.Droid.Resource.Attribute.insetForeground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.insetForeground;
+			global::FormsControls.Droid.Resource.Attribute.isLightTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.isLightTheme;
+			global::FormsControls.Droid.Resource.Attribute.itemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.itemBackground;
+			global::FormsControls.Droid.Resource.Attribute.itemIconTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.itemIconTint;
+			global::FormsControls.Droid.Resource.Attribute.itemPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.itemPadding;
+			global::FormsControls.Droid.Resource.Attribute.itemTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.itemTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.itemTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.itemTextColor;
+			global::FormsControls.Droid.Resource.Attribute.keylines = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.keylines;
+			global::FormsControls.Droid.Resource.Attribute.layout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout;
+			global::FormsControls.Droid.Resource.Attribute.layoutManager = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layoutManager;
+			global::FormsControls.Droid.Resource.Attribute.layout_anchor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_anchor;
+			global::FormsControls.Droid.Resource.Attribute.layout_anchorGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_anchorGravity;
+			global::FormsControls.Droid.Resource.Attribute.layout_behavior = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_behavior;
+			global::FormsControls.Droid.Resource.Attribute.layout_collapseMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_collapseMode;
+			global::FormsControls.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::FormsControls.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::FormsControls.Droid.Resource.Attribute.layout_insetEdge = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_insetEdge;
+			global::FormsControls.Droid.Resource.Attribute.layout_keyline = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_keyline;
+			global::FormsControls.Droid.Resource.Attribute.layout_scrollFlags = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_scrollFlags;
+			global::FormsControls.Droid.Resource.Attribute.layout_scrollInterpolator = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::FormsControls.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::FormsControls.Droid.Resource.Attribute.listDividerAlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::FormsControls.Droid.Resource.Attribute.listItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listItemLayout;
+			global::FormsControls.Droid.Resource.Attribute.listLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listLayout;
+			global::FormsControls.Droid.Resource.Attribute.listMenuViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listMenuViewStyle;
+			global::FormsControls.Droid.Resource.Attribute.listPopupWindowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::FormsControls.Droid.Resource.Attribute.listPreferredItemHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::FormsControls.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::FormsControls.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::FormsControls.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::FormsControls.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::FormsControls.Droid.Resource.Attribute.logo = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.logo;
+			global::FormsControls.Droid.Resource.Attribute.logoDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.logoDescription;
+			global::FormsControls.Droid.Resource.Attribute.maxActionInlineWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::FormsControls.Droid.Resource.Attribute.maxButtonHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.maxButtonHeight;
+			global::FormsControls.Droid.Resource.Attribute.measureWithLargestChild = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.measureWithLargestChild;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteButtonTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteButtonTint;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteCloseDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRoutePauseDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRoutePlayDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteStopDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteStopDrawable;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteTheme;
+			global::FormsControls.Droid.Resource.Attribute.mediaRouteTvIconDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::FormsControls.Droid.Resource.Attribute.menu = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.menu;
+			global::FormsControls.Droid.Resource.Attribute.multiChoiceItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::FormsControls.Droid.Resource.Attribute.navigationContentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.navigationContentDescription;
+			global::FormsControls.Droid.Resource.Attribute.navigationIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.navigationIcon;
+			global::FormsControls.Droid.Resource.Attribute.navigationMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.navigationMode;
+			global::FormsControls.Droid.Resource.Attribute.numericModifiers = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.numericModifiers;
+			global::FormsControls.Droid.Resource.Attribute.overlapAnchor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.overlapAnchor;
+			global::FormsControls.Droid.Resource.Attribute.paddingBottomNoButtons = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::FormsControls.Droid.Resource.Attribute.paddingEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.paddingEnd;
+			global::FormsControls.Droid.Resource.Attribute.paddingStart = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.paddingStart;
+			global::FormsControls.Droid.Resource.Attribute.paddingTopNoTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::FormsControls.Droid.Resource.Attribute.panelBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.panelBackground;
+			global::FormsControls.Droid.Resource.Attribute.panelMenuListTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.panelMenuListTheme;
+			global::FormsControls.Droid.Resource.Attribute.panelMenuListWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.panelMenuListWidth;
+			global::FormsControls.Droid.Resource.Attribute.passwordToggleContentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::FormsControls.Droid.Resource.Attribute.passwordToggleDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::FormsControls.Droid.Resource.Attribute.passwordToggleEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::FormsControls.Droid.Resource.Attribute.passwordToggleTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.passwordToggleTint;
+			global::FormsControls.Droid.Resource.Attribute.passwordToggleTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::FormsControls.Droid.Resource.Attribute.popupMenuStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.popupMenuStyle;
+			global::FormsControls.Droid.Resource.Attribute.popupTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.popupTheme;
+			global::FormsControls.Droid.Resource.Attribute.popupWindowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.popupWindowStyle;
+			global::FormsControls.Droid.Resource.Attribute.preserveIconSpacing = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.preserveIconSpacing;
+			global::FormsControls.Droid.Resource.Attribute.pressedTranslationZ = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.pressedTranslationZ;
+			global::FormsControls.Droid.Resource.Attribute.progressBarPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.progressBarPadding;
+			global::FormsControls.Droid.Resource.Attribute.progressBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.progressBarStyle;
+			global::FormsControls.Droid.Resource.Attribute.queryBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.queryBackground;
+			global::FormsControls.Droid.Resource.Attribute.queryHint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.queryHint;
+			global::FormsControls.Droid.Resource.Attribute.radioButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.radioButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.ratingBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.ratingBarStyle;
+			global::FormsControls.Droid.Resource.Attribute.ratingBarStyleIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::FormsControls.Droid.Resource.Attribute.ratingBarStyleSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::FormsControls.Droid.Resource.Attribute.reverseLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.reverseLayout;
+			global::FormsControls.Droid.Resource.Attribute.rippleColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.rippleColor;
+			global::FormsControls.Droid.Resource.Attribute.scrimAnimationDuration = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::FormsControls.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::FormsControls.Droid.Resource.Attribute.searchHintIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.searchHintIcon;
+			global::FormsControls.Droid.Resource.Attribute.searchIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.searchIcon;
+			global::FormsControls.Droid.Resource.Attribute.searchViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.searchViewStyle;
+			global::FormsControls.Droid.Resource.Attribute.seekBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.seekBarStyle;
+			global::FormsControls.Droid.Resource.Attribute.selectableItemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.selectableItemBackground;
+			global::FormsControls.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::FormsControls.Droid.Resource.Attribute.showAsAction = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.showAsAction;
+			global::FormsControls.Droid.Resource.Attribute.showDividers = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.showDividers;
+			global::FormsControls.Droid.Resource.Attribute.showText = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.showText;
+			global::FormsControls.Droid.Resource.Attribute.showTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.showTitle;
+			global::FormsControls.Droid.Resource.Attribute.singleChoiceItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::FormsControls.Droid.Resource.Attribute.spanCount = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.spanCount;
+			global::FormsControls.Droid.Resource.Attribute.spinBars = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.spinBars;
+			global::FormsControls.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::FormsControls.Droid.Resource.Attribute.spinnerStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.spinnerStyle;
+			global::FormsControls.Droid.Resource.Attribute.splitTrack = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.splitTrack;
+			global::FormsControls.Droid.Resource.Attribute.srcCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.srcCompat;
+			global::FormsControls.Droid.Resource.Attribute.stackFromEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.stackFromEnd;
+			global::FormsControls.Droid.Resource.Attribute.state_above_anchor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.state_above_anchor;
+			global::FormsControls.Droid.Resource.Attribute.state_collapsed = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.state_collapsed;
+			global::FormsControls.Droid.Resource.Attribute.state_collapsible = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.state_collapsible;
+			global::FormsControls.Droid.Resource.Attribute.statusBarBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.statusBarBackground;
+			global::FormsControls.Droid.Resource.Attribute.statusBarScrim = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.statusBarScrim;
+			global::FormsControls.Droid.Resource.Attribute.subMenuArrow = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.subMenuArrow;
+			global::FormsControls.Droid.Resource.Attribute.submitBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.submitBackground;
+			global::FormsControls.Droid.Resource.Attribute.subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.subtitle;
+			global::FormsControls.Droid.Resource.Attribute.subtitleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.subtitleTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.subtitleTextColor;
+			global::FormsControls.Droid.Resource.Attribute.subtitleTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.subtitleTextStyle;
+			global::FormsControls.Droid.Resource.Attribute.suggestionRowLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.suggestionRowLayout;
+			global::FormsControls.Droid.Resource.Attribute.switchMinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.switchMinWidth;
+			global::FormsControls.Droid.Resource.Attribute.switchPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.switchPadding;
+			global::FormsControls.Droid.Resource.Attribute.switchStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.switchStyle;
+			global::FormsControls.Droid.Resource.Attribute.switchTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.switchTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.tabBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabBackground;
+			global::FormsControls.Droid.Resource.Attribute.tabContentStart = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabContentStart;
+			global::FormsControls.Droid.Resource.Attribute.tabGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabGravity;
+			global::FormsControls.Droid.Resource.Attribute.tabIndicatorColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabIndicatorColor;
+			global::FormsControls.Droid.Resource.Attribute.tabIndicatorHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::FormsControls.Droid.Resource.Attribute.tabMaxWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabMaxWidth;
+			global::FormsControls.Droid.Resource.Attribute.tabMinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabMinWidth;
+			global::FormsControls.Droid.Resource.Attribute.tabMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabMode;
+			global::FormsControls.Droid.Resource.Attribute.tabPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabPadding;
+			global::FormsControls.Droid.Resource.Attribute.tabPaddingBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabPaddingBottom;
+			global::FormsControls.Droid.Resource.Attribute.tabPaddingEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabPaddingEnd;
+			global::FormsControls.Droid.Resource.Attribute.tabPaddingStart = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabPaddingStart;
+			global::FormsControls.Droid.Resource.Attribute.tabPaddingTop = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabPaddingTop;
+			global::FormsControls.Droid.Resource.Attribute.tabSelectedTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::FormsControls.Droid.Resource.Attribute.tabTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.tabTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tabTextColor;
+			global::FormsControls.Droid.Resource.Attribute.textAllCaps = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAllCaps;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceListItem = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceListItem;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceListItemSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::FormsControls.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::FormsControls.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::FormsControls.Droid.Resource.Attribute.textColorAlertDialogListItem = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::FormsControls.Droid.Resource.Attribute.textColorError = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textColorError;
+			global::FormsControls.Droid.Resource.Attribute.textColorSearchUrl = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.textColorSearchUrl;
+			global::FormsControls.Droid.Resource.Attribute.theme = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.theme;
+			global::FormsControls.Droid.Resource.Attribute.thickness = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.thickness;
+			global::FormsControls.Droid.Resource.Attribute.thumbTextPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.thumbTextPadding;
+			global::FormsControls.Droid.Resource.Attribute.thumbTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.thumbTint;
+			global::FormsControls.Droid.Resource.Attribute.thumbTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.thumbTintMode;
+			global::FormsControls.Droid.Resource.Attribute.tickMark = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tickMark;
+			global::FormsControls.Droid.Resource.Attribute.tickMarkTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tickMarkTint;
+			global::FormsControls.Droid.Resource.Attribute.tickMarkTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tickMarkTintMode;
+			global::FormsControls.Droid.Resource.Attribute.tint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tint;
+			global::FormsControls.Droid.Resource.Attribute.tintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tintMode;
+			global::FormsControls.Droid.Resource.Attribute.title = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.title;
+			global::FormsControls.Droid.Resource.Attribute.titleEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleEnabled;
+			global::FormsControls.Droid.Resource.Attribute.titleMargin = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleMargin;
+			global::FormsControls.Droid.Resource.Attribute.titleMarginBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleMarginBottom;
+			global::FormsControls.Droid.Resource.Attribute.titleMarginEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleMarginEnd;
+			global::FormsControls.Droid.Resource.Attribute.titleMarginStart = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleMarginStart;
+			global::FormsControls.Droid.Resource.Attribute.titleMarginTop = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleMarginTop;
+			global::FormsControls.Droid.Resource.Attribute.titleMargins = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleMargins;
+			global::FormsControls.Droid.Resource.Attribute.titleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleTextAppearance;
+			global::FormsControls.Droid.Resource.Attribute.titleTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleTextColor;
+			global::FormsControls.Droid.Resource.Attribute.titleTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.titleTextStyle;
+			global::FormsControls.Droid.Resource.Attribute.toolbarId = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.toolbarId;
+			global::FormsControls.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::FormsControls.Droid.Resource.Attribute.toolbarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.toolbarStyle;
+			global::FormsControls.Droid.Resource.Attribute.tooltipForegroundColor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::FormsControls.Droid.Resource.Attribute.tooltipFrameBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::FormsControls.Droid.Resource.Attribute.tooltipText = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.tooltipText;
+			global::FormsControls.Droid.Resource.Attribute.track = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.track;
+			global::FormsControls.Droid.Resource.Attribute.trackTint = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.trackTint;
+			global::FormsControls.Droid.Resource.Attribute.trackTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.trackTintMode;
+			global::FormsControls.Droid.Resource.Attribute.useCompatPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.useCompatPadding;
+			global::FormsControls.Droid.Resource.Attribute.voiceIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.voiceIcon;
+			global::FormsControls.Droid.Resource.Attribute.windowActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowActionBar;
+			global::FormsControls.Droid.Resource.Attribute.windowActionBarOverlay = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::FormsControls.Droid.Resource.Attribute.windowActionModeOverlay = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::FormsControls.Droid.Resource.Attribute.windowFixedHeightMajor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::FormsControls.Droid.Resource.Attribute.windowFixedHeightMinor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::FormsControls.Droid.Resource.Attribute.windowFixedWidthMajor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::FormsControls.Droid.Resource.Attribute.windowFixedWidthMinor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::FormsControls.Droid.Resource.Attribute.windowMinWidthMajor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::FormsControls.Droid.Resource.Attribute.windowMinWidthMinor = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::FormsControls.Droid.Resource.Attribute.windowNoTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Attribute.windowNoTitle;
+			global::FormsControls.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::StreetWorkoutV2_Bert.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::FormsControls.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::FormsControls.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::StreetWorkoutV2_Bert.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::FormsControls.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::StreetWorkoutV2_Bert.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::FormsControls.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::StreetWorkoutV2_Bert.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::FormsControls.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::FormsControls.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::FormsControls.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::FormsControls.Droid.Resource.Color.abc_btn_colored_text_material = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::FormsControls.Droid.Resource.Color.abc_color_highlight_material = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_color_highlight_material;
+			global::FormsControls.Droid.Resource.Color.abc_hint_foreground_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::FormsControls.Droid.Resource.Color.abc_hint_foreground_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::FormsControls.Droid.Resource.Color.abc_input_method_navigation_guard = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::FormsControls.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::FormsControls.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::FormsControls.Droid.Resource.Color.abc_primary_text_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::FormsControls.Droid.Resource.Color.abc_primary_text_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_primary_text_material_light;
+			global::FormsControls.Droid.Resource.Color.abc_search_url_text = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_search_url_text;
+			global::FormsControls.Droid.Resource.Color.abc_search_url_text_normal = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_search_url_text_normal;
+			global::FormsControls.Droid.Resource.Color.abc_search_url_text_pressed = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::FormsControls.Droid.Resource.Color.abc_search_url_text_selected = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_search_url_text_selected;
+			global::FormsControls.Droid.Resource.Color.abc_secondary_text_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::FormsControls.Droid.Resource.Color.abc_secondary_text_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::FormsControls.Droid.Resource.Color.abc_tint_btn_checkable = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::FormsControls.Droid.Resource.Color.abc_tint_default = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_tint_default;
+			global::FormsControls.Droid.Resource.Color.abc_tint_edittext = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_tint_edittext;
+			global::FormsControls.Droid.Resource.Color.abc_tint_seek_thumb = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::FormsControls.Droid.Resource.Color.abc_tint_spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_tint_spinner;
+			global::FormsControls.Droid.Resource.Color.abc_tint_switch_track = global::StreetWorkoutV2_Bert.Droid.Resource.Color.abc_tint_switch_track;
+			global::FormsControls.Droid.Resource.Color.accent_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.accent_material_dark;
+			global::FormsControls.Droid.Resource.Color.accent_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.accent_material_light;
+			global::FormsControls.Droid.Resource.Color.background_floating_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.background_floating_material_dark;
+			global::FormsControls.Droid.Resource.Color.background_floating_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.background_floating_material_light;
+			global::FormsControls.Droid.Resource.Color.background_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.background_material_dark;
+			global::FormsControls.Droid.Resource.Color.background_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.background_material_light;
+			global::FormsControls.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::FormsControls.Droid.Resource.Color.bright_foreground_disabled_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::FormsControls.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::FormsControls.Droid.Resource.Color.bright_foreground_inverse_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::FormsControls.Droid.Resource.Color.bright_foreground_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.bright_foreground_material_dark;
+			global::FormsControls.Droid.Resource.Color.bright_foreground_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.bright_foreground_material_light;
+			global::FormsControls.Droid.Resource.Color.button_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.button_material_dark;
+			global::FormsControls.Droid.Resource.Color.button_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.button_material_light;
+			global::FormsControls.Droid.Resource.Color.cardview_dark_background = global::StreetWorkoutV2_Bert.Droid.Resource.Color.cardview_dark_background;
+			global::FormsControls.Droid.Resource.Color.cardview_light_background = global::StreetWorkoutV2_Bert.Droid.Resource.Color.cardview_light_background;
+			global::FormsControls.Droid.Resource.Color.cardview_shadow_end_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.cardview_shadow_end_color;
+			global::FormsControls.Droid.Resource.Color.cardview_shadow_start_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.cardview_shadow_start_color;
+			global::FormsControls.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::FormsControls.Droid.Resource.Color.design_error = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_error;
+			global::FormsControls.Droid.Resource.Color.design_fab_shadow_end_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::FormsControls.Droid.Resource.Color.design_fab_shadow_mid_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::FormsControls.Droid.Resource.Color.design_fab_shadow_start_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::FormsControls.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::FormsControls.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::FormsControls.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::FormsControls.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::FormsControls.Droid.Resource.Color.design_snackbar_background_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_snackbar_background_color;
+			global::FormsControls.Droid.Resource.Color.design_tint_password_toggle = global::StreetWorkoutV2_Bert.Droid.Resource.Color.design_tint_password_toggle;
+			global::FormsControls.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::FormsControls.Droid.Resource.Color.dim_foreground_disabled_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::FormsControls.Droid.Resource.Color.dim_foreground_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.dim_foreground_material_dark;
+			global::FormsControls.Droid.Resource.Color.dim_foreground_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.dim_foreground_material_light;
+			global::FormsControls.Droid.Resource.Color.error_color_material = global::StreetWorkoutV2_Bert.Droid.Resource.Color.error_color_material;
+			global::FormsControls.Droid.Resource.Color.foreground_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.foreground_material_dark;
+			global::FormsControls.Droid.Resource.Color.foreground_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.foreground_material_light;
+			global::FormsControls.Droid.Resource.Color.highlighted_text_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.highlighted_text_material_dark;
+			global::FormsControls.Droid.Resource.Color.highlighted_text_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.highlighted_text_material_light;
+			global::FormsControls.Droid.Resource.Color.material_blue_grey_800 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_blue_grey_800;
+			global::FormsControls.Droid.Resource.Color.material_blue_grey_900 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_blue_grey_900;
+			global::FormsControls.Droid.Resource.Color.material_blue_grey_950 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_blue_grey_950;
+			global::FormsControls.Droid.Resource.Color.material_deep_teal_200 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_deep_teal_200;
+			global::FormsControls.Droid.Resource.Color.material_deep_teal_500 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_deep_teal_500;
+			global::FormsControls.Droid.Resource.Color.material_grey_100 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_100;
+			global::FormsControls.Droid.Resource.Color.material_grey_300 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_300;
+			global::FormsControls.Droid.Resource.Color.material_grey_50 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_50;
+			global::FormsControls.Droid.Resource.Color.material_grey_600 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_600;
+			global::FormsControls.Droid.Resource.Color.material_grey_800 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_800;
+			global::FormsControls.Droid.Resource.Color.material_grey_850 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_850;
+			global::FormsControls.Droid.Resource.Color.material_grey_900 = global::StreetWorkoutV2_Bert.Droid.Resource.Color.material_grey_900;
+			global::FormsControls.Droid.Resource.Color.notification_action_color_filter = global::StreetWorkoutV2_Bert.Droid.Resource.Color.notification_action_color_filter;
+			global::FormsControls.Droid.Resource.Color.notification_icon_bg_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.notification_icon_bg_color;
+			global::FormsControls.Droid.Resource.Color.notification_material_background_media_default_color = global::StreetWorkoutV2_Bert.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::FormsControls.Droid.Resource.Color.primary_dark_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_dark_material_dark;
+			global::FormsControls.Droid.Resource.Color.primary_dark_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_dark_material_light;
+			global::FormsControls.Droid.Resource.Color.primary_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_material_dark;
+			global::FormsControls.Droid.Resource.Color.primary_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_material_light;
+			global::FormsControls.Droid.Resource.Color.primary_text_default_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_text_default_material_dark;
+			global::FormsControls.Droid.Resource.Color.primary_text_default_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_text_default_material_light;
+			global::FormsControls.Droid.Resource.Color.primary_text_disabled_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::FormsControls.Droid.Resource.Color.primary_text_disabled_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::FormsControls.Droid.Resource.Color.ripple_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.ripple_material_dark;
+			global::FormsControls.Droid.Resource.Color.ripple_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.ripple_material_light;
+			global::FormsControls.Droid.Resource.Color.secondary_text_default_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::FormsControls.Droid.Resource.Color.secondary_text_default_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.secondary_text_default_material_light;
+			global::FormsControls.Droid.Resource.Color.secondary_text_disabled_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::FormsControls.Droid.Resource.Color.secondary_text_disabled_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::FormsControls.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::FormsControls.Droid.Resource.Color.switch_thumb_disabled_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::FormsControls.Droid.Resource.Color.switch_thumb_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.switch_thumb_material_dark;
+			global::FormsControls.Droid.Resource.Color.switch_thumb_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.switch_thumb_material_light;
+			global::FormsControls.Droid.Resource.Color.switch_thumb_normal_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::FormsControls.Droid.Resource.Color.switch_thumb_normal_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::FormsControls.Droid.Resource.Color.tooltip_background_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Color.tooltip_background_dark;
+			global::FormsControls.Droid.Resource.Color.tooltip_background_light = global::StreetWorkoutV2_Bert.Droid.Resource.Color.tooltip_background_light;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_progress_bar_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_button_min_height_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_button_min_width_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::FormsControls.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::FormsControls.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::FormsControls.Droid.Resource.Dimension.abc_control_corner_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_control_corner_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_control_inset_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_control_inset_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_control_padding_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_control_padding_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_min_width_major = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_padding_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::FormsControls.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::FormsControls.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::FormsControls.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::FormsControls.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::FormsControls.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_floating_window_z = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_floating_window_z;
+			global::FormsControls.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_panel_menu_list_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::FormsControls.Droid.Resource.Dimension.abc_progress_bar_height_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_search_view_preferred_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::FormsControls.Droid.Resource.Dimension.abc_search_view_preferred_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::FormsControls.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_switch_padding = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_switch_padding;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_body_1_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_body_2_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_button_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_caption_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_display_1_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_display_2_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_display_3_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_display_4_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_headline_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_large_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_medium_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_menu_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_small_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_subhead_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_title_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::FormsControls.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::FormsControls.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::FormsControls.Droid.Resource.Dimension.cardview_default_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.cardview_default_elevation;
+			global::FormsControls.Droid.Resource.Dimension.cardview_default_radius = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.cardview_default_radius;
+			global::FormsControls.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::FormsControls.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::FormsControls.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::FormsControls.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::FormsControls.Droid.Resource.Dimension.compat_control_corner_material = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.compat_control_corner_material;
+			global::FormsControls.Droid.Resource.Dimension.design_appbar_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_appbar_elevation;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_margin = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::FormsControls.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::FormsControls.Droid.Resource.Dimension.design_fab_border_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_fab_border_width;
+			global::FormsControls.Droid.Resource.Dimension.design_fab_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_fab_elevation;
+			global::FormsControls.Droid.Resource.Dimension.design_fab_image_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_fab_image_size;
+			global::FormsControls.Droid.Resource.Dimension.design_fab_size_mini = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_fab_size_mini;
+			global::FormsControls.Droid.Resource.Dimension.design_fab_size_normal = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_fab_size_normal;
+			global::FormsControls.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::FormsControls.Droid.Resource.Dimension.design_navigation_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_navigation_elevation;
+			global::FormsControls.Droid.Resource.Dimension.design_navigation_icon_padding = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::FormsControls.Droid.Resource.Dimension.design_navigation_icon_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::FormsControls.Droid.Resource.Dimension.design_navigation_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_navigation_max_width;
+			global::FormsControls.Droid.Resource.Dimension.design_navigation_padding_bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::FormsControls.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_min_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::FormsControls.Droid.Resource.Dimension.design_snackbar_text_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::FormsControls.Droid.Resource.Dimension.design_tab_max_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_tab_max_width;
+			global::FormsControls.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::FormsControls.Droid.Resource.Dimension.design_tab_text_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_tab_text_size;
+			global::FormsControls.Droid.Resource.Dimension.design_tab_text_size_2line = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::FormsControls.Droid.Resource.Dimension.disabled_alpha_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::FormsControls.Droid.Resource.Dimension.disabled_alpha_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::FormsControls.Droid.Resource.Dimension.fastscroll_default_thickness = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::FormsControls.Droid.Resource.Dimension.fastscroll_margin = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.fastscroll_margin;
+			global::FormsControls.Droid.Resource.Dimension.fastscroll_minimum_range = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::FormsControls.Droid.Resource.Dimension.highlight_alpha_material_colored = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::FormsControls.Droid.Resource.Dimension.highlight_alpha_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::FormsControls.Droid.Resource.Dimension.highlight_alpha_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::FormsControls.Droid.Resource.Dimension.hint_alpha_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::FormsControls.Droid.Resource.Dimension.hint_alpha_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::FormsControls.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::FormsControls.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::FormsControls.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::FormsControls.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::FormsControls.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::FormsControls.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::FormsControls.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::FormsControls.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::FormsControls.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::FormsControls.Droid.Resource.Dimension.mr_dialog_fixed_width_major = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::FormsControls.Droid.Resource.Dimension.mr_dialog_fixed_width_minor = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::FormsControls.Droid.Resource.Dimension.notification_action_icon_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_action_icon_size;
+			global::FormsControls.Droid.Resource.Dimension.notification_action_text_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_action_text_size;
+			global::FormsControls.Droid.Resource.Dimension.notification_big_circle_margin = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::FormsControls.Droid.Resource.Dimension.notification_content_margin_start = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_content_margin_start;
+			global::FormsControls.Droid.Resource.Dimension.notification_large_icon_height = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_large_icon_height;
+			global::FormsControls.Droid.Resource.Dimension.notification_large_icon_width = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_large_icon_width;
+			global::FormsControls.Droid.Resource.Dimension.notification_main_column_padding_top = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::FormsControls.Droid.Resource.Dimension.notification_media_narrow_margin = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::FormsControls.Droid.Resource.Dimension.notification_right_icon_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_right_icon_size;
+			global::FormsControls.Droid.Resource.Dimension.notification_right_side_padding_top = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::FormsControls.Droid.Resource.Dimension.notification_small_icon_background_padding = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::FormsControls.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::FormsControls.Droid.Resource.Dimension.notification_subtext_size = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_subtext_size;
+			global::FormsControls.Droid.Resource.Dimension.notification_top_pad = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_top_pad;
+			global::FormsControls.Droid.Resource.Dimension.notification_top_pad_large_text = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_corner_radius = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_horizontal_padding = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_margin = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_margin;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_vertical_padding = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::FormsControls.Droid.Resource.Dimension.tooltip_y_offset_touch = global::StreetWorkoutV2_Bert.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::FormsControls.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_borderless_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_check_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_check_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_colored_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_radio_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::FormsControls.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::FormsControls.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::FormsControls.Droid.Resource.Drawable.abc_cab_background_top_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_control_background_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_control_background_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_dialog_material_background = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::FormsControls.Droid.Resource.Drawable.abc_edit_text_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_edit_text_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_ab_back_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_clear_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_search_api_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::FormsControls.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_item_background_holo_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_item_background_holo_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_focused_holo = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_longpressed_holo = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_list_selector_holo_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::FormsControls.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::FormsControls.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ratingbar_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_ratingbar_small_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::FormsControls.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::FormsControls.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_seekbar_track_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_switch_thumb_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_tab_indicator_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_cursor_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::FormsControls.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::FormsControls.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::FormsControls.Droid.Resource.Drawable.abc_textfield_search_material = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::FormsControls.Droid.Resource.Drawable.abc_vector_test = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.abc_vector_test;
+			global::FormsControls.Droid.Resource.Drawable.avd_hide_password = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_hide_password;
+			global::FormsControls.Droid.Resource.Drawable.avd_hide_password_1 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_hide_password_1;
+			global::FormsControls.Droid.Resource.Drawable.avd_hide_password_2 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_hide_password_2;
+			global::FormsControls.Droid.Resource.Drawable.avd_hide_password_3 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_hide_password_3;
+			global::FormsControls.Droid.Resource.Drawable.avd_show_password = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_show_password;
+			global::FormsControls.Droid.Resource.Drawable.avd_show_password_1 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_show_password_1;
+			global::FormsControls.Droid.Resource.Drawable.avd_show_password_2 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_show_password_2;
+			global::FormsControls.Droid.Resource.Drawable.avd_show_password_3 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.avd_show_password_3;
+			global::FormsControls.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::FormsControls.Droid.Resource.Drawable.design_fab_background = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.design_fab_background;
+			global::FormsControls.Droid.Resource.Drawable.design_ic_visibility = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.design_ic_visibility;
+			global::FormsControls.Droid.Resource.Drawable.design_ic_visibility_off = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::FormsControls.Droid.Resource.Drawable.design_password_eye = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.design_password_eye;
+			global::FormsControls.Droid.Resource.Drawable.design_snackbar_background = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.design_snackbar_background;
+			global::FormsControls.Droid.Resource.Drawable.ic_audiotrack_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_audiotrack_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_audiotrack_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_dialog_close_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_dialog_close_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_dialog_close_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_dialog_close_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_00 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_00;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_01 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_01;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_02 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_02;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_03 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_03;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_04 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_04;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_05 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_05;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_06 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_06;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_07 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_07;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_08 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_08;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_09 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_09;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_10 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_10;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_11 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_11;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_12 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_12;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_13 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_13;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_14 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_14;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_collapse_15 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_collapse_15;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_00 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_00;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_01 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_01;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_02 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_02;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_03 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_03;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_04 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_04;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_05 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_05;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_06 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_06;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_07 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_07;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_08 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_08;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_09 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_09;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_10 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_10;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_11 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_11;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_12 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_12;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_13 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_13;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_14 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_14;
+			global::FormsControls.Droid.Resource.Drawable.ic_group_expand_15 = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_group_expand_15;
+			global::FormsControls.Droid.Resource.Drawable.ic_media_pause_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_media_pause_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_media_pause_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_media_pause_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_media_play_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_media_play_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_media_play_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_media_play_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_media_stop_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_media_stop_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_media_stop_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_media_stop_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_00_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_00_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_01_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_01_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_02_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_02_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_03_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_03_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_04_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_04_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_05_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_05_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_06_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_06_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_07_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_07_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_08_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_08_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_09_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_09_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_10_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_10_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_11_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_11_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_12_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_12_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_13_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_13_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_14_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_14_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_15_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_15_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_16_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_16_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_17_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_17_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_18_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_18_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_19_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_19_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_20_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_20_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_21_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_21_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_22_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_22_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_23_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_23_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_23_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_23_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_24_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_24_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_24_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_24_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_25_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_25_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_25_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_25_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_26_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_26_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_26_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_26_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_27_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_27_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_27_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_27_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_28_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_28_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_28_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_28_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_29_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_29_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_29_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_29_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_30_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_30_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connected_30_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connected_30_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_00_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_01_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_02_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_03_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_04_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_05_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_06_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_07_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_08_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_09_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_10_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_11_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_12_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_13_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_14_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_15_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_16_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_17_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_18_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_19_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_20_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_21_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_22_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_23_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_23_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_24_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_24_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_25_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_25_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_26_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_26_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_27_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_27_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_28_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_28_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_29_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_29_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_connecting_30_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_connecting_30_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_disabled_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_disabled_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_disabled_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_disconnected_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_disconnected_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_mr_button_grey = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_mr_button_grey;
+			global::FormsControls.Droid.Resource.Drawable.ic_vol_type_speaker_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_vol_type_speaker_group_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_vol_type_speaker_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_vol_type_speaker_light;
+			global::FormsControls.Droid.Resource.Drawable.ic_vol_type_tv_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_vol_type_tv_dark;
+			global::FormsControls.Droid.Resource.Drawable.ic_vol_type_tv_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.ic_vol_type_tv_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_button_connected_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_button_connected_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_button_connected_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_button_connected_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_button_connecting_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_button_connecting_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_button_connecting_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_button_connecting_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_button_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_button_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_button_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_button_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_dialog_close_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_dialog_close_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_dialog_close_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_dialog_close_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_dialog_material_background_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_dialog_material_background_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_group_collapse = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_group_collapse;
+			global::FormsControls.Droid.Resource.Drawable.mr_group_expand = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_group_expand;
+			global::FormsControls.Droid.Resource.Drawable.mr_media_pause_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_media_pause_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_media_pause_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_media_pause_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_media_play_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_media_play_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_media_play_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_media_play_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_media_stop_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_media_stop_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_media_stop_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_media_stop_light;
+			global::FormsControls.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
+			global::FormsControls.Droid.Resource.Drawable.mr_vol_type_audiotrack_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
+			global::FormsControls.Droid.Resource.Drawable.navigation_empty_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.navigation_empty_icon;
+			global::FormsControls.Droid.Resource.Drawable.notification_action_background = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_action_background;
+			global::FormsControls.Droid.Resource.Drawable.notification_bg = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_bg;
+			global::FormsControls.Droid.Resource.Drawable.notification_bg_low = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_bg_low;
+			global::FormsControls.Droid.Resource.Drawable.notification_bg_low_normal = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::FormsControls.Droid.Resource.Drawable.notification_bg_low_pressed = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::FormsControls.Droid.Resource.Drawable.notification_bg_normal = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_bg_normal;
+			global::FormsControls.Droid.Resource.Drawable.notification_bg_normal_pressed = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::FormsControls.Droid.Resource.Drawable.notification_icon_background = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_icon_background;
+			global::FormsControls.Droid.Resource.Drawable.notification_template_icon_bg = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::FormsControls.Droid.Resource.Drawable.notification_template_icon_low_bg = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::FormsControls.Droid.Resource.Drawable.notification_tile_bg = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notification_tile_bg;
+			global::FormsControls.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::FormsControls.Droid.Resource.Drawable.tooltip_frame_dark = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::FormsControls.Droid.Resource.Drawable.tooltip_frame_light = global::StreetWorkoutV2_Bert.Droid.Resource.Drawable.tooltip_frame_light;
+			global::FormsControls.Droid.Resource.Id.ALT = global::StreetWorkoutV2_Bert.Droid.Resource.Id.ALT;
+			global::FormsControls.Droid.Resource.Id.CTRL = global::StreetWorkoutV2_Bert.Droid.Resource.Id.CTRL;
+			global::FormsControls.Droid.Resource.Id.FUNCTION = global::StreetWorkoutV2_Bert.Droid.Resource.Id.FUNCTION;
+			global::FormsControls.Droid.Resource.Id.META = global::StreetWorkoutV2_Bert.Droid.Resource.Id.META;
+			global::FormsControls.Droid.Resource.Id.SHIFT = global::StreetWorkoutV2_Bert.Droid.Resource.Id.SHIFT;
+			global::FormsControls.Droid.Resource.Id.SYM = global::StreetWorkoutV2_Bert.Droid.Resource.Id.SYM;
+			global::FormsControls.Droid.Resource.Id.action0 = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action0;
+			global::FormsControls.Droid.Resource.Id.action_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar;
+			global::FormsControls.Droid.Resource.Id.action_bar_activity_content = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar_activity_content;
+			global::FormsControls.Droid.Resource.Id.action_bar_container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar_container;
+			global::FormsControls.Droid.Resource.Id.action_bar_root = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar_root;
+			global::FormsControls.Droid.Resource.Id.action_bar_spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar_spinner;
+			global::FormsControls.Droid.Resource.Id.action_bar_subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar_subtitle;
+			global::FormsControls.Droid.Resource.Id.action_bar_title = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_bar_title;
+			global::FormsControls.Droid.Resource.Id.action_container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_container;
+			global::FormsControls.Droid.Resource.Id.action_context_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_context_bar;
+			global::FormsControls.Droid.Resource.Id.action_divider = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_divider;
+			global::FormsControls.Droid.Resource.Id.action_image = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_image;
+			global::FormsControls.Droid.Resource.Id.action_menu_divider = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_menu_divider;
+			global::FormsControls.Droid.Resource.Id.action_menu_presenter = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_menu_presenter;
+			global::FormsControls.Droid.Resource.Id.action_mode_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_mode_bar;
+			global::FormsControls.Droid.Resource.Id.action_mode_bar_stub = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_mode_bar_stub;
+			global::FormsControls.Droid.Resource.Id.action_mode_close_button = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_mode_close_button;
+			global::FormsControls.Droid.Resource.Id.action_text = global::StreetWorkoutV2_Bert.Droid.Resource.Id.action_text;
+			global::FormsControls.Droid.Resource.Id.actions = global::StreetWorkoutV2_Bert.Droid.Resource.Id.actions;
+			global::FormsControls.Droid.Resource.Id.activity_chooser_view_content = global::StreetWorkoutV2_Bert.Droid.Resource.Id.activity_chooser_view_content;
+			global::FormsControls.Droid.Resource.Id.add = global::StreetWorkoutV2_Bert.Droid.Resource.Id.add;
+			global::FormsControls.Droid.Resource.Id.alertTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.alertTitle;
+			global::FormsControls.Droid.Resource.Id.all = global::StreetWorkoutV2_Bert.Droid.Resource.Id.all;
+			global::FormsControls.Droid.Resource.Id.always = global::StreetWorkoutV2_Bert.Droid.Resource.Id.always;
+			global::FormsControls.Droid.Resource.Id.async = global::StreetWorkoutV2_Bert.Droid.Resource.Id.async;
+			global::FormsControls.Droid.Resource.Id.auto = global::StreetWorkoutV2_Bert.Droid.Resource.Id.auto;
+			global::FormsControls.Droid.Resource.Id.beginning = global::StreetWorkoutV2_Bert.Droid.Resource.Id.beginning;
+			global::FormsControls.Droid.Resource.Id.blocking = global::StreetWorkoutV2_Bert.Droid.Resource.Id.blocking;
+			global::FormsControls.Droid.Resource.Id.bottom = global::StreetWorkoutV2_Bert.Droid.Resource.Id.bottom;
+			global::FormsControls.Droid.Resource.Id.buttonPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.buttonPanel;
+			global::FormsControls.Droid.Resource.Id.cancel_action = global::StreetWorkoutV2_Bert.Droid.Resource.Id.cancel_action;
+			global::FormsControls.Droid.Resource.Id.center = global::StreetWorkoutV2_Bert.Droid.Resource.Id.center;
+			global::FormsControls.Droid.Resource.Id.center_horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Id.center_horizontal;
+			global::FormsControls.Droid.Resource.Id.center_vertical = global::StreetWorkoutV2_Bert.Droid.Resource.Id.center_vertical;
+			global::FormsControls.Droid.Resource.Id.checkbox = global::StreetWorkoutV2_Bert.Droid.Resource.Id.checkbox;
+			global::FormsControls.Droid.Resource.Id.chronometer = global::StreetWorkoutV2_Bert.Droid.Resource.Id.chronometer;
+			global::FormsControls.Droid.Resource.Id.clip_horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Id.clip_horizontal;
+			global::FormsControls.Droid.Resource.Id.clip_vertical = global::StreetWorkoutV2_Bert.Droid.Resource.Id.clip_vertical;
+			global::FormsControls.Droid.Resource.Id.collapseActionView = global::StreetWorkoutV2_Bert.Droid.Resource.Id.collapseActionView;
+			global::FormsControls.Droid.Resource.Id.container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.container;
+			global::FormsControls.Droid.Resource.Id.contentPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.contentPanel;
+			global::FormsControls.Droid.Resource.Id.coordinator = global::StreetWorkoutV2_Bert.Droid.Resource.Id.coordinator;
+			global::FormsControls.Droid.Resource.Id.custom = global::StreetWorkoutV2_Bert.Droid.Resource.Id.custom;
+			global::FormsControls.Droid.Resource.Id.customPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.customPanel;
+			global::FormsControls.Droid.Resource.Id.decor_content_parent = global::StreetWorkoutV2_Bert.Droid.Resource.Id.decor_content_parent;
+			global::FormsControls.Droid.Resource.Id.default_activity_button = global::StreetWorkoutV2_Bert.Droid.Resource.Id.default_activity_button;
+			global::FormsControls.Droid.Resource.Id.design_bottom_sheet = global::StreetWorkoutV2_Bert.Droid.Resource.Id.design_bottom_sheet;
+			global::FormsControls.Droid.Resource.Id.design_menu_item_action_area = global::StreetWorkoutV2_Bert.Droid.Resource.Id.design_menu_item_action_area;
+			global::FormsControls.Droid.Resource.Id.design_menu_item_action_area_stub = global::StreetWorkoutV2_Bert.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::FormsControls.Droid.Resource.Id.design_menu_item_text = global::StreetWorkoutV2_Bert.Droid.Resource.Id.design_menu_item_text;
+			global::FormsControls.Droid.Resource.Id.design_navigation_view = global::StreetWorkoutV2_Bert.Droid.Resource.Id.design_navigation_view;
+			global::FormsControls.Droid.Resource.Id.disableHome = global::StreetWorkoutV2_Bert.Droid.Resource.Id.disableHome;
+			global::FormsControls.Droid.Resource.Id.edit_query = global::StreetWorkoutV2_Bert.Droid.Resource.Id.edit_query;
+			global::FormsControls.Droid.Resource.Id.end = global::StreetWorkoutV2_Bert.Droid.Resource.Id.end;
+			global::FormsControls.Droid.Resource.Id.end_padder = global::StreetWorkoutV2_Bert.Droid.Resource.Id.end_padder;
+			global::FormsControls.Droid.Resource.Id.enterAlways = global::StreetWorkoutV2_Bert.Droid.Resource.Id.enterAlways;
+			global::FormsControls.Droid.Resource.Id.enterAlwaysCollapsed = global::StreetWorkoutV2_Bert.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::FormsControls.Droid.Resource.Id.exitUntilCollapsed = global::StreetWorkoutV2_Bert.Droid.Resource.Id.exitUntilCollapsed;
+			global::FormsControls.Droid.Resource.Id.expand_activities_button = global::StreetWorkoutV2_Bert.Droid.Resource.Id.expand_activities_button;
+			global::FormsControls.Droid.Resource.Id.expanded_menu = global::StreetWorkoutV2_Bert.Droid.Resource.Id.expanded_menu;
+			global::FormsControls.Droid.Resource.Id.fill = global::StreetWorkoutV2_Bert.Droid.Resource.Id.fill;
+			global::FormsControls.Droid.Resource.Id.fill_horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Id.fill_horizontal;
+			global::FormsControls.Droid.Resource.Id.fill_vertical = global::StreetWorkoutV2_Bert.Droid.Resource.Id.fill_vertical;
+			global::FormsControls.Droid.Resource.Id.@fixed = global::StreetWorkoutV2_Bert.Droid.Resource.Id.@fixed;
+			global::FormsControls.Droid.Resource.Id.forever = global::StreetWorkoutV2_Bert.Droid.Resource.Id.forever;
+			global::FormsControls.Droid.Resource.Id.ghost_view = global::StreetWorkoutV2_Bert.Droid.Resource.Id.ghost_view;
+			global::FormsControls.Droid.Resource.Id.home = global::StreetWorkoutV2_Bert.Droid.Resource.Id.home;
+			global::FormsControls.Droid.Resource.Id.homeAsUp = global::StreetWorkoutV2_Bert.Droid.Resource.Id.homeAsUp;
+			global::FormsControls.Droid.Resource.Id.icon = global::StreetWorkoutV2_Bert.Droid.Resource.Id.icon;
+			global::FormsControls.Droid.Resource.Id.icon_group = global::StreetWorkoutV2_Bert.Droid.Resource.Id.icon_group;
+			global::FormsControls.Droid.Resource.Id.ifRoom = global::StreetWorkoutV2_Bert.Droid.Resource.Id.ifRoom;
+			global::FormsControls.Droid.Resource.Id.image = global::StreetWorkoutV2_Bert.Droid.Resource.Id.image;
+			global::FormsControls.Droid.Resource.Id.info = global::StreetWorkoutV2_Bert.Droid.Resource.Id.info;
+			global::FormsControls.Droid.Resource.Id.italic = global::StreetWorkoutV2_Bert.Droid.Resource.Id.italic;
+			global::FormsControls.Droid.Resource.Id.item_touch_helper_previous_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::FormsControls.Droid.Resource.Id.largeLabel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.largeLabel;
+			global::FormsControls.Droid.Resource.Id.left = global::StreetWorkoutV2_Bert.Droid.Resource.Id.left;
+			global::FormsControls.Droid.Resource.Id.line1 = global::StreetWorkoutV2_Bert.Droid.Resource.Id.line1;
+			global::FormsControls.Droid.Resource.Id.line3 = global::StreetWorkoutV2_Bert.Droid.Resource.Id.line3;
+			global::FormsControls.Droid.Resource.Id.listMode = global::StreetWorkoutV2_Bert.Droid.Resource.Id.listMode;
+			global::FormsControls.Droid.Resource.Id.list_item = global::StreetWorkoutV2_Bert.Droid.Resource.Id.list_item;
+			global::FormsControls.Droid.Resource.Id.masked = global::StreetWorkoutV2_Bert.Droid.Resource.Id.masked;
+			global::FormsControls.Droid.Resource.Id.media_actions = global::StreetWorkoutV2_Bert.Droid.Resource.Id.media_actions;
+			global::FormsControls.Droid.Resource.Id.message = global::StreetWorkoutV2_Bert.Droid.Resource.Id.message;
+			global::FormsControls.Droid.Resource.Id.middle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.middle;
+			global::FormsControls.Droid.Resource.Id.mini = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mini;
+			global::FormsControls.Droid.Resource.Id.mr_art = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_art;
+			global::FormsControls.Droid.Resource.Id.mr_chooser_list = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_chooser_list;
+			global::FormsControls.Droid.Resource.Id.mr_chooser_route_desc = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_chooser_route_desc;
+			global::FormsControls.Droid.Resource.Id.mr_chooser_route_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_chooser_route_icon;
+			global::FormsControls.Droid.Resource.Id.mr_chooser_route_name = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_chooser_route_name;
+			global::FormsControls.Droid.Resource.Id.mr_chooser_title = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_chooser_title;
+			global::FormsControls.Droid.Resource.Id.mr_close = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_close;
+			global::FormsControls.Droid.Resource.Id.mr_control_divider = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_control_divider;
+			global::FormsControls.Droid.Resource.Id.mr_control_playback_ctrl = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_control_playback_ctrl;
+			global::FormsControls.Droid.Resource.Id.mr_control_subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_control_subtitle;
+			global::FormsControls.Droid.Resource.Id.mr_control_title = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_control_title;
+			global::FormsControls.Droid.Resource.Id.mr_control_title_container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_control_title_container;
+			global::FormsControls.Droid.Resource.Id.mr_custom_control = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_custom_control;
+			global::FormsControls.Droid.Resource.Id.mr_default_control = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_default_control;
+			global::FormsControls.Droid.Resource.Id.mr_dialog_area = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_dialog_area;
+			global::FormsControls.Droid.Resource.Id.mr_expandable_area = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_expandable_area;
+			global::FormsControls.Droid.Resource.Id.mr_group_expand_collapse = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_group_expand_collapse;
+			global::FormsControls.Droid.Resource.Id.mr_media_main_control = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_media_main_control;
+			global::FormsControls.Droid.Resource.Id.mr_name = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_name;
+			global::FormsControls.Droid.Resource.Id.mr_playback_control = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_playback_control;
+			global::FormsControls.Droid.Resource.Id.mr_title_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_title_bar;
+			global::FormsControls.Droid.Resource.Id.mr_volume_control = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_volume_control;
+			global::FormsControls.Droid.Resource.Id.mr_volume_group_list = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_volume_group_list;
+			global::FormsControls.Droid.Resource.Id.mr_volume_item_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_volume_item_icon;
+			global::FormsControls.Droid.Resource.Id.mr_volume_slider = global::StreetWorkoutV2_Bert.Droid.Resource.Id.mr_volume_slider;
+			global::FormsControls.Droid.Resource.Id.multiply = global::StreetWorkoutV2_Bert.Droid.Resource.Id.multiply;
+			global::FormsControls.Droid.Resource.Id.navigation_header_container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.navigation_header_container;
+			global::FormsControls.Droid.Resource.Id.never = global::StreetWorkoutV2_Bert.Droid.Resource.Id.never;
+			global::FormsControls.Droid.Resource.Id.none = global::StreetWorkoutV2_Bert.Droid.Resource.Id.none;
+			global::FormsControls.Droid.Resource.Id.normal = global::StreetWorkoutV2_Bert.Droid.Resource.Id.normal;
+			global::FormsControls.Droid.Resource.Id.notification_background = global::StreetWorkoutV2_Bert.Droid.Resource.Id.notification_background;
+			global::FormsControls.Droid.Resource.Id.notification_main_column = global::StreetWorkoutV2_Bert.Droid.Resource.Id.notification_main_column;
+			global::FormsControls.Droid.Resource.Id.notification_main_column_container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.notification_main_column_container;
+			global::FormsControls.Droid.Resource.Id.parallax = global::StreetWorkoutV2_Bert.Droid.Resource.Id.parallax;
+			global::FormsControls.Droid.Resource.Id.parentPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.parentPanel;
+			global::FormsControls.Droid.Resource.Id.parent_matrix = global::StreetWorkoutV2_Bert.Droid.Resource.Id.parent_matrix;
+			global::FormsControls.Droid.Resource.Id.pin = global::StreetWorkoutV2_Bert.Droid.Resource.Id.pin;
+			global::FormsControls.Droid.Resource.Id.progress_circular = global::StreetWorkoutV2_Bert.Droid.Resource.Id.progress_circular;
+			global::FormsControls.Droid.Resource.Id.progress_horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Id.progress_horizontal;
+			global::FormsControls.Droid.Resource.Id.radio = global::StreetWorkoutV2_Bert.Droid.Resource.Id.radio;
+			global::FormsControls.Droid.Resource.Id.right = global::StreetWorkoutV2_Bert.Droid.Resource.Id.right;
+			global::FormsControls.Droid.Resource.Id.right_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Id.right_icon;
+			global::FormsControls.Droid.Resource.Id.right_side = global::StreetWorkoutV2_Bert.Droid.Resource.Id.right_side;
+			global::FormsControls.Droid.Resource.Id.save_image_matrix = global::StreetWorkoutV2_Bert.Droid.Resource.Id.save_image_matrix;
+			global::FormsControls.Droid.Resource.Id.save_non_transition_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Id.save_non_transition_alpha;
+			global::FormsControls.Droid.Resource.Id.save_scale_type = global::StreetWorkoutV2_Bert.Droid.Resource.Id.save_scale_type;
+			global::FormsControls.Droid.Resource.Id.screen = global::StreetWorkoutV2_Bert.Droid.Resource.Id.screen;
+			global::FormsControls.Droid.Resource.Id.scroll = global::StreetWorkoutV2_Bert.Droid.Resource.Id.scroll;
+			global::FormsControls.Droid.Resource.Id.scrollIndicatorDown = global::StreetWorkoutV2_Bert.Droid.Resource.Id.scrollIndicatorDown;
+			global::FormsControls.Droid.Resource.Id.scrollIndicatorUp = global::StreetWorkoutV2_Bert.Droid.Resource.Id.scrollIndicatorUp;
+			global::FormsControls.Droid.Resource.Id.scrollView = global::StreetWorkoutV2_Bert.Droid.Resource.Id.scrollView;
+			global::FormsControls.Droid.Resource.Id.scrollable = global::StreetWorkoutV2_Bert.Droid.Resource.Id.scrollable;
+			global::FormsControls.Droid.Resource.Id.search_badge = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_badge;
+			global::FormsControls.Droid.Resource.Id.search_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_bar;
+			global::FormsControls.Droid.Resource.Id.search_button = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_button;
+			global::FormsControls.Droid.Resource.Id.search_close_btn = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_close_btn;
+			global::FormsControls.Droid.Resource.Id.search_edit_frame = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_edit_frame;
+			global::FormsControls.Droid.Resource.Id.search_go_btn = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_go_btn;
+			global::FormsControls.Droid.Resource.Id.search_mag_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_mag_icon;
+			global::FormsControls.Droid.Resource.Id.search_plate = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_plate;
+			global::FormsControls.Droid.Resource.Id.search_src_text = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_src_text;
+			global::FormsControls.Droid.Resource.Id.search_voice_btn = global::StreetWorkoutV2_Bert.Droid.Resource.Id.search_voice_btn;
+			global::FormsControls.Droid.Resource.Id.select_dialog_listview = global::StreetWorkoutV2_Bert.Droid.Resource.Id.select_dialog_listview;
+			global::FormsControls.Droid.Resource.Id.shortcut = global::StreetWorkoutV2_Bert.Droid.Resource.Id.shortcut;
+			global::FormsControls.Droid.Resource.Id.showCustom = global::StreetWorkoutV2_Bert.Droid.Resource.Id.showCustom;
+			global::FormsControls.Droid.Resource.Id.showHome = global::StreetWorkoutV2_Bert.Droid.Resource.Id.showHome;
+			global::FormsControls.Droid.Resource.Id.showTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.showTitle;
+			global::FormsControls.Droid.Resource.Id.smallLabel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.smallLabel;
+			global::FormsControls.Droid.Resource.Id.snackbar_action = global::StreetWorkoutV2_Bert.Droid.Resource.Id.snackbar_action;
+			global::FormsControls.Droid.Resource.Id.snackbar_text = global::StreetWorkoutV2_Bert.Droid.Resource.Id.snackbar_text;
+			global::FormsControls.Droid.Resource.Id.snap = global::StreetWorkoutV2_Bert.Droid.Resource.Id.snap;
+			global::FormsControls.Droid.Resource.Id.spacer = global::StreetWorkoutV2_Bert.Droid.Resource.Id.spacer;
+			global::FormsControls.Droid.Resource.Id.split_action_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Id.split_action_bar;
+			global::FormsControls.Droid.Resource.Id.src_atop = global::StreetWorkoutV2_Bert.Droid.Resource.Id.src_atop;
+			global::FormsControls.Droid.Resource.Id.src_in = global::StreetWorkoutV2_Bert.Droid.Resource.Id.src_in;
+			global::FormsControls.Droid.Resource.Id.src_over = global::StreetWorkoutV2_Bert.Droid.Resource.Id.src_over;
+			global::FormsControls.Droid.Resource.Id.start = global::StreetWorkoutV2_Bert.Droid.Resource.Id.start;
+			global::FormsControls.Droid.Resource.Id.status_bar_latest_event_content = global::StreetWorkoutV2_Bert.Droid.Resource.Id.status_bar_latest_event_content;
+			global::FormsControls.Droid.Resource.Id.submenuarrow = global::StreetWorkoutV2_Bert.Droid.Resource.Id.submenuarrow;
+			global::FormsControls.Droid.Resource.Id.submit_area = global::StreetWorkoutV2_Bert.Droid.Resource.Id.submit_area;
+			global::FormsControls.Droid.Resource.Id.tabMode = global::StreetWorkoutV2_Bert.Droid.Resource.Id.tabMode;
+			global::FormsControls.Droid.Resource.Id.tag_transition_group = global::StreetWorkoutV2_Bert.Droid.Resource.Id.tag_transition_group;
+			global::FormsControls.Droid.Resource.Id.text = global::StreetWorkoutV2_Bert.Droid.Resource.Id.text;
+			global::FormsControls.Droid.Resource.Id.text2 = global::StreetWorkoutV2_Bert.Droid.Resource.Id.text2;
+			global::FormsControls.Droid.Resource.Id.textSpacerNoButtons = global::StreetWorkoutV2_Bert.Droid.Resource.Id.textSpacerNoButtons;
+			global::FormsControls.Droid.Resource.Id.textSpacerNoTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.textSpacerNoTitle;
+			global::FormsControls.Droid.Resource.Id.text_input_password_toggle = global::StreetWorkoutV2_Bert.Droid.Resource.Id.text_input_password_toggle;
+			global::FormsControls.Droid.Resource.Id.textinput_counter = global::StreetWorkoutV2_Bert.Droid.Resource.Id.textinput_counter;
+			global::FormsControls.Droid.Resource.Id.textinput_error = global::StreetWorkoutV2_Bert.Droid.Resource.Id.textinput_error;
+			global::FormsControls.Droid.Resource.Id.time = global::StreetWorkoutV2_Bert.Droid.Resource.Id.time;
+			global::FormsControls.Droid.Resource.Id.title = global::StreetWorkoutV2_Bert.Droid.Resource.Id.title;
+			global::FormsControls.Droid.Resource.Id.titleDividerNoCustom = global::StreetWorkoutV2_Bert.Droid.Resource.Id.titleDividerNoCustom;
+			global::FormsControls.Droid.Resource.Id.title_template = global::StreetWorkoutV2_Bert.Droid.Resource.Id.title_template;
+			global::FormsControls.Droid.Resource.Id.top = global::StreetWorkoutV2_Bert.Droid.Resource.Id.top;
+			global::FormsControls.Droid.Resource.Id.topPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Id.topPanel;
+			global::FormsControls.Droid.Resource.Id.touch_outside = global::StreetWorkoutV2_Bert.Droid.Resource.Id.touch_outside;
+			global::FormsControls.Droid.Resource.Id.transition_current_scene = global::StreetWorkoutV2_Bert.Droid.Resource.Id.transition_current_scene;
+			global::FormsControls.Droid.Resource.Id.transition_layout_save = global::StreetWorkoutV2_Bert.Droid.Resource.Id.transition_layout_save;
+			global::FormsControls.Droid.Resource.Id.transition_position = global::StreetWorkoutV2_Bert.Droid.Resource.Id.transition_position;
+			global::FormsControls.Droid.Resource.Id.transition_scene_layoutid_cache = global::StreetWorkoutV2_Bert.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::FormsControls.Droid.Resource.Id.transition_transform = global::StreetWorkoutV2_Bert.Droid.Resource.Id.transition_transform;
+			global::FormsControls.Droid.Resource.Id.uniform = global::StreetWorkoutV2_Bert.Droid.Resource.Id.uniform;
+			global::FormsControls.Droid.Resource.Id.up = global::StreetWorkoutV2_Bert.Droid.Resource.Id.up;
+			global::FormsControls.Droid.Resource.Id.useLogo = global::StreetWorkoutV2_Bert.Droid.Resource.Id.useLogo;
+			global::FormsControls.Droid.Resource.Id.view_offset_helper = global::StreetWorkoutV2_Bert.Droid.Resource.Id.view_offset_helper;
+			global::FormsControls.Droid.Resource.Id.visible = global::StreetWorkoutV2_Bert.Droid.Resource.Id.visible;
+			global::FormsControls.Droid.Resource.Id.volume_item_container = global::StreetWorkoutV2_Bert.Droid.Resource.Id.volume_item_container;
+			global::FormsControls.Droid.Resource.Id.withText = global::StreetWorkoutV2_Bert.Droid.Resource.Id.withText;
+			global::FormsControls.Droid.Resource.Id.wrap_content = global::StreetWorkoutV2_Bert.Droid.Resource.Id.wrap_content;
+			global::FormsControls.Droid.Resource.Integer.abc_config_activityDefaultDur = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::FormsControls.Droid.Resource.Integer.abc_config_activityShortDur = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::FormsControls.Droid.Resource.Integer.animation_duration = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.animation_duration;
+			global::FormsControls.Droid.Resource.Integer.animation_duration_long = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.animation_duration_long;
+			global::FormsControls.Droid.Resource.Integer.animation_duration_short = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.animation_duration_short;
+			global::FormsControls.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::FormsControls.Droid.Resource.Integer.bottom_sheet_slide_duration = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::FormsControls.Droid.Resource.Integer.cancel_button_image_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::FormsControls.Droid.Resource.Integer.config_tooltipAnimTime = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::FormsControls.Droid.Resource.Integer.design_snackbar_text_max_lines = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::FormsControls.Droid.Resource.Integer.hide_password_duration = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.hide_password_duration;
+			global::FormsControls.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::FormsControls.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::FormsControls.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::FormsControls.Droid.Resource.Integer.show_password_duration = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.show_password_duration;
+			global::FormsControls.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::StreetWorkoutV2_Bert.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::FormsControls.Droid.Resource.Interpolator.mr_fast_out_slow_in = global::StreetWorkoutV2_Bert.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::FormsControls.Droid.Resource.Interpolator.mr_linear_out_slow_in = global::StreetWorkoutV2_Bert.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::FormsControls.Droid.Resource.Layout.abc_action_bar_title_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::FormsControls.Droid.Resource.Layout.abc_action_bar_up_container = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::FormsControls.Droid.Resource.Layout.abc_action_menu_item_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::FormsControls.Droid.Resource.Layout.abc_action_menu_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_action_menu_layout;
+			global::FormsControls.Droid.Resource.Layout.abc_action_mode_bar = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_action_mode_bar;
+			global::FormsControls.Droid.Resource.Layout.abc_action_mode_close_item_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::FormsControls.Droid.Resource.Layout.abc_activity_chooser_view = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::FormsControls.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::FormsControls.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::FormsControls.Droid.Resource.Layout.abc_alert_dialog_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::FormsControls.Droid.Resource.Layout.abc_alert_dialog_title_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::FormsControls.Droid.Resource.Layout.abc_dialog_title_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_dialog_title_material;
+			global::FormsControls.Droid.Resource.Layout.abc_expanded_menu_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::FormsControls.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::FormsControls.Droid.Resource.Layout.abc_list_menu_item_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::FormsControls.Droid.Resource.Layout.abc_list_menu_item_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::FormsControls.Droid.Resource.Layout.abc_list_menu_item_radio = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::FormsControls.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::FormsControls.Droid.Resource.Layout.abc_popup_menu_item_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::FormsControls.Droid.Resource.Layout.abc_screen_content_include = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_screen_content_include;
+			global::FormsControls.Droid.Resource.Layout.abc_screen_simple = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_screen_simple;
+			global::FormsControls.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::FormsControls.Droid.Resource.Layout.abc_screen_toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_screen_toolbar;
+			global::FormsControls.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::FormsControls.Droid.Resource.Layout.abc_search_view = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_search_view;
+			global::FormsControls.Droid.Resource.Layout.abc_select_dialog_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.abc_select_dialog_material;
+			global::FormsControls.Droid.Resource.Layout.design_bottom_navigation_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::FormsControls.Droid.Resource.Layout.design_bottom_sheet_dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::FormsControls.Droid.Resource.Layout.design_layout_snackbar = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_layout_snackbar;
+			global::FormsControls.Droid.Resource.Layout.design_layout_snackbar_include = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::FormsControls.Droid.Resource.Layout.design_layout_tab_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_layout_tab_icon;
+			global::FormsControls.Droid.Resource.Layout.design_layout_tab_text = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_layout_tab_text;
+			global::FormsControls.Droid.Resource.Layout.design_menu_item_action_area = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_menu_item_action_area;
+			global::FormsControls.Droid.Resource.Layout.design_navigation_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_navigation_item;
+			global::FormsControls.Droid.Resource.Layout.design_navigation_item_header = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_navigation_item_header;
+			global::FormsControls.Droid.Resource.Layout.design_navigation_item_separator = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_navigation_item_separator;
+			global::FormsControls.Droid.Resource.Layout.design_navigation_item_subheader = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::FormsControls.Droid.Resource.Layout.design_navigation_menu = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_navigation_menu;
+			global::FormsControls.Droid.Resource.Layout.design_navigation_menu_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_navigation_menu_item;
+			global::FormsControls.Droid.Resource.Layout.design_text_input_password_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.design_text_input_password_icon;
+			global::FormsControls.Droid.Resource.Layout.mr_chooser_dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.mr_chooser_dialog;
+			global::FormsControls.Droid.Resource.Layout.mr_chooser_list_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.mr_chooser_list_item;
+			global::FormsControls.Droid.Resource.Layout.mr_controller_material_dialog_b = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::FormsControls.Droid.Resource.Layout.mr_controller_volume_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.mr_controller_volume_item;
+			global::FormsControls.Droid.Resource.Layout.mr_playback_control = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.mr_playback_control;
+			global::FormsControls.Droid.Resource.Layout.mr_volume_control = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.mr_volume_control;
+			global::FormsControls.Droid.Resource.Layout.notification_action = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_action;
+			global::FormsControls.Droid.Resource.Layout.notification_action_tombstone = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_action_tombstone;
+			global::FormsControls.Droid.Resource.Layout.notification_media_action = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_media_action;
+			global::FormsControls.Droid.Resource.Layout.notification_media_cancel_action = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_media_cancel_action;
+			global::FormsControls.Droid.Resource.Layout.notification_template_big_media = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_big_media;
+			global::FormsControls.Droid.Resource.Layout.notification_template_big_media_custom = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::FormsControls.Droid.Resource.Layout.notification_template_big_media_narrow = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::FormsControls.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::FormsControls.Droid.Resource.Layout.notification_template_custom_big = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_custom_big;
+			global::FormsControls.Droid.Resource.Layout.notification_template_icon_group = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_icon_group;
+			global::FormsControls.Droid.Resource.Layout.notification_template_lines_media = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_lines_media;
+			global::FormsControls.Droid.Resource.Layout.notification_template_media = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_media;
+			global::FormsControls.Droid.Resource.Layout.notification_template_media_custom = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_media_custom;
+			global::FormsControls.Droid.Resource.Layout.notification_template_part_chronometer = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::FormsControls.Droid.Resource.Layout.notification_template_part_time = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.notification_template_part_time;
+			global::FormsControls.Droid.Resource.Layout.select_dialog_item_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.select_dialog_item_material;
+			global::FormsControls.Droid.Resource.Layout.select_dialog_multichoice_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::FormsControls.Droid.Resource.Layout.select_dialog_singlechoice_material = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::FormsControls.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::FormsControls.Droid.Resource.Layout.tooltip = global::StreetWorkoutV2_Bert.Droid.Resource.Layout.tooltip;
+			global::FormsControls.Droid.Resource.String.abc_action_bar_home_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_action_bar_home_description;
+			global::FormsControls.Droid.Resource.String.abc_action_bar_up_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_action_bar_up_description;
+			global::FormsControls.Droid.Resource.String.abc_action_menu_overflow_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::FormsControls.Droid.Resource.String.abc_action_mode_done = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_action_mode_done;
+			global::FormsControls.Droid.Resource.String.abc_activity_chooser_view_see_all = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::FormsControls.Droid.Resource.String.abc_activitychooserview_choose_application = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::FormsControls.Droid.Resource.String.abc_capital_off = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_capital_off;
+			global::FormsControls.Droid.Resource.String.abc_capital_on = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_capital_on;
+			global::FormsControls.Droid.Resource.String.abc_font_family_body_1_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_body_1_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_body_2_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_body_2_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_button_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_button_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_caption_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_caption_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_display_1_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_display_1_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_display_2_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_display_2_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_display_3_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_display_3_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_display_4_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_display_4_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_headline_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_headline_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_menu_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_menu_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_subhead_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_subhead_material;
+			global::FormsControls.Droid.Resource.String.abc_font_family_title_material = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_font_family_title_material;
+			global::FormsControls.Droid.Resource.String.abc_search_hint = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_search_hint;
+			global::FormsControls.Droid.Resource.String.abc_searchview_description_clear = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_searchview_description_clear;
+			global::FormsControls.Droid.Resource.String.abc_searchview_description_query = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_searchview_description_query;
+			global::FormsControls.Droid.Resource.String.abc_searchview_description_search = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_searchview_description_search;
+			global::FormsControls.Droid.Resource.String.abc_searchview_description_submit = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_searchview_description_submit;
+			global::FormsControls.Droid.Resource.String.abc_searchview_description_voice = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_searchview_description_voice;
+			global::FormsControls.Droid.Resource.String.abc_shareactionprovider_share_with = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::FormsControls.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::FormsControls.Droid.Resource.String.abc_toolbar_collapse_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::FormsControls.Droid.Resource.String.appbar_scrolling_view_behavior = global::StreetWorkoutV2_Bert.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::FormsControls.Droid.Resource.String.bottom_sheet_behavior = global::StreetWorkoutV2_Bert.Droid.Resource.String.bottom_sheet_behavior;
+			global::FormsControls.Droid.Resource.String.character_counter_pattern = global::StreetWorkoutV2_Bert.Droid.Resource.String.character_counter_pattern;
+			global::FormsControls.Droid.Resource.String.mr_button_content_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_button_content_description;
+			global::FormsControls.Droid.Resource.String.mr_cast_button_connected = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_cast_button_connected;
+			global::FormsControls.Droid.Resource.String.mr_cast_button_connecting = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_cast_button_connecting;
+			global::FormsControls.Droid.Resource.String.mr_cast_button_disconnected = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_cast_button_disconnected;
+			global::FormsControls.Droid.Resource.String.mr_chooser_searching = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_chooser_searching;
+			global::FormsControls.Droid.Resource.String.mr_chooser_title = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_chooser_title;
+			global::FormsControls.Droid.Resource.String.mr_controller_album_art = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_album_art;
+			global::FormsControls.Droid.Resource.String.mr_controller_casting_screen = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_casting_screen;
+			global::FormsControls.Droid.Resource.String.mr_controller_close_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_close_description;
+			global::FormsControls.Droid.Resource.String.mr_controller_collapse_group = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_collapse_group;
+			global::FormsControls.Droid.Resource.String.mr_controller_disconnect = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_disconnect;
+			global::FormsControls.Droid.Resource.String.mr_controller_expand_group = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_expand_group;
+			global::FormsControls.Droid.Resource.String.mr_controller_no_info_available = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_no_info_available;
+			global::FormsControls.Droid.Resource.String.mr_controller_no_media_selected = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_no_media_selected;
+			global::FormsControls.Droid.Resource.String.mr_controller_pause = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_pause;
+			global::FormsControls.Droid.Resource.String.mr_controller_play = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_play;
+			global::FormsControls.Droid.Resource.String.mr_controller_stop = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_stop;
+			global::FormsControls.Droid.Resource.String.mr_controller_stop_casting = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_stop_casting;
+			global::FormsControls.Droid.Resource.String.mr_controller_volume_slider = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_controller_volume_slider;
+			global::FormsControls.Droid.Resource.String.mr_system_route_name = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_system_route_name;
+			global::FormsControls.Droid.Resource.String.mr_user_route_category_name = global::StreetWorkoutV2_Bert.Droid.Resource.String.mr_user_route_category_name;
+			global::FormsControls.Droid.Resource.String.password_toggle_content_description = global::StreetWorkoutV2_Bert.Droid.Resource.String.password_toggle_content_description;
+			global::FormsControls.Droid.Resource.String.path_password_eye = global::StreetWorkoutV2_Bert.Droid.Resource.String.path_password_eye;
+			global::FormsControls.Droid.Resource.String.path_password_eye_mask_strike_through = global::StreetWorkoutV2_Bert.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::FormsControls.Droid.Resource.String.path_password_eye_mask_visible = global::StreetWorkoutV2_Bert.Droid.Resource.String.path_password_eye_mask_visible;
+			global::FormsControls.Droid.Resource.String.path_password_strike_through = global::StreetWorkoutV2_Bert.Droid.Resource.String.path_password_strike_through;
+			global::FormsControls.Droid.Resource.String.search_menu_title = global::StreetWorkoutV2_Bert.Droid.Resource.String.search_menu_title;
+			global::FormsControls.Droid.Resource.String.status_bar_notification_info_overflow = global::StreetWorkoutV2_Bert.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::FormsControls.Droid.Resource.Style.AlertDialog_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::FormsControls.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Animation_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::FormsControls.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::FormsControls.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::FormsControls.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::FormsControls.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::FormsControls.Droid.Resource.Style.Base_CardView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_CardView;
+			global::FormsControls.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::FormsControls.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::FormsControls.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::FormsControls.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::FormsControls.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
+			global::FormsControls.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
+			global::FormsControls.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::FormsControls.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::FormsControls.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_Design_AppBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::FormsControls.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::FormsControls.Droid.Resource.Style.CardView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.CardView;
+			global::FormsControls.Droid.Resource.Style.CardView_Dark = global::StreetWorkoutV2_Bert.Droid.Resource.Style.CardView_Dark;
+			global::FormsControls.Droid.Resource.Style.CardView_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.CardView_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Platform_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::FormsControls.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_V11_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Platform_V11_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_V14_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_V21_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_V25_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::FormsControls.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::FormsControls.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::FormsControls.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_Counter = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_Error = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_Hint = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Design_Tab = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_MediaRouter_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::FormsControls.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::StreetWorkoutV2_Bert.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_Design = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_Design;
+			global::FormsControls.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::FormsControls.Droid.Resource.Style.Theme_Design_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_Design_Light;
+			global::FormsControls.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::FormsControls.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_Design_NoActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::FormsControls.Droid.Resource.Style.Theme_MediaRouter = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_MediaRouter;
+			global::FormsControls.Droid.Resource.Style.Theme_MediaRouter_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::FormsControls.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::FormsControls.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
+			global::FormsControls.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light = global::StreetWorkoutV2_Bert.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Button = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_EditText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ListView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_SearchView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::FormsControls.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::FormsControls.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::FormsControls.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_AppBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_CoordinatorLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_NavigationView = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_Snackbar = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_TabLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::FormsControls.Droid.Resource.Style.Widget_Design_TextInputLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::FormsControls.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::FormsControls.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::StreetWorkoutV2_Bert.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_background = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_background;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_displayOptions = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_divider = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_divider;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_elevation;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_height = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_height;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_homeLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_icon;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_itemPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_logo = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_logo;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_navigationMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_popupTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_title = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_title;
+			global::FormsControls.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::FormsControls.Droid.Resource.Styleable.ActionBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBarLayout;
+			global::FormsControls.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::FormsControls.Droid.Resource.Styleable.ActionMenuItemView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMenuItemView;
+			global::FormsControls.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::FormsControls.Droid.Resource.Styleable.ActionMenuView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMenuView;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode_background = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode_background;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode_height = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode_height;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::FormsControls.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::FormsControls.Droid.Resource.Styleable.ActivityChooserView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActivityChooserView;
+			global::FormsControls.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::FormsControls.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_android_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_listLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_showTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::FormsControls.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_android_background = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_expanded = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayoutStates = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::FormsControls.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatImageView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatImageView;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatImageView_android_src = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatImageView_tint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatSeekBar = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorError = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::FormsControls.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::FormsControls.Droid.Resource.Styleable.BottomNavigationView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomNavigationView;
+			global::FormsControls.Droid.Resource.Styleable.BottomNavigationView_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::FormsControls.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::FormsControls.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::FormsControls.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::FormsControls.Droid.Resource.Styleable.BottomNavigationView_menu = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::FormsControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::FormsControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::FormsControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::FormsControls.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::FormsControls.Droid.Resource.Styleable.ButtonBarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ButtonBarLayout;
+			global::FormsControls.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::FormsControls.Droid.Resource.Styleable.CardView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView;
+			global::FormsControls.Droid.Resource.Styleable.CardView_android_minHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::FormsControls.Droid.Resource.Styleable.CardView_android_minWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::FormsControls.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::FormsControls.Droid.Resource.Styleable.CardView_cardCornerRadius = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::FormsControls.Droid.Resource.Styleable.CardView_cardElevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_cardElevation;
+			global::FormsControls.Droid.Resource.Styleable.CardView_cardMaxElevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::FormsControls.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::FormsControls.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::FormsControls.Droid.Resource.Styleable.CardView_contentPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_contentPadding;
+			global::FormsControls.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::FormsControls.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::FormsControls.Droid.Resource.Styleable.CardView_contentPaddingRight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::FormsControls.Droid.Resource.Styleable.CardView_contentPaddingTop = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::FormsControls.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::FormsControls.Droid.Resource.Styleable.ColorStateListItem = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ColorStateListItem;
+			global::FormsControls.Droid.Resource.Styleable.ColorStateListItem_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::FormsControls.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::FormsControls.Droid.Resource.Styleable.ColorStateListItem_android_color = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::FormsControls.Droid.Resource.Styleable.CompoundButton = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CompoundButton;
+			global::FormsControls.Droid.Resource.Styleable.CompoundButton_android_button = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::FormsControls.Droid.Resource.Styleable.CompoundButton_buttonTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::FormsControls.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::FormsControls.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::FormsControls.Droid.Resource.Styleable.DesignTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DesignTheme;
+			global::FormsControls.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::FormsControls.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::FormsControls.Droid.Resource.Styleable.DesignTheme_textColorError = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DesignTheme_textColorError;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_color = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::FormsControls.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::FormsControls.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::FormsControls.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont_android_font = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont_font = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::FormsControls.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::FormsControls.Droid.Resource.Styleable.ForegroundLinearLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::FormsControls.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::FormsControls.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::FormsControls.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::FormsControls.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::FormsControls.Droid.Resource.Styleable.ListPopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ListPopupWindow;
+			global::FormsControls.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::FormsControls.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::FormsControls.Droid.Resource.Styleable.MediaRouteButton = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MediaRouteButton;
+			global::FormsControls.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::FormsControls.Droid.Resource.Styleable.MediaRouteButton_android_minWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::FormsControls.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::FormsControls.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup_android_enabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup_android_id = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::FormsControls.Droid.Resource.Styleable.MenuGroup_android_visible = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_actionLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_actionViewClass = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_checkable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_checked = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_enabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_id = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_id;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_onClick = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_title = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_title;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_android_visible = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_contentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_iconTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_iconTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_numericModifiers = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_showAsAction = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::FormsControls.Droid.Resource.Styleable.MenuItem_tooltipText = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::FormsControls.Droid.Resource.Styleable.MenuView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_headerBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_itemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::FormsControls.Droid.Resource.Styleable.MenuView_subMenuArrow = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_android_background = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_android_background;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_elevation;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_headerLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_itemBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_itemIconTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_itemTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::FormsControls.Droid.Resource.Styleable.NavigationView_menu = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.NavigationView_menu;
+			global::FormsControls.Droid.Resource.Styleable.PopupWindow = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.PopupWindow;
+			global::FormsControls.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::FormsControls.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::FormsControls.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::FormsControls.Droid.Resource.Styleable.PopupWindowBackgroundState = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::FormsControls.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::FormsControls.Droid.Resource.Styleable.RecycleListView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecycleListView;
+			global::FormsControls.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::FormsControls.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_android_orientation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_layoutManager = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_spanCount = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::FormsControls.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::FormsControls.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::FormsControls.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::FormsControls.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::FormsControls.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::FormsControls.Droid.Resource.Styleable.SearchView = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_android_focusable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_android_imeOptions = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_android_inputType = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_android_maxWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_closeIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_commitIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_goIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_goIcon;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_layout;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_queryBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_queryHint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_queryHint;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_searchHintIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_searchIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_submitBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::FormsControls.Droid.Resource.Styleable.SearchView_voiceIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::FormsControls.Droid.Resource.Styleable.SnackbarLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SnackbarLayout;
+			global::FormsControls.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::FormsControls.Droid.Resource.Styleable.SnackbarLayout_elevation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::FormsControls.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::FormsControls.Droid.Resource.Styleable.Spinner = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Spinner;
+			global::FormsControls.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::FormsControls.Droid.Resource.Styleable.Spinner_android_entries = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Spinner_android_entries;
+			global::FormsControls.Droid.Resource.Styleable.Spinner_android_popupBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::FormsControls.Droid.Resource.Styleable.Spinner_android_prompt = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::FormsControls.Droid.Resource.Styleable.Spinner_popupTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_showText = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_track = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_track;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_trackTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::FormsControls.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::FormsControls.Droid.Resource.Styleable.TabItem = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabItem;
+			global::FormsControls.Droid.Resource.Styleable.TabItem_android_icon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabItem_android_icon;
+			global::FormsControls.Droid.Resource.Styleable.TabItem_android_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabItem_android_layout;
+			global::FormsControls.Droid.Resource.Styleable.TabItem_android_text = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabItem_android_text;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabBackground = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabContentStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabPadding = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.TabLayout_tabTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_textColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_textSize = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_android_typeface = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_fontFamily = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::FormsControls.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_android_hint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::FormsControls.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_android_gravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_android_minHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_buttonGravity = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_collapseIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_logo = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_logo;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_logoDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_navigationIcon = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_popupTheme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_subtitle = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_title = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_title;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleMargin = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleMargins = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::FormsControls.Droid.Resource.Styleable.Toolbar_titleTextColor = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::FormsControls.Droid.Resource.Styleable.View = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.View;
+			global::FormsControls.Droid.Resource.Styleable.View_android_focusable = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.View_android_focusable;
+			global::FormsControls.Droid.Resource.Styleable.View_android_theme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.View_android_theme;
+			global::FormsControls.Droid.Resource.Styleable.View_paddingEnd = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.View_paddingEnd;
+			global::FormsControls.Droid.Resource.Styleable.View_paddingStart = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.View_paddingStart;
+			global::FormsControls.Droid.Resource.Styleable.View_theme = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.View_theme;
+			global::FormsControls.Droid.Resource.Styleable.ViewBackgroundHelper = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::FormsControls.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::FormsControls.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::FormsControls.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::FormsControls.Droid.Resource.Styleable.ViewStubCompat = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewStubCompat;
+			global::FormsControls.Droid.Resource.Styleable.ViewStubCompat_android_id = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::FormsControls.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::FormsControls.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::StreetWorkoutV2_Bert.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Microcharts.Droid.Resource.String.library_name = global::StreetWorkoutV2_Bert.Droid.Resource.String.library_name;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::StreetWorkoutV2_Bert.Droid.Resource.Animation.slide_out_left;
@@ -229,6 +2718,672 @@ namespace StreetWorkoutV2_Bert.Droid
 			
 			// aapt resource value: 0x7f060000
 			public const int design_appbar_state_list_animator = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int empty_Animation = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int empty_Animation_long = 2131099650;
+			
+			// aapt resource value: 0x7f060003
+			public const int empty_Animation_short = 2131099651;
+			
+			// aapt resource value: 0x7f060004
+			public const int enter_from_bottom = 2131099652;
+			
+			// aapt resource value: 0x7f060005
+			public const int enter_from_bottom_bounce = 2131099653;
+			
+			// aapt resource value: 0x7f060006
+			public const int enter_from_bottom_long = 2131099654;
+			
+			// aapt resource value: 0x7f060007
+			public const int enter_from_bottom_long_bounce = 2131099655;
+			
+			// aapt resource value: 0x7f060008
+			public const int enter_from_bottom_short = 2131099656;
+			
+			// aapt resource value: 0x7f060009
+			public const int enter_from_bottom_short_bounce = 2131099657;
+			
+			// aapt resource value: 0x7f06000a
+			public const int enter_from_left = 2131099658;
+			
+			// aapt resource value: 0x7f06000b
+			public const int enter_from_left_bounce = 2131099659;
+			
+			// aapt resource value: 0x7f06000c
+			public const int enter_from_left_long = 2131099660;
+			
+			// aapt resource value: 0x7f06000d
+			public const int enter_from_left_long_bounce = 2131099661;
+			
+			// aapt resource value: 0x7f06000e
+			public const int enter_from_left_short = 2131099662;
+			
+			// aapt resource value: 0x7f06000f
+			public const int enter_from_left_short_bounce = 2131099663;
+			
+			// aapt resource value: 0x7f060010
+			public const int enter_from_right = 2131099664;
+			
+			// aapt resource value: 0x7f060011
+			public const int enter_from_right_bounce = 2131099665;
+			
+			// aapt resource value: 0x7f060012
+			public const int enter_from_right_long = 2131099666;
+			
+			// aapt resource value: 0x7f060013
+			public const int enter_from_right_long_bounce = 2131099667;
+			
+			// aapt resource value: 0x7f060014
+			public const int enter_from_right_short = 2131099668;
+			
+			// aapt resource value: 0x7f060015
+			public const int enter_from_right_short_bounce = 2131099669;
+			
+			// aapt resource value: 0x7f060016
+			public const int enter_from_top = 2131099670;
+			
+			// aapt resource value: 0x7f060017
+			public const int enter_from_top_bounce = 2131099671;
+			
+			// aapt resource value: 0x7f060018
+			public const int enter_from_top_long = 2131099672;
+			
+			// aapt resource value: 0x7f060019
+			public const int enter_from_top_long_bounce = 2131099673;
+			
+			// aapt resource value: 0x7f06001a
+			public const int enter_from_top_short = 2131099674;
+			
+			// aapt resource value: 0x7f06001b
+			public const int enter_from_top_short_bounce = 2131099675;
+			
+			// aapt resource value: 0x7f06001c
+			public const int enter_landing = 2131099676;
+			
+			// aapt resource value: 0x7f06001d
+			public const int enter_landing_bounce = 2131099677;
+			
+			// aapt resource value: 0x7f06001e
+			public const int enter_landing_from_bottom = 2131099678;
+			
+			// aapt resource value: 0x7f06001f
+			public const int enter_landing_from_bottom_bounce = 2131099679;
+			
+			// aapt resource value: 0x7f060020
+			public const int enter_landing_from_bottom_long = 2131099680;
+			
+			// aapt resource value: 0x7f060021
+			public const int enter_landing_from_bottom_long_bounce = 2131099681;
+			
+			// aapt resource value: 0x7f060022
+			public const int enter_landing_from_bottom_short = 2131099682;
+			
+			// aapt resource value: 0x7f060023
+			public const int enter_landing_from_bottom_short_bounce = 2131099683;
+			
+			// aapt resource value: 0x7f060024
+			public const int enter_landing_from_left = 2131099684;
+			
+			// aapt resource value: 0x7f060025
+			public const int enter_landing_from_left_bounce = 2131099685;
+			
+			// aapt resource value: 0x7f060026
+			public const int enter_landing_from_left_long = 2131099686;
+			
+			// aapt resource value: 0x7f060027
+			public const int enter_landing_from_left_long_bounce = 2131099687;
+			
+			// aapt resource value: 0x7f060028
+			public const int enter_landing_from_left_short = 2131099688;
+			
+			// aapt resource value: 0x7f060029
+			public const int enter_landing_from_left_short_bounce = 2131099689;
+			
+			// aapt resource value: 0x7f06002a
+			public const int enter_landing_from_right = 2131099690;
+			
+			// aapt resource value: 0x7f06002b
+			public const int enter_landing_from_right_bounce = 2131099691;
+			
+			// aapt resource value: 0x7f06002c
+			public const int enter_landing_from_right_long = 2131099692;
+			
+			// aapt resource value: 0x7f06002d
+			public const int enter_landing_from_right_long_bounce = 2131099693;
+			
+			// aapt resource value: 0x7f06002e
+			public const int enter_landing_from_right_short = 2131099694;
+			
+			// aapt resource value: 0x7f06002f
+			public const int enter_landing_from_right_short_bounce = 2131099695;
+			
+			// aapt resource value: 0x7f060030
+			public const int enter_landing_from_top = 2131099696;
+			
+			// aapt resource value: 0x7f060031
+			public const int enter_landing_from_top_bounce = 2131099697;
+			
+			// aapt resource value: 0x7f060032
+			public const int enter_landing_from_top_long = 2131099698;
+			
+			// aapt resource value: 0x7f060033
+			public const int enter_landing_from_top_long_bounce = 2131099699;
+			
+			// aapt resource value: 0x7f060034
+			public const int enter_landing_from_top_short = 2131099700;
+			
+			// aapt resource value: 0x7f060035
+			public const int enter_landing_from_top_short_bounce = 2131099701;
+			
+			// aapt resource value: 0x7f060036
+			public const int enter_landing_long = 2131099702;
+			
+			// aapt resource value: 0x7f060037
+			public const int enter_landing_long_bounce = 2131099703;
+			
+			// aapt resource value: 0x7f060038
+			public const int enter_landing_short = 2131099704;
+			
+			// aapt resource value: 0x7f060039
+			public const int enter_landing_short_bounce = 2131099705;
+			
+			// aapt resource value: 0x7f06003a
+			public const int enter_roll_from_bottom = 2131099706;
+			
+			// aapt resource value: 0x7f06003b
+			public const int enter_roll_from_bottom_bounce = 2131099707;
+			
+			// aapt resource value: 0x7f06003c
+			public const int enter_roll_from_bottom_long = 2131099708;
+			
+			// aapt resource value: 0x7f06003d
+			public const int enter_roll_from_bottom_long_bounce = 2131099709;
+			
+			// aapt resource value: 0x7f06003e
+			public const int enter_roll_from_bottom_short = 2131099710;
+			
+			// aapt resource value: 0x7f06003f
+			public const int enter_roll_from_bottom_short_bounce = 2131099711;
+			
+			// aapt resource value: 0x7f060040
+			public const int enter_roll_from_left = 2131099712;
+			
+			// aapt resource value: 0x7f060041
+			public const int enter_roll_from_left_bounce = 2131099713;
+			
+			// aapt resource value: 0x7f060042
+			public const int enter_roll_from_left_long = 2131099714;
+			
+			// aapt resource value: 0x7f060043
+			public const int enter_roll_from_left_long_bounce = 2131099715;
+			
+			// aapt resource value: 0x7f060044
+			public const int enter_roll_from_left_short = 2131099716;
+			
+			// aapt resource value: 0x7f060045
+			public const int enter_roll_from_left_short_bounce = 2131099717;
+			
+			// aapt resource value: 0x7f060046
+			public const int enter_roll_from_right = 2131099718;
+			
+			// aapt resource value: 0x7f060047
+			public const int enter_roll_from_right_bounce = 2131099719;
+			
+			// aapt resource value: 0x7f060048
+			public const int enter_roll_from_right_long = 2131099720;
+			
+			// aapt resource value: 0x7f060049
+			public const int enter_roll_from_right_long_bounce = 2131099721;
+			
+			// aapt resource value: 0x7f06004a
+			public const int enter_roll_from_right_short = 2131099722;
+			
+			// aapt resource value: 0x7f06004b
+			public const int enter_roll_from_right_short_bounce = 2131099723;
+			
+			// aapt resource value: 0x7f06004c
+			public const int enter_roll_from_top = 2131099724;
+			
+			// aapt resource value: 0x7f06004d
+			public const int enter_roll_from_top_bounce = 2131099725;
+			
+			// aapt resource value: 0x7f06004e
+			public const int enter_roll_from_top_long = 2131099726;
+			
+			// aapt resource value: 0x7f06004f
+			public const int enter_roll_from_top_long_bounce = 2131099727;
+			
+			// aapt resource value: 0x7f060050
+			public const int enter_roll_from_top_short = 2131099728;
+			
+			// aapt resource value: 0x7f060051
+			public const int enter_roll_from_top_short_bounce = 2131099729;
+			
+			// aapt resource value: 0x7f060052
+			public const int enter_rotate = 2131099730;
+			
+			// aapt resource value: 0x7f060053
+			public const int enter_rotate_bounce = 2131099731;
+			
+			// aapt resource value: 0x7f060054
+			public const int enter_rotate_from_bottom = 2131099732;
+			
+			// aapt resource value: 0x7f060055
+			public const int enter_rotate_from_bottom_bounce = 2131099733;
+			
+			// aapt resource value: 0x7f060056
+			public const int enter_rotate_from_bottom_long = 2131099734;
+			
+			// aapt resource value: 0x7f060057
+			public const int enter_rotate_from_bottom_long_bounce = 2131099735;
+			
+			// aapt resource value: 0x7f060058
+			public const int enter_rotate_from_bottom_short = 2131099736;
+			
+			// aapt resource value: 0x7f060059
+			public const int enter_rotate_from_bottom_short_bounce = 2131099737;
+			
+			// aapt resource value: 0x7f06005a
+			public const int enter_rotate_from_left = 2131099738;
+			
+			// aapt resource value: 0x7f06005b
+			public const int enter_rotate_from_left_bounce = 2131099739;
+			
+			// aapt resource value: 0x7f06005c
+			public const int enter_rotate_from_left_long = 2131099740;
+			
+			// aapt resource value: 0x7f06005d
+			public const int enter_rotate_from_left_long_bounce = 2131099741;
+			
+			// aapt resource value: 0x7f06005e
+			public const int enter_rotate_from_left_short = 2131099742;
+			
+			// aapt resource value: 0x7f06005f
+			public const int enter_rotate_from_left_short_bounce = 2131099743;
+			
+			// aapt resource value: 0x7f060060
+			public const int enter_rotate_from_right = 2131099744;
+			
+			// aapt resource value: 0x7f060061
+			public const int enter_rotate_from_right_bounce = 2131099745;
+			
+			// aapt resource value: 0x7f060062
+			public const int enter_rotate_from_right_long = 2131099746;
+			
+			// aapt resource value: 0x7f060063
+			public const int enter_rotate_from_right_long_bounce = 2131099747;
+			
+			// aapt resource value: 0x7f060064
+			public const int enter_rotate_from_right_short = 2131099748;
+			
+			// aapt resource value: 0x7f060065
+			public const int enter_rotate_from_right_short_bounce = 2131099749;
+			
+			// aapt resource value: 0x7f060066
+			public const int enter_rotate_from_top = 2131099750;
+			
+			// aapt resource value: 0x7f060067
+			public const int enter_rotate_from_top_bounce = 2131099751;
+			
+			// aapt resource value: 0x7f060068
+			public const int enter_rotate_from_top_long = 2131099752;
+			
+			// aapt resource value: 0x7f060069
+			public const int enter_rotate_from_top_long_bounce = 2131099753;
+			
+			// aapt resource value: 0x7f06006a
+			public const int enter_rotate_from_top_short = 2131099754;
+			
+			// aapt resource value: 0x7f06006b
+			public const int enter_rotate_from_top_short_bounce = 2131099755;
+			
+			// aapt resource value: 0x7f06006c
+			public const int enter_rotate_long = 2131099756;
+			
+			// aapt resource value: 0x7f06006d
+			public const int enter_rotate_long_bounce = 2131099757;
+			
+			// aapt resource value: 0x7f06006e
+			public const int enter_rotate_short = 2131099758;
+			
+			// aapt resource value: 0x7f06006f
+			public const int enter_rotate_short_bounce = 2131099759;
+			
+			// aapt resource value: 0x7f060070
+			public const int enter_scale = 2131099760;
+			
+			// aapt resource value: 0x7f060071
+			public const int enter_scale_bounce = 2131099761;
+			
+			// aapt resource value: 0x7f060072
+			public const int enter_scale_from_bottom = 2131099762;
+			
+			// aapt resource value: 0x7f060073
+			public const int enter_scale_from_bottom_bounce = 2131099763;
+			
+			// aapt resource value: 0x7f060074
+			public const int enter_scale_from_bottom_long = 2131099764;
+			
+			// aapt resource value: 0x7f060075
+			public const int enter_scale_from_bottom_long_bounce = 2131099765;
+			
+			// aapt resource value: 0x7f060076
+			public const int enter_scale_from_bottom_short = 2131099766;
+			
+			// aapt resource value: 0x7f060077
+			public const int enter_scale_from_bottom_short_bounce = 2131099767;
+			
+			// aapt resource value: 0x7f060078
+			public const int enter_scale_from_left = 2131099768;
+			
+			// aapt resource value: 0x7f060079
+			public const int enter_scale_from_left_bounce = 2131099769;
+			
+			// aapt resource value: 0x7f06007a
+			public const int enter_scale_from_left_long = 2131099770;
+			
+			// aapt resource value: 0x7f06007b
+			public const int enter_scale_from_left_long_bounce = 2131099771;
+			
+			// aapt resource value: 0x7f06007c
+			public const int enter_scale_from_left_short = 2131099772;
+			
+			// aapt resource value: 0x7f06007d
+			public const int enter_scale_from_left_short_bounce = 2131099773;
+			
+			// aapt resource value: 0x7f06007e
+			public const int enter_scale_from_right = 2131099774;
+			
+			// aapt resource value: 0x7f06007f
+			public const int enter_scale_from_right_bounce = 2131099775;
+			
+			// aapt resource value: 0x7f060080
+			public const int enter_scale_from_right_long = 2131099776;
+			
+			// aapt resource value: 0x7f060081
+			public const int enter_scale_from_right_long_bounce = 2131099777;
+			
+			// aapt resource value: 0x7f060082
+			public const int enter_scale_from_right_short = 2131099778;
+			
+			// aapt resource value: 0x7f060083
+			public const int enter_scale_from_right_short_bounce = 2131099779;
+			
+			// aapt resource value: 0x7f060084
+			public const int enter_scale_from_top = 2131099780;
+			
+			// aapt resource value: 0x7f060085
+			public const int enter_scale_from_top_bounce = 2131099781;
+			
+			// aapt resource value: 0x7f060086
+			public const int enter_scale_from_top_long = 2131099782;
+			
+			// aapt resource value: 0x7f060087
+			public const int enter_scale_from_top_long_bounce = 2131099783;
+			
+			// aapt resource value: 0x7f060088
+			public const int enter_scale_from_top_short = 2131099784;
+			
+			// aapt resource value: 0x7f060089
+			public const int enter_scale_from_top_short_bounce = 2131099785;
+			
+			// aapt resource value: 0x7f06008a
+			public const int enter_scale_long = 2131099786;
+			
+			// aapt resource value: 0x7f06008b
+			public const int enter_scale_long_bounce = 2131099787;
+			
+			// aapt resource value: 0x7f06008c
+			public const int enter_scale_short = 2131099788;
+			
+			// aapt resource value: 0x7f06008d
+			public const int enter_scale_short_bounce = 2131099789;
+			
+			// aapt resource value: 0x7f06008e
+			public const int exit_landing = 2131099790;
+			
+			// aapt resource value: 0x7f06008f
+			public const int exit_landing_from_bottom = 2131099791;
+			
+			// aapt resource value: 0x7f060090
+			public const int exit_landing_from_bottom_long = 2131099792;
+			
+			// aapt resource value: 0x7f060091
+			public const int exit_landing_from_bottom_short = 2131099793;
+			
+			// aapt resource value: 0x7f060092
+			public const int exit_landing_from_left = 2131099794;
+			
+			// aapt resource value: 0x7f060093
+			public const int exit_landing_from_left_long = 2131099795;
+			
+			// aapt resource value: 0x7f060094
+			public const int exit_landing_from_left_short = 2131099796;
+			
+			// aapt resource value: 0x7f060095
+			public const int exit_landing_from_right = 2131099797;
+			
+			// aapt resource value: 0x7f060096
+			public const int exit_landing_from_right_long = 2131099798;
+			
+			// aapt resource value: 0x7f060097
+			public const int exit_landing_from_right_short = 2131099799;
+			
+			// aapt resource value: 0x7f060098
+			public const int exit_landing_from_top = 2131099800;
+			
+			// aapt resource value: 0x7f060099
+			public const int exit_landing_from_top_long = 2131099801;
+			
+			// aapt resource value: 0x7f06009a
+			public const int exit_landing_from_top_short = 2131099802;
+			
+			// aapt resource value: 0x7f06009b
+			public const int exit_landing_long = 2131099803;
+			
+			// aapt resource value: 0x7f06009c
+			public const int exit_landing_short = 2131099804;
+			
+			// aapt resource value: 0x7f06009d
+			public const int exit_roll_to_bottom = 2131099805;
+			
+			// aapt resource value: 0x7f06009e
+			public const int exit_roll_to_bottom_long = 2131099806;
+			
+			// aapt resource value: 0x7f06009f
+			public const int exit_roll_to_bottom_short = 2131099807;
+			
+			// aapt resource value: 0x7f0600a0
+			public const int exit_roll_to_left = 2131099808;
+			
+			// aapt resource value: 0x7f0600a1
+			public const int exit_roll_to_left_long = 2131099809;
+			
+			// aapt resource value: 0x7f0600a2
+			public const int exit_roll_to_left_short = 2131099810;
+			
+			// aapt resource value: 0x7f0600a3
+			public const int exit_roll_to_right = 2131099811;
+			
+			// aapt resource value: 0x7f0600a4
+			public const int exit_roll_to_right_long = 2131099812;
+			
+			// aapt resource value: 0x7f0600a5
+			public const int exit_roll_to_right_short = 2131099813;
+			
+			// aapt resource value: 0x7f0600a6
+			public const int exit_roll_to_top = 2131099814;
+			
+			// aapt resource value: 0x7f0600a7
+			public const int exit_roll_to_top_long = 2131099815;
+			
+			// aapt resource value: 0x7f0600a8
+			public const int exit_roll_to_top_short = 2131099816;
+			
+			// aapt resource value: 0x7f0600a9
+			public const int exit_rotate = 2131099817;
+			
+			// aapt resource value: 0x7f0600aa
+			public const int exit_rotate_long = 2131099818;
+			
+			// aapt resource value: 0x7f0600ab
+			public const int exit_rotate_short = 2131099819;
+			
+			// aapt resource value: 0x7f0600ac
+			public const int exit_rotate_to_bottom = 2131099820;
+			
+			// aapt resource value: 0x7f0600ad
+			public const int exit_rotate_to_bottom_long = 2131099821;
+			
+			// aapt resource value: 0x7f0600ae
+			public const int exit_rotate_to_bottom_short = 2131099822;
+			
+			// aapt resource value: 0x7f0600af
+			public const int exit_rotate_to_left = 2131099823;
+			
+			// aapt resource value: 0x7f0600b0
+			public const int exit_rotate_to_left_long = 2131099824;
+			
+			// aapt resource value: 0x7f0600b1
+			public const int exit_rotate_to_left_short = 2131099825;
+			
+			// aapt resource value: 0x7f0600b2
+			public const int exit_rotate_to_right = 2131099826;
+			
+			// aapt resource value: 0x7f0600b3
+			public const int exit_rotate_to_right_long = 2131099827;
+			
+			// aapt resource value: 0x7f0600b4
+			public const int exit_rotate_to_right_short = 2131099828;
+			
+			// aapt resource value: 0x7f0600b5
+			public const int exit_rotate_to_top = 2131099829;
+			
+			// aapt resource value: 0x7f0600b6
+			public const int exit_rotate_to_top_long = 2131099830;
+			
+			// aapt resource value: 0x7f0600b7
+			public const int exit_rotate_to_top_short = 2131099831;
+			
+			// aapt resource value: 0x7f0600b8
+			public const int exit_scale = 2131099832;
+			
+			// aapt resource value: 0x7f0600b9
+			public const int exit_scale_from_bottom = 2131099833;
+			
+			// aapt resource value: 0x7f0600ba
+			public const int exit_scale_from_bottom_long = 2131099834;
+			
+			// aapt resource value: 0x7f0600bb
+			public const int exit_scale_from_bottom_short = 2131099835;
+			
+			// aapt resource value: 0x7f0600bc
+			public const int exit_scale_from_left = 2131099836;
+			
+			// aapt resource value: 0x7f0600bd
+			public const int exit_scale_from_left_long = 2131099837;
+			
+			// aapt resource value: 0x7f0600be
+			public const int exit_scale_from_left_short = 2131099838;
+			
+			// aapt resource value: 0x7f0600bf
+			public const int exit_scale_from_right = 2131099839;
+			
+			// aapt resource value: 0x7f0600c0
+			public const int exit_scale_from_right_long = 2131099840;
+			
+			// aapt resource value: 0x7f0600c1
+			public const int exit_scale_from_right_short = 2131099841;
+			
+			// aapt resource value: 0x7f0600c2
+			public const int exit_scale_from_top = 2131099842;
+			
+			// aapt resource value: 0x7f0600c3
+			public const int exit_scale_from_top_long = 2131099843;
+			
+			// aapt resource value: 0x7f0600c4
+			public const int exit_scale_from_top_short = 2131099844;
+			
+			// aapt resource value: 0x7f0600c5
+			public const int exit_scale_long = 2131099845;
+			
+			// aapt resource value: 0x7f0600c6
+			public const int exit_scale_short = 2131099846;
+			
+			// aapt resource value: 0x7f0600c7
+			public const int exit_to_bottom = 2131099847;
+			
+			// aapt resource value: 0x7f0600c8
+			public const int exit_to_bottom_bounce = 2131099848;
+			
+			// aapt resource value: 0x7f0600c9
+			public const int exit_to_bottom_long = 2131099849;
+			
+			// aapt resource value: 0x7f0600ca
+			public const int exit_to_bottom_long_bounce = 2131099850;
+			
+			// aapt resource value: 0x7f0600cb
+			public const int exit_to_bottom_short = 2131099851;
+			
+			// aapt resource value: 0x7f0600cc
+			public const int exit_to_bottom_short_bounce = 2131099852;
+			
+			// aapt resource value: 0x7f0600cd
+			public const int exit_to_left = 2131099853;
+			
+			// aapt resource value: 0x7f0600ce
+			public const int exit_to_left_bounce = 2131099854;
+			
+			// aapt resource value: 0x7f0600cf
+			public const int exit_to_left_long = 2131099855;
+			
+			// aapt resource value: 0x7f0600d0
+			public const int exit_to_left_long_bounce = 2131099856;
+			
+			// aapt resource value: 0x7f0600d1
+			public const int exit_to_left_short = 2131099857;
+			
+			// aapt resource value: 0x7f0600d2
+			public const int exit_to_left_short_bounce = 2131099858;
+			
+			// aapt resource value: 0x7f0600d3
+			public const int exit_to_right = 2131099859;
+			
+			// aapt resource value: 0x7f0600d4
+			public const int exit_to_right_bounce = 2131099860;
+			
+			// aapt resource value: 0x7f0600d5
+			public const int exit_to_right_long = 2131099861;
+			
+			// aapt resource value: 0x7f0600d6
+			public const int exit_to_right_long_bounce = 2131099862;
+			
+			// aapt resource value: 0x7f0600d7
+			public const int exit_to_right_short = 2131099863;
+			
+			// aapt resource value: 0x7f0600d8
+			public const int exit_to_right_short_bounce = 2131099864;
+			
+			// aapt resource value: 0x7f0600d9
+			public const int exit_to_top = 2131099865;
+			
+			// aapt resource value: 0x7f0600da
+			public const int exit_to_top_bounce = 2131099866;
+			
+			// aapt resource value: 0x7f0600db
+			public const int exit_to_top_long = 2131099867;
+			
+			// aapt resource value: 0x7f0600dc
+			public const int exit_to_top_long_bounce = 2131099868;
+			
+			// aapt resource value: 0x7f0600dd
+			public const int exit_to_top_short = 2131099869;
+			
+			// aapt resource value: 0x7f0600de
+			public const int exit_to_top_short_bounce = 2131099870;
 			
 			static Animator()
 			{
@@ -3812,6 +6967,15 @@ namespace StreetWorkoutV2_Bert.Droid
 			
 			// aapt resource value: 0x7f0b0004
 			public const int abc_config_activityShortDur = 2131427332;
+			
+			// aapt resource value: 0x7f0b000e
+			public const int animation_duration = 2131427342;
+			
+			// aapt resource value: 0x7f0b000f
+			public const int animation_duration_long = 2131427343;
+			
+			// aapt resource value: 0x7f0b000d
+			public const int animation_duration_short = 2131427341;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int app_bar_elevation_anim_duration = 2131427336;

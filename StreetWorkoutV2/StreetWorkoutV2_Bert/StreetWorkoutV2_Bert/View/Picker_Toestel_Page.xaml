@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<controls:AnimationPage
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreetWorkoutV2_Bert.View.Picker_Toestel_Page"
     xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
     xmlns:custom="clr-namespace:StreetWorkoutV2_Bert"
              NavigationPage.HasNavigationBar="False">
+    <controls:AnimationPage.PageAnimation>
+        <controls:PushPageAnimation  Duration="Medium" Subtype="FromRight"/>
+    </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
             <!-- Background -->
@@ -70,6 +74,45 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
+            
+            <!--Popup-->
+            
+            <StackLayout Opacity="0"  x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="130"  Padding="0">
+                    <renderers:GradientLayout
+                                            ColorsList="#484E6D,#323751"
+                                            Mode="ToTopLeft">
+
+                        <Grid Margin="12,24,12,12" ColumnSpacing="6" RowSpacing="24" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" ></ColumnDefinition>
+                                <ColumnDefinition Width="*" ></ColumnDefinition>
+                                <ColumnDefinition Width="*" ></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="2*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"  Grid.ColumnSpan="3" HorizontalTextAlignment="Center" Text="Selecteer de moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+
+
+                            <Button Grid.Row="1" Grid.Column="0" Text="Makkelijk" x:Name="makkelijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="Makkelijk_Clicked"/>
+                            <Button Grid.Row="1" Grid.Column="1" Text="Gemiddeld" x:Name="gemiddeld" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="45" Clicked="Gemiddeld_Clicked"/>
+                                <Button Grid.Row="1" Grid.Column="2" Text="Moeilijk" x:Name="moeilijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="Moeilijk_Clicked" />
+
+                        </Grid>
+
+                    </renderers:GradientLayout>
+                </Frame>
+                </StackLayout>
+            </StackLayout>
+            <!--========-->
         </RelativeLayout>
     </ContentPage.Content>
-</ContentPage>
+</controls:AnimationPage>

@@ -9,11 +9,12 @@ using SkiaSharp;
 using Xamarin.Forms;
 using Entry = Microcharts.Entry;
 using Xamarin.Forms.Xaml;
+using FormsControls.Base;
 
 namespace StreetWorkoutV2_Bert.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Oefening_Complete_Page : ContentPage
+	public partial class Oefening_Complete_Page : AnimationPage
 	{
 		public Oefening_Complete_Page ()
 		{

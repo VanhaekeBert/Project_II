@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using FormsControls.Base;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2_Bert.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class OefeningPage : ContentPage
+	public partial class OefeningPage : AnimationPage
 	{
         string AantalKeeper = "";
         private int countdownremaining = 0;

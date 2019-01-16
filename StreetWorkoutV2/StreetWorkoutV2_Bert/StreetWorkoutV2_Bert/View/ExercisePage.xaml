@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<controls:AnimationPage
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreetWorkoutV2_Bert.View.ExercisePage"
     xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource MainDarkColor}">
+
+    <controls:AnimationPage.PageAnimation>
+        <controls:PushPageAnimation Duration="Zero" Subtype="FromTop"/>
+    </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
@@ -83,4 +88,4 @@
             </Grid>
         </RelativeLayout>
     </ContentPage.Content>
-</ContentPage>
+</controls:AnimationPage>

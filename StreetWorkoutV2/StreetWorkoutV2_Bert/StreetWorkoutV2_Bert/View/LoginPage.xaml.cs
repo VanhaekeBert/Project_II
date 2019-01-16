@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.Model;
+﻿using FormsControls.Base;
+using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2_Bert.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class LoginPage : AnimationPage
     {
         public LoginPage()
         {

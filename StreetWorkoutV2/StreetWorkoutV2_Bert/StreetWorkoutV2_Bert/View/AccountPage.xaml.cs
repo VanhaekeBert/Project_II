@@ -110,10 +110,9 @@ namespace StreetWorkoutV2_Bert.View
         }
 
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            Task.Run(async () =>
-            {
+            
                 JObject user = new JObject();
                 user["Lengte"] = heightInput.Text.ToString();
                 user["Gewicht"] = weightInput.Text.ToString();
@@ -124,7 +123,7 @@ namespace StreetWorkoutV2_Bert.View
                 heightInput.Placeholder = user["Lengte"].ToString();
                 waterInput.Placeholder = user["WaterDoel"].ToString();
                 await DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
-            });
+           
         }
 
 

@@ -106,9 +106,10 @@ namespace StreetWorkoutV2_Bert.View
 
         private async Task Sign_Out_Button_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+
             Application.Current.Properties["Naam"] = "";
             await Application.Current.SavePropertiesAsync();
-            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
     }
 }

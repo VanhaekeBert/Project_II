@@ -1,4 +1,5 @@
-﻿using StreetWorkoutV2_Bert.View;
+﻿using FormsControls.Base;
+using StreetWorkoutV2_Bert.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,7 @@ namespace StreetWorkoutV2_Bert
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new AnimationNavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

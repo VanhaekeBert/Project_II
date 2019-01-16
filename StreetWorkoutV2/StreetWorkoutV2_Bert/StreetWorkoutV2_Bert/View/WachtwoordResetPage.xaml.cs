@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using FormsControls.Base;
+using Newtonsoft.Json.Linq;
 using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2_Bert.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class WachtwoordResetPage : ContentPage
+	public partial class WachtwoordResetPage : AnimationPage
 	{
 		public WachtwoordResetPage ()
 		{

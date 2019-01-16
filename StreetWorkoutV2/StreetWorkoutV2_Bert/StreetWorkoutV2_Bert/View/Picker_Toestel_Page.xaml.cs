@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FormsControls.Base;
+using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
@@ -16,8 +17,10 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2_Bert.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Picker_Toestel_Page : ContentPage
+    public partial class Picker_Toestel_Page : AnimationPage
     {
+        PickerClass _SelectedItem = new PickerClass();
+
         public Picker_Toestel_Page(string uitvoering)
         {
             InitializeComponent();
@@ -36,7 +39,6 @@ namespace StreetWorkoutV2_Bert.View
             
             //bytes uit het bestand gaan inlezen en verwerken
             StreamReader oSR = new StreamReader(stream);
-
             string json = oSR.ReadToEnd();
             Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
             //-----------------------------------------------
@@ -115,11 +117,50 @@ namespace StreetWorkoutV2_Bert.View
             Toestellen.ItemTapped += async (o, e) =>
             {
                 var myList = (ListView)o;
-                var myAction = (myList.SelectedItem as PickerClass);
-                await PopupNavigation.Instance.PushAsync(new PopupView2(myAction));
+                _SelectedItem = (myList.SelectedItem as PickerClass);
+                Popup.IsEnabled = true;
+                Popup.IsVisible = true;
+                Popup.FadeTo(1, 250);
+
                 //await popupView.PushAsync(new ExercisePage());
                 myList.SelectedItem = null;
+
             };
+
+
+        }
+        private async void Makkelijk_Clicked(object sender, EventArgs e)
+        {
+            Popup.IsEnabled = false;
+          //  Popup.FadeTo(0, 250);
+
+
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemakkelijk"));
+            Popup.IsVisible = false;
+
+
+        }
+
+        private async void Gemiddeld_Clicked(object sender, EventArgs e)
+        {
+            Popup.IsEnabled = false;
+           // Popup.FadeTo(0, 250);
+
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemiddeld"),true);
+            Popup.IsVisible = false;
+
+
+        }
+
+        private async void Moeilijk_Clicked(object sender, EventArgs e)
+        {
+           // Popup.FadeTo(0, 250);
+
+            Popup.IsEnabled = false;
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"));
+            Popup.IsVisible = false;
+
+
 
         }
 

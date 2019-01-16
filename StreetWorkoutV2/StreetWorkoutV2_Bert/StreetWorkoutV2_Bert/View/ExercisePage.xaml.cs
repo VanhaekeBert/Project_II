@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FormsControls.Base;
+using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
@@ -15,7 +16,7 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2_Bert.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ExercisePage : ContentPage
+	public partial class ExercisePage : AnimationPage
 	{
 		public ExercisePage (PickerClass picker, string moeilijkheidsgraad)
 		{

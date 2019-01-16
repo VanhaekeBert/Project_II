@@ -25,7 +25,10 @@ namespace StreetWorkoutV2_Bert.Droid
             global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);
             CustomTabsConfiguration.CustomTabsClosingMessage = null;
             RequestedOrientation = ScreenOrientation.Portrait;
+            FormsControls.Droid.Main.Init(this);
+
             LoadApplication(new App());
+
         }
         public override void OnBackPressed()
         {

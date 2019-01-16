@@ -149,14 +149,11 @@
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>1.1.5.180</Version>
     </PackageReference>
-    <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView">
-      <Version>1.0.0.7</Version>
-    </PackageReference>
     <PackageReference Include="Clancey.SimpleAuth">
       <Version>1.0.49</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StreetWorkoutV2_Bert\StreetWorkoutV2_Bert.csproj">

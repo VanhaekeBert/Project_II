@@ -11,7 +11,7 @@
                  
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="Center">
-            <Frame CornerRadius="10"   HorizontalOptions="Fill" HeightRequest="130"  Padding="0">
+            <Frame CornerRadius="10"    HorizontalOptions="Fill" HeightRequest="130"  Padding="0">
                 <renderers:GradientLayout
                                             ColorsList="#484E6D,#323751"
                                             Mode="ToTopLeft">
