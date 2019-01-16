@@ -9,7 +9,7 @@
              BackgroundColor="{StaticResource MainDarkColor}">
 
     <controls:AnimationPage.PageAnimation>
-        <controls:PushPageAnimation  Duration="Medium" Subtype="FromRight"/>
+        <controls:PushPageAnimation  Duration="Short" Subtype="FromRight"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">

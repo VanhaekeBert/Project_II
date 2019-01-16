@@ -3,7 +3,8 @@
     xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
-             x:Class="StreetWorkoutV2_Bert.View.RegisterPage"
+    xmlns:renderers="clr-namespace:StreetWorkoutV2_Bert.Renderers"
+    x:Class="StreetWorkoutV2_Bert.View.RegisterPage"
              NavigationPage.HasNavigationBar="False">
 
     <controls:AnimationPage.PageAnimation>
@@ -55,6 +56,7 @@
                     </Label>
                 </Grid>
             </Grid>
+            
         </RelativeLayout>
     </ContentPage.Content>
 </controls:AnimationPage>

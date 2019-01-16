@@ -48,6 +48,8 @@ namespace StreetWorkoutV2_Bert.View
                         {
                             JObject gegevens = new JObject();
                             gegevens["Wachtwoord"] = ww;
+                            ErrorLabel.Text = "Wachtwoord succesvol verstuurd";
+                            ErrorLabel.IsVisible = true;
                             await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
                             await DBManager.PutUserData(email, "Email", gegevens);
                             await Navigation.PopAsync();

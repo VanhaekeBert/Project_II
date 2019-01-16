@@ -169,6 +169,7 @@
     <None Remove="Asset\PlayButton.png" />
     <None Remove="Asset\Profile_BackCover.png" />
     <None Remove="Asset\profile_pic.png" />
+    <None Remove="Asset\Profile_Picture.jpg" />
     <None Remove="Asset\Profile_Picture.png" />
     <None Remove="Asset\qr.png" />
     <None Remove="Asset\qrcode.png" />
@@ -341,7 +342,7 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
-    <EmbeddedResource Include="Asset\Profile_Picture.png" />
+    <EmbeddedResource Include="Asset\Profile_Picture.jpg" />
     <EmbeddedResource Include="Asset\Slideshow_Pause.png" />
     <EmbeddedResource Include="Asset\Slideshow_Play.png" />
     <EmbeddedResource Include="Asset\Spiergroep_Afbeeldingen\Biceps.png" />

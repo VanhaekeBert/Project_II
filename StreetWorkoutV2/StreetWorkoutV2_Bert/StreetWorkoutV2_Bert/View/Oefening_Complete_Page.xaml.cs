@@ -241,5 +241,9 @@ namespace StreetWorkoutV2_Bert.View
 
             Navigation.PopAsync();
         }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }
