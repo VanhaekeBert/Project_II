@@ -58,9 +58,14 @@
                     <custom:CustomFrame  CornerRadius="10"  Padding="0" Grid.Row="0"   VerticalOptions="FillAndExpand">
                         <!--<renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft">-->
                             <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0"  BackgroundColor="Red" VerticalOptions="FillAndExpand">
-                                <Image x:Name="OefeningImage" Aspect="AspectFill"/>
+                            <Image x:Name="OefeningImage" Aspect="AspectFill" />
+                            <Image x:Name="OefeningImage2" Aspect="AspectFill" IsVisible="False" />
                                 <Image x:Name="OefeningCover" Aspect="AspectFill"/>
-                                <Grid Margin="24,0,24,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="90" RowSpacing="0" ColumnSpacing="0"  >
+                            <Grid Margin="24,0,24,0" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" HeightRequest="90">
+                                <Image HeightRequest="75"  Opacity="0.5" IsVisible="False" IsEnabled="False"  x:Name="SlideshowToggle_Stop" Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" />
+                                <Image HeightRequest="75"  IsVisible="True" IsEnabled="True"  x:Name="SlideshowToggle_Start"  Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" />
+                            </Grid>
+                            <Grid Margin="24,0,24,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="90" RowSpacing="0" ColumnSpacing="0"  >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
@@ -69,10 +74,12 @@
                                         <ColumnDefinition Width="9*"/>
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
+                                    
                                     <Label Margin="0,2,0,0" Grid.Row="0" Grid.ColumnSpan="2" Text="" x:Name="Oefeningnaam" FontFamily="{StaticResource BoldFont}"  FontSize="34" TextColor="{StaticResource LightColor}" />
                                     <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Text="" x:Name="herhalingen" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                     <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="1" Text="" x:Name="aantal_keer"  FontFamily="{StaticResource BoldFont}" FontSize="18" HorizontalOptions="EndAndExpand" TextColor="{StaticResource LightColor}"/>
-                                </Grid>
+                               
+                            </Grid>
                             </Grid>
                         <!--</renderers:GradientLayout>-->
                     </custom:CustomFrame>
@@ -100,8 +107,8 @@
 
                                     <Label Text="Verstreken Tijd" Grid.Column="0" Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="15" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                                     <Label Text="00 : 00"  x:Name="TimerText" Grid.Column="0" Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="42" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                    <Image x:Name="Pause_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="77" HeightRequest="77" IsEnabled="True" IsVisible="True"></Image>
-                                    <Image x:Name="Play_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="77" HeightRequest="77" IsEnabled="False" IsVisible="False"></Image>
+                                    <Image BackgroundColor="Transparent" x:Name="Pause_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="77" HeightRequest="77" IsEnabled="True" IsVisible="True" ></Image>
+                                    <Image BackgroundColor="Transparent" x:Name="Play_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="77" HeightRequest="77" IsEnabled="False" IsVisible="False"></Image>
                                     <!--<Button x:Name="Pause_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" FontFamily="{StaticResource BoldFont}" Text="I I"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="24" FontAttributes="Bold" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="15" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" HeightRequest="60" Clicked="Button_Pause_Clicked"/>-->
                                     <!--<Label Text="Dashboard"  FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>-->
                                 </Grid>

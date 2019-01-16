@@ -46,8 +46,8 @@
     <None Remove="Asset\Oef_Afbeeldingen\archer_push_up_hard_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\archer_push_up_hard_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\around_the_world_plank_hard_1.jpg" />
-    <None Remove="Asset\Oef_Afbeeldingen\assisted_Chin-up_easy_1.jpg" />
-    <None Remove="Asset\Oef_Afbeeldingen\assisted_Chin-up_easy_2.jpg" />
+    <None Remove="Asset\Oef_Afbeeldingen\assisted_chin-up_easy_1.jpg" />
+    <None Remove="Asset\Oef_Afbeeldingen\assisted_chin-up_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\biceprows_easy_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\biceprows_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\biceprows_hard_1.jpg" />
@@ -170,6 +170,8 @@
     <None Remove="Asset\Profile_Picture.png" />
     <None Remove="Asset\qr.png" />
     <None Remove="Asset\qrcode.png" />
+    <None Remove="Asset\Slideshow_Pause.png" />
+    <None Remove="Asset\Slideshow_Play.png" />
     <None Remove="Asset\spier.png" />
     <None Remove="Asset\Spiergroep_Afbeeldingen\Biceps.png" />
     <None Remove="Asset\Spiergroep_Afbeeldingen\Billen.png" />
@@ -232,8 +234,8 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\archer_push_up_hard_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\archer_push_up_hard_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\around_the_world_plank_hard_1.jpg" />
-    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\assisted_Chin-up_easy_1.jpg" />
-    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\assisted_Chin-up_easy_2.jpg" />
+    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\assisted_chin-up_easy_1.jpg" />
+    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\assisted_chin-up_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\biceprows_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\biceprows_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\biceprows_hard_1.jpg" />
@@ -336,6 +338,8 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Profile_Picture.png" />
+    <EmbeddedResource Include="Asset\Slideshow_Pause.png" />
+    <EmbeddedResource Include="Asset\Slideshow_Play.png" />
     <EmbeddedResource Include="Asset\Spiergroep_Afbeeldingen\Biceps.png" />
     <EmbeddedResource Include="Asset\Spiergroep_Afbeeldingen\Billen.png" />
     <EmbeddedResource Include="Asset\Spiergroep_Afbeeldingen\Borst.png" />
