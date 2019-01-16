@@ -29,6 +29,7 @@
     <None Remove="Asset\Heart.png" />
     <None Remove="Asset\Heart_Colored.png" />
     <None Remove="Asset\Heart_Compleet.png" />
+    <None Remove="Asset\Heart_Uncolored.png" />
     <None Remove="Asset\Login_Background.png" />
     <None Remove="Asset\oefeningen.json" />
     <None Remove="Asset\oefeningenV2.json" />
@@ -206,6 +207,7 @@
     <EmbeddedResource Include="Asset\BackgroundSettings_2x.png" />
     <EmbeddedResource Include="Asset\energy_empty.png" />
     <EmbeddedResource Include="Asset\energy_fill.png" />
+    <EmbeddedResource Include="Asset\Heart_Uncolored.png" />
     <EmbeddedResource Include="Asset\oefeningenV2.json" />
     <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
     <EmbeddedResource Include="Asset\Oefening_Background.png" />

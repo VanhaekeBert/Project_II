@@ -24,7 +24,7 @@
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="55"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -113,11 +113,11 @@
                                             ColorsList="#484E6D,#2E334D"
                                             Mode="ToTopLeft">
                             <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image x:Name="RatingHeart1" WidthRequest="40"></Image>
-                                <Image x:Name="RatingHeart2" WidthRequest="40"></Image>
-                                <Image x:Name="RatingHeart3" WidthRequest="40"></Image>
-                                <Image x:Name="RatingHeart4" WidthRequest="40"></Image>
-                                <Image x:Name="RatingHeart5" WidthRequest="40"></Image>
+                                <Image x:Name="imgRatingHeart1" WidthRequest="40"></Image>
+                                <Image x:Name="imgRatingHeart2" WidthRequest="40"></Image>
+                                <Image x:Name="imgRatingHeart3" WidthRequest="40"></Image>
+                                <Image x:Name="imgRatingHeart4" WidthRequest="40"></Image>
+                                <Image x:Name="imgRatingHeart5" WidthRequest="40"></Image>
 
                             </StackLayout>
                             <!-- Grafiek-->

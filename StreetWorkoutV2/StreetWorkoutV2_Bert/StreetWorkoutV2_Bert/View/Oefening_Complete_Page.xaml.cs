@@ -24,16 +24,76 @@ namespace StreetWorkoutV2_Bert.View
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Vuur.png");
             ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Compleet.png");
-            RatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            RatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            RatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            RatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            RatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+            imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+            imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+            imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+            imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+            imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
 
 
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesHartslag();
+
+            //houd  rating bij tussen 1-5 (wordt nog niets mee gedaan )
+            int rating;
+
+            imgRatingHeart1.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    rating = 1;
+                })
+            });
+            imgRatingHeart2.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    rating = 2;
+                })
+            });
+            imgRatingHeart3.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    rating = 3;
+                })
+            });
+            imgRatingHeart4.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
+                    rating = 4;
+                })
+            });
+            imgRatingHeart5.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
+                    rating = 5;
+                })
+            });
         }
+    
 
         private void MakeEntriesHartslag()
         {
