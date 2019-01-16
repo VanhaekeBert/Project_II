@@ -83,8 +83,8 @@
                                                 <ColumnDefinition Width="auto"/>
                                                 <ColumnDefinition Width="auto"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="StartAndExpand"  Text="10x Biceprows" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
-                                            <Label Margin="0,2,0,0" Grid.Column="1" HorizontalOptions="EndAndExpand"  Text="2/3" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="StartAndExpand"  Text="" x:Name="Aantal_herhalingen" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                            <Label Margin="0,2,0,0" Grid.Column="1" HorizontalOptions="EndAndExpand"  Text="" x:Name="Aantal_keer" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
                                             <Image Margin="0,2,0,0"  Grid.Column="2" HeightRequest="20" WidthRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
                                         </Grid>
                                     </Grid>

@@ -130,7 +130,6 @@ namespace StreetWorkoutV2_Bert.View
                 {
                     Popup.IsEnabled = true;
                     Popup.IsVisible = true;
-                    Popup.FadeTo(1, 250);
                 })
             });
         }

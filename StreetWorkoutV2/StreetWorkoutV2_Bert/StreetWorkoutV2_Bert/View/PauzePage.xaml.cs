@@ -31,17 +31,18 @@ namespace StreetWorkoutV2_Bert.View
             {
                 Aantal_keeper = "2/3";
             }
-            if (Aantal_keeper == "2/3")
+            else if (Aantal_keeper == "2/3")
             {
                 Aantal_keeper = "3/3";
             }
 
+            Aantal_keer.Text = Aantal_keeper;
+            Aantal_herhalingen.Text = oefening.Herhalingen.ToString() + " herhalingen";
             Next_exercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
                 Command = new Command(async () => { await Navigation.PushAsync(new OefeningPage(oefeningKeeper, Aantal_keeper)); })
             });
-            OefeningImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oef_Afbeeldingen.triceps_extensions_easy_1.jpg");
             int countdownremaining = 0;
             Device.StartTimer(TimeSpan.FromSeconds(1), () => {
                 countdownremaining += 1;

@@ -42,18 +42,18 @@
                                 </Grid>
 
                             </Frame>
-                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Kevin Uyttenhove" TextColor="White" Margin="0,16,0,0" HorizontalOptions="CenterAndExpand"/>
+                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="0,16,0,0" HorizontalOptions="CenterAndExpand"/>
                         </Grid>
 
                         <!-- Historiek-->
                         <StackLayout Spacing="0">
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Historiek" TextColor="White"/>
-                            <Frame CornerRadius="10" HeightRequest="160" Margin="0,24,0,24" >
+                            <Frame CornerRadius="10" Padding="0" HeightRequest="200" Margin="0,24,0,24" >
                                 <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
-                                    <StackLayout VerticalOptions="Start" Spacing="0">
-                                        <Label Margin="0,-8,0,14" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Kcal verbrand / dag" TextColor="White"/>
+                                    <StackLayout VerticalOptions="Start" Spacing="0" Margin="0,24,0,24">
+                                        <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Kcal verbrand / dag" TextColor="White"/>
                                         <forms:ChartView x:Name="chartKcal" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                                     </StackLayout>
                                     <!-- Grafiek-->
@@ -112,12 +112,12 @@
                                 </Frame>
                             </Grid>
 
-                            <Frame CornerRadius="10" HeightRequest="160" Margin="0,48,0,24">
+                            <Frame CornerRadius="10" HeightRequest="200" Padding="0" Margin="0,48,0,24">
                                 <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
-                                    <StackLayout VerticalOptions="Start" Spacing="0">
-                                        <Label Margin="0,-8,0,14" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Oefeningen uitgevoerd / dag" TextColor="White"/>
+                                    <StackLayout VerticalOptions="Start" Spacing="0" Padding="0" Margin="0,24,0,24">
+                                        <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Oefeningen uitgevoerd / dag" TextColor="White"/>
                                         <forms:ChartView x:Name="chartOef" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                                     </StackLayout>
                                     <!-- Grafiek-->
@@ -179,11 +179,11 @@
                         <!-- Persoonsgegevens-->
                         <StackLayout Spacing="0" Margin="0,48,0,0">
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Persoonsgegevens" TextColor="White"/>
-                            <Frame CornerRadius="10" Margin="0,24,0,16" Padding="24,16,24,8">
+                            <Frame CornerRadius="10" Padding="0" Margin="0,24,0,36">
                                 <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
-                                    <Grid RowSpacing="0">
+                                    <Grid RowSpacing="0" Padding="24,24,0,24">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50"/>
                                             <RowDefinition Height="50"/>

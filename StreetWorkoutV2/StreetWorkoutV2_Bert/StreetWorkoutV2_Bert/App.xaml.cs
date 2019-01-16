@@ -1,4 +1,5 @@
 ﻿using FormsControls.Base;
+using StreetWorkoutV2_Bert.Model;
 using StreetWorkoutV2_Bert.View;
 using System;
 using Xamarin.Forms;

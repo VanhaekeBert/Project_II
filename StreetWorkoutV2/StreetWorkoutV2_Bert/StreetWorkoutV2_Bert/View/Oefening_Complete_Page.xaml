@@ -50,13 +50,13 @@
                     <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Reflectie" TextColor="White" />
                 </StackLayout>
                 <ScrollView VerticalOptions="CenterAndExpand" Grid.Row="3" Grid.ColumnSpan="2"  >
-                    <StackLayout Margin="24,0,24,0">
-                        <Frame CornerRadius="10" HeightRequest="160" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0">
+                    <StackLayout Margin="24,0,24,0" Spacing="0" VerticalOptions="Start">
+                        <Frame CornerRadius="10" HeightRequest="200" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,24,0,24" Padding="0">
                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                         <StackLayout VerticalOptions="Start" Spacing="0">
-                            <Label Margin="0,-8,0,14" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hartslag doorheen de oefening" TextColor="White"/>
+                                    <Label Margin="24,12,0,12" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hartslag doorheen de oefening" TextColor="White"/>
                             <forms:ChartView x:Name="chartHartslag" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
                         <!-- Grafiek-->
@@ -111,7 +111,7 @@
                 </Grid>
                 <StackLayout Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,24,0,0">
                     <Label  FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hoe voelde deze oefening aan?" TextColor="White" Margin="-2,0,0,5"/>
-                    <custom:CustomFrame  HasShadow="True" CornerRadius="10" HeightRequest="40" Margin="0" >
+                    <custom:CustomFrame  HasShadow="True" CornerRadius="10" HeightRequest="40" Margin="24" Padding="0">
                         <renderers:GradientLayout
                                             ColorsList="#484E6D,#2E334D"
                                             Mode="ToTopLeft">

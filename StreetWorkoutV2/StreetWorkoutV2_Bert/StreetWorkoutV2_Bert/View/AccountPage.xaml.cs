@@ -11,6 +11,7 @@ using SkiaSharp;
 using Xamarin.Forms;
 using Entry = Microcharts.Entry;
 using Xamarin.Forms.Xaml;
+using System.IO;
 
 namespace StreetWorkoutV2_Bert.View
 {
@@ -24,9 +25,27 @@ namespace StreetWorkoutV2_Bert.View
             // BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundAccount_2x.png");
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Profile_BackCover.png");
             imgProfile.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Profile_Picture.png");
+            Username.Text = Application.Current.Properties["Naam"].ToString();
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();
+
+            //Profile picture ophalen
+            imgProfile.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
+                    if (stream != null)
+                    {
+
+                        imgProfile.Source = ImageSource.FromStream(() => stream);
+
+
+                    }
+                })
+            });
 
             Task.Run(async () =>
             {
