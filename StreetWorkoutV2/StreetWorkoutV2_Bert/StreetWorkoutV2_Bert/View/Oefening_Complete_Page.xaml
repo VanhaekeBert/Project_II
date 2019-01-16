@@ -115,13 +115,17 @@
                         <renderers:GradientLayout
                                             ColorsList="#484E6D,#2E334D"
                                             Mode="ToTopLeft">
-                            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image x:Name="imgRatingHeart1" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart2" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart3" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart4" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart5" WidthRequest="40"></Image>
-
+                            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">                                        
+                                <Image x:Name="imgRatingHeartFull1" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeartFull2" WidthRequest="40" ></Image> 
+                                <Image x:Name="imgRatingHeartFull3" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeartFull4" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeartFull5" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart1" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart2" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart3" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart4" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart5" WidthRequest="40"></Image>                                        
                             </StackLayout>
                             <!-- Grafiek-->
                         </renderers:GradientLayout>
