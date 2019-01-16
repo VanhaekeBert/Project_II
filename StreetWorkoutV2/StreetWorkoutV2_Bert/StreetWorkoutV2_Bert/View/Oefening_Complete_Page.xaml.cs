@@ -25,19 +25,19 @@ namespace StreetWorkoutV2_Bert.View
             ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Vuur.png");
             ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Compleet.png");
 
-             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_UnColored.png");
+             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Uncolored.png");
 
-            imgRatingHeart1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_UnColored.png");
-            imgRatingHeart2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_UnColored.png");
-            imgRatingHeart3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_UnColored.png");
-            imgRatingHeart4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_UnColored.png");
-            imgRatingHeart5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_UnColored.png");
+            imgRatingHeart1.Source = picUncolored;
+            imgRatingHeart2.Source = picUncolored;
+            imgRatingHeart3.Source = picUncolored;
+            imgRatingHeart4.Source = picUncolored;
+            imgRatingHeart5.Source = picUncolored;
             var picColored = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            imgRatingHeartFull1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            imgRatingHeartFull2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            imgRatingHeartFull3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            imgRatingHeartFull4.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png");
-            imgRatingHeartFull5.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart_Colored.png"); ;
+            imgRatingHeartFull1.Source = picColored;
+            imgRatingHeartFull2.Source = picColored;
+            imgRatingHeartFull3.Source = picColored;
+            imgRatingHeartFull4.Source = picColored;
+            imgRatingHeartFull5.Source = picColored;
 
             imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;
             imgRatingHeartFull2.IsVisible = true; imgRatingHeartFull2.IsEnabled = true;
