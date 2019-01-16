@@ -18,17 +18,19 @@ namespace StreetWorkoutV2_Bert.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ExercisePage : AnimationPage
 	{
-		public ExercisePage (PickerClass picker, string moeilijkheidsgraad)
+        PickerClass _SelectedItem;
+        List<Oefening> Finallijst = new List<Oefening>();
+        List<Oefening> Oefeningslijst = new List<Oefening>();
+
+        public ExercisePage (PickerClass picker, string moeilijkheidsgraad)
 		{
 			InitializeComponent ();
             BackButtonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
-            Moeilijkheidsgraad1.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_fill.png");
-            Moeilijkheidsgraad2.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_empty.png");
-            Moeilijkheidsgraad3.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.energy_empty.png");
+            _SelectedItem = picker;
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             Titlelabel.Text = picker.Name;
             //Inlezen JSON
-            List<Oefening> Oefeningslijst = new List<Oefening>();
+            
 
             //bestandnaam? , Pad?
             // opgelet bovenaan -> using System.Reflection; toevoegen
@@ -44,6 +46,7 @@ namespace StreetWorkoutV2_Bert.View
             switch (moeilijkheidsgraad)
             {
                 case "gemakkelijk":
+                    Moeilijkheidsgraadlabel.Text = "Gemakkelijk";
                     foreach (Oefening oefening in Oefeningslijst)
                     {
                         if (oefening.Moeilijkheidsgraad.Contains("Easy"))
@@ -53,8 +56,10 @@ namespace StreetWorkoutV2_Bert.View
                     }
                     break;
                 case "gemiddeld":
+                    Moeilijkheidsgraadlabel.Text = "Gemiddeld";
                     foreach (Oefening oefening in Oefeningslijst)
                     {
+
                         if (oefening.Moeilijkheidsgraad.Contains("Medium"))
                         {
                             Semifinallijst.Add(oefening);
@@ -62,6 +67,7 @@ namespace StreetWorkoutV2_Bert.View
                     }
                     break;
                 case "moeilijk":
+                    Moeilijkheidsgraadlabel.Text = "Moeilijk";
                     foreach (Oefening oefening in Oefeningslijst)
                     {
                         if (oefening.Moeilijkheidsgraad.Contains("Hard"))
@@ -75,7 +81,7 @@ namespace StreetWorkoutV2_Bert.View
                         break;
             }
 
-            List<Oefening> Finallijst = new List<Oefening>();
+            
             if (picker.Type == "Spiergroep")
             {
                 foreach (Oefening oefening in Semifinallijst)
@@ -117,11 +123,69 @@ namespace StreetWorkoutV2_Bert.View
                 //await popupView.PushAsync(new ExercisePage());
                 myList.SelectedItem = null;
             };
+
+            SelecteerDificultyAgain.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    Popup.IsEnabled = true;
+                    Popup.IsVisible = true;
+                    Popup.FadeTo(1, 250);
+                })
+            });
         }
 
+
+        private async void Makkelijk_Clicked(object sender, EventArgs e)
+        {
+            Popup.IsEnabled = false;
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "makkelijk"), true);
+            Popup.IsVisible = false;
+        }
+
+        private async void Gemiddeld_Clicked(object sender, EventArgs e)
+        {
+            Popup.IsEnabled = false;
+            // Popup.FadeTo(0, 250);
+
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemiddeld"), true);
+            Popup.IsVisible = false;
+
+
+        }
+
+        private async void Moeilijk_Clicked(object sender, EventArgs e)
+        {
+            // Popup.FadeTo(0, 250);
+
+            Popup.IsEnabled = false;
+            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"));
+            Popup.IsVisible = false;
+
+        }
+
+        private void OefeningNaamEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<Oefening> myOefeningList = new List<Oefening>();
+            if (OefeningNaamEntry.Text != null)
+            {
+                foreach (Oefening oefening in Finallijst)
+                {
+                    if (oefening.Oefeningnaam.ToLower().Contains(OefeningNaamEntry.Text.ToLower()))
+                    {
+                        myOefeningList.Add(oefening);
+                    }
+                }
+                Oefeningen.ItemsSource = myOefeningList;
+            }
+            else
+            {
+                Oefeningen.ItemsSource = Finallijst;
+            }
+        }
         //private async void ontap(Xamarin.Forms.View arg1, object arg2)
         //{
-            
+
         //}
     }
 }
