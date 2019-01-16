@@ -111,24 +111,28 @@
                 </Grid>
                 <StackLayout Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,24,0,0">
                     <Label  FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hoe voelde deze oefening aan?" TextColor="White" Margin="-2,0,0,5"/>
-                    <custom:CustomFrame  HasShadow="True" CornerRadius="10" HeightRequest="40" Margin="24" Padding="0">
+                    <custom:CustomFrame  HasShadow="True" CornerRadius="10" HeightRequest="60" Padding="0">
                         <renderers:GradientLayout
                                             ColorsList="#484E6D,#2E334D"
                                             Mode="ToTopLeft">
-                            <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image x:Name="imgRatingHeart1" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart2" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart3" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart4" WidthRequest="40"></Image>
-                                <Image x:Name="imgRatingHeart5" WidthRequest="40"></Image>
-
+                            <StackLayout Margin="0,10" Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">                                        
+                                <Image x:Name="imgRatingHeartFull1" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeartFull2" WidthRequest="40" ></Image> 
+                                <Image x:Name="imgRatingHeartFull3" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeartFull4" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeartFull5" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart1" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart2" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart3" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart4" WidthRequest="40" ></Image>                                
+                                <Image x:Name="imgRatingHeart5" WidthRequest="40"></Image>                                        
                             </StackLayout>
                             <!-- Grafiek-->
                         </renderers:GradientLayout>
                     </custom:CustomFrame>                    
                 </StackLayout>
                 <Grid  Grid.Row="5" Grid.ColumnSpan="2" Margin="24"  VerticalOptions="StartAndExpand">
-                 <Button Grid.Column="0" Text="Meer oefeningen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="Button_Clicked"/>
+                            <Button Grid.Column="0" Text="Meer oefeningen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="Button_Clicked"/>
                     <Button Grid.Column="1" Text="Home" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="100" HeightRequest="45" Clicked="Button_Clicked_1"/>
                 </Grid>
                     </StackLayout>

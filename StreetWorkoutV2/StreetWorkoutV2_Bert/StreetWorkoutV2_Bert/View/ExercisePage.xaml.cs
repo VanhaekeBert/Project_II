@@ -4,6 +4,7 @@ using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2_Bert.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -19,7 +20,8 @@ namespace StreetWorkoutV2_Bert.View
 	public partial class ExercisePage : AnimationPage
 	{
         PickerClass _SelectedItem;
-        List<Oefening> Finallijst = new List<Oefening>();
+        List<Oefening> _FinalList;
+        string _json;
         List<Oefening> Oefeningslijst = new List<Oefening>();
 
         public ExercisePage (PickerClass picker, string moeilijkheidsgraad)
@@ -29,84 +31,16 @@ namespace StreetWorkoutV2_Bert.View
             _SelectedItem = picker;
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
             Titlelabel.Text = picker.Name;
-            //Inlezen JSON
             
-
-            //bestandnaam? , Pad?
-            // opgelet bovenaan -> using System.Reflection; toevoegen
-            var assembly = typeof(Oefening).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2_Bert.Asset.oefeningenV2.json");
-
-            //bytes uit het bestand gaan inlezen en verwerken
-            StreamReader oSR = new StreamReader(stream);
-
-            string json = oSR.ReadToEnd();
-            Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
-            List<Oefening> Semifinallijst = new List<Oefening>();
-            switch (moeilijkheidsgraad)
-            {
-                case "gemakkelijk":
-                    Moeilijkheidsgraadlabel.Text = "Gemakkelijk";
-                    foreach (Oefening oefening in Oefeningslijst)
-                    {
-                        if (oefening.Moeilijkheidsgraad.Contains("Easy"))
-                        {
-                            Semifinallijst.Add(oefening);
-                        }
-                    }
-                    break;
-                case "gemiddeld":
-                    Moeilijkheidsgraadlabel.Text = "Gemiddeld";
-                    foreach (Oefening oefening in Oefeningslijst)
-                    {
-
-                        if (oefening.Moeilijkheidsgraad.Contains("Medium"))
-                        {
-                            Semifinallijst.Add(oefening);
-                        }
-                    }
-                    break;
-                case "moeilijk":
-                    Moeilijkheidsgraadlabel.Text = "Moeilijk";
-                    foreach (Oefening oefening in Oefeningslijst)
-                    {
-                        if (oefening.Moeilijkheidsgraad.Contains("Hard"))
-                        {
-                            Semifinallijst.Add(oefening);
-                        }
-                    }
-                    break;
-                default:
-                    Semifinallijst = Oefeningslijst;
-                        break;
-            }
-
+            string json = InlezenJson();
             
-            if (picker.Type == "Spiergroep")
-            {
-                foreach (Oefening oefening in Semifinallijst)
-                {
-                    if (oefening.Spiergroep == picker.Name)
-                    {
-                        Finallijst.Add(oefening);
-                    }
-                }
-            }
-            else if (picker.Type == "Toestel")
-            {
-                foreach (Oefening oefening in Semifinallijst)
-                {
-                    if (oefening.Toestel == picker.Name)
-                    {
-                        Finallijst.Add(oefening);
-                    }
-                }
-            }
-
-
-            //Listview opvullen
+            List<Oefening> Semifinallijst = CreateSemiFinalLijst(json, moeilijkheidsgraad);
+            List<Oefening> Finallijst = CreateFinalLijst(picker,Semifinallijst);
             Oefeningen.ItemsSource = Finallijst;
 
+
+            _json = json;
+            _FinalList = Finallijst;
             BackButton.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new  Command(async() => {
@@ -124,7 +58,7 @@ namespace StreetWorkoutV2_Bert.View
                 myList.SelectedItem = null;
             };
 
-            SelecteerDificultyAgain.GestureRecognizers.Add(new TapGestureRecognizer
+            ChangeDifficulty.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
                 {
@@ -134,31 +68,133 @@ namespace StreetWorkoutV2_Bert.View
             });
         }
 
+        private List<Oefening> CreateFinalLijst(PickerClass picker, List<Oefening> semifinallijst)
+        {
+            List<Oefening> Finallijst = new List<Oefening>();
+            if (picker.Type == "Spiergroep")
+            {
+                foreach (Oefening oefening in semifinallijst)
+                {
+                    if (oefening.Spiergroep == picker.Name)
+                    {
+                        Finallijst.Add(oefening);
+                    }
+                }
+                return Finallijst;
+            }
+            else if (picker.Type == "Toestel")
+            {
+                foreach (Oefening oefening in semifinallijst)
+                {
+                    if (oefening.Toestel == picker.Name)
+                    {
+                        Finallijst.Add(oefening);
+                    }
+                }
+                return Finallijst;
+            }
+            else
+            {
+                return Finallijst = semifinallijst;
+            }
+        }
 
-        private async void Makkelijk_Clicked(object sender, EventArgs e)
+        private List<Oefening> CreateSemiFinalLijst(string json, string moeilijkheidsgraad)
+        {
+
+            Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+            List<Oefening> Semifinallijst = new List<Oefening>();
+            switch (moeilijkheidsgraad)
+            {
+                case "gemakkelijk":
+                    Moeilijkheidsgraadlabel.Text = "Gemakkelijk";
+                    foreach (Oefening oefening in Oefeningslijst)
+                    {
+                        if (oefening.Moeilijkheidsgraad.Contains("Easy"))
+                        {
+                            Semifinallijst.Add(oefening);
+                        }
+                    }
+                    return Semifinallijst;
+                case "gemiddeld":
+                    Moeilijkheidsgraadlabel.Text = "Gemiddeld";
+                    foreach (Oefening oefening in Oefeningslijst)
+                    {
+
+                        if (oefening.Moeilijkheidsgraad.Contains("Medium"))
+                        {
+                            Semifinallijst.Add(oefening);
+                        }
+                    }
+                    return Semifinallijst;
+                case "moeilijk":
+                    Moeilijkheidsgraadlabel.Text = "Moeilijk";
+                    foreach (Oefening oefening in Oefeningslijst)
+                    {
+                        if (oefening.Moeilijkheidsgraad.Contains("Hard"))
+                        {
+                            Semifinallijst.Add(oefening);
+                        }
+                    }
+                    return Semifinallijst;
+                    
+                default:
+                    Semifinallijst = Oefeningslijst;
+                    return Semifinallijst;
+
+            }
+        }
+
+        private string InlezenJson()
+        {
+            //Inlezen JSON
+
+
+            //bestandnaam? , Pad?
+            // opgelet bovenaan -> using System.Reflection; toevoegen
+            var assembly = typeof(Oefening).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2_Bert.Asset.oefeningenV2.json");
+
+            //bytes uit het bestand gaan inlezen en verwerken
+            StreamReader oSR = new StreamReader(stream);
+
+            string json = oSR.ReadToEnd();
+            return json;
+        }
+
+        private void Makkelijk_Clicked(object sender, EventArgs e)
         {
             Popup.IsEnabled = false;
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemakkelijk"), true);
+            List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemakkelijk");
+            List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
+            Oefeningen.ItemsSource = list2;
+            //global final list updaten voor textChanged
+            _FinalList = list2;
+            OefeningNaamEntry.Text = "";
             Popup.IsVisible = false;
         }
 
-        private async void Gemiddeld_Clicked(object sender, EventArgs e)
+        private void Gemiddeld_Clicked(object sender, EventArgs e)
         {
             Popup.IsEnabled = false;
-            // Popup.FadeTo(0, 250);
-
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemiddeld"), true);
+            List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemiddeld");
+            List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
+            Oefeningen.ItemsSource = list2;
+            //global final list updaten voor textChanged
+            _FinalList = list2;
+            OefeningNaamEntry.Text = "";
             Popup.IsVisible = false;
-
-
         }
 
-        private async void Moeilijk_Clicked(object sender, EventArgs e)
+        private void Moeilijk_Clicked(object sender, EventArgs e)
         {
-            // Popup.FadeTo(0, 250);
-
             Popup.IsEnabled = false;
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"), true);
+            List<Oefening> list1 = CreateSemiFinalLijst(_json, "moeilijk");
+            List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
+            Oefeningen.ItemsSource = list2;
+            //global final list updaten voor textChanged
+            _FinalList = list2;
+            OefeningNaamEntry.Text = "";
             Popup.IsVisible = false;
 
         }
@@ -168,7 +204,7 @@ namespace StreetWorkoutV2_Bert.View
             List<Oefening> myOefeningList = new List<Oefening>();
             if (OefeningNaamEntry.Text != null)
             {
-                foreach (Oefening oefening in Finallijst)
+                foreach (Oefening oefening in _FinalList)
                 {
                     if (oefening.Oefeningnaam.ToLower().Contains(OefeningNaamEntry.Text.ToLower()))
                     {
@@ -179,7 +215,7 @@ namespace StreetWorkoutV2_Bert.View
             }
             else
             {
-                Oefeningen.ItemsSource = Finallijst;
+                Oefeningen.ItemsSource = _FinalList;
             }
         }
         //private async void ontap(Xamarin.Forms.View arg1, object arg2)
