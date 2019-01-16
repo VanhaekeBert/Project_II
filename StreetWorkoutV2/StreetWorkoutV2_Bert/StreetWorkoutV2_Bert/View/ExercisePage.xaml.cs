@@ -168,6 +168,9 @@ namespace StreetWorkoutV2_Bert.View
             List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemakkelijk");
             List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
             Oefeningen.ItemsSource = list2;
+            //global final list updaten voor textChanged
+            _FinalList = list2;
+            OefeningNaamEntry.Text = "";
             Popup.IsVisible = false;
         }
 
@@ -177,6 +180,9 @@ namespace StreetWorkoutV2_Bert.View
             List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemiddeld");
             List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
             Oefeningen.ItemsSource = list2;
+            //global final list updaten voor textChanged
+            _FinalList = list2;
+            OefeningNaamEntry.Text = "";
             Popup.IsVisible = false;
         }
 
@@ -186,6 +192,9 @@ namespace StreetWorkoutV2_Bert.View
             List<Oefening> list1 = CreateSemiFinalLijst(_json, "moeilijk");
             List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
             Oefeningen.ItemsSource = list2;
+            //global final list updaten voor textChanged
+            _FinalList = list2;
+            OefeningNaamEntry.Text = "";
             Popup.IsVisible = false;
 
         }
