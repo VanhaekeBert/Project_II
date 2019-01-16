@@ -84,7 +84,7 @@
 
             <!--Popup-->
 
-            <StackLayout Opacity="0"  x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            <StackLayout Opacity="1"  x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
                  
                  HorizontalOptions="CenterAndExpand"

@@ -8,7 +8,7 @@
     xmlns:custom="clr-namespace:StreetWorkoutV2_Bert"
              NavigationPage.HasNavigationBar="False">
     <controls:AnimationPage.PageAnimation>
-        <controls:PushPageAnimation  Duration="Medium" Subtype="FromRight"/>
+        <controls:PushPageAnimation  Duration="Short" Subtype="FromRight"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -77,7 +77,7 @@
             
             <!--Popup-->
             
-            <StackLayout Opacity="0"  x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            <StackLayout x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
                  
                  HorizontalOptions="CenterAndExpand"

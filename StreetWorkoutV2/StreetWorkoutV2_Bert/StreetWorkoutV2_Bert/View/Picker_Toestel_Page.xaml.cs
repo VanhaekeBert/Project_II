@@ -120,7 +120,6 @@ namespace StreetWorkoutV2_Bert.View
                 _SelectedItem = (myList.SelectedItem as PickerClass);
                 Popup.IsEnabled = true;
                 Popup.IsVisible = true;
-                Popup.FadeTo(1, 250);
 
                 //await popupView.PushAsync(new ExercisePage());
                 myList.SelectedItem = null;

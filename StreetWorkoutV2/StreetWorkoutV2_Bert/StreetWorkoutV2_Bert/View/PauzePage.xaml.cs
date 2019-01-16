@@ -31,11 +31,12 @@ namespace StreetWorkoutV2_Bert.View
             {
                 Aantal_keeper = "2/3";
             }
-            if (Aantal_keeper == "2/3")
+            else if (Aantal_keeper == "2/3")
             {
                 Aantal_keeper = "3/3";
             }
 
+            Aantal_keer.Text = Aantal_keeper;
             Next_exercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
