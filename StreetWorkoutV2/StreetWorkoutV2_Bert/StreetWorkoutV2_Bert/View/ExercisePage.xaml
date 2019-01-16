@@ -48,7 +48,7 @@
                                     <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
                                         <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="" x:Name="Titlelabel" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                                     </StackLayout>
-                                    <StackLayout Grid.Row="1" x:Name="SelecteerDificultyAgain" HorizontalOptions="EndAndExpand" VerticalOptions="End" Grid.Column="1" >
+                                    <StackLayout Grid.Row="1" x:Name="ChangeDifficulty" HorizontalOptions="EndAndExpand" VerticalOptions="End" Grid.Column="1" >
                                         <Label  FontFamily="{StaticResource NormalFont}"  FontSize="18" Text="" x:Name="Moeilijkheidsgraadlabel" TextColor="{StaticResource LightColor}" Margin="0,0,24,-5" />
                                         <BoxView Margin="0,0,24,0" HeightRequest="2" BackgroundColor="{StaticResource LightColor}"/>
                                     </StackLayout>
