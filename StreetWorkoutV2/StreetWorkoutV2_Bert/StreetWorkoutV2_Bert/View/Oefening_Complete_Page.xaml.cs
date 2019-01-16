@@ -39,16 +39,7 @@ namespace StreetWorkoutV2_Bert.View
             imgRatingHeartFull4.Source = picColored;
             imgRatingHeartFull5.Source = picColored;
 
-            imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;
-            imgRatingHeartFull2.IsVisible = true; imgRatingHeartFull2.IsEnabled = true;
-            imgRatingHeartFull3.IsVisible = true; imgRatingHeartFull3.IsEnabled = true;
-            imgRatingHeartFull4.IsVisible = true; imgRatingHeartFull4.IsEnabled = true;
-            imgRatingHeartFull5.IsVisible = false; imgRatingHeartFull5.IsEnabled = false;
-            imgRatingHeart1.IsVisible = false; imgRatingHeart1.IsEnabled = false;
-            imgRatingHeart2.IsVisible = false; imgRatingHeart2.IsEnabled = false;
-            imgRatingHeart3.IsVisible = false; imgRatingHeart3.IsEnabled = false;
-            imgRatingHeart4.IsVisible = false; imgRatingHeart4.IsEnabled = false;
-            imgRatingHeart5.IsVisible = true; imgRatingHeart4.IsEnabled = true;
+            Rate3Stars();
 
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesHartslag();
@@ -58,35 +49,35 @@ namespace StreetWorkoutV2_Bert.View
 
             imgRatingHeart1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () => {
+                Command = new Command(async () => {
                     Rate1Star();                    
                     rating = 1;
                 })
             });
             imgRatingHeart2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate2Stars();
                     rating = 2;
                 })
             });
             imgRatingHeart3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate3Stars();
                     rating = 3;
                 })
             });
             imgRatingHeart4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate4Stars();
                     rating = 4;
                 })
             });
             imgRatingHeart5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate5Stars();
                     rating = 5;
                 })
@@ -94,21 +85,21 @@ namespace StreetWorkoutV2_Bert.View
             
             imgRatingHeartFull1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate1Star();
                     rating = 1;
                 })
             });
             imgRatingHeartFull2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate2Stars();
                     rating = 2;
                 })
             });
             imgRatingHeartFull3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate3Stars();
                     rating = 3;
 
@@ -116,14 +107,14 @@ namespace StreetWorkoutV2_Bert.View
             });
             imgRatingHeartFull4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate4Stars();
                     rating = 4;
                 })
             });
             imgRatingHeartFull5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(async () => {
                     Rate5Stars();
                     rating = 5;
                 })
@@ -235,14 +226,20 @@ namespace StreetWorkoutV2_Bert.View
                 LabelColor = SKColor.Parse("#FFFFFF"),
             };
         }
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Button_Clicked_1(object sender, EventArgs e)
         {
+            Navigation.PopToRootAsync();
+        }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
+            }
+
+            Navigation.PopAsync();
         }
     }
 }
