@@ -6,6 +6,8 @@
              xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="StreetWorkoutV2_Bert.View.AccountPage"
              xmlns:local1="clr-namespace:StreetWorkoutV2_Bert"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
 
@@ -32,17 +34,18 @@
                                 <RowDefinition Height="60"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Frame CornerRadius="90" Margin="0" Padding="0" HeightRequest="132" WidthRequest="132" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="140"/>
-                                        <RowDefinition Height="60"/>
-                                    </Grid.RowDefinitions>
-                                    <Image Aspect="AspectFill" x:Name="imgProfile"/>
-                                </Grid>
-
-                            </Frame>
-                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="0,16,0,0" HorizontalOptions="CenterAndExpand"/>
+                            <!--<Image Aspect="AspectFill" x:Name="imgProfile"/>-->
+                            <ff:CachedImage x:Name="imgProfile" Source="resource://StreetWorkoutV2_Bert.Asset.Profile_Picture.png" HeightRequest="132" WidthRequest="132" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <ff:CachedImage.Transformations>
+                                    <ffTransformations:RoundedTransformation Radius= "1000"/>
+                                </ff:CachedImage.Transformations>
+                            </ff:CachedImage>
+                                <Image Grid.Row="0" x:Name="imgSelector" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="40" Margin="72,0,0,0"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="1">
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="23,16,0,0"/>
+                                <Image x:Name="Potlood" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
+                            </StackLayout>
+                                
                         </Grid>
 
                         <!-- Historiek-->

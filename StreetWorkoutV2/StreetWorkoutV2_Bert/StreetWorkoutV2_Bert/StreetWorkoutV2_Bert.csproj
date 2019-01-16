@@ -30,6 +30,7 @@
     <None Remove="Asset\Heart_Colored.png" />
     <None Remove="Asset\Heart_Compleet.png" />
     <None Remove="Asset\Heart_Uncolored.png" />
+    <None Remove="Asset\ImageSelect.png" />
     <None Remove="Asset\Login_Background.png" />
     <None Remove="Asset\oefeningen.json" />
     <None Remove="Asset\oefeningenV2.json" />
@@ -163,6 +164,7 @@
     <None Remove="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
     <None Remove="Asset\Parallel_Bars.png" />
     <None Remove="Asset\PauseButton.png" />
+    <None Remove="Asset\pencil.png" />
     <None Remove="Asset\Picker_Background.png" />
     <None Remove="Asset\PlayButton.png" />
     <None Remove="Asset\Profile_BackCover.png" />
@@ -210,6 +212,7 @@
     <EmbeddedResource Include="Asset\energy_empty.png" />
     <EmbeddedResource Include="Asset\energy_fill.png" />
     <EmbeddedResource Include="Asset\Heart_Uncolored.png" />
+    <EmbeddedResource Include="Asset\ImageSelect.png" />
     <EmbeddedResource Include="Asset\oefeningenV2.json" />
     <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
     <EmbeddedResource Include="Asset\Oefening_Background.png" />
@@ -222,6 +225,7 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_medium_2.jpg" />
     <EmbeddedResource Include="Asset\PauseButton.png" />
+    <EmbeddedResource Include="Asset\pencil.png" />
     <EmbeddedResource Include="Asset\Picker_Background.png" />
     <EmbeddedResource Include="Asset\PlayButton.png" />
     <EmbeddedResource Include="Asset\Profile_BackCover.png" />
@@ -392,6 +396,8 @@
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.180" />
     <PackageReference Include="Sendgrid" Version="9.10.0" />
     <PackageReference Include="Xamarin.Auth" Version="1.6.0.4" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
     <PackageReference Include="XForms.Plugin.AnimationNavigationPage" Version="1.0.6" />
   </ItemGroup>

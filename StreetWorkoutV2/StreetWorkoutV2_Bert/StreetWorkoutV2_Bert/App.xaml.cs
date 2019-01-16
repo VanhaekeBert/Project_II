@@ -14,7 +14,7 @@ namespace StreetWorkoutV2_Bert
         {
             InitializeComponent();
 
-            MainPage = new AnimationNavigationPage(new MainPage());
+            MainPage = new AnimationNavigationPage(new AccountPage());
         }
 
         protected override void OnStart()

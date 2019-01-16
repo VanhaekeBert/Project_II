@@ -24,14 +24,15 @@ namespace StreetWorkoutV2_Bert.View
             InitializeComponent();
             // BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.BackgroundAccount_2x.png");
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Profile_BackCover.png");
-            imgProfile.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Profile_Picture.png");
+            Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.pencil.png");
+            imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.ImageSelect.png");
             Username.Text = Application.Current.Properties["Naam"].ToString();
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();
 
             //Profile picture ophalen
-            imgProfile.GestureRecognizers.Add(
+            imgSelector.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
                 Command = new Command(async () =>
