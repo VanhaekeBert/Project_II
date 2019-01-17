@@ -41,10 +41,12 @@ namespace StreetWorkoutV2_Bert.View
 
             _json = json;
             _FinalList = Finallijst;
-            BackButton.GestureRecognizers.Add(new TapGestureRecognizer
+            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new  Command(async() => {
-                   await Navigation.PopAsync();
+                    await backbutton.FadeTo(0.3, 150);
+                    await backbutton.FadeTo(1, 150);
+                    await Navigation.PopAsync();
                 })
             });
 

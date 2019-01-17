@@ -32,8 +32,7 @@ namespace StreetWorkoutV2_Bert.View
             MakeEntriesOef();
 
             //Profile picture ophalen
-            imgSelector.GestureRecognizers.Add(
-            new TapGestureRecognizer()
+            TapGestureRecognizer ImageHandler = new TapGestureRecognizer()
             {
                 Command = new Command(async () =>
                 {
@@ -46,7 +45,11 @@ namespace StreetWorkoutV2_Bert.View
 
                     }
                 })
-            });
+            };
+
+            imgSelector.GestureRecognizers.Add(ImageHandler);
+            imgProfile.GestureRecognizers.Add(ImageHandler);
+          
 
             Task.Run(async () =>
             {
@@ -145,7 +148,10 @@ namespace StreetWorkoutV2_Bert.View
                 await DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
            
         }
-
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
 
     }
 }

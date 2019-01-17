@@ -8,7 +8,7 @@
 
 
     <controls:AnimationPage.PageAnimation>
-        <controls:PushPageAnimation  Duration="Medium" Subtype="FromRight"/>
+        <controls:PushPageAnimation  Duration="Short" Type="Landing"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -31,7 +31,7 @@
                 </Grid.RowDefinitions>
                 <!--Back button -->
                 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" x:Name="backbutton">
-                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbuttonimage"/>
+                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbuttonImage"/>
                     <Label Text="Instellingen" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>
                 <!-- ================= -->

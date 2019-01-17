@@ -18,6 +18,8 @@ namespace StreetWorkoutV2_Bert.Model
         public string Beschrijving { get; set; }
         [JsonProperty("herhalingen")]
         public int Herhalingen { get; set; }
+        [JsonProperty("duurtijd")]
+        public int Duurtijd { get; set; }
         [JsonProperty("afbeeldingen")]
         public List<string> Afbeeldingen { get; set; }
 

@@ -51,7 +51,7 @@ namespace StreetWorkoutV2_Bert.Droid
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 199, 41, 48));
             base.OnCreate(savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
-            CachedImageRenderer.Init(true);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);
             CustomTabsConfiguration.CustomTabsClosingMessage = null;

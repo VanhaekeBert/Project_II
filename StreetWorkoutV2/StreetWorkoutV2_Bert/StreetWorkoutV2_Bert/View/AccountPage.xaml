@@ -35,7 +35,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <!--<Image Aspect="AspectFill" x:Name="imgProfile"/>-->
-                            <ff:CachedImage x:Name="imgProfile" Source="resource://StreetWorkoutV2_Bert.Asset.Profile_Picture.png" HeightRequest="132" WidthRequest="132" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                            <ff:CachedImage x:Name="imgProfile" Source="resource://StreetWorkoutV2_Bert.Asset.Profile_Picture.jpg" HeightRequest="132" WidthRequest="132" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                                 <ff:CachedImage.Transformations>
                                     <ffTransformations:RoundedTransformation Radius= "1000"/>
                                 </ff:CachedImage.Transformations>

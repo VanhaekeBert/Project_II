@@ -119,5 +119,9 @@ namespace StreetWorkoutV2_Bert.View
             Application.Current.Properties["Naam"] = null;
             await Application.Current.SavePropertiesAsync();
         }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }

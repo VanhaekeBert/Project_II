@@ -34,9 +34,9 @@
                 <!--Back button + heartbeat +10px down -->
                 <StackLayout Grid.Row="0" Grid.Column="0"  Orientation="Horizontal" Margin="24,0,0,0" x:Name="backbutton">
                     <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbuttonImage"/>
-                    <Label  Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                    <Label  Text="Oefeningen" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>
-                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,24,0">
+                <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,24,0">
                     <Image HeightRequest="32"  HorizontalOptions="EndAndExpand" x:Name="Heart" Margin="0,4,-8,0"/>
                     <Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>

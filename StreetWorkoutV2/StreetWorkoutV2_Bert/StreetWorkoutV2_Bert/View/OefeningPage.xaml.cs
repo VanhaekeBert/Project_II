@@ -29,11 +29,10 @@ namespace StreetWorkoutV2_Bert.View
             OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Cover.png");
             OefeningImage.Source = oefening.AfbeeldingenResource[0];
 
-            if (oefening.AfbeeldingenResource.Capacity <= 1)
+            if (oefening.AfbeeldingenResource.Count <= 1)
             {
                 SlideshowToggle_Start.IsVisible = false;
                 SlideshowToggle_Stop.IsVisible = false;
-
             }
             else
             {
@@ -44,18 +43,32 @@ namespace StreetWorkoutV2_Bert.View
             backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
 
             aantal_keer.Text = AantalKeeper;
+            if (AantalKeeper != "1/3")
+            {
+                backbutton.IsVisible = false;
+                backbutton.IsEnabled = false;
+            }
             Oefeningnaam.Text = oefening.Oefeningnaam;
-            herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
+
+            if (oefening.Herhalingen == 0)
+            {
+                herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
+            }
+            else
+            {
+                herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
+            }
+
             oefening.Beschrijving = oefening.Beschrijving.Replace(". ", ". " + Environment.NewLine);
-
             description.Text = oefening.Beschrijving;
-
             backbutton.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
-                    await backbutton.FadeTo(0.3, 500);
-                    await backbutton.FadeTo(1, 500);
+                    if (AantalKeeper == "1/3"){ 
+                    await backbutton.FadeTo(0.3, 150);
+                    await backbutton.FadeTo(1, 150);
                     await Navigation.PopAsync();
+                    }
                 })
             });
             // -------------------------------------------------------------------

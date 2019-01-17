@@ -20,7 +20,7 @@ namespace StreetWorkoutV2_Bert.View
             InitializeComponent();
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.eye.png");
-            backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
+            backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             PasswordEntry.IsPassword = true;
 
             Password_reset.GestureRecognizers.Add(new TapGestureRecognizer
@@ -30,9 +30,11 @@ namespace StreetWorkoutV2_Bert.View
                 })
             });
 
-            BackRegister.GestureRecognizers.Add(new TapGestureRecognizer
+            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
+                    await backbutton.FadeTo(0.3, 150);
+                    await backbutton.FadeTo(1, 150);
                     await Navigation.PushAsync(new RegisterPage());
                 })
             });

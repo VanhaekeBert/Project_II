@@ -30,8 +30,8 @@
                     <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
                 <!--Back button -->
-                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" x:Name="BackRegister">
-                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbutton"/>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" x:Name="backbutton">
+                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbuttonImage"/>
                     <Label Text="Registreren" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>               
                 <!-- ================= -->

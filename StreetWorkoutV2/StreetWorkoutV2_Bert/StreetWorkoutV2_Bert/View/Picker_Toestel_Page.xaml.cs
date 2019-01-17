@@ -25,7 +25,7 @@ namespace StreetWorkoutV2_Bert.View
         {
             InitializeComponent();
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Picker_Background.png");
-            backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
+            backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Heart.png");
 
             //------------------Inlezen JSON-----------------
@@ -108,10 +108,13 @@ namespace StreetWorkoutV2_Bert.View
             }
             this.BackgroundColor = Color.FromHex("2B3049");
 
-            BackDashboard.GestureRecognizers.Add(
+            backbutton.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
-                Command = new Command(async () => { await Navigation.PopAsync(); })
+                Command = new Command(async () => {
+                    await backbutton.FadeTo(0.3, 150);
+                    await backbutton.FadeTo(1, 150);
+                    await Navigation.PopAsync(); })
             });
 
             Toestellen.ItemTapped += async (o, e) =>

@@ -21,11 +21,13 @@ namespace StreetWorkoutV2_Bert.View
         {
             InitializeComponent();
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Forgot-Password_Background.png");
-            backbutton.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
+            backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Backbutton.png");
 
-            BackLogin.GestureRecognizers.Add(new TapGestureRecognizer
+            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
+                    await backbutton.FadeTo(0.3, 150);
+                    await backbutton.FadeTo(1, 150);
                     await Navigation.PushAsync(new LoginPage());
                 })
             });
