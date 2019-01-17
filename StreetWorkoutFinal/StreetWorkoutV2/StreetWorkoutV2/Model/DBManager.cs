@@ -156,5 +156,20 @@ namespace StreetWorkoutV2.Model
             var message = await client.PostAsync(url, httpContent);
             return message.IsSuccessStatusCode;
         }
+
+        public static async Task<List<JObject>> GetOefeningenData(string naam)
+        {
+            JObject userData = new JObject();
+            userData["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(userData);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/GetOefening";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            List<JObject> gegevens = JsonConvert.DeserializeObject<List<JObject>>(responseString.ToString());
+            return gegevens;
+        }
     }
 }

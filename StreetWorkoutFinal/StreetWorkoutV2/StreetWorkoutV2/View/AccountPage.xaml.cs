@@ -19,6 +19,9 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AccountPage : AnimationPage
     {
+        public Color JObject { get; }
+        List<JObject> weekOef = new List<JObject>();
+        List<JObject> maandOef = new List<JObject>();
 
         public AccountPage()
         {
@@ -29,6 +32,23 @@ namespace StreetWorkoutV2.View
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             Username.Text = Application.Current.Properties["Naam"].ToString();
             NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
+            Task.Run(async () =>
+            {
+                List<JObject> oefeningen = await DBManager.GetOefeningenData(Application.Current.Properties["Naam"].ToString());
+                foreach (JObject oefening in oefeningen)
+                {
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd"))+1)).Contains(int.Parse(oefening["Datum"].ToString().Substring(0,2))))
+                    {
+                        weekOef.Add(oefening);
+                    }
+                    if (int.Parse(DateTime.Now.ToString("MM")) == int.Parse(oefening["Datum"].ToString().Substring(3, 2)))
+                    {
+                        maandOef.Add(oefening);
+                    }
+                }
+                LblOefWeek.Text = weekOef.Count().ToString();
+                LblOefMaand.Text = maandOef.Count().ToString();
+            });
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();
@@ -97,7 +117,7 @@ namespace StreetWorkoutV2.View
             };
 
             List<Entry> entriesKcal2 = new List<Entry> { };
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
                 float value = float.Parse(listValues[i]);
 
@@ -121,12 +141,29 @@ namespace StreetWorkoutV2.View
         }
         private void MakeEntriesOef()
         {
+            List<JObject> oef = new List<JObject>();
+            List<string> data = new List<string>();
+            for (int i = 0; i < weekOef.Count(); i++)
+            {
+                if (i == 0)
+                {
+                    data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
+                    oef.Add(weekOef[i]);
+                }
+                else if (!data.Contains(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", "")))
+                {
+                    data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
+                    oef.Add(weekOef[i]);
+                }
+            }
             List<string> listKleuren = new List<string> {
                 "#FF4A4A","#F74848","#F74848","#F74848","#E64343","#E64343","#E64343","#E64343"
             };
-            List<string> listLabels = new List<string> {
-                "Vr","Za","Zo","Ma","Di","Wo","Do","Vr"
-            };
+            List<string> listLabels = new List<string>();
+            foreach (string dag in data)
+            {
+                listLabels.Add(DateTime.ParseExact(dag, "dddd", System.Globalization.CultureInfo.InvariantCulture).ToString().Substring(0, 2));
+            }
             List<string> listValues = new List<string> {
                 "42","45","40","120","81","83","60","5"
             };

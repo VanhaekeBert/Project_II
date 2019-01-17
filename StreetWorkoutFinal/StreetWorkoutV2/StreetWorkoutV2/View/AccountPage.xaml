@@ -150,7 +150,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="15" />
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblOefWeek"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
@@ -176,7 +176,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="43" />
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblOefMaand"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
