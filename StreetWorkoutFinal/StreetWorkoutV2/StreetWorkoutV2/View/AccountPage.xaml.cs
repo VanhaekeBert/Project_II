@@ -27,6 +27,7 @@ namespace StreetWorkoutV2.View
             Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             Username.Text = Application.Current.Properties["Naam"].ToString();
+            NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();
@@ -49,7 +50,27 @@ namespace StreetWorkoutV2.View
 
             imgSelector.GestureRecognizers.Add(ImageHandler);
             imgProfile.GestureRecognizers.Add(ImageHandler);
-          
+
+            NameChanger.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    NameChangeEntry.Placeholder = Application.Current.Properties["Naam"].ToString();
+                    NameChangeEntry.IsVisible = true;
+                    NameChangeEntry.IsEnabled = true;
+                    Username.IsVisible = false;
+                    Potlood.IsVisible = false;
+                })
+            });
+
+            NameChangeEntry.Unfocused += async (sender, e) => {
+                NameChangeEntry.IsVisible = false;
+                NameChangeEntry.IsEnabled = false;
+                Username.Text = NameChangeEntry.Text;
+                Username.IsVisible = true;
+                Potlood.IsVisible = true;
+            };
+
 
             Task.Run(async () =>
             {

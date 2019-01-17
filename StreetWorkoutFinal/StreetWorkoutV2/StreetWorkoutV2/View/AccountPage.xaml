@@ -41,10 +41,13 @@
                                 </ff:CachedImage.Transformations>
                             </ff:CachedImage>
                                 <Image Grid.Row="0" x:Name="imgSelector" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="40" Margin="72,0,0,0"/>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="1">
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="23,16,0,0"/>
-                                <Image x:Name="Potlood" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
-                            </StackLayout>
+                            <Grid Grid.Row="1">
+                                <local1:CustomSmallEntry Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,8,0,5" x:Name="NameChangeEntry" HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
+                                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" x:Name="NameChanger">
+                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="23,16,0,0"/>
+                                    <Image x:Name="Potlood" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
+                                </StackLayout>
+                            </Grid>
                                 
                         </Grid>
 
