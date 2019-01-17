@@ -33,10 +33,21 @@ namespace StreetWorkoutV2.View
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
             lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
+            two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
+            four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
             Task.Run(async () =>
             {
                 JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
                 lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
+            });
+
+            WaterFrame.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    Popup.IsEnabled = true;
+                    Popup.IsVisible = true;
+                })
             });
 
             imgQr.GestureRecognizers.Add(new TapGestureRecognizer
@@ -145,6 +156,20 @@ namespace StreetWorkoutV2.View
         protected override bool OnBackButtonPressed()
         {
             return true;
+        }
+
+        private void SubmitWater_Clicked(object sender, EventArgs e)
+        {
+            Popup.IsEnabled = false;
+            // Popup.FadeTo(0, 250);
+            lblWaterGedronken.Text = "500";
+            
+            Popup.IsVisible = false;
+        }
+
+        private void SubmitWaterInput_Clicked(object sender, EventArgs e)
+        {
+
         }
 
         private void Back_Clicked(object sender, EventArgs e)
