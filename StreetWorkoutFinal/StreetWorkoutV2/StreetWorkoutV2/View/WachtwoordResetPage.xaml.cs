@@ -22,9 +22,11 @@ namespace StreetWorkoutV2.View
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
             eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+            eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
             backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             NewPasswordEntry.IsPassword = true;
-
+            NewPasswordEntryRepeat.IsPassword = true;
+            OldPasswordEntry.IsPassword = true;
 
             eyeimagenew.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -38,6 +40,22 @@ namespace StreetWorkoutV2.View
                     {
                         NewPasswordEntry.IsPassword = true;
                         eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                    }
+                })
+            });
+
+            eyeimagenew2.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => {
+                    if (NewPasswordEntryRepeat.IsPassword == true)
+                    {
+                        NewPasswordEntryRepeat.IsPassword = false;
+                        eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                    }
+                    else
+                    {
+                        NewPasswordEntryRepeat.IsPassword = true;
+                        eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                 })
             });
@@ -73,6 +91,8 @@ namespace StreetWorkoutV2.View
         {
             if (OldPasswordEntry.Text != null && NewPasswordEntry.Text != null)
             {
+                if(NewPasswordEntry.Text == NewPasswordEntryRepeat.Text)
+                {
                 if (NewPasswordEntry.Text.Length >= 8)
                 {
               
@@ -98,6 +118,13 @@ namespace StreetWorkoutV2.View
                 {
                     //vult de shit aan
                     ErrorLabel.Text = "Uw nieuw wachtwoord moet minstens 8 tekens bevatten";
+                    ErrorLabel.IsVisible = true;
+                }
+
+                }
+                else
+                {
+                    ErrorLabel.Text = "Uw wachtwoorden komen niet overeen";
                     ErrorLabel.IsVisible = true;
                 }
             }
