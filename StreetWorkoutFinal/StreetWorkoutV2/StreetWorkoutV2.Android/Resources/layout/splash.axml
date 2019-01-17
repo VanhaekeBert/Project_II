@@ -5,7 +5,9 @@
     android:layout_height="fill_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:gravity="center">
+    android:gravity="center"
+	android:background = "#3B4057">
+
     <ImageView
         android:src="@drawable/applogo"
         android:layout_width="wrap_content"

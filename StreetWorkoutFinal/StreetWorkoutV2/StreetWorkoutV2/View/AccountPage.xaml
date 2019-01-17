@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<controls:AnimationPage
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
              xmlns:local="clr-namespace:StreetWorkoutV2.Model"
@@ -9,6 +10,9 @@
              xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              NavigationPage.HasNavigationBar="False">
+    <controls:AnimationPage.PageAnimation>
+        <controls:EmptyPageAnimation  Duration="Long" Type="Fade"/>
+    </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
 
 
@@ -227,10 +231,10 @@
                                         <!--<Frame Padding="0" Margin="0,0,0,8" Grid.Row="3" Grid.Column="1" CornerRadius="100" BackgroundColor="White" >
                                             <Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="2000" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
                                         </Frame>-->
-                                        <local1:CustomSmallEntry Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Placeholder="56" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="weightInput" HorizontalTextAlignment="Center"/>
-                                        <local1:CustomSmallEntry Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Placeholder="175" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="heightInput" HorizontalTextAlignment="Center"/>
-                                        <local1:CustomSmallEntry Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Placeholder="22" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="ageInput" HorizontalTextAlignment="Center"/>
-                                        <local1:CustomSmallEntry Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Placeholder="2000" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}"  Margin="0,5,0,5" x:Name="waterInput" HorizontalTextAlignment="Center"/>
+                                        <local1:CustomSmallEntry Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Text="65" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="weightInput" HorizontalTextAlignment="Center"/>
+                                        <local1:CustomSmallEntry Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Text="180" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="heightInput" HorizontalTextAlignment="Center"/>
+                                        <local1:CustomSmallEntry Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Text="20" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="ageInput" HorizontalTextAlignment="Center"/>
+                                        <local1:CustomSmallEntry Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" Text="2000" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}"  Margin="0,5,0,5" x:Name="waterInput" HorizontalTextAlignment="Center"/>
 
                                         <Label  Grid.Row="0" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="kg" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
                                         <Label  Grid.Row="1" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="cm" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
@@ -241,6 +245,7 @@
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
                             </Frame>
+                            <ActivityIndicator x:Name="LoadingIndicator" Grid.Row="4" Color="White" IsRunning="false" HeightRequest="20" Margin="0,0,0,20" />
 
                             <Button Grid.Row="4" Text="Opslaan" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Button_Clicked"/>
 
@@ -253,4 +258,4 @@
         </Grid>
 
     </ContentPage.Content>
-</ContentPage>
+</controls:AnimationPage>

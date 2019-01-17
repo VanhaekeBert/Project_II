@@ -26,7 +26,7 @@
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="185"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="20"/>
                     <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="30" Text="Registreren" TextColor="{StaticResource LightColor}" VerticalOptions="StartAndExpand" Margin="20,0,0,0"/>

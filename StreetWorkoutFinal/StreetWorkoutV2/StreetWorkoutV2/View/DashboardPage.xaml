@@ -129,7 +129,7 @@
             </Grid>
             <!--Popup-->
 
-            <StackLayout x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            <StackLayout x:Name="PopupWater" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
                  
                  HorizontalOptions="CenterAndExpand"
@@ -156,7 +156,7 @@
                                     <Label Grid.Row="0" Grid.Column="0" Text="Water toevoegen:" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                                     <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1" Text="250" x:Name="TotalWater" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,8,0,5" HorizontalTextAlignment="Center"/>
                                 </Grid>
-                                
+
                                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0">
                                     <Image x:Name="one_glass" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="250ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
@@ -173,6 +173,76 @@
                                 </StackLayout>
 
                                 <Button Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HeightRequest="50" WidthRequest="175" HorizontalOptions="Center" Text="Bevestigen" BorderRadius="100" BackgroundColor="Transparent" BorderColor="{StaticResource LightColor}" FontSize="20" BorderWidth="2" x:Name="SubmitWaterInput" TextColor="{StaticResource LightColor}" FontFamily="{StaticResource NormalFont}" Clicked="SubmitWaterInput_Clicked"/>
+                            </Grid>
+
+                        </renderers:GradientLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <!--========-->
+
+            <!--Popup-->
+
+            <StackLayout x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="130"  Padding="0">
+                        <renderers:GradientLayout
+                                            ColorsList="#484E6D,#323751"
+                                            Mode="ToTopLeft">
+
+                            <Grid Margin="12,24,12,12" ColumnSpacing="6" RowSpacing="24" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0"   Grid.ColumnSpan="3" HorizontalTextAlignment="Center" Text="Selecteer de moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+
+                                <Button Grid.Row="1" Grid.Column="0" Text="Makkelijk" x:Name="makkelijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="Makkelijk_Clicked"/>
+                                <Button Grid.Row="1" Grid.Column="1" Text="Gemiddeld" x:Name="gemiddeld" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="45" Clicked="Gemiddeld_Clicked"/>
+                                <Button Grid.Row="1" Grid.Column="2" Text="Moeilijk" x:Name="moeilijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" Clicked="Moeilijk_Clicked" />
+                            </Grid>
+
+                        </renderers:GradientLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <!--========-->
+            <!--Popup no thingy found-->
+            <StackLayout x:Name="PopupNoQr" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="130"  Padding="0">
+                        <renderers:GradientLayout
+                                            ColorsList="#484E6D,#323751"
+                                            Mode="ToTopLeft">
+
+                            <Grid Margin="12,24,12,12" ColumnSpacing="6" RowSpacing="24" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.ColumnSpan="3" HorizontalTextAlignment="Center" Text="Geen oefeningen gevonden" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+
+                                <Button Grid.Row="1" Grid.Column="1" Text="Back" x:Name="Back" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="45" Clicked="Back_Clicked"/>
                             </Grid>
 
                         </renderers:GradientLayout>

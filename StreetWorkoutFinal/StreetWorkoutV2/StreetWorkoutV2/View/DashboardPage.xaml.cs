@@ -45,8 +45,8 @@ namespace StreetWorkoutV2.View
             WaterFrame.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
-                    Popup.IsEnabled = true;
-                    Popup.IsVisible = true;
+                    PopupWater.IsEnabled = true;
+                    PopupWater.IsVisible = true;
                 })
             });
 
@@ -163,7 +163,7 @@ namespace StreetWorkoutV2.View
             Popup.IsEnabled = false;
             // Popup.FadeTo(0, 250);
             lblWaterGedronken.Text = "500";
-            
+
             Popup.IsVisible = false;
         }
 

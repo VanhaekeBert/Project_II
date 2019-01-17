@@ -71,25 +71,32 @@ namespace StreetWorkoutV2.View
                     });
                 };
             };
-            var tapGestureRecognizerWWR = new TapGestureRecognizer();
-            tapGestureRecognizerWWR.Tapped += (s, e) => {
-                Navigation.PushAsync(new WachtwoordResetPage());
-            };
-            var tapGestureRecognizerAD = new TapGestureRecognizer();
-            tapGestureRecognizerAD.Tapped += (s, e) => {
-                Task.Run(async () =>
-                {
-                    await DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
-                await Navigation.PushModalAsync(new LoginPage());
+
+
+            FraWWR.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    await Navigation.PushAsync(new WachtwoordResetPage());
+                })
             });
-            };
+
+            FraAD.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                   
+                    await DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
+                    Application.Current.Properties["Naam"] = null;
+                    await Application.Current.SavePropertiesAsync();
+                    await Navigation.PushAsync(new LoginPage());
+                })
+            });
+
+
             FraFB.GestureRecognizers.Add(tapGestureRecognizerFB);
             FraP.GestureRecognizers.Add(tapGestureRecognizerP);
-            FraWWR.GestureRecognizers.Add(tapGestureRecognizerWWR);
-            FraAD.GestureRecognizers.Add(tapGestureRecognizerAD);
         }
 
-        private async void Button_Clicked_1(object sender, EventArgs e)
+        private async void Logout(object sender, EventArgs e)
         {
             Application.Current.Properties["Naam"] = null;
             await Application.Current.SavePropertiesAsync();

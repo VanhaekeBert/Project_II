@@ -80,7 +80,7 @@
                                 </StackLayout>
                             </renderers:GradientLayout>
                         </StreetWorkoutV2:CustomFrame>
-                        <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0" x:Name="FraAD">
+                        <StreetWorkoutV2:CustomFrame x:Name="FraAD" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
 
                             <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
                                 <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -90,7 +90,7 @@
                         </StreetWorkoutV2:CustomFrame>
                     </Grid>
                 </StackLayout>
-                <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Button_Clicked_1"/>
+                <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Logout"/>
             </Grid>
         </RelativeLayout>
     </ContentPage.Content>

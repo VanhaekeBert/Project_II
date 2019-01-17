@@ -12,11 +12,12 @@ using Xamarin.Forms;
 using Entry = Microcharts.Entry;
 using Xamarin.Forms.Xaml;
 using System.IO;
+using FormsControls.Base;
 
 namespace StreetWorkoutV2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AccountPage : ContentPage
+    public partial class AccountPage : AnimationPage
     {
 
         public AccountPage()
@@ -75,10 +76,10 @@ namespace StreetWorkoutV2.View
             Task.Run(async () =>
             {
                 var data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                weightInput.Placeholder = data["Gewicht"].ToString();
-                ageInput.Placeholder = data["Leeftijd"].ToString();
-                heightInput.Placeholder = data["Lengte"].ToString();
-                waterInput.Placeholder = data["WaterDoel"].ToString();
+                weightInput.Text = data["Gewicht"].ToString();
+                ageInput.Text = data["Leeftijd"].ToString();
+                heightInput.Text = data["Lengte"].ToString();
+                waterInput.Text = data["WaterDoel"].ToString();
             });
         }
 
@@ -156,18 +157,26 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            LoadingIndicator.IsRunning = true;
+
+            JObject user = new JObject();
             
-                JObject user = new JObject();
-                user["Lengte"] = heightInput.Text.ToString();
-                user["Gewicht"] = weightInput.Text.ToString();
-                user["Leeftijd"] = ageInput.Text.ToString();
-                user["WaterDoel"] = waterInput.Text.ToString();
-                weightInput.Placeholder = user["Gewicht"].ToString();
-                ageInput.Placeholder = user["Leeftijd"].ToString();
-                heightInput.Placeholder = user["Lengte"].ToString();
-                waterInput.Placeholder = user["WaterDoel"].ToString();
-                await DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
-           
+            user["Lengte"] = heightInput.Text.ToString();
+            user["Gewicht"] = weightInput.Text.ToString();
+            user["Leeftijd"] = ageInput.Text.ToString();
+            user["WaterDoel"] = waterInput.Text.ToString();
+            weightInput.Text = user["Gewicht"].ToString();
+            ageInput.Text = user["Leeftijd"].ToString();
+            heightInput.Text = user["Lengte"].ToString();
+            waterInput.Text = user["WaterDoel"].ToString();
+            await DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
+                LoadingIndicator.IsRunning = false;
+            var vUpdatedPage = new AccountPage();
+            Navigation.InsertPageBefore(vUpdatedPage, this);
+            Navigation.PopAsync();
+
+
+
         }
         protected override bool OnBackButtonPressed()
         {

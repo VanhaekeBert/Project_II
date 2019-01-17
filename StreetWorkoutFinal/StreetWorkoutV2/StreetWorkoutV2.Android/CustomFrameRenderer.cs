@@ -57,7 +57,7 @@ namespace StreetWorkoutV2.Droid
 
         private void UpdateOutlineColor(GradientDrawable drawable)
         {
-            drawable.SetStroke(1, Element.OutlineColor.ToAndroid());
+            drawable.SetStroke(1, Element.BorderColor.ToAndroid());
         }
 
         private void UpdateBackgroundColor(GradientDrawable drawable)
