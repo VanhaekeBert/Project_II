@@ -42,6 +42,12 @@ namespace StreetWorkoutV2.View
                 lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
             });
 
+            WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                })
+            });
+
             WaterFrame.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {

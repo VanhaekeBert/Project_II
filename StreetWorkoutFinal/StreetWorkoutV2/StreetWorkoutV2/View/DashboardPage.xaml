@@ -138,7 +138,7 @@
                  VerticalOptions="FillAndExpand">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" HeightRequest="300"  Padding="0">
+                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" HeightRequest="300"  Padding="0" x:Name="WaterPopUpFrame">
                         <renderers:GradientLayout
                                             ColorsList="#448CEE,#44C5EE"
                                             Mode="ToTopLeft">

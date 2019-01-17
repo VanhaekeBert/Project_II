@@ -168,17 +168,17 @@ namespace StreetWorkoutV2.View
             };
 
             List<Entry> entriesOef = new List<Entry> { };
-            for (int i = 0; i < 8; i++)
-            {
-                float value = float.Parse(listValues[i]);
+            //for (int i = 0; i < 8; i++)
+            //{
+            //    float value = float.Parse(listValues[i]);
 
-                entriesOef.Add(new Entry(value)
-                {
-                    Color = SKColor.Parse(listKleuren[i]),
-                    Label = listLabels[i],
-                    ValueLabel = listValues[i]
-                });
-            }
+            //    entriesOef.Add(new Entry(value)
+            //    {
+            //        Color = SKColor.Parse(listKleuren[i]),
+            //        Label = listLabels[i],
+            //        ValueLabel = listValues[i]
+            //    });
+            //}
             chartOef.Chart = new LineChart()
             {
                 Entries = entriesOef,
