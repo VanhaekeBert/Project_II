@@ -115,6 +115,14 @@ namespace StreetWorkoutV2.View
                     await Navigation.PopAsync(); })
             });
 
+            Popup.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () => {
+    
+                })
+            });
+
             Toestellen.ItemTapped += async (o, e) =>
             {
                 var myList = (ListView)o;

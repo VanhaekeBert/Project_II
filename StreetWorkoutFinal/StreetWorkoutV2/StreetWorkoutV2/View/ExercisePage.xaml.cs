@@ -50,6 +50,13 @@ namespace StreetWorkoutV2.View
                 })
             });
 
+            Popup.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () => {
+
+                })
+            });
 
             Oefeningen.ItemTapped += async (o, e) =>
             {
