@@ -85,14 +85,14 @@
 
             <!--Popup-->
 
-            <StackLayout Opacity="1"  x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            <StackLayout x:Name="Popup" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
                  
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="FillAndExpand">
                 <StackLayout  Margin="24"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="130"  Padding="0">
+                    <Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="130"  Padding="0" x:Name="DataFrame">
                         <renderers:GradientLayout
                                             ColorsList="#484E6D,#323751"
                                             Mode="ToTopLeft">

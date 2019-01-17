@@ -119,7 +119,16 @@ namespace StreetWorkoutV2.View
             new TapGestureRecognizer()
             {
                 Command = new Command(async () => {
-    
+                    Popup.IsEnabled = false;
+                    Popup.IsVisible = false;
+                })
+            });
+
+            DataFrame.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () => {
+
                 })
             });
 
