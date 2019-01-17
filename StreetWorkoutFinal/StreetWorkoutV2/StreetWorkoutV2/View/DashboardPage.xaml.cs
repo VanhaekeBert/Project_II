@@ -50,6 +50,14 @@ namespace StreetWorkoutV2.View
                     TotalWater.Text = "0";
                 })
             });
+            PopupWater.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    PopupWater.IsEnabled = false;
+                    PopupWater.IsVisible = false;
+         
+                })
+            });
 
             imgQr.GestureRecognizers.Add(new TapGestureRecognizer
             {

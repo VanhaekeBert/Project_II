@@ -159,18 +159,18 @@
                                     <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,0,12,0" VerticalOptions="Center" Text="ml" FontFamily="{StaticResource Darkcolor}"/>
                                 </Grid>
 
-                                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0">
+                                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0" x:Name="click_one_glass">
                                     <!--<Image/>-->
                                     <ff:CachedImage  x:Name="one_glass" HorizontalOptions="Center" HeightRequest="60" />
                                     <Label Text="250ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
 
-                                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="0">
+                                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="0" x:Name="click_two_glass">
                                     <ff:CachedImage x:Name="two_glass" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="500ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
 
-                                <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Spacing="0">
+                                <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Spacing="0" x:Name="click_four_glass">
                                     <ff:CachedImage x:Name="four_glass" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="1000ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
