@@ -19,15 +19,6 @@ namespace StreetWorkoutV2.View
 		public RegisterPage ()
 		{
             InitializeComponent();
-            if (Application.Current.Properties.ContainsKey("Naam")) 
-            {
-                Task.Run(async () =>
-                {
-                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-                });
-            }
-            else
-            {
                 BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
                 eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
             eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
@@ -54,7 +45,6 @@ namespace StreetWorkoutV2.View
                         await Navigation.PushAsync(new LoginPage());
                     })
                 });
-            }
         }
 
         private async void LoginTap(Xamarin.Forms.View arg1, object arg2)

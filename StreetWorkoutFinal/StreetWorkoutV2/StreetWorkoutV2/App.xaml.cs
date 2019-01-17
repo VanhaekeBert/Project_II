@@ -13,7 +13,16 @@ namespace StreetWorkoutV2
         {
             InitializeComponent();
 
-            MainPage = new AnimationNavigationPage(new LoginPage());
+            if (Application.Current.Properties.ContainsKey("Naam") && Application.Current.Properties["Naam"] != null)
+            {
+
+                MainPage = new NavigationPage(new MainPage());
+
+            }
+            else
+            {
+                MainPage = new NavigationPage(new RegisterPage());
+            }
         }
 
         protected override void OnStart()
