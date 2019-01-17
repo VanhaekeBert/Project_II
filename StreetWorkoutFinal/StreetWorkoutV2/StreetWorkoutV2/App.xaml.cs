@@ -22,8 +22,8 @@ namespace StreetWorkoutV2
             else
             {
                 MainPage = new NavigationPage(new RegisterPage());
-            }
         }
+    }
 
         protected override void OnStart()
         {

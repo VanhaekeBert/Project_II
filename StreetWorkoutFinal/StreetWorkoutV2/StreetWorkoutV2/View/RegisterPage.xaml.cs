@@ -39,7 +39,23 @@ namespace StreetWorkoutV2.View
                         }
                     })
                 });
-                Login.GestureRecognizers.Add(new TapGestureRecognizer
+
+            eyeimage2.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => {
+                    if (PasswordEntryRepeat.IsPassword == true)
+                    {
+                        PasswordEntryRepeat.IsPassword = false;
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                    }
+                    else
+                    {
+                        PasswordEntryRepeat.IsPassword = true;
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                    }
+                })
+            });
+            Login.GestureRecognizers.Add(new TapGestureRecognizer
                 {
                     Command = new Command(async () => {
                         await Navigation.PushAsync(new LoginPage());
@@ -58,6 +74,8 @@ namespace StreetWorkoutV2.View
             LoadingIndicator.IsRunning = false;
             if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
             {
+                if(PasswordEntry.Text == PasswordEntryRepeat.Text)
+                {
                 if (!UserNameEntry.Text.ToLower().Contains(' '))
                 {
                     if (EmailEntry.Text.ToLower().Contains('@'))
@@ -90,6 +108,13 @@ namespace StreetWorkoutV2.View
                 else
                 {
                     ErrorLabel.Text = "Gebruikersnaam mag geen spatie bevatten.";
+                    ErrorLabel.IsVisible = true;
+                }
+
+                }
+                else
+                {
+                    ErrorLabel.Text = "Uw wachtwoorden komt niet overeen.";
                     ErrorLabel.IsVisible = true;
                 }
             }
