@@ -11,26 +11,24 @@ namespace StreetWorkoutV2_Bert.Model
 {
     public class PolarManager
     {
-        const string ClientId = "3bef4750-06d5-471f-884c-961db3df1607";
-        const string ClientSecret = "db15f74c-cf12-4c7c-97cd-5ce1cb79adc7";
+        const string ClientId = "ea578976-f76f-48a4-b2c1-fce5d8b5446b";
+        const string ClientSecret = "9763ab20-59ce-4bf7-a32d-dd7229c77f20";
 
-        public static PolarAcces PolarAsync()
+        public static void PolarAsync()
         {
             try
             {
                 var auth = GetPolarAuth();
                 auth.AllowCancel = true;
-                PolarAcces acces = new PolarAcces();
                 var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
                 presenter.Login(auth);
                 presenter.Completed += (s, ee) =>
                 {
                     Task.Run(async () =>
                     {
-                        acces = await GetPolarToken();
+                        await GetPolarToken();
                     });
                 };
-                return acces;
             }
             catch (Exception ex)
             {
@@ -60,7 +58,7 @@ namespace StreetWorkoutV2_Bert.Model
             }
         }
 
-        public static async Task<PolarAcces> GetPolarToken()
+        public static async Task<PolarUser> GetPolarToken()
         {
             try
             {
@@ -74,7 +72,8 @@ namespace StreetWorkoutV2_Bert.Model
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
                 var acces = JsonConvert.DeserializeObject<PolarAcces>(responseString);
-                return acces;
+                PolarUser user = await GetUserData(acces);
+                return user;
             }
             catch (Exception ex)
             {

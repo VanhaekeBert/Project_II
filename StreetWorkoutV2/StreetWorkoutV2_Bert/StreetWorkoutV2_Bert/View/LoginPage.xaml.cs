@@ -52,52 +52,40 @@ namespace StreetWorkoutV2_Bert.View
                     }
                 })
             });
-
-
-
-
         }
-
-
-
-
-
+        
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
-
-
-
+        
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            LoadingIndicator.IsRunning = false;
+            ErrorLabel.IsVisible = true;
             if (PasswordEntry.Text != null && UserNameEntry.Text != null)
             {
                 LoadingIndicator.IsRunning = true;
 
-                bool login = await DBManager.LoginAsync(UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
-                if (login == true)
+                bool Login = await DBManager.LoginAsync(UserNameEntry.Text.Replace(" ", ""), DBManager.Encrypt(PasswordEntry.Text));
+                if (Login)
                 {
-                    Application.Current.Properties["Naam"] = UserNameEntry.Text;
+                    Application.Current.Properties["Naam"] = UserNameEntry.Text.Replace(" ", "");
                     await Application.Current.SavePropertiesAsync ();
                     await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else
                 {
-                    //ej al account, vult et juste in
-                    LoadingIndicator.IsRunning = false;
-
                     ErrorLabel.Text = "Onjuiste ingave.";
                     ErrorLabel.IsVisible = true;
+                    LoadingIndicator.IsRunning = false;
                 }
             }
             else
             {
-                // vult het in a.u.b.
-                LoadingIndicator.IsRunning = false;
-
                 ErrorLabel.Text = "Vul alle gegevens in.";
                 ErrorLabel.IsVisible = true;
+                LoadingIndicator.IsRunning = false;
             }
         }
     }

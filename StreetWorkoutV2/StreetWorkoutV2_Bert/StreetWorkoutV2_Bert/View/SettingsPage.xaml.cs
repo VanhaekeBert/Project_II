@@ -71,12 +71,22 @@ namespace StreetWorkoutV2_Bert.View
             tapGestureRecognizerP.Tapped += (s, e) => {
                 Task.Run(async () =>
                 {
-                    PolarUser user = await PolarManager.GetUserData(PolarManager.PolarAsync());
-                    user.Naam = Application.Current.Properties["Naam"].ToString();
-                    string text = JsonConvert.SerializeObject(user);
-                    JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                    Debug.WriteLine(user.Leeftijd);
-                    await DBManager.PutUserData(user.Naam, "Naam", data);
+                    var auth = PolarManager.GetPolarAuth();
+                    auth.AllowCancel = true;
+                    var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+                    presenter.Login(auth);
+                    presenter.Completed += (p, ee) =>
+                    {
+                        Task.Run(async () =>
+                        {
+                            PolarUser user = await PolarManager.GetPolarToken();
+                            user.Naam = Application.Current.Properties["Naam"].ToString();
+                            string text = JsonConvert.SerializeObject(user);
+                            JObject data = JsonConvert.DeserializeObject<JObject>(text);
+                            Debug.WriteLine(user.Leeftijd);
+                            await DBManager.PutUserData(user.Naam, "Naam", data);
+                        });
+                    };
                     JObject api = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
                     if (api["API"].ToString() == "FitBit")
                     {
@@ -104,11 +114,9 @@ namespace StreetWorkoutV2_Bert.View
             FraWWR.GestureRecognizers.Add(tapGestureRecognizerWWR);
         }
 
-        private async Task Sign_Out_Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
-
-            Application.Current.Properties["Naam"] = "";
+            Application.Current.Properties["Naam"] = null;
             await Application.Current.SavePropertiesAsync();
         }
     }

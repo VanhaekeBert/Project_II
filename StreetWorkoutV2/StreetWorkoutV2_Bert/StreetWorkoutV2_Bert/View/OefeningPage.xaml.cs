@@ -141,6 +141,14 @@ namespace StreetWorkoutV2_Bert.View
             // -------------------------------------------------------------------
 
         }
+        //public OefeningPage()
+        //{
+        //    InitializeComponent();
+          
+        //    BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Background.png");
+        //    OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Oefening_Cover.png");
+          
+        //    //Back button + heartbeat
 
       
 

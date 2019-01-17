@@ -61,6 +61,8 @@ namespace StreetWorkoutV2_Bert.Droid
             LoadApplication(new App());
 
         }
+
+
         public override void OnBackPressed()
         {
             if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))

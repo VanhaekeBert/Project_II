@@ -12,8 +12,8 @@ namespace test.Model
 {
     public class PolarAuthenticator
     {
-        const string ClientId = "5b0f8bfb-cea6-4166-a13b-73ed6b2d7f41";
-        const string ClientSecret = "f4406d7c-95ca-4ab4-b946-a7de6e796ab3";
+        const string ClientId = "ea578976-f76f-48a4-b2c1-fce5d8b5446b";
+        const string ClientSecret = "9763ab20-59ce-4bf7-a32d-dd7229c77f20";
 
         public static OAuth2Authenticator GetPolarAuth()
         {
