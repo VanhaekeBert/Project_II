@@ -21,7 +21,7 @@ namespace StreetWorkoutV2.View
             InitializeComponent();
 
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
-            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             PasswordEntry.IsPassword = true;
 
@@ -47,12 +47,12 @@ namespace StreetWorkoutV2.View
                     if (PasswordEntry.IsPassword == true)
                     {
                         PasswordEntry.IsPassword = false;
-                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
                         PasswordEntry.IsPassword = true;
-                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });

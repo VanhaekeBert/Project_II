@@ -20,9 +20,9 @@ namespace StreetWorkoutV2.View
 		{
             InitializeComponent();
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
-            eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-            eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-            eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+            eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+            eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+            eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             NewPasswordEntry.IsPassword = true;
             NewPasswordEntryRepeat.IsPassword = true;
@@ -34,12 +34,12 @@ namespace StreetWorkoutV2.View
                     if (NewPasswordEntry.IsPassword == true)
                     {
                         NewPasswordEntry.IsPassword = false;
-                        eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
                         NewPasswordEntry.IsPassword = true;
-                        eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        eyeimagenew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });
@@ -50,12 +50,12 @@ namespace StreetWorkoutV2.View
                     if (NewPasswordEntryRepeat.IsPassword == true)
                     {
                         NewPasswordEntryRepeat.IsPassword = false;
-                        eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
                         NewPasswordEntryRepeat.IsPassword = true;
-                        eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        eyeimagenew2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });
@@ -66,12 +66,12 @@ namespace StreetWorkoutV2.View
                     if (OldPasswordEntry.IsPassword == true)
                     {
                         OldPasswordEntry.IsPassword = false;
-                        eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
                         OldPasswordEntry.IsPassword = true;
-                        eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        eyeimageold.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });
