@@ -20,8 +20,8 @@ namespace StreetWorkoutV2.View
 		{
             InitializeComponent();
                 BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
-                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-                eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                 PasswordEntryRepeat.IsPassword = true;
                 PasswordEntry.IsPassword = true;
                 eyeimage.GestureRecognizers.Add(new TapGestureRecognizer
@@ -30,12 +30,12 @@ namespace StreetWorkoutV2.View
                         if (PasswordEntry.IsPassword == true)
                         {
                             PasswordEntry.IsPassword = false;
-                            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                         }
                         else
                         {
                             PasswordEntry.IsPassword = true;
-                            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                         }
                     })
                 });
@@ -46,12 +46,12 @@ namespace StreetWorkoutV2.View
                     if (PasswordEntryRepeat.IsPassword == true)
                     {
                         PasswordEntryRepeat.IsPassword = false;
-                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
                         PasswordEntryRepeat.IsPassword = true;
-                        eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });
@@ -74,47 +74,55 @@ namespace StreetWorkoutV2.View
             LoadingIndicator.IsRunning = false;
             if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
             {
-                if(PasswordEntry.Text == PasswordEntryRepeat.Text)
+                if (PasswordEntry.Text.Length >= 8)
                 {
-                if (!UserNameEntry.Text.ToLower().Contains(' '))
-                {
-                    if (EmailEntry.Text.ToLower().Contains('@'))
+                    if (PasswordEntry.Text == PasswordEntryRepeat.Text)
                     {
-                        string Email = EmailEntry.Text.Replace(" ", "");
-                        bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
-                        bool EmailCheck = await DBManager.CheckUserData(Email, "Email");
-                        if (UserNameCheck == false && EmailCheck == false)
+                        if (!UserNameEntry.Text.ToLower().Contains(' '))
                         {
-                            LoadingIndicator.IsRunning = true;
-                            var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
-                            if (response)
+                            if (EmailEntry.Text.ToLower().Contains('@'))
                             {
-                                await Navigation.PushAsync(new LoginPage());
+                                string Email = EmailEntry.Text.Replace(" ", "");
+                                bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
+                                bool EmailCheck = await DBManager.CheckUserData(Email, "Email");
+                                if (UserNameCheck == false && EmailCheck == false)
+                                {
+                                    LoadingIndicator.IsRunning = true;
+                                    var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
+                                    if (response)
+                                    {
+                                        await Navigation.PushAsync(new LoginPage());
+                                    }
+                                }
+                                else
+                                {
+                                    ErrorLabel.Text = "Gebruikersnaam of Email al in gebruik.";
+                                    ErrorLabel.IsVisible = true;
+                                    LoadingIndicator.IsRunning = false;
+                                }
+                            }
+                            else
+                            {
+                                ErrorLabel.Text = "Email onjuist.";
+                                ErrorLabel.IsVisible = true;
                             }
                         }
                         else
                         {
-                            ErrorLabel.Text = "Gebruikersnaam of Email al in gebruik.";
+                            ErrorLabel.Text = "Gebruikersnaam mag geen spatie bevatten.";
                             ErrorLabel.IsVisible = true;
-                            LoadingIndicator.IsRunning = false;
                         }
+
                     }
                     else
                     {
-                        ErrorLabel.Text = "Email onjuist.";
+                        ErrorLabel.Text = "Uw wachtwoorden komt niet overeen.";
                         ErrorLabel.IsVisible = true;
                     }
                 }
                 else
                 {
-                    ErrorLabel.Text = "Gebruikersnaam mag geen spatie bevatten.";
-                    ErrorLabel.IsVisible = true;
-                }
-
-                }
-                else
-                {
-                    ErrorLabel.Text = "Uw wachtwoorden komt niet overeen.";
+                    ErrorLabel.Text = "Uw wachtwoord moet minstens 8 tekens lang zijn.";
                     ErrorLabel.IsVisible = true;
                 }
             }

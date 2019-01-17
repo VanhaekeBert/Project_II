@@ -26,7 +26,7 @@ namespace StreetWorkoutV2.View
         public AccountPage()
         {
             InitializeComponent();
-            // BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount_2x.png");
+   
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");

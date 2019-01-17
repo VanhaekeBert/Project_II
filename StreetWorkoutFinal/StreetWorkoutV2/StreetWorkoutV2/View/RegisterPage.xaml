@@ -41,7 +41,7 @@
                         <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord herhalen" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="PasswordEntryRepeat"/>
                         <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage2" Margin="0,0,42,0"/>
                     </Grid>
-                    <Label Grid.Row="4" Text="" TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="ErrorLabel" FontFamily="{StaticResource NormalFont}" FontSize="16" Margin="32,0,32,0" WidthRequest="175" HorizontalOptions="Start"/>
+                    <Label Grid.Row="4" Text=""  TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="ErrorLabel" FontFamily="{StaticResource NormalFont}" FontSize="16" Margin="32,0,32,0" WidthRequest="300" HorizontalOptions="Start"/>
                 </Grid>
                 <ActivityIndicator x:Name="LoadingIndicator" Grid.Row="3" Color="White" IsRunning="false" HeightRequest="20" />
 
