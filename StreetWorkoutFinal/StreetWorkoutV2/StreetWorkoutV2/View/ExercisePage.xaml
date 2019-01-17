@@ -60,7 +60,7 @@
 
                     </renderers:GradientLayout>
                 </Frame>
-                <ListView Margin="24,45" Grid.Row="3" x:Name="Oefeningen" HasUnevenRows="True" HeightRequest="1000" VerticalOptions="StartAndExpand">
+                <ListView Margin="24,45,24,0" Grid.Row="3" x:Name="Oefeningen" HasUnevenRows="True" HeightRequest="1000" VerticalOptions="StartAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

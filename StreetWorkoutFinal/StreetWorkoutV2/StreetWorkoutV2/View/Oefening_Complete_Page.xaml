@@ -46,13 +46,13 @@
                 </StackLayout>
                 <!-- ================= -->
     
-                <StackLayout  VerticalOptions="StartAndExpand" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="24,14,24,55">
+                <StackLayout  VerticalOptions="StartAndExpand" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="24,14,24,35">
                     <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Oefening compleet" TextColor="White"/>
                     <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Reflectie" TextColor="White" />
                 </StackLayout>
                 <ScrollView VerticalOptions="CenterAndExpand" Grid.Row="3" Grid.ColumnSpan="2"  >
                     <StackLayout Margin="24,0,24,0" Spacing="0" VerticalOptions="Start">
-                        <Frame CornerRadius="10" HeightRequest="200" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,24,0,24" Padding="0">
+                        <Frame CornerRadius="10" HeightRequest="200" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,6,0,24" Padding="0">
                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">

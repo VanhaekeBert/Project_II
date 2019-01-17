@@ -27,7 +27,7 @@ namespace StreetWorkoutV2.View
         {
             InitializeComponent();
             // BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount_2x.png");
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Profile_BackCover.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             Username.Text = Application.Current.Properties["Naam"].ToString();
@@ -49,7 +49,6 @@ namespace StreetWorkoutV2.View
                 LblOefWeek.Text = weekOef.Count().ToString();
                 LblOefMaand.Text = maandOef.Count().ToString();
             });
-            this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();
             

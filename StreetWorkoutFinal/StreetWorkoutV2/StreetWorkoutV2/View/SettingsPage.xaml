@@ -8,7 +8,8 @@
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="StreetWorkoutV2.View.SettingsPage"
              Icon="settings.png" Title="Settings"
-                 NavigationPage.HasNavigationBar="False">
+                 NavigationPage.HasNavigationBar="False"
+        BackgroundColor="{StaticResource MainDarkColor}">
     
     <controls:AnimationPage.PageAnimation>
         <controls:PushPageAnimation  Duration="Short" Type="Landing"/>

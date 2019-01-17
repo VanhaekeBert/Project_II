@@ -23,7 +23,7 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_2x.png");
+            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
             ImgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
             ImgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout.png");
