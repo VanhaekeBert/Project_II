@@ -20,7 +20,8 @@ namespace StreetWorkoutV2.View
     public partial class Picker_Toestel_Page : AnimationPage
     {
         PickerClass _SelectedItem = new PickerClass();
-
+        List<Oefening> _Oefeningslijst = new List<Oefening>();
+        string _json;
         public Picker_Toestel_Page(string uitvoering)
         {
             InitializeComponent();
@@ -28,8 +29,6 @@ namespace StreetWorkoutV2.View
             backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
 
-            //------------------Inlezen JSON-----------------
-            List<Oefening> Oefeningslijst = new List<Oefening>();
 
             //bestandnaam? , Pad?
             // opgelet bovenaan -> using System.Reflection; toevoegen
@@ -40,7 +39,7 @@ namespace StreetWorkoutV2.View
             //bytes uit het bestand gaan inlezen en verwerken
             StreamReader oSR = new StreamReader(stream);
             string json = oSR.ReadToEnd();
-            Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+            _Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
             //-----------------------------------------------
             if (uitvoering == "Toestel")
             {
@@ -48,7 +47,7 @@ namespace StreetWorkoutV2.View
                 List<string> Filteredlisttoestel = new List<string>();
                 Dictionary<string, int> Toestel = new Dictionary<string, int>();
                 lblTitle.Text = "Toestellen";
-                foreach (Oefening oefening in Oefeningslijst)
+                foreach (Oefening oefening in _Oefeningslijst)
                 {
                     PickerClass toestel = new PickerClass() { Name = oefening.Toestel };
                     if (!Filteredlisttoestel.Contains(toestel.Name))
@@ -62,7 +61,6 @@ namespace StreetWorkoutV2.View
                     }
                 }
                 List<PickerClass> toestellen = new List<PickerClass>();
-
                 
                 foreach (var toestel in Toestel)
                 {
@@ -81,7 +79,7 @@ namespace StreetWorkoutV2.View
                 Dictionary<string, int> Spier = new Dictionary<string, int>();
                 lblTitle.Text = "Spiergroepen";
                 
-                foreach (Oefening duts in Oefeningslijst)
+                foreach (Oefening duts in _Oefeningslijst)
                 {
                     PickerClass toestel = new PickerClass() { Name = duts.Spiergroep };
                     if (!Filteredlist.Contains(toestel.Name))
@@ -121,8 +119,69 @@ namespace StreetWorkoutV2.View
             {
                 var myList = (ListView)o;
                 _SelectedItem = (myList.SelectedItem as PickerClass);
+                List<Oefening> easylist = new List<Oefening>();
+                List<Oefening> mediumlist = new List<Oefening>();
+                List<Oefening> hardlist = new List<Oefening>();
+
+
+                foreach(Oefening oefening in _Oefeningslijst)
+                {
+                    if (_SelectedItem.Type == "Toestel")
+                    {
+                        if (oefening.Toestel == _SelectedItem.Name)
+                        {
+                            if (oefening.Moeilijkheidsgraad == "Easy")
+                            {
+                                easylist.Add(oefening);
+                            }
+                            else if (oefening.Moeilijkheidsgraad == "Medium")
+                            {
+                                mediumlist.Add(oefening);
+                            }
+                            else if (oefening.Moeilijkheidsgraad == "Hard")
+                            {
+                                hardlist.Add(oefening);
+                            }
+                        }
+                    }
+                    else if (_SelectedItem.Type == "Spiergroep")
+                    {
+                        if (oefening.Spiergroep == _SelectedItem.Name)
+                        {
+                            if (oefening.Moeilijkheidsgraad == "Easy")
+                            {
+                                easylist.Add(oefening);
+                            }
+                            else if (oefening.Moeilijkheidsgraad == "Medium")
+                            {
+                                mediumlist.Add(oefening);
+                            }
+                            else if (oefening.Moeilijkheidsgraad == "Hard")
+                            {
+                                hardlist.Add(oefening);
+                            }
+                        }
+                    }
+                }
+
+                
+                if (easylist.Count == 0)
+                {
+                    makkelijk.Opacity = 0.5;
+                }
+                if (mediumlist.Count == 0)
+                {
+                    gemiddeld.Opacity = 0.5;
+                }
+                if (hardlist.Count == 0)
+                {
+                    moeilijk.Opacity = 0.5;
+                }
                 Popup.IsEnabled = true;
                 Popup.IsVisible = true;
+                
+
+
 
                 //await popupView.PushAsync(new ExercisePage());
                 myList.SelectedItem = null;
@@ -131,37 +190,46 @@ namespace StreetWorkoutV2.View
 
 
         }
+
+
         private async void Makkelijk_Clicked(object sender, EventArgs e)
         {
-            Popup.IsEnabled = false;
-          //  Popup.FadeTo(0, 250);
+            if (makkelijk.Opacity == 1)
+            {
+                Popup.IsEnabled = false;
+                //  Popup.FadeTo(0, 250);
 
+                await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemakkelijk"));
+                Popup.IsVisible = false;
+            }
 
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemakkelijk"));
-            Popup.IsVisible = false;
 
 
         }
 
         private async void Gemiddeld_Clicked(object sender, EventArgs e)
         {
-            Popup.IsEnabled = false;
-           // Popup.FadeTo(0, 250);
+            if (gemiddeld.Opacity == 1)
+            {
+                Popup.IsEnabled = false;
+                // Popup.FadeTo(0, 250);
 
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemiddeld"),true);
-            Popup.IsVisible = false;
-
+                await Navigation.PushAsync(new ExercisePage(_SelectedItem, "gemiddeld"), true);
+                Popup.IsVisible = false;
+            }
 
         }
 
         private async void Moeilijk_Clicked(object sender, EventArgs e)
         {
-           // Popup.FadeTo(0, 250);
+            if (moeilijk.Opacity == 1)
+            {
+                // Popup.FadeTo(0, 250);
 
-            Popup.IsEnabled = false;
-            await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"));
-            Popup.IsVisible = false;
-
+                Popup.IsEnabled = false;
+                await Navigation.PushAsync(new ExercisePage(_SelectedItem, "moeilijk"));
+                Popup.IsVisible = false;
+            }
 
 
         }

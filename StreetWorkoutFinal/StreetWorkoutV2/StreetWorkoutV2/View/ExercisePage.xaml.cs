@@ -64,6 +64,29 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(() =>
                 {
+
+                    List<Oefening> listmakkelijk1 = CreateSemiFinalLijst(_json, "gemakkelijk");
+                    List<Oefening> listmakkelijk2 = CreateFinalLijst(_SelectedItem, listmakkelijk1);
+
+                    List<Oefening> listgemiddeld1 = CreateSemiFinalLijst(_json, "gemiddeld");
+                    List<Oefening> listgemiddeld2 = CreateFinalLijst(_SelectedItem, listgemiddeld1);
+
+                    List<Oefening> listmoeilijk1 = CreateSemiFinalLijst(_json, "moeilijk");
+                    List<Oefening> listmoeilijk2 = CreateFinalLijst(_SelectedItem, listmoeilijk1);
+
+                    if (listmakkelijk2.Count == 0)
+                    {
+                        makkelijk.Opacity = 0.5;
+                    }
+                    if (listgemiddeld2.Count == 0)
+                    {
+                        gemiddeld.Opacity = 0.5;
+                    }
+                    if (listmoeilijk2.Count == 0)
+                    {
+                        moeilijk.Opacity = 0.5;
+                    }
+
                     Popup.IsEnabled = true;
                     Popup.IsVisible = true;
                 })
@@ -169,39 +192,47 @@ namespace StreetWorkoutV2.View
 
         private void Makkelijk_Clicked(object sender, EventArgs e)
         {
-            Popup.IsEnabled = false;
-            List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemakkelijk");
-            List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
-            Oefeningen.ItemsSource = list2;
-            //global final list updaten voor textChanged
-            _FinalList = list2;
-            OefeningNaamEntry.Text = "";
-            Popup.IsVisible = false;
+            if (makkelijk.Opacity == 1)
+            {
+                Popup.IsEnabled = false;
+                List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemakkelijk");
+                List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
+                Oefeningen.ItemsSource = list2;
+                //global final list updaten voor textChanged
+                _FinalList = list2;
+                OefeningNaamEntry.Text = "";
+                Popup.IsVisible = false;
+            }
         }
 
         private void Gemiddeld_Clicked(object sender, EventArgs e)
         {
-            Popup.IsEnabled = false;
-            List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemiddeld");
-            List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
-            Oefeningen.ItemsSource = list2;
-            //global final list updaten voor textChanged
-            _FinalList = list2;
-            OefeningNaamEntry.Text = "";
-            Popup.IsVisible = false;
+            if (gemiddeld.Opacity == 1)
+            {
+                Popup.IsEnabled = false;
+                List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemiddeld");
+                List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
+                Oefeningen.ItemsSource = list2;
+                //global final list updaten voor textChanged
+                _FinalList = list2;
+                OefeningNaamEntry.Text = "";
+                Popup.IsVisible = false;
+            }
         }
 
         private void Moeilijk_Clicked(object sender, EventArgs e)
         {
-            Popup.IsEnabled = false;
-            List<Oefening> list1 = CreateSemiFinalLijst(_json, "moeilijk");
-            List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
-            Oefeningen.ItemsSource = list2;
-            //global final list updaten voor textChanged
-            _FinalList = list2;
-            OefeningNaamEntry.Text = "";
-            Popup.IsVisible = false;
-
+            if (moeilijk.Opacity == 1)
+            {
+                Popup.IsEnabled = false;
+                List<Oefening> list1 = CreateSemiFinalLijst(_json, "moeilijk");
+                List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
+                Oefeningen.ItemsSource = list2;
+                //global final list updaten voor textChanged
+                _FinalList = list2;
+                OefeningNaamEntry.Text = "";
+                Popup.IsVisible = false;
+            }
         }
 
         private void OefeningNaamEntry_TextChanged(object sender, TextChangedEventArgs e)
