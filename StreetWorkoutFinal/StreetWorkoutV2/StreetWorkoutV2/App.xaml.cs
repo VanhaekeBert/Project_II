@@ -18,12 +18,15 @@ namespace StreetWorkoutV2
                 MainPage = new NavigationPage(new MainPage());
 
             }
-            else {
+            else
+            {
                 MainPage = new NavigationPage(new RegisterPage());
             }
+            //MainPage = new NavigationPage(new Oefening_Complete_Page());
+
 
         }
-    
+
 
         protected override void OnStart()
         {

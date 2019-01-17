@@ -1,4 +1,5 @@
 ﻿using FormsControls.Base;
+using Rg.Plugins.Popup.Extensions;
 using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace StreetWorkoutV2.View
         public LoginPage()
         {
             InitializeComponent();
+
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
             backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");

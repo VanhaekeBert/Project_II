@@ -32,6 +32,7 @@ namespace StreetWorkoutV2.View
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();
+            
 
             //Profile picture ophalen
             TapGestureRecognizer ImageHandler = new TapGestureRecognizer()

@@ -3,7 +3,8 @@
     xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local1="clr-namespace:StreetWorkoutV2"
-             x:Class="StreetWorkoutV2.View.LoginPage"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="StreetWorkoutV2.View.LoginPage"
              NavigationPage.HasNavigationBar="False">
 
     <controls:AnimationPage.PageAnimation>
@@ -12,12 +13,12 @@
     <ContentPage.Content>
         <RelativeLayout Padding="0">
             <!-- Background -->
-            <Image
+            <ff:CachedImage
             x:Name="BckgrImage"
             Aspect="AspectFill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            </Image>
+            </ff:CachedImage>
             <!-- ================= -->
 
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
@@ -31,7 +32,7 @@
                 </Grid.RowDefinitions>
                 <!--Back button -->
                 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" x:Name="backbutton">
-                    <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="backbuttonImage"/>
+                    <ff:CachedImage  WidthRequest="18" HorizontalOptions="Start" x:Name="backbuttonImage"/>
                     <Label Text="Registreren" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
                 </StackLayout>               
                 <!-- ================= -->
@@ -40,7 +41,7 @@
                     <local1:CustomEntry x:Name="UserNameEntry" Margin="24,0,24,0" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Gebruikersnaam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
                     <Grid Grid.Row="1">
                         <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="PasswordEntry"/>
-                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage" Margin="0,0,42,0"/>
+                        <ff:CachedImage HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage" Margin="0,0,42,0"/>
                     </Grid>
                     <Label Grid.Row="3" Text="" TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="ErrorLabel" FontFamily="{StaticResource NormalFont}" FontSize="16" WidthRequest="175" HorizontalOptions="Start" Margin="32,-70,32,0"/>
                 </Grid>

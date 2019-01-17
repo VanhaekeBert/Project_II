@@ -421,6 +421,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="PopUpAccountDelete.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="PopupWaterInput.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

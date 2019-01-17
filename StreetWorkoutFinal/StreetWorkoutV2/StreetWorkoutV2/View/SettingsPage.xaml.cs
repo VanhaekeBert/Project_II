@@ -1,6 +1,7 @@
 ﻿using FormsControls.Base;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Rg.Plugins.Popup.Extensions;
 using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
@@ -40,17 +41,23 @@ namespace StreetWorkoutV2.View
                 }
             });
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
+
             var tapGestureRecognizerFB = new TapGestureRecognizer();
             tapGestureRecognizerFB.Tapped += (s, e) => {
                 Task.Run(async () =>
                 {
                     FitBitUser user = await FitBitManager.FitBitAsync();
+                    //LoadingIndicator.IsRunning = false;
+                    var vUpdatedPage = new SettingsPage();
+                    Navigation.InsertPageBefore(vUpdatedPage, this);
+                    await Navigation.PopAsync();
                     user.Naam = Application.Current.Properties["Naam"].ToString();
                     string text = JsonConvert.SerializeObject(user);
                     JObject data = JsonConvert.DeserializeObject<JObject>(text);
                     await DBManager.PutUserData(user.Naam, "Naam", data);
                 });
             };
+
             var tapGestureRecognizerP = new TapGestureRecognizer();
             tapGestureRecognizerP.Tapped += (s, e) => {
                 var auth = PolarManager.GetPolarAuth();
@@ -63,6 +70,7 @@ namespace StreetWorkoutV2.View
                     {
                         PolarUser user = await PolarManager.GetPolarToken();
                         user.Naam = Application.Current.Properties["Naam"].ToString();
+
                         string text = JsonConvert.SerializeObject(user);
                         JObject data = JsonConvert.DeserializeObject<JObject>(text);
                         Debug.WriteLine(user.Leeftijd);
@@ -82,11 +90,9 @@ namespace StreetWorkoutV2.View
             FraAD.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
-                   
-                    await DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
-                    Application.Current.Properties["Naam"] = null;
-                    await Application.Current.SavePropertiesAsync();
-                    await Navigation.PushAsync(new LoginPage());
+
+
+                    await Navigation.PushPopupAsync(new PopUpAccountDelete());
                 })
             });
 

@@ -50,7 +50,7 @@
                     </Grid.RowDefinitions>
                     <custom:CustomFrame  CornerRadius="10" BackgroundColor="Transparent" Padding="0" Grid.Row="1" VerticalOptions="FillAndExpand" Margin="0,-20,0,0">
                         <renderers:GradientLayout   ColorsList="#484E6D,#313650"   Mode="ToTopLeft">
-                            <ScrollView HeightRequest="150">
+                            <ScrollView HeightRequest="150" Margin="0,0,0,24">
                                 <Label Margin="24,44" Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="15" HorizontalOptions="Center" TextColor="{StaticResource LightColor}"  Text="" x:Name="description"/>
                             </ScrollView>
                         </renderers:GradientLayout>

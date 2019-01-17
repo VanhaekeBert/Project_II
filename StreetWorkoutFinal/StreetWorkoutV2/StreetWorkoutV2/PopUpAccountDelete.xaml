@@ -1,10 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StreetWorkoutV2.PopUpAccountDelete">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+    xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
+    x:Class="StreetWorkoutV2.PopUpAccountDelete">
+
+
+        <StackLayout Margin="24"                
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="Center">
+            <Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill"   Padding="0">
+                <renderers:GradientLayout
+                                            ColorsList="#484E6D,#323751"
+                                            Mode="ToTopLeft">
+                <Grid Margin="12,24"  ColumnSpacing="10" RowSpacing="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Label  Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="Weet u zeker dat u uw account wil verwijderen? &#x0a; Deze actie kan niet ongedaan gemaakt worden." FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                    <Button Clicked="Annuleren" Grid.Row="1" Grid.Column="0" Text="Annuleren" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140"  />
+                    <Button Clicked="Verwijderen" Grid.Row="1" Grid.Column="1" Text="VERWIJDEREN" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140"  />
+
+                </Grid>
+
+                </renderers:GradientLayout>
+            </Frame>
+        </StackLayout>
+</pages:PopupPage>

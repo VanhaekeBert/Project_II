@@ -37,7 +37,17 @@ namespace StreetWorkoutV2.View
             }
 
             Aantal_keer.Text = Aantal_keeper;
-            Aantal_herhalingen.Text = oefening.Herhalingen.ToString() + " herhalingen";
+
+            if (oefening.Herhalingen == 0)
+            {
+                Aantal_herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
+            }
+            else
+            {
+                Aantal_herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
+            }
+
+            ////////////////////////
             Next_exercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
