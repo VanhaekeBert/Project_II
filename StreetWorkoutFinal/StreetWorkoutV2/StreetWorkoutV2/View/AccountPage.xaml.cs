@@ -79,6 +79,7 @@ namespace StreetWorkoutV2.View
                     NameChangeEntry.Placeholder = Application.Current.Properties["Naam"].ToString();
                     NameChangeEntry.IsVisible = true;
                     NameChangeEntry.IsEnabled = true;
+                    NameChangeEntry.Focus();
                     Username.IsVisible = false;
                     Potlood.IsVisible = false;
                 })
