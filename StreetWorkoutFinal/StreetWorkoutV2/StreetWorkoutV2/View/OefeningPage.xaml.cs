@@ -220,10 +220,22 @@ namespace StreetWorkoutV2.View
         {
             if (AantalKeeper == "1/3" || AantalKeeper == "2/3")
             {
+                if (Application.Current.Properties.ContainsKey("WorkTime"))
+                {
+                    string workout = Application.Current.Properties["WorkTime"].ToString();
+                    Application.Current.Properties["WorkTime"] = countdownremaining + int.Parse(workout);
+                }
+                else
+                {
+                    Application.Current.Properties["WorkTime"] = countdownremaining;
+                }
                 await Navigation.PushAsync(new PauzePage(AantalKeeper, oefeningKeeper));
             }
             else if (AantalKeeper == "3/3")
             {
+                string workout = Application.Current.Properties["WorkTime"].ToString();
+                Application.Current.Properties["WorkTime"] = countdownremaining + int.Parse(workout);
+                Application.Current.Properties["Workout"] = Oefeningnaam.Text;
                 await Navigation.PushAsync(new Oefening_Complete_Page());
             }
         }

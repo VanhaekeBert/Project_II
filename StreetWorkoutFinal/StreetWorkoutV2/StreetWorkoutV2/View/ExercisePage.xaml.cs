@@ -110,6 +110,7 @@ namespace StreetWorkoutV2.View
             {
                 case "gemakkelijk":
                     Moeilijkheidsgraadlabel.Text = "Gemakkelijk";
+                    Application.Current.Properties["Difficulty"] = Moeilijkheidsgraadlabel.Text;
                     foreach (Oefening oefening in Oefeningslijst)
                     {
                         if (oefening.Moeilijkheidsgraad.Contains("Easy"))
@@ -120,6 +121,7 @@ namespace StreetWorkoutV2.View
                     return Semifinallijst;
                 case "gemiddeld":
                     Moeilijkheidsgraadlabel.Text = "Gemiddeld";
+                    Application.Current.Properties["Difficulty"] = Moeilijkheidsgraadlabel.Text;
                     foreach (Oefening oefening in Oefeningslijst)
                     {
 
@@ -131,6 +133,7 @@ namespace StreetWorkoutV2.View
                     return Semifinallijst;
                 case "moeilijk":
                     Moeilijkheidsgraadlabel.Text = "Moeilijk";
+                    Application.Current.Properties["Difficulty"] = Moeilijkheidsgraadlabel.Text;
                     foreach (Oefening oefening in Oefeningslijst)
                     {
                         if (oefening.Moeilijkheidsgraad.Contains("Hard"))

@@ -48,7 +48,6 @@ namespace StreetWorkoutV2.View
                     user.Naam = Application.Current.Properties["Naam"].ToString();
                     string text = JsonConvert.SerializeObject(user);
                     JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                    Debug.WriteLine(user.Leeftijd);
                     await DBManager.PutUserData(user.Naam, "Naam", data);
                 });
             };

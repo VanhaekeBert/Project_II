@@ -10,6 +10,8 @@ using Xamarin.Forms;
 using Entry = Microcharts.Entry;
 using Xamarin.Forms.Xaml;
 using FormsControls.Base;
+using StreetWorkoutV2.Model;
+using Newtonsoft.Json.Linq;
 
 namespace StreetWorkoutV2.View
 {
@@ -227,19 +229,72 @@ namespace StreetWorkoutV2.View
             };
         }
         
-        private void Button_Clicked_1(object sender, EventArgs e)
+        private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync();
+            JObject oefening = new JObject();
+            oefening["Naam"] = Application.Current.Properties["Naam"].ToString();
+            oefening["Datum"] = DateTime.Now.ToString();
+            oefening["Duur"] = Application.Current.Properties["WorkTime"].ToString();
+            oefening["Workout"] = Application.Current.Properties["Workout"].ToString();
+            oefening["Moeilijkheidsgraad"] = Application.Current.Properties["Difficulty"].ToString();
+            if (imgRatingHeartFull5.IsVisible)
+            {
+                oefening["Gevoel"] = "5";
+            }
+            else if (imgRatingHeartFull4.IsVisible)
+            {
+                oefening["Gevoel"] = "4";
+            }
+            else if (imgRatingHeartFull3.IsVisible)
+            {
+                oefening["Gevoel"] = "3";
+            }
+            else if (imgRatingHeartFull2.IsVisible)
+            {
+                oefening["Gevoel"] = "2";
+            }
+            else
+            {
+                oefening["Gevoel"] = "1";
+            }
+            await DBManager.PostOefening(oefening);
+            await Navigation.PopToRootAsync();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             for (int i = 0; i < 5; i++)
             {
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             }
-
-            Navigation.PopAsync();
+            JObject oefening = new JObject();
+            oefening["Naam"] = Application.Current.Properties["Naam"].ToString();
+            oefening["Datum"] = DateTime.Now.ToString();
+            oefening["Duur"] = Application.Current.Properties["WorkTime"].ToString();
+            oefening["Workout"] = Application.Current.Properties["Workout"].ToString();
+            oefening["Moeilijkheidsgraad"] = Application.Current.Properties["Difficulty"].ToString();
+            if (imgRatingHeartFull5.IsVisible)
+            {
+                oefening["Gevoel"] = "5";
+            }
+            else if (imgRatingHeartFull4.IsVisible)
+            {
+                oefening["Gevoel"] = "4";
+            }
+            else if (imgRatingHeartFull3.IsVisible)
+            {
+                oefening["Gevoel"] = "3";
+            }
+            else if (imgRatingHeartFull2.IsVisible)
+            {
+                oefening["Gevoel"] = "2";
+            }
+            else
+            {
+                oefening["Gevoel"] = "1";
+            }
+            await DBManager.PostOefening(oefening);
+            await Navigation.PopAsync();
         }
         protected override bool OnBackButtonPressed()
         {
