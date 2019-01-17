@@ -15,7 +15,7 @@ using StreetWorkoutV2.Model;
 namespace StreetWorkoutV2.Droid
 {
     [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
-    [IntentFilter(new[] { Intent.ActionView },Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },DataSchemes = new[] { "com.companyname.test" },DataPath = "/oauth2redirect")]
+    [IntentFilter(new[] { Intent.ActionView },Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },DataSchemes = new[] { "com.nmct.SICWorkout" },DataPath = "/oauth2redirect")]
     public class CustomUrlSchemeInterceptorActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -80,7 +80,7 @@
                                 </StackLayout>
                             </renderers:GradientLayout>
                         </StreetWorkoutV2:CustomFrame>
-                        <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
+                        <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0" x:Name="FraAD">
 
                             <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
                                 <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">

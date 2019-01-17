@@ -132,5 +132,18 @@ namespace StreetWorkoutV2.Model
             var responseString = await message.Content.ReadAsStringAsync();
             return responseString.ToString();
         }
+
+        public static async Task DeleteUserData(string naam)
+        {
+            JObject data = new JObject();
+            data["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(data);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/DeleteUserData";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+        }
     }
 }

@@ -23,7 +23,6 @@ namespace StreetWorkoutV2
             }
 
         }
-    
 
         protected override void OnStart()
         {
