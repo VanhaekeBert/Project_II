@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<controls:AnimationPage
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base" 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
@@ -7,6 +8,10 @@
     x:Class="StreetWorkoutV2.View.SettingsPage"
              Icon="settings.png" Title="Settings"
                  NavigationPage.HasNavigationBar="False">
+    
+    <controls:AnimationPage.PageAnimation>
+        <controls:PushPageAnimation  Duration="Short" Type="Landing"/>
+    </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
             <!-- Background -->
@@ -89,4 +94,4 @@
             </Grid>
         </RelativeLayout>
     </ContentPage.Content>
-</ContentPage>
+</controls:AnimationPage>

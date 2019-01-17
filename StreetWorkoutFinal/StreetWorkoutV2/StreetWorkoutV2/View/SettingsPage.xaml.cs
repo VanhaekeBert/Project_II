@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FormsControls.Base;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using StreetWorkoutV2.Model;
 using System;
@@ -14,7 +15,7 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingsPage : ContentPage
+    public partial class SettingsPage : AnimationPage
     {
         public SettingsPage()
         {
@@ -118,6 +119,7 @@ namespace StreetWorkoutV2.View
         {
             Application.Current.Properties["Naam"] = null;
             await Application.Current.SavePropertiesAsync();
+            await Navigation.PushAsync(new LoginPage());
         }
         protected override bool OnBackButtonPressed()
         {
