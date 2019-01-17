@@ -21,8 +21,8 @@ namespace StreetWorkoutV2.View
             InitializeComponent();
                 BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
                 eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-            eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-            PasswordEntryRepeat.IsPassword = true;
+                eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                PasswordEntryRepeat.IsPassword = true;
                 PasswordEntry.IsPassword = true;
                 eyeimage.GestureRecognizers.Add(new TapGestureRecognizer
                 {

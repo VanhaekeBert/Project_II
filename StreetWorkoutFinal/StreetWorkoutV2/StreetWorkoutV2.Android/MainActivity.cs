@@ -14,7 +14,7 @@ using FFImageLoading.Forms.Droid;
 
 namespace StreetWorkoutV2.Droid
 {
-    [Activity(Label = "StreetWorkoutV2", WindowSoftInputMode = SoftInput.AdjustResize, Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity( WindowSoftInputMode = SoftInput.AdjustResize, Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
 
@@ -48,7 +48,7 @@ namespace StreetWorkoutV2.Droid
         {
             //TabLayoutResource = Resource.Layout.Tabbar;
             //ToolbarResource = Resource.Layout.Toolbar;
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 199, 41, 48));
+            //Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 199, 41, 48));
             base.OnCreate(savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);

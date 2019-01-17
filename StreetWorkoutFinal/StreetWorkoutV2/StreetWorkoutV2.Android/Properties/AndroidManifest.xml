@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.StreetWorkoutV2">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
-    <application android:label="StreetWorkoutV2.Android"></application>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="0.9" package="com.nmct.SICWorkout" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="26" android:targetSdkVersion="27" />
+	<application android:label="SIC Workout" android:icon="@drawable/applogo"></application>
 </manifest>
