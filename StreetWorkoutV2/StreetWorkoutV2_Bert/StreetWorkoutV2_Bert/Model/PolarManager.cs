@@ -72,12 +72,33 @@ namespace StreetWorkoutV2_Bert.Model
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
                 var acces = JsonConvert.DeserializeObject<PolarAcces>(responseString);
+                await PostUserAuthorize(acces);
                 PolarUser user = await GetUserData(acces);
                 return user;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Error GetPolarToken: " + ex.Message);
+                throw ex;
+            }
+        }
+
+        public static async Task PostUserAuthorize(PolarAcces acces)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + acces.Acces_token);
+                var request = "{\"member-id\": \"" + acces.X_user_id + "\"}";
+                var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+                string url = "https://www.polaraccesslink.com/v3/users";
+                var message = await client.PostAsync(url, httpContent);
+                var responseString = await message.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
                 throw ex;
             }
         }

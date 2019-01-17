@@ -47,24 +47,10 @@ namespace StreetWorkoutV2_Bert.View
                     user.Naam = Application.Current.Properties["Naam"].ToString();
                     string text = JsonConvert.SerializeObject(user);
                     JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                    Debug.WriteLine(user.Leeftijd);
                     await DBManager.PutUserData(user.Naam, "Naam", data);
-                    JObject api = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                    if (api["API"].ToString() == "FitBit")
-                    {
-                        lblFBverbonden.Text = "Verbonden";
-                        lblPverbonden.Text = "Niet Verbonden";
-                    }
-                    else if (api["API"].ToString() == "Polar")
-                    {
-                        lblFBverbonden.Text = "Niet Verbonden";
-                        lblPverbonden.Text = "Verbonden";
-                    }
-                    else
-                    {
-                        lblFBverbonden.Text = "Niet Verbonden";
-                        lblPverbonden.Text = "Niet Verbonden";
-                    }
+                    var vUpdatedPage = new MainPage();
+                    Navigation.InsertPageBefore(vUpdatedPage, this);
+                    await Navigation.PopModalAsync();
                 });
             };
             var tapGestureRecognizerP = new TapGestureRecognizer();
@@ -87,22 +73,9 @@ namespace StreetWorkoutV2_Bert.View
                             await DBManager.PutUserData(user.Naam, "Naam", data);
                         });
                     };
-                    JObject api = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                    if (api["API"].ToString() == "FitBit")
-                    {
-                        lblFBverbonden.Text = "Verbonden";
-                        lblPverbonden.Text = "Niet Verbonden";
-                    }
-                    else if (api["API"].ToString() == "Polar")
-                    {
-                        lblFBverbonden.Text = "Niet Verbonden";
-                        lblPverbonden.Text = "Verbonden";
-                    }
-                    else
-                    {
-                        lblFBverbonden.Text = "Niet Verbonden";
-                        lblPverbonden.Text = "Niet Verbonden";
-                    }
+                    var vUpdatedPage = new MainPage();
+                    Navigation.InsertPageBefore(vUpdatedPage, this);
+                    await Navigation.PopModalAsync();
                 });
             };
             var tapGestureRecognizerWWR = new TapGestureRecognizer();
@@ -118,6 +91,7 @@ namespace StreetWorkoutV2_Bert.View
         {
             Application.Current.Properties["Naam"] = null;
             await Application.Current.SavePropertiesAsync();
+            await Navigation.PushModalAsync(new LoginPage());
         }
         protected override bool OnBackButtonPressed()
         {
