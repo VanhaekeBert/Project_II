@@ -76,7 +76,7 @@
                                         <Label.FormattedText >
                                             <FormattedString>
 
-                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblWaterGedronken"/>
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="0" x:Name="lblWaterGedronken"/>
                                                 <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text=" / -- " x:Name="lblWaterTotaal"/>
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text="ml"/>
                                             </FormattedString>
@@ -148,26 +148,27 @@
                                     <ColumnDefinition Width="*" ></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Grid Grid.Row="0"  Grid.ColumnSpan="3">
+                                <Grid Grid.Row="0"  Grid.ColumnSpan="3" Margin="24,0">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="12*"/>
+                                        <ColumnDefinition Width="8*"/>
                                         <ColumnDefinition Width="4*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Row="0" Grid.Column="0" Text="Water toevoegen:" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                    <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1" Text="250" x:Name="TotalWater" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,8,0,5" HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Water toevoegen:" FontFamily="{StaticResource NormalFont}" FontSize="24" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                                    <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1" Text="0" x:Name="TotalWater" VerticalOptions="Center" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Darkcolor}" FontSize="14" Margin="0,0,0,8" Keyboard="Numeric" FontFamily="{StaticResource NormalFont}"  HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,0,12,0" VerticalOptions="Center" Text="ml" FontFamily="{StaticResource Darkcolor}"/>
                                 </Grid>
 
-                                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0">
+                                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0" x:Name="click_one_glass">
                                     <Image x:Name="one_glass" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="250ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
 
-                                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="0">
+                                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="0" x:Name="click_two_glass">
                                     <Image x:Name="two_glass" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="500ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
 
-                                <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Spacing="0">
+                                <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Spacing="0" x:Name="click_four_glass">
                                     <Image x:Name="four_glass" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="1000ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>

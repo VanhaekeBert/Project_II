@@ -47,6 +47,7 @@ namespace StreetWorkoutV2.View
                 Command = new Command(async () => {
                     PopupWater.IsEnabled = true;
                     PopupWater.IsVisible = true;
+                    TotalWater.Text = "0";
                 })
             });
 
@@ -124,6 +125,34 @@ namespace StreetWorkoutV2.View
                     await Navigation.PushAsync(new Picker_Toestel_Page("Toestel"));
                 })
             });
+
+            click_one_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    int Water_now = int.Parse(TotalWater.Text);
+                    int Water_update = Water_now + 250;
+                    TotalWater.Text = Water_update.ToString();
+                })
+            });
+
+            click_two_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    int Water_now = int.Parse(TotalWater.Text);
+                    int Water_update = Water_now + 500;
+                    TotalWater.Text = Water_update.ToString();
+                })
+            });
+
+            click_four_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => {
+                    int Water_now = int.Parse(TotalWater.Text);
+                    int Water_update = Water_now + 1000;
+                    TotalWater.Text = Water_update.ToString();
+                })
+            });
+
         }
 
 
@@ -169,7 +198,12 @@ namespace StreetWorkoutV2.View
 
         private void SubmitWaterInput_Clicked(object sender, EventArgs e)
         {
-
+            int water_current = int.Parse(lblWaterGedronken.Text);
+            int water_added = int.Parse(TotalWater.Text);
+            int water_now = water_current + water_added;
+            lblWaterGedronken.Text = water_now.ToString();
+            PopupWater.IsEnabled = false;
+            PopupWater.IsVisible = false;
         }
 
         private void Back_Clicked(object sender, EventArgs e)

@@ -173,7 +173,7 @@ namespace StreetWorkoutV2.View
                 LoadingIndicator.IsRunning = false;
             var vUpdatedPage = new AccountPage();
             Navigation.InsertPageBefore(vUpdatedPage, this);
-            Navigation.PopAsync();
+            await Navigation.PopAsync();
 
 
 
