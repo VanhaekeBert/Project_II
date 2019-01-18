@@ -32,18 +32,18 @@ namespace StreetWorkoutV2.View
             imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
-            lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            //lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
             one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
-            if (Application.Current.Properties["WaterDoel"].ToString() != null)
-            {
-                if (Application.Current.Properties["WaterGedronken"].ToString() != null)
-                {
-                    lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
-                }
-                lblWaterTotaal.Text = " / " + Application.Current.Properties["WaterDoel"].ToString() + " ";
-            }
+            //if (Application.Current.Properties["WaterDoel"].ToString() != null)
+            //{
+            //    if (Application.Current.Properties["WaterGedronken"].ToString() != null)
+            //    {
+            //        lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
+            //    }
+            //    lblWaterTotaal.Text = " / " + Application.Current.Properties["WaterDoel"].ToString() + " ";
+            //}
 
             WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
             {

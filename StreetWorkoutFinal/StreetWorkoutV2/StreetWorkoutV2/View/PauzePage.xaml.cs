@@ -26,7 +26,9 @@ namespace StreetWorkoutV2.View
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
             GoToOefeningen.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
             OefeningImage.Source = oefening.AfbeeldingenResource[0];
-            
+            RepitionsInput.Placeholder = oefening.Herhalingen.ToString();
+
+
             if (Aantal_keeper == "1/3")
             {
                 Aantal_keeper = "2/3";

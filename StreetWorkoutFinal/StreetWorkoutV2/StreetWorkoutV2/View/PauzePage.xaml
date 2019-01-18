@@ -44,6 +44,7 @@
                         <RowDefinition Height="75"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label Text="Pauze" FontFamily="{StaticResource BoldFont}" FontSize="34" TextColor="{StaticResource LightColor}" Grid.Row="0" VerticalOptions="End"/>
@@ -66,7 +67,20 @@
                         </renderers:GradientLayout>
                     </custom:CustomFrame>
 
-                    <custom:CustomFrame x:Name="Next_exercise" Grid.Row="3" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}" Padding="0" Margin="0,30,0,0">
+                    <custom:CustomFrame Grid.Row="3" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}" Padding="0" Margin="0,30,0,0">
+                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                            <Grid Margin="0,24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Text="Vul uw behaald aantal repetities in: " TextColor="{StaticResource LightColor}" Margin="24,0,0,0" FontSize="18"/>
+                                <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="80" HeightRequest="40" Text="" TextColor="{StaticResource Darkcolor}" FontSize="20" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,0" x:Name="RepitionsInput" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+                            </Grid>
+                        </renderers:GradientLayout>
+                    </custom:CustomFrame>
+
+                    <custom:CustomFrame x:Name="Next_exercise" Grid.Row="4" CornerRadius="10" BackgroundColor="{StaticResource MainDarkColor}" Padding="0" Margin="0,30,0,0">
                         <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
                             <Grid RowSpacing="0" ColumnSpacing="0" >
                                 <Grid.RowDefinitions>
