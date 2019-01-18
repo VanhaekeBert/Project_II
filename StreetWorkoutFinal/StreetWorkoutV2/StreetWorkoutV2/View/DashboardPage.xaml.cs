@@ -39,7 +39,10 @@ namespace StreetWorkoutV2.View
             Task.Run(async () =>
             {
                 JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
+                if (data["WaterDoel"].ToString() != null)
+                {
+                    lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
+                }
             });
 
             WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer

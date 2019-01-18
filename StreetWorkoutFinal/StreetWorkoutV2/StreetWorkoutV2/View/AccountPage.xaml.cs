@@ -48,9 +48,10 @@ namespace StreetWorkoutV2.View
                 }
                 LblOefWeek.Text = weekOef.Count().ToString();
                 LblOefMaand.Text = maandOef.Count().ToString();
+                MakeEntriesKcal();
+                MakeEntriesOef();
             });
-            MakeEntriesKcal();
-            MakeEntriesOef();
+            this.BackgroundColor = Color.FromHex("2B3049");
             
 
             //Profile picture ophalen
@@ -141,37 +142,44 @@ namespace StreetWorkoutV2.View
         }
         private void MakeEntriesOef()
         {
-            List<JObject> oef = new List<JObject>();
             List<string> data = new List<string>();
             for (int i = 0; i < weekOef.Count(); i++)
             {
                 if (i == 0)
                 {
                     data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
-                    oef.Add(weekOef[i]);
                 }
                 else if (!data.Contains(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", "")))
                 {
                     data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
-                    oef.Add(weekOef[i]);
                 }
             }
             List<string> listKleuren = new List<string> {
                 "#FF4A4A","#F74848","#F74848","#F74848","#E64343","#E64343","#E64343","#E64343"
             };
             List<string> listLabels = new List<string>();
-            foreach (string dag in data)
+            for (int i = 6; i >= 0; i--)
             {
-                listLabels.Add(DateTime.ParseExact(dag, "dddd", System.Globalization.CultureInfo.InvariantCulture).ToString().Substring(0, 2));
+                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 4));
             }
-            List<string> listValues = new List<string> {
-                "42","45","40","120","81","83","60","5"
-            };
+            List<string> listValues = new List<string>();
+            foreach (string date in listLabels)
+            {
+                int i = 0;
+                foreach (JObject oefening in weekOef)
+                {
+                    if (date == DateTime.Parse(oefening["Datum"].ToString()).DayOfWeek.ToString().Substring(0, 4))
+                    {
+                        i++;
+                    }
+                }
+                listValues.Add(i.ToString());
+            }
 
             List<Entry> entriesOef = new List<Entry> { };
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    float value = float.Parse(listValues[i]);
+            for (int i = 0; i < listLabels.Count(); i++)
+            {
+                float value = float.Parse(listValues[i]);
 
             //    entriesOef.Add(new Entry(value)
             //    {
