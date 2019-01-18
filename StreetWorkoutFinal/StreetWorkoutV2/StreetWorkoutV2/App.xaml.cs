@@ -15,7 +15,7 @@ namespace StreetWorkoutV2
             if (Application.Current.Properties.ContainsKey("Naam") && Application.Current.Properties["Naam"] != null)
             {
 
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new LogboekPage());
 
             }
             else
