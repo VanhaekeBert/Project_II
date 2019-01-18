@@ -25,10 +25,20 @@ namespace StreetWorkoutV2.View
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
-            ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
-            ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Compleet.png");
+            //ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
+            //ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Compleet.png");
+            List<int> repetitions = new List<int>();
+            repetitions.Add(13);
+            repetitions.Add(15);
+            repetitions.Add(15);
+            Logboek logboek = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Makkelijk", Total_hearts_given = 3, ExerciseRepetitions = repetitions };
+            NameToestel.BindingContext = logboek;
+            Moeilijkheidsgraad.BindingContext = logboek;
+            Repetition1.BindingContext = logboek;
+            Repetition2.BindingContext = logboek;
+            Repetition3.BindingContext = logboek;
 
-             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Uncolored.png");
+            var picUncolored = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Uncolored.png");
 
             imgRatingHeart1.Source = picUncolored;
             imgRatingHeart2.Source = picUncolored;
@@ -218,16 +228,16 @@ namespace StreetWorkoutV2.View
                     ValueLabel = listValues[i]
                 });
             }
-            chartHartslag.Chart = new LineChart()
-            {
-                Entries = entriesOef,
-                BackgroundColor = SKColors.Transparent,
-                PointSize = 22,
-                LabelTextSize = 22,
-                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelColor = SKColor.Parse("#FFFFFF"),
-            };
+            //chartHartslag.Chart = new LineChart()
+            //{
+            //    Entries = entriesOef,
+            //    BackgroundColor = SKColors.Transparent,
+            //    PointSize = 22,
+            //    LabelTextSize = 22,
+            //    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+            //    LabelOrientation = Microcharts.Orientation.Horizontal,
+            //    LabelColor = SKColor.Parse("#FFFFFF"),
+            //};
         }
         
         private async void Button_Clicked_1(object sender, EventArgs e)

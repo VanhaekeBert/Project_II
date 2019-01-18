@@ -52,7 +52,7 @@
                 </StackLayout>
                 <ScrollView VerticalOptions="CenterAndExpand" Grid.Row="3" Grid.ColumnSpan="2"  >
                     <StackLayout Margin="24,0,24,0" Spacing="0" VerticalOptions="Start">
-                        <Frame CornerRadius="10" HeightRequest="200" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,6,0,24" Padding="0">
+                        <!--<Frame CornerRadius="10" HeightRequest="200" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,6,0,24" Padding="0">
                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
@@ -60,7 +60,7 @@
                                     <Label Margin="24,12,0,12" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hartslag doorheen de oefening" TextColor="White"/>
                             <forms:ChartView x:Name="chartHartslag" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
-                        <!-- Grafiek-->
+                        --><!-- Grafiek--><!--
                     </renderers:GradientLayout>
                 </Frame>
                 <Grid VerticalOptions="Start"  ColumnSpacing="10">
@@ -109,14 +109,55 @@
                             </StackLayout>
                         </renderers:GradientLayout>
                     </Frame>
-                </Grid>
-                <StackLayout Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,24,0,0">
-                    <Label  FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hoe voelde deze oefening aan?" TextColor="White" Margin="-2,0,0,5"/>
-                    <custom:CustomFrame  HasShadow="True" CornerRadius="10" HeightRequest="60" Padding="0">
-                        <renderers:GradientLayout
+                </Grid>-->
+                        <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Margin="0,140,0,0">
+                        <Label  FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Uw logboek ingave." TextColor="{StaticResource LightColor}"/>
+                        <custom:CustomFrame CornerRadius="10" Padding="0" BackgroundColor="#484E6D">
+                            <renderers:GradientLayout
+                                            ColorsList="#484E6D,#2D324B"
+                                            Mode="ToTopLeft">
+                                <Grid  Padding="0" Margin="0" RowSpacing="0" HeightRequest="100" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                    <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                        <StackLayout Grid.ColumnSpan="3" Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                            <Label VerticalOptions="Center" x:Name="NameToestel" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                            <Label VerticalOptions="Center" x:Name="Moeilijkheidsgraad" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" Margin=" 0,3,0,0" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                        </StackLayout>
+                                        <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="20" TextColor="{StaticResource LightColor}" />
+                                                    <Span Text="{Binding ExerciseRepetitions[0]}" x:Name="Repetition1" FontFamily="{StaticResource BoldFont}"  FontSize="20" TextColor="{StaticResource Maincolor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="20" TextColor="{StaticResource LightColor}" />
+                                                    <Span Text="{Binding ExerciseRepetitions[1]}" x:Name="Repetition2" FontFamily="{StaticResource BoldFont}"  FontSize="20" TextColor="LightGreen"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Start">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="20" TextColor="{StaticResource LightColor}" />
+                                                    <Span Text="{Binding ExerciseRepetitions[2]}" x:Name="Repetition3" FontFamily="{StaticResource BoldFont}"  FontSize="20" TextColor="LightGreen"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </renderers:GradientLayout>
+                        </custom:CustomFrame>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,24,0,0">
+                            <Label  FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hoe voelde deze oefening aan?" TextColor="{StaticResource LightColor}"/>
+                            <custom:CustomFrame  HasShadow="True" CornerRadius="10" HeightRequest="60" Padding="0">
+                                <renderers:GradientLayout
                                             ColorsList="#484E6D,#2E334D"
                                             Mode="ToTopLeft">
-                            <StackLayout Margin="0,10" Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <StackLayout Margin="0,10" Spacing="10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                         <ff:CachedImage x:Name="imgRatingHeartFull1" WidthRequest="40" ></ff:CachedImage>
                                         <ff:CachedImage x:Name="imgRatingHeartFull2" WidthRequest="40" ></ff:CachedImage>
                                         <ff:CachedImage x:Name="imgRatingHeartFull3" WidthRequest="40" ></ff:CachedImage>
@@ -126,13 +167,13 @@
                                         <ff:CachedImage x:Name="imgRatingHeart2" WidthRequest="40" ></ff:CachedImage>
                                         <ff:CachedImage x:Name="imgRatingHeart3" WidthRequest="40" ></ff:CachedImage>
                                         <ff:CachedImage x:Name="imgRatingHeart4" WidthRequest="40" ></ff:CachedImage>
-                                        <ff:CachedImage x:Name="imgRatingHeart5" WidthRequest="40"></ff:CachedImage>                                        
-                            </StackLayout>
-                            <!-- Grafiek-->
-                        </renderers:GradientLayout>
-                    </custom:CustomFrame>                    
-                </StackLayout>
-                <Grid  Grid.Row="5" Grid.ColumnSpan="2" Margin="24"  VerticalOptions="StartAndExpand">
+                                        <ff:CachedImage x:Name="imgRatingHeart5" WidthRequest="40"></ff:CachedImage>
+                                    </StackLayout>
+                                    <!-- Grafiek-->
+                                </renderers:GradientLayout>
+                            </custom:CustomFrame>
+                        </StackLayout>
+                        <Grid  Grid.Row="5" Grid.ColumnSpan="2" Margin="24"  VerticalOptions="StartAndExpand">
                             <Button Grid.Column="0" Text="Meer oefeningen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="Button_Clicked"/>
                     <Button Grid.Column="1" Text="Home" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="100" HeightRequest="45" Clicked="Button_Clicked_1"/>
                 </Grid>
