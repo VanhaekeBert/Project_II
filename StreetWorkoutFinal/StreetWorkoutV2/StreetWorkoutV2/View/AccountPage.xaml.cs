@@ -32,25 +32,21 @@ namespace StreetWorkoutV2.View
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             Username.Text = Application.Current.Properties["Naam"].ToString();
             NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
-            Task.Run(async () =>
+            foreach (JObject oefening in (List<JObject>)Application.Current.Properties["Oefeningen"])
             {
-                List<JObject> oefeningen = await DBManager.GetOefeningenData(Application.Current.Properties["Naam"].ToString());
-                foreach (JObject oefening in oefeningen)
+                if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd"))+1)).Contains(int.Parse(oefening["Datum"].ToString().Substring(0,2))))
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd"))+1)).Contains(int.Parse(oefening["Datum"].ToString().Substring(0,2))))
-                    {
-                        weekOef.Add(oefening);
-                    }
-                    if (int.Parse(DateTime.Now.ToString("MM")) == int.Parse(oefening["Datum"].ToString().Substring(3, 2)))
-                    {
-                        maandOef.Add(oefening);
-                    }
+                    weekOef.Add(oefening);
                 }
-                LblOefWeek.Text = weekOef.Count().ToString();
-                LblOefMaand.Text = maandOef.Count().ToString();
-                MakeEntriesKcal();
-                MakeEntriesOef();
-            });
+                if (int.Parse(DateTime.Now.ToString("MM")) == int.Parse(oefening["Datum"].ToString().Substring(3, 2)))
+                {
+                    maandOef.Add(oefening);
+                }
+            }
+            LblOefWeek.Text = weekOef.Count().ToString();
+            LblOefMaand.Text = maandOef.Count().ToString();
+            MakeEntriesKcal();
+            MakeEntriesOef();
             this.BackgroundColor = Color.FromHex("2B3049");
             
 
@@ -94,15 +90,10 @@ namespace StreetWorkoutV2.View
                 Potlood.IsVisible = true;
             };
 
-
-            Task.Run(async () =>
-            {
-                var data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                weightInput.Text = data["Gewicht"].ToString();
-                ageInput.Text = data["Leeftijd"].ToString();
-                heightInput.Text = data["Lengte"].ToString();
-                waterInput.Text = data["WaterDoel"].ToString();
-            });
+            weightInput.Text = Application.Current.Properties["Gewicht"].ToString();
+            ageInput.Text = Application.Current.Properties["Leeftijd"].ToString();
+            heightInput.Text = Application.Current.Properties["Lengte"].ToString();
+            waterInput.Text = Application.Current.Properties["WaterDoel"].ToString();
         }
 
         private void MakeEntriesKcal()
@@ -181,53 +172,51 @@ namespace StreetWorkoutV2.View
             {
                 float value = float.Parse(listValues[i]);
 
-            //    entriesOef.Add(new Entry(value)
-            //    {
-            //        Color = SKColor.Parse(listKleuren[i]),
-            //        Label = listLabels[i],
-            //        ValueLabel = listValues[i]
-            //    });
-            //}
+                entriesOef.Add(new Entry(value)
+                {
+                    Color = SKColor.Parse(listKleuren[i]),
+                    Label = listLabels[i],
+                    ValueLabel = listValues[i]
+                });
+            }
             chartOef.Chart = new LineChart()
-            {
-                Entries = entriesOef,
-                BackgroundColor = SKColors.Transparent,
-                PointSize = 22,
-                LabelTextSize = 22,
-                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelColor = SKColor.Parse("#FFFFFF"),
-            };
-        }
+                {
+                    Entries = entriesOef,
+                    BackgroundColor = SKColors.Transparent,
+                    PointSize = 22,
+                    LabelTextSize = 22,
+                    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+                    LabelOrientation = Microcharts.Orientation.Horizontal,
+                    LabelColor = SKColor.Parse("#FFFFFF"),
+                };
+            }
 
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            LoadingIndicator.IsRunning = true;
-
-            JObject user = new JObject();
-            
-            user["Lengte"] = heightInput.Text.ToString();
-            user["Gewicht"] = weightInput.Text.ToString();
-            user["Leeftijd"] = ageInput.Text.ToString();
-            user["WaterDoel"] = waterInput.Text.ToString();
-            weightInput.Text = user["Gewicht"].ToString();
-            ageInput.Text = user["Leeftijd"].ToString();
-            heightInput.Text = user["Lengte"].ToString();
-            waterInput.Text = user["WaterDoel"].ToString();
-            await DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
-                LoadingIndicator.IsRunning = false;
-            var vUpdatedPage = new AccountPage();
-            Navigation.InsertPageBefore(vUpdatedPage, this);
-            await Navigation.PopAsync();
-
-
-
-        }
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
 
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            LoadingIndicator.IsRunning = true;
+            JObject user = new JObject();
+            user["Lengte"] = heightInput.Text.ToString();
+            user["Gewicht"] = weightInput.Text.ToString();
+            user["Leeftijd"] = ageInput.Text.ToString();
+            user["WaterDoel"] = waterInput.Text.ToString();
+            user["Naam"] = NameChangeEntry.Text.ToString();
+            Application.Current.Properties["Lengte"] = user["Lengte"];
+            Application.Current.Properties["Gewicht"] = user["Gewicht"];
+            Application.Current.Properties["Leeftijd"] = user["Leeftijd"];
+            Application.Current.Properties["WaterDoel"] = user["WaterDoel"];
+            await Application.Current.SavePropertiesAsync();
+            DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
+            Application.Current.Properties["Naam"] = user["Naam"];
+            await Application.Current.SavePropertiesAsync();
+            LoadingIndicator.IsRunning = false;
+            var vUpdatedPage = new AccountPage();
+            Navigation.InsertPageBefore(vUpdatedPage, this);
+            await Navigation.PopAsync();
+        }
     }
 }

@@ -19,6 +19,19 @@ namespace StreetWorkoutV2.View
 		public RegisterPage ()
 		{
             InitializeComponent();
+            if (!Application.Current.Properties.ContainsKey("Naam"))
+            {
+                Application.Current.Properties["Naam"] = null;
+            }
+            if (Application.Current.Properties["Naam"] != null)
+            {
+                Task.Run(async () =>
+                {
+                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+                });
+            }
+            else
+            {
                 BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
                 eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                 eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
@@ -40,27 +53,28 @@ namespace StreetWorkoutV2.View
                     })
                 });
 
-            eyeimage2.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() => {
-                    if (PasswordEntryRepeat.IsPassword == true)
-                    {
-                        PasswordEntryRepeat.IsPassword = false;
-                        eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-                    }
-                    else
-                    {
-                        PasswordEntryRepeat.IsPassword = true;
-                        eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-                    }
-                })
-            });
-            Login.GestureRecognizers.Add(new TapGestureRecognizer
+                eyeimage2.GestureRecognizers.Add(new TapGestureRecognizer
+                {
+                    Command = new Command(() => {
+                        if (PasswordEntryRepeat.IsPassword == true)
+                        {
+                            PasswordEntryRepeat.IsPassword = false;
+                            eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        }
+                        else
+                        {
+                            PasswordEntryRepeat.IsPassword = true;
+                            eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        }
+                    })
+                });
+                Login.GestureRecognizers.Add(new TapGestureRecognizer
                 {
                     Command = new Command(async () => {
                         await Navigation.PushAsync(new LoginPage());
                     })
                 });
+            }
         }
 
         private async void LoginTap(Xamarin.Forms.View arg1, object arg2)

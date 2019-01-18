@@ -42,10 +42,11 @@ namespace StreetWorkoutV2
 
         private async void Verwijderen(object sender, EventArgs e)
         {
-            DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
+            await DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
+            await DBManager.DeleteOefeningenData(Application.Current.Properties["Naam"].ToString());
             Application.Current.Properties["Naam"] = null;
             await Application.Current.SavePropertiesAsync();
-            Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new LoginPage());
 
 
         }

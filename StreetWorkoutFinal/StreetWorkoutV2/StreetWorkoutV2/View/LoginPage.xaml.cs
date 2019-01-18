@@ -1,4 +1,5 @@
 ﻿using FormsControls.Base;
+using Newtonsoft.Json.Linq;
 using Rg.Plugins.Popup.Extensions;
 using StreetWorkoutV2.Model;
 using System;
@@ -74,8 +75,20 @@ namespace StreetWorkoutV2.View
                 bool Login = await DBManager.LoginAsync(UserNameEntry.Text.Replace(" ", ""), DBManager.Encrypt(PasswordEntry.Text));
                 if (Login)
                 {
-                    Application.Current.Properties["Naam"] = UserNameEntry.Text.Replace(" ", "");
-                    await Application.Current.SavePropertiesAsync ();
+                    JObject gebruiker = await DBManager.GetUserData(UserNameEntry.Text.Replace(" ", ""), "Naam");
+                    List<JObject> oefeningen = await DBManager.GetOefeningenData(UserNameEntry.Text.Replace(" ", ""));
+                    Application.Current.Properties["Naam"] = gebruiker["Naam"];
+                    Application.Current.Properties["Email"] = gebruiker["Email"];
+                    Application.Current.Properties["Leeftijd"] = gebruiker["Leeftijd"];
+                    Application.Current.Properties["Lengte"] = gebruiker["Lengte"];
+                    Application.Current.Properties["Gewicht"] = gebruiker["Gewicht"];
+                    Application.Current.Properties["Achievements"] = gebruiker["Achievements"];
+                    Application.Current.Properties["API"] = gebruiker["API"];
+                    Application.Current.Properties["Token"] = gebruiker["Token"];
+                    Application.Current.Properties["WaterDoel"] = gebruiker["WaterDoel"];
+                    Application.Current.Properties["WaterGedronken"] = gebruiker["WaterGedronken"];
+                    Application.Current.Properties["Oefeningen"] = oefeningen;
+                    await Application.Current.SavePropertiesAsync();
                     await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else

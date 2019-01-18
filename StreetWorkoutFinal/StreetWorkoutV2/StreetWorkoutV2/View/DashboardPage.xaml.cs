@@ -36,14 +36,14 @@ namespace StreetWorkoutV2.View
             one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
-            Task.Run(async () =>
+            if (Application.Current.Properties["WaterDoel"].ToString() != null)
             {
-                JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                if (data["WaterDoel"].ToString() != null)
+                if (Application.Current.Properties["WaterGedronken"].ToString() != null)
                 {
-                    lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
+                    lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
                 }
-            });
+                lblWaterTotaal.Text = " / " + Application.Current.Properties["WaterDoel"].ToString() + " ";
+            }
 
             WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -213,12 +213,14 @@ namespace StreetWorkoutV2.View
             Popup.IsVisible = false;
         }
 
-        private void SubmitWaterInput_Clicked(object sender, EventArgs e)
+        private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
         {
             int water_current = int.Parse(lblWaterGedronken.Text);
             int water_added = int.Parse(TotalWater.Text);
             int water_now = water_current + water_added;
-            lblWaterGedronken.Text = water_now.ToString();
+            Application.Current.Properties["WaterGedronken"] = water_now.ToString();
+            await Application.Current.SavePropertiesAsync();
+            lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
             PopupWater.IsEnabled = false;
             PopupWater.IsVisible = false;
         }

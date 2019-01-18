@@ -22,6 +22,7 @@ namespace StreetWorkoutV2.View
 		public OefeningPage (Oefening oefening, string aantal)
 		{
 			InitializeComponent ();
+            Application.Current.Properties["StartWorkout"] = DateTime.Now;
             AantalKeeper = aantal;
             oefeningKeeper = oefening;  
 

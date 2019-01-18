@@ -26,8 +26,8 @@ namespace StreetWorkoutV2_Bert.View
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.Profile_BackCover.png");
             Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2_Bert.Asset.ImageSelect.png");
-            Username.Text = Application.Current.Properties["Naam"].ToString();
-            NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
+            //Username.Text = Application.Current.Properties["Naam"].ToString();
+            //NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
             this.BackgroundColor = Color.FromHex("2B3049");
             MakeEntriesKcal();
             MakeEntriesOef();

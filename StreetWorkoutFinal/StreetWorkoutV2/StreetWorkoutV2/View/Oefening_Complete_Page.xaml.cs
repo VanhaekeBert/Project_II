@@ -21,6 +21,7 @@ namespace StreetWorkoutV2.View
 		public Oefening_Complete_Page ()
 		{
 			InitializeComponent ();
+            Application.Current.Properties["EndWorkout"] = DateTime.Now;
             BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");

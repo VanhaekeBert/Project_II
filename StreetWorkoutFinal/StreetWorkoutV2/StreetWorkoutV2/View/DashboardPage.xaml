@@ -37,7 +37,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="StartAndExpand" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="24,14,24,0">
                     <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Dashboard" TextColor="White"/>
-                    <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo, Bert" TextColor="White" x:Name="lblwelkom"/>
+                    <Label FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo" TextColor="White" x:Name="lblwelkom"/>
                 </StackLayout>
                 <Grid VerticalOptions="CenterAndExpand" Grid.Row="2" Grid.ColumnSpan="2"  Margin="24,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
@@ -79,7 +79,7 @@
                                             <FormattedString>
 
                                                 <Span FontSize="17" FontFamily="{StaticResource BoldFont}" Text="0" x:Name="lblWaterGedronken"/>
-                                                <Span FontSize="17" FontFamily="{StaticResource BoldFont}" Text=" / -- " x:Name="lblWaterTotaal"/>
+                                                <Span FontSize="17" FontFamily="{StaticResource BoldFont}" Text=" / 0 " x:Name="lblWaterTotaal"/>
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text="ml"/>
                                             </FormattedString>
                                         </Label.FormattedText>

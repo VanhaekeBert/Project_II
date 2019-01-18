@@ -40,7 +40,6 @@ namespace StreetWorkoutV2.Model
             string url = "https://streetworkout.azurewebsites.net/api/MailService";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
-            Debug.WriteLine(responseString.ToString());
             return (responseString.ToString());
         }
 
@@ -143,7 +142,6 @@ namespace StreetWorkoutV2.Model
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
             string url = "https://streetworkout.azurewebsites.net/api/DeleteUserData";
             var message = await client.PostAsync(url, httpContent);
-            var responseString = await message.Content.ReadAsStringAsync();
         }
 
         public static async Task<bool> PostOefening(JObject data)
@@ -170,6 +168,18 @@ namespace StreetWorkoutV2.Model
             var responseString = await message.Content.ReadAsStringAsync();
             List<JObject> gegevens = JsonConvert.DeserializeObject<List<JObject>>(responseString.ToString());
             return gegevens;
+        }
+
+        public static async Task DeleteOefeningenData(string naam)
+        {
+            JObject data = new JObject();
+            data["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(data);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/DeleteOefeningenData";
+            var message = await client.PostAsync(url, httpContent);
         }
     }
 }
