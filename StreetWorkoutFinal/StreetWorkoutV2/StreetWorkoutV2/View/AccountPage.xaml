@@ -21,19 +21,7 @@
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             <ScrollView x:Name="MainScroll">
                 <RelativeLayout Padding="0">
-                    <!-- Background -->
-                    <!--
-                    <ff:CachedImage                        
-                        x:Name="BckgrImage"
-                        VerticalOptions="Start"
-                        HorizontalOptions="FillAndExpand"
-                        
-Aspect="AspectFill"                             
-                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=30}"
-        RelativeLayout.WidthConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Width,Factor=1}"
-        RelativeLayout.HeightConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Height,Factor=10,Constant=100}"
-                  />-->
-                    <!-- ================= -->
+
                     <ff:CachedImage                        
                         x:Name="BckgrImage"
                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-370}"
@@ -60,7 +48,7 @@ Aspect="AspectFill"
                                 <local1:CustomSmallEntry Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5" x:Name="NameChangeEntry" HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
                                 <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" x:Name="NameChanger">
                                     <Label FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="23,16,0,0"/>
-                                    <Image x:Name="Potlood" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
+                                    <ff:CachedImage x:Name="Potlood" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
                                 </StackLayout>
                             </Grid>
                         </Grid>
@@ -233,7 +221,7 @@ Aspect="AspectFill"
                                 </renderers:GradientLayout>
                             </Frame>
                             <ActivityIndicator x:Name="LoadingIndicator" Grid.Row="4" Color="White" IsRunning="false" HeightRequest="20" Margin="0,0,0,20" />
-                            <Button Grid.Row="4" Text="Opslaan" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Button_Clicked"/>
+                            <Button Grid.Row="4" Text="Opslaan" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="140" HeightRequest="45" Clicked="Button_Clicked"/>
                         </StackLayout>
                     </StackLayout>
                 </RelativeLayout>

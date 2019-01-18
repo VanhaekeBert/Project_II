@@ -14,6 +14,7 @@ namespace StreetWorkoutV2.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OefeningPage : AnimationPage
 	{
+        //static int count = 0;
         string AantalKeeper = "";
         private int countdownremaining = 0;
         private bool _isRunning = true;
@@ -59,8 +60,13 @@ namespace StreetWorkoutV2.View
             {
                 herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
             }
-
-            oefening.Beschrijving = oefening.Beschrijving.Replace(". ", ". " + Environment.NewLine);
+        
+            //if (count == 0) ;
+            //{
+            //    oefening.Beschrijving = oefening.Beschrijving.Replace(". ", ". " + Environment.NewLine);
+            //    count++;
+            //}
+           
             description.Text = oefening.Beschrijving;
             backbutton.GestureRecognizers.Add(new TapGestureRecognizer
             {

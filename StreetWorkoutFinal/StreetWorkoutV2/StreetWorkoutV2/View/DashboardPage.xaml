@@ -55,7 +55,7 @@
                                     <Label TextColor="White">
                                         <Label.FormattedText >
                                             <FormattedString>
-                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="312" />
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="0" />
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" kcal"/>
                                             </FormattedString>
                                         </Label.FormattedText>
@@ -138,7 +138,7 @@
                  VerticalOptions="FillAndExpand">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" HeightRequest="300"  Padding="0" x:Name="WaterPopUpFrame">
+                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" HeightRequest="270"  Padding="0" x:Name="WaterPopUpFrame">
                         <renderers:GradientLayout
                                             ColorsList="#448CEE,#44C5EE"
                                             Mode="ToTopLeft">
@@ -156,8 +156,8 @@
                                         <ColumnDefinition Width="4*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Row="0" Grid.Column="0" Text="Water toevoegen:" FontFamily="{StaticResource NormalFont}" FontSize="24" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                    <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1"  HeightRequest="30" Text="0" x:Name="TotalWater" VerticalOptions="Center" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Darkcolor}" FontSize="14" Margin="0,0,0,8" Keyboard="Numeric" FontFamily="{StaticResource NormalFont}"  HorizontalTextAlignment="Center"/>
-                                    <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,0,12,0" VerticalOptions="Center" Text="ml" FontFamily="{StaticResource Darkcolor}"/>
+                                    <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1"  HeightRequest="36" Text="0" x:Name="TotalWater" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Darkcolor}" FontSize="14" Margin="0,3,0,8" Keyboard="Numeric" FontFamily="{StaticResource NormalFont}"  HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,-2,12,0" VerticalOptions="Center" Text="ml" FontFamily="{StaticResource Darkcolor}"/>
                                 </Grid>
 
                                 <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0" x:Name="click_one_glass">
@@ -176,7 +176,7 @@
                                     <Label Text="1000ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
 
-                                <Button Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HeightRequest="50" WidthRequest="175" HorizontalOptions="Center" Text="Bevestigen" BorderRadius="100" BackgroundColor="Transparent" BorderColor="{StaticResource LightColor}" FontSize="20" BorderWidth="2" x:Name="SubmitWaterInput" TextColor="{StaticResource LightColor}" FontFamily="{StaticResource NormalFont}" Clicked="SubmitWaterInput_Clicked"/>
+                                <Button Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HeightRequest="40" WidthRequest="145" HorizontalOptions="Center" Text="Bevestigen" BorderRadius="100" BackgroundColor="Transparent" BorderColor="{StaticResource LightColor}" FontSize="18" BorderWidth="2" x:Name="SubmitWaterInput" TextColor="{StaticResource LightColor}" FontFamily="{StaticResource NormalFont}" Clicked="SubmitWaterInput_Clicked"/>
                             </Grid>
 
                         </renderers:GradientLayout>

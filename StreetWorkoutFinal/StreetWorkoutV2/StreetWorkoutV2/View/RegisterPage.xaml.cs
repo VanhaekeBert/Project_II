@@ -77,9 +77,14 @@ namespace StreetWorkoutV2.View
             }
         }
 
-        private async void LoginTap(Xamarin.Forms.View arg1, object arg2)
+        //private async void LoginTap(Xamarin.Forms.View arg1, object arg2)
+        //{
+        //    await Navigation.PushAsync(new LoginPage());
+        //}
+
+        protected override bool OnBackButtonPressed()
         {
-            await Navigation.PushAsync(new LoginPage());
+            return true;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -145,6 +150,7 @@ namespace StreetWorkoutV2.View
                 ErrorLabel.Text = "Vul alle gegevens in.";
                 ErrorLabel.IsVisible = true;
             }
+
         }
     }
 }

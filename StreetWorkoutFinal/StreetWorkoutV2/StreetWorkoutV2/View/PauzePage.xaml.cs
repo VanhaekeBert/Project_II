@@ -63,6 +63,7 @@ namespace StreetWorkoutV2.View
                 });
                 if (countdownremaining == 60)
                 {
+                    GaDoor.Text="Ga nu door";
                     return false;
                 }
                 return true;

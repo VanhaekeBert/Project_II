@@ -9,7 +9,7 @@
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     NavigationPage.HasNavigationBar="False">
     <controls:AnimationPage.PageAnimation>
-        <controls:PushPageAnimation  Duration="Short" Subtype="FromBottom"/>
+        <controls:PushPageAnimation  Duration="Zero" Subtype="FromBottom"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">

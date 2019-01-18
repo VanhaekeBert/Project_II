@@ -73,7 +73,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="100"/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="16"  Margin="24,12" TextColor="{StaticResource LightColor}" Text="Ga meteen door naar volgende reeks" VerticalOptions="Center"/>
+                                <Label Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="16"  Margin="24,12" TextColor="{StaticResource LightColor}" Text="Ga meteen door naar volgende reeks" VerticalOptions="Center" x:Name="GaDoor" />
                                 <custom:CustomFrame  CornerRadius="10" Grid.Row="1" Padding="0" HeightRequest="100" BackgroundColor="#484E6D" Margin="0">
                                     <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
                                         <Image x:Name="OefeningImage" Aspect="AspectFill" Opacity="0.6"/>

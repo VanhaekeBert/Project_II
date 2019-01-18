@@ -169,6 +169,11 @@ namespace StreetWorkoutV2.View
                     TotalWater.Text = Water_update.ToString();
                 })
             });
+            Task.Run(async () =>
+            {
+                JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
+                lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
+            });
 
         }
 
