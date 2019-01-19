@@ -1,13 +1,8 @@
 ﻿using FormsControls.Base;
-using Newtonsoft.Json;
-using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,263 +11,252 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkoutV2.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ExercisePage : AnimationPage
-	{
-        PickerClass _SelectedItem;
-        List<Oefening> _FinalList;
-        string _json;
-        List<Oefening> Oefeningslijst = new List<Oefening>();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ExercisePage : AnimationPage
+    {
+        //static int count = 0;
+        string AantalKeeper = "";
+        private int countdownremaining = 0;
+        private bool _isRunning = true;
+        private bool _isSlideshowRunning = false;
+        Oefening oefeningKeeper = new Oefening();
+        public ExercisePage(Oefening oefening, string aantal)
+        {
+            InitializeComponent();
+            Application.Current.Properties["StartWorkout"] = DateTime.Now;
+            AantalKeeper = aantal;
+            oefeningKeeper = oefening;
 
-        public ExercisePage (PickerClass picker, string moeilijkheidsgraad)
-		{
-			InitializeComponent ();
-            BackButtonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
-            _SelectedItem = picker;
-            Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
-            Titlelabel.Text = picker.Name;
-            
-            string json = InlezenJson();
-            
-            List<Oefening> Semifinallijst = CreateSemiFinalLijst(json, moeilijkheidsgraad);
-            List<Oefening> Finallijst = CreateFinalLijst(picker,Semifinallijst);
-            Oefeningen.ItemsSource = Finallijst;
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
+            OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
+            OefeningImage.Source = oefening.AfbeeldingenResource[0];
 
-
-            _json = json;
-            _FinalList = Finallijst;
-            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
+            if (oefening.AfbeeldingenResource.Count <= 1)
             {
-                Command = new  Command(async() => {
-                    await backbutton.FadeTo(0.3, 150);
-                    await backbutton.FadeTo(1, 150);
-                    await Navigation.PopAsync();
+                SlideshowToggle_Start.IsVisible = false;
+                SlideshowToggle_Stop.IsVisible = false;
+            }
+            else
+            {
+                OefeningImage2.Source = oefening.AfbeeldingenResource[1];
+            }
+
+            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
+
+            aantal_keer.Text = AantalKeeper;
+            if (AantalKeeper != "1/3")
+            {
+                btnBack.IsVisible = false;
+                btnBack.IsEnabled = false;
+            }
+
+            //Oefeningnaam.Text = oefening.Oefeningnaam; 
+
+            //if (oefening.Herhalingen == 0)
+            //{
+            //    herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
+            //}
+            //else
+            //{
+            //    herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
+            //}
+
+            //if (count == 0) ;
+            //{
+            //    oefening.Beschrijving = oefening.Beschrijving.Replace(". ", ". " + Environment.NewLine);
+            //    count++;
+            //}
+
+            description.Text = oefening.Beschrijving;
+            btnBack.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
+                {
+                    if (AantalKeeper == "1/3")
+                    {
+
+                        await Navigation.PopAsync();
+                    }
                 })
             });
+            // -------------------------------------------------------------------
+            // START OF PLAY PAUSE CODE ------------------------------------------
+            // -------------------------------------------------------------------
 
-            Popup.GestureRecognizers.Add(
-            new TapGestureRecognizer()
+            RunTimer();
+
+            Pause_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.PauseButton.png");
+            Play_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.PlayButton.png");
+
+            TapGestureRecognizer Pause_Play_Gesture = new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    Popup.IsEnabled = false;
-                    Popup.IsVisible = false;
+                Command = new Command(async () =>
+                {
+
+                    _isRunning = !_isRunning;
+                    if (_isRunning)
+                    {
+                        Pause_Button.IsEnabled = true;
+                        Pause_Button.IsVisible = true;
+                        Play_Button.IsEnabled = false;
+                        Play_Button.IsVisible = false;
+                        RunTimer();
+
+
+                    }
+                    else
+                    {
+                        Play_Button.IsEnabled = true;
+                        Play_Button.IsVisible = true;
+                        Pause_Button.IsEnabled = false;
+                        Pause_Button.IsVisible = false;
+
+
+                    }
                 })
-            });
+            };
+            Pause_Button.GestureRecognizers.Add(Pause_Play_Gesture);
+            Play_Button.GestureRecognizers.Add(Pause_Play_Gesture);
+            // -------------------------------------------------------------------
+            // END OF PLAY PAUSE CODE ------------------------------------------
+            // -------------------------------------------------------------------
 
-            DataFrame.GestureRecognizers.Add(
-            new TapGestureRecognizer()
+
+            // -------------------------------------------------------------------
+            // START OF SLIDESHOW CODE ------------------------------------------
+            // -------------------------------------------------------------------
+            SlideshowToggle_Stop.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Pause.png");
+            SlideshowToggle_Start.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Play.png");
+            TapGestureRecognizer Slideshow_Gesture = new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
 
+                    _isSlideshowRunning = !_isSlideshowRunning;
+                    if (_isSlideshowRunning)
+                    {
+                        SlideshowToggle_Stop.IsEnabled = true;
+                        SlideshowToggle_Stop.IsVisible = true;
+                        SlideshowToggle_Start.IsEnabled = false;
+                        SlideshowToggle_Start.IsVisible = false;
+                        RunSlideshow();
+
+
+                    }
+                    else
+                    {
+                        SlideshowToggle_Start.IsEnabled = true;
+                        SlideshowToggle_Start.IsVisible = true;
+                        SlideshowToggle_Stop.IsEnabled = false;
+                        SlideshowToggle_Stop.IsVisible = false;
+
+
+                    }
                 })
-            });
-
-            Oefeningen.ItemTapped += async (o, e) =>
-            {
-                var myList = (ListView)o;
-                var myAction = (myList.SelectedItem as Oefening);
-                await Navigation.PushAsync(new OefeningPage(myAction, "1/3"));
-                //await popupView.PushAsync(new ExercisePage());
-                myList.SelectedItem = null;
             };
 
-            ChangeDifficulty.GestureRecognizers.Add(new TapGestureRecognizer
+            SlideshowToggle_Start.GestureRecognizers.Add(Slideshow_Gesture);
+            SlideshowToggle_Stop.GestureRecognizers.Add(Slideshow_Gesture);
+            // -------------------------------------------------------------------
+            // END OF SLIDESHOW CODE --------------------------------------------
+            // -------------------------------------------------------------------
+
+        }
+
+        //public ExercisePage()
+        //{
+        //    InitializeComponent();
+
+        //    imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
+        //    OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
+
+        //    //Back button + heartbeat
+
+
+
+        // -------------------------------------------------------------------
+        // START OF PLAY PAUSE TIMER CODE ------------------------------------
+        // -------------------------------------------------------------------
+
+        public void RunTimer()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                Command = new Command(() =>
+                countdownremaining += 1;
+                Device.BeginInvokeOnMainThread(() =>
                 {
+                    TimerText.Text = (countdownremaining / 60).ToString("00") + " : " + (countdownremaining % 60).ToString("00");
 
-                    List<Oefening> listmakkelijk1 = CreateSemiFinalLijst(_json, "gemakkelijk");
-                    List<Oefening> listmakkelijk2 = CreateFinalLijst(_SelectedItem, listmakkelijk1);
 
-                    List<Oefening> listgemiddeld1 = CreateSemiFinalLijst(_json, "gemiddeld");
-                    List<Oefening> listgemiddeld2 = CreateFinalLijst(_SelectedItem, listgemiddeld1);
+                });
 
-                    List<Oefening> listmoeilijk1 = CreateSemiFinalLijst(_json, "moeilijk");
-                    List<Oefening> listmoeilijk2 = CreateFinalLijst(_SelectedItem, listmoeilijk1);
-
-                    if (listmakkelijk2.Count == 0)
-                    {
-                        makkelijk.Opacity = 0.5;
-                    }
-                    if (listgemiddeld2.Count == 0)
-                    {
-                        gemiddeld.Opacity = 0.5;
-                    }
-                    if (listmoeilijk2.Count == 0)
-                    {
-                        moeilijk.Opacity = 0.5;
-                    }
-
-                    Popup.IsEnabled = true;
-                    Popup.IsVisible = true;
-                })
+                return _isRunning;
             });
         }
+        // -------------------------------------------------------------------
+        // END OF PLAY PAUSE TIMER CODE --------------------------------------
+        // -------------------------------------------------------------------
 
-        private List<Oefening> CreateFinalLijst(PickerClass picker, List<Oefening> semifinallijst)
+        // -------------------------------------------------------------------
+        // START OF SLIDESHOW TIMER CODE -------------------------------------
+        // -------------------------------------------------------------------
+        bool slideshowstate = false;
+
+        public void RunSlideshow()
         {
-            List<Oefening> Finallijst = new List<Oefening>();
-            if (picker.Type == "Spiergroep")
+            Device.StartTimer(TimeSpan.FromSeconds(0.8), () =>
             {
-                foreach (Oefening oefening in semifinallijst)
+                slideshowstate = !slideshowstate;
+                Device.BeginInvokeOnMainThread(() =>
                 {
-                    if (oefening.Spiergroep == picker.Name)
+                    if (slideshowstate)
                     {
-                        Finallijst.Add(oefening);
+                        OefeningImage2.IsVisible = true;
                     }
-                }
-                return Finallijst;
-            }
-            else if (picker.Type == "Toestel")
+                    else
+                    {
+                        OefeningImage2.IsVisible = false;
+
+                    }
+
+
+                });
+
+                return _isSlideshowRunning;
+            });
+        }
+        // -------------------------------------------------------------------
+        // END OF SLIDESHOW TIMER CODE ---------------------------------------
+        // -------------------------------------------------------------------
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            if (AantalKeeper == "1/3" || AantalKeeper == "2/3")
             {
-                foreach (Oefening oefening in semifinallijst)
+                if (Application.Current.Properties.ContainsKey("WorkTime"))
                 {
-                    if (oefening.Toestel == picker.Name)
-                    {
-                        Finallijst.Add(oefening);
-                    }
+                    string workout = Application.Current.Properties["WorkTime"].ToString();
+                    Application.Current.Properties["WorkTime"] = countdownremaining + int.Parse(workout);
                 }
-                return Finallijst;
-            }
-            else
-            {
-                return Finallijst = semifinallijst;
-            }
-        }
-
-        private List<Oefening> CreateSemiFinalLijst(string json, string moeilijkheidsgraad)
-        {
-
-            Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
-            List<Oefening> Semifinallijst = new List<Oefening>();
-            switch (moeilijkheidsgraad)
-            {
-                case "gemakkelijk":
-                    Moeilijkheidsgraadlabel.Text = "Gemakkelijk";
-                    Application.Current.Properties["Difficulty"] = Moeilijkheidsgraadlabel.Text;
-                    foreach (Oefening oefening in Oefeningslijst)
-                    {
-                        if (oefening.Moeilijkheidsgraad.Contains("Easy"))
-                        {
-                            Semifinallijst.Add(oefening);
-                        }
-                    }
-                    return Semifinallijst;
-                case "gemiddeld":
-                    Moeilijkheidsgraadlabel.Text = "Gemiddeld";
-                    Application.Current.Properties["Difficulty"] = Moeilijkheidsgraadlabel.Text;
-                    foreach (Oefening oefening in Oefeningslijst)
-                    {
-
-                        if (oefening.Moeilijkheidsgraad.Contains("Medium"))
-                        {
-                            Semifinallijst.Add(oefening);
-                        }
-                    }
-                    return Semifinallijst;
-                case "moeilijk":
-                    Moeilijkheidsgraadlabel.Text = "Moeilijk";
-                    Application.Current.Properties["Difficulty"] = Moeilijkheidsgraadlabel.Text;
-                    foreach (Oefening oefening in Oefeningslijst)
-                    {
-                        if (oefening.Moeilijkheidsgraad.Contains("Hard"))
-                        {
-                            Semifinallijst.Add(oefening);
-                        }
-                    }
-                    return Semifinallijst;
-                    
-                default:
-                    Semifinallijst = Oefeningslijst;
-                    return Semifinallijst;
-
-            }
-        }
-
-        private string InlezenJson()
-        {
-            //Inlezen JSON
-
-
-            //bestandnaam? , Pad?
-            // opgelet bovenaan -> using System.Reflection; toevoegen
-            var assembly = typeof(Oefening).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.oefeningenV2.json");
-
-            //bytes uit het bestand gaan inlezen en verwerken
-            StreamReader oSR = new StreamReader(stream);
-
-            string json = oSR.ReadToEnd();
-            return json;
-        }
-
-        private void Makkelijk_Clicked(object sender, EventArgs e)
-        {
-            if (makkelijk.Opacity == 1)
-            {
-                Popup.IsEnabled = false;
-                List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemakkelijk");
-                List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
-                Oefeningen.ItemsSource = list2;
-                //global final list updaten voor textChanged
-                _FinalList = list2;
-                OefeningNaamEntry.Text = "";
-                Popup.IsVisible = false;
-            }
-        }
-
-        private void Gemiddeld_Clicked(object sender, EventArgs e)
-        {
-            if (gemiddeld.Opacity == 1)
-            {
-                Popup.IsEnabled = false;
-                List<Oefening> list1 = CreateSemiFinalLijst(_json, "gemiddeld");
-                List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
-                Oefeningen.ItemsSource = list2;
-                //global final list updaten voor textChanged
-                _FinalList = list2;
-                OefeningNaamEntry.Text = "";
-                Popup.IsVisible = false;
-            }
-        }
-
-        private void Moeilijk_Clicked(object sender, EventArgs e)
-        {
-            if (moeilijk.Opacity == 1)
-            {
-                Popup.IsEnabled = false;
-                List<Oefening> list1 = CreateSemiFinalLijst(_json, "moeilijk");
-                List<Oefening> list2 = CreateFinalLijst(_SelectedItem, list1);
-                Oefeningen.ItemsSource = list2;
-                //global final list updaten voor textChanged
-                _FinalList = list2;
-                OefeningNaamEntry.Text = "";
-                Popup.IsVisible = false;
-            }
-        }
-
-        private void OefeningNaamEntry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            List<Oefening> myOefeningList = new List<Oefening>();
-            if (OefeningNaamEntry.Text != null)
-            {
-                foreach (Oefening oefening in _FinalList)
+                else
                 {
-                    if (oefening.Oefeningnaam.ToLower().Contains(OefeningNaamEntry.Text.ToLower()))
-                    {
-                        myOefeningList.Add(oefening);
-                    }
+                    Application.Current.Properties["WorkTime"] = countdownremaining;
                 }
-                Oefeningen.ItemsSource = myOefeningList;
+                await Navigation.PushAsync(new PausePage(AantalKeeper, oefeningKeeper));
             }
-            else
+            else if (AantalKeeper == "3/3")
             {
-                Oefeningen.ItemsSource = _FinalList;
+                string workout = Application.Current.Properties["WorkTime"].ToString();
+                Application.Current.Properties["WorkTime"] = countdownremaining + int.Parse(workout);
+                Application.Current.Properties["Workout"] = Oefeningnaam.Text;
+                await Navigation.PushAsync(new ExerciseCompletePage());
             }
         }
-        //private async void ontap(Xamarin.Forms.View arg1, object arg2)
+
+
+        //protected override bool OnBackButtonPressed()
         //{
-
+        //    return true;
         //}
     }
 }

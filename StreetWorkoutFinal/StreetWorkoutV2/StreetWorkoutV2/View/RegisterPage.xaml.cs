@@ -13,68 +13,57 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkoutV2.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RegisterPage : AnimationPage
-	{
-		public RegisterPage ()
-		{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RegisterPage : AnimationPage
+    {
+        public RegisterPage()
+        {
             InitializeComponent();
-            if (!Application.Current.Properties.ContainsKey("Naam"))
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
+            imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+            imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+            PasswordEntryRepeat.IsPassword = true;
+            PasswordEntry.IsPassword = true;
+            imgEye.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Application.Current.Properties["Naam"] = null;
-            }
-            if (Application.Current.Properties["Naam"] != null)
-            {
-                Task.Run(async () =>
+                Command = new Command(() =>
                 {
-                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-                });
-            }
-            else
-            {
-                BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
-                eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-                eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-                PasswordEntryRepeat.IsPassword = true;
-                PasswordEntry.IsPassword = true;
-                eyeimage.GestureRecognizers.Add(new TapGestureRecognizer
-                {
-                    Command = new Command(() => {
-                        if (PasswordEntry.IsPassword == true)
-                        {
-                            PasswordEntry.IsPassword = false;
-                            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-                        }
-                        else
-                        {
-                            PasswordEntry.IsPassword = true;
-                            eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-                        }
-                    })
-                });
+                    if (PasswordEntry.IsPassword == true)
+                    {
+                        PasswordEntry.IsPassword = false;
+                        imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                    }
+                    else
+                    {
+                        PasswordEntry.IsPassword = true;
+                        imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                    }
+                })
+            });
 
-                eyeimage2.GestureRecognizers.Add(new TapGestureRecognizer
+            imgEyeRepeat.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
                 {
-                    Command = new Command(() => {
-                        if (PasswordEntryRepeat.IsPassword == true)
-                        {
-                            PasswordEntryRepeat.IsPassword = false;
-                            eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
-                        }
-                        else
-                        {
-                            PasswordEntryRepeat.IsPassword = true;
-                            eyeimage2.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-                        }
-                    })
-                });
-                Login.GestureRecognizers.Add(new TapGestureRecognizer
+                    if (PasswordEntryRepeat.IsPassword == true)
+                    {
+                        PasswordEntryRepeat.IsPassword = false;
+                        imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                    }
+                    else
+                    {
+                        PasswordEntryRepeat.IsPassword = true;
+                        imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                    }
+                })
+            });
+            Login.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
                 {
-                    Command = new Command(async () => {
-                        await Navigation.PushAsync(new LoginPage());
-                    })
-                });
-            }
+                    await Navigation.PushAsync(new LoginPage());
+                })
+            });
         }
 
         //private async void LoginTap(Xamarin.Forms.View arg1, object arg2)
@@ -89,7 +78,7 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            ErrorLabel.IsVisible = false;
+            lblError.IsVisible = false;
             LoadingIndicator.IsRunning = false;
             if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
             {
@@ -115,40 +104,40 @@ namespace StreetWorkoutV2.View
                                 }
                                 else
                                 {
-                                    ErrorLabel.Text = "Gebruikersnaam of Email al in gebruik.";
-                                    ErrorLabel.IsVisible = true;
+                                    lblError.Text = "Gebruikersnaam of Email al in gebruik.";
+                                    lblError.IsVisible = true;
                                     LoadingIndicator.IsRunning = false;
                                 }
                             }
                             else
                             {
-                                ErrorLabel.Text = "Email onjuist.";
-                                ErrorLabel.IsVisible = true;
+                                lblError.Text = "Email onjuist.";
+                                lblError.IsVisible = true;
                             }
                         }
                         else
                         {
-                            ErrorLabel.Text = "Gebruikersnaam mag geen spatie bevatten.";
-                            ErrorLabel.IsVisible = true;
+                            lblError.Text = "Gebruikersnaam mag geen spatie bevatten.";
+                            lblError.IsVisible = true;
                         }
 
                     }
                     else
                     {
-                        ErrorLabel.Text = "Uw wachtwoorden komt niet overeen.";
-                        ErrorLabel.IsVisible = true;
+                        lblError.Text = "Uw wachtwoorden komt niet overeen.";
+                        lblError.IsVisible = true;
                     }
                 }
                 else
                 {
-                    ErrorLabel.Text = "Uw wachtwoord moet minstens 8 tekens lang zijn.";
-                    ErrorLabel.IsVisible = true;
+                    lblError.Text = "Uw wachtwoord moet minstens 8 tekens lang zijn.";
+                    lblError.IsVisible = true;
                 }
             }
             else
             {
-                ErrorLabel.Text = "Vul alle gegevens in.";
-                ErrorLabel.IsVisible = true;
+                lblError.Text = "Vul alle gegevens in.";
+                lblError.IsVisible = true;
             }
 
         }

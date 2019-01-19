@@ -20,14 +20,14 @@ namespace StreetWorkoutV2.View
         public ForgotPasswordPage()
         {
             InitializeComponent();
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Forgot-Password_Background.png");
-            backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Forgot-Password_Background.png");
+            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 
-            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
+            btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
-                    await backbutton.FadeTo(0.3, 150);
-                    await backbutton.FadeTo(1, 150);
+                    await btnBack.FadeTo(0.3, 150);
+                    await btnBack.FadeTo(1, 150);
                     await Navigation.PushAsync(new LoginPage());
                 })
             });
@@ -50,8 +50,8 @@ namespace StreetWorkoutV2.View
                         {
                             JObject gegevens = new JObject();
                             gegevens["Wachtwoord"] = ww;
-                            //ErrorLabel.Text = "Wachtwoord succesvol verstuurd";
-                            //ErrorLabel.IsVisible = true;
+                            //lblError.Text = "Wachtwoord succesvol verstuurd";
+                            //lblError.IsVisible = true;
                             await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
                             await DBManager.PutUserData(email, "Email", gegevens);
                             await Navigation.PopAsync();
@@ -60,29 +60,29 @@ namespace StreetWorkoutV2.View
                         else
                         {
                             //iets mis bij mailtje verzenden
-                            ErrorLabel.Text = "Probleem bij verzenden. Probeer later opnieuw.";
-                            ErrorLabel.IsVisible = true;
+                            lblError.Text = "Probleem bij verzenden. Probeer later opnieuw.";
+                            lblError.IsVisible = true;
                         }
                     }
                     else
                     {
                         //email nie geregistreerd
-                        ErrorLabel.Text = "Account is nog niet geregistreerd.";
-                        ErrorLabel.IsVisible = true;
+                        lblError.Text = "Account is nog niet geregistreerd.";
+                        lblError.IsVisible = true;
                     }
                 }
                 else
                 {
                     //vul ne email adres in
-                    ErrorLabel.Text = "Uw email is onjuist.";
-                    ErrorLabel.IsVisible = true;
+                    lblError.Text = "Uw email is onjuist.";
+                    lblError.IsVisible = true;
                 }
             }
             else
             {
                 //vult ne twuk in
-                    ErrorLabel.Text = "Geliewe uw email in te voeren";
-                    ErrorLabel.IsVisible = true;
+                    lblError.Text = "Geliewe uw email in te voeren";
+                    lblError.IsVisible = true;
             }
         }
     }

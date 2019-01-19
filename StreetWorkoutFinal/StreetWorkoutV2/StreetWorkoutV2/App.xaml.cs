@@ -12,17 +12,14 @@ namespace StreetWorkoutV2
         public App()
         {
             InitializeComponent();
-            //if (Application.Current.Properties.ContainsKey("Naam") && Application.Current.Properties["Naam"] != null)
-            //{
-
-                MainPage = new NavigationPage(new Oefening_Complete_Page());
-
-            //}
-            //else
-            //{
-            //    MainPage = new NavigationPage(new RegisterPage());
-            //}
-            MainPage = new NavigationPage(new LogboekPage());
+            if (Application.Current.Properties.ContainsKey("Naam") && Application.Current.Properties["Naam"] != null)
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new RegisterPage());
+            }
 
 
         }

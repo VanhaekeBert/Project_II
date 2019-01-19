@@ -12,13 +12,12 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogboekPage : AnimationPage
+    public partial class LogbookPage : AnimationPage
     {
-        public LogboekPage()
+        public LogbookPage()
         {
             InitializeComponent();
-            Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
-            BackButtonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
+            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             Titlelabel.Text = "Logboek";
 
             List<int> repetitions = new List<int>();

@@ -15,16 +15,15 @@ using Newtonsoft.Json.Linq;
 
 namespace StreetWorkoutV2.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Oefening_Complete_Page : AnimationPage
-	{
-		public Oefening_Complete_Page ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ExerciseCompletePage : AnimationPage
+    {
+        public ExerciseCompletePage()
+        {
+            InitializeComponent();
             Application.Current.Properties["EndWorkout"] = DateTime.Now;
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
-            Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
             //ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
             //ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Compleet.png");
             List<int> repetitions = new List<int>();
@@ -62,57 +61,65 @@ namespace StreetWorkoutV2.View
 
             imgRatingHeart1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    Rate1Star();                    
+                Command = new Command(async () =>
+                {
+                    Rate1Star();
                     rating = 1;
                 })
             });
             imgRatingHeart2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate2Stars();
                     rating = 2;
                 })
             });
             imgRatingHeart3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate3Stars();
                     rating = 3;
                 })
             });
             imgRatingHeart4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate4Stars();
                     rating = 4;
                 })
             });
             imgRatingHeart5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate5Stars();
                     rating = 5;
                 })
             });
-            
+
             imgRatingHeartFull1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate1Star();
                     rating = 1;
                 })
             });
             imgRatingHeartFull2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate2Stars();
                     rating = 2;
                 })
             });
             imgRatingHeartFull3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate3Stars();
                     rating = 3;
 
@@ -120,14 +127,16 @@ namespace StreetWorkoutV2.View
             });
             imgRatingHeartFull4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate4Stars();
                     rating = 4;
                 })
             });
             imgRatingHeartFull5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     Rate5Stars();
                     rating = 5;
                 })
@@ -239,7 +248,7 @@ namespace StreetWorkoutV2.View
             //    LabelColor = SKColor.Parse("#FFFFFF"),
             //};
         }
-        
+
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             JObject oefening = new JObject();

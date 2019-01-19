@@ -12,21 +12,22 @@ using Xamarin.Forms.Xaml;
 namespace StreetWorkoutV2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PauzePage : AnimationPage
+    public partial class PausePage : AnimationPage
     {
         string Aantal_keeper = "";
         Oefening oefeningKeeper = new Oefening();
-        public PauzePage(string aantal, Oefening oefening)
+        public PausePage(string aantal, Oefening oefening)
         {
             InitializeComponent();
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //Back button + heartbeat
             Aantal_keeper = aantal;
             oefeningKeeper = oefening;
-            Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
             GoToOefeningen.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
             OefeningImage.Source = oefening.AfbeeldingenResource[0];
-            
+            RepitionsInput.Placeholder = oefening.Herhalingen.ToString();
+
+
             if (Aantal_keeper == "1/3")
             {
                 Aantal_keeper = "2/3";
@@ -36,12 +37,12 @@ namespace StreetWorkoutV2.View
                 Aantal_keeper = "3/3";
             }
 
-            Aantal_keer.Text = Aantal_keeper;
+            //Aantal_keer.Text = Aantal_keeper;
 
-            if (oefening.Herhalingen == 0)
-            {
-                Aantal_herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
-            }
+            //if (oefening.Herhalingen == 0)
+            //{
+            //    Aantal_herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
+            //}
             else
             {
                 Aantal_herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
@@ -51,26 +52,28 @@ namespace StreetWorkoutV2.View
             Next_exercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
-                Command = new Command(async () => { await Navigation.PushAsync(new OefeningPage(oefeningKeeper, Aantal_keeper)); })
+                Command = new Command(async () => { await Navigation.PushAsync(new ExercisePage(oefeningKeeper, Aantal_keeper)); })
             });
             int countdownremaining = 0;
-            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
                 countdownremaining += 1;
-                Device.BeginInvokeOnMainThread(() => {
+                Device.BeginInvokeOnMainThread(() =>
+                {
                     TimerText.Text = (countdownremaining / 60).ToString("00") + " : " + (countdownremaining % 60).ToString("00") + " /  01 : 00 ";
 
-                    TimerBarInner.Progress = ((100.0/60.0)*countdownremaining)/100.0;
+                    TimerBarInner.Progress = ((100.0 / 60.0) * countdownremaining) / 100.0;
                 });
                 if (countdownremaining == 60)
                 {
-                    GaDoor.Text="Ga nu door";
+                    GaDoor.Text = "Ga nu door";
                     return false;
                 }
                 return true;
             });
-            
-           
-            
+
+
+
         }
 
         protected override bool OnBackButtonPressed()

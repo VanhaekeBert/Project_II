@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -17,13 +18,14 @@ namespace StreetWorkoutV2.Model
         [JsonProperty("beschrijving")]
         public string Beschrijving { get; set; }
         [JsonProperty("herhalingen")]
-        public int Herhalingen { get; set; }
+        public List<int> Herhalingen { get; set; }
         [JsonProperty("duurtijd")]
-        public int Duurtijd { get; set; }
+        public List<int> Duurtijd { get; set; }
         [JsonProperty("afbeeldingen")]
         public List<string> Afbeeldingen { get; set; }
 
         public int AantalOefeningen { get; set; } = 1;
+        public DateTime Datum { get; set; }
 
 
         public List<ImageSource> AfbeeldingenResource

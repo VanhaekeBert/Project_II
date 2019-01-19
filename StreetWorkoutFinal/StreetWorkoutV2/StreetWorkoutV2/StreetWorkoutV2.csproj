@@ -429,8 +429,29 @@
     <Compile Update="PopUp_ForgotPassword.xaml.cs">
       <DependentUpon>PopUp_ForgotPassword.xaml</DependentUpon>
     </Compile>
+    <Compile Update="View\ExerciseListPage.xaml.cs">
+      <DependentUpon>ExerciseListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\LogbookPage.xaml.cs">
+      <DependentUpon>LogbookPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\OefeningPage - Copy.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="View\ExerciseCompletePage.xaml.cs">
+      <DependentUpon>ExerciseCompletePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\ExercisePage.xaml.cs">
+      <DependentUpon>ExercisePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PausePage.xaml.cs">
+      <DependentUpon>PausePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PickerPage.xaml.cs">
+      <DependentUpon>PickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PasswordResetPage.xaml.cs">
+      <DependentUpon>PasswordResetPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -453,28 +474,28 @@
     <EmbeddedResource Update="View\DashboardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\ExercisePage.xaml">
+    <EmbeddedResource Update="View\ExerciseListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ForgotPasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\LogboekPage.xaml">
+    <EmbeddedResource Update="View\LogbookPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\OefeningPage.xaml">
+    <EmbeddedResource Update="View\ExercisePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Oefening_Complete_Page.xaml">
+    <EmbeddedResource Update="View\ExerciseCompletePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\PauzePage.xaml">
+    <EmbeddedResource Update="View\PausePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Picker_Toestel_Page.xaml">
+    <EmbeddedResource Update="View\PickerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\RegisterPage.xaml">
@@ -483,7 +504,7 @@
     <EmbeddedResource Update="View\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\WachtwoordResetPage.xaml">
+    <EmbeddedResource Update="View\PasswordResetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

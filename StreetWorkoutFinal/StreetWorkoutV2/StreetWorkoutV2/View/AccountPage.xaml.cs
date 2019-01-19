@@ -20,25 +20,27 @@ namespace StreetWorkoutV2.View
     public partial class AccountPage : AnimationPage
     {
         public Color JObject { get; }
-        List<JObject> weekOef = new List<JObject>();
-        List<JObject> maandOef = new List<JObject>();
+        List<Oefening> weekOef = new List<Oefening>();
+        List<Oefening> maandOef = new List<Oefening>();
 
         public AccountPage()
         {
             InitializeComponent();
-   
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
-            Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
+
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
+            imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
-            Username.Text = Application.Current.Properties["Naam"].ToString();
+            lblUsername.Text = Application.Current.Properties["Naam"].ToString();
             NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
-            foreach (JObject oefening in (List<JObject>)Application.Current.Properties["Oefeningen"])
+            List<Oefening> oefeningen = (List<Oefening>)Application.Current.Properties["Oefeningen"];
+
+            foreach (Oefening oefening in oefeningen)
             {
-                if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd"))+1)).Contains(int.Parse(oefening["Datum"].ToString().Substring(0,2))))
+                if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
                 {
                     weekOef.Add(oefening);
                 }
-                if (int.Parse(DateTime.Now.ToString("MM")) == int.Parse(oefening["Datum"].ToString().Substring(3, 2)))
+                if (int.Parse(DateTime.Now.ToString("MM")) == oefening.Datum.Month)
                 {
                     maandOef.Add(oefening);
                 }
@@ -48,7 +50,7 @@ namespace StreetWorkoutV2.View
             MakeEntriesKcal();
             MakeEntriesOef();
             this.BackgroundColor = Color.FromHex("2B3049");
-            
+
 
             //Profile picture ophalen
             TapGestureRecognizer ImageHandler = new TapGestureRecognizer()
@@ -77,17 +79,18 @@ namespace StreetWorkoutV2.View
                     NameChangeEntry.IsVisible = true;
                     NameChangeEntry.IsEnabled = true;
                     NameChangeEntry.Focus();
-                    Username.IsVisible = false;
-                    Potlood.IsVisible = false;
+                    lblUsername.IsVisible = false;
+                    imgPencil.IsVisible = false;
                 })
             });
 
-            NameChangeEntry.Unfocused += async (sender, e) => {
+            NameChangeEntry.Unfocused += async (sender, e) =>
+            {
                 NameChangeEntry.IsVisible = false;
                 NameChangeEntry.IsEnabled = false;
-                Username.Text = NameChangeEntry.Text;
-                Username.IsVisible = true;
-                Potlood.IsVisible = true;
+                lblUsername.Text = NameChangeEntry.Text;
+                lblUsername.IsVisible = true;
+                imgPencil.IsVisible = true;
             };
 
             weightInput.Text = Application.Current.Properties["Gewicht"].ToString();
@@ -138,11 +141,11 @@ namespace StreetWorkoutV2.View
             {
                 if (i == 0)
                 {
-                    data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
+                    data.Add(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", ""));
                 }
-                else if (!data.Contains(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", "")))
+                else if (!data.Contains(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", "")))
                 {
-                    data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
+                    data.Add(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", ""));
                 }
             }
             List<string> listKleuren = new List<string> {
@@ -157,9 +160,9 @@ namespace StreetWorkoutV2.View
             foreach (string date in listLabels)
             {
                 int i = 0;
-                foreach (JObject oefening in weekOef)
+                foreach (Oefening oefening in weekOef)
                 {
-                    if (date == DateTime.Parse(oefening["Datum"].ToString()).DayOfWeek.ToString().Substring(0, 4))
+                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 4))
                     {
                         i++;
                     }
@@ -180,16 +183,16 @@ namespace StreetWorkoutV2.View
                 });
             }
             chartOef.Chart = new LineChart()
-                {
-                    Entries = entriesOef,
-                    BackgroundColor = SKColors.Transparent,
-                    PointSize = 22,
-                    LabelTextSize = 22,
-                    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                    LabelOrientation = Microcharts.Orientation.Horizontal,
-                    LabelColor = SKColor.Parse("#FFFFFF"),
-                };
-            }
+            {
+                Entries = entriesOef,
+                BackgroundColor = SKColors.Transparent,
+                PointSize = 22,
+                LabelTextSize = 22,
+                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelColor = SKColor.Parse("#FFFFFF"),
+            };
+        }
 
         protected override bool OnBackButtonPressed()
         {

@@ -155,7 +155,7 @@ namespace StreetWorkoutV2.Model
             return message.IsSuccessStatusCode;
         }
 
-        public static async Task<List<JObject>> GetOefeningenData(string naam)
+        public static async Task<JArray> GetOefeningenData(string naam)
         {
             JObject userData = new JObject();
             userData["Naam"] = naam;
@@ -166,7 +166,7 @@ namespace StreetWorkoutV2.Model
             string url = "https://streetworkout.azurewebsites.net/api/GetOefening";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
-            List<JObject> gegevens = JsonConvert.DeserializeObject<List<JObject>>(responseString.ToString());
+            JArray gegevens = JsonConvert.DeserializeObject<JArray>(responseString.ToString());
             return gegevens;
         }
 

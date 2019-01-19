@@ -36,10 +36,11 @@ namespace StreetWorkoutV2.View
                 lblFBverbonden.Text = "Niet Verbonden";
                 lblPverbonden.Text = "Niet Verbonden";
             }
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
 
             var tapGestureRecognizerFB = new TapGestureRecognizer();
-            tapGestureRecognizerFB.Tapped += (s, e) => {
+            tapGestureRecognizerFB.Tapped += (s, e) =>
+            {
                 Task.Run(async () =>
                 {
                     FitBitUser user = await FitBitManager.FitBitAsync();
@@ -59,7 +60,8 @@ namespace StreetWorkoutV2.View
             };
 
             var tapGestureRecognizerP = new TapGestureRecognizer();
-            tapGestureRecognizerP.Tapped += (s, e) => {
+            tapGestureRecognizerP.Tapped += (s, e) =>
+            {
                 var auth = PolarManager.GetPolarAuth();
                 auth.AllowCancel = true;
                 var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
@@ -85,14 +87,16 @@ namespace StreetWorkoutV2.View
 
             FraWWR.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    await Navigation.PushAsync(new WachtwoordResetPage());
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new PasswordResetPage());
                 })
             });
 
             FraAD.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
 
 
                     await Navigation.PushPopupAsync(new PopUpAccountDelete());

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <controls:AnimationPage
-    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base" xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local1="clr-namespace:StreetWorkoutV2"
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local1="clr-namespace:StreetWorkoutV2"
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
     x:Class="StreetWorkoutV2.View.RegisterPage"
              NavigationPage.HasNavigationBar="False">
-
     <controls:AnimationPage.PageAnimation>
         <controls:PushPageAnimation  Duration="Short" Subtype="FromLeft"/>
     </controls:AnimationPage.PageAnimation>
@@ -14,11 +14,10 @@
         <RelativeLayout Padding="0">
             <!-- Background -->
             <Image
-            x:Name="BckgrImage"
+            x:Name="imgBackground"
             Aspect="Fill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            </Image>
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"></Image>
             <!-- ================= -->
             <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
@@ -31,23 +30,22 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="30" Text="Registreren" TextColor="{StaticResource LightColor}" VerticalOptions="StartAndExpand" Margin="20,0,0,0"/>
                 <Grid Grid.Row="2" RowSpacing="20" VerticalOptions="Start">
-                    <local1:CustomEntry Margin="24,0,24,0" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Gebruikersnaam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}" x:Name="UserNameEntry"/>
-                    <local1:CustomEntry Margin="24,0,24,0" Grid.Row="1" HorizontalOptions="FillAndExpand" Placeholder="Email" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}" x:Name="EmailEntry"/>
+                    <local1:CustomEntry x:Name="UserNameEntry" Margin="24,0,24,0" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Gebruikersnaam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
+                    <local1:CustomEntry  x:Name="EmailEntry" Margin="24,0,24,0" Grid.Row="1" HorizontalOptions="FillAndExpand" Placeholder="Email" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
                     <Grid Grid.Row="2">
-                        <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="PasswordEntry"/>
-                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage" Margin="0,0,42,0"/>
+                        <local1:CustomEntry x:Name="PasswordEntry" HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" />
+                        <Image x:Name="imgEye" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" Margin="0,0,42,0"/>
                     </Grid>
                     <Grid Grid.Row="3">
-                        <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord herhalen" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="PasswordEntryRepeat"/>
-                        <Image HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage2" Margin="0,0,42,0"/>
+                        <local1:CustomEntry x:Name="PasswordEntryRepeat" HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord herhalen" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0"/>
+                        <Image x:Name="imgEyeRepeat"  HeightRequest="20" WidthRequest="20" HorizontalOptions="End" Margin="0,0,42,0"/>
                     </Grid>
-                    <Label Grid.Row="4" Text=""  TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="ErrorLabel" FontFamily="{StaticResource NormalFont}" FontSize="16" Margin="32,0,32,0" WidthRequest="300" HorizontalOptions="Start"/>
+                    <Label x:Name="lblError" Grid.Row="4" Text=""  TextColor="{StaticResource LightColor}" IsVisible="False" FontFamily="{StaticResource NormalFont}" FontSize="16" Margin="32,0,32,0" WidthRequest="300" HorizontalOptions="Start"/>
                 </Grid>
                 <ActivityIndicator x:Name="LoadingIndicator" Grid.Row="3" Color="White" IsRunning="false" HeightRequest="20" />
-
                 <Grid Grid.Row="4" VerticalOptions="CenterAndExpand" RowSpacing="20" >
                     <Button Grid.Row="0" Text="Registreren" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" Clicked="Button_Clicked"/>
-                    <Label LineBreakMode="WordWrap" Grid.Row="1" HorizontalOptions="Center" x:Name="Login">
+                    <Label  x:Name="Login" LineBreakMode="WordWrap" Grid.Row="1" HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Al een account? " TextColor="{StaticResource LightColor}" FontFamily="{StaticResource NormalFont}"/>
@@ -57,7 +55,6 @@
                     </Label>
                 </Grid>
             </Grid>
-            
         </RelativeLayout>
     </ContentPage.Content>
 </controls:AnimationPage>

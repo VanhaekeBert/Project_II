@@ -21,9 +21,8 @@
                                            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             <ScrollView x:Name="MainScroll">
                 <RelativeLayout Padding="0">
-
                     <ff:CachedImage                        
-                        x:Name="BckgrImage"
+                        x:Name="imgBackground"
                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-370}"
         RelativeLayout.WidthConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
         RelativeLayout.HeightConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Height,Factor=1,Constant=10}"
@@ -45,10 +44,10 @@
                             </ff:CachedImage>
                             <Image Grid.Row="0" x:Name="imgSelector" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="40" Margin="72,0,0,0"/>
                             <Grid Grid.Row="1">
-                                <local1:CustomSmallEntry Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5" x:Name="NameChangeEntry" HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
-                                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" x:Name="NameChanger">
-                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="" x:Name="Username" TextColor="White" Margin="23,16,0,0"/>
-                                    <ff:CachedImage x:Name="Potlood" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
+                                <local1:CustomSmallEntry x:Name="NameChangeEntry" Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5"  HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
+                                <StackLayout  x:Name="NameChanger" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                                    <Label x:Name="lblUsername" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text=""  TextColor="White" Margin="23,16,0,0"/>
+                                    <ff:CachedImage x:Name="imgPencil" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
                                 </StackLayout>
                             </Grid>
                         </Grid>

@@ -23,16 +23,16 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
-            ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
-            ImgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
-            ImgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout.png");
-            ImgStartWorkout_Cover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout_Cover.png");
+            //Debug.WriteLine(Application.Current.Properties["Naam"]);
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
+            imgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
+            imgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
+            imgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout.png");
+            imgStartWorkout_Cover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout_Cover.png");
             imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.qrcode.png");
-            imgSpier.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
-            imgToestel.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
-            Heart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart.png");
-            lblwelkom.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
+            imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
+            lblWelcome.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
             one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
@@ -45,107 +45,113 @@ namespace StreetWorkoutV2.View
                 lblWaterTotaal.Text = " / " + Application.Current.Properties["WaterDoel"].ToString() + " ";
             }
 
-            WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () => {
-                })
-            });
 
-            WaterFrame.GestureRecognizers.Add(new TapGestureRecognizer
+
+            innerPopWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    PopupWater.IsEnabled = true;
-                    PopupWater.IsVisible = true;
+                Command = new Command(async () =>
+                {
+                    popWater.IsEnabled = true;
+                    popWater.IsVisible = true;
                     TotalWater.Text = "0";
                 })
             });
-            PopupWater.GestureRecognizers.Add(new TapGestureRecognizer
+            popWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    PopupWater.IsEnabled = false;
-                    PopupWater.IsVisible = false;
-         
+                Command = new Command(async () =>
+                {
+                    popWater.IsEnabled = false;
+                    popWater.IsVisible = false;
+
                 })
             });
 
-            imgQr.GestureRecognizers.Add(new TapGestureRecognizer
+            //imgQr.GestureRecognizers.Add(new TapGestureRecognizer
+            //{
+            //    Command = new Command(async () =>
+            //    {
+            //        var scan = new ZXingScannerPage();
+            //        await Navigation.PushAsync(scan);
+            //        //Debug.WriteLine("AwaitScanResult");
+
+            //        scan.OnScanResult += (result) =>
+            //        {
+            //            //Debug.WriteLine("OnScanResult");
+            //            Device.BeginInvokeOnMainThread(async () =>
+            //            {
+            //                await Navigation.PopToRootAsync();
+            //                //Debug.WriteLine("Start If statment");
+            //                //incline press
+            //                if (result.Text == "http://kaywa.me/s58ti")
+            //                {
+            //                    Popup.IsEnabled = true;
+            //                    Popup.IsVisible = true;
+            //                    _result = "Incline Press";
+            //                }
+            //                //pushupbars
+            //                else if (result.Text == "http://kaywa.me/wdxX3")
+            //                {
+            //                    Popup.IsEnabled = true;
+            //                    Popup.IsVisible = true;
+            //                    _result = "Push Up Bars";
+            //                }
+            //                //overheadladder
+            //                else if (result.Text == "http://kaywa.me/Y2UJp")
+            //                {
+            //                    Popup.IsEnabled = true;
+            //                    Popup.IsVisible = true;
+            //                    _result = "Overhead Ladder";
+            //                }
+            //                //parrallel bars
+            //                else if (result.Text == "http://kaywa.me/sle3O")
+            //                {
+            //                    Popup.IsEnabled = true;
+            //                    Popup.IsVisible = true;
+            //                    _result = "Parallel Bars";
+            //                }
+            //                //decline bench
+            //                else if (result.Text == "http://kaywa.me/3nCNB")
+            //                {
+            //                    Popup.IsEnabled = true;
+            //                    Popup.IsVisible = true;
+            //                    _result = "Decline Bench";
+            //                }
+            //                else
+            //                {
+            //                    PopupNoQr.IsEnabled = true;
+            //                    PopupNoQr.IsVisible = true;
+            //                }
+
+            //                //Debug.WriteLine("End If statment");
+            //            });
+
+            //        };
+            //        //Debug.WriteLine("VoorbijScanResult");
+            //    })
+            //});
+
+            // -------------------------------------------------------------------
+            // --------------------------TAPGESTURES -----------------------------
+            // -------------------------------------------------------------------
+            btnMuscle.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    var scan = new ZXingScannerPage();
-                    await Navigation.PushAsync(scan);
-                    Debug.WriteLine("AwaitScanResult");
-
-                    scan.OnScanResult += (result) =>
-                    {
-                        Debug.WriteLine("OnScanResult");
-                        Device.BeginInvokeOnMainThread(async () =>
-                        {
-                            await Navigation.PopToRootAsync();
-                            Debug.WriteLine("Start If statment");
-                            //incline press
-                            if (result.Text == "http://kaywa.me/s58ti")
-                            {
-                                Popup.IsEnabled = true;
-                                Popup.IsVisible = true;
-                                _result = "Incline Press";
-                            }
-                            //pushupbars
-                            else if (result.Text == "http://kaywa.me/wdxX3")
-                            {
-                                Popup.IsEnabled = true;
-                                Popup.IsVisible = true;
-                                _result = "Push Up Bars";
-                            }
-                            //overheadladder
-                            else if (result.Text == "http://kaywa.me/Y2UJp")
-                            {
-                                Popup.IsEnabled = true;
-                                Popup.IsVisible = true;
-                                _result = "Overhead Ladder";
-                            }
-                            //parrallel bars
-                            else if (result.Text == "http://kaywa.me/sle3O")
-                            {
-                                Popup.IsEnabled = true;
-                                Popup.IsVisible = true;
-                                _result = "Parallel Bars";
-                            }
-                            //decline bench
-                            else if (result.Text == "http://kaywa.me/3nCNB")
-                            {
-                                Popup.IsEnabled = true;
-                                Popup.IsVisible = true;
-                                _result = "Decline Bench";
-                            }
-                            else
-                            {
-                                PopupNoQr.IsEnabled = true;
-                                PopupNoQr.IsVisible = true;
-                            }
-
-                            Debug.WriteLine("End If statment");
-                        });
-
-                    };
-                    Debug.WriteLine("VoorbijScanResult");
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new PickerPage("Spiergroep"));
                 })
             });
-            imgSpier.GestureRecognizers.Add(new TapGestureRecognizer
+            btnDevice.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    await Navigation.PushAsync(new Picker_Toestel_Page("Spiergroep"));
-                })
-            });
-            imgToestel.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () => {
-                    await Navigation.PushAsync(new Picker_Toestel_Page("Toestel"));
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new PickerPage("Toestel"));
                 })
             });
 
             click_one_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 250;
                     TotalWater.Text = Water_update.ToString();
@@ -154,7 +160,8 @@ namespace StreetWorkoutV2.View
 
             click_two_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 500;
                     TotalWater.Text = Water_update.ToString();
@@ -163,45 +170,46 @@ namespace StreetWorkoutV2.View
 
             click_four_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 1000;
                     TotalWater.Text = Water_update.ToString();
                 })
             });
-            Task.Run(async () =>
-            {
-                JObject data = await DBManager.GetUserData(Application.Current.Properties["Naam"].ToString(), "Naam");
-                lblWaterTotaal.Text = " / " + data["WaterDoel"].ToString() + " ";
-            });
-
+            // -------------------------------------------------------------------
+            // -------------------------------------------------------------------
+            // -------------------------------------------------------------------
         }
 
+        //private void Debug()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        private async void Makkelijk_Clicked(object sender, EventArgs e)
-        {
-            Popup.IsEnabled = false;
-            PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
-            await Navigation.PushAsync(new ExercisePage(_QrItem, "gemakkelijk"));
-            Popup.IsVisible = false;
-        }
+        //private async void Makkelijk_Clicked(object sender, EventArgs e)
+        //{
+        //    Popup.IsEnabled = false;
+        //    PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
+        //    await Navigation.PushAsync(new ExerciseListPage(_QrItem, "gemakkelijk"));
+        //    Popup.IsVisible = false;
+        //}
 
-        private async void Gemiddeld_Clicked(object sender, EventArgs e)
-        {
-            Popup.IsEnabled = false;
-            PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
-            await Navigation.PushAsync(new ExercisePage(_QrItem, "gemiddeld"));
-            Popup.IsVisible = false;
-        }
+        //private async void Gemiddeld_Clicked(object sender, EventArgs e)
+        //{
+        //    Popup.IsEnabled = false;
+        //    PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
+        //    await Navigation.PushAsync(new ExerciseListPage(_QrItem, "gemiddeld"));
+        //    Popup.IsVisible = false;
+        //}
 
-        private async void Moeilijk_Clicked(object sender, EventArgs e)
-        {
-            // Popup.FadeTo(0, 250);
-            Popup.IsEnabled = false;
-            PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
-            await Navigation.PushAsync(new ExercisePage(_QrItem, "moeilijk"));
-            Popup.IsVisible = false;
-        }
+        //private async void Moeilijk_Clicked(object sender, EventArgs e)
+        //{
+        //    Popup.IsEnabled = false;
+        //    PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
+        //    await Navigation.PushAsync(new ExerciseListPage(_QrItem, "moeilijk"));
+        //    Popup.IsVisible = false;
+        //}
 
 
         protected override bool OnBackButtonPressed()
@@ -211,11 +219,9 @@ namespace StreetWorkoutV2.View
 
         private void SubmitWater_Clicked(object sender, EventArgs e)
         {
-            Popup.IsEnabled = false;
-            // Popup.FadeTo(0, 250);
+            popWater.IsEnabled = false;
             lblWaterGedronken.Text = "500";
-
-            Popup.IsVisible = false;
+            popWater.IsVisible = false;
         }
 
         private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
@@ -226,16 +232,16 @@ namespace StreetWorkoutV2.View
             Application.Current.Properties["WaterGedronken"] = water_now.ToString();
             await Application.Current.SavePropertiesAsync();
             lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
-            PopupWater.IsEnabled = false;
-            PopupWater.IsVisible = false;
+            popWater.IsEnabled = false;
+            popWater.IsVisible = false;
         }
 
-        private void Back_Clicked(object sender, EventArgs e)
-        {
-            PopupNoQr.IsEnabled = false;
-            PopupNoQr.IsVisible = false;
-            Navigation.PopToRootAsync();
-        }
+        //private void Back_Clicked(object sender, EventArgs e)
+        //{
+        //    PopupNoQr.IsEnabled = false;
+        //    PopupNoQr.IsVisible = false;
+        //    Navigation.PopToRootAsync();
+        //}
 
         //private void Button_Clicked(object sender, EventArgs e)
         //{
