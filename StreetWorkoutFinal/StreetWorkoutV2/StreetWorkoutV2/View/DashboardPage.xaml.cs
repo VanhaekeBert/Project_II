@@ -45,6 +45,16 @@ namespace StreetWorkoutV2.View
                 lblWaterTotaal.Text = " / " + Preferences.Get("WaterDoel", 0).ToString() + " ";
             }
 
+
+            WaterFrame.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command( () =>
+                {
+                    popWater.IsEnabled = true;
+                    popWater.IsVisible = true;
+                    
+                })
+            });
             //WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
             //{
 
@@ -52,7 +62,7 @@ namespace StreetWorkoutV2.View
 
             innerPopWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     popWater.IsEnabled = true;
                     popWater.IsVisible = true;
@@ -61,7 +71,7 @@ namespace StreetWorkoutV2.View
             });
             popWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     popWater.IsEnabled = false;
                     popWater.IsVisible = false;
