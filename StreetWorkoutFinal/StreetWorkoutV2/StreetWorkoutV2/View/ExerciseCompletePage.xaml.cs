@@ -12,6 +12,7 @@ using Xamarin.Forms.Xaml;
 using FormsControls.Base;
 using StreetWorkoutV2.Model;
 using Newtonsoft.Json.Linq;
+using Xamarin.Essentials;
 
 namespace StreetWorkoutV2.View
 {
@@ -21,7 +22,13 @@ namespace StreetWorkoutV2.View
         public ExerciseCompletePage()
         {
             InitializeComponent();
-            Application.Current.Properties["EndWorkout"] = DateTime.Now;
+            if (Preferences.Get("API", "") == "FitBit")
+            {
+                FrmChart.IsVisible = true;
+                GrdAPIData.IsVisible = true;
+                MakeEntriesHartslag();
+            }
+            Preferences.Set("EndWorkout", DateTime.Now);
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             //ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
@@ -54,7 +61,6 @@ namespace StreetWorkoutV2.View
             Rate3Stars();
 
             this.BackgroundColor = Color.FromHex("2B3049");
-            MakeEntriesHartslag();
 
             //houd  rating bij tussen 1-5 (wordt nog niets mee gedaan )
             int rating;
@@ -237,26 +243,39 @@ namespace StreetWorkoutV2.View
                     ValueLabel = listValues[i]
                 });
             }
-            //chartHartslag.Chart = new LineChart()
-            //{
-            //    Entries = entriesOef,
-            //    BackgroundColor = SKColors.Transparent,
-            //    PointSize = 22,
-            //    LabelTextSize = 22,
-            //    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-            //    LabelOrientation = Microcharts.Orientation.Horizontal,
-            //    LabelColor = SKColor.Parse("#FFFFFF"),
-            //};
+                chartHartslag.Chart = new LineChart()
+                {
+                    Entries = entriesOef,
+                    BackgroundColor = SKColors.Transparent,
+                    PointSize = 22,
+                    LabelTextSize = 22,
+                    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+                    LabelOrientation = Microcharts.Orientation.Horizontal,
+                    LabelColor = SKColor.Parse("#FFFFFF"),
+                };
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             JObject oefening = new JObject();
-            oefening["Naam"] = Application.Current.Properties["Naam"].ToString();
+            string herhalingen = "[";
+            oefening["Naam"] = Preferences.Get("Naam", "");
             oefening["Datum"] = DateTime.Now.ToString();
-            oefening["Duur"] = Application.Current.Properties["WorkTime"].ToString();
-            oefening["Workout"] = Application.Current.Properties["Workout"].ToString();
-            oefening["Moeilijkheidsgraad"] = Application.Current.Properties["Difficulty"].ToString();
+            oefening["Duur"] = Preferences.Get("WorkTime", 0);
+            oefening["Workout"] = Preferences.Get("Workout", "");
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", 0);
+            for (int i = 0; i < 3; i++)
+            {
+                    if (i == 2)
+                    {
+                        herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
+                    }
+                    else
+                    {
+                        herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
+                    }
+            }
+            oefening["Herhalingen"] = herhalingen;
             if (imgRatingHeartFull5.IsVisible)
             {
                 oefening["Gevoel"] = "5";
@@ -276,6 +295,18 @@ namespace StreetWorkoutV2.View
             else
             {
                 oefening["Gevoel"] = "1";
+            }
+            if (Preferences.Get("API", "") == "FitBit")
+            {
+                oefening["Kcal"] = 5;
+                oefening["MaxHeart"] = 5;
+                oefening["AverageHeart"] = 5;
+            }
+            else
+            {
+                oefening["Kcal"] = 0;
+                oefening["MaxHeart"] = 0;
+                oefening["AverageHeart"] = 0;
             }
             await DBManager.PostOefening(oefening);
             await Navigation.PopToRootAsync();
@@ -288,11 +319,24 @@ namespace StreetWorkoutV2.View
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             }
             JObject oefening = new JObject();
-            oefening["Naam"] = Application.Current.Properties["Naam"].ToString();
+            string herhalingen = "[";
+            oefening["Naam"] = Preferences.Get("Naam", "");
             oefening["Datum"] = DateTime.Now.ToString();
-            oefening["Duur"] = Application.Current.Properties["WorkTime"].ToString();
-            oefening["Workout"] = Application.Current.Properties["Workout"].ToString();
-            oefening["Moeilijkheidsgraad"] = Application.Current.Properties["Difficulty"].ToString();
+            oefening["Duur"] = Preferences.Get("WorkTime", 0);
+            oefening["Workout"] = Preferences.Get("Workout", ""); ;
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 2)
+                {
+                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
+                }
+                else
+                {
+                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
+                }
+            }
+            oefening["Herhalingen"] = herhalingen;
             if (imgRatingHeartFull5.IsVisible)
             {
                 oefening["Gevoel"] = "5";
@@ -312,6 +356,18 @@ namespace StreetWorkoutV2.View
             else
             {
                 oefening["Gevoel"] = "1";
+            }
+            if (Preferences.Get("API", "") == "FitBit")
+            {
+                oefening["Kcal"] = "5";
+                oefening["MaxHeart"] = "5";
+                oefening["AverageHeart"] = "5";
+            }
+            else
+            {
+                oefening["Kcal"] = 0;
+                oefening["MaxHeart"] = 0;
+                oefening["AverageHeart"] = 0;
             }
             await DBManager.PostOefening(oefening);
             await Navigation.PopAsync();

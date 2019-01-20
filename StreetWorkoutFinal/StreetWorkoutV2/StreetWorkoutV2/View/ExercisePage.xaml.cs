@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +14,6 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExercisePage : AnimationPage
     {
-        //static int count = 0;
         private int TimeKeeper = 0;
         private bool _isRunning = true;
         private bool _isSlideshowRunning = false;
@@ -25,8 +24,10 @@ namespace StreetWorkoutV2.View
         public ExercisePage(Oefening Exercise,int Repetitions,int Difficulty, string Progress)
         {
             InitializeComponent();
-            //Application.Current.Properties["StartWorkout"] = DateTime.Now;
-
+            if (Preferences.Get("StartDate", "") == null)
+            {
+                Preferences.Set("StartDate", DateTime.Now);
+            }
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
             imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
@@ -100,8 +101,6 @@ namespace StreetWorkoutV2.View
                         Play_Button.IsEnabled = false;
                         Play_Button.IsVisible = false;
                         RunTimer();
-
-
                     }
                     else
                     {
@@ -109,8 +108,6 @@ namespace StreetWorkoutV2.View
                         Play_Button.IsVisible = true;
                         Pause_Button.IsEnabled = false;
                         Pause_Button.IsVisible = false;
-
-
                     }
                 })
             };
@@ -232,22 +229,23 @@ namespace StreetWorkoutV2.View
         {
             if (_CurrentProgress == "1/3" || _CurrentProgress == "2/3")
             {
-                if (Application.Current.Properties.ContainsKey("WorkTime"))
+                if (Preferences.ContainsKey("WorkTime"))
                 {
-                    string workout = Application.Current.Properties["WorkTime"].ToString();
-                    Application.Current.Properties["WorkTime"] = TimeKeeper + int.Parse(workout);
+                    string workout = Preferences.Get("WorkTime", 0).ToString();
+                    Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
                 }
                 else
                 {
-                    Application.Current.Properties["WorkTime"] = TimeKeeper;
+                    Preferences.Set("WorkTime", TimeKeeper);
                 }
                 await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions,_Difficulty, _CurrentProgress));
             }
             else if (_CurrentProgress == "3/3")
             {
-                string workout = Application.Current.Properties["WorkTime"].ToString();
-                Application.Current.Properties["WorkTime"] = TimeKeeper + int.Parse(workout);
-                Application.Current.Properties["Workout"] = lblExerciseName.Text;
+                string workout = Preferences.Get("WorkTime", 0).ToString();
+                Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
+                Preferences.Set("Workout", lblExerciseName.Text);
+                Preferences.Set("Difficulty", _Difficulty);
                 await Navigation.PushAsync(new ExerciseCompletePage());
             }
         }

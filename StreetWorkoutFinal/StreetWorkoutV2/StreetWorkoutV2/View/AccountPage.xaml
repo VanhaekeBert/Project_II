@@ -81,7 +81,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="312" />
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblKcalWeek" />
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" kcal"/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
@@ -107,7 +107,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="10.9k" />
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--"  x:Name="LblKcalMaand"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" kcal"/>
                                                         </FormattedString>
                                                     </Label.FormattedText>

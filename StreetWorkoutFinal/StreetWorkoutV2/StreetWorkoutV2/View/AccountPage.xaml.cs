@@ -22,8 +22,8 @@ namespace StreetWorkoutV2.View
     public partial class AccountPage : AnimationPage
     {
         public Color JObject { get; }
-        List<Oefening> weekOef = new List<Oefening>();
-        List<Oefening> maandOef = new List<Oefening>();
+        List<OefeningDB> weekOef = new List<OefeningDB>();
+        List<OefeningDB> maandOef = new List<OefeningDB>();
 
         public AccountPage()
         {
@@ -37,19 +37,19 @@ namespace StreetWorkoutV2.View
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
                 var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                List<Oefening> oefeningen = new List<Oefening>();
+                List<OefeningDB> oefeningen = new List<OefeningDB>();
                 for (int i = 0; i < rawOefeningen.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        oefeningen.Add(JsonConvert.DeserializeObject<Oefening>(rawOefeningen[i].ToString() + "}"));
+                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString() + "}"));
                     }
                     else if (i != (rawOefeningen.Count() - 1))
                     {
-                        oefeningen.Add(JsonConvert.DeserializeObject<Oefening>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
-                foreach (Oefening oefening in oefeningen)
+                foreach (OefeningDB oefening in oefeningen)
                 {
                     if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
                     {
@@ -62,9 +62,21 @@ namespace StreetWorkoutV2.View
                 }
                 LblOefWeek.Text = weekOef.Count().ToString();
                 LblOefMaand.Text = maandOef.Count().ToString();
+                int kcalweek = 0;
+                foreach (OefeningDB oefening in weekOef)
+                {
+                    kcalweek += oefening.Kcal;
+                }
+                int kcalmaand = 0;
+                foreach (OefeningDB oefening in weekOef)
+                {
+                    kcalmaand += oefening.Kcal;
+                }
+                LblKcalWeek.Text = kcalweek.ToString();
+                LblKcalMaand.Text = kcalmaand.ToString();
                 MakeEntriesOef();
+                MakeEntriesKcal();
             }
-            MakeEntriesKcal();
             this.BackgroundColor = Color.FromHex("2B3049");
 
 
@@ -119,12 +131,25 @@ namespace StreetWorkoutV2.View
             List<string> listKleuren = new List<string> {
                 "#EE9F44","#EE9944","#EE9344","#EE8E44","#EE8844","#EE8244","#EE7D44","#EE8244"
             };
-            List<string> listLabels = new List<string> {
-                "Vr","Za","Zo","Ma","Di","Wo","Do","Vr"
-            };
-            List<string> listValues = new List<string> {
-                "42","45","40","120","81","83","60","5"
-            };
+            List<string> listLabels = new List<string>();
+            for (int i = 6; i >= 0; i--)
+            {
+                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
+            }
+            List<string> listValues = new List<string>();
+            foreach (string date in listLabels)
+            {
+                int i = 0;
+                foreach (OefeningDB oefening in weekOef)
+                {
+                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 3))
+                    {
+                        i += oefening.Kcal;
+                    }
+                }
+                listValues.Add(i.ToString());
+            }
+
 
             List<Entry> entriesKcal2 = new List<Entry> { };
             for (int i = 0; i < 7; i++)
@@ -151,33 +176,21 @@ namespace StreetWorkoutV2.View
         }
         private void MakeEntriesOef()
         {
-            List<string> data = new List<string>();
-            for (int i = 0; i < weekOef.Count(); i++)
-            {
-                if (i == 0)
-                {
-                    data.Add(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", ""));
-                }
-                else if (!data.Contains(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", "")))
-                {
-                    data.Add(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", ""));
-                }
-            }
             List<string> listKleuren = new List<string> {
                 "#FF4A4A","#F74848","#F74848","#F74848","#E64343","#E64343","#E64343","#E64343"
             };
             List<string> listLabels = new List<string>();
             for (int i = 6; i >= 0; i--)
             {
-                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 4));
+                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
             }
             List<string> listValues = new List<string>();
             foreach (string date in listLabels)
             {
                 int i = 0;
-                foreach (Oefening oefening in weekOef)
+                foreach (OefeningDB oefening in weekOef)
                 {
-                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 4))
+                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 3))
                     {
                         i++;
                     }

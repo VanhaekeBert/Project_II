@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -60,7 +61,15 @@ namespace StreetWorkoutV2.View
             new TapGestureRecognizer()
             {
                 Command = new Command(async () => {
-                    // SLA HIER DE inputRepetitions VARIABELE OP IN LOCAL STORAGE
+                    if (inputRepetitions.Text != "")
+                    {
+                        Preferences.Set($"Repetition{_Repetitions}", inputRepetitions.Text);
+                    }
+                    else
+                    {
+                        Preferences.Set($"Repetition{_Repetitions}", inputRepetitions.Placeholder);
+                    }
+                    Debug.WriteLine(Preferences.Get($"Repetition{_Repetitions}", ""));
                     await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                 })
             });
