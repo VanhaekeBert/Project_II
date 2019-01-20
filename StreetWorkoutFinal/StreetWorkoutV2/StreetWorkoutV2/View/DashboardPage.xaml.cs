@@ -66,70 +66,7 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            //imgQr.GestureRecognizers.Add(new TapGestureRecognizer
-            //{
-            //    Command = new Command(async () =>
-            //    {
-            //        var scan = new ZXingScannerPage();
-            //        await Navigation.PushAsync(scan);
-            //        //Debug.WriteLine("AwaitScanResult");
-
-            //        scan.OnScanResult += (result) =>
-            //        {
-            //            //Debug.WriteLine("OnScanResult");
-            //            Device.BeginInvokeOnMainThread(async () =>
-            //            {
-            //                await Navigation.PopToRootAsync();
-            //                //Debug.WriteLine("Start If statment");
-            //                //incline press
-            //                if (result.Text == "http://kaywa.me/s58ti")
-            //                {
-            //                    Popup.IsEnabled = true;
-            //                    Popup.IsVisible = true;
-            //                    _result = "Incline Press";
-            //                }
-            //                //pushupbars
-            //                else if (result.Text == "http://kaywa.me/wdxX3")
-            //                {
-            //                    Popup.IsEnabled = true;
-            //                    Popup.IsVisible = true;
-            //                    _result = "Push Up Bars";
-            //                }
-            //                //overheadladder
-            //                else if (result.Text == "http://kaywa.me/Y2UJp")
-            //                {
-            //                    Popup.IsEnabled = true;
-            //                    Popup.IsVisible = true;
-            //                    _result = "Overhead Ladder";
-            //                }
-            //                //parrallel bars
-            //                else if (result.Text == "http://kaywa.me/sle3O")
-            //                {
-            //                    Popup.IsEnabled = true;
-            //                    Popup.IsVisible = true;
-            //                    _result = "Parallel Bars";
-            //                }
-            //                //decline bench
-            //                else if (result.Text == "http://kaywa.me/3nCNB")
-            //                {
-            //                    Popup.IsEnabled = true;
-            //                    Popup.IsVisible = true;
-            //                    _result = "Decline Bench";
-            //                }
-            //                else
-            //                {
-            //                    PopupNoQr.IsEnabled = true;
-            //                    PopupNoQr.IsVisible = true;
-            //                }
-
-            //                //Debug.WriteLine("End If statment");
-            //            });
-
-            //        };
-            //        //Debug.WriteLine("VoorbijScanResult");
-            //    })
-            //});
-
+ 
             // -------------------------------------------------------------------
             // --------------------------TAPGESTURES -----------------------------
             // -------------------------------------------------------------------
@@ -182,10 +119,6 @@ namespace StreetWorkoutV2.View
             // -------------------------------------------------------------------
         }
 
-        //private void Debug()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
        
 
@@ -214,16 +147,6 @@ namespace StreetWorkoutV2.View
             popWater.IsVisible = false;
         }
 
-        //private void Back_Clicked(object sender, EventArgs e)
-        //{
-        //    PopupNoQr.IsEnabled = false;
-        //    PopupNoQr.IsVisible = false;
-        //    Navigation.PopToRootAsync();
-        //}
-
-        //private void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    PopupNavigation.Instance.PushAsync(new PopupView2());
-        //}
+        
     }
 }

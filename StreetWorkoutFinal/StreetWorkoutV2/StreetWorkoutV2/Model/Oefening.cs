@@ -28,6 +28,22 @@ namespace StreetWorkoutV2.Model
 
         public int AantalOefeningen { get; set; } = 3;
         public DateTime Datum { get; set; }
+        public List<string> BeschrijvingNewLine
+        {
+            get
+            {
+
+                List<string> ReturnList = new List<string>();
+                foreach (var subItem in Beschrijving)
+                {
+                    ReturnList.Add(subItem.Replace(". ", ". " + Environment.NewLine));
+                }
+
+                return ReturnList;
+
+            }
+        }
+
         public ImageSource OefeningCover
         {
             get

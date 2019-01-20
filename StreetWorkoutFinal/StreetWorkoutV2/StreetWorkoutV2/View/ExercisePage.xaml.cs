@@ -20,23 +20,24 @@ namespace StreetWorkoutV2.View
         private bool _isSlideshowRunning = false;
         Oefening _CurrentExercise;
         string _CurrentProgress;
+        int _Repetitions;
+        int _Difficulty;
         public ExercisePage(Oefening Exercise,int Repetitions,int Difficulty, string Progress)
         {
             InitializeComponent();
-            Application.Current.Properties["StartWorkout"] = DateTime.Now;
+            //Application.Current.Properties["StartWorkout"] = DateTime.Now;
 
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
             imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             imgExercise.Source = Exercise.AfbeeldingenResource[Difficulty][0];
-            lblDescription.Text = Exercise.Beschrijving[Difficulty];
+            lblDescription.Text = Exercise.BeschrijvingNewLine[Difficulty];
             lblExerciseName.Text = Exercise.Oefeningnaam[Difficulty];
-
 
             _CurrentExercise = Exercise;
             _CurrentProgress = Progress;
-
-         
+            _Difficulty = Difficulty;
+            _Repetitions = Repetitions;
 
             if (Exercise.AfbeeldingenResource[Difficulty].Count <= 1)
             {
@@ -48,7 +49,6 @@ namespace StreetWorkoutV2.View
                 imgExerciseSwap.Source = Exercise.AfbeeldingenResource[Difficulty][1];
             }
 
-
             lblProgress.Text = _CurrentProgress;
             if (_CurrentProgress != "1/3")
             {
@@ -56,21 +56,16 @@ namespace StreetWorkoutV2.View
                 btnBack.IsEnabled = false;
             }
 
-
             if (_CurrentExercise.Herhalingen.Count == 0)
             {
-                lblRepetitions.Text = _CurrentExercise.Duurtijd[Difficulty].ToString() + " Seconden";
+                lblRepetitions.Text = _CurrentExercise.Duurtijd[Repetitions].ToString() + " Seconden";
             }
             else
             {
-                lblRepetitions.Text = _CurrentExercise.Herhalingen[Difficulty].ToString() + " Herhalingen";
+                lblRepetitions.Text = _CurrentExercise.Herhalingen[Repetitions].ToString() + " Herhalingen";
             }
 
-            //if (count == 0) ;
-            //{
-            //    oefening.Beschrijving = oefening.Beschrijving.Replace(". ", ". " + Environment.NewLine);
-            //    count++;
-            //}
+
 
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -246,7 +241,7 @@ namespace StreetWorkoutV2.View
                 {
                     Application.Current.Properties["WorkTime"] = TimeKeeper;
                 }
-                await Navigation.PushAsync(new PausePage(_CurrentProgress, _CurrentExercise));
+                await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions,_Difficulty, _CurrentProgress));
             }
             else if (_CurrentProgress == "3/3")
             {

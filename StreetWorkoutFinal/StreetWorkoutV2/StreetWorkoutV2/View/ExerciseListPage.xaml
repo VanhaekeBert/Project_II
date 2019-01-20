@@ -75,7 +75,7 @@
                 </ListView>
             </Grid>
             <!--Popup-->
-            <StackLayout x:Name="popSelectDetails" IsVisible="False" IsEnabled="False" BackgroundColor="#ef000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            <StackLayout x:Name="popSelectDetails" IsVisible="False" IsEnabled="False" BackgroundColor="#d0000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"                
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="FillAndExpand">

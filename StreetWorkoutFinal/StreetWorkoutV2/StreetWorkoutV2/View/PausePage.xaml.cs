@@ -14,59 +14,71 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PausePage : AnimationPage
     {
-        string Aantal_keeper = "";
-        Oefening oefeningKeeper = new Oefening();
-        public PausePage(string aantal, Oefening oefening)
+        Oefening _CurrentExercise;
+        string _CurrentProgress;
+        int _Repetitions;
+        int _Difficulty;
+        public PausePage(Oefening Exercise, int Repetitions, int Difficulty, string Progress)
         {
             InitializeComponent();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
-            //Back button + heartbeat
-            Aantal_keeper = aantal;
-            oefeningKeeper = oefening;
-            GoToOefeningen.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
-           // OefeningImage.Source = oefening.AfbeeldingenResource[0];
-            RepitionsInput.Placeholder = oefening.Herhalingen.ToString();
+            imgContinue.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
+            imgExercise.Source = Exercise.AfbeeldingenResource[Difficulty][0];
+
+            _CurrentExercise = Exercise;
+            _CurrentProgress = Progress;
+            _Difficulty = Difficulty;
+            _Repetitions = Repetitions;
 
 
-            if (Aantal_keeper == "1/3")
+            if (_CurrentProgress == "1/3")
             {
-                Aantal_keeper = "2/3";
+                _CurrentProgress = "2/3";
             }
-            else if (Aantal_keeper == "2/3")
+            else if (_CurrentProgress == "2/3")
             {
-                Aantal_keeper = "3/3";
+                _CurrentProgress = "3/3";
             }
 
-            //Aantal_keer.Text = Aantal_keeper;
+            lblProgress.Text = _CurrentProgress;
+       
 
-            //if (oefening.Herhalingen == 0)
-            //{
-            //    Aantal_herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
-            //}
+            if (_CurrentExercise.Herhalingen.Count == 0)
+            {
+                inputRepetitions.Placeholder = Exercise.Duurtijd[Repetitions].ToString();
+                lblInputRepetitions.Text = "Vul uw behaalde aantal seconden in";
+                lblRepetitions.Text = _CurrentExercise.Duurtijd[Repetitions].ToString() + " Seconden";
+            }
             else
             {
-                Aantal_herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
+                inputRepetitions.Placeholder = Exercise.Herhalingen[Repetitions].ToString();
+                lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
+                lblRepetitions.Text = _CurrentExercise.Herhalingen[Repetitions].ToString() + " Herhalingen";
             }
 
-            ////////////////////////
-            //Next_exercise.GestureRecognizers.Add(
-            //new TapGestureRecognizer()
-            //{
-            //    Command = new Command(async () => { await Navigation.PushAsync(new ExercisePage(oefeningKeeper, Aantal_keeper)); })
-            //});
-            int countdownremaining = 0;
+            frameNextExercise.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () => {
+                    // SLA HIER DE inputRepetitions VARIABELE OP IN LOCAL STORAGE
+                    await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
+                })
+            });
+
+
+            int TimeKeeper = 0;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                countdownremaining += 1;
+                TimeKeeper += 1;
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    TimerText.Text = (countdownremaining / 60).ToString("00") + " : " + (countdownremaining % 60).ToString("00") + " /  01 : 00 ";
+                    lblTimerText.Text = (TimeKeeper / 60).ToString("00") + " : " + (TimeKeeper % 60).ToString("00") + " /  01 : 00 ";
 
-                    TimerBarInner.Progress = ((100.0 / 60.0) * countdownremaining) / 100.0;
+                    TimerBarInner.Progress = ((100.0 / 60.0) * TimeKeeper) / 100.0;
                 });
-                if (countdownremaining == 60)
+                if (TimeKeeper == 60)
                 {
-                    GaDoor.Text = "Ga nu door";
+                    GaDoor.Text = "Ga nu verder";
                     return false;
                 }
                 return true;

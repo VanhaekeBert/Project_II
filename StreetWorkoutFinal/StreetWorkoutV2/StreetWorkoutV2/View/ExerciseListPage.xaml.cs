@@ -19,9 +19,7 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseListPage : AnimationPage
     {
-        PickerClass _SelectedItem;
-        List<Oefening> _FinalList;
-        string _json;
+
         Oefening _TappedExercise;
         int _ChosenRepetitionState = 4;
         int _ChosenDifficultyState = 4;
@@ -36,15 +34,21 @@ namespace StreetWorkoutV2.View
             lvwExercices.ItemsSource = ExerciseList;
 
 
-
             lvwExercices.ItemSelected += async (o, e) =>
             {
                 var myList = (ListView)o;
                 _TappedExercise = (lvwExercices.SelectedItem as Oefening);
                 popSelectDetails.IsEnabled = true;
                 popSelectDetails.IsVisible = true;
-                
+
             };
+            btnBack.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+               {
+                   Navigation.PopAsync();
+               })
+            });
 
         }
         private void btnRep1_Clicked(object sender, EventArgs e)
@@ -100,6 +104,7 @@ namespace StreetWorkoutV2.View
             stkDiff3.Opacity = 1;
         }
 
+
         private async void btnConfirm_Clicked(object sender, EventArgs e)
         {
 
@@ -107,16 +112,16 @@ namespace StreetWorkoutV2.View
             {
                 if (_ChosenRepetitionState != 4)
                 {
-                    await Navigation.PushAsync(new ExercisePage(_TappedExercise,  _ChosenRepetitionState, _ChosenDifficultyState, "1/3"));
+                    await Navigation.PushAsync(new ExercisePage(_TappedExercise, _ChosenRepetitionState, _ChosenDifficultyState, "1/3"));
                     //lvwExercices.SelectedItem = null;
                     //popSelectDetails.IsEnabled = false;
                     //popSelectDetails.IsVisible = false;
                 }
-            } 
-            
+            }
+
         }
 
-        
+
 
     }
 }

@@ -70,33 +70,60 @@ namespace StreetWorkoutV2.View
             else
             {
                 //-----SPIER---------------------
-                List<string> filteredList = new List<string>();
-                Dictionary<string, int> Spier = new Dictionary<string, int>();
+
+                List<string> Filteredlisttoestel = new List<string>();
+                Dictionary<string, int> MuscleGroupSet = new Dictionary<string, int>();
                 lblTitle.Text = "Spiergroepen";
-
-                foreach (Oefening duts in _Oefeningslijst)
+                foreach (Oefening oefening in _Oefeningslijst)
                 {
-                    PickerClass toestel = new PickerClass() { Name = duts.Spiergroep };
-                    if (!filteredList.Contains(toestel.Name))
+                    PickerClass muscleGroup = new PickerClass() { Name = oefening.Spiergroep };
+                    if (!Filteredlisttoestel.Contains(muscleGroup.Name))
                     {
-
-                        filteredList.Add(toestel.Name);
-                        Spier.Add(toestel.Name, toestel.AantalOefeningen);
+                        Filteredlisttoestel.Add(muscleGroup.Name);
+                        MuscleGroupSet.Add(muscleGroup.Name, muscleGroup.AantalOefeningen);
                     }
                     else
                     {
-                        Spier[toestel.Name] += 1;
+                        MuscleGroupSet[muscleGroup.Name] += 1;
                     }
                 }
                 List<PickerClass> muscleList = new List<PickerClass>();
 
-                foreach (var spier in Spier)
+                foreach (var muscleGroup in MuscleGroupSet)
                 {
-                    PickerClass spiernaam = new PickerClass() { Name = spier.Key, AantalOefeningen = spier.Value, Type = uitvoering };
-                    muscleList.Add(spiernaam);
+                    PickerClass muscleName = new PickerClass() { Name = muscleGroup.Key, AantalOefeningen = muscleGroup.Value, Type = "Spiergroep" };
+                    muscleList.Add(muscleName);
                 }
-                //Listview opvullen
                 lvwDevices.ItemsSource = muscleList;
+                //----------------------------------------------------------
+                //-----SPIER---------------------
+                // List<string> filteredList = new List<string>();
+                // Dictionary<string, int> Spier = new Dictionary<string, int>();
+                // lblTitle.Text = "Spiergroepen";
+
+                // foreach (Oefening duts in _Oefeningslijst)
+                // {
+                //     PickerClass toestel = new PickerClass() { Name = duts.Spiergroep };
+                //     if (!filteredList.Contains(toestel.Name))
+                //     {
+
+                //         filteredList.Add(toestel.Name);
+                //         Spier.Add(toestel.Name, toestel.AantalOefeningen);
+                //     }
+                //     else
+                //     {
+                //         Spier[toestel.Name] += 1;
+                //     }
+                // }
+                // List<PickerClass> muscleList = new List<PickerClass>();
+
+                // foreach (var spier in Spier)
+                // {
+                //     PickerClass spiernaam = new PickerClass() { Name = spier.Key, AantalOefeningen = spier.Value, Type = uitvoering };
+                //     muscleList.Add(spiernaam);
+                // }
+                // //Listview opvullen
+                // lvwDevices.ItemsSource = muscleList;
                 //----------------------------------------------------------
             }
             this.BackgroundColor = Color.FromHex("2B3049");
@@ -125,19 +152,24 @@ namespace StreetWorkoutV2.View
 
                 foreach (Oefening oefening in _Oefeningslijst)
                 {
-
+                   
+                    if (oefening.Spiergroep == _SelectedItem.Name)
+                    {
+                        PassList.Add(oefening);
+                    }
+                    
                     if (oefening.Toestel == _SelectedItem.Name)
                     {
                         PassList.Add(oefening);
                     }
                 }
 
-               
 
 
 
-                    await Navigation.PushAsync(new ExerciseListPage( PassList));
-                    myList.SelectedItem = null;
+
+                await Navigation.PushAsync(new ExerciseListPage(PassList));
+                myList.SelectedItem = null;
 
             };
 
