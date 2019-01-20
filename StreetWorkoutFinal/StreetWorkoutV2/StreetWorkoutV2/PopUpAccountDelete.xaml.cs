@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,19 +19,6 @@ namespace StreetWorkoutV2
 		public PopUpAccountDelete ()
 		{
 			InitializeComponent ();
-
-
-
-            //FraAD.GestureRecognizers.Add(new TapGestureRecognizer
-            //{
-            //    Command = new Command(async () => {
-
-            //        await DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
-            //        Application.Current.Properties["Naam"] = null;
-            //        await Application.Current.SavePropertiesAsync();
-            //        await Navigation.PushAsync(new LoginPage());
-            //    })
-            //});
         }
 
         private async void Annuleren(object sender, EventArgs e)
@@ -42,13 +29,19 @@ namespace StreetWorkoutV2
 
         private async void Verwijderen(object sender, EventArgs e)
         {
-            await DBManager.DeleteUserData(Application.Current.Properties["Naam"].ToString());
-            await DBManager.DeleteOefeningenData(Application.Current.Properties["Naam"].ToString());
-            Application.Current.Properties["Naam"] = null;
-            await Application.Current.SavePropertiesAsync();
-            await Navigation.PushAsync(new LoginPage());
-
-
+            await DBManager.DeleteUserData(Preferences.Get("Naam", ""));
+            await DBManager.DeleteOefeningenData(Preferences.Get("Naam", ""));
+            await DBManager.DeleteWater(Preferences.Get("Naam", ""));
+            Preferences.Set("Naam", null);
+            Preferences.Set("Email", null);
+            Preferences.Set("Leeftijd", null);
+            Preferences.Set("Lengte", null);
+            Preferences.Set("Gewicht", null);
+            Preferences.Set("API", null);
+            Preferences.Set("WaterDoel", null);
+            Preferences.Set("WaterGedronken", null);
+            Preferences.Set("Oefeningen", null);
+            await Navigation.PushModalAsync(new LoginPage());
         }
     }
 }

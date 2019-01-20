@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:AnimationPage
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreetWorkoutV2.View.PickerPage"
+    xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
+    xmlns:custom="clr-namespace:StreetWorkoutV2"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    NavigationPage.HasNavigationBar="False">
+    <controls:AnimationPage.PageAnimation>
+        <controls:PushPageAnimation  Duration="Zero" Subtype="FromBottom"/>
+    </controls:AnimationPage.PageAnimation>
+    <ContentPage.Content>
+        <RelativeLayout Padding="0">
+            <!-- Background -->
+            <ff:CachedImage
+            x:Name="imgBackground"
+            Aspect="Fill"
+            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"></ff:CachedImage>
+            <!-- ================= -->
+            <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Back button + heartbeat-->
+                <StackLayout x:Name="btnBack" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,0,0,0" >
+                    <ff:CachedImage x:Name="imgBtnBack" WidthRequest="18" HorizontalOptions="Start" />
+                    <Label Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                </StackLayout>
+                <!-- ================= -->
+                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
+                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34" x:Name="lblTitle" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                </StackLayout>
+                <ListView Margin="24,40,24,0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="lvwDevices" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <custom:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,0,0,22">
+                                    <renderers:GradientLayout
+                                            ColorsList="#484E6D,#2D324B"
+                                            Mode="ToTopLeft">
+                                        <Grid  Padding="0" Margin="0" RowSpacing="0" HeightRequest="100" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                            <Grid Margin="24,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*"/>
+                                                    <ColumnDefinition Width="4*"/>
+                                                    <ColumnDefinition Width="0.5*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ff:CachedImage Source="{Binding Image}" Grid.Column="0"  Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                                <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                    <Label Text="{Binding Name}" Margin="10,2,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                                    <Label Text="{Binding AantalOefeningen, StringFormat='Aantal oefeningen: {0}'}" Margin="10,-5,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                </StackLayout>
+                                                <ff:CachedImage  x:Name="GoToOefeningen" Source="{Binding Go_To_button}" Margin="0,2,0,0"  Grid.Column="2"  VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="20" />
+                                            </Grid>
+                                        </Grid>
+                                    </renderers:GradientLayout>
+                                </custom:CustomFrame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <!--Popup-->
+            <!-- <StackLayout x:Name="popPickerDetails" IsVisible="fals" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand"><StackLayout  Margin="24" Spacing="0" HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand"><Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="150"  Padding="0" Margin="0,0,0,40"><renderers:GradientLayout
+                                            ColorsList="#484E6D,#323751"
+                                            Mode="ToTopLeft"><Grid Margin="0,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><Grid.RowDefinitions><RowDefinition Height="1*"></RowDefinition><RowDefinition Height="2*"></RowDefinition></Grid.RowDefinitions><Label Grid.Row="0" Grid.ColumnSpan="3" Margin="0,16,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Selecteer uw repetitiedoel" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" /><Frame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="10" VerticalOptions="EndAndExpand"   HorizontalOptions="Fill" HeightRequest="90"  Padding="0" Margin="0"><renderers:GradientLayout
+                                            ColorsList="#ED4444,#903A46"
+                                            Mode="ToTopLeft"><Grid Padding="0" Margin="16,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" ><Grid.ColumnDefinitions><ColumnDefinition Width="*" ></ColumnDefinition><ColumnDefinition Width="*" ></ColumnDefinition><ColumnDefinition Width="*" ></ColumnDefinition></Grid.ColumnDefinitions><Grid.RowDefinitions><RowDefinition Height="1*"></RowDefinition><RowDefinition Height="2*"></RowDefinition></Grid.RowDefinitions><Label Margin="0,8,0,0" HorizontalOptions="Center" FontSize="14" Text="Makkelijk" Grid.Row="0" Grid.Column="0" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" /><Label Margin="0,8,0,0" HorizontalOptions="Center" FontSize="14" Text="Gevorderd" Grid.Row="0" Grid.Column="1" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" /><Label Margin="0,8,0,0" HorizontalOptions="Center" FontSize="14" Text="Ervaren" Grid.Row="0" Grid.Column="2" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor} " /><Button Margin="0,0,0,16" Grid.Row="1" Grid.Column="0" Text="3x15"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" /><Button Margin="0,0,0,16" Grid.Row="1" Grid.Column="1" Text="3x30"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="45" /><Button Margin="0,0,0,16" Grid.Row="1" Grid.Column="2" Text="3x45"   BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" /></Grid></renderers:GradientLayout></Frame></Grid></renderers:GradientLayout></Frame><Frame CornerRadius="10" VerticalOptions="Center"   HorizontalOptions="Fill" HeightRequest="150"  Padding="0" x:Name=""><renderers:GradientLayout
+                                            ColorsList="#484E6D,#323751"
+                                            Mode="ToTopLeft"><Grid Margin="0,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><Grid.RowDefinitions><RowDefinition Height="1*"></RowDefinition><RowDefinition Height="2*"></RowDefinition></Grid.RowDefinitions><Label Grid.Row="0" Grid.ColumnSpan="3" Margin="0,16,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Selecteer de moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" /><Frame Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="10" VerticalOptions="EndAndExpand"   HorizontalOptions="Fill" HeightRequest="90"  Padding="0" Margin="0"><renderers:GradientLayout
+                                            ColorsList="#ED4444,#903A46"
+                                            Mode="ToTopLeft"><StackLayout Padding="0" Margin="16,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" ><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*" ></ColumnDefinition><ColumnDefinition Width="*" ></ColumnDefinition><ColumnDefinition Width="*" ></ColumnDefinition></Grid.ColumnDefinitions><Button VerticalOptions="CenterAndExpand" Margin="0,0,0,16"  Grid.Column="0" Text="3x15" x:Name="makkelijk" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" /><Button VerticalOptions="CenterAndExpand" Margin="0,0,0,16"  Grid.Column="1" Text="3x30" x:Name="gemiddeld"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="45" /><Button VerticalOptions="CenterAndExpand" Margin="0,0,0,16"  Grid.Column="2" Text="3x45" x:Name="moeilijk"   BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="45" /></Grid></StackLayout></renderers:GradientLayout></Frame></Grid></renderers:GradientLayout></Frame></StackLayout></StackLayout> -->
+            <!--========-->
+        </RelativeLayout>
+    </ContentPage.Content>
+</controls:AnimationPage>

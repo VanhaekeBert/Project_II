@@ -13,6 +13,8 @@ using Entry = Microcharts.Entry;
 using Xamarin.Forms.Xaml;
 using System.IO;
 using FormsControls.Base;
+using Newtonsoft.Json;
+using Xamarin.Essentials;
 
 namespace StreetWorkoutV2.View
 {
@@ -20,35 +22,51 @@ namespace StreetWorkoutV2.View
     public partial class AccountPage : AnimationPage
     {
         public Color JObject { get; }
-        List<JObject> weekOef = new List<JObject>();
-        List<JObject> maandOef = new List<JObject>();
+        List<Oefening> weekOef = new List<Oefening>();
+        List<Oefening> maandOef = new List<Oefening>();
 
         public AccountPage()
         {
             InitializeComponent();
-   
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
-            Potlood.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
+
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
+            imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
-            Username.Text = Application.Current.Properties["Naam"].ToString();
-            NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
-            foreach (JObject oefening in (List<JObject>)Application.Current.Properties["Oefeningen"])
+            lblUsername.Text = Preferences.Get("Naam", "");
+            NameChangeEntry.Text = Preferences.Get("Naam", "");
+            if (Preferences.Get("Oefeningen", "") != "[]")
             {
-                if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd"))+1)).Contains(int.Parse(oefening["Datum"].ToString().Substring(0,2))))
+                var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<Oefening> oefeningen = new List<Oefening>();
+                for (int i = 0; i < rawOefeningen.Count(); i++)
                 {
-                    weekOef.Add(oefening);
+                    if (i == 0)
+                    {
+                        oefeningen.Add(JsonConvert.DeserializeObject<Oefening>(rawOefeningen[i].ToString() + "}"));
+                    }
+                    else if (i != (rawOefeningen.Count() - 1))
+                    {
+                        oefeningen.Add(JsonConvert.DeserializeObject<Oefening>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                    }
                 }
-                if (int.Parse(DateTime.Now.ToString("MM")) == int.Parse(oefening["Datum"].ToString().Substring(3, 2)))
+                foreach (Oefening oefening in oefeningen)
                 {
-                    maandOef.Add(oefening);
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                    {
+                        weekOef.Add(oefening);
+                    }
+                    if (int.Parse(DateTime.Now.ToString("MM")) == oefening.Datum.Month)
+                    {
+                        maandOef.Add(oefening);
+                    }
                 }
+                LblOefWeek.Text = weekOef.Count().ToString();
+                LblOefMaand.Text = maandOef.Count().ToString();
+                MakeEntriesOef();
             }
-            LblOefWeek.Text = weekOef.Count().ToString();
-            LblOefMaand.Text = maandOef.Count().ToString();
             MakeEntriesKcal();
-            MakeEntriesOef();
             this.BackgroundColor = Color.FromHex("2B3049");
-            
+
 
             //Profile picture ophalen
             TapGestureRecognizer ImageHandler = new TapGestureRecognizer()
@@ -73,27 +91,27 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                    NameChangeEntry.Placeholder = Application.Current.Properties["Naam"].ToString();
+                    NameChangeEntry.Placeholder = Preferences.Get("Naam", "");
                     NameChangeEntry.IsVisible = true;
                     NameChangeEntry.IsEnabled = true;
                     NameChangeEntry.Focus();
-                    Username.IsVisible = false;
-                    Potlood.IsVisible = false;
+                    lblUsername.IsVisible = false;
+                    imgPencil.IsVisible = false;
                 })
             });
 
-            NameChangeEntry.Unfocused += async (sender, e) => {
+            NameChangeEntry.Unfocused += async (sender, e) =>
+            {
                 NameChangeEntry.IsVisible = false;
                 NameChangeEntry.IsEnabled = false;
-                Username.Text = NameChangeEntry.Text;
-                Username.IsVisible = true;
-                Potlood.IsVisible = true;
+                lblUsername.Text = NameChangeEntry.Text;
+                lblUsername.IsVisible = true;
+                imgPencil.IsVisible = true;
             };
-
-            weightInput.Text = Application.Current.Properties["Gewicht"].ToString();
-            ageInput.Text = Application.Current.Properties["Leeftijd"].ToString();
-            heightInput.Text = Application.Current.Properties["Lengte"].ToString();
-            waterInput.Text = Application.Current.Properties["WaterDoel"].ToString();
+            weightInput.Text = Preferences.Get("Gewicht", "");
+            ageInput.Text = Preferences.Get("Leeftijd", "");
+            heightInput.Text = Preferences.Get("Lengte", "");
+            waterInput.Text = Preferences.Get("WaterDoel", 0).ToString();
         }
 
         private void MakeEntriesKcal()
@@ -138,11 +156,11 @@ namespace StreetWorkoutV2.View
             {
                 if (i == 0)
                 {
-                    data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
+                    data.Add(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", ""));
                 }
-                else if (!data.Contains(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", "")))
+                else if (!data.Contains(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", "")))
                 {
-                    data.Add(weekOef[i]["Datum"].ToString().Substring(0, 10).Replace(" ", ""));
+                    data.Add(weekOef[i].Datum.ToString().Substring(0, 10).Replace(" ", ""));
                 }
             }
             List<string> listKleuren = new List<string> {
@@ -157,9 +175,9 @@ namespace StreetWorkoutV2.View
             foreach (string date in listLabels)
             {
                 int i = 0;
-                foreach (JObject oefening in weekOef)
+                foreach (Oefening oefening in weekOef)
                 {
-                    if (date == DateTime.Parse(oefening["Datum"].ToString()).DayOfWeek.ToString().Substring(0, 4))
+                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 4))
                     {
                         i++;
                     }
@@ -180,16 +198,16 @@ namespace StreetWorkoutV2.View
                 });
             }
             chartOef.Chart = new LineChart()
-                {
-                    Entries = entriesOef,
-                    BackgroundColor = SKColors.Transparent,
-                    PointSize = 22,
-                    LabelTextSize = 22,
-                    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                    LabelOrientation = Microcharts.Orientation.Horizontal,
-                    LabelColor = SKColor.Parse("#FFFFFF"),
-                };
-            }
+            {
+                Entries = entriesOef,
+                BackgroundColor = SKColors.Transparent,
+                PointSize = 22,
+                LabelTextSize = 22,
+                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelColor = SKColor.Parse("#FFFFFF"),
+            };
+        }
 
         protected override bool OnBackButtonPressed()
         {
@@ -200,19 +218,20 @@ namespace StreetWorkoutV2.View
         {
             LoadingIndicator.IsRunning = true;
             JObject user = new JObject();
+            JObject water = new JObject();
             user["Lengte"] = heightInput.Text.ToString();
             user["Gewicht"] = weightInput.Text.ToString();
             user["Leeftijd"] = ageInput.Text.ToString();
-            user["WaterDoel"] = waterInput.Text.ToString();
-            user["Naam"] = NameChangeEntry.Text.ToString();
-            Application.Current.Properties["Lengte"] = user["Lengte"];
-            Application.Current.Properties["Gewicht"] = user["Gewicht"];
-            Application.Current.Properties["Leeftijd"] = user["Leeftijd"];
-            Application.Current.Properties["WaterDoel"] = user["WaterDoel"];
-            await Application.Current.SavePropertiesAsync();
-            DBManager.PutUserData(Application.Current.Properties["Naam"].ToString(), "Naam", user);
-            Application.Current.Properties["Naam"] = user["Naam"];
-            await Application.Current.SavePropertiesAsync();
+            water["WaterDoel"] = int.Parse(waterInput.Text);
+            water["Naam"] = Preferences.Get("Naam", "");
+            //user["Naam"] = NameChangeEntry.Text.ToString();
+            Preferences.Set("Lengte", user["Lengte"].ToString());
+            Preferences.Set("Gewicht", user["Gewicht"].ToString());
+            Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
+            Preferences.Set("WaterDoel", int.Parse(water["WaterDoel"].ToString()));
+            DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
+            DBManager.PutWater(water);
+            //Preferences.Set("Naam", user["Naam"].ToString());
             LoadingIndicator.IsRunning = false;
             var vUpdatedPage = new AccountPage();
             Navigation.InsertPageBefore(vUpdatedPage, this);

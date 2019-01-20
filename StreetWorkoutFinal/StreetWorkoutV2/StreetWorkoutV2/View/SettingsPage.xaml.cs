@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,12 +21,12 @@ namespace StreetWorkoutV2.View
         public SettingsPage()
         {
             InitializeComponent();
-            if (Application.Current.Properties["API"].ToString() == "FitBit")
+            if (Preferences.Get("API", "") == "FitBit")
             {
                 lblFBverbonden.Text = "Verbonden";
                 lblPverbonden.Text = "Niet Verbonden";
             }
-            else if (Application.Current.Properties["API"].ToString() == "Polar")
+            else if (Preferences.Get("API", "") == "Polar")
             {
                 lblFBverbonden.Text = "Niet Verbonden";
                 lblPverbonden.Text = "Verbonden";
@@ -36,30 +36,31 @@ namespace StreetWorkoutV2.View
                 lblFBverbonden.Text = "Niet Verbonden";
                 lblPverbonden.Text = "Niet Verbonden";
             }
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
 
             var tapGestureRecognizerFB = new TapGestureRecognizer();
-            tapGestureRecognizerFB.Tapped += (s, e) => {
+            tapGestureRecognizerFB.Tapped += (s, e) =>
+            {
                 Task.Run(async () =>
                 {
                     FitBitUser user = await FitBitManager.FitBitAsync();
                     var vUpdatedPage = new SettingsPage();
                     Navigation.InsertPageBefore(vUpdatedPage, this);
                     await Navigation.PopAsync();
-                    user.Naam = Application.Current.Properties["Naam"].ToString();
+                    user.Naam = Preferences.Get("Naam", "").ToString();
                     string text = JsonConvert.SerializeObject(user);
                     JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                    Application.Current.Properties["Leeftijd"] = data["Leeftijd"];
-                    Application.Current.Properties["Lengte"] = data["Lengte"];
-                    Application.Current.Properties["Gewicht"] = data["Gewicht"];
-                    Application.Current.Properties["API"] = data["API"];
-                    await Application.Current.SavePropertiesAsync();
+                    Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
+                    Preferences.Set("Lengte", data["Lengte"].ToString());
+                    Preferences.Set("Gewicht", data["Gewicht"].ToString());
+                    Preferences.Set("API", data["API"].ToString());
                     DBManager.PutUserData(user.Naam, "Naam", data);
                 });
             };
 
             var tapGestureRecognizerP = new TapGestureRecognizer();
-            tapGestureRecognizerP.Tapped += (s, e) => {
+            tapGestureRecognizerP.Tapped += (s, e) =>
+            {
                 var auth = PolarManager.GetPolarAuth();
                 auth.AllowCancel = true;
                 var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
@@ -69,14 +70,13 @@ namespace StreetWorkoutV2.View
                     Task.Run(async () =>
                     {
                         PolarUser user = await PolarManager.GetPolarToken();
-                        user.Naam = Application.Current.Properties["Naam"].ToString();
+                        user.Naam = Preferences.Get("Naam", "");
                         string text = JsonConvert.SerializeObject(user);
                         JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                        Application.Current.Properties["Leeftijd"] = data["Leeftijd"];
-                        Application.Current.Properties["Lengte"] = data["Lengte"];
-                        Application.Current.Properties["Gewicht"] = data["Gewicht"];
-                        Application.Current.Properties["API"] = data["API"];
-                        await Application.Current.SavePropertiesAsync();
+                        Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
+                        Preferences.Set("Lengte", data["Lengte"].ToString());
+                        Preferences.Set("Gewicht", data["Gewicht"].ToString());
+                        Preferences.Set("API", data["API"].ToString());
                         DBManager.PutUserData(user.Naam, "Naam", data);
                     });
                 };
@@ -85,14 +85,16 @@ namespace StreetWorkoutV2.View
 
             FraWWR.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
-                    await Navigation.PushAsync(new WachtwoordResetPage());
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new PasswordResetPage());
                 })
             });
 
             FraAD.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
 
 
                     await Navigation.PushPopupAsync(new PopUpAccountDelete());
@@ -106,18 +108,15 @@ namespace StreetWorkoutV2.View
 
         private async void Logout(object sender, EventArgs e)
         {
-            Application.Current.Properties["Naam"] = null;
-            Application.Current.Properties["Email"] = null;
-            Application.Current.Properties["Leeftijd"] = null;
-            Application.Current.Properties["Lengte"] = null;
-            Application.Current.Properties["Gewicht"] = null;
-            Application.Current.Properties["Achievements"] = null;
-            Application.Current.Properties["API"] = null;
-            Application.Current.Properties["Token"] = null;
-            Application.Current.Properties["WaterDoel"] = null;
-            Application.Current.Properties["WaterGedronken"] = null;
-            Application.Current.Properties["Oefeningen"] = null;
-            await Application.Current.SavePropertiesAsync();
+            Preferences.Set("Naam", null);
+            Preferences.Set("Email", null);
+            Preferences.Set("Leeftijd", null);
+            Preferences.Set("Lengte", null);
+            Preferences.Set("Gewicht", null);
+            Preferences.Set("API", null);
+            Preferences.Set("WaterDoel", null);
+            Preferences.Set("WaterGedronken", null);
+            Preferences.Set("Oefeningen", null);
             await Navigation.PushAsync(new LoginPage());
         }
         protected override bool OnBackButtonPressed()

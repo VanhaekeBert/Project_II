@@ -1,6 +1,7 @@
 ﻿using FormsControls.Base;
 using StreetWorkoutV2.View;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,16 +13,14 @@ namespace StreetWorkoutV2
         public App()
         {
             InitializeComponent();
-            //if (Application.Current.Properties.ContainsKey("Naam") && Application.Current.Properties["Naam"] != null)
-            //{
-
-                MainPage = new NavigationPage(new DashboardPage());
-
-            //}
-            //else
-            //{
-            //    MainPage = new NavigationPage(new RegisterPage());
-            //}
+            if (Preferences.Get("Naam", "") != "")
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new RegisterPage());
+            }
 
 
         }

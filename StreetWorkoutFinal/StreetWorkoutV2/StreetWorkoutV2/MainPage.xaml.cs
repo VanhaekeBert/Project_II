@@ -15,7 +15,6 @@ namespace StreetWorkoutV2
         public MainPage()
         {
             InitializeComponent();
-
             var navAcccount = new AnimationNavigationPage(new AccountPage());
             navAcccount.Icon = "account.png";
             navAcccount.Title = "Account";

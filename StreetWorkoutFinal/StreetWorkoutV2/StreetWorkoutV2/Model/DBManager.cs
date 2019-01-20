@@ -102,6 +102,12 @@ namespace StreetWorkoutV2.Model
                 return false;
             }
         }
+
+        internal static Task<bool> LoginAsync(object p, string v)
+        {
+            throw new NotImplementedException();
+        }
+
         public static async Task<JObject> GetUserData(string value, string referentie)
         {
             JObject userData = new JObject();
@@ -155,7 +161,7 @@ namespace StreetWorkoutV2.Model
             return message.IsSuccessStatusCode;
         }
 
-        public static async Task<List<JObject>> GetOefeningenData(string naam)
+        public static async Task<JArray> GetOefeningenData(string naam)
         {
             JObject userData = new JObject();
             userData["Naam"] = naam;
@@ -166,7 +172,7 @@ namespace StreetWorkoutV2.Model
             string url = "https://streetworkout.azurewebsites.net/api/GetOefening";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
-            List<JObject> gegevens = JsonConvert.DeserializeObject<List<JObject>>(responseString.ToString());
+            JArray gegevens = JsonConvert.DeserializeObject<JArray>(responseString.ToString());
             return gegevens;
         }
 
@@ -180,6 +186,109 @@ namespace StreetWorkoutV2.Model
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
             string url = "https://streetworkout.azurewebsites.net/api/DeleteOefeningenData";
             var message = await client.PostAsync(url, httpContent);
+        }
+
+        public static async Task<bool> PostWater(string naam, int waterdoel, int watergedronken)
+        {
+            TimeZone localZone = TimeZone.CurrentTimeZone;
+            TimeSpan currentOffset = localZone.GetUtcOffset(DateTime.Now);
+            JObject reg = new JObject();
+            reg["WaterDoel"] = waterdoel;
+            reg["Naam"] = naam;
+            reg["WaterGedronken"] = watergedronken;
+            reg["Datum"] = DateTime.Now.ToString("MM-dd-yyyy");
+            if (currentOffset.ToString().Substring(0, 1) == "-")
+            {
+                reg["DatumTijd"] = DateTime.Now.AddHours(-int.Parse(currentOffset.ToString().Substring(1, 2)));
+            }
+            else
+            {
+                reg["DatumTijd"] = DateTime.Now.AddHours(int.Parse(currentOffset.ToString().Substring(0, 2)));
+            }
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(reg);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/PostWater";
+            var message = await client.PostAsync(url, httpContent);
+            return message.IsSuccessStatusCode;
+        }
+
+        public static async Task<JArray> GetWater(string naam)
+        {
+            JObject userData = new JObject();
+            userData["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(userData);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/GetWater";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            JArray gegevens = JsonConvert.DeserializeObject<JArray>(responseString.ToString());
+            return gegevens;
+        }
+
+        public static async Task<JObject> GetLatestWater(string naam)
+        {
+            JObject userData = new JObject();
+            userData["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(userData);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/GetLatestWater";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            JObject gegevens = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
+            return gegevens;
+        }
+
+        public static async Task DeleteWater(string naam)
+        {
+            JObject data = new JObject();
+            data["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(data);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/DeleteWater?code=cvCM8haZ00J5YYzWHglXIyJh9eANDVel5PSZsymy83Hv18rPnstrQA==";
+            var message = await client.PostAsync(url, httpContent);
+        }
+
+        public static async Task<string> PutWater(JObject data)
+        {
+            data["Datum"] = DateTime.Now.ToString("MM-dd-yyyy");
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(data);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/PutWater";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return responseString.ToString();
+        }
+
+        public static async Task<bool> CheckWater(string naam, DateTime Datum)
+        {
+            JObject checkUserData = new JObject();
+            checkUserData["Naam"] = naam;
+            checkUserData["Datum"] = Datum.ToString("MM-dd-yyyy");
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            string request = JsonConvert.SerializeObject(checkUserData);
+            StringContent httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/CheckUserData";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            if (responseString.ToString() == "true")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

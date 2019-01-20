@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Asset\Backbutton.png" />
+    <None Remove="Asset\backbutton.png" />
     <None Remove="Asset\Background.png" />
     <None Remove="Asset\BackgroundAccount.png" />
     <None Remove="Asset\BackgroundAccount_2x.png" />
@@ -128,8 +128,8 @@
     <None Remove="Asset\Oef_Afbeeldingen\push_up_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\push_up_medium_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\push_up_medium_2.jpg" />
-    <None Remove="Asset\Oef_Afbeeldingen\Reuzenpas_easy_1.jpg" />
-    <None Remove="Asset\Oef_Afbeeldingen\Reuzenpas_easy_2.jpg" />
+    <None Remove="Asset\Oef_Afbeeldingen\reuzenpas_easy_1.jpg" />
+    <None Remove="Asset\Oef_Afbeeldingen\reuzenpas_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\schelp_easy_1.jpg" />
@@ -318,8 +318,8 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\push_up_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\push_up_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\push_up_medium_2.jpg" />
-    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Reuzenpas_easy_1.jpg" />
-    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Reuzenpas_easy_2.jpg" />
+    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reuzenpas_easy_1.jpg" />
+    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reuzenpas_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\schelp_easy_1.jpg" />
@@ -381,7 +381,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Asset\Backbutton.png" />
+    <EmbeddedResource Include="Asset\backbutton.png" />
     <EmbeddedResource Include="Asset\Background.png" />
     <EmbeddedResource Include="Asset\BackgroundDashboard.png" />
     <EmbeddedResource Include="Asset\BackgroundProfile.png" />
@@ -417,6 +417,7 @@
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.180" />
     <PackageReference Include="Sendgrid" Version="9.10.0" />
     <PackageReference Include="Xamarin.Auth" Version="1.6.0.4" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
@@ -429,8 +430,29 @@
     <Compile Update="PopUp_ForgotPassword.xaml.cs">
       <DependentUpon>PopUp_ForgotPassword.xaml</DependentUpon>
     </Compile>
+    <Compile Update="View\ExerciseListPage.xaml.cs">
+      <DependentUpon>ExerciseListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\LogbookPage.xaml.cs">
+      <DependentUpon>LogbookPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="View\OefeningPage - Copy.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="View\ExerciseCompletePage.xaml.cs">
+      <DependentUpon>ExerciseCompletePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\ExercisePage.xaml.cs">
+      <DependentUpon>ExercisePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PausePage.xaml.cs">
+      <DependentUpon>PausePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PickerPage.xaml.cs">
+      <DependentUpon>PickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PasswordResetPage.xaml.cs">
+      <DependentUpon>PasswordResetPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -453,28 +475,28 @@
     <EmbeddedResource Update="View\DashboardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\ExercisePage.xaml">
+    <EmbeddedResource Update="View\ExerciseListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ForgotPasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\LogboekPage.xaml">
+    <EmbeddedResource Update="View\LogbookPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\OefeningPage.xaml">
+    <EmbeddedResource Update="View\ExercisePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Oefening_Complete_Page.xaml">
+    <EmbeddedResource Update="View\ExerciseCompletePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\PauzePage.xaml">
+    <EmbeddedResource Update="View\PausePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Picker_Toestel_Page.xaml">
+    <EmbeddedResource Update="View\PickerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\RegisterPage.xaml">
@@ -483,7 +505,7 @@
     <EmbeddedResource Update="View\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\WachtwoordResetPage.xaml">
+    <EmbeddedResource Update="View\PasswordResetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

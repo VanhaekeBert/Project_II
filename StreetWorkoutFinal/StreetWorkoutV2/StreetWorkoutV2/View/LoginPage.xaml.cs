@@ -1,14 +1,16 @@
 ﻿using FormsControls.Base;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Rg.Plugins.Popup.Extensions;
 using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,9 +23,9 @@ namespace StreetWorkoutV2.View
         {
             InitializeComponent();
 
-            BckgrImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-            backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
+            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             PasswordEntry.IsPassword = true;
 
             Password_reset.GestureRecognizers.Add(new TapGestureRecognizer
@@ -33,11 +35,11 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            backbutton.GestureRecognizers.Add(new TapGestureRecognizer
+            btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
-                    await backbutton.FadeTo(0.3, 150);
-                    await backbutton.FadeTo(1, 150);
+                    await btnBack.FadeTo(0.3, 150);
+                    await btnBack.FadeTo(1, 150);
                     await Navigation.PushAsync(new RegisterPage());
                 })
             });
@@ -67,7 +69,7 @@ namespace StreetWorkoutV2.View
         private async void Button_Clicked(object sender, EventArgs e)
         {
             LoadingIndicator.IsRunning = false;
-            ErrorLabel.IsVisible = true;
+            lblError.IsVisible = true;
             if (PasswordEntry.Text != null && UserNameEntry.Text != null)
             {
                 LoadingIndicator.IsRunning = true;
@@ -76,32 +78,50 @@ namespace StreetWorkoutV2.View
                 if (Login)
                 {
                     JObject gebruiker = await DBManager.GetUserData(UserNameEntry.Text.Replace(" ", ""), "Naam");
-                    List<JObject> oefeningen = await DBManager.GetOefeningenData(UserNameEntry.Text.Replace(" ", ""));
-                    Application.Current.Properties["Naam"] = gebruiker["Naam"];
-                    Application.Current.Properties["Email"] = gebruiker["Email"];
-                    Application.Current.Properties["Leeftijd"] = gebruiker["Leeftijd"];
-                    Application.Current.Properties["Lengte"] = gebruiker["Lengte"];
-                    Application.Current.Properties["Gewicht"] = gebruiker["Gewicht"];
-                    Application.Current.Properties["Achievements"] = gebruiker["Achievements"];
-                    Application.Current.Properties["API"] = gebruiker["API"];
-                    Application.Current.Properties["Token"] = gebruiker["Token"];
-                    Application.Current.Properties["WaterDoel"] = gebruiker["WaterDoel"];
-                    Application.Current.Properties["WaterGedronken"] = gebruiker["WaterGedronken"];
-                    Application.Current.Properties["Oefeningen"] = oefeningen;
-                    await Application.Current.SavePropertiesAsync();
+                    JArray oefeningen = await DBManager.GetOefeningenData(UserNameEntry.Text.Replace(" ", ""));
+                    var latestWater = await DBManager.GetLatestWater(UserNameEntry.Text.Replace(" ", ""));
+                    if (latestWater != null)
+                    {
+                        DateTime datum = (DateTime)latestWater["Datum"];
+                        if (datum.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
+                        {
+                            Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
+                            Preferences.Set("WaterGedronken", int.Parse(latestWater["WaterGedronken"].ToString()));
+                        }
+                        else
+                        {
+                            DBManager.PostWater(UserNameEntry.Text.Replace(" ", ""), int.Parse(latestWater["WaterDoel"].ToString()), 0);
+                            Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
+                            Preferences.Set("WaterGedronken", 0);
+                        }
+                    }
+                    else
+                    {
+                        DBManager.PostWater(UserNameEntry.Text.Replace(" ", ""), 0, 0);
+                        Preferences.Set("WaterDoel", 0);
+                        Preferences.Set("WaterGedronken", 0);
+                    }
+                    var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
+                    Preferences.Set("Naam", gebruiker["Naam"].ToString());
+                    Preferences.Set("Email", gebruiker["Email"].ToString());
+                    Preferences.Set("Leeftijd", gebruiker["Leeftijd"].ToString());
+                    Preferences.Set("Lengte", gebruiker["Lengte"].ToString());
+                    Preferences.Set("Gewicht", gebruiker["Gewicht"].ToString());
+                    Preferences.Set("API", gebruiker["API"].ToString());
+                    Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
                     await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else
                 {
-                    ErrorLabel.Text = "Onjuiste ingave.";
-                    ErrorLabel.IsVisible = true;
+                    lblError.Text = "Onjuiste ingave.";
+                    lblError.IsVisible = true;
                     LoadingIndicator.IsRunning = false;
                 }
             }
             else
             {
-                ErrorLabel.Text = "Vul alle gegevens in.";
-                ErrorLabel.IsVisible = true;
+                lblError.Text = "Vul alle gegevens in.";
+                lblError.IsVisible = true;
                 LoadingIndicator.IsRunning = false;
             }
         }
