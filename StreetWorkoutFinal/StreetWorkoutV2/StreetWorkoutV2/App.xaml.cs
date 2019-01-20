@@ -15,6 +15,7 @@ namespace StreetWorkoutV2
             InitializeComponent();
             if (Preferences.Get("Naam", "") != "")
             {
+                Preferences.Set("From", true);
                 MainPage = new NavigationPage(new MainPage());
             }
             else
