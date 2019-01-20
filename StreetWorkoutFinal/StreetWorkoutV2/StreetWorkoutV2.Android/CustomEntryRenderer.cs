@@ -40,7 +40,7 @@ namespace StreetWorkoutV2.Droid
                 Control.Elevation = 6.0f;
                 Control.TranslationY = 3.0f;
                 this.Control.SetBackground(gd);
-                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Argb(99, 0,0,0)));
+                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Argb(99, 0, 0, 0)));
                 Control.SetPadding(60, 50, 0, 0);
 
             }

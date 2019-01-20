@@ -25,7 +25,7 @@ namespace StreetWorkoutV2.View
             InitializeComponent();
             //Debug.WriteLine(Application.Current.Properties["Naam"]);
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
-            imgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
+            imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");
             imgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
             imgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout.png");
             imgStartWorkout_Cover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout_Cover.png");
@@ -46,12 +46,21 @@ namespace StreetWorkoutV2.View
             }
 
 
-            WaterFrame.GestureRecognizers.Add(new TapGestureRecognizer
+            frameWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command( () =>
                 {
                     popWater.IsEnabled = true;
                     popWater.IsVisible = true;
+                    
+                })
+            });
+
+            frameLog.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new LogbookPage());
                     
                 })
             });
@@ -98,9 +107,17 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            click_one_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            btnQR.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
+                {
+                    await Navigation.PushAsync(new QrPage());
+                })
+            });
+
+            click_one_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command( () =>
                 {
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 250;
@@ -110,7 +127,7 @@ namespace StreetWorkoutV2.View
 
             click_two_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 500;
@@ -120,7 +137,7 @@ namespace StreetWorkoutV2.View
 
             click_four_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 1000;

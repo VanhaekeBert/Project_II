@@ -24,15 +24,18 @@ namespace StreetWorkoutV2.View
             repetitions.Add(13);
             repetitions.Add(15);
             repetitions.Add(15);
-            //Logboek logboek = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Makkelijk", Total_hearts_given = 3, ExerciseRepetitions = repetitions };
-            //Logboek logboek1 = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Gemiddeld", Total_hearts_given = 5, ExerciseRepetitions = repetitions };
-            //List<Logboek> logboeks = new List<Logboek>();
-            //logboeks.Add(logboek);
-            //logboeks.Add(logboek1);
-            //logboeks.Add(logboek);
-            //logboeks.Add(logboek1);
+            Logboek logboek = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Makkelijk", Total_hearts_given = 3, ExerciseRepetitions = repetitions };
+            Logboek logboek1 = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Gemiddeld", Total_hearts_given = 5, ExerciseRepetitions = repetitions };
+            List<Logboek> logboeks = new List<Logboek>();
+            logboeks.Add(logboek);
+            logboeks.Add(logboek1);
+            logboeks.Add(logboek);
+            logboeks.Add(logboek1);
 
-            //Logboek1.ItemsSource = logboeks;
+            Logboek1.ItemsSource = logboeks;
+            Logboek1.HeightRequest = (100 * logboeks.Count);
+            Logboek2.ItemsSource = logboeks;
+            Logboek2.HeightRequest = (100 * logboeks.Count);
         }
     }
 }
