@@ -48,8 +48,8 @@
                                 </Grid>
                             </renderers:GradientLayout>
                         </Frame>
-                        <local1:CustomEntry  x:Name="OefeningNaamEntry" VerticalOptions="CenterAndExpand" Margin="24,0,24,14" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Zoeken op naam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
-                        <!--<local1:CustomEntry TextChanged="OefeningNaamEntry_TextChanged" x:Name="OefeningNaamEntry" VerticalOptions="CenterAndExpand" Margin="24,0,24,14" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Zoeken op naam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>-->
+                        <!-- <local1:CustomEntry  x:Name="OefeningNaamEntry" VerticalOptions="CenterAndExpand" Margin="24,0,24,14" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Zoeken op naam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/> -->
+                        <local1:CustomEntry TextChanged="OefeningNaamEntry_TextChanged" x:Name="OefeningNaamEntry" VerticalOptions="CenterAndExpand" Margin="24,0,24,14" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Zoeken op naam" TextColor="{StaticResource Darkcolor}" FontSize="14" HeightRequest="50" FontFamily="{StaticResource NormalFont}"/>
                     </renderers:GradientLayout>
                 </Frame>
                 <ListView Margin="24,24,24,0" Grid.Row="3" x:Name="lvwExercices" HasUnevenRows="True" HeightRequest="1000" VerticalOptions="StartAndExpand">
@@ -82,10 +82,9 @@
                 <StackLayout  Margin="24" Spacing="0" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand">
                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  >
-
                         <Label Text="Vorige keer koos u voor:" FontSize="16" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12"/>
-                    <Label Text="3x30 Gevorderd" FontSize="20" FontFamily="{StaticResource BoldFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12"/>
-                    <ff:CachedImage x:Name="imgHearts" Aspect="AspectFill" HeightRequest="35" HorizontalOptions="Center" Margin="0,0,0,0"></ff:CachedImage>
+                        <Label Text="3x30 Gevorderd" FontSize="20" FontFamily="{StaticResource BoldFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12"/>
+                        <ff:CachedImage x:Name="imgHearts" Aspect="AspectFill" HeightRequest="35" HorizontalOptions="Center" Margin="0,0,0,0"></ff:CachedImage>
                         <StackLayout  VerticalOptions="CenterAndExpand"  Padding="0,0,0,0" HeightRequest="150" HorizontalOptions="Fill"   Margin="0,0,0,30" x:Name="frameRepetions">
                             <!--<renderers:GradientLayout
                                             ColorsList="#484E6D,#323751"

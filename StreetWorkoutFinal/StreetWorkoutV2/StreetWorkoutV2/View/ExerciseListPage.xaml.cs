@@ -23,7 +23,7 @@ namespace StreetWorkoutV2.View
         Oefening _TappedExercise;
         int _ChosenRepetitionState = 4;
         int _ChosenDifficultyState = 4;
-        List<Oefening> Oefeningslijst = new List<Oefening>();
+        List<Oefening> _ExerciseList = new List<Oefening>();
 
         public ExerciseListPage(List<Oefening> ExerciseList)
         {
@@ -32,6 +32,12 @@ namespace StreetWorkoutV2.View
             imgHearts.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Hearts_4.png");
             Titlelabel.Text = ExerciseList[0].Toestel;
             lvwExercices.ItemsSource = ExerciseList;
+            _ExerciseList = ExerciseList;
+            // OefeningNaamEntry.TextChanged += async (o, e) =>
+            // {
+            //     lvwExercices.ItemsSource
+
+            // };
 
 
             lvwExercices.ItemSelected += async (o, e) =>
@@ -50,6 +56,25 @@ namespace StreetWorkoutV2.View
                })
             });
 
+        }
+        private void OefeningNaamEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<Oefening> filteredExerciseList = new List<Oefening>();
+            if (OefeningNaamEntry.Text != null)
+            {
+                foreach (Oefening oefening in _ExerciseList)
+                {
+                    if (oefening.Groepering.ToLower().Contains(OefeningNaamEntry.Text.ToLower()))
+                    {
+                        filteredExerciseList.Add(oefening);
+                    }
+                }
+                lvwExercices.ItemsSource = filteredExerciseList;
+            }
+            else
+            {
+                lvwExercices.ItemsSource = _ExerciseList;
+            }
         }
         private void btnRep1_Clicked(object sender, EventArgs e)
         {
