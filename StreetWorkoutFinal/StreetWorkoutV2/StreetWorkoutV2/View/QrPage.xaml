@@ -32,9 +32,9 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <!--Back button + heartbeat +10px down -->
-                            <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,10,0,0" x:Name="btnBack">
+                            <StackLayout x:Name="btnBack" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,10,0,0">
                                 <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="imgBtnBack"/>
-                                <Label Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                                <Label Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center" />
                             </StackLayout>
                             <!-- ================= -->
                             <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">

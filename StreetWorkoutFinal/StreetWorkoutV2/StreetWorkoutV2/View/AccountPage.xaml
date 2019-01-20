@@ -23,7 +23,7 @@
                 <RelativeLayout Padding="0">
                     <ff:CachedImage                        
                         x:Name="imgBackground"
-                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-370}"
+                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-530}"
         RelativeLayout.WidthConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
         RelativeLayout.HeightConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Height,Factor=1,Constant=10}"
                   />
@@ -171,6 +171,70 @@
                                                     <Label.FormattedText >
                                                         <FormattedString>
                                                             <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblOefMaand"/>
+                                                            <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </renderers:GradientLayout>
+                                </Frame>
+                            </Grid>
+                            <!-- chart water-->
+                            <Frame CornerRadius="10" Padding="0" HeightRequest="200" Margin="0,24,0,24" >
+                                <renderers:GradientLayout
+                                            ColorsList="#484E6D,#2F344E"
+                                            Mode="ToTopLeft">
+                                    <StackLayout VerticalOptions="Start" Spacing="0" Margin="0,24,0,24">
+                                        <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="water gedronken / dag" TextColor="White"/>
+                                        <forms:ChartView x:Name="chartWater" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+                                    <!-- Grafiek-->
+                                </renderers:GradientLayout>
+                            </Frame>
+                            <!--Aantal water per week-->
+                            <Grid Margin="24,0,24,16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="28*"/>
+                                    <ColumnDefinition Width="8*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalOptions="CenterAndExpand" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Totaal in de voorbije week:" TextColor="White"/>
+                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill"   HeightRequest="44" WidthRequest="46" Padding="0">
+                                    <renderers:GradientLayout
+                                            ColorsList="#447DEE,#44C5EE"
+                                            Mode="ToTopLeft">
+                                        <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                            <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                                <Label TextColor="White" >
+                                                    <Label.FormattedText >
+                                                        <FormattedString>
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblWaterWeek"/>
+                                                            <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </renderers:GradientLayout>
+                                </Frame>
+                            </Grid>
+                            <!--Aantal water voorbije maand-->
+                            <Grid Margin="24,0,24,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="28*"/>
+                                    <ColumnDefinition Width="8*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label VerticalOptions="CenterAndExpand" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Totaal in de voorbije maand:" TextColor="White"/>
+                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill"   HeightRequest="44" WidthRequest="46" Padding="0">
+                                    <renderers:GradientLayout
+                                            ColorsList="#447DEE,#44C5EE"
+                                            Mode="ToTopLeft">
+                                        <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                            <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                                <Label TextColor="White" >
+                                                    <Label.FormattedText >
+                                                        <FormattedString>
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblWaterMaand"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>

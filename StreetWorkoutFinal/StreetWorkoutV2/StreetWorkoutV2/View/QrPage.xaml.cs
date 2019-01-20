@@ -28,6 +28,17 @@ namespace StreetWorkoutV2.View
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             lblTitle.Text = "QR SCANNER";
             GrabJson();
+
+            btnBack.GestureRecognizers.Add(
+            new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    await btnBack.FadeTo(0.3, 150);
+                    await btnBack.FadeTo(1, 150);
+                    await Navigation.PopAsync();
+                })
+            });
         }
 
         public void GrabJson()

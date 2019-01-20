@@ -27,7 +27,7 @@ namespace StreetWorkoutV2.View
 
             InitializeComponent();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Picker_Background.png");
-            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
+            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 
 
             var assembly = typeof(Oefening).GetTypeInfo().Assembly;

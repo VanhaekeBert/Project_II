@@ -222,6 +222,46 @@ namespace StreetWorkoutV2.View
             };
         }
 
+        private void MakeEntriesWater()
+        {
+            List<string> listKleuren = new List<string> {
+                "#44C5EE","#44B9EE","#44AFEE","#44A2EE","#4499EE","#448EEE","#447DEE","#447DEE"
+            };
+            List<string> listLabels = new List<string>();
+            for (int i = 6; i >= 0; i--)
+            {
+                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
+            }
+
+            List<string> listValues = new List<string>
+            {
+                "72","62","20","30","50","80","60","70"
+            };
+
+            List<Entry> entriesWater = new List<Entry> { };
+            for (int i = 0; i < listLabels.Count(); i++)
+            {
+                float value = float.Parse(listValues[i]);
+
+                entriesWater.Add(new Entry(value)
+                {
+                    Color = SKColor.Parse(listKleuren[i]),
+                    Label = listLabels[i],
+                    ValueLabel = listValues[i]
+                });
+            }
+            chartWater.Chart = new LineChart()
+            {
+                Entries = entriesWater,
+                BackgroundColor = SKColors.Transparent,
+                PointSize = 22,
+                LabelTextSize = 22,
+                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelColor = SKColor.Parse("#FFFFFF"),
+            };
+        }
+
         protected override bool OnBackButtonPressed()
         {
             return true;
