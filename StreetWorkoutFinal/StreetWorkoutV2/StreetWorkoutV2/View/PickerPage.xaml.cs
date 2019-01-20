@@ -39,6 +39,7 @@ namespace StreetWorkoutV2.View
             if (uitvoering == "Toestel")
             {
                 //-----TOESTEL---------------------
+
                 List<string> Filteredlisttoestel = new List<string>();
                 Dictionary<string, int> Toestel = new Dictionary<string, int>();
                 lblTitle.Text = "Toestellen";
@@ -118,72 +119,25 @@ namespace StreetWorkoutV2.View
             {
                 var myList = (ListView)o;
                 _SelectedItem = (myList.SelectedItem as PickerClass);
-                List<Oefening> easylist = new List<Oefening>();
-                List<Oefening> mediumlist = new List<Oefening>();
-                List<Oefening> hardlist = new List<Oefening>();
-
-
-                //foreach (Oefening oefening in _Oefeningslijst)
-                //{
-                //    if (_SelectedItem.Type == "Toestel")
-                //    {
-                //        if (oefening.Toestel == _SelectedItem.Name)
-                //        {
-                //            if (oefening.Moeilijkheidsgraad == "Easy")
-                //            {
-                //                easylist.Add(oefening);
-                //            }
-                //            else if (oefening.Moeilijkheidsgraad == "Medium")
-                //            {
-                //                mediumlist.Add(oefening);
-                //            }
-                //            else if (oefening.Moeilijkheidsgraad == "Hard")
-                //            {
-                //                hardlist.Add(oefening);
-                //            }
-                //        }
-                //    }
-                //    else if (_SelectedItem.Type == "Spiergroep")
-                //    {
-                //        if (oefening.Spiergroep == _SelectedItem.Name)
-                //        {
-                //            if (oefening.Moeilijkheidsgraad == "Easy")
-                //            {
-                //                easylist.Add(oefening);
-                //            }
-                //            else if (oefening.Moeilijkheidsgraad == "Medium")
-                //            {
-                //                mediumlist.Add(oefening);
-                //            }
-                //            else if (oefening.Moeilijkheidsgraad == "Hard")
-                //            {
-                //                hardlist.Add(oefening);
-                //            }
-                //        }
-                //    }
+                List<Oefening> PassList = new List<Oefening>();
 
 
 
-                //if (easylist.Count == 0)
-                //{
-                //    makkelijk.Opacity = 0.5;
-                //}
-                //if (mediumlist.Count == 0)
-                //{
-                //    gemiddeld.Opacity = 0.5;
-                //}
-                //if (hardlist.Count == 0)
-                //{
-                //    moeilijk.Opacity = 0.5;
-                //}
-                //popPickerDetails.IsEnabled = true;
-                //popPickerDetails.IsVisible = true;
+                foreach (Oefening oefening in _Oefeningslijst)
+                {
+
+                    if (oefening.Toestel == _SelectedItem.Name)
+                    {
+                        PassList.Add(oefening);
+                    }
+                }
+
+               
 
 
 
-
-                //await popupView.PushAsync(new ExerciseListPage());
-                myList.SelectedItem = null;
+                    await Navigation.PushAsync(new ExerciseListPage( PassList));
+                    myList.SelectedItem = null;
 
             };
 

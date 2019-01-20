@@ -15,51 +15,56 @@ namespace StreetWorkoutV2.View
     public partial class ExercisePage : AnimationPage
     {
         //static int count = 0;
-        string AantalKeeper = "";
-        private int countdownremaining = 0;
+        private int TimeKeeper = 0;
         private bool _isRunning = true;
         private bool _isSlideshowRunning = false;
-        Oefening oefeningKeeper = new Oefening();
-        public ExercisePage(Oefening oefening, string aantal)
+        Oefening _CurrentExercise;
+        string _CurrentProgress;
+        public ExercisePage(Oefening Exercise,int Repetitions,int Difficulty, string Progress)
         {
             InitializeComponent();
             Application.Current.Properties["StartWorkout"] = DateTime.Now;
-            AantalKeeper = aantal;
-            oefeningKeeper = oefening;
 
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
-            OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
-            OefeningImage.Source = oefening.AfbeeldingenResource[0];
+            imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
+            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
+            imgExercise.Source = Exercise.AfbeeldingenResource[Difficulty][0];
+            lblDescription.Text = Exercise.Beschrijving[Difficulty];
+            lblExerciseName.Text = Exercise.Oefeningnaam[Difficulty];
 
-            if (oefening.AfbeeldingenResource.Count <= 1)
+
+            _CurrentExercise = Exercise;
+            _CurrentProgress = Progress;
+
+         
+
+            if (Exercise.AfbeeldingenResource[Difficulty].Count <= 1)
             {
                 SlideshowToggle_Start.IsVisible = false;
                 SlideshowToggle_Stop.IsVisible = false;
             }
             else
             {
-                OefeningImage2.Source = oefening.AfbeeldingenResource[1];
+                imgExerciseSwap.Source = Exercise.AfbeeldingenResource[Difficulty][1];
             }
 
-            imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
 
-            aantal_keer.Text = AantalKeeper;
-            if (AantalKeeper != "1/3")
+            lblProgress.Text = _CurrentProgress;
+            if (_CurrentProgress != "1/3")
             {
                 btnBack.IsVisible = false;
                 btnBack.IsEnabled = false;
             }
 
-            //Oefeningnaam.Text = oefening.Oefeningnaam; 
 
-            //if (oefening.Herhalingen == 0)
-            //{
-            //    herhalingen.Text = oefening.Duurtijd.ToString() + " Seconden";
-            //}
-            //else
-            //{
-            //    herhalingen.Text = oefening.Herhalingen.ToString() + " Herhalingen";
-            //}
+            if (_CurrentExercise.Herhalingen.Count == 0)
+            {
+                lblRepetitions.Text = _CurrentExercise.Duurtijd[Difficulty].ToString() + " Seconden";
+            }
+            else
+            {
+                lblRepetitions.Text = _CurrentExercise.Herhalingen[Difficulty].ToString() + " Herhalingen";
+            }
 
             //if (count == 0) ;
             //{
@@ -67,12 +72,11 @@ namespace StreetWorkoutV2.View
             //    count++;
             //}
 
-            description.Text = oefening.Beschrijving;
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
-                    if (AantalKeeper == "1/3")
+                    if (_CurrentProgress == "1/3")
                     {
 
                         await Navigation.PopAsync();
@@ -182,10 +186,10 @@ namespace StreetWorkoutV2.View
         {
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                countdownremaining += 1;
+                TimeKeeper += 1;
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    TimerText.Text = (countdownremaining / 60).ToString("00") + " : " + (countdownremaining % 60).ToString("00");
+                    TimerText.Text = (TimeKeeper / 60).ToString("00") + " : " + (TimeKeeper % 60).ToString("00");
 
 
                 });
@@ -211,11 +215,11 @@ namespace StreetWorkoutV2.View
                 {
                     if (slideshowstate)
                     {
-                        OefeningImage2.IsVisible = true;
+                        imgExerciseSwap.IsVisible = true;
                     }
                     else
                     {
-                        OefeningImage2.IsVisible = false;
+                        imgExerciseSwap.IsVisible = false;
 
                     }
 
@@ -229,26 +233,26 @@ namespace StreetWorkoutV2.View
         // END OF SLIDESHOW TIMER CODE ---------------------------------------
         // -------------------------------------------------------------------
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void btnDone_Clicked(object sender, EventArgs e)
         {
-            if (AantalKeeper == "1/3" || AantalKeeper == "2/3")
+            if (_CurrentProgress == "1/3" || _CurrentProgress == "2/3")
             {
                 if (Application.Current.Properties.ContainsKey("WorkTime"))
                 {
                     string workout = Application.Current.Properties["WorkTime"].ToString();
-                    Application.Current.Properties["WorkTime"] = countdownremaining + int.Parse(workout);
+                    Application.Current.Properties["WorkTime"] = TimeKeeper + int.Parse(workout);
                 }
                 else
                 {
-                    Application.Current.Properties["WorkTime"] = countdownremaining;
+                    Application.Current.Properties["WorkTime"] = TimeKeeper;
                 }
-                await Navigation.PushAsync(new PausePage(AantalKeeper, oefeningKeeper));
+                await Navigation.PushAsync(new PausePage(_CurrentProgress, _CurrentExercise));
             }
-            else if (AantalKeeper == "3/3")
+            else if (_CurrentProgress == "3/3")
             {
                 string workout = Application.Current.Properties["WorkTime"].ToString();
-                Application.Current.Properties["WorkTime"] = countdownremaining + int.Parse(workout);
-                Application.Current.Properties["Workout"] = Oefeningnaam.Text;
+                Application.Current.Properties["WorkTime"] = TimeKeeper + int.Parse(workout);
+                Application.Current.Properties["Workout"] = lblExerciseName.Text;
                 await Navigation.PushAsync(new ExerciseCompletePage());
             }
         }

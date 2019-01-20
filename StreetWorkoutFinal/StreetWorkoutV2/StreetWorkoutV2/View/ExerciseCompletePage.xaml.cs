@@ -32,7 +32,7 @@ namespace StreetWorkoutV2.View
             repetitions.Add(15);
             Logboek logboek = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Makkelijk", Total_hearts_given = 3, ExerciseRepetitions = repetitions };
             NameToestel.BindingContext = logboek;
-            Moeilijkheidsgraad.BindingContext = logboek;
+            //Moeilijkheidsgraad.BindingContext = logboek;
             Repetition1.BindingContext = logboek;
             Repetition2.BindingContext = logboek;
             Repetition3.BindingContext = logboek;

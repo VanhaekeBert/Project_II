@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Asset\Backbutton.png" />
+    <None Remove="Asset\backbutton.png" />
     <None Remove="Asset\Background.png" />
     <None Remove="Asset\BackgroundAccount.png" />
     <None Remove="Asset\BackgroundAccount_2x.png" />
@@ -128,8 +128,8 @@
     <None Remove="Asset\Oef_Afbeeldingen\push_up_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\push_up_medium_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\push_up_medium_2.jpg" />
-    <None Remove="Asset\Oef_Afbeeldingen\Reuzenpas_easy_1.jpg" />
-    <None Remove="Asset\Oef_Afbeeldingen\Reuzenpas_easy_2.jpg" />
+    <None Remove="Asset\Oef_Afbeeldingen\reuzenpas_easy_1.jpg" />
+    <None Remove="Asset\Oef_Afbeeldingen\reuzenpas_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\schelp_easy_1.jpg" />
@@ -318,8 +318,8 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\push_up_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\push_up_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\push_up_medium_2.jpg" />
-    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Reuzenpas_easy_1.jpg" />
-    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Reuzenpas_easy_2.jpg" />
+    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reuzenpas_easy_1.jpg" />
+    <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reuzenpas_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\reverse_chin-up_hard_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\schelp_easy_1.jpg" />
@@ -381,7 +381,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Asset\Backbutton.png" />
+    <EmbeddedResource Include="Asset\backbutton.png" />
     <EmbeddedResource Include="Asset\Background.png" />
     <EmbeddedResource Include="Asset\BackgroundDashboard.png" />
     <EmbeddedResource Include="Asset\BackgroundProfile.png" />

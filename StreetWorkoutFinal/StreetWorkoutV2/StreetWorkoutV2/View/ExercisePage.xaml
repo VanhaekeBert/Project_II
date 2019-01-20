@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
     xmlns:custom="clr-namespace:StreetWorkoutV2"
-             x:Class="StreetWorkoutV2.View.ExercisePage"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="StreetWorkoutV2.View.ExercisePage"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource MainDarkColor}">
     <controls:AnimationPage.PageAnimation>
@@ -39,23 +40,23 @@
                 <!-- frame with foto or video -->
                 <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="24,0" RowSpacing="0" ColumnSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="300"/>
+                        <RowDefinition Height="1*"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <custom:CustomFrame  CornerRadius="10" BackgroundColor="Transparent" Padding="0" Grid.Row="1" VerticalOptions="FillAndExpand" Margin="0,-30,0,0">
                         <renderers:GradientLayout   ColorsList="#484E6D,#313650"   Mode="ToTopLeft">
                             <ScrollView HeightRequest="130" Margin="0,0,0,24">
-                                <Label Margin="24,44" Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="15" HorizontalOptions="Center" TextColor="{StaticResource LightColor}"  Text="" x:Name="description"/>
+                                <Label  x:Name="lblDescription" Margin="24,44" Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="15" HorizontalOptions="Center" TextColor="{StaticResource LightColor}"  Text=""/>
                             </ScrollView>
                         </renderers:GradientLayout>
                     </custom:CustomFrame>
                     <custom:CustomFrame  CornerRadius="10"  Padding="0" Grid.Row="0"   VerticalOptions="FillAndExpand">
                         <!--<renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft">-->
                         <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0"  BackgroundColor="Red" VerticalOptions="FillAndExpand">
-                            <Image x:Name="OefeningImage" Aspect="AspectFill" />
-                            <Image x:Name="OefeningImage2" Aspect="AspectFill" IsVisible="False" />
-                            <Image x:Name="OefeningCover" Aspect="AspectFill"/>
+                            <Image x:Name="imgExercise" Aspect="AspectFill" />
+                            <Image x:Name="imgExerciseSwap" Aspect="AspectFill" IsVisible="False" />
+                            <Image x:Name="imgExerciseCover" Aspect="AspectFill"/>
                             <Grid Margin="24,0,24,0" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" HeightRequest="90">
                                 <Image HeightRequest="75"  Opacity="0.5" IsVisible="False" IsEnabled="False"  x:Name="SlideshowToggle_Stop" Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" />
                                 <Image HeightRequest="75"  IsVisible="True" IsEnabled="True"  x:Name="SlideshowToggle_Start"  Margin="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" />
@@ -69,9 +70,9 @@
                                     <ColumnDefinition Width="9*"/>
                                     <ColumnDefinition Width="1*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Margin="0,2,0,0" Grid.Row="0" Grid.ColumnSpan="2" Text="" x:Name="Oefeningnaam" FontFamily="{StaticResource BoldFont}"  FontSize="34" TextColor="{StaticResource LightColor}" />
-                                <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Text="" x:Name="herhalingen" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
-                                <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="1" Text="" x:Name="aantal_keer"  FontFamily="{StaticResource BoldFont}" FontSize="18" HorizontalOptions="EndAndExpand" TextColor="{StaticResource LightColor}"/>
+                                <Label Margin="0,2,0,0" Grid.Row="0" Grid.ColumnSpan="2" Text="" x:Name="lblExerciseName" FontFamily="{StaticResource BoldFont}"  FontSize="34" TextColor="{StaticResource LightColor}" />
+                                <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Text="" x:Name="lblRepetitions" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                <Label Margin="0,2,0,0" Grid.Row="1" Grid.Column="1" Text="" x:Name="lblProgress"  FontFamily="{StaticResource BoldFont}" FontSize="18" HorizontalOptions="EndAndExpand" TextColor="{StaticResource LightColor}"/>
                             </Grid>
                         </Grid>
                         <!--</renderers:GradientLayout>-->
@@ -81,36 +82,29 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Frame HasShadow="True" Grid.Row="0" CornerRadius="10" Padding="0" Grid.ColumnSpan="2"  VerticalOptions="FillAndExpand" >
+                        <Frame HasShadow="True" Grid.Row="0"  CornerRadius="10" Padding="0"  VerticalOptions="FillAndExpand" >
                             <renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft">
-                                <Grid  VerticalOptions="CenterAndExpand" Margin="24">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                    </Grid.RowDefinitions>
+                                <Grid  VerticalOptions="CenterAndExpand" Padding="0" Margin="24,24,24,14" RowSpacing="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="6*"/>
                                         <ColumnDefinition Width="4*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Verstreken Tijd" Grid.Column="0" Grid.Row="0" FontFamily="{StaticResource NormalFont}" FontSize="15" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                    <Label Text="00 : 00"  x:Name="TimerText" Grid.Column="0" Grid.Row="1" FontFamily="{StaticResource BoldFont}" FontSize="42" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                    <Image BackgroundColor="Transparent" x:Name="Pause_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="77" HeightRequest="77" IsEnabled="True" IsVisible="True" ></Image>
-                                    <Image BackgroundColor="Transparent" x:Name="Play_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="77" HeightRequest="77" IsEnabled="False" IsVisible="False"></Image>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Column="0" >
+                                        <Label Text="Verstreken Tijd"  FontFamily="{StaticResource NormalFont}" FontSize="15" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                                        <Label Text="00 : 00"  x:Name="TimerText" FontFamily="{StaticResource BoldFont}" FontSize="42" TextColor="{StaticResource LightColor}" VerticalOptions="Center" Margin="0,0,0,0"/>
+                                    </StackLayout>
+                                    <Image Aspect="AspectFit" x:Name="Pause_Button" Grid.Column="1"    HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Center"  IsEnabled="True" IsVisible="True"  Margin="0" ></Image>
+                                    <Image Aspect="AspectFit" Grid.Row="0" x:Name="Play_Button" Grid.Column="1"  HeightRequest="80" WidthRequest="80"  IsEnabled="False" IsVisible="False" Margin="0" />
                                     <!--<Button x:Name="Pause_Button" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" FontFamily="{StaticResource BoldFont}" Text="I I"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="24" FontAttributes="Bold" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="15" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" HeightRequest="60" Clicked="Button_Pause_Clicked"/>-->
                                     <!--<Label Text="Dashboard"  FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>-->
                                 </Grid>
                             </renderers:GradientLayout>
                         </Frame>
-                        <Frame HasShadow="True" Grid.Row="1" Grid.Column="0"  HeightRequest="50" CornerRadius="10" Padding="0">
-                            <renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft">
-                                <Label Text="Volgende: 1 min pauze"  FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
-                            </renderers:GradientLayout>
-                        </Frame>
-                        <Button Grid.Row="1" Grid.Column="1" Text="Klaar" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="End" WidthRequest="100" HeightRequest="40" Margin="0,0,10,0" Clicked="Button_Clicked"/>
+                        <!--<Frame HasShadow="True" Grid.Row="1" Grid.Column="0"  HeightRequest="50" CornerRadius="10" Padding="0"><renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft"><Label Text="Volgende: 1 min pauze"  FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/></renderers:GradientLayout></Frame>-->
+                        <Button Clicked="btnDone_Clicked" Grid.Row="1" Text="Klaar" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="100" HeightRequest="40" Margin="0,10,0,0" />
                     </Grid>
                 </Grid>
             </Grid>

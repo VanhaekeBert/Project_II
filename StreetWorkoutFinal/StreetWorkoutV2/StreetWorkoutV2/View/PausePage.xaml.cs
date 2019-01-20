@@ -24,7 +24,7 @@ namespace StreetWorkoutV2.View
             Aantal_keeper = aantal;
             oefeningKeeper = oefening;
             GoToOefeningen.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
-            OefeningImage.Source = oefening.AfbeeldingenResource[0];
+           // OefeningImage.Source = oefening.AfbeeldingenResource[0];
             RepitionsInput.Placeholder = oefening.Herhalingen.ToString();
 
 
@@ -49,11 +49,11 @@ namespace StreetWorkoutV2.View
             }
 
             ////////////////////////
-            Next_exercise.GestureRecognizers.Add(
-            new TapGestureRecognizer()
-            {
-                Command = new Command(async () => { await Navigation.PushAsync(new ExercisePage(oefeningKeeper, Aantal_keeper)); })
-            });
+            //Next_exercise.GestureRecognizers.Add(
+            //new TapGestureRecognizer()
+            //{
+            //    Command = new Command(async () => { await Navigation.PushAsync(new ExercisePage(oefeningKeeper, Aantal_keeper)); })
+            //});
             int countdownremaining = 0;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {

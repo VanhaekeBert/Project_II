@@ -30,21 +30,21 @@ namespace StreetWorkoutV2.View
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
-            lblUsername.Text = Application.Current.Properties["Naam"].ToString();
-            NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
-            List<Oefening> oefeningen = (List<Oefening>)Application.Current.Properties["Oefeningen"];
+           // lblUsername.Text = Application.Current.Properties["Naam"].ToString();
+           // NameChangeEntry.Text = Application.Current.Properties["Naam"].ToString();
+           // List<Oefening> oefeningen = (List<Oefening>)Application.Current.Properties["Oefeningen"];
 
-            foreach (Oefening oefening in oefeningen)
-            {
-                if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
-                {
-                    weekOef.Add(oefening);
-                }
-                if (int.Parse(DateTime.Now.ToString("MM")) == oefening.Datum.Month)
-                {
-                    maandOef.Add(oefening);
-                }
-            }
+            //foreach (Oefening oefening in oefeningen)
+            //{
+            //    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+            //    {
+            //        weekOef.Add(oefening);
+            //    }
+            //    if (int.Parse(DateTime.Now.ToString("MM")) == oefening.Datum.Month)
+            //    {
+            //        maandOef.Add(oefening);
+            //    }
+            //}
             LblOefWeek.Text = weekOef.Count().ToString();
             LblOefMaand.Text = maandOef.Count().ToString();
             MakeEntriesKcal();
@@ -93,10 +93,10 @@ namespace StreetWorkoutV2.View
                 imgPencil.IsVisible = true;
             };
 
-            weightInput.Text = Application.Current.Properties["Gewicht"].ToString();
-            ageInput.Text = Application.Current.Properties["Leeftijd"].ToString();
-            heightInput.Text = Application.Current.Properties["Lengte"].ToString();
-            waterInput.Text = Application.Current.Properties["WaterDoel"].ToString();
+            //weightInput.Text = Application.Current.Properties["Gewicht"].ToString();
+            //ageInput.Text = Application.Current.Properties["Leeftijd"].ToString();
+            //heightInput.Text = Application.Current.Properties["Lengte"].ToString();
+            //waterInput.Text = Application.Current.Properties["WaterDoel"].ToString();
         }
 
         private void MakeEntriesKcal()

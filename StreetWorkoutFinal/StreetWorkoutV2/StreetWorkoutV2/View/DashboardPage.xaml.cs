@@ -32,18 +32,18 @@ namespace StreetWorkoutV2.View
             imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.qrcode.png");
             imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
-            lblWelcome.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
+            //lblWelcome.Text = "Welkom " + Application.Current.Properties["Naam"].ToString();
             one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
-            if (Application.Current.Properties["WaterDoel"].ToString() != null)
-            {
-                if (Application.Current.Properties["WaterGedronken"].ToString() != null)
-                {
-                    lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
-                }
-                lblWaterTotaal.Text = " / " + Application.Current.Properties["WaterDoel"].ToString() + " ";
-            }
+            //if (Application.Current.Properties["WaterDoel"].ToString() != null)
+            //{
+            //    if (Application.Current.Properties["WaterGedronken"].ToString() != null)
+            //    {
+            //        lblWaterGedronken.Text = Application.Current.Properties["WaterGedronken"].ToString();
+            //    }
+            //    lblWaterTotaal.Text = " / " + Application.Current.Properties["WaterDoel"].ToString() + " ";
+            //}
 
 
 
@@ -187,29 +187,7 @@ namespace StreetWorkoutV2.View
         //    throw new NotImplementedException();
         //}
 
-        //private async void Makkelijk_Clicked(object sender, EventArgs e)
-        //{
-        //    Popup.IsEnabled = false;
-        //    PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
-        //    await Navigation.PushAsync(new ExerciseListPage(_QrItem, "gemakkelijk"));
-        //    Popup.IsVisible = false;
-        //}
-
-        //private async void Gemiddeld_Clicked(object sender, EventArgs e)
-        //{
-        //    Popup.IsEnabled = false;
-        //    PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
-        //    await Navigation.PushAsync(new ExerciseListPage(_QrItem, "gemiddeld"));
-        //    Popup.IsVisible = false;
-        //}
-
-        //private async void Moeilijk_Clicked(object sender, EventArgs e)
-        //{
-        //    Popup.IsEnabled = false;
-        //    PickerClass _QrItem = new PickerClass() { Name = _result, Type = "Toestel" };
-        //    await Navigation.PushAsync(new ExerciseListPage(_QrItem, "moeilijk"));
-        //    Popup.IsVisible = false;
-        //}
+       
 
 
         protected override bool OnBackButtonPressed()

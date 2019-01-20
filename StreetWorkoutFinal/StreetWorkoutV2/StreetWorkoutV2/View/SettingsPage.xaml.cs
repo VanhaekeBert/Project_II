@@ -21,21 +21,21 @@ namespace StreetWorkoutV2.View
         public SettingsPage()
         {
             InitializeComponent();
-            if (Application.Current.Properties["API"].ToString() == "FitBit")
-            {
-                lblFBverbonden.Text = "Verbonden";
-                lblPverbonden.Text = "Niet Verbonden";
-            }
-            else if (Application.Current.Properties["API"].ToString() == "Polar")
-            {
-                lblFBverbonden.Text = "Niet Verbonden";
-                lblPverbonden.Text = "Verbonden";
-            }
-            else
-            {
-                lblFBverbonden.Text = "Niet Verbonden";
-                lblPverbonden.Text = "Niet Verbonden";
-            }
+            //if (Application.Current.Properties["API"].ToString() == "FitBit")
+            //{
+            //    lblFBverbonden.Text = "Verbonden";
+            //    lblPverbonden.Text = "Niet Verbonden";
+            //}
+            //else if (Application.Current.Properties["API"].ToString() == "Polar")
+            //{
+            //    lblFBverbonden.Text = "Niet Verbonden";
+            //    lblPverbonden.Text = "Verbonden";
+            //}
+            //else
+            //{
+            //    lblFBverbonden.Text = "Niet Verbonden";
+            //    lblPverbonden.Text = "Niet Verbonden";
+            //}
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
 
             var tapGestureRecognizerFB = new TapGestureRecognizer();
