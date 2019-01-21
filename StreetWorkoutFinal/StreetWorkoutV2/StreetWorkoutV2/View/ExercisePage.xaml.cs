@@ -22,13 +22,15 @@ namespace StreetWorkoutV2.View
         string _CurrentProgress;
         int _Repetitions;
         int _Difficulty;
-        public ExercisePage(Oefening Exercise,int Repetitions,int Difficulty, string Progress)
+        public ExercisePage(Oefening Exercise, int Repetitions, int Difficulty, string Progress)
         {
             InitializeComponent();
-            if (Preferences.Get("StartDate", "") == null)
+            if (Progress == "1/3")
             {
                 Preferences.Set("StartDate", DateTime.Now);
+
             }
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
             imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
@@ -244,7 +246,7 @@ namespace StreetWorkoutV2.View
                 {
                     Preferences.Set("WorkTime", TimeKeeper);
                 }
-                await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions,_Difficulty, _CurrentProgress));
+                await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
             }
             else if (_CurrentProgress == "3/3")
             {

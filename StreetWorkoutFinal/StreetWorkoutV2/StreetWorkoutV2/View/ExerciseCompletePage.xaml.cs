@@ -167,8 +167,38 @@ namespace StreetWorkoutV2.View
                 })
             });
         }
-        private void PopupRepetitionsConfirm_Clicked(object sender, EventArgs e)
+        private async void PopupRepetitionsConfirm_Clicked(object sender, EventArgs e)
         {
+         
+            if (Preferences.Get("API", "") == "FitBit") {
+                JObject oefening = new JObject();
+                string herhalingen = "[";
+                var fitbitName = Preferences.Get("Naam", "");
+                var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
+                Preferences.Set("StartDate", null);
+                var fitbitDuration = Preferences.Get("WorkTime", 0);
+                var fitbitExercise = Preferences.Get("Workout", "");
+                var fitbitDifficulty = Preferences.Get("Difficulty", "").Substring(4).Replace(" ", "");
+                var fitbitActivityId = 0;
+                switch (fitbitDifficulty)
+                {
+                    case "Simpel":
+                        fitbitActivityId = 2030;
+                        break;
+                    case "Gevorderd":
+                        fitbitActivityId = 2060;
+                        break;
+                    case "Expert":
+                        fitbitActivityId = 2020;
+                        break;
+                    default:
+                        fitbitActivityId = 2101;
+                        break;
+                }
+
+                await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
+            }
+
             popExerciseReview.IsVisible = false;
             popExerciseReview.IsEnabled = false;
             Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", _Repetitions);
@@ -280,16 +310,16 @@ namespace StreetWorkoutV2.View
                     ValueLabel = listValues[i]
                 });
             }
-                chartHartslag.Chart = new LineChart()
-                {
-                    Entries = entriesOef,
-                    BackgroundColor = SKColors.Transparent,
-                    PointSize = 22,
-                    LabelTextSize = 22,
-                    ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                    LabelOrientation = Microcharts.Orientation.Horizontal,
-                    LabelColor = SKColor.Parse("#FFFFFF"),
-                };
+            chartHartslag.Chart = new LineChart()
+            {
+                Entries = entriesOef,
+                BackgroundColor = SKColors.Transparent,
+                PointSize = 22,
+                LabelTextSize = 22,
+                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelOrientation = Microcharts.Orientation.Horizontal,
+                LabelColor = SKColor.Parse("#FFFFFF"),
+            };
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
@@ -304,13 +334,13 @@ namespace StreetWorkoutV2.View
             oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
             for (int i = 0; i < 3; i++)
             {
-                    if (i == 2)
-                    {
-                        herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
+                if (i == 2)
+                {
+                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
                 }
-                    else
-                    {
-                        herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
+                else
+                {
+                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
                 }
             }
             oefening["Herhalingen"] = herhalingen;
@@ -363,7 +393,7 @@ namespace StreetWorkoutV2.View
             oefening["Duur"] = Preferences.Get("WorkTime", 0);
             Preferences.Set("WorkTime", 0);
             oefening["Workout"] = Preferences.Get("Workout", ""); ;
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", 0);
             for (int i = 0; i < 3; i++)
             {
                 if (i == 2)

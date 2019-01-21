@@ -73,10 +73,11 @@ namespace StreetWorkoutV2.Model
                 client.DefaultRequestHeaders.Add("Authorization", authToken);
                 var postTime = startTime.ToString("HH:mm:ss");
                 var postDate = startTime.ToString("yyyy-MM-dd");
+                var durationInSeconds = duration * 1000;
                 var jsonString = "";
                 Debug.WriteLine(jsonString);
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                string url = $"https://api.fitbit.com/1/user/-/activities.json?activityId={activityId}&durationMillis={duration}&date={postDate}&startTime={postTime}";
+                string url = $"https://api.fitbit.com/1/user/-/activities.json?activityId={activityId}&durationMillis={durationInSeconds}&date={postDate}&startTime={postTime}";
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
                 Debug.WriteLine(responseString);
