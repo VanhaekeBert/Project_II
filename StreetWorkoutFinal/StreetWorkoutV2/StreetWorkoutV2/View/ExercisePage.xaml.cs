@@ -250,7 +250,7 @@ namespace StreetWorkoutV2.View
             {
                 string workout = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
-                await Navigation.PushAsync(new ExerciseCompletePage());
+                await Navigation.PushAsync(new ExerciseCompletePage(_CurrentExercise,_Repetitions));
             }
         }
 

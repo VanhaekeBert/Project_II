@@ -20,7 +20,7 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseCompletePage : AnimationPage
     {
-        public ExerciseCompletePage()
+        public ExerciseCompletePage(Oefening Exercise,int Repetitions)
         {
             InitializeComponent();
             if (Preferences.Get("API", "") == "FitBit")
@@ -32,6 +32,18 @@ namespace StreetWorkoutV2.View
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
             Repetition1.Text = Preferences.Get("Repetition1", "");
+
+            if (Exercise.Herhalingen.Count == 0)
+            {
+                inputRepetitions.Text = Exercise.Duurtijd[Repetitions].ToString();
+                lblInputRepetitions.Text = "Vul uw behaalde aantal seconden in";                
+            }
+            else
+            {
+                inputRepetitions.Text = Exercise.Herhalingen[Repetitions].ToString();
+                lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
+            }
+
             if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition0", "")))
             {
                 Repetition1.TextColor = Color.Red;
