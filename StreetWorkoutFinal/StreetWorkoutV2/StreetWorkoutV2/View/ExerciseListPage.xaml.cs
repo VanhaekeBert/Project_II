@@ -63,7 +63,13 @@ namespace StreetWorkoutV2.View
 
                 })
             });
+            stkMoeilijkheidsgraad.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
+                {
 
+                })
+            });
             lvwExercices.ItemSelected += async (o, e) =>
             {
 

@@ -130,7 +130,7 @@
                                     <RowDefinition Height="3*"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                <Frame Grid.Row="1"  CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="300"  HorizontalOptions="FillAndExpand"  Padding="0"  >
+                                <Frame Grid.Row="1" x:Name="stkMoeilijkheidsgraad" CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="300"  HorizontalOptions="FillAndExpand"  Padding="0"  >
                                     <renderers:GradientLayout
                                           ColorsList="#484E6D,#313751"
                                             Mode="ToTopLeft">

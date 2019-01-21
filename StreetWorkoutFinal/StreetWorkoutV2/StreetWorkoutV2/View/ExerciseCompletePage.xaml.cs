@@ -32,12 +32,12 @@ namespace StreetWorkoutV2.View
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
             Repetition1.Text = Preferences.Get("Repetition1", "");
-            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition1", "")))
+            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition0", "")))
             {
                 Repetition1.TextColor = Color.Red;
             }
-            Repetition2.Text = Preferences.Get("Repetition2", "");
-            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition2", "")))
+            Repetition2.Text = Preferences.Get("Repetition1", "");
+            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition1", "")))
             {
                 Repetition2.TextColor = Color.Red;
             }

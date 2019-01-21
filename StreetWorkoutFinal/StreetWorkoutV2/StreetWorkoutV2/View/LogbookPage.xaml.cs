@@ -36,6 +36,13 @@ namespace StreetWorkoutV2.View
             Logboek1.HeightRequest = (100 * logboeks.Count);
             Logboek2.ItemsSource = logboeks;
             Logboek2.HeightRequest = (100 * logboeks.Count);
+            btnBack.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    Navigation.PopAsync();
+                })
+            });
         }
     }
 }

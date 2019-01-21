@@ -2,5 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="0.9" package="com.nmct.SICWorkout" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="26" android:targetSdkVersion="27" />
 	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
 	<application android:label="SIC Workout" android:icon="@drawable/applogo"></application>
 </manifest>
