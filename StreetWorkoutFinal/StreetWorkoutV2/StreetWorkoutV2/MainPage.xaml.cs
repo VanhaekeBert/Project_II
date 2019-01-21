@@ -49,6 +49,7 @@ namespace StreetWorkoutV2
         {
             JObject gebruiker = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
             JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+            JArray water = await DBManager.GetWater(Preferences.Get("Naam", ""));
             var latestWater = await DBManager.GetLatestWater(Preferences.Get("Naam", ""));
             if (latestWater != null)
             {
@@ -71,6 +72,7 @@ namespace StreetWorkoutV2
                 Preferences.Set("WaterDoel", 0);
                 Preferences.Set("WaterGedronken", 0);
             }
+            var waterTojson = JsonConvert.SerializeObject(water);
             var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
             Preferences.Set("Naam", gebruiker["Naam"].ToString());
             Preferences.Set("Email", gebruiker["Email"].ToString());
@@ -79,6 +81,7 @@ namespace StreetWorkoutV2
             Preferences.Set("Gewicht", gebruiker["Gewicht"].ToString());
             Preferences.Set("API", gebruiker["API"].ToString());
             Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
+            Preferences.Set("Water", waterTojson.ToString());
         }
        
     }

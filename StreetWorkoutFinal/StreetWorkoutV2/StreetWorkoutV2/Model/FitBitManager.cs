@@ -3,6 +3,7 @@ using SimpleAuth.Providers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -29,17 +30,62 @@ namespace StreetWorkoutV2.Model
             return response;
         }
 
-        //public static async Task<FitBitUser> PostActivityAsync()
-        //{
-        //    var scopes = new[] { "profile" };
-        //    var api = new FitBitApi("google", "22D9J5", "8889b872288980d53e2cad3a2043955b", true)
-        //    {
-        //        Scopes = scopes
-        //    };
+        public static async Task<JObject> FitBitGetHeartRate(string requestDate, string startTime, string endTime)
+        {
+            try
+            {
+                //string RequestDate = "yyyy-MM-dd";
+                //string StartTime = "00:01";
+                //string EndTime = "00:10";
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                string authToken = Preferences.Get("Token", "");
+                //string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwNzk0Mjh9.m39NX6x91xwD6jT2oUVuZBs-kdGbQi6ll_i-veW0P9k";
+                client.DefaultRequestHeaders.Add("Authorization", authToken);
+                string url = $"https://api.fitbit.com/1/user/-/activities/heart/date/{requestDate}/1d/1sec/time/{startTime}/{endTime}.json";
 
-        //    var response = await api.Get<FitBitUser>("https://api.fitbit.com/1/user/-/profile.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}" });
-        //    response.API = "FitBit";
-        //    return response;
-        //}
+                string json = await client.GetStringAsync(url);
+                if (json != null)
+                {
+                    JObject hearRateObject = JsonConvert.DeserializeObject<JObject>(json);
+                    return hearRateObject;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Foutmelding: " + ex.Message);
+                throw ex;
+            }
+        }
+        public static async Task FitBitPostExercise(int activityId, DateTime startTime, int duration)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                //string authToken = Preferences.Get("Token", "");
+                string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwODQ4MjJ9.39Wk-eblMXId2YodXEVIV6G_WHXAsuhabUfWfftGc4w";
+                client.DefaultRequestHeaders.Add("Authorization", authToken);
+                var postTime = startTime.ToString("HH:mm:ss");
+                var postDate = startTime.ToString("yyyy-MM-dd");
+                var jsonString = "";
+                Debug.WriteLine(jsonString);
+                var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                string url = $"https://api.fitbit.com/1/user/-/activities.json?activityId={activityId}&durationMillis={duration}&date={postDate}&startTime={postTime}";
+                var message = await client.PostAsync(url, httpContent);
+                var responseString = await message.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+                throw ex;
+            }
+        }
     }
 }

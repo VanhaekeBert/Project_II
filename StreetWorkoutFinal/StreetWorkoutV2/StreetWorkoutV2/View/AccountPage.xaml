@@ -55,7 +55,8 @@
                         <StackLayout Spacing="0">
                             <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Historiek" TextColor="White"/>
                             <Frame CornerRadius="10" Padding="0" HeightRequest="200" Margin="0,24,0,24" >
-                                <renderers:GradientLayout
+                                <Grid>
+                                    <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                     <StackLayout VerticalOptions="Start" Spacing="0" Margin="0,24,0,24">
@@ -63,8 +64,11 @@
                                         <forms:ChartView x:Name="chartKcal" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                                     </StackLayout>
                                     <!-- Grafiek-->
-                                </renderers:GradientLayout>
+                                    </renderers:GradientLayout>
+                                    <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="LblDataKcal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
+                                </Grid>
                             </Frame>
+                                
                             <!--Aantal cal per week-->
                             <Grid Margin="24,0,24,16">
                                 <Grid.ColumnDefinitions>
@@ -118,7 +122,8 @@
                                 </Frame>
                             </Grid>
                             <Frame CornerRadius="10" HeightRequest="200" Padding="0" Margin="0,48,0,24">
-                                <renderers:GradientLayout
+                                <Grid>
+                                    <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                     <StackLayout VerticalOptions="Start" Spacing="0" Padding="0" Margin="0,24,0,24">
@@ -127,7 +132,9 @@
                                     </StackLayout>
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
-                            </Frame>
+                                <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="LblDataOef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
+        </Grid>
+        </Frame>
                             <!--Aantal oef per week-->
                             <Grid Margin="24,0,24,16">
                                 <Grid.ColumnDefinitions>
@@ -182,7 +189,8 @@
                             </Grid>
                             <!-- chart water-->
                             <Frame CornerRadius="10" Padding="0" HeightRequest="200" Margin="0,24,0,24" >
-                                <renderers:GradientLayout
+                                <Grid>
+                                    <renderers:GradientLayout
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                     <StackLayout VerticalOptions="Start" Spacing="0" Margin="0,24,0,24">
@@ -191,6 +199,8 @@
                                     </StackLayout>
                                     <!-- Grafiek-->
                                 </renderers:GradientLayout>
+                                <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="LblDataWater" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
+        </Grid>
                             </Frame>
                             <!--Aantal water per week-->
                             <Grid Margin="24,0,24,16">

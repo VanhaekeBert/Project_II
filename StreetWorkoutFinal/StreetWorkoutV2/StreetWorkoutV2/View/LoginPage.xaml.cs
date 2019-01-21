@@ -78,6 +78,7 @@ namespace StreetWorkoutV2.View
                 {
                     JObject gebruiker = await DBManager.GetUserData(UserNameEntry.Text.Replace(" ", ""), "Naam");
                     JArray oefeningen = await DBManager.GetOefeningenData(UserNameEntry.Text.Replace(" ", ""));
+                    JArray water = await DBManager.GetWater(UserNameEntry.Text.Replace(" ", ""));
                     var latestWater = await DBManager.GetLatestWater(UserNameEntry.Text.Replace(" ", ""));
                     if (latestWater != null)
                     {
@@ -100,14 +101,16 @@ namespace StreetWorkoutV2.View
                         Preferences.Set("WaterDoel", 0);
                         Preferences.Set("WaterGedronken", 0);
                     }
-                    var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
+                    var waterTojson = JsonConvert.SerializeObject(water);
+                    var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
                     Preferences.Set("Naam", gebruiker["Naam"].ToString());
                     Preferences.Set("Email", gebruiker["Email"].ToString());
                     Preferences.Set("Leeftijd", gebruiker["Leeftijd"].ToString());
                     Preferences.Set("Lengte", gebruiker["Lengte"].ToString());
                     Preferences.Set("Gewicht", gebruiker["Gewicht"].ToString());
                     Preferences.Set("API", gebruiker["API"].ToString());
-                    Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
+                    Preferences.Set("Oefeningen", oefeningTojson.ToString());
+                    Preferences.Set("Water", waterTojson.ToString());
                     await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else

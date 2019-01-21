@@ -24,6 +24,8 @@ namespace StreetWorkoutV2.View
         public Color JObject { get; }
         List<OefeningDB> weekOef = new List<OefeningDB>();
         List<OefeningDB> maandOef = new List<OefeningDB>();
+        List<Water> weekWater = new List<Water>();
+        List<Water> maandWater = new List<Water>();
 
         public AccountPage()
         {
@@ -34,6 +36,49 @@ namespace StreetWorkoutV2.View
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             lblUsername.Text = Preferences.Get("Naam", "");
             NameChangeEntry.Text = Preferences.Get("Naam", "");
+
+
+            if (Preferences.Get("Water", "") != "[]")
+            {
+                var rawWater = Preferences.Get("Water", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<Water> water = new List<Water>();
+                for (int i = 0; i < rawWater.Count(); i++)
+                {
+                    if (i == 0)
+                    {
+                        water.Add(JsonConvert.DeserializeObject<Water>(rawWater[i].ToString() + "}"));
+                    }
+                    else if (i != (rawWater.Count() - 1))
+                    {
+                        water.Add(JsonConvert.DeserializeObject<Water>(rawWater[i].ToString().Remove(0, 1) + "}"));
+                    }
+                }
+                foreach (Water item in water)
+                {
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.Datum.Day))
+                    {
+                        weekWater.Add(item);
+                    }
+                    if (int.Parse(DateTime.Now.ToString("MM")) == item.Datum.Month)
+                    {
+                        maandWater.Add(item);
+                    }
+                }
+                int sum = 0;
+                foreach (Water item in weekWater)
+                {
+                    sum += item.WaterGedronken;
+                }
+                LblWaterWeek.Text = sum.ToString();
+                sum = 0;
+                foreach (Water item in maandWater)
+                {
+                    sum += item.WaterGedronken;
+                }
+                LblWaterMaand.Text = sum.ToString();
+                MakeEntriesWater();
+            }
+
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
                 var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
@@ -149,6 +194,15 @@ namespace StreetWorkoutV2.View
                 }
                 listValues.Add(i.ToString());
             }
+            bool visible = true;
+            foreach (string item in listValues)
+            {
+                if (item != "0")
+                {
+                    visible = false;
+                }
+            }
+            LblDataKcal.IsVisible = visible;
 
 
             List<Entry> entriesKcal2 = new List<Entry> { };
@@ -197,6 +251,15 @@ namespace StreetWorkoutV2.View
                 }
                 listValues.Add(i.ToString());
             }
+            bool visible = true;
+            foreach (string item in listValues)
+            {
+                if (item != "0")
+                {
+                    visible = false;
+                }
+            }
+            LblDataOef.IsVisible = visible;
 
             List<Entry> entriesOef = new List<Entry> { };
             for (int i = 0; i < listLabels.Count(); i++)
@@ -232,11 +295,28 @@ namespace StreetWorkoutV2.View
             {
                 listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
             }
-
-            List<string> listValues = new List<string>
+            List<string> listValues = new List<string>();
+            foreach (Water item in weekWater)
             {
-                "72","62","20","30","50","80","60","70"
-            };
+                listValues.Add(item.WaterGedronken.ToString());
+            }
+            int length = listValues.Count();
+            if (length < 7)
+            {
+                for (int i = 0; i < (7-length); i++)
+                {
+                    listValues.Insert(0, "0");
+                }
+            }
+            bool visible = true;
+            foreach (string item in listValues)
+            {
+                if (item != "0")
+                {
+                    visible = false;
+                }
+            }
+            LblDataWater.IsVisible = visible;
 
             List<Entry> entriesWater = new List<Entry> { };
             for (int i = 0; i < listLabels.Count(); i++)

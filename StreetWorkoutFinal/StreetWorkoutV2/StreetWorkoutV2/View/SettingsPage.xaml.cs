@@ -117,6 +117,8 @@ namespace StreetWorkoutV2.View
             Preferences.Set("WaterDoel", null);
             Preferences.Set("WaterGedronken", null);
             Preferences.Set("Oefeningen", null);
+            Preferences.Set("Water", null);
+            Preferences.Set("Token", null);
             await Navigation.PushAsync(new LoginPage());
         }
         protected override bool OnBackButtonPressed()
