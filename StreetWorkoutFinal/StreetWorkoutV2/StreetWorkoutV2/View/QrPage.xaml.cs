@@ -61,7 +61,7 @@ namespace StreetWorkoutV2.View
                     PassList.Add(oefening);
                 }
             }
-             Navigation.PushAsync(new ExerciseListPage(PassList));
+            Navigation.PushAsync(new ExerciseListPage(PassList));
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -84,18 +84,34 @@ namespace StreetWorkoutV2.View
                 var QRScanner = new ZXingScannerPage(options, overlay);
 
                 await Navigation.PushModalAsync(QRScanner);
-
+                bool isAlerted = false;
                 QRScanner.OnScanResult += (result) =>
                 {
                     // Stop scanning
                     QRScanner.IsScanning = false;
 
                     // Pop the page and show the result
+
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        Navigation.PopModalAsync(true);                      
-                        GetDevice(result.Text);                     
-                       
+
+                        List<string> devices = new List<string>();
+                        foreach (var oefening in _Oefeningslijst)
+                        {
+                            devices.Add(oefening.Toestel);
+                        }
+
+                        if (devices.Contains(result.Text))
+                        {
+                            Navigation.PopModalAsync(true);
+                            GetDevice(result.Text);
+                        }
+                        else if (isAlerted == false)
+                        {
+                            DisplayAlert("Alert", "De gescande QR-code was ongeldig", "Ok");
+                            isAlerted = true;
+                        }
+
                     });
                 };
 

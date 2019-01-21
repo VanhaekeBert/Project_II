@@ -13,6 +13,7 @@ using FormsControls.Base;
 using StreetWorkoutV2.Model;
 using Newtonsoft.Json.Linq;
 using Xamarin.Essentials;
+using System.Diagnostics;
 
 namespace StreetWorkoutV2.View
 {
@@ -29,20 +30,21 @@ namespace StreetWorkoutV2.View
                 MakeEntriesHartslag();
             }
             Preferences.Set("EndWorkout", DateTime.Now);
+            NameToestel.Text = Preferences.Get("Workout", "");
+            Repetition1.Text = Preferences.Get("Repetition1", "");
+            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition1", "")))
+            {
+                Repetition1.TextColor = Color.Red;
+            }
+            Repetition2.Text = Preferences.Get("Repetition2", "");
+            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition2", "")))
+            {
+                Repetition2.TextColor = Color.Red;
+            }
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
             //ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
             //ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Compleet.png");
-            List<int> repetitions = new List<int>();
-            repetitions.Add(13);
-            repetitions.Add(15);
-            repetitions.Add(15);
-            Logboek logboek = new Logboek() { Name = "Triceps Extensions", Moeilijkheidsgraad = "Makkelijk", Total_hearts_given = 3, ExerciseRepetitions = repetitions };
-            NameToestel.BindingContext = logboek;
-            //Moeilijkheidsgraad.BindingContext = logboek;
-            Repetition1.BindingContext = logboek;
-            Repetition2.BindingContext = logboek;
-            Repetition3.BindingContext = logboek;
 
             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Uncolored.png");
 
@@ -148,7 +150,17 @@ namespace StreetWorkoutV2.View
                 })
             });
         }
-
+        private void PopupRepetitionsConfirm_Clicked(object sender, EventArgs e)
+        {
+            popExerciseReview.IsVisible = false;
+            popExerciseReview.IsEnabled = false;
+            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+            Repetition3.Text = inputRepetitions.Text;
+            if (Preferences.Get("Doel", 0) > int.Parse(inputRepetitions.Text))
+            {
+                Repetition3.TextColor = Color.Red;
+            }
+        }
         private void Rate1Star()
         {
             imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;
@@ -262,18 +274,19 @@ namespace StreetWorkoutV2.View
             oefening["Naam"] = Preferences.Get("Naam", "");
             oefening["Datum"] = DateTime.Now.ToString();
             oefening["Duur"] = Preferences.Get("WorkTime", 0);
+            Preferences.Set("WorkTime", 0);
             oefening["Workout"] = Preferences.Get("Workout", "");
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", 0);
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
             for (int i = 0; i < 3; i++)
             {
                     if (i == 2)
                     {
                         herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
-                    }
+                }
                     else
                     {
                         herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
-                    }
+                }
             }
             oefening["Herhalingen"] = herhalingen;
             if (imgRatingHeartFull5.IsVisible)
@@ -323,17 +336,19 @@ namespace StreetWorkoutV2.View
             oefening["Naam"] = Preferences.Get("Naam", "");
             oefening["Datum"] = DateTime.Now.ToString();
             oefening["Duur"] = Preferences.Get("WorkTime", 0);
+            Preferences.Set("WorkTime", 0);
             oefening["Workout"] = Preferences.Get("Workout", ""); ;
             oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", 0);
             for (int i = 0; i < 3; i++)
             {
                 if (i == 2)
                 {
-                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
+                    herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                    Debug.WriteLine(herhalingen);
                 }
                 else
                 {
-                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
+                    herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
                 }
             }
             oefening["Herhalingen"] = herhalingen;

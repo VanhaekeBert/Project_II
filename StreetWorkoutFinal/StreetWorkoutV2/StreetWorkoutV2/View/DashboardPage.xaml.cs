@@ -1,4 +1,5 @@
 ﻿using FormsControls.Base;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2.Model;
@@ -23,6 +24,31 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
+            List<OefeningDB> weekOef = new List<OefeningDB>();
+            if (Preferences.Get("Oefeningen", "") != "[]")
+            {
+                var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<OefeningDB> oefeningen = new List<OefeningDB>();
+                for (int i = 0; i < rawOefeningen.Count(); i++)
+                {
+                    if (i == 0)
+                    {
+                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString() + "}"));
+                    }
+                    else if (i != (rawOefeningen.Count() - 1))
+                    {
+                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                    }
+                }
+                foreach (OefeningDB oefening in oefeningen)
+                {
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                    {
+                        weekOef.Add(oefening);
+                    }
+                }
+            }
+            LblLogs.Text = weekOef.Count().ToString();
             //Debug.WriteLine(Application.Current.Properties["Naam"]);
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");

@@ -2,6 +2,7 @@
 using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -150,6 +151,11 @@ namespace StreetWorkoutV2.View
                     }
                 })
             };
+            if (!Preferences.Get("Difficulty", "").Contains("3x"))
+            {
+                Preferences.Set("Difficulty", "3x" + lblRepetitions.Text.Split(' ')[0] + " " + Preferences.Get("Difficulty", ""));
+            }
+            Preferences.Set("Doel", int.Parse(lblRepetitions.Text.Split(' ')[0]));
 
             SlideshowToggle_Start.GestureRecognizers.Add(Slideshow_Gesture);
             SlideshowToggle_Stop.GestureRecognizers.Add(Slideshow_Gesture);
@@ -229,7 +235,7 @@ namespace StreetWorkoutV2.View
         {
             if (_CurrentProgress == "1/3" || _CurrentProgress == "2/3")
             {
-                if (Preferences.ContainsKey("WorkTime"))
+                if (Preferences.Get("WorkTime", 0) != 0)
                 {
                     string workout = Preferences.Get("WorkTime", 0).ToString();
                     Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
@@ -244,8 +250,6 @@ namespace StreetWorkoutV2.View
             {
                 string workout = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
-                Preferences.Set("Workout", lblExerciseName.Text);
-                Preferences.Set("Difficulty", _Difficulty);
                 await Navigation.PushAsync(new ExerciseCompletePage());
             }
         }

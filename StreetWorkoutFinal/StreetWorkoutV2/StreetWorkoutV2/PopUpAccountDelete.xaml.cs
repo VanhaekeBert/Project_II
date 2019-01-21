@@ -41,7 +41,10 @@ namespace StreetWorkoutV2
             Preferences.Set("WaterDoel", null);
             Preferences.Set("WaterGedronken", null);
             Preferences.Set("Oefeningen", null);
-            await Navigation.PushModalAsync(new LoginPage());
+       
+           Navigation.PushModalAsync(new LoginPage());
+            await Navigation.PopPopupAsync();
+
         }
     }
 }

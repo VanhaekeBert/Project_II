@@ -42,7 +42,7 @@
                     </Grid.ColumnDefinitions>
                     <custom:CustomFrame x:Name="frameLog" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0">
                         <renderers:GradientLayout
-                                            ColorsList="#EB6338,#EE9F44"
+                                            ColorsList="#ee7345,#ee4b66"
                                             Mode="ToTopLeft">
                             <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                 <Image   x:Name="imgLog" HeightRequest="38" Margin="15,0,10,0"/>
@@ -50,12 +50,12 @@
                                     <Label TextColor="White">
                                         <Label.FormattedText >
                                             <FormattedString>
-                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="0" />
-                                                <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" kcal"/>
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblLogs"/>
+                                                <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" logs"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="14" Text="Calorieën verbrand" TextColor="White"/>
+                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="14" Text="Logboek" TextColor="White"/>
                                 </StackLayout>
                             </StackLayout>
                         </renderers:GradientLayout>

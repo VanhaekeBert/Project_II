@@ -38,8 +38,7 @@ namespace StreetWorkoutV2.View
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () => {
-                    await btnBack.FadeTo(0.3, 150);
-                    await btnBack.FadeTo(1, 150);
+
                     await Navigation.PushAsync(new RegisterPage());
                 })
             });

@@ -22,7 +22,6 @@ namespace StreetWorkoutV2
             {
                 MainPage = new NavigationPage(new RegisterPage());
             }
-            //MainPage = new NavigationPage(new QrPage());
         }
 
 

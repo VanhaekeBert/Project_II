@@ -64,7 +64,7 @@
                                                 <ColumnDefinition Width="Auto"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="EndAndExpand"  Text="{Binding Groepering}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
+                                            <Label Margin="0,2,0,0" Grid.Column="0" HorizontalOptions="EndAndExpand"  Text="{Binding Groepering}" FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" x:Name="LblGroepering"/>
                                             <ff:CachedImage Margin="0,2,0,0" Source="{Binding Go_To_button}" Grid.Column="1" HeightRequest="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"  x:Name="GoToOefeningen"/>
                                         </Grid>
                                     </Grid>
@@ -82,9 +82,11 @@
                 <StackLayout  Margin="24" Spacing="0" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand">
                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  >
-                        <Label Text="Vorige keer koos u voor:" FontSize="16" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12"/>
-                        <Label Text="3x30 Gevorderd" FontSize="20" FontFamily="{StaticResource BoldFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12"/>
-                        <ff:CachedImage x:Name="imgHearts" Aspect="AspectFill" HeightRequest="35" HorizontalOptions="Center" Margin="0,0,0,0"></ff:CachedImage>
+                        <StackLayout Margin="0" Orientation="Vertical" VerticalOptions="CenterAndExpand"  x:Name="StkAanbeveling" IsVisible="False">
+                            <Label Text="Vorige keer koos u voor:" FontSize="16" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12"/>
+                            <Label FontSize="20" FontFamily="{StaticResource BoldFont}" TextColor="{StaticResource LightColor}" HorizontalOptions="Center" Margin="0,0,0,12" x:Name="LblOefening"/>
+                            <ff:CachedImage x:Name="imgHearts" Aspect="AspectFill" HeightRequest="35" HorizontalOptions="Center" Margin="0,0,0,0"></ff:CachedImage>
+                        </StackLayout>
                         <StackLayout  VerticalOptions="CenterAndExpand"  Padding="0,0,0,0" HeightRequest="150" HorizontalOptions="Fill"   Margin="0,0,0,30" x:Name="frameRepetions">
                             <!--<renderers:GradientLayout
                                             ColorsList="#484E6D,#323751"
@@ -94,23 +96,23 @@
                                     <RowDefinition Height="3*"></RowDefinition>
                                     <RowDefinition Height="5*"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Row="0" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw repetitiedoel" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                <Frame Grid.Row="1"  CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="300"  HorizontalOptions="FillAndExpand"  Padding="0"  >
+                                <Label Grid.Row="0" x:Name="lblSelectGoal" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw repetitiedoel" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                                <Frame x:Name="stkReps" Grid.Row="1"  CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="300"  HorizontalOptions="FillAndExpand"  Padding="0"  >
                                     <renderers:GradientLayout
                                             ColorsList="#484E6D,#313751"
                                             Mode="ToTopLeft">
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="12" Padding="0" VerticalOptions="CenterAndExpand">
+                                        <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="12" Padding="0" VerticalOptions="CenterAndExpand">
                                             <StackLayout x:Name="stkRep1" >
                                                 <Label HorizontalOptions="Center" FontSize="14" Text="Makkelijk" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" />
-                                                <Button Clicked="btnRep1_Clicked"  Text="3x15" WidthRequest="100"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="30" Padding="0"/>
+                                                <Button Clicked="btnRep1_Clicked"  x:Name="txtRepMakkelijk"  WidthRequest="100"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="30" Padding="0"/>
                                             </StackLayout>
                                             <StackLayout x:Name="stkRep2">
                                                 <Label HorizontalOptions="Center" FontSize="14" Text="Gemiddeld" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" />
-                                                <Button Clicked="btnRep2_Clicked" Text="3x30"  BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="30" Padding="0"/>
+                                                <Button Clicked="btnRep2_Clicked" x:Name="txtRepGemiddeld"  BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="30" Padding="0"/>
                                             </StackLayout>
                                             <StackLayout x:Name="stkRep3">
                                                 <Label HorizontalOptions="Center" FontSize="14" Text="Moeilijk"  FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor} " />
-                                                <Button  Clicked="btnRep3_Clicked" Text="3x45"   BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="30"  Padding="0"/>
+                                                <Button  Clicked="btnRep3_Clicked" x:Name="txtRepMoeilijk"   BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="30"  Padding="0"/>
                                             </StackLayout>
                                         </StackLayout>
                                     </renderers:GradientLayout>

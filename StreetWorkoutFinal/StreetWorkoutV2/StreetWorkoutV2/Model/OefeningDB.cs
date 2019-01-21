@@ -8,7 +8,7 @@ namespace StreetWorkoutV2.Model
     public class OefeningDB
     {
         public string Workout { get; set; }
-        public int Moeilijkheidsgraad { get; set; }
+        public string Moeilijkheidsgraad { get; set; }
         public int Kcal { get; set; }
         public int MaxHeart { get; set; }
         public int AverageHeart { get; set; }

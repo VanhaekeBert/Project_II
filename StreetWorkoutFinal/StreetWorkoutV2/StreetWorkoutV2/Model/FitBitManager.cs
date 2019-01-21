@@ -1,9 +1,11 @@
-﻿using SimpleAuth.Providers;
+﻿using Newtonsoft.Json.Linq;
+using SimpleAuth.Providers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace StreetWorkoutV2.Model
 {
@@ -19,6 +21,10 @@ namespace StreetWorkoutV2.Model
             };
             var account = (SimpleAuth.OAuthAccount)await api.Authenticate();
             var response = await api.Get<FitBitUser>("https://api.fitbit.com/1/user/-/profile.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}" });
+            Preferences.Set("Token", $"Bearer {account.Token}");
+            JObject token = new JObject();
+            token["Token"] = $"Bearer {account.Token}";
+            DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", token);
             response.API = "FitBit";
             return response;
         }

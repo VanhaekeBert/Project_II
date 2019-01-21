@@ -1,5 +1,6 @@
 ﻿using FormsControls.Base;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Rg.Plugins.Popup.Services;
 using StreetWorkoutV2.Model;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,6 +27,13 @@ namespace StreetWorkoutV2.View
         {
 
             InitializeComponent();
+            Task.Run(async () =>
+            {
+                JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
+                Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
+            });
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Picker_Background.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 

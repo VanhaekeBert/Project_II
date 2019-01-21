@@ -63,13 +63,14 @@ namespace StreetWorkoutV2.View
                 Command = new Command(async () => {
                     if (inputRepetitions.Text != "")
                     {
-                        Preferences.Set($"Repetition{_Repetitions}", inputRepetitions.Text);
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                        Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                     }
                     else
                     {
-                        Preferences.Set($"Repetition{_Repetitions}", inputRepetitions.Placeholder);
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder);
+                        Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                     }
-                    Debug.WriteLine(Preferences.Get($"Repetition{_Repetitions}", ""));
                     await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                 })
             });
