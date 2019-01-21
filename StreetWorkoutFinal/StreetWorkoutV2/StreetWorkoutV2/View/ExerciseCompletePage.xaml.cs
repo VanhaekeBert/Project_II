@@ -20,9 +20,12 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseCompletePage : AnimationPage
     {
+        string _Repetitions;
         public ExerciseCompletePage(Oefening Exercise,int Repetitions)
         {
             InitializeComponent();
+
+            
             if (Preferences.Get("API", "") == "FitBit")
             {
                 FrmChart.IsVisible = true;
@@ -35,13 +38,15 @@ namespace StreetWorkoutV2.View
 
             if (Exercise.Herhalingen.Count == 0)
             {
-                inputRepetitions.Text = Exercise.Duurtijd[Repetitions].ToString();
-                lblInputRepetitions.Text = "Vul uw behaalde aantal seconden in";                
+                inputRepetitions.Placeholder = Exercise.Duurtijd[Repetitions].ToString();
+                lblInputRepetitions.Text = "Vul uw behaalde aantal seconden in";
+                _Repetitions = Exercise.Duurtijd[Repetitions].ToString();
             }
             else
             {
-                inputRepetitions.Text = Exercise.Herhalingen[Repetitions].ToString();
+                inputRepetitions.Placeholder = Exercise.Herhalingen[Repetitions].ToString();
                 lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
+                _Repetitions = Exercise.Herhalingen[Repetitions].ToString();
             }
 
             if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition0", "")))
@@ -166,12 +171,20 @@ namespace StreetWorkoutV2.View
         {
             popExerciseReview.IsVisible = false;
             popExerciseReview.IsEnabled = false;
-            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", _Repetitions);
             Repetition3.Text = inputRepetitions.Text;
-            if (Preferences.Get("Doel", 0) > int.Parse(inputRepetitions.Text))
-            {
-                Repetition3.TextColor = Color.Red;
+            if (Repetition3.Text != "")
+            {                
+                if (Preferences.Get("Doel", 0) > int.Parse(Repetition3.Text))
+                {
+                    Repetition3.TextColor = Color.Red;
+                }
             }
+            else
+            {
+                Repetition3.Text = _Repetitions; 
+            }
+            
         }
         private void Rate1Star()
         {
@@ -350,7 +363,7 @@ namespace StreetWorkoutV2.View
             oefening["Duur"] = Preferences.Get("WorkTime", 0);
             Preferences.Set("WorkTime", 0);
             oefening["Workout"] = Preferences.Get("Workout", ""); ;
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", 0);
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
             for (int i = 0; i < 3; i++)
             {
                 if (i == 2)
