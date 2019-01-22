@@ -355,27 +355,36 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            LoadingIndicator.IsRunning = true;
-            JObject user = new JObject();
-            JObject water = new JObject();
-            user["Lengte"] = heightInput.Text.ToString();
-            user["Gewicht"] = weightInput.Text.ToString();
-            user["Leeftijd"] = ageInput.Text.ToString();
-            water["WaterDoel"] = int.Parse(waterInput.Text);
-            MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
-            water["Naam"] = Preferences.Get("Naam", "");
-            //user["Naam"] = NameChangeEntry.Text.ToString();
-            Preferences.Set("Lengte", user["Lengte"].ToString());
-            Preferences.Set("Gewicht", user["Gewicht"].ToString());
-            Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
-            Preferences.Set("WaterDoel", int.Parse(water["WaterDoel"].ToString()));
-            DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
-            DBManager.PutWater(water);
-            //Preferences.Set("Naam", user["Naam"].ToString());
-            LoadingIndicator.IsRunning = false;
-            var vUpdatedPage = new AccountPage();
-            Navigation.InsertPageBefore(vUpdatedPage, this);
-            await Navigation.PopAsync();
+            char[] chars = { '-' };
+            if (heightInput.Text.IndexOfAny(chars) != -1 || weightInput.Text.IndexOfAny(chars) != -1 || ageInput.Text.IndexOfAny(chars) != -1 || waterInput.Text.IndexOfAny(chars) != -1)
+            {
+                await DisplayAlert("Opgelet", "Negatieve waardes worden niet aanvaard", "Ok");
+            }
+            else
+            {
+                LoadingIndicator.IsRunning = true;
+                JObject user = new JObject();
+                JObject water = new JObject();
+                user["Lengte"] = heightInput.Text.ToString();
+                user["Gewicht"] = weightInput.Text.ToString();
+                user["Leeftijd"] = ageInput.Text.ToString();
+                water["WaterDoel"] = int.Parse(waterInput.Text);
+                MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
+                water["Naam"] = Preferences.Get("Naam", "");
+                //user["Naam"] = NameChangeEntry.Text.ToString();
+                Preferences.Set("Lengte", user["Lengte"].ToString());
+                Preferences.Set("Gewicht", user["Gewicht"].ToString());
+                Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
+                Preferences.Set("WaterDoel", int.Parse(water["WaterDoel"].ToString()));
+                DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
+                DBManager.PutWater(water);
+                //Preferences.Set("Naam", user["Naam"].ToString());
+                LoadingIndicator.IsRunning = false;
+                var vUpdatedPage = new AccountPage();
+                Navigation.InsertPageBefore(vUpdatedPage, this);
+                await Navigation.PopAsync();
+            }
+
         }
     }
 }
