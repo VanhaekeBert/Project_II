@@ -5,7 +5,9 @@ using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
+using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -289,6 +291,56 @@ namespace StreetWorkoutV2.Model
             {
                 return false;
             }
+        }
+
+        public static async Task<bool> PostProfilePicture(string naam, Stream content)
+        {
+            byte[] bytes = new byte[16 * 1024];
+            byte[] buffer = new byte[16 * 1024];
+            using (MemoryStream ms = new MemoryStream())
+            {
+                int read;
+                while ((read = content.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    ms.Write(buffer, 0, read);
+                }
+                bytes =  ms.ToArray();
+            }
+            ProfilePicture foto = new ProfilePicture() {Naam = naam, stream  = bytes};
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(foto);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/PostProfilePicture";
+            var message = await client.PostAsync(url, httpContent);
+            return message.IsSuccessStatusCode;
+        }
+
+        public static async Task<Uri> GetProfilePicture(string naam)
+        {
+            JObject gegevens = new JObject();
+            gegevens["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(naam);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/GetProfilePicture";
+            var message = await client.PostAsync(url, httpContent);
+            var responseString = await message.Content.ReadAsStringAsync();
+            return new Uri(responseString);
+        }
+
+        public static async Task<bool> DeleteProfilePicture(string naam)
+        {
+            JObject gegevens = new JObject();
+            gegevens["Naam"] = naam;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/string");
+            var request = JsonConvert.SerializeObject(naam);
+            var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+            string url = "https://streetworkout.azurewebsites.net/api/DeleteProfilePicture";
+            var message = await client.PostAsync(url, httpContent);
+            return message.IsSuccessStatusCode;
         }
     }
 }

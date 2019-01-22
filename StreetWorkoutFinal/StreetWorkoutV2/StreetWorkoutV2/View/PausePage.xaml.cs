@@ -64,22 +64,20 @@ namespace StreetWorkoutV2.View
                 Command = new Command(async () => {
                     if (inputRepetitions.Text != "")
                     {
-                        if (inputRepetitions.Text.Contains("-") || inputRepetitions.Text.Contains(".") || inputRepetitions.Text.Contains(","))
+                        if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
                         {
-                            lblCheckEntry.Text = "Ongeldige input";
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
+                            Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         }
                         else
                         {
-                            lblCheckEntry.Text = "";
-                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
                             Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
-                            await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                         }
-                        
                     }
                     else
                     {
-                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder);
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
                         Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                     }

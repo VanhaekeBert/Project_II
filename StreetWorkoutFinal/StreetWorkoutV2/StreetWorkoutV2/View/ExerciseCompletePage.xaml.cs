@@ -35,8 +35,16 @@ namespace StreetWorkoutV2.View
             }
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
-            Repetition1.Text = Preferences.Get("Repetition1", "");
-
+            Repetition1.Text = Preferences.Get("Repetition0", "").Substring(0, Preferences.Get("Repetition0", "").Length - 1);
+            if (Preferences.Get("Repetition0", "").Substring(Preferences.Get("Repetition0", "").Length - 1, 1) == "R")
+            {
+                Repetition1.TextColor = Color.Red;
+            }
+            Repetition2.Text = Preferences.Get("Repetition1", "").Substring(0, Preferences.Get("Repetition0", "").Length - 1);
+            if (Preferences.Get("Repetition1", "").Substring(Preferences.Get("Repetition1", "").Length - 1, 1) == "R")
+            {
+                Repetition2.TextColor = Color.Red;
+            }
             if (Exercise.Herhalingen.Count == 0)
             {
                 inputRepetitions.Placeholder = Exercise.Duurtijd[Repetitions].ToString();
@@ -48,16 +56,6 @@ namespace StreetWorkoutV2.View
                 inputRepetitions.Placeholder = Exercise.Herhalingen[Repetitions].ToString();
                 lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
                 _Repetitions = Exercise.Herhalingen[Repetitions].ToString();
-            }
-
-            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition0", "")))
-            {
-                Repetition1.TextColor = Color.Red;
-            }
-            Repetition2.Text = Preferences.Get("Repetition1", "");
-            if (Preferences.Get("Doel", 0) > int.Parse(Preferences.Get("Repetition1", "")))
-            {
-                Repetition2.TextColor = Color.Red;
             }
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
@@ -202,7 +200,6 @@ namespace StreetWorkoutV2.View
                 if (Preferences.Get("API", "") == "FitBit") {
                 //In if steken
                 JObject oefening = new JObject();
-                string herhalingen = "[";
                 var fitbitName = Preferences.Get("Naam", "");
                 var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
                 var fitbitEndDate = DateTime.Now;
@@ -230,7 +227,27 @@ namespace StreetWorkoutV2.View
                var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
                 _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
                 var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+            popExerciseReview.IsVisible = false;
+            popExerciseReview.IsEnabled = false;
+            if (inputRepetitions.Text != "")
+            {
+                if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
+                {
+                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
                 }
+                else
+                {
+                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
+                }
+            }
+            else
+            {
+                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
+            }
+            Repetition3.Text = Preferences.Get("Repetition2", "").Substring(0, Preferences.Get("Repetition2", "").Length - 1);
+            if (Preferences.Get("Repetition2", "").Substring(Preferences.Get("Repetition2", "").Length - 1, 1) == "R")
+            {
+                Repetition3.TextColor = Color.Red;
             }
         }
         private void Rate1Star()
@@ -353,11 +370,11 @@ namespace StreetWorkoutV2.View
             {
                 if (i == 2)
                 {
-                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + "]";
+                    herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
                 }
                 else
                 {
-                    herhalingen += "\"" + Preferences.Get($"Repetition{i}", "") + "\"" + ", ";
+                    herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
                 }
             }
             oefening["Herhalingen"] = herhalingen;

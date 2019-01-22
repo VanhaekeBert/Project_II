@@ -30,7 +30,6 @@ namespace StreetWorkoutV2.View
         public AccountPage()
         {
             InitializeComponent();
-
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
@@ -139,10 +138,7 @@ namespace StreetWorkoutV2.View
                     Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
                     if (stream != null)
                     {
-
-                        imgProfile.Source = ImageSource.FromStream(() => stream);
-
-
+                        await DBManager.PostProfilePicture(Preferences.Get("Naam", "") + ".jpeg", stream);
                     }
                 })
             };
@@ -175,6 +171,10 @@ namespace StreetWorkoutV2.View
             ageInput.Text = Preferences.Get("Leeftijd", "");
             heightInput.Text = Preferences.Get("Lengte", "");
             waterInput.Text = Preferences.Get("WaterDoel", 0).ToString();
+            Task.Run(async () =>
+            {
+                imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
+            });
         }
 
         private void MakeEntriesKcal()

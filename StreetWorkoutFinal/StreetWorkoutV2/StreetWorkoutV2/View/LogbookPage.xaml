@@ -40,16 +40,16 @@
                             </StackLayout>
                             <!-- ================= -->
                             <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
-                                <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="" x:Name="Titlelabel" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                                <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="Logboek" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                             </StackLayout>
                         </Grid>
                     </renderers:GradientLayout>
                 </Frame>
                 <ScrollView Grid.Row="3" Margin="0,-40,0,0">
                     <StackLayout>
-                        <ListView Margin="24,24,24,0" x:Name="Logboek1" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag1" HasUnevenRows="True" VerticalOptions="FillAndExpand" IsVisible="False">
                             <ListView.Header>
-                                <Label Text="Maandag 18/01" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDag1" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -65,7 +65,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
@@ -83,7 +83,7 @@
                                                             <Label.FormattedText>
                                                                 <FormattedString>
                                                                     <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
-                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{StaticResource Maincolor}"/>
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
                                                                 </FormattedString>
                                                             </Label.FormattedText>
                                                         </Label>
@@ -91,7 +91,7 @@
                                                             <Label.FormattedText>
                                                                 <FormattedString>
                                                                     <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
-                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="LightGreen"/>
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
                                                                 </FormattedString>
                                                             </Label.FormattedText>
                                                         </Label>
@@ -99,7 +99,7 @@
                                                             <Label.FormattedText>
                                                                 <FormattedString>
                                                                     <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
-                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="LightGreen"/>
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
                                                                 </FormattedString>
                                                             </Label.FormattedText>
                                                         </Label>
@@ -111,9 +111,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0" x:Name="Logboek2" HasUnevenRows="True" VerticalOptions="Start">
+                        <ListView Margin="24,24,24,0"  x:Name="lvwDag2" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label Text="Maandag 19/01" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDag2" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -147,7 +147,7 @@
                                                             <Label.FormattedText>
                                                                 <FormattedString>
                                                                     <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
-                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{StaticResource Maincolor}"/>
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
                                                                 </FormattedString>
                                                             </Label.FormattedText>
                                                         </Label>
@@ -155,7 +155,7 @@
                                                             <Label.FormattedText>
                                                                 <FormattedString>
                                                                     <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
-                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="LightGreen"/>
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
                                                                 </FormattedString>
                                                             </Label.FormattedText>
                                                         </Label>
@@ -163,7 +163,327 @@
                                                             <Label.FormattedText>
                                                                 <FormattedString>
                                                                     <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
-                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="LightGreen"/>
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+                                                </Grid>
+                                            </renderers:GradientLayout>
+                                        </local1:CustomFrame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag3" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                            <ListView.Header>
+                                <Label x:Name="lblDag3" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
+                                            <renderers:GradientLayout
+                                            ColorsList="#484E6D,#343954"
+                                            Mode="ToTopLeft">
+                                                <Grid Margin="20,15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="8*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
+                                                            <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                            <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"    Source="{Binding Heartrate}"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Grid Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+                                                </Grid>
+                                            </renderers:GradientLayout>
+                                        </local1:CustomFrame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag4" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                            <ListView.Header>
+                                <Label x:Name="lblDag4" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
+                                            <renderers:GradientLayout
+                                            ColorsList="#484E6D,#343954"
+                                            Mode="ToTopLeft">
+                                                <Grid Margin="20,15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="8*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
+                                                            <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                            <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"    Source="{Binding Heartrate}"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Grid Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+                                                </Grid>
+                                            </renderers:GradientLayout>
+                                        </local1:CustomFrame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag5" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                            <ListView.Header>
+                                <Label x:Name="lblDag5" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
+                                            <renderers:GradientLayout
+                                            ColorsList="#484E6D,#343954"
+                                            Mode="ToTopLeft">
+                                                <Grid Margin="20,15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="8*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
+                                                            <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                            <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"    Source="{Binding Heartrate}"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Grid Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+                                                </Grid>
+                                            </renderers:GradientLayout>
+                                        </local1:CustomFrame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag6" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                            <ListView.Header>
+                                <Label x:Name="lblDag6" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
+                                            <renderers:GradientLayout
+                                            ColorsList="#484E6D,#343954"
+                                            Mode="ToTopLeft">
+                                                <Grid Margin="20,15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="8*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
+                                                            <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                            <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"    Source="{Binding Heartrate}"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Grid Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+                                                </Grid>
+                                            </renderers:GradientLayout>
+                                        </local1:CustomFrame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag7" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                            <ListView.Header>
+                                <Label x:Name="lblDag7" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
+                                            <renderers:GradientLayout
+                                            ColorsList="#484E6D,#343954"
+                                            Mode="ToTopLeft">
+                                                <Grid Margin="20,15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="8*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
+                                                            <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                            <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"    Source="{Binding Heartrate}"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Grid Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[0]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[0]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="1"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[1]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[1]}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="1x" FontFamily="{StaticResource BoldFont}"  FontSize="14" TextColor="{StaticResource LightColor}" />
+                                                                    <Span Text="{Binding ExerciseRepetitions[2]}" FontFamily="{StaticResource BoldFont}"  FontSize="16" TextColor="{Binding Color[2]}"/>
                                                                 </FormattedString>
                                                             </Label.FormattedText>
                                                         </Label>
