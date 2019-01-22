@@ -21,6 +21,7 @@ namespace StreetWorkoutV2.View
     public partial class ExerciseCompletePage : AnimationPage
     {
         string _Repetitions;
+        private string _KcalAPI = "0";
         public ExerciseCompletePage(Oefening Exercise,int Repetitions)
         {
             InitializeComponent();
@@ -198,7 +199,7 @@ namespace StreetWorkoutV2.View
             if(popExerciseReview.IsEnabled == false)
             {
 
-                //if (Preferences.Get("API", "") == "FitBit") {
+                if (Preferences.Get("API", "") == "FitBit") {
                 //In if steken
                 JObject oefening = new JObject();
                 string herhalingen = "[";
@@ -226,9 +227,10 @@ namespace StreetWorkoutV2.View
                         break;
                 }
 
-                //await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
-                //var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
-                //}
+               var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
+                _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
+                var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+                }
             }
         }
         private void Rate1Star()
@@ -381,9 +383,9 @@ namespace StreetWorkoutV2.View
             }
             if (Preferences.Get("API", "") == "FitBit")
             {
-                oefening["Kcal"] = 5;
-                oefening["MaxHeart"] = 5;
-                oefening["AverageHeart"] = 5;
+                oefening["Kcal"] = _KcalAPI;
+                oefening["MaxHeart"] = "0";
+                oefening["AverageHeart"] = "0";
             }
             else
             {
@@ -444,9 +446,9 @@ namespace StreetWorkoutV2.View
             }
             if (Preferences.Get("API", "") == "FitBit")
             {
-                oefening["Kcal"] = "5";
-                oefening["MaxHeart"] = "5";
-                oefening["AverageHeart"] = "5";
+                oefening["Kcal"] = _KcalAPI;
+                oefening["MaxHeart"] = "0";
+                oefening["AverageHeart"] = "0";
             }
             else
             {

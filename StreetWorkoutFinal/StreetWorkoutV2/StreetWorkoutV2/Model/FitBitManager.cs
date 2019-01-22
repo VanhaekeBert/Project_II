@@ -28,6 +28,8 @@ namespace StreetWorkoutV2.Model
             Preferences.Set("Token", $"Bearer {account.Token}");
             JObject token = new JObject();
             token["Token"] = $"Bearer {account.Token}";
+            _BearerToken = $"Bearer {account.Token}";
+            Preferences.Set("Token", $"Bearer {account.Token}");
             DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", token);
             response.API = "FitBit";
             return response;
@@ -48,11 +50,12 @@ namespace StreetWorkoutV2.Model
                 //string authToken = Preferences.Get("Token", "");
                 string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwNzk0Mjh9.m39NX6x91xwD6jT2oUVuZBs-kdGbQi6ll_i-veW0P9k";
                 client.DefaultRequestHeaders.Add("Authorization", authToken);
-                string url = $"https://api.fitbit.com/1/user/-/activities/heart/date/{postStartDate}/1d/1sec/time/{postStartTime}/{postEndTime}.json";
+                string url = $"https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec/time/{postStartTime}/{postEndTime}.json";
 
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
+                    
                     JObject hearRateObject = JsonConvert.DeserializeObject<JObject>(json);
                     return hearRateObject;
                 }
@@ -67,7 +70,7 @@ namespace StreetWorkoutV2.Model
                 throw ex;
             }
         }
-        public static async Task FitBitPostExercise(int activityId, DateTime startTime, int duration)
+        public static async Task<JObject> FitBitPostExercise(int activityId, DateTime startTime, int duration)
         {
             try
             {
@@ -84,8 +87,18 @@ namespace StreetWorkoutV2.Model
                 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
                 string url = $"https://api.fitbit.com/1/user/-/activities.json?activityId={activityId}&durationMillis={durationInSeconds}&date={postDate}&startTime={postTime}";
                 var message = await client.PostAsync(url, httpContent);
-                var responseString = await message.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseString);
+                var json = await message.Content.ReadAsStringAsync();
+                Debug.WriteLine(json);
+                if (json != null)
+                {
+                    JObject returnObject = JsonConvert.DeserializeObject<JObject>(json);
+                    return returnObject;
+                }
+                else
+                {
+                    return null;
+                }
+           
 
             }
             catch (Exception ex)
