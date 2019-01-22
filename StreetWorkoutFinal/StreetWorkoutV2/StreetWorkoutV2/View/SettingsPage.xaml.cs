@@ -21,6 +21,11 @@ namespace StreetWorkoutV2.View
         public SettingsPage()
         {
             InitializeComponent();
+            MessagingCenter.Subscribe<SettingsPage, string>(this, "PassFitbitConnected", (sender, arg) =>
+            {
+                lblFBverbonden.Text = arg;
+
+            });
             if (Preferences.Get("API", "") == "FitBit")
             {
                 lblFBverbonden.Text = "Verbonden";
@@ -44,9 +49,7 @@ namespace StreetWorkoutV2.View
                 Task.Run(async () =>
                 {
                     FitBitUser user = await FitBitManager.FitBitAsync();
-                    var vUpdatedPage = new SettingsPage();
-                    Navigation.InsertPageBefore(vUpdatedPage, this);
-                    await Navigation.PopAsync();
+        
                     user.Naam = Preferences.Get("Naam", "").ToString();
                     string text = JsonConvert.SerializeObject(user);
                     JObject data = JsonConvert.DeserializeObject<JObject>(text);
@@ -54,6 +57,8 @@ namespace StreetWorkoutV2.View
                     Preferences.Set("Lengte", data["Lengte"].ToString());
                     Preferences.Set("Gewicht", data["Gewicht"].ToString());
                     Preferences.Set("API", data["API"].ToString());
+                    MessagingCenter.Send(this, "PassFitbitConnected", "Verbonden");
+
                     DBManager.PutUserData(user.Naam, "Naam", data);
                 });
             };

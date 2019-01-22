@@ -395,7 +395,7 @@ namespace StreetWorkoutV2.View
             oefening["Duur"] = Preferences.Get("WorkTime", 0);
             Preferences.Set("WorkTime", 0);
             oefening["Workout"] = Preferences.Get("Workout", ""); ;
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", 0);
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
             for (int i = 0; i < 3; i++)
             {
                 if (i == 2)

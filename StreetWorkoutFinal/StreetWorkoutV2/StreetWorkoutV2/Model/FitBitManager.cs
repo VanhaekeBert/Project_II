@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace StreetWorkoutV2.Model
 {
@@ -16,6 +17,7 @@ namespace StreetWorkoutV2.Model
         static string _BearerToken = "";
         public static async Task<FitBitUser> FitBitAsync()
         {
+          
             var scopes = new[] { "profile" };
             var api = new FitBitApi("google", "22D9J5", "8889b872288980d53e2cad3a2043955b", true)
             {

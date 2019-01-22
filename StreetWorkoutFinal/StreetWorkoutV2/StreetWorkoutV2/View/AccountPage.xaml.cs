@@ -37,6 +37,12 @@ namespace StreetWorkoutV2.View
             lblUsername.Text = Preferences.Get("Naam", "");
             NameChangeEntry.Text = Preferences.Get("Naam", "");
 
+            MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterDrunk", (sender, arg) =>
+            {
+              //  lblWaterTotaal.Text = arg;
+
+            });
+
 
             if (Preferences.Get("Water", "") != "[]")
             {
@@ -356,6 +362,7 @@ namespace StreetWorkoutV2.View
             user["Gewicht"] = weightInput.Text.ToString();
             user["Leeftijd"] = ageInput.Text.ToString();
             water["WaterDoel"] = int.Parse(waterInput.Text);
+            MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
             water["Naam"] = Preferences.Get("Naam", "");
             //user["Naam"] = NameChangeEntry.Text.ToString();
             Preferences.Set("Lengte", user["Lengte"].ToString());

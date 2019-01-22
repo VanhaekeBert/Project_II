@@ -24,6 +24,13 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
+
+            MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender,arg) =>
+            {
+                lblWaterTotaal.Text =arg;
+
+            });
+
             List<OefeningDB> weekOef = new List<OefeningDB>();
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
@@ -68,7 +75,7 @@ namespace StreetWorkoutV2.View
                 {
                     lblWaterGedronken.Text = Preferences.Get("WaterGedronken", 0).ToString();
                 }
-                lblWaterTotaal.Text = " / " + Preferences.Get("WaterDoel", 0).ToString() + " ";
+                lblWaterTotaal.Text = Preferences.Get("WaterDoel", 0).ToString();
             }
 
 
