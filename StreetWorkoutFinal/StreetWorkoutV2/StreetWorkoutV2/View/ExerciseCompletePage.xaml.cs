@@ -170,11 +170,12 @@ namespace StreetWorkoutV2.View
         private async void PopupRepetitionsConfirm_Clicked(object sender, EventArgs e)
         {
          
-            if (Preferences.Get("API", "") == "FitBit") {
+            //if (Preferences.Get("API", "") == "FitBit") {
                 JObject oefening = new JObject();
                 string herhalingen = "[";
                 var fitbitName = Preferences.Get("Naam", "");
                 var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
+                var fitbitEndDate = DateTime.Now;
                 Preferences.Set("StartDate", null);
                 var fitbitDuration = Preferences.Get("WorkTime", 0);
                 var fitbitExercise = Preferences.Get("Workout", "");
@@ -197,7 +198,8 @@ namespace StreetWorkoutV2.View
                 }
 
                 await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
-            }
+                var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+            //}
 
             popExerciseReview.IsVisible = false;
             popExerciseReview.IsEnabled = false;

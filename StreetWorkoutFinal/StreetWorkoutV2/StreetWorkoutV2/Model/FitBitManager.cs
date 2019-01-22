@@ -31,19 +31,22 @@ namespace StreetWorkoutV2.Model
             return response;
         }
 
-        public static async Task<JObject> FitBitGetHeartRate(string requestDate, string startTime, string endTime)
+        public static async Task<JObject> FitBitGetHeartRate(DateTime startTime, DateTime endTime)
         {
             try
             {
                 //string RequestDate = "yyyy-MM-dd";
                 //string StartTime = "00:01";
                 //string EndTime = "00:10";
+                var postStartTime = startTime.ToString("HH:mm:ss");
+                var postStartDate = startTime.ToString("yyyy-MM-dd");
+                var postEndTime = endTime.ToString("HH:mm:ss");
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                string authToken = Preferences.Get("Token", "");
-                //string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwNzk0Mjh9.m39NX6x91xwD6jT2oUVuZBs-kdGbQi6ll_i-veW0P9k";
+                //string authToken = Preferences.Get("Token", "");
+                string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwNzk0Mjh9.m39NX6x91xwD6jT2oUVuZBs-kdGbQi6ll_i-veW0P9k";
                 client.DefaultRequestHeaders.Add("Authorization", authToken);
-                string url = $"https://api.fitbit.com/1/user/-/activities/heart/date/{requestDate}/1d/1sec/time/{startTime}/{endTime}.json";
+                string url = $"https://api.fitbit.com/1/user/-/activities/heart/date/{postStartDate}/1d/1sec/time/{postStartTime}/{postEndTime}.json";
 
                 string json = await client.GetStringAsync(url);
                 if (json != null)

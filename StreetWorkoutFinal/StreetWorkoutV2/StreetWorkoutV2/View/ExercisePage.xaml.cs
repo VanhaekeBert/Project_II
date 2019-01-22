@@ -235,19 +235,18 @@ namespace StreetWorkoutV2.View
 
         private async void btnDone_Clicked(object sender, EventArgs e)
         {
-            if (_CurrentProgress == "1/3" || _CurrentProgress == "2/3")
+            if (_CurrentProgress == "1/3")
             {
-                if (Preferences.Get("WorkTime", 0) != 0)
-                {
-                    string workout = Preferences.Get("WorkTime", 0).ToString();
-                    Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
-                }
-                else
-                {
-                    Preferences.Set("WorkTime", TimeKeeper);
-                }
+                Preferences.Set("WorkTime", TimeKeeper);
                 await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
             }
+            else if (_CurrentProgress == "2/3")
+            {
+                string workout = Preferences.Get("WorkTime", 0).ToString();
+                Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
+                await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
+            }
+          
             else if (_CurrentProgress == "3/3")
             {
                 string workout = Preferences.Get("WorkTime", 0).ToString();
