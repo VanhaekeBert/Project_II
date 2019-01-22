@@ -194,60 +194,63 @@ namespace StreetWorkoutV2.View
                 popExerciseReview.IsEnabled = false;
             }
 
-            if(popExerciseReview.IsEnabled == false)
+            if (popExerciseReview.IsEnabled == false)
             {
 
-                if (Preferences.Get("API", "") == "FitBit") {
-                //In if steken
-                JObject oefening = new JObject();
-                var fitbitName = Preferences.Get("Naam", "");
-                var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
-                var fitbitEndDate = DateTime.Now;
-                Preferences.Set("StartDate", null);
-                var fitbitDuration = Preferences.Get("WorkTime", 0);
-                var fitbitExercise = Preferences.Get("Workout", "");
-                var fitbitDifficulty = Preferences.Get("Difficulty", "").Substring(4).Replace(" ", "");
-                var fitbitActivityId = 0;
-                switch (fitbitDifficulty)
+                if (Preferences.Get("API", "") == "FitBit")
                 {
-                    case "Simpel":
-                        fitbitActivityId = 2030;
-                        break;
-                    case "Gevorderd":
-                        fitbitActivityId = 2060;
-                        break;
-                    case "Expert":
-                        fitbitActivityId = 2020;
-                        break;
-                    default:
-                        fitbitActivityId = 2101;
-                        break;
-                }
+                    //In if steken
+                    JObject oefening = new JObject();
+                    var fitbitName = Preferences.Get("Naam", "");
+                    var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
+                    var fitbitEndDate = DateTime.Now;
+                    Preferences.Set("StartDate", null);
+                    var fitbitDuration = Preferences.Get("WorkTime", 0);
+                    var fitbitExercise = Preferences.Get("Workout", "");
+                    var fitbitDifficulty = Preferences.Get("Difficulty", "").Substring(4).Replace(" ", "");
+                    var fitbitActivityId = 0;
+                    switch (fitbitDifficulty)
+                    {
+                        case "Simpel":
+                            fitbitActivityId = 2030;
+                            break;
+                        case "Gevorderd":
+                            fitbitActivityId = 2060;
+                            break;
+                        case "Expert":
+                            fitbitActivityId = 2020;
+                            break;
+                        default:
+                            fitbitActivityId = 2101;
+                            break;
+                    }
 
-               var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
-                _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
-                var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
-            popExerciseReview.IsVisible = false;
-            popExerciseReview.IsEnabled = false;
-            if (inputRepetitions.Text != "")
-            {
-                if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
-                {
-                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
+                    var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
+                    _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
+                    var HeartRateObject = await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+                    popExerciseReview.IsVisible = false;
+                    popExerciseReview.IsEnabled = false;
+                    if (inputRepetitions.Text != "")
+                    {
+                        if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
+                        {
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
+                        }
+                        else
+                        {
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
+                        }
+                    }
+                    else
+                    {
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
+                    }
+                    Repetition3.Text = Preferences.Get("Repetition2", "").Substring(0, Preferences.Get("Repetition2", "").Length - 1);
+                    if (Preferences.Get("Repetition2", "").Substring(Preferences.Get("Repetition2", "").Length - 1, 1) == "R")
+                    {
+                        Repetition3.TextColor = Color.Red;
+                    }
                 }
-                else
-                {
-                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
-                }
-            }
-            else
-            {
-                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
-            }
-            Repetition3.Text = Preferences.Get("Repetition2", "").Substring(0, Preferences.Get("Repetition2", "").Length - 1);
-            if (Preferences.Get("Repetition2", "").Substring(Preferences.Get("Repetition2", "").Length - 1, 1) == "R")
-            {
-                Repetition3.TextColor = Color.Red;
             }
         }
         private void Rate1Star()
