@@ -95,9 +95,10 @@
                                         </Grid>
                                     </Grid>
                                 </custom:CustomFrame>
-                            </Grid>
-                        </renderers:GradientLayout>
+                            </Grid>                            
+                        </renderers:GradientLayout>                        
                     </custom:CustomFrame>
+                    <Label Grid.Row="5" x:Name="lblCheckEntry" Margin="0,24,0,0" FontSize="18" TextColor="{StaticResource LightColor}"></Label>
                 </Grid>
             </Grid>
         </RelativeLayout>

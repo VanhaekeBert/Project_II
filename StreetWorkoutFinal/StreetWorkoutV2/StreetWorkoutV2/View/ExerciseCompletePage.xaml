@@ -179,8 +179,8 @@
                             </Grid>
                         </renderers:GradientLayout>
                     </Frame>
-                    <Button Grid.Row="0" x:Name="PopupRepetitionsConfirm" Clicked="PopupRepetitionsConfirm_Clicked" Text="Bevestigen" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="18" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" />
-                
+                    <Button Grid.Row="0" x:Name="PopupRepetitionsConfirm" Clicked="PopupRepetitionsConfirm_Clicked" BackgroundColor="#1C1E2B" Text="Bevestigen" TextColor="{StaticResource LightColor}" FontSize="18" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" />
+                    
                 </StackLayout>
             </StackLayout>
             <!--========-->

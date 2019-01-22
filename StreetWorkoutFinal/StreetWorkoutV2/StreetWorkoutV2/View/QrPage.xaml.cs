@@ -1,5 +1,7 @@
 ﻿using FormsControls.Base;
 using Newtonsoft.Json;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
@@ -34,11 +36,13 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
+
                     await btnBack.FadeTo(0.3, 150);
                     await btnBack.FadeTo(1, 150);
                     await Navigation.PopAsync();
                 })
             });
+           
         }
 
         public void GrabJson()
@@ -48,6 +52,7 @@ namespace StreetWorkoutV2.View
             StreamReader oSR = new StreamReader(stream);
             string json = oSR.ReadToEnd();
             _Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+            CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera);
         }
 
         public void GetDevice(string ScannedDevice)
@@ -68,6 +73,22 @@ namespace StreetWorkoutV2.View
         {
             try
             {
+                //PermissionStatus status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+                //if (status != PermissionStatus.Granted)
+                //{
+                //    if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
+                //    {
+                //        await DisplayAlert("Alert", "Gunna need that camerapermissions", "OK");
+                //    }
+
+                //    var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera });
+                //    status = results[Permission.Camera];
+                    
+                //}
+                //else
+                //{
+                    
+                //}
                 var options = new MobileBarcodeScanningOptions
                 {
                     AutoRotate = false,
@@ -85,36 +106,43 @@ namespace StreetWorkoutV2.View
 
                 await Navigation.PushModalAsync(QRScanner);
                 bool isAlerted = false;
-                QRScanner.OnScanResult += (result) =>
+                PermissionStatus status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+                if (status != PermissionStatus.Granted)
                 {
-                    // Stop scanning
-                    QRScanner.IsScanning = false;
-
-                    // Pop the page and show the result
-
-                    Device.BeginInvokeOnMainThread(() =>
+                    await DisplayAlert("Eerste keer?", "Omdat het de eerste keer is dat je de qr-scanner wilt gebruiken zul je de app moeten herstarten", "Ok");
+                }
+                else
+                {
+                    QRScanner.OnScanResult += (result) =>
                     {
+                        // Stop scanning
+                        QRScanner.IsScanning = false;
 
-                        List<string> devices = new List<string>();
-                        foreach (var oefening in _Oefeningslijst)
+                        // Pop the page and show the result
+
+                        Device.BeginInvokeOnMainThread(() =>
                         {
-                            devices.Add(oefening.Toestel);
-                        }
 
-                        if (devices.Contains(result.Text))
-                        {
-                            Navigation.PopModalAsync(true);
-                            GetDevice(result.Text);
-                        }
-                        else if (isAlerted == false)
-                        {
-                            DisplayAlert("Alert", "De gescande QR-code was ongeldig", "Ok");
-                            isAlerted = true;
-                        }
+                            List<string> devices = new List<string>();
+                            foreach (var oefening in _Oefeningslijst)
+                            {
+                                devices.Add(oefening.Toestel);
+                            }
 
-                    });
-                };
+                            if (devices.Contains(result.Text))
+                            {
+                                Navigation.PopModalAsync(true);
+                                GetDevice(result.Text);
+                            }
+                            else if (isAlerted == false)
+                            {
+                                DisplayAlert("Geen toestel gevonden", "De gescande QR-code was ongeldig.", "Ok");
+                                isAlerted = true;
+                            }
 
+                        });
+                    };
+                }
             }
             catch (Exception ex)
             {

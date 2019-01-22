@@ -79,6 +79,7 @@ namespace StreetWorkoutV2.View
 
                 if (lvwExercices.SelectedItem as Oefening != null)
                 {
+                    StkAanbeveling.IsVisible = false;
                     _TappedExercise = (lvwExercices.SelectedItem as Oefening);
                     List<OefeningDB> tempOefeningen = new List<OefeningDB>();
                     foreach (OefeningDB oefening in oefeningen)

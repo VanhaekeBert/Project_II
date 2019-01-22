@@ -31,6 +31,7 @@ namespace StreetWorkoutV2.View
             _Difficulty = Difficulty;
             _Repetitions = Repetitions;
 
+            
 
             if (_CurrentProgress == "1/3")
             {
@@ -63,15 +64,26 @@ namespace StreetWorkoutV2.View
                 Command = new Command(async () => {
                     if (inputRepetitions.Text != "")
                     {
-                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
-                        Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
+                        if (inputRepetitions.Text.Contains("-") || inputRepetitions.Text.Contains(".") || inputRepetitions.Text.Contains(","))
+                        {
+                            lblCheckEntry.Text = "Ongeldige input";
+                        }
+                        else
+                        {
+                            lblCheckEntry.Text = "";
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                            Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
+                            await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
+                        }
+                        
                     }
                     else
                     {
                         Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder);
                         Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
+                        await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                     }
-                    await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
+                    
                 })
             });
 

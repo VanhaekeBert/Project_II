@@ -11,6 +11,7 @@ using Android.Content;
 using System.IO;
 using System.Threading.Tasks;
 using FFImageLoading.Forms.Droid;
+using Plugin.Permissions;
 
 namespace StreetWorkoutV2.Droid
 {
@@ -42,6 +43,12 @@ namespace StreetWorkoutV2.Droid
                     PickImageTaskCompletionSource.SetResult(null);
                 }
             }
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

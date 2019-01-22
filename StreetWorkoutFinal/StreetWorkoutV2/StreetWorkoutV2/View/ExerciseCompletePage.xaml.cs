@@ -169,8 +169,37 @@ namespace StreetWorkoutV2.View
         }
         private async void PopupRepetitionsConfirm_Clicked(object sender, EventArgs e)
         {
-         
-            //if (Preferences.Get("API", "") == "FitBit") {
+
+            if (inputRepetitions.Text != "")
+            {
+                if (inputRepetitions.Text.Contains("-") || inputRepetitions.Text.Contains(".") || inputRepetitions.Text.Contains(","))
+                {
+                    await DisplayAlert("Ongeldige input", "Gelieve geen negatieve getallen en kommagetallen te gebruiken.", "Ok");
+                }
+                else
+                {
+                    Repetition3.Text = inputRepetitions.Text;
+                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", _Repetitions);
+                    if (int.Parse(_Repetitions) > int.Parse(Repetition3.Text))
+                    {
+                        Repetition3.TextColor = Color.Red;
+                    }
+                    popExerciseReview.IsVisible = false;
+                    popExerciseReview.IsEnabled = false;
+                }
+            }
+            else
+            {
+                Repetition3.Text = _Repetitions;
+                popExerciseReview.IsVisible = false;
+                popExerciseReview.IsEnabled = false;
+            }
+
+            if(popExerciseReview.IsEnabled == false)
+            {
+
+                //if (Preferences.Get("API", "") == "FitBit") {
+                //In if steken
                 JObject oefening = new JObject();
                 string herhalingen = "[";
                 var fitbitName = Preferences.Get("Naam", "");
@@ -197,26 +226,10 @@ namespace StreetWorkoutV2.View
                         break;
                 }
 
-                await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
-                var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
-            //}
-
-            popExerciseReview.IsVisible = false;
-            popExerciseReview.IsEnabled = false;
-            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", _Repetitions);
-            Repetition3.Text = inputRepetitions.Text;
-            if (Repetition3.Text != "")
-            {                
-                if (Preferences.Get("Doel", 0) > int.Parse(Repetition3.Text))
-                {
-                    Repetition3.TextColor = Color.Red;
-                }
+                //await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
+                //var HeartRateObject =   await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+                //}
             }
-            else
-            {
-                Repetition3.Text = _Repetitions; 
-            }
-            
         }
         private void Rate1Star()
         {
@@ -395,7 +408,7 @@ namespace StreetWorkoutV2.View
             oefening["Duur"] = Preferences.Get("WorkTime", 0);
             Preferences.Set("WorkTime", 0);
             oefening["Workout"] = Preferences.Get("Workout", ""); ;
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty","");
             for (int i = 0; i < 3; i++)
             {
                 if (i == 2)
