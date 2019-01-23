@@ -246,18 +246,19 @@ namespace StreetWorkoutV2.View
                 Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
                 await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
             }
-
+          
             else if (_CurrentProgress == "3/3")
             {
                 string workout = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
-                await Navigation.PushAsync(new ExerciseCompletePage(_CurrentExercise, _Repetitions));
+                await Navigation.PushAsync(new ExerciseCompletePage(_CurrentExercise,_Repetitions));
             }
         }
-    } }
+
 
         //protected override bool OnBackButtonPressed()
         //{
         //    return true;
         //}
- 
+    }
+}

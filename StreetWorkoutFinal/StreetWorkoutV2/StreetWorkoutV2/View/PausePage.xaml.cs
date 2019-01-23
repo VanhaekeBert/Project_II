@@ -64,24 +64,15 @@ namespace StreetWorkoutV2.View
                 Command = new Command(async () => {
                     if (inputRepetitions.Text != "")
                     {
-                        if (inputRepetitions.Text.Contains("-") || inputRepetitions.Text.Contains(".") || inputRepetitions.Text.Contains(","))
+                        if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
                         {
-                            lblCheckEntry.Text = "Ongeldige input";
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
+                            Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         }
                         else
                         {
-                            if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
-                            {
-                                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
-                                Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
-                            }
-                            else
-                            {
-                                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
-                                Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
-                            }
-                            lblCheckEntry.Text = "";                            
-                            await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
+                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
+                            Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         }
                     }
                     else

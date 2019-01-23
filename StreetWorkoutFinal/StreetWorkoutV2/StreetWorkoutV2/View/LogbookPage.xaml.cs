@@ -55,8 +55,8 @@ namespace StreetWorkoutV2.View
                     data.Add(oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd"));
                     List<Logboek> lijst = new List<Logboek>();
                     Logboek logboek = new Logboek();
-                    logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
                     logboek.Naam = oefening.Workout;
+                    logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
                     logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
                     logboek.Total_hearts_given = int.Parse(oefening.Gevoel);
                     List<int> herhalingen = new List<int>();
@@ -85,14 +85,16 @@ namespace StreetWorkoutV2.View
                 else
                 {
                     //foreach (List<Logboek> logboeks in lijstLogboek)
-                    for (int i = 0; i < lijstLogboek.Count; i++)
+                    for (int i = 0; i <= lijstLogboek.Count; i++)
                     {
+                        if (i != lijstLogboek.Count)
+                        {
                         if (oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd") == lijstLogboek[i][0].Date)
                         {
                             Logboek logboek = new Logboek();
-                            logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
                             logboek.Naam = oefening.Workout;
-                            logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
+                                logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
+                                logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
                             logboek.Total_hearts_given = int.Parse(oefening.Gevoel);
                             List<int> herhalingen = new List<int>();
                             var herhalingenTemp = oefening.Herhalingen.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
@@ -115,14 +117,16 @@ namespace StreetWorkoutV2.View
                             }
                             logboek.Color = kleuren;
                             lijstLogboek[i].Add(logboek);
+                                break;
+                            }
                         }
                         else
                         {
                             data.Add(oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd"));
                             List<Logboek> lijst = new List<Logboek>();
                             Logboek logboek = new Logboek();
-                            logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
                             logboek.Naam = oefening.Workout;
+                            logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
                             logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
                             logboek.Total_hearts_given = int.Parse(oefening.Gevoel);
                             List<int> herhalingen = new List<int>();
@@ -147,6 +151,7 @@ namespace StreetWorkoutV2.View
                             logboek.Color = kleuren;
                             lijst.Add(logboek);
                             lijstLogboek.Add(lijst);
+                            break;
                         }
                     }
                 }
@@ -159,42 +164,49 @@ namespace StreetWorkoutV2.View
                     lvwDag1.IsVisible = true;
                     lblDag1.Text = data[data.Count-1];
                     lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 1];
+                    lvwDag1.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 1].Count)+125;
                 }
                 else if(i == 2)
                 {
                     lvwDag2.IsVisible = true;
-                    lblDag1.Text = data[data.Count - 2];
-                    lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 2];
+                    lblDag2.Text = data[data.Count - 2];
+                    lvwDag2.ItemsSource = lijstLogboek[lijstLogboek.Count - 2];
+                    lvwDag2.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 2].Count)+125;
                 }
                 else if (i == 3)
                 {
                     lvwDag3.IsVisible = true;
-                    lblDag1.Text = data[data.Count - 3];
-                    lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 3];
+                    lblDag3.Text = data[data.Count - 3];
+                    lvwDag3.ItemsSource = lijstLogboek[lijstLogboek.Count - 3];
+                    lvwDag3.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 3].Count) + 125;
                 }
                 else if (i == 4)
                 {
                     lvwDag4.IsVisible = true;
-                    lblDag1.Text = data[data.Count - 4];
-                    lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 4];
+                    lblDag4.Text = data[data.Count - 4];
+                    lvwDag4.ItemsSource = lijstLogboek[lijstLogboek.Count - 4];
+                    lvwDag4.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 4].Count) + 125;
                 }
                 else if (i == 5)
                 {
                     lvwDag5.IsVisible = true;
-                    lblDag1.Text = data[data.Count - 5];
-                    lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 5];
+                    lblDag5.Text = data[data.Count - 5];
+                    lvwDag5.ItemsSource = lijstLogboek[lijstLogboek.Count - 5];
+                    lvwDag5.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 5].Count) + 125;
                 }
                 else if (i == 6)
                 {
                     lvwDag6.IsVisible = true;
-                    lblDag1.Text = data[data.Count - 6];
-                    lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 6];
+                    lblDag6.Text = data[data.Count - 6];
+                    lvwDag6.ItemsSource = lijstLogboek[lijstLogboek.Count - 6];
+                    lvwDag6.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 6].Count) + 125;
                 }
                 else
                 {
                     lvwDag7.IsVisible = true;
-                    lblDag1.Text = data[data.Count - 7];
-                    lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 7];
+                    lblDag7.Text = data[data.Count - 7];
+                    lvwDag7.ItemsSource = lijstLogboek[lijstLogboek.Count - 7];
+                    lvwDag7.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 7].Count) + 125;
                 }
             }
         }

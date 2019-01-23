@@ -253,6 +253,7 @@ namespace StreetWorkoutV2.View
                 }
             }
         }
+
         private void Rate1Star()
         {
             imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;

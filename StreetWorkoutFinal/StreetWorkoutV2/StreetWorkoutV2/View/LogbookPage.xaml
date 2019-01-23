@@ -52,7 +52,7 @@
                                 <Label x:Name="lblDag1" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag1">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
@@ -116,7 +116,7 @@
                                 <Label x:Name="lblDag2" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag2">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
@@ -180,7 +180,7 @@
                                 <Label x:Name="lblDag3" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag3">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
@@ -244,7 +244,7 @@
                                 <Label x:Name="lblDag4" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag4">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
@@ -308,7 +308,7 @@
                                 <Label x:Name="lblDag5" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag5">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
@@ -372,7 +372,7 @@
                                 <Label x:Name="lblDag6" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag6">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
@@ -436,7 +436,7 @@
                                 <Label x:Name="lblDag7" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:Name="DtDag7">
                                     <ViewCell >
                                         <local1:CustomFrame  CornerRadius="10"  Padding="0"  BackgroundColor="#484E6D" Margin="0,12,0,12" HeightRequest="100">
                                             <renderers:GradientLayout
