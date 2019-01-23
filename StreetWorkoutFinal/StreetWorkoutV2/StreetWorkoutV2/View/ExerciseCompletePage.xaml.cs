@@ -184,6 +184,8 @@ namespace StreetWorkoutV2.View
                     {
                         Repetition3.TextColor = Color.Red;
                     }
+                    await PopupRepetitionsConfirm.FadeTo(0.3, 75);
+                    await PopupRepetitionsConfirm.FadeTo(1, 75);
                     popExerciseReview.IsVisible = false;
                     popExerciseReview.IsEnabled = false;
                 }
@@ -229,6 +231,8 @@ namespace StreetWorkoutV2.View
                     var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
                     _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
                     var HeartRateObject = await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+                    await popExerciseReview.FadeTo(0.3, 75);
+                    await popExerciseReview.FadeTo(1, 75);
                     popExerciseReview.IsVisible = false;
                     popExerciseReview.IsEnabled = false;
                 }
@@ -420,6 +424,8 @@ namespace StreetWorkoutV2.View
             var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
             Preferences.Set("Oefeningen", oefeningTojson.ToString());
             MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+            await btnHome.FadeTo(0.3, 75);
+            btnHome.FadeTo(1, 75);
             await Navigation.PopToRootAsync();
         }
 
@@ -487,6 +493,8 @@ namespace StreetWorkoutV2.View
             var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
             Preferences.Set("Oefeningen", oefeningTojson.ToString());
             MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+            await btnMoreEx.FadeTo(0.3, 75);
+            btnMoreEx.FadeTo(1, 75);
             await Navigation.PopAsync();
         }
         protected override bool OnBackButtonPressed()
