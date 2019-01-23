@@ -17,22 +17,29 @@ namespace StreetWorkoutV2.Model
         static string _BearerToken = "";
         public static async Task<FitBitUser> FitBitAsync()
         {
-          
-            var scopes = new[] { "profile" };
-            var api = new FitBitApi("google", "22D9J5", "8889b872288980d53e2cad3a2043955b", true)
+            try
             {
-                Scopes = scopes
-            };
-            var account = (SimpleAuth.OAuthAccount)await api.Authenticate();
-            var response = await api.Get<FitBitUser>("https://api.fitbit.com/1/user/-/profile.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}" });
-            Preferences.Set("Token", $"Bearer {account.Token}");
-            JObject token = new JObject();
-            token["Token"] = $"Bearer {account.Token}";
-            _BearerToken = $"Bearer {account.Token}";
-            Preferences.Set("Token", $"Bearer {account.Token}");
-            DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", token);
-            response.API = "FitBit";
-            return response;
+                var scopes = new[] { "profile" };
+                var api = new FitBitApi("google", "22D9J5", "8889b872288980d53e2cad3a2043955b", true)
+                {
+                    Scopes = scopes
+                };
+                var account = (SimpleAuth.OAuthAccount)await api.Authenticate();
+                var response = await api.Get<FitBitUser>("https://api.fitbit.com/1/user/-/profile.json", new Dictionary<string, string> { ["Authorization"] = $"Bearer {account.Token}" });
+                Preferences.Set("Token", $"Bearer {account.Token}");
+                JObject token = new JObject();
+                token["Token"] = $"Bearer {account.Token}";
+                _BearerToken = $"Bearer {account.Token}";
+                Preferences.Set("Token", $"Bearer {account.Token}");
+                DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", token);
+                response.API = "FitBit";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Foutmelding: " + ex.Message);
+                throw ex;
+            }
         }
 
         public static async Task<JObject> FitBitGetHeartRate(DateTime startTime, DateTime endTime)
