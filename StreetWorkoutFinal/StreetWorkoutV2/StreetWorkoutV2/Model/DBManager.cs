@@ -50,6 +50,7 @@ namespace StreetWorkoutV2.Model
             JObject reg = new JObject();
             reg["Email"] = email;
             reg["Naam"] = naam;
+            reg["ApiNaam"] = naam;
             reg["Wachtwoord"] = wachtwoord;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");

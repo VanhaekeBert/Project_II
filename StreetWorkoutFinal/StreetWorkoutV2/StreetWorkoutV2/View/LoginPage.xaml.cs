@@ -104,6 +104,7 @@ namespace StreetWorkoutV2.View
                     var waterTojson = JsonConvert.SerializeObject(water);
                     var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
                     Preferences.Set("Naam", gebruiker["Naam"].ToString());
+                    Preferences.Set("ApiNaam", gebruiker["ApiNaam"].ToString());
                     Preferences.Set("Email", gebruiker["Email"].ToString());
                     Preferences.Set("Leeftijd", gebruiker["Leeftijd"].ToString());
                     Preferences.Set("Lengte", gebruiker["Lengte"].ToString());

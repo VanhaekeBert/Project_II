@@ -33,8 +33,8 @@ namespace StreetWorkoutV2.View
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
-            lblUsername.Text = Preferences.Get("Naam", "");
-            NameChangeEntry.Text = Preferences.Get("Naam", "");
+            lblUsername.Text = Preferences.Get("ApiNaam", "");
+            NameChangeEntry.Text = Preferences.Get("ApiNaam", "");
 
             MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
             {
@@ -158,14 +158,18 @@ namespace StreetWorkoutV2.View
                 {
                     sum += item.WaterGedronken;
                 }
-                LblWaterWeek.Text = sum.ToString();
+                LblWaterWeek.Text = sum.ToString() + " ml";
                 sum = 0;
                 foreach (Water item in maandWater)
                 {
                     sum += item.WaterGedronken;
                 }
-                LblWaterMaand.Text = sum.ToString();
+                LblWaterMaand.Text = sum.ToString() + " ml";
                 MakeEntriesWater();
+            }
+            else
+            {
+                LblDataWater.IsVisible = true;
             }
 
             if (Preferences.Get("Oefeningen", "") != "[]")
@@ -211,6 +215,11 @@ namespace StreetWorkoutV2.View
                 MakeEntriesOef();
                 MakeEntriesKcal();
             }
+            else
+            {
+                LblDataOef.IsVisible = true;
+                LblDataKcal.IsVisible = true;
+            }
             this.BackgroundColor = Color.FromHex("2B3049");
 
 
@@ -235,7 +244,7 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                    NameChangeEntry.Placeholder = Preferences.Get("Naam", "");
+                    NameChangeEntry.Placeholder = Preferences.Get("ApiNaam", "");
                     NameChangeEntry.IsVisible = true;
                     NameChangeEntry.IsEnabled = true;
                     NameChangeEntry.Focus();
@@ -246,16 +255,31 @@ namespace StreetWorkoutV2.View
 
             NameChangeEntry.Unfocused += async (sender, e) =>
             {
+                JObject user = new JObject();
+                user["ApiNaam"] = NameChangeEntry.Text.ToString();
+                await DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
                 NameChangeEntry.IsVisible = false;
                 NameChangeEntry.IsEnabled = false;
                 lblUsername.Text = NameChangeEntry.Text;
                 lblUsername.IsVisible = true;
                 imgPencil.IsVisible = true;
             };
-            weightInput.Text = Preferences.Get("Gewicht", "");
-            ageInput.Text = Preferences.Get("Leeftijd", "");
-            heightInput.Text = Preferences.Get("Lengte", "");
-            waterInput.Text = Preferences.Get("WaterDoel", 0).ToString();
+            if (Preferences.Get("Gewicht", "") != "")
+            {
+                weightInput.Text = Preferences.Get("Gewicht", "");
+            }
+            if (Preferences.Get("Leeftijd", "") != "")
+            {
+                ageInput.Text = Preferences.Get("Leeftijd", "");
+            }
+            if (Preferences.Get("Lengte", "") != "")
+            {
+                heightInput.Text = Preferences.Get("Lengte", "");
+            }
+            if (Preferences.Get("WaterDoel", 0) != 0)
+            {
+                waterInput.Text = Preferences.Get("WaterDoel", 0).ToString();
+            }
             Task.Run(async () =>
             {
                 imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));

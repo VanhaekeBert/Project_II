@@ -21,7 +21,7 @@ namespace StreetWorkoutV2
             if (Preferences.Get("From", false))
             {
                 Inladen();
-                Preferences.Set("From", true);
+                Preferences.Set("From", false);
             }
             var navAcccount = new AnimationNavigationPage(new AccountPage());
             navAcccount.Icon = "account.png";
@@ -75,6 +75,7 @@ namespace StreetWorkoutV2
             var waterTojson = JsonConvert.SerializeObject(water);
             var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
             Preferences.Set("Naam", gebruiker["Naam"].ToString());
+            Preferences.Set("ApiNaam", gebruiker["ApiNaam"].ToString());
             Preferences.Set("Email", gebruiker["Email"].ToString());
             Preferences.Set("Leeftijd", gebruiker["Leeftijd"].ToString());
             Preferences.Set("Lengte", gebruiker["Lengte"].ToString());
