@@ -113,7 +113,6 @@ namespace StreetWorkoutV2.View
 
         private async void Logout(object sender, EventArgs e)
         {
-            DBManager.DeleteProfilePicture(Preferences.Get("Naam", ""));
             Preferences.Set("Naam", null);
             Preferences.Set("Email", null);
             Preferences.Set("Leeftijd", null);

@@ -222,7 +222,8 @@ namespace StreetWorkoutV2.View
                     Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
                     if (stream != null)
                     {
-                        await DBManager.PostProfilePicture(Preferences.Get("Naam", "") + ".jpeg", stream);
+                        await DBManager.PostProfilePicture(Preferences.Get("Naam", "") + ".jpg", stream);
+                        imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
                     }
                 })
             };

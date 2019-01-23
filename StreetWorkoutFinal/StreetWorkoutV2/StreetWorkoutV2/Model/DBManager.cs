@@ -321,13 +321,15 @@ namespace StreetWorkoutV2.Model
             JObject gegevens = new JObject();
             gegevens["Naam"] = naam;
             HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(naam);
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            var request = JsonConvert.SerializeObject(gegevens);
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
             string url = "https://streetworkout.azurewebsites.net/api/GetProfilePicture";
             var message = await client.PostAsync(url, httpContent);
             var responseString = await message.Content.ReadAsStringAsync();
-            return new Uri(responseString);
+            JObject uri = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
+            Debug.WriteLine(new Uri(uri["Uri"].ToString() + uri["SAS"].ToString()));
+            return new Uri(uri["Uri"].ToString() + uri["SAS"].ToString());
         }
 
         public static async Task<bool> DeleteProfilePicture(string naam)
@@ -336,7 +338,7 @@ namespace StreetWorkoutV2.Model
             gegevens["Naam"] = naam;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/string");
-            var request = JsonConvert.SerializeObject(naam);
+            var request = JsonConvert.SerializeObject(gegevens);
             var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
             string url = "https://streetworkout.azurewebsites.net/api/DeleteProfilePicture";
             var message = await client.PostAsync(url, httpContent);

@@ -29,6 +29,7 @@ namespace StreetWorkoutV2
 
         private async void Verwijderen(object sender, EventArgs e)
         {
+            await DBManager.DeleteProfilePicture(Preferences.Get("Naam", ""));
             await DBManager.DeleteUserData(Preferences.Get("Naam", ""));
             await DBManager.DeleteOefeningenData(Preferences.Get("Naam", ""));
             await DBManager.DeleteWater(Preferences.Get("Naam", ""));
