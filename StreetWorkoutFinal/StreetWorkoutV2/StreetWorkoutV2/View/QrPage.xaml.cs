@@ -110,6 +110,7 @@ namespace StreetWorkoutV2.View
                 if (status != PermissionStatus.Granted)
                 {
                     await DisplayAlert("Eerste keer?", "Omdat het de eerste keer is dat je de qr-scanner wilt gebruiken zul je de app moeten herstarten", "Ok");
+
                 }
                 else
                 {

@@ -96,7 +96,7 @@
                     </Grid>
                     <StackLayout  Grid.Row="4" Opacity="0.5">
                         <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
-                        <Label FontSize="12" Text="Foto's Oefeningen -  Remi Overstijns " TextColor="White"></Label>
+                        <Label FontSize="12" Text="Foto's en beschrijving Oefeningen -  Remi Overstijns " TextColor="White"></Label>
                         <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
                     </StackLayout>
                 </StackLayout>

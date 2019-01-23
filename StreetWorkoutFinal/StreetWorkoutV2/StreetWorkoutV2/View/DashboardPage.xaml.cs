@@ -144,9 +144,10 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command( () =>
                 {
+                    TotalWater.Text = "0";
+
                     popWater.IsEnabled = false;
                     popWater.IsVisible = false;
-
                 })
             });
 
@@ -158,14 +159,21 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
+                    await btnMuscle.FadeTo(0.3, 75);
+                    await btnMuscle.FadeTo(1, 75);
                     await Navigation.PushAsync(new PickerPage("Spiergroep"));
+                    
+
                 })
             });
             btnDevice.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
+                    await btnDevice.FadeTo(0.3, 75);
+                    await btnDevice.FadeTo(1, 75);
                     await Navigation.PushAsync(new PickerPage("Toestel"));
+
                 })
             });
 
@@ -173,37 +181,48 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
+                    await btnQR.FadeTo(0.3, 75);
+                    await btnQR.FadeTo(1, 75);
                     await Navigation.PushAsync(new QrPage());
                 })
             });
 
             click_one_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () =>
+                Command = new Command(async () =>
                 {
+                    await click_one_glass.FadeTo(0.3, 75);
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 250;
                     TotalWater.Text = Water_update.ToString();
+                    await click_one_glass.FadeTo(1, 75);
+
                 })
             });
 
             click_two_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () =>
+                Command = new Command(async () =>
                 {
+                    await click_two_glass.FadeTo(0.3, 75);
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 500;
                     TotalWater.Text = Water_update.ToString();
+                    await click_two_glass.FadeTo(1, 75);
+
                 })
             });
 
             click_four_glass.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () =>
+                Command = new Command(async () =>
                 {
+                    await click_four_glass.FadeTo(0.3, 75);
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 1000;
                     TotalWater.Text = Water_update.ToString();
+                    await click_four_glass.FadeTo(1, 75);
+
                 })
             });
             // -------------------------------------------------------------------
@@ -222,6 +241,7 @@ namespace StreetWorkoutV2.View
 
         private void SubmitWater_Clicked(object sender, EventArgs e)
         {
+
             popWater.IsEnabled = false;
             lblWaterGedronken.Text = "500";
             popWater.IsVisible = false;
@@ -229,6 +249,8 @@ namespace StreetWorkoutV2.View
 
         private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
         {
+           await SubmitWaterInput.FadeTo(0.3, 75);
+
             Preferences.Set("WaterGedronken", Preferences.Get("WaterGedronken", 0) + int.Parse(TotalWater.Text.ToString()));
             lblWaterGedronken.Text = Preferences.Get("WaterGedronken", 0).ToString();
             JObject water = new JObject();
@@ -239,6 +261,8 @@ namespace StreetWorkoutV2.View
             var waterTojson = JsonConvert.SerializeObject(waterlist);
             Preferences.Set("Water", waterTojson.ToString());
             MessagingCenter.Send(this, "PassWaterGedronken", Preferences.Get("Water", ""));
+            await SubmitWaterInput.FadeTo(1, 75);
+            TotalWater.Text = "0";
             popWater.IsEnabled = false;
             popWater.IsVisible = false;
         }
