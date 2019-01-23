@@ -86,13 +86,24 @@
 
                             <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
                                 <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+
                                     <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Account verwijderen" TextColor="White"/>
                                 </StackLayout>
                             </renderers:GradientLayout>
                         </StreetWorkoutV2:CustomFrame>
+
                     </Grid>
+                    <StackLayout  Grid.Row="4" Opacity="0.5">
+                        <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
+                        <Label FontSize="12" Text="Foto's Oefeningen -  Remi Overstijns " TextColor="White"></Label>
+                        <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
+                    </StackLayout>
                 </StackLayout>
+
+                
                 <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Logout"/>
+               
             </Grid>
         </RelativeLayout>
     </ContentPage.Content>

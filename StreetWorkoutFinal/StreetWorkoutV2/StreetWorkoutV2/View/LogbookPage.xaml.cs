@@ -209,6 +209,18 @@ namespace StreetWorkoutV2.View
                     lvwDag7.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 7].Count) + 125;
                 }
             }
+            btnBack.GestureRecognizers.Add(
+           new TapGestureRecognizer()
+           {
+               Command = new Command(async () =>
+               {
+                   await btnBack.FadeTo(0.3, 150);
+              
+                   await Navigation.PopAsync();
+                   await btnBack.FadeTo(1, 150);
+               })
+           });
         }
+
     }
 }
