@@ -34,7 +34,7 @@ namespace StreetWorkoutV2.View
             imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             lblUsername.Text = Preferences.Get("ApiNaam", "");
-            NameChangeEntry.Text = Preferences.Get("ApiNaam", "");
+            NameChangeEntry.Placeholder = Preferences.Get("ApiNaam", "");
 
             MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
             {
@@ -262,6 +262,7 @@ namespace StreetWorkoutV2.View
                 JObject user = new JObject();
                 user["ApiNaam"] = NameChangeEntry.Text.ToString();
                 await DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
+                Preferences.Set("ApiNaam", NameChangeEntry.Text.ToString());
                 NameChangeEntry.IsVisible = false;
                 NameChangeEntry.IsEnabled = false;
                 lblUsername.Text = NameChangeEntry.Text;
