@@ -83,15 +83,13 @@ namespace StreetWorkoutV2.View
                                 Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                             }
                             lblCheckEntry.Text = "";
-                            await frameNextExercise.FadeTo(0.3, 75);
-                            frameNextExercise.FadeTo(1, 75);
+                         
                             await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                         }
                     }
                     else
                     {
-                        await frameNextExercise.FadeTo(0.3, 75);
-                        frameNextExercise.FadeTo(1, 75);
+                      
                         Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
                         Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));

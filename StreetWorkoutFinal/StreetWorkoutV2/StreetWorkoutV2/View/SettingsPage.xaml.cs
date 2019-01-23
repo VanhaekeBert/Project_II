@@ -92,6 +92,8 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
+                    await FraWWR.FadeTo(0.5, 100);
+                    FraWWR.FadeTo(1, 75);
                     await Navigation.PushAsync(new PasswordResetPage());
                 })
             });
@@ -101,7 +103,8 @@ namespace StreetWorkoutV2.View
                 Command = new Command(async () =>
                 {
 
-
+                    await FraAD.FadeTo(0.5, 100);
+                    FraAD.FadeTo(1, 75);
                     await Navigation.PushPopupAsync(new PopUpAccountDelete());
                 })
             });

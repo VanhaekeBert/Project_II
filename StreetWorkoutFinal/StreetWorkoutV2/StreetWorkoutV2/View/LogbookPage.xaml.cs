@@ -5,6 +5,7 @@ using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace StreetWorkoutV2.View
         {
             InitializeComponent();
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
+            CultureInfo dutch = new CultureInfo("nl-BE");
 
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
@@ -52,11 +54,13 @@ namespace StreetWorkoutV2.View
             {
                 if (lijstLogboek.Count == 0)
                 {
-                    data.Add(oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd"));
+                    string dayName = oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1);
+                    data.Add(dayName + " " + oefening.Datum.ToString("MM-dd"));
                     List<Logboek> lijst = new List<Logboek>();
                     Logboek logboek = new Logboek();
                     logboek.Naam = oefening.Workout;
-                    logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
+                   
+                    logboek.Date = dayName + " " + oefening.Datum.ToString("MM-dd");
                     logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
                     logboek.Total_hearts_given = int.Parse(oefening.Gevoel);
                     List<int> herhalingen = new List<int>();
@@ -89,11 +93,14 @@ namespace StreetWorkoutV2.View
                     {
                         if (i != lijstLogboek.Count)
                         {
-                        if (oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd") == lijstLogboek[i][0].Date)
+                            string dayName = oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1);
+                           
+                            if (dayName + " " + oefening.Datum.ToString("MM-dd") == lijstLogboek[i][0].Date)
                         {
                             Logboek logboek = new Logboek();
                             logboek.Naam = oefening.Workout;
-                                logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
+                                logboek.Date = dayName + " " + oefening.Datum.ToString("MM-dd");
+
                                 logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
                             logboek.Total_hearts_given = int.Parse(oefening.Gevoel);
                             List<int> herhalingen = new List<int>();
@@ -122,11 +129,13 @@ namespace StreetWorkoutV2.View
                         }
                         else
                         {
-                            data.Add(oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd"));
+                            string dayName = oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1);
+
+                            data.Add(dayName + " " + oefening.Datum.ToString("MM-dd"));
                             List<Logboek> lijst = new List<Logboek>();
                             Logboek logboek = new Logboek();
                             logboek.Naam = oefening.Workout;
-                            logboek.Date = oefening.Datum.DayOfWeek + " " + oefening.Datum.ToString("MM-dd");
+                            logboek.Date = dayName + " " + oefening.Datum.ToString("MM-dd");
                             logboek.Moeilijkheidsgraad = oefening.Moeilijkheidsgraad;
                             logboek.Total_hearts_given = int.Parse(oefening.Gevoel);
                             List<int> herhalingen = new List<int>();

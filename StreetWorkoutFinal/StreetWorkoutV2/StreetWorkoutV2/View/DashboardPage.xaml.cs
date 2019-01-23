@@ -110,8 +110,10 @@ namespace StreetWorkoutV2.View
 
             frameWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () =>
+                Command = new Command(async () =>
                 {
+                    await frameWater.FadeTo(0.5, 100);
+                    frameWater.FadeTo(1, 75);
                     popWater.IsEnabled = true;
                     popWater.IsVisible = true;
                     
@@ -122,8 +124,11 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
+                    await frameLog.FadeTo(0.5, 100);
+                    frameLog.FadeTo(1, 75);
                     await Navigation.PushAsync(new LogbookPage());
                     
+
                 })
             });
             //WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
