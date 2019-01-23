@@ -40,6 +40,8 @@ namespace StreetWorkoutV2.View
             {
                 if (arg != "[]")
                 {
+                    weekOef = new List<OefeningDB>();
+                    maandOef = new List<OefeningDB>();
                     var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
                     List<OefeningDB> oefeningen = new List<OefeningDB>();
                     for (int i = 0; i < rawOefeningen.Count(); i++)
@@ -87,6 +89,8 @@ namespace StreetWorkoutV2.View
             {
                 if (arg != "[]")
                 {
+                    weekWater = new List<Water>();
+                    maandWater = new List<Water>();
                     var rawWater = Preferences.Get("Water", "").ToString().Replace("[", "").Replace("]", "").Split('}');
                     List<Water> water = new List<Water>();
                     for (int i = 0; i < rawWater.Count(); i++)
