@@ -31,7 +31,36 @@ namespace StreetWorkoutV2.View
 
             });
 
-            List<OefeningDB> weekOef = new List<OefeningDB>();
+            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
+            {
+                List<OefeningDB> listweekOef = new List<OefeningDB>();
+                if (arg != "[]")
+                {
+                    var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                    List<OefeningDB> oefeningen = new List<OefeningDB>();
+                    for (int i = 0; i < rawOefeningen.Count(); i++)
+                    {
+                        if (i == 0)
+                        {
+                            oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString() + "}"));
+                        }
+                        else if (i != (rawOefeningen.Count() - 1))
+                        {
+                            oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                        }
+                    }
+                    foreach (OefeningDB oefening in oefeningen)
+                    {
+                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                        {
+                            listweekOef.Add(oefening);
+                        }
+                    }
+                }
+                LblLogs.Text = listweekOef.Count().ToString();
+            });
+
+                List<OefeningDB> weekOef = new List<OefeningDB>();
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
                 var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
@@ -205,7 +234,11 @@ namespace StreetWorkoutV2.View
             JObject water = new JObject();
             water["Naam"] = Preferences.Get("Naam", "");
             water["WaterGedronken"] = Preferences.Get("WaterGedronken", 0);
-            DBManager.PutWater(water);
+            await DBManager.PutWater(water);
+            JArray waterlist = await DBManager.GetWater(Preferences.Get("Naam", ""));
+            var waterTojson = JsonConvert.SerializeObject(waterlist);
+            Preferences.Set("Water", waterTojson.ToString());
+            MessagingCenter.Send(this, "PassWaterGedronken", Preferences.Get("Water", ""));
             popWater.IsEnabled = false;
             popWater.IsVisible = false;
         }

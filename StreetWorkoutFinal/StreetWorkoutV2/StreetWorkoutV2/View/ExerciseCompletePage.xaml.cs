@@ -14,6 +14,7 @@ using StreetWorkoutV2.Model;
 using Newtonsoft.Json.Linq;
 using Xamarin.Essentials;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace StreetWorkoutV2.View
 {
@@ -230,26 +231,26 @@ namespace StreetWorkoutV2.View
                     var HeartRateObject = await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
                     popExerciseReview.IsVisible = false;
                     popExerciseReview.IsEnabled = false;
-                    if (inputRepetitions.Text != "")
+                }
+                if (inputRepetitions.Text != "")
+                {
+                    if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
                     {
-                        if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
-                        {
-                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
-                        }
-                        else
-                        {
-                            Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
-                        }
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
                     }
                     else
                     {
-                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
                     }
-                    Repetition3.Text = Preferences.Get("Repetition2", "").Substring(0, Preferences.Get("Repetition2", "").Length - 1);
-                    if (Preferences.Get("Repetition2", "").Substring(Preferences.Get("Repetition2", "").Length - 1, 1) == "R")
-                    {
-                        Repetition3.TextColor = Color.Red;
-                    }
+                }
+                else
+                {
+                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
+                }
+                Repetition3.Text = Preferences.Get("Repetition2", "").Substring(0, Preferences.Get("Repetition2", "").Length - 1);
+                if (Preferences.Get("Repetition2", "").Substring(Preferences.Get("Repetition2", "").Length - 1, 1) == "R")
+                {
+                    Repetition3.TextColor = Color.Red;
                 }
             }
         }
@@ -415,6 +416,10 @@ namespace StreetWorkoutV2.View
                 oefening["AverageHeart"] = 0;
             }
             await DBManager.PostOefening(oefening);
+            JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+            var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
+            Preferences.Set("Oefeningen", oefeningTojson.ToString());
+            MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
             await Navigation.PopToRootAsync();
         }
 
@@ -478,6 +483,10 @@ namespace StreetWorkoutV2.View
                 oefening["AverageHeart"] = 0;
             }
             await DBManager.PostOefening(oefening);
+            JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+            var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
+            Preferences.Set("Oefeningen", oefeningTojson.ToString());
+            MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
             await Navigation.PopAsync();
         }
         protected override bool OnBackButtonPressed()
