@@ -243,6 +243,8 @@ namespace StreetWorkoutV2.View
                     Preferences.Set("Difficulty", diff);
                     Preferences.Set("Counter", 0);
                     Preferences.Set("Workout", _TappedExercise.Groepering);
+                    await btnConfirm.FadeTo(0.3, 75);
+                    await btnConfirm.FadeTo(1, 75);
                     popSelectDetails.IsEnabled = false;
                     popSelectDetails.IsVisible = false;
                     stkRep1.Opacity = 1;
@@ -252,6 +254,7 @@ namespace StreetWorkoutV2.View
                     stkDiff2.Opacity = 1;
                     stkDiff3.Opacity = 1;
 
+                    
                     await Navigation.PushAsync(new ExercisePage(_TappedExercise, _ChosenRepetitionState, _ChosenDifficultyState, "1/3"));
                     //lvwExercices.SelectedItem = null;
                 }

@@ -150,7 +150,7 @@
                             </Grid>
                             <!--</renderers:GradientLayout>-->
                         </StackLayout>
-                        <Button Grid.Row="0" Clicked="btnConfirm_Clicked" Text="Bevestigen" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="18" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" />
+                        <Button Grid.Row="0" x:Name="btnConfirm" Clicked="btnConfirm_Clicked" Text="Bevestigen" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="18" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

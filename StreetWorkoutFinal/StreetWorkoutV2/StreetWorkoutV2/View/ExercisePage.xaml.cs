@@ -99,6 +99,8 @@ namespace StreetWorkoutV2.View
                     _isRunning = !_isRunning;
                     if (_isRunning)
                     {
+                        await Play_Button.FadeTo(0.3, 100);
+                        Play_Button.FadeTo(1, 50);
                         Pause_Button.IsEnabled = true;
                         Pause_Button.IsVisible = true;
                         Play_Button.IsEnabled = false;
@@ -107,6 +109,8 @@ namespace StreetWorkoutV2.View
                     }
                     else
                     {
+                        await Pause_Button.FadeTo(0.3, 100);
+                        Pause_Button.FadeTo(1, 50);
                         Play_Button.IsEnabled = true;
                         Play_Button.IsVisible = true;
                         Pause_Button.IsEnabled = false;
@@ -237,11 +241,15 @@ namespace StreetWorkoutV2.View
         {
             if (_CurrentProgress == "1/3")
             {
+                await btnDone.FadeTo(0.3, 75);
+                await btnDone.FadeTo(1, 75);
                 Preferences.Set("WorkTime", TimeKeeper);
                 await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
             }
             else if (_CurrentProgress == "2/3")
             {
+                await btnDone.FadeTo(0.3, 75);
+                await btnDone.FadeTo(1, 75);
                 string workout = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
                 await Navigation.PushAsync(new PausePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
@@ -249,6 +257,8 @@ namespace StreetWorkoutV2.View
 
             else if (_CurrentProgress == "3/3")
             {
+                await btnDone.FadeTo(0.3, 75);
+                await btnDone.FadeTo(1, 75);
                 string workout = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", TimeKeeper + int.Parse(workout));
                 await Navigation.PushAsync(new ExerciseCompletePage(_CurrentExercise, _Repetitions));
