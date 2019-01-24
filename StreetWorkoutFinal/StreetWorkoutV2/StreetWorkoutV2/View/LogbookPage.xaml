@@ -129,7 +129,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
@@ -193,7 +193,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
@@ -257,7 +257,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
@@ -321,7 +321,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
@@ -385,7 +385,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
@@ -449,7 +449,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="20">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
                                                             <Label Margin=" 0,3,0,0" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         </StackLayout>
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Center">
