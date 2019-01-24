@@ -30,6 +30,11 @@ namespace StreetWorkoutV2.View
                 lblWaterTotaal.Text =arg;
 
             });
+            MessagingCenter.Subscribe<AccountPage, string>(this, "PassName", (sender,arg) =>
+            {
+                lblWelcome.Text = "Welkom " + arg;
+
+            });
 
             MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
             {
@@ -94,7 +99,7 @@ namespace StreetWorkoutV2.View
             imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.qrcode.png");
             imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
-            lblWelcome.Text = "Welkom " + Preferences.Get("Naam", "");
+            lblWelcome.Text = "Welkom " + Preferences.Get("ApiNaam", "");
             one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");

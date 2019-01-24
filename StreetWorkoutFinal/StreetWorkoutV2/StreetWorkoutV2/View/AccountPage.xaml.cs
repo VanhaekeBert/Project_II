@@ -263,6 +263,8 @@ namespace StreetWorkoutV2.View
                 user["ApiNaam"] = NameChangeEntry.Text.ToString();
                 await DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
                 Preferences.Set("ApiNaam", NameChangeEntry.Text.ToString());
+                MessagingCenter.Send(this, "PassName", NameChangeEntry.Text.ToString());
+
                 NameChangeEntry.IsVisible = false;
                 NameChangeEntry.IsEnabled = false;
                 lblUsername.Text = NameChangeEntry.Text;
