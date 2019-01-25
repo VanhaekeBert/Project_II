@@ -41,7 +41,7 @@
                         <local1:CustomEntry HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Wachtwoord" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="24,0,24,0" x:Name="PasswordEntry"/>
                         <ff:CachedImage HeightRequest="20" WidthRequest="20" HorizontalOptions="End" x:Name="eyeimage" Margin="0,0,42,0"/>
                     </Grid>
-                    <Label Grid.Row="3" Text="" TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="lblError" FontFamily="{StaticResource NormalFont}" FontSize="16" WidthRequest="175" HorizontalOptions="Start" Margin="32,-70,32,0"/>
+                    <Label Grid.Row="3" Text="" TextColor="{StaticResource LightColor}" IsVisible="False" x:Name="lblError" FontFamily="{StaticResource NormalFont}" FontSize="16" HorizontalOptions="Start" Margin="32,-70,32,0"/>
                 </Grid>
                 <ActivityIndicator x:Name="LoadingIndicator" Grid.Row="3" Color="White" IsRunning="false" HeightRequest="20" />
                 <Grid Grid.Row="4" VerticalOptions="CenterAndExpand" RowSpacing="20" >

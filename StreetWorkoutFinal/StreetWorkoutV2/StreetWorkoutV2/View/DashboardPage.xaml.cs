@@ -24,7 +24,32 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
-
+            if (!Preferences.Get("Connection", true))
+            {
+                popNoConnection.IsVisible = true;
+                Preferences.Set("Connection", true);
+            }
+            popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnection.IsVisible = false;
+                })
+            });
+            popNoConnectionQR.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnectionQR.IsVisible = false;
+                })
+            });
+            popNoConnectionWater.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnectionWater.IsVisible = false;
+                })
+            });
             MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender,arg) =>
             {
                 lblWaterTotaal.Text =arg;
@@ -186,9 +211,16 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                    await btnQR.FadeTo(0.3, 75);
-                    await btnQR.FadeTo(1, 75);
-                    await Navigation.PushAsync(new QrPage());
+                    if (Connection.CheckConnection())
+                    {
+                        await btnQR.FadeTo(0.3, 75);
+                        await btnQR.FadeTo(1, 75);
+                        await Navigation.PushAsync(new QrPage());
+                    }
+                    else
+                    {
+                        popNoConnectionQR.IsVisible = true;
+                    }
                 })
             });
 
@@ -244,14 +276,6 @@ namespace StreetWorkoutV2.View
             return true;
         }
 
-        private void SubmitWater_Clicked(object sender, EventArgs e)
-        {
-
-            popWater.IsEnabled = false;
-            lblWaterGedronken.Text = "500";
-            popWater.IsVisible = false;
-        }
-
         private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
         {
            await SubmitWaterInput.FadeTo(0.3, 75);
@@ -261,10 +285,17 @@ namespace StreetWorkoutV2.View
             JObject water = new JObject();
             water["Naam"] = Preferences.Get("Naam", "");
             water["WaterGedronken"] = Preferences.Get("WaterGedronken", 0);
-            await DBManager.PutWater(water);
-            JArray waterlist = await DBManager.GetWater(Preferences.Get("Naam", ""));
-            var waterTojson = JsonConvert.SerializeObject(waterlist);
-            Preferences.Set("Water", waterTojson.ToString());
+            if (Connection.CheckConnection())
+            {
+                await DBManager.PutWater(water);
+                JArray waterlist = await DBManager.GetWater(Preferences.Get("Naam", ""));
+                var waterTojson = JsonConvert.SerializeObject(waterlist);
+                Preferences.Set("Water", waterTojson.ToString());
+            }
+            else
+            {
+                popNoConnectionWater.IsVisible = true;
+            }
             MessagingCenter.Send(this, "PassWaterGedronken", Preferences.Get("Water", ""));
             await SubmitWaterInput.FadeTo(1, 75);
             TotalWater.Text = "0";

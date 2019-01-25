@@ -26,8 +26,15 @@ namespace StreetWorkoutV2.View
         public ExerciseCompletePage(Oefening Exercise,int Repetitions)
         {
             InitializeComponent();
+            popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnection.IsVisible = false;
+                })
+            });
 
-            
+
             if (Preferences.Get("API", "") == "FitBit")
             {
                 FrmChart.IsVisible = true;
@@ -364,138 +371,162 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            JObject oefening = new JObject();
-            string herhalingen = "[";
-            oefening["Naam"] = Preferences.Get("Naam", "");
-            oefening["Datum"] = DateTime.Now.ToString();
-            oefening["Duur"] = Preferences.Get("WorkTime", 0);
-            Preferences.Set("WorkTime", 0);
-            oefening["Workout"] = Preferences.Get("Workout", "");
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
-            for (int i = 0; i < 3; i++)
+            if (Connection.CheckConnection())
             {
-                if (i == 2)
+                JObject oefening = new JObject();
+                string herhalingen = "[";
+                oefening["Naam"] = Preferences.Get("Naam", "");
+                oefening["Datum"] = DateTime.Now.ToString();
+                oefening["Duur"] = Preferences.Get("WorkTime", 0);
+                Preferences.Set("WorkTime", 0);
+                oefening["Workout"] = Preferences.Get("Workout", "");
+                oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+                for (int i = 0; i < 3; i++)
                 {
-                    herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                    if (i == 2)
+                    {
+                        herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                    }
+                    else
+                    {
+                        herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
+                    }
+                }
+                oefening["Herhalingen"] = herhalingen;
+                if (imgRatingHeartFull5.IsVisible)
+                {
+                    oefening["Gevoel"] = "5";
+                }
+                else if (imgRatingHeartFull4.IsVisible)
+                {
+                    oefening["Gevoel"] = "4";
+                }
+                else if (imgRatingHeartFull3.IsVisible)
+                {
+                    oefening["Gevoel"] = "3";
+                }
+                else if (imgRatingHeartFull2.IsVisible)
+                {
+                    oefening["Gevoel"] = "2";
                 }
                 else
                 {
-                    herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
+                    oefening["Gevoel"] = "1";
                 }
-            }
-            oefening["Herhalingen"] = herhalingen;
-            if (imgRatingHeartFull5.IsVisible)
-            {
-                oefening["Gevoel"] = "5";
-            }
-            else if (imgRatingHeartFull4.IsVisible)
-            {
-                oefening["Gevoel"] = "4";
-            }
-            else if (imgRatingHeartFull3.IsVisible)
-            {
-                oefening["Gevoel"] = "3";
-            }
-            else if (imgRatingHeartFull2.IsVisible)
-            {
-                oefening["Gevoel"] = "2";
-            }
-            else
-            {
-                oefening["Gevoel"] = "1";
-            }
-            if (Preferences.Get("API", "") == "FitBit")
-            {
-                oefening["Kcal"] = _KcalAPI;
-                oefening["MaxHeart"] = "0";
-                oefening["AverageHeart"] = "0";
+                if (Preferences.Get("API", "") == "FitBit")
+                {
+                    oefening["Kcal"] = _KcalAPI;
+                    oefening["MaxHeart"] = "0";
+                    oefening["AverageHeart"] = "0";
+                }
+                else
+                {
+                    oefening["Kcal"] = 0;
+                    oefening["MaxHeart"] = 0;
+                    oefening["AverageHeart"] = 0;
+                }
+                await DBManager.PostOefening(oefening);
+                JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
+                Preferences.Set("Oefeningen", oefeningTojson.ToString());
+                MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+                await btnHome.FadeTo(0.3, 75);
+                btnHome.FadeTo(1, 75);
+                await Navigation.PopToRootAsync();
             }
             else
             {
-                oefening["Kcal"] = 0;
-                oefening["MaxHeart"] = 0;
-                oefening["AverageHeart"] = 0;
+                popNoConnection.IsVisible = true;
             }
-            await DBManager.PostOefening(oefening);
-            JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
-            var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
-            Preferences.Set("Oefeningen", oefeningTojson.ToString());
-            MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
-            await btnHome.FadeTo(0.3, 75);
-            btnHome.FadeTo(1, 75);
-            await Navigation.PopToRootAsync();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5; i++)
+            if (Connection.CheckConnection())
             {
-                this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
-            }
-            JObject oefening = new JObject();
-            string herhalingen = "[";
-            oefening["Naam"] = Preferences.Get("Naam", "");
-            oefening["Datum"] = DateTime.Now.ToString();
-            oefening["Duur"] = Preferences.Get("WorkTime", 0);
-            Preferences.Set("WorkTime", 0);
-            oefening["Workout"] = Preferences.Get("Workout", ""); ;
-            oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty","");
-            for (int i = 0; i < 3; i++)
-            {
-                if (i == 2)
+                for (int i = 0; i < 5; i++)
                 {
-                    herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                    this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
+                }
+                JObject oefening = new JObject();
+                string herhalingen = "[";
+                oefening["Naam"] = Preferences.Get("Naam", "");
+                oefening["Datum"] = DateTime.Now.ToString();
+                oefening["Duur"] = Preferences.Get("WorkTime", 0);
+                Preferences.Set("WorkTime", 0);
+                oefening["Workout"] = Preferences.Get("Workout", ""); ;
+                oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (i == 2)
+                    {
+                        herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                    }
+                    else
+                    {
+                        herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
+                    }
+                }
+                oefening["Herhalingen"] = herhalingen;
+                if (imgRatingHeartFull5.IsVisible)
+                {
+                    oefening["Gevoel"] = "5";
+                }
+                else if (imgRatingHeartFull4.IsVisible)
+                {
+                    oefening["Gevoel"] = "4";
+                }
+                else if (imgRatingHeartFull3.IsVisible)
+                {
+                    oefening["Gevoel"] = "3";
+                }
+                else if (imgRatingHeartFull2.IsVisible)
+                {
+                    oefening["Gevoel"] = "2";
                 }
                 else
                 {
-                    herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
+                    oefening["Gevoel"] = "1";
                 }
-            }
-            oefening["Herhalingen"] = herhalingen;
-            if (imgRatingHeartFull5.IsVisible)
-            {
-                oefening["Gevoel"] = "5";
-            }
-            else if (imgRatingHeartFull4.IsVisible)
-            {
-                oefening["Gevoel"] = "4";
-            }
-            else if (imgRatingHeartFull3.IsVisible)
-            {
-                oefening["Gevoel"] = "3";
-            }
-            else if (imgRatingHeartFull2.IsVisible)
-            {
-                oefening["Gevoel"] = "2";
-            }
-            else
-            {
-                oefening["Gevoel"] = "1";
-            }
-            if (Preferences.Get("API", "") == "FitBit")
-            {
-                oefening["Kcal"] = _KcalAPI;
-                oefening["MaxHeart"] = "0";
-                oefening["AverageHeart"] = "0";
+                if (Preferences.Get("API", "") == "FitBit")
+                {
+                    oefening["Kcal"] = _KcalAPI;
+                    oefening["MaxHeart"] = "0";
+                    oefening["AverageHeart"] = "0";
+                }
+                else
+                {
+                    oefening["Kcal"] = 0;
+                    oefening["MaxHeart"] = 0;
+                    oefening["AverageHeart"] = 0;
+                }
+                await DBManager.PostOefening(oefening);
+                JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
+                Preferences.Set("Oefeningen", oefeningTojson.ToString());
+                MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+                await btnMoreEx.FadeTo(0.3, 75);
+                btnMoreEx.FadeTo(1, 75);
+                await Navigation.PopAsync();
             }
             else
             {
-                oefening["Kcal"] = 0;
-                oefening["MaxHeart"] = 0;
-                oefening["AverageHeart"] = 0;
+                popNoConnection.IsVisible = true;
             }
-            await DBManager.PostOefening(oefening);
-            JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
-            var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
-            Preferences.Set("Oefeningen", oefeningTojson.ToString());
-            MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
-            await btnMoreEx.FadeTo(0.3, 75);
-            btnMoreEx.FadeTo(1, 75);
-            await Navigation.PopAsync();
         }
         protected override bool OnBackButtonPressed()
         {
             return true;
+        }
+
+        private void btnOpnieuw_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnDashboard_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopToRootAsync();
         }
     }
 }

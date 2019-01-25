@@ -87,48 +87,51 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (entryPasswordOld.Text != null && entryPasswordNew.Text != null)
+            if (Connection.CheckConnection())
             {
-                if(entryPasswordNew.Text == entryPasswordNewRepeat.Text)
+                if (entryPasswordOld.Text != null && entryPasswordNew.Text != null)
                 {
-                if (entryPasswordNew.Text.Length >= 8)
+                    if (entryPasswordNew.Text == entryPasswordNewRepeat.Text)
                     {
-                        bool CheckOldWW = await DBManager.LoginAsync(Preferences.Get("Naam", ""), DBManager.Encrypt(entryPasswordOld.Text));
-                        if (CheckOldWW)
+                        if (entryPasswordNew.Text.Length >= 8)
                         {
-                            JObject data = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
-                            JObject gegevens = new JObject();
-                            gegevens["Wachtwoord"] = DBManager.Encrypt(entryPasswordNew.Text);
-                            await DBManager.PutUserData(data["Email"].ToString(), "Email", gegevens);
-                    await Navigation.PopAsync();
-                    //je wachtwoord is succesvol veranderd
-                }
-                else
-                {
+                            bool CheckOldWW = await DBManager.LoginAsync(Preferences.Get("Naam", ""), DBManager.Encrypt(entryPasswordOld.Text));
+                            if (CheckOldWW)
+                            {
+                                JObject data = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
+                                JObject gegevens = new JObject();
+                                gegevens["Wachtwoord"] = DBManager.Encrypt(entryPasswordNew.Text);
+                                await DBManager.PutUserData(data["Email"].ToString(), "Email", gegevens);
+                                await Navigation.PopAsync();
+                            }
+                            else
+                            {
+                                lblError.Text = "Uw oude wachtwoord is niet correct";
+                                lblError.IsVisible = true;
+                            }
+                        }
+                        else
+                        {
+                            lblError.Text = "Uw nieuw wachtwoord moet minstens 8 tekens bevatten";
+                            lblError.IsVisible = true;
+                        }
 
-                    //dit is nie je oud wachtwoord
-                    lblError.Text = "Uw oude wachtwoord is niet correct";
-                    lblError.IsVisible = true;
-                }
-            }
-                else
-                {
-                    //vult de shit aan
-                    lblError.Text = "Uw nieuw wachtwoord moet minstens 8 tekens bevatten";
-                    lblError.IsVisible = true;
-                }
-
+                    }
+                    else
+                    {
+                        lblError.Text = "Uw wachtwoorden komen niet overeen";
+                        lblError.IsVisible = true;
+                    }
                 }
                 else
                 {
-                    lblError.Text = "Uw wachtwoorden komen niet overeen";
+                    lblError.Text = "vult de shit aan";
                     lblError.IsVisible = true;
                 }
             }
             else
             {
-                //vult de shit aan
-                lblError.Text = "vult de shit aan";
+                lblError.Text = "Oeps, zorg voor een internetverbinding.";
                 lblError.IsVisible = true;
             }
         }

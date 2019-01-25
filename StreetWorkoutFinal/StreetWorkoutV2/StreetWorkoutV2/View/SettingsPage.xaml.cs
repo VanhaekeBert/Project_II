@@ -21,6 +21,13 @@ namespace StreetWorkoutV2.View
         public SettingsPage()
         {
             InitializeComponent();
+            popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnection.IsVisible = false;
+                })
+            });
             MessagingCenter.Subscribe<SettingsPage, string>(this, "PassFitbitConnected", (sender, arg) =>
             {
                 lblFBverbonden.Text = arg;
@@ -102,10 +109,16 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-
-                    await FraAD.FadeTo(0.5, 100);
-                    FraAD.FadeTo(1, 75);
-                    await Navigation.PushPopupAsync(new PopUpAccountDelete());
+                    if (Connection.CheckConnection())
+                    {
+                        await FraAD.FadeTo(0.5, 100);
+                        FraAD.FadeTo(1, 75);
+                        await Navigation.PushPopupAsync(new PopUpAccountDelete());
+                    }
+                    else
+                    {
+                        popNoConnection.IsVisible = true;
+                    }
                 })
             });
 
@@ -127,7 +140,7 @@ namespace StreetWorkoutV2.View
             Preferences.Set("Oefeningen", null);
             Preferences.Set("Water", null);
             Preferences.Set("Token", null);
-            await Navigation.PushModalAsync(new NavigationPage( new LoginPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
         protected override bool OnBackButtonPressed()
         {

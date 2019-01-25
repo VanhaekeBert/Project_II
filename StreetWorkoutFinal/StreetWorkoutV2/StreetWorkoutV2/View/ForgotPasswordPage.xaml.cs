@@ -36,52 +36,54 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (EmailEntry.Text != null)
+            if (Connection.CheckConnection())
             {
-                if (EmailEntry.Text.ToLower().Contains("@"))
+                if (EmailEntry.Text != null)
                 {
-                    string email = EmailEntry.Text.Replace(" ", "");
-                    bool EmailCheck = await DBManager.CheckUserData(email, "Email");
-                    if (EmailCheck == true)
+                    if (EmailEntry.Text.ToLower().Contains("@"))
                     {
-                        JObject data = await DBManager.GetUserData(email, "Email");
-                        string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Naam"].ToString()));
-                        if (ww != null)
+                        string email = EmailEntry.Text.Replace(" ", "");
+                        bool EmailCheck = await DBManager.CheckUserData(email, "Email");
+                        if (EmailCheck == true)
                         {
-                            JObject gegevens = new JObject();
-                            gegevens["Wachtwoord"] = ww;
-                            await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
-                            await DBManager.PutUserData(email, "Email", gegevens);
-                            await Navigation.PopAsync();
-                            //message da mailtje verstuurd is
+                            JObject data = await DBManager.GetUserData(email, "Email");
+                            string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Naam"].ToString()));
+                            if (ww != null)
+                            {
+                                JObject gegevens = new JObject();
+                                gegevens["Wachtwoord"] = ww;
+                                await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
+                                await DBManager.PutUserData(email, "Email", gegevens);
+                                await Navigation.PopAsync();
+                            }
+                            else
+                            {
+                                lblError.Text = "Probleem bij verzenden. Probeer later opnieuw.";
+                                lblError.IsVisible = true;
+                            }
                         }
                         else
                         {
-                            //iets mis bij mailtje verzenden
-                            lblError.Text = "Probleem bij verzenden. Probeer later opnieuw.";
+                            lblError.Text = "Account is nog niet geregistreerd.";
                             lblError.IsVisible = true;
                         }
                     }
                     else
-                    {
-                        //email nie geregistreerd
-                        lblError.Text = "Account is nog niet geregistreerd.";
-                        lblError.IsVisible = true;
-                    }
-                }
-                else
-                {
-                    //vul ne email adres in
-                    lblError.Text = "Uw email is onjuist.";
+                        lblError.Text = "Uw email is onjuist.";
                     lblError.IsVisible = true;
                 }
-            }
             else
             {
-                //vult ne twuk in
-                    lblError.Text = "Geliewe uw email in te voeren";
-                    lblError.IsVisible = true;
+                lblError.Text = "Geliewe uw email in te voeren";
+                lblError.IsVisible = true;
             }
         }
+            else
+            {
+                lblError.Text = "Oeps, zorg voor een internetverbinding.";
+                lblError.IsVisible = true;
+            }
+        }
+
     }
 }

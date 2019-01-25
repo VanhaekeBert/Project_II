@@ -64,10 +64,12 @@ namespace StreetWorkoutV2.View
         {
             return true;
         }
-        
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            LoadingIndicator.IsRunning = false;
+            if (Connection.CheckConnection())
+            {
+                LoadingIndicator.IsRunning = false;
             lblError.IsVisible = true;
             if (PasswordEntry.Text != null && UserNameEntry.Text != null)
             {
@@ -128,5 +130,11 @@ namespace StreetWorkoutV2.View
                 LoadingIndicator.IsRunning = false;
             }
         }
+            else
+            {
+                lblError.Text = "Oeps, zorg voor een internetverbinding.";
+                lblError.IsVisible = true;
+            }
+}
     }
 }

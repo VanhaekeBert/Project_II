@@ -73,65 +73,73 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            lblError.IsVisible = false;
-            LoadingIndicator.IsRunning = false;
-            if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
+            if (Connection.CheckConnection())
             {
-                if (PasswordEntry.Text.Length >= 8)
+                lblError.IsVisible = false;
+                LoadingIndicator.IsRunning = false;
+                if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
                 {
-                    if (PasswordEntry.Text == PasswordEntryRepeat.Text)
+                    if (PasswordEntry.Text.Length >= 8)
                     {
-                        if (!UserNameEntry.Text.ToLower().Contains(' '))
+                        if (PasswordEntry.Text == PasswordEntryRepeat.Text)
                         {
-                            if (EmailEntry.Text.ToLower().Contains('@'))
+                            if (!UserNameEntry.Text.ToLower().Contains(' '))
                             {
-                                string Email = EmailEntry.Text.Replace(" ", "");
-                                bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
-                                bool EmailCheck = await DBManager.CheckUserData(Email, "Email");
-                                if (UserNameCheck == false && EmailCheck == false)
+                                if (EmailEntry.Text.ToLower().Contains('@'))
                                 {
-                                    LoadingIndicator.IsRunning = true;
-                                    var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
-                                    if (response)
+                                    string Email = EmailEntry.Text.Replace(" ", "");
+                                    bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
+                                    bool EmailCheck = await DBManager.CheckUserData(Email, "Email");
+                                    if (UserNameCheck == false && EmailCheck == false)
                                     {
-                                        await Navigation.PushAsync(new LoginPage());
+                                        LoadingIndicator.IsRunning = true;
+                                        var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
+                                        if (response)
+                                        {
+                                            await Navigation.PushAsync(new LoginPage());
+                                        }
+                                    }
+                                    else
+                                    {
+                                        lblError.Text = "Gebruikersnaam of Email al in gebruik.";
+                                        lblError.IsVisible = true;
+                                        LoadingIndicator.IsRunning = false;
                                     }
                                 }
                                 else
                                 {
-                                    lblError.Text = "Gebruikersnaam of Email al in gebruik.";
+                                    lblError.Text = "Email onjuist.";
                                     lblError.IsVisible = true;
-                                    LoadingIndicator.IsRunning = false;
                                 }
                             }
                             else
                             {
-                                lblError.Text = "Email onjuist.";
+                                lblError.Text = "Gebruikersnaam mag geen spatie bevatten.";
                                 lblError.IsVisible = true;
                             }
+
                         }
                         else
                         {
-                            lblError.Text = "Gebruikersnaam mag geen spatie bevatten.";
+                            lblError.Text = "Uw wachtwoorden komt niet overeen.";
                             lblError.IsVisible = true;
                         }
-
                     }
                     else
                     {
-                        lblError.Text = "Uw wachtwoorden komt niet overeen.";
+                        lblError.Text = "Uw wachtwoord moet minstens 8 tekens lang zijn.";
                         lblError.IsVisible = true;
                     }
                 }
                 else
                 {
-                    lblError.Text = "Uw wachtwoord moet minstens 8 tekens lang zijn.";
+                    lblError.Text = "Vul alle gegevens in.";
                     lblError.IsVisible = true;
                 }
             }
             else
             {
-                lblError.Text = "Vul alle gegevens in.";
+                lblError.Text = "Oeps, zorg voor een internetverbinding.";
                 lblError.IsVisible = true;
             }
         }

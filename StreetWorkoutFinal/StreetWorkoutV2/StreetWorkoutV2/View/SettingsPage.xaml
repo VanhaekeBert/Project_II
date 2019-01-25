@@ -103,7 +103,24 @@
 
                 
                 <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Logout"/>
-               
+
+                <!--<PopUps>-->
+                <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                    <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                        <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
+                            <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                                <Grid>
+                                    <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw account niet verwijderen." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
+                                </Grid>
+                            </renderers:GradientLayout>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
             </Grid>
         </RelativeLayout>
     </ContentPage.Content>

@@ -20,7 +20,15 @@ namespace StreetWorkoutV2
             InitializeComponent();
             if (Preferences.Get("From", false))
             {
-                Inladen();
+                if (Connection.CheckConnection())
+                {
+                    Inladen();
+                    Preferences.Set("Connection", true);
+                }
+                else
+                {
+                    Preferences.Set("Connection", false);
+                }
                 Preferences.Set("From", false);
             }
             var navAcccount = new AnimationNavigationPage(new AccountPage());

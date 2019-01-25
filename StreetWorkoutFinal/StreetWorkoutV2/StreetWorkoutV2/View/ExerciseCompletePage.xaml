@@ -157,7 +157,33 @@
                     </StackLayout>
                 </ScrollView>
             </Grid>
-                    <!--Popup-->
+            <!--Popup-->
+            <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
+                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                            <Grid Margin="0,24">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                <Label Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw oefening niet opslaan. Verbind opnieuw met het internet en drup op opnieuw of ga verder naar het dashboard." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
+                                <Button Grid.Row="2" Grid.Column="1" x:Name="btnOpnieuw"  WidthRequest="100"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="30" Padding="0" Text="Opnieuw" Clicked="btnOpnieuw_Clicked"/>
+                                <Button Grid.Row="2" Grid.Column="2" x:Name="btnDashboard"  WidthRequest="100"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="30" Padding="0" Text="Dashboard" Clicked="btnDashboard_Clicked"/>
+                            </Grid>
+                        </renderers:GradientLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
             <StackLayout x:Name="popExerciseReview" IsVisible="True" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
                  

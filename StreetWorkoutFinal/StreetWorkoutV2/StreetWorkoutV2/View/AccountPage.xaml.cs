@@ -15,6 +15,7 @@ using System.IO;
 using FormsControls.Base;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
+using System.Globalization;
 
 namespace StreetWorkoutV2.View
 {
@@ -26,10 +27,25 @@ namespace StreetWorkoutV2.View
         List<OefeningDB> maandOef = new List<OefeningDB>();
         List<Water> weekWater = new List<Water>();
         List<Water> maandWater = new List<Water>();
+        CultureInfo dutch = new CultureInfo("nl-BE");
 
         public AccountPage()
         {
             InitializeComponent();
+            popNoConnectionProfilePicture.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnectionProfilePicture.IsVisible = false;
+                })
+            });
+            popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() =>
+                {
+                    popNoConnection.IsVisible = false;
+                })
+            });
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
@@ -235,8 +251,15 @@ namespace StreetWorkoutV2.View
                     Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
                     if (stream != null)
                     {
-                        await DBManager.PostProfilePicture(Preferences.Get("Naam", "") + ".jpg", stream);
-                        imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
+                        if (Connection.CheckConnection())
+                        {
+                            await DBManager.PostProfilePicture(Preferences.Get("Naam", "") + ".jpg", stream);
+                            imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
+                        }
+                        else
+                        {
+                            popNoConnectionProfilePicture.IsVisible = true;
+                        }
                     }
                 })
             };
@@ -259,15 +282,25 @@ namespace StreetWorkoutV2.View
 
             NameChangeEntry.Unfocused += async (sender, e) =>
             {
-                JObject user = new JObject();
-                user["ApiNaam"] = NameChangeEntry.Text.ToString();
-                await DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
-                Preferences.Set("ApiNaam", NameChangeEntry.Text.ToString());
-                MessagingCenter.Send(this, "PassName", NameChangeEntry.Text.ToString());
+                if (NameChangeEntry.Text != null)
+                {
+                    JObject user = new JObject();
+                    user["ApiNaam"] = NameChangeEntry.Text.ToString();
+                    if (Connection.CheckConnection())
+                    {
+                        await DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
+                    }
+                    else
+                    {
+                        popNoConnection.IsVisible = true;
+                    }
+                    Preferences.Set("ApiNaam", NameChangeEntry.Text.ToString());
+                    MessagingCenter.Send(this, "PassName", NameChangeEntry.Text.ToString());
+                    lblUsername.Text = NameChangeEntry.Text;
+                }
 
                 NameChangeEntry.IsVisible = false;
                 NameChangeEntry.IsEnabled = false;
-                lblUsername.Text = NameChangeEntry.Text;
                 lblUsername.IsVisible = true;
                 imgPencil.IsVisible = true;
             };
@@ -301,7 +334,7 @@ namespace StreetWorkoutV2.View
             List<string> listLabels = new List<string>();
             for (int i = 6; i >= 0; i--)
             {
-                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
+                listLabels.Add(DateTime.Now.AddDays(-i).ToString("dddd", dutch).First().ToString().ToUpper() + DateTime.Now.AddDays(-i).ToString("dddd", dutch).Substring(1, 2));
             }
             List<string> listValues = new List<string>();
             foreach (string date in listLabels)
@@ -309,7 +342,7 @@ namespace StreetWorkoutV2.View
                 int i = 0;
                 foreach (OefeningDB oefening in weekOef)
                 {
-                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 3))
+                    if (date == (oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1, 2)))
                     {
                         i += oefening.Kcal;
                     }
@@ -358,7 +391,7 @@ namespace StreetWorkoutV2.View
             List<string> listLabels = new List<string>();
             for (int i = 6; i >= 0; i--)
             {
-                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
+                listLabels.Add(DateTime.Now.AddDays(-i).ToString("dddd", dutch).First().ToString().ToUpper() + DateTime.Now.AddDays(-i).ToString("dddd", dutch).Substring(1, 2));
             }
             List<string> listValues = new List<string>();
             foreach (string date in listLabels)
@@ -366,8 +399,9 @@ namespace StreetWorkoutV2.View
                 int i = 0;
                 foreach (OefeningDB oefening in weekOef)
                 {
-                    if (date == DateTime.Parse(oefening.Datum.ToString()).DayOfWeek.ToString().Substring(0, 3))
-                    {
+                    if (date == (oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1, 2)))
+                    
+                        {
                         i++;
                     }
                 }
@@ -415,7 +449,7 @@ namespace StreetWorkoutV2.View
             List<string> listLabels = new List<string>();
             for (int i = 6; i >= 0; i--)
             {
-                listLabels.Add(DateTime.Now.AddDays(-i).DayOfWeek.ToString().Substring(0, 3));
+                listLabels.Add(DateTime.Now.AddDays(-i).ToString("dddd", dutch).First().ToString().ToUpper() + DateTime.Now.AddDays(-i).ToString("dddd", dutch).Substring(1, 2));
             }
             List<string> listValues = new List<string>();
             foreach (Water item in weekWater)
@@ -474,29 +508,37 @@ namespace StreetWorkoutV2.View
             char[] chars = { '-' };
             if (heightInput.Text.IndexOfAny(chars) != -1 || weightInput.Text.IndexOfAny(chars) != -1 || ageInput.Text.IndexOfAny(chars) != -1 || waterInput.Text.IndexOfAny(chars) != -1)
             {
-                await DisplayAlert("Opgelet", "Negatieve waardes worden niet aanvaard", "Ok");
+                await DisplayAlert("Opgelet", "Lege of negatieve waardes worden niet aanvaard", "Ok");
             }
             else
             {
                 LoadingIndicator.IsRunning = true;
                 JObject user = new JObject();
                 JObject water = new JObject();
-                user["Lengte"] = heightInput.Text.ToString();
-                user["Gewicht"] = weightInput.Text.ToString();
-                user["Leeftijd"] = ageInput.Text.ToString();
-                water["WaterDoel"] = int.Parse(waterInput.Text);
-                MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
-                water["Naam"] = Preferences.Get("Naam", "");
-                Preferences.Set("Lengte", user["Lengte"].ToString());
-                Preferences.Set("Gewicht", user["Gewicht"].ToString());
-                Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
-                Preferences.Set("WaterDoel", int.Parse(water["WaterDoel"].ToString()));
-                DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
-                DBManager.PutWater(water);
-                LoadingIndicator.IsRunning = false;
-                var vUpdatedPage = new AccountPage();
-                Navigation.InsertPageBefore(vUpdatedPage, this);
-                await Navigation.PopAsync();
+                    user["Lengte"] = heightInput.Text.ToString();
+                    Preferences.Set("Lengte", user["Lengte"].ToString());
+                    user["Gewicht"] = weightInput.Text.ToString();
+                    Preferences.Set("Gewicht", user["Gewicht"].ToString());
+                    user["Leeftijd"] = ageInput.Text.ToString();
+                    Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
+                    water["WaterDoel"] = int.Parse(waterInput.Text);
+                    Preferences.Set("WaterDoel", int.Parse(water["WaterDoel"].ToString()));
+                    MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
+                    water["Naam"] = Preferences.Get("Naam", "");
+                if (Connection.CheckConnection())
+                {
+                    DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
+                    DBManager.PutWater(water);
+                    LoadingIndicator.IsRunning = false;
+                    var vUpdatedPage = new AccountPage();
+                    Navigation.InsertPageBefore(vUpdatedPage, this);
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    popNoConnection.IsVisible = true;
+                    LoadingIndicator.IsRunning = false;
+                }
             }
 
         }

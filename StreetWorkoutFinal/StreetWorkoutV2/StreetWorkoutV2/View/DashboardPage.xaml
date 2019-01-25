@@ -163,6 +163,55 @@
                     </Frame>
                 </StackLayout>
             </StackLayout>
+            <!--<PopUps>-->
+            <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
+                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                            <Grid>
+                                <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet beschikt u niet over de laatste gegevens." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
+                            </Grid>
+                        </renderers:GradientLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="popNoConnectionQR" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
+                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                            <Grid>
+                                <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunt u geen QR-codes scannen." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
+                            </Grid>
+                        </renderers:GradientLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="popNoConnectionWater" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+                 
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="FillAndExpand">
+                <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
+                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                            <Grid>
+                                <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw data niet opslaan op onze servers." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
+                            </Grid>
+                        </renderers:GradientLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
             <!--========-->
         </RelativeLayout>
     </ContentPage.Content>
