@@ -120,13 +120,13 @@ namespace StreetWorkoutV2.View
                     {
                         sum += item.WaterGedronken;
                     }
-                    LblWaterWeek.Text = sum.ToString();
+                    LblWaterWeek.Text = (sum / 1000.0).ToString() + " L";
                     sum = 0;
                     foreach (Water item in maandWater)
                     {
                         sum += item.WaterGedronken;
                     }
-                    LblWaterMaand.Text = sum.ToString();
+                    LblWaterMaand.Text = (sum / 1000.0).ToString() + " L";
                     MakeEntriesWater();
                 }
             });
@@ -162,13 +162,13 @@ namespace StreetWorkoutV2.View
                 {
                     sum += item.WaterGedronken;
                 }
-                LblWaterWeek.Text = sum.ToString() + " ml";
+                LblWaterWeek.Text = (sum / 1000.0).ToString() + " L";
                 sum = 0;
                 foreach (Water item in maandWater)
                 {
                     sum += item.WaterGedronken;
                 }
-                LblWaterMaand.Text = sum.ToString() + " ml";
+                LblWaterMaand.Text = (sum/1000.0).ToString() + " L";
                 MakeEntriesWater();
             }
             else
@@ -420,7 +420,7 @@ namespace StreetWorkoutV2.View
             List<string> listValues = new List<string>();
             foreach (Water item in weekWater)
             {
-                listValues.Add(item.WaterGedronken.ToString());
+                listValues.Add((item.WaterGedronken/1000.0).ToString());
             }
             int length = listValues.Count();
             if (length < 7)
