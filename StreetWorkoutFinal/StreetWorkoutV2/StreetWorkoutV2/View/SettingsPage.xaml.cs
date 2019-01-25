@@ -127,7 +127,7 @@ namespace StreetWorkoutV2.View
             Preferences.Set("Oefeningen", null);
             Preferences.Set("Water", null);
             Preferences.Set("Token", null);
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushModalAsync(new NavigationPage( new LoginPage()));
         }
         protected override bool OnBackButtonPressed()
         {

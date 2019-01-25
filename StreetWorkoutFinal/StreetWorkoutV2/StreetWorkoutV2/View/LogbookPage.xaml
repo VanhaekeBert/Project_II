@@ -112,7 +112,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,0,24,0"  x:Name="lvwDag2" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0"  x:Name="lvwDag2" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
                                 <Label x:Name="lblDag2" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
@@ -177,7 +177,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,0,24,0" x:Name="lvwDag3" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag3" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
                                 <Label x:Name="lblDag3" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
@@ -242,7 +242,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,0,24,0" x:Name="lvwDag4" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag4" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
                                 <Label x:Name="lblDag4" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
@@ -307,7 +307,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,0,24,0" x:Name="lvwDag5" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag5" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
                                 <Label x:Name="lblDag5" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
@@ -372,7 +372,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,0,24,0" x:Name="lvwDag6" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag6" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
                                 <Label x:Name="lblDag6" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
@@ -437,7 +437,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,0,24,0" x:Name="lvwDag7" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDag7" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
                                 <Label x:Name="lblDag7" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>

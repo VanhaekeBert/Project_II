@@ -172,49 +172,49 @@ namespace StreetWorkoutV2.View
                     lvwDag1.IsVisible = true;
                     lblDag1.Text = data[data.Count-1];
                     lvwDag1.ItemsSource = lijstLogboek[lijstLogboek.Count - 1];
-                    lvwDag1.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 1].Count)+125;
+                    lvwDag1.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 1].Count)+125;
                 }
                 else if(i == 2)
                 {
                     lvwDag2.IsVisible = true;
                     lblDag2.Text = data[data.Count - 2];
                     lvwDag2.ItemsSource = lijstLogboek[lijstLogboek.Count - 2];
-                    lvwDag2.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 2].Count)+125;
+                    lvwDag2.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 2].Count)+125;
                 }
                 else if (i == 3)
                 {
                     lvwDag3.IsVisible = true;
                     lblDag3.Text = data[data.Count - 3];
                     lvwDag3.ItemsSource = lijstLogboek[lijstLogboek.Count - 3];
-                    lvwDag3.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 3].Count) + 125;
+                    lvwDag3.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 3].Count) + 125;
                 }
                 else if (i == 4)
                 {
                     lvwDag4.IsVisible = true;
                     lblDag4.Text = data[data.Count - 4];
                     lvwDag4.ItemsSource = lijstLogboek[lijstLogboek.Count - 4];
-                    lvwDag4.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 4].Count) + 125;
+                    lvwDag4.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 4].Count) + 125;
                 }
                 else if (i == 5)
                 {
                     lvwDag5.IsVisible = true;
                     lblDag5.Text = data[data.Count - 5];
                     lvwDag5.ItemsSource = lijstLogboek[lijstLogboek.Count - 5];
-                    lvwDag5.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 5].Count) + 125;
+                    lvwDag5.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 5].Count) + 125;
                 }
                 else if (i == 6)
                 {
                     lvwDag6.IsVisible = true;
                     lblDag6.Text = data[data.Count - 6];
                     lvwDag6.ItemsSource = lijstLogboek[lijstLogboek.Count - 6];
-                    lvwDag6.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 6].Count) + 125;
+                    lvwDag6.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 6].Count) + 125;
                 }
                 else
                 {
                     lvwDag7.IsVisible = true;
                     lblDag7.Text = data[data.Count - 7];
                     lvwDag7.ItemsSource = lijstLogboek[lijstLogboek.Count - 7];
-                    lvwDag7.HeightRequest = (100 * lijstLogboek[lijstLogboek.Count - 7].Count) + 125;
+                    lvwDag7.HeightRequest = (115 * lijstLogboek[lijstLogboek.Count - 7].Count) + 125;
                 }
             }
             btnBack.GestureRecognizers.Add(
