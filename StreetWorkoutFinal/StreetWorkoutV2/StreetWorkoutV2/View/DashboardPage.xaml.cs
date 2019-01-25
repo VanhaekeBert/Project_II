@@ -278,6 +278,7 @@ namespace StreetWorkoutV2.View
 
         private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
         {
+           LoadingIndicator.IsRunning = true;
            await SubmitWaterInput.FadeTo(0.3, 75);
 
             Preferences.Set("WaterGedronken", Preferences.Get("WaterGedronken", 0) + int.Parse(TotalWater.Text.ToString()));
@@ -297,6 +298,7 @@ namespace StreetWorkoutV2.View
                 popNoConnectionWater.IsVisible = true;
             }
             MessagingCenter.Send(this, "PassWaterGedronken", Preferences.Get("Water", ""));
+            LoadingIndicator.IsRunning = false;
             await SubmitWaterInput.FadeTo(1, 75);
             TotalWater.Text = "0";
             popWater.IsEnabled = false;

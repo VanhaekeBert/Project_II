@@ -371,6 +371,7 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
+            LoadingIndicator.IsRunning = true;
             if (Connection.CheckConnection())
             {
                 JObject oefening = new JObject();
@@ -430,6 +431,7 @@ namespace StreetWorkoutV2.View
                 var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
                 Preferences.Set("Oefeningen", oefeningTojson.ToString());
                 MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+                LoadingIndicator.IsRunning = false;
                 await btnHome.FadeTo(0.3, 75);
                 btnHome.FadeTo(1, 75);
                 await Navigation.PopToRootAsync();
@@ -442,6 +444,7 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            LoadingIndicator.IsRunning = true;
             if (Connection.CheckConnection())
             {
                 for (int i = 0; i < 5; i++)
@@ -505,6 +508,7 @@ namespace StreetWorkoutV2.View
                 var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
                 Preferences.Set("Oefeningen", oefeningTojson.ToString());
                 MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+                LoadingIndicator.IsRunning = false;
                 await btnMoreEx.FadeTo(0.3, 75);
                 btnMoreEx.FadeTo(1, 75);
                 await Navigation.PopAsync();

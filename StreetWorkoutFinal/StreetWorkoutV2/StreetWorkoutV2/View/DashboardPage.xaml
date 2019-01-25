@@ -161,6 +161,7 @@
                             </Grid>
                         </renderers:GradientLayout>
                     </Frame>
+                    <ActivityIndicator x:Name="LoadingIndicator" Color="White" IsRunning="false" HeightRequest="20" HorizontalOptions="Center"/>
                 </StackLayout>
             </StackLayout>
             <!--<PopUps>-->
