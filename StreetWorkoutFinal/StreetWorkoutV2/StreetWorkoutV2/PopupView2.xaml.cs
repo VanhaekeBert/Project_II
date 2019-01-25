@@ -24,19 +24,16 @@ namespace StreetWorkoutV2
 
         private async void makkelijk_Clicked(object sender, EventArgs e)
         {
-           // await Navigation.PushAsync(new ExercisePage("1/3"));
             await PopupNavigation.Instance.PopAsync();
         }
 
         private async void gemiddeld_Clicked(object sender, EventArgs e)
         {
-            // await Navigation.PushAsync(new ExerciseListPage(pickerchoice, "gemiddeld"));
             await PopupNavigation.Instance.PopAsync();
         }
 
         private async void moeilijk_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new ExerciseListPage(pickerchoice, "moeilijk"));
             await PopupNavigation.Instance.PopAsync();
         }
     }

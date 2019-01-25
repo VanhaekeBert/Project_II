@@ -77,46 +77,5 @@ namespace StreetWorkoutV2.Droid
                 Elevation = 0;
             }
         }
-        //public CustomFrameRenderer(Context context)
-        //  : base(context)
-        //{
-        //}
-
-        //protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
-        //{
-
-        //    base.OnElementChanged(e);
-        //    if (e.NewElement == null)
-        //        return;
-        //    SetBackgroundResource(Resource.Drawable.shadow);
-        //    Frame frame = Element as Frame;
-        //    frame.CornerRadius = 100;
-
-        //    UpdateElevation();
-        //}
-
-
-        //private void UpdateElevation()
-        //{
-
-
-        //    // we need to reset the StateListAnimator to override the setting of Elevation on touch down and release.
-        //  //
-
-        //    // set the elevation manually
-        //    ViewCompat.SetElevation(this, 50);
-
-
-        //}
-
-        //protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    base.OnElementPropertyChanged(sender, e);
-        //    if (e.PropertyName == "Elevation")
-        //    {
-        //        UpdateElevation();
-        //    }
-        //}
-
     }
 }

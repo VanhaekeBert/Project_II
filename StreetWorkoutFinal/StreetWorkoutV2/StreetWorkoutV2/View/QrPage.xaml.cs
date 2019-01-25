@@ -73,22 +73,6 @@ namespace StreetWorkoutV2.View
         {
             try
             {
-                //PermissionStatus status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-                //if (status != PermissionStatus.Granted)
-                //{
-                //    if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
-                //    {
-                //        await DisplayAlert("Alert", "Gunna need that camerapermissions", "OK");
-                //    }
-
-                //    var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera });
-                //    status = results[Permission.Camera];
-                    
-                //}
-                //else
-                //{
-                    
-                //}
                 var options = new MobileBarcodeScanningOptions
                 {
                     AutoRotate = false,

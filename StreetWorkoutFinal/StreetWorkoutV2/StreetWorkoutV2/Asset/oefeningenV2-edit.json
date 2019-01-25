@@ -17,26 +17,6 @@
             ["biceprows_hard_1.jpg", "biceprows_hard_2.jpg"]
         ]
     },
-    // {
-    //     "oefening": "Biceprows",
-    //     "spiergroep": "Biceps",
-    //     "toestel": "Parallel Bars",
-    //     "moeilijkheidsgraad": "Medium",
-    //     "beschrijving": "Neem de bar vast in regular grip (handrug naar grond toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, voorbij de bar. Vanuit deze startpositie hou je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [15, 30, 45],
-    //     "afbeeldingen": ["biceprows_medium_1.jpg", "biceprows_medium_2.jpg"]
-    // },
-    // {
-    //     "oefening": "Biceprows",
-    //     "spiergroep": "Biceps",
-    //     "toestel": "Parallel Bars",
-    //     "moeilijkheidsgraad": "Hard",
-    //     "beschrijving": "Neem de bar vast in reverse grip (handrug naar boven toe) op schouderbreedte. Zorg dat het lichaam volledig opgespannen in vormspanning wordt gehouden terwijl je actief hangt in je armen (niet doorhangen maar vormspanning behouden en gestrekte armen). Hielen rusten op de grond, voorbij de bar. Vanuit deze startpositie hou je de ellebogen dicht bij je lichaam terwijl je je lichaam explosief naar de bar toetrekt. Het lichaam blijft steeds in spanning. Keer rustig terug naar de startpositie en herhaal de beweging. Je kan de oefening extra zwaar maken door de voeten nog verder te plaatsen waardoor het lichaam meer horizontaal komt te staan.",
-    //     "duurtijd": [],
-    //     "herhalingen": [15, 30, 45],
-    //     "afbeeldingen": ["biceprows_hard_1.jpg", "biceprows_hard_2.jpg"]
-    // },
     {
         "mainname": "Biceprows",
         "oefening": ["Assisted Chin-up", "Chin-up", "Reverse Chin-up"],
@@ -56,26 +36,6 @@
             ["reverse_chin-up_hard_1.jpg", "reverse_chin-up_hard_2.jpg"]
         ]
     },
-    // {
-    //     "oefening": "Chin-up",
-    //     "spiergroep": "Biceps",
-    //     "toestel": "Pull Up Station",
-    //     "moeilijkheidsgraad": "Medium",
-    //     "beschrijving": "Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen naar jezelf gericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-    //     "duurtijd": [],
-    //     "herhalingen": [8, 15, 20],
-    //     "afbeeldingen": ["chin-up_medium_1.jpg", "chin-up_medium_2.jpg"]
-    // },
-    // {
-    //     "oefening": "Reverse Chin-up",
-    //     "spiergroep": "Biceps",
-    //     "toestel": "Pull Up Station",
-    //     "moeilijkheidsgraad": "Hard",
-    //     "beschrijving": "Start in hang. De armen zijn gestrekt en in palmgreep op schouderbreedte (regular grip, polsen van jezelf weggericht). Trek explosief op tot de kin boven de bar is. Keer rustig terug naar de startpositie. Herhaal de beweging. Het lichaam blijft in spanning gedurende de hele oefening, span de buikspieren op. Adem uit tijdens de opwaartse beweging, adem in tijdens het zakken.",
-    //     "duurtijd": [],
-    //     "herhalingen": [8, 15, 20],
-    //     "afbeeldingen": ["reverse_chin-up_hard_1.jpg", "reverse_chin-up_hard_2.jpg"]
-    // },
     {
         "mainname": "Bridge",
         "oefening": ["Bridge", "Bridge", "Bridge"],
@@ -95,37 +55,6 @@
             ["bridge_hard_1.jpg", "bridge_hard_2.jpg"]
         ]
     },
-    // {
-    //     "mainname": "Bridge",
-    //     "oefening": "Bridge",
-    //     "spiergroep": "Billen",
-    //     "toestel": "Grond",
-    //     "moeilijkheidsgraad": "Easy",
-    //     "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-    //     "duurtijd": [15, 30, 45],
-    //     "herhalingen": [],
-    //     "afbeeldingen": ["bridge_easy_1.jpg", "bridge_easy_2.jpg"]
-    // },
-    // {
-    //     "oefening": "Bridge",
-    //     "spiergroep": "Billen",
-    //     "toestel": "Push Up Bars",
-    //     "moeilijkheidsgraad": "Medium",
-    //     "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-    //     "duurtijd": [15, 30, 45],
-    //     "herhalingen": [],
-    //     "afbeeldingen": ["bridge_medium_1.jpg", "bridge_medium_2.jpg"]
-    // },
-    // {
-    //     "oefening": "Bridge",
-    //     "spiergroep": "Billen",
-    //     "toestel": "Push Up Bars",
-    //     "moeilijkheidsgraad": "Hard",
-    //     "beschrijving": "Ga op de rug liggen met je armen plat op de grond naast je lichaam ter ondersteuning. Plaats voeten op schouderbreedte op een verhoog waarbij de knieën zich in 90° bevinden. Span de billen aan en hef het bekken opwaarts tot er een rechte lijn wordt gevormd met de bovenbenen en het bovenlichaam. Strek afwisselend je linker - en rechterbeen uit terwijl de bovenbenen gelijk blijven. Houd de spanning aan OF keer rustig terug naar de startpositie en herhaal.",
-    //     "duurtijd": [15, 30, 45],
-    //     "herhalingen": [],
-    //     "afbeeldingen": ["bridge_hard_1.jpg", "bridge_hard_2.jpg"]
-    // },
     {
         "mainname": "4 point leg extention",
         "oefening": ["4 point leg extention", "4 point leg extention", "4 point leg extention"],
@@ -145,36 +74,6 @@
             ["4_point_leg_extention_hard_1.jpg", "4_point_leg_extention_hard_2.jpg"]
         ]
     },
-    // {
-    //     "oefening": "4 point leg extention",
-    //     "spiergroep": "Billen",
-    //     "toestel": "Incline Press",
-    //     "moeilijkheidsgraad": "Easy",
-    //     "beschrijving": "Zoek steun aan een verticaal vlak (muur/bar). Houd je handen tegenover je schouders tegen het verticale vlak. Strek afwisselend het linker - en rechterbeen naar achter uit. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [10, 20, 30],
-    //     "afbeeldingen": ["4_point_leg_extention_easy_1.jpg", "4_point_leg_extention_easy_2.jpg"]
-    // },
-    // {
-    //     "oefening": "4 point leg extention",
-    //     "spiergroep": "Billen",
-    //     "toestel": "Grond",
-    //     "moeilijkheidsgraad": "Medium",
-    //     "beschrijving": "Start vanuit een vierpuntspositie. Handen recht onder schouders en heupen recht boven knieën. Strek afwisselend het linker - en rechterbeen uit. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [10, 20, 30],
-    //     "afbeeldingen": ["4_point_leg_extention_medium_1.jpg", "4_point_leg_extention_medium_2.jpg"]
-    // },
-    // {
-    //     "oefening": "4 point leg extention",
-    //     "spiergroep": "Billen",
-    //     "toestel": "Grond",
-    //     "moeilijkheidsgraad": "Hard",
-    //     "beschrijving": "Start vanuit een vierpuntspositie. Handen recht onder schouders en heupen recht boven knieën. Strek afwisselend het linker - en rechterbeen uit terwijl je partner tegendruk bied op het been dat je uitstrekt. Tip: probeer een denkbeeldige muur achter je te tikken. De navel is ingetrokken, de rug blijft stabiel en lang. Herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [10, 20, 30],
-    //     "afbeeldingen": ["4_point_leg_extention_hard_1.jpg", "4_point_leg_extention_hard_2.jpg"]
-    // },
     {
         "mainname": "Dip",
         "oefening": ["Dip", "Dip", "Dip"],
@@ -194,36 +93,6 @@
             ["dip_hard_1.jpg"]
         ]
     },
-    // {
-    //     "oefening": "Dip",
-    //     "spiergroep": "Borst",
-    //     "toestel": "Parallel Bars",
-    //     "moeilijkheidsgraad": "Easy",
-    //     "beschrijving": "Plaats de rekker dwars over de barren en houdt deze op zijn plaats door je handen erop te plaatsen. Op die manier kan je de knieën op de rekker plaatsen waardoor de rekker ondersteuning kan bieden. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90°. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [10, 20, 30],
-    //     "afbeeldingen": ["dip_easy_1.jpg"]
-    // },
-    // {
-    //     "oefening": "Dip",
-    //     "spiergroep": "Borst",
-    //     "toestel": "Parallel Bars",
-    //     "moeilijkheidsgraad": "Medium",
-    //     "beschrijving": "Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [10, 20, 30],
-    //     "afbeeldingen": ["dip_medium_1.jpg", "dip_medium_2.jpg"]
-    // },
-    // {
-    //     "oefening": "Dip",
-    //     "spiergroep": "Borst",
-    //     "toestel": "Parallel Bars",
-    //     "moeilijkheidsgraad": "Hard",
-    //     "beschrijving": "Leg de rekker zoals op de foto dwars over je schouders en houdt deze op zijn plaats met je handen. De rekker staat lichtjes onder spanning. Ospringen tot steun (startpositie). De spanning in de rekker is voelbaar. Steun met de handen, volledig uitduwen (niet in schouders hangen door nek lang te houden). Armen gestrekt, lichaam in vormspanning (buikspieren aanspannen gedurende hele oefening). Laat jezelf zakken, adem in en buig de ellebogen tot een hoek van 90 graden. Druk jezelf explosief terug omhoog , terwijl je uitademt. Herhaal de beweging.",
-    //     "duurtijd": [],
-    //     "herhalingen": [10, 20, 30],
-    //     "afbeeldingen": ["dip_hard_1.jpg"]
-    // },
     {
         "mainname": "Push up",
         "oefening": ["Push up", "Push up", "Push up"],

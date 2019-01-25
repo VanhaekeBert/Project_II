@@ -82,8 +82,6 @@ namespace StreetWorkoutV2.View
                     await Navigation.PopAsync();
                 })
             });
-
-            //Password_reset.GestureRecognizers.Add(new TapGestureRecognizer(OnTapPassword_reset));
         }
 
 

@@ -53,9 +53,6 @@ namespace StreetWorkoutV2.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            //TabLayoutResource = Resource.Layout.Tabbar;
-            //ToolbarResource = Resource.Layout.Toolbar;
-            //Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 199, 41, 48));
             base.OnCreate(savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);

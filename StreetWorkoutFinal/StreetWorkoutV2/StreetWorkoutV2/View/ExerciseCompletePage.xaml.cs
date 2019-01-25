@@ -59,9 +59,6 @@ namespace StreetWorkoutV2.View
                 _Repetitions = Exercise.Herhalingen[Repetitions].ToString();
             }
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
-            //backbuttonImage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Backbutton.png");
-            //ImgCal.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Vuur.png");
-            //ImgHeart.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Compleet.png");
 
             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Uncolored.png");
 
@@ -448,7 +445,6 @@ namespace StreetWorkoutV2.View
                 if (i == 2)
                 {
                     herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
-                    Debug.WriteLine(herhalingen);
                 }
                 else
                 {

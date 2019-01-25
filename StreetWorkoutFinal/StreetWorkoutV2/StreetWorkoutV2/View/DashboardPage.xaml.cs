@@ -90,7 +90,6 @@ namespace StreetWorkoutV2.View
                 }
             }
             LblLogs.Text = weekOef.Count().ToString();
-            //Debug.WriteLine(Application.Current.Properties["Naam"]);
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");
             imgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
@@ -136,10 +135,6 @@ namespace StreetWorkoutV2.View
 
                 })
             });
-            //WaterPopUpFrame.GestureRecognizers.Add(new TapGestureRecognizer
-            //{
-
-            //});
 
             innerPopWater.GestureRecognizers.Add(new TapGestureRecognizer
             {

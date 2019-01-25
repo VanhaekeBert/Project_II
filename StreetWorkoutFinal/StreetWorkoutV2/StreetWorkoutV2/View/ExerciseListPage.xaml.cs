@@ -50,11 +50,6 @@ namespace StreetWorkoutV2.View
             Titlelabel.Text = ExerciseList[0].Toestel;
             lvwExercices.ItemsSource = ExerciseList;
             _ExerciseList = ExerciseList;
-            // OefeningNaamEntry.TextChanged += async (o, e) =>
-            // {
-            //     lvwExercices.ItemsSource
-
-            // };
 
             stkReps.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -133,7 +128,6 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(() =>
                 {
-                    //lvwExercices.SelectedItem = null;
                     popSelectDetails.IsVisible = false;
                     popSelectDetails.IsEnabled = false;
                     stkRep1.Opacity = 1;
@@ -256,7 +250,6 @@ namespace StreetWorkoutV2.View
 
                     
                     await Navigation.PushAsync(new ExercisePage(_TappedExercise, _ChosenRepetitionState, _ChosenDifficultyState, "1/3"));
-                    //lvwExercices.SelectedItem = null;
                 }
             }
 

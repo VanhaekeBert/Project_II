@@ -103,36 +103,6 @@ namespace StreetWorkoutV2.View
                     muscleList.Add(muscleName);
                 }
                 lvwDevices.ItemsSource = muscleList;
-                //----------------------------------------------------------
-                //-----SPIER---------------------
-                // List<string> filteredList = new List<string>();
-                // Dictionary<string, int> Spier = new Dictionary<string, int>();
-                // lblTitle.Text = "Spiergroepen";
-
-                // foreach (Oefening duts in _Oefeningslijst)
-                // {
-                //     PickerClass toestel = new PickerClass() { Name = duts.Spiergroep };
-                //     if (!filteredList.Contains(toestel.Name))
-                //     {
-
-                //         filteredList.Add(toestel.Name);
-                //         Spier.Add(toestel.Name, toestel.AantalOefeningen);
-                //     }
-                //     else
-                //     {
-                //         Spier[toestel.Name] += 1;
-                //     }
-                // }
-                // List<PickerClass> muscleList = new List<PickerClass>();
-
-                // foreach (var spier in Spier)
-                // {
-                //     PickerClass spiernaam = new PickerClass() { Name = spier.Key, AantalOefeningen = spier.Value, Type = uitvoering };
-                //     muscleList.Add(spiernaam);
-                // }
-                // //Listview opvullen
-                // lvwDevices.ItemsSource = muscleList;
-                //----------------------------------------------------------
             }
             this.BackgroundColor = Color.FromHex("2B3049");
 
@@ -183,61 +153,5 @@ namespace StreetWorkoutV2.View
 
 
         }
-
-        //popPickerDetails.GestureRecognizers.Add(
-        //    new TapGestureRecognizer()
-        //{
-        //    Command = new Command(async () =>
-        //    {
-        //        popPickerDetails.IsEnabled = false;
-        //        popPickerDetails.IsVisible = false;
-        //    })
-        //    });
-
-        //private async void Makkelijk_Clicked(object sender, EventArgs e)
-        //{
-        //    if (makkelijk.Opacity == 1)
-        //    {
-        //        popPickerDetails.IsEnabled = false;
-        //        //  Popup.FadeTo(0, 250);
-
-        //        await Navigation.PushAsync(new ExerciseListPage(_SelectedItem, "gemakkelijk"));
-        //        popPickerDetails.IsVisible = false;
-        //    }
-
-
-
-        //}
-
-        //private async void Gemiddeld_Clicked(object sender, EventArgs e)
-        //{
-        //    if (gemiddeld.Opacity == 1)
-        //    {
-        //        popPickerDetails.IsEnabled = false;
-        //        // Popup.FadeTo(0, 250);
-
-        //        await Navigation.PushAsync(new ExerciseListPage(_SelectedItem, "gemiddeld"), true);
-        //        popPickerDetails.IsVisible = false;
-        //    }
-
-        //}
-
-        //private async void Moeilijk_Clicked(object sender, EventArgs e)
-        //{
-        //    if (moeilijk.Opacity == 1)
-        //    {
-        //        // Popup.FadeTo(0, 250);
-
-        //        popPickerDetails.IsEnabled = false;
-        //        await Navigation.PushAsync(new ExerciseListPage(_SelectedItem, "moeilijk"));
-        //        popPickerDetails.IsVisible = false;
-        //    }
-
-
-        //}
-
-
-        //}
-
     }
 }

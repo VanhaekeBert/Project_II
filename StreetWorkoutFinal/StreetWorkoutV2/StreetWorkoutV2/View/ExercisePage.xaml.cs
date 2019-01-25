@@ -171,17 +171,6 @@ namespace StreetWorkoutV2.View
 
         }
 
-        //public ExercisePage()
-        //{
-        //    InitializeComponent();
-
-        //    imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
-        //    OefeningCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
-
-        //    //Back button + heartbeat
-
-
-
         // -------------------------------------------------------------------
         // START OF PLAY PAUSE TIMER CODE ------------------------------------
         // -------------------------------------------------------------------
@@ -265,9 +254,4 @@ namespace StreetWorkoutV2.View
             }
         }
     } }
-
-        //protected override bool OnBackButtonPressed()
-        //{
-        //    return true;
-        //}
  

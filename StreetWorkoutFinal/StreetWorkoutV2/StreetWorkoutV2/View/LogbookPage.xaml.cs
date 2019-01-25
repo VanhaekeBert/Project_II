@@ -88,7 +88,6 @@ namespace StreetWorkoutV2.View
                 }
                 else
                 {
-                    //foreach (List<Logboek> logboeks in lijstLogboek)
                     for (int i = 0; i <= lijstLogboek.Count; i++)
                     {
                         if (i != lijstLogboek.Count)

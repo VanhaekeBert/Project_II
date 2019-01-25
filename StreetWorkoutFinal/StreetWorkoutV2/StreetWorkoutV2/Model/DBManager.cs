@@ -475,7 +475,6 @@ namespace StreetWorkoutV2.Model
                 var message = await client.PostAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
                 JObject uri = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
-                Debug.WriteLine(new Uri(uri["Uri"].ToString() + uri["SAS"].ToString()));
                 return new Uri(uri["Uri"].ToString() + uri["SAS"].ToString());
             }
             catch (Exception ex)
