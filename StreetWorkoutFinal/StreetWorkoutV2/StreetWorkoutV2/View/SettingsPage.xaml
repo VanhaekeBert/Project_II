@@ -36,37 +36,40 @@
                 <!--<StackLayout   Grid.Row="0" Orientation="Horizontal" Margin="0,0,24,0"><Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/><Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/></StackLayout>-->
                 <StackLayout VerticalOptions="FillAndExpand" Grid.Row="1" Orientation="Vertical" Margin="24,14,24,0">
                     <Label VerticalOptions="StartAndExpand" FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Instellingen" TextColor="White" />
-                    <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Verbonden Diensten" TextColor="White" Margin="5,0,0,-15" />
+                    <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Account" TextColor="White" Margin="5,0,0,-15" />
                 </StackLayout>
                 <Grid VerticalOptions="CenterAndExpand" Grid.Row="2"  Margin="24,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0" x:Name="FraFB">
+                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="FraWWR">
                         <renderers:GradientLayout
-                                            ColorsList="#00B09B,#70D3D8"
-                                            Mode="ToTopLeft"
-                                            x:Name="colFB">
+                                            ColorsList="#484E6D,#2D324B"
+                                            Mode="ToTopLeft">
                             <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Fitbit" TextColor="White"/>
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White" x:Name="lblFBverbonden"/>
-                            </StackLayout>
-                        </renderers:GradientLayout>
-                        </StreetWorkoutV2:CustomFrame>
-                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110"  Padding="0" x:Name="FraP">
-                        <renderers:GradientLayout
-                                            ColorsList="#DC483F,#EE3A43"
-                                            Mode="ToTopLeft"
-                                            x:Name="colP">
-                            <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Polar" TextColor="White"/>
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Niet Verbonden" TextColor="White" x:Name="lblPverbonden"/>
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Wachtwoord resetten" TextColor="White"/>
                             </StackLayout>
                         </renderers:GradientLayout>
                     </StreetWorkoutV2:CustomFrame>
+                    <StreetWorkoutV2:CustomFrame x:Name="FraAD" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
+
+                        <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
+                            <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Account verwijderen" TextColor="White"/>
+                            </StackLayout>
+                        </renderers:GradientLayout>
+                    </StreetWorkoutV2:CustomFrame>
+                    
                 </Grid>
-                <StackLayout Grid.Row="3"  Margin="24" Orientation="Vertical">
+                <StackLayout Margin="24,0" Grid.Row="3" Opacity="0.5">
+                    <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
+                    <Label FontSize="12" Text="Foto's en beschrijving oefeningen -  Remi Overstijns " TextColor="White"></Label>
+                    <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
+                </StackLayout>
+                <!--<StackLayout Grid.Row="3"  Margin="24" Orientation="Vertical">
                     <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Account" TextColor="White" Margin="5,0,0,0" />
                     <Grid VerticalOptions="StartAndExpand"  ColumnSpacing="10" Margin="0,6,0,0">
                         <Grid.ColumnDefinitions>
@@ -99,7 +102,7 @@
                         <Label FontSize="12" Text="Foto's en beschrijving oefeningen -  Remi Overstijns " TextColor="White"></Label>
                         <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
                     </StackLayout>
-                </StackLayout>
+                </StackLayout>-->
 
                 
                 <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Logout"/>

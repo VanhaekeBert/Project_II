@@ -28,71 +28,71 @@ namespace StreetWorkoutV2.View
                     popNoConnection.IsVisible = false;
                 })
             });
-            MessagingCenter.Subscribe<SettingsPage, string>(this, "PassFitbitConnected", (sender, arg) =>
-            {
-                lblFBverbonden.Text = arg;
+            //MessagingCenter.Subscribe<SettingsPage, string>(this, "PassFitbitConnected", (sender, arg) =>
+            //{
+            //    lblFBverbonden.Text = arg;
 
-            });
-            if (Preferences.Get("API", "") == "FitBit")
-            {
-                lblFBverbonden.Text = "Verbonden";
-                lblPverbonden.Text = "Niet Verbonden";
-            }
-            else if (Preferences.Get("API", "") == "Polar")
-            {
-                lblFBverbonden.Text = "Niet Verbonden";
-                lblPverbonden.Text = "Verbonden";
-            }
-            else
-            {
-                lblFBverbonden.Text = "Niet Verbonden";
-                lblPverbonden.Text = "Niet Verbonden";
-            }
+            //});
+            //if (Preferences.Get("API", "") == "FitBit")
+            //{
+            //    lblFBverbonden.Text = "Verbonden";
+            //    lblPverbonden.Text = "Niet Verbonden";
+            //}
+            //else if (Preferences.Get("API", "") == "Polar")
+            //{
+            //    lblFBverbonden.Text = "Niet Verbonden";
+            //    lblPverbonden.Text = "Verbonden";
+            //}
+            //else
+            //{
+            //    lblFBverbonden.Text = "Niet Verbonden";
+            //    lblPverbonden.Text = "Niet Verbonden";
+            //}
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
 
-            var tapGestureRecognizerFB = new TapGestureRecognizer();
-            tapGestureRecognizerFB.Tapped += (s, e) =>
-            {
-                Task.Run(async () =>
-                {
-                    FitBitUser user = await FitBitManager.FitBitAsync();
+            //var tapGestureRecognizerFB = new TapGestureRecognizer();
+            //tapGestureRecognizerFB.Tapped += (s, e) =>
+            //{
+            //    Task.Run(async () =>
+            //    {
+            //        FitBitUser user = await FitBitManager.FitBitAsync();
         
-                    user.Naam = Preferences.Get("Naam", "").ToString();
-                    string text = JsonConvert.SerializeObject(user);
-                    JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                    Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
-                    Preferences.Set("Lengte", data["Lengte"].ToString());
-                    Preferences.Set("Gewicht", data["Gewicht"].ToString());
-                    Preferences.Set("API", data["API"].ToString());
-                    MessagingCenter.Send(this, "PassFitbitConnected", "Verbonden");
+            //        user.Naam = Preferences.Get("Naam", "").ToString();
+            //        string text = JsonConvert.SerializeObject(user);
+            //        JObject data = JsonConvert.DeserializeObject<JObject>(text);
+            //        Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
+            //        Preferences.Set("Lengte", data["Lengte"].ToString());
+            //        Preferences.Set("Gewicht", data["Gewicht"].ToString());
+            //        Preferences.Set("API", data["API"].ToString());
+            //        MessagingCenter.Send(this, "PassFitbitConnected", "Verbonden");
 
-                    DBManager.PutUserData(user.Naam, "Naam", data);
-                });
-            };
+            //        DBManager.PutUserData(user.Naam, "Naam", data);
+            //    });
+            //};
 
-            var tapGestureRecognizerP = new TapGestureRecognizer();
-            tapGestureRecognizerP.Tapped += (s, e) =>
-            {
-                var auth = PolarManager.GetPolarAuth();
-                auth.AllowCancel = true;
-                var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-                presenter.Login(auth);
-                presenter.Completed += (p, ee) =>
-                {
-                    Task.Run(async () =>
-                    {
-                        PolarUser user = await PolarManager.GetPolarToken();
-                        user.Naam = Preferences.Get("Naam", "");
-                        string text = JsonConvert.SerializeObject(user);
-                        JObject data = JsonConvert.DeserializeObject<JObject>(text);
-                        Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
-                        Preferences.Set("Lengte", data["Lengte"].ToString());
-                        Preferences.Set("Gewicht", data["Gewicht"].ToString());
-                        Preferences.Set("API", data["API"].ToString());
-                        DBManager.PutUserData(user.Naam, "Naam", data);
-                    });
-                };
-            };
+            //var tapGestureRecognizerP = new TapGestureRecognizer();
+            //tapGestureRecognizerP.Tapped += (s, e) =>
+            //{
+            //    var auth = PolarManager.GetPolarAuth();
+            //    auth.AllowCancel = true;
+            //    var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            //    presenter.Login(auth);
+            //    presenter.Completed += (p, ee) =>
+            //    {
+            //        Task.Run(async () =>
+            //        {
+            //            PolarUser user = await PolarManager.GetPolarToken();
+            //            user.Naam = Preferences.Get("Naam", "");
+            //            string text = JsonConvert.SerializeObject(user);
+            //            JObject data = JsonConvert.DeserializeObject<JObject>(text);
+            //            Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
+            //            Preferences.Set("Lengte", data["Lengte"].ToString());
+            //            Preferences.Set("Gewicht", data["Gewicht"].ToString());
+            //            Preferences.Set("API", data["API"].ToString());
+            //            DBManager.PutUserData(user.Naam, "Naam", data);
+            //        });
+            //    };
+            //};
 
 
             FraWWR.GestureRecognizers.Add(new TapGestureRecognizer
@@ -123,8 +123,8 @@ namespace StreetWorkoutV2.View
             });
 
 
-            FraFB.GestureRecognizers.Add(tapGestureRecognizerFB);
-            FraP.GestureRecognizers.Add(tapGestureRecognizerP);
+            //FraFB.GestureRecognizers.Add(tapGestureRecognizerFB);
+            //FraP.GestureRecognizers.Add(tapGestureRecognizerP);
         }
 
         private async void Logout(object sender, EventArgs e)

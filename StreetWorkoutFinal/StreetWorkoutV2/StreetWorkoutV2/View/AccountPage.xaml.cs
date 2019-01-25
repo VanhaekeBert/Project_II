@@ -94,10 +94,10 @@ namespace StreetWorkoutV2.View
                     {
                         kcalmaand += oefening.Kcal;
                     }
-                    LblKcalWeek.Text = kcalweek.ToString();
-                    LblKcalMaand.Text = kcalmaand.ToString();
+                   // LblKcalWeek.Text = kcalweek.ToString();
+                   // LblKcalMaand.Text = kcalmaand.ToString();
                     MakeEntriesOef();
-                    MakeEntriesKcal();
+                   // MakeEntriesKcal();
                 }
             });
 
@@ -230,15 +230,15 @@ namespace StreetWorkoutV2.View
                 {
                     kcalmaand += oefening.Kcal;
                 }
-                LblKcalWeek.Text = kcalweek.ToString();
-                LblKcalMaand.Text = kcalmaand.ToString();
+               // LblKcalWeek.Text = kcalweek.ToString();
+               // LblKcalMaand.Text = kcalmaand.ToString();
                 MakeEntriesOef();
-                MakeEntriesKcal();
+              //  MakeEntriesKcal();
             }
             else
             {
                 LblDataOef.IsVisible = true;
-                LblDataKcal.IsVisible = true;
+               // LblDataKcal.IsVisible = true;
             }
             this.BackgroundColor = Color.FromHex("2B3049");
 
@@ -326,63 +326,63 @@ namespace StreetWorkoutV2.View
             });
         }
 
-        private void MakeEntriesKcal()
-        {
-            List<string> listKleuren = new List<string> {
-                "#EE9F44","#EE9944","#EE9344","#EE8E44","#EE8844","#EE8244","#EE7D44","#EE8244"
-            };
-            List<string> listLabels = new List<string>();
-            for (int i = 6; i >= 0; i--)
-            {
-                listLabels.Add(DateTime.Now.AddDays(-i).ToString("dddd", dutch).First().ToString().ToUpper() + DateTime.Now.AddDays(-i).ToString("dddd", dutch).Substring(1, 2));
-            }
-            List<string> listValues = new List<string>();
-            foreach (string date in listLabels)
-            {
-                int i = 0;
-                foreach (OefeningDB oefening in weekOef)
-                {
-                    if (date == (oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1, 2)))
-                    {
-                        i += oefening.Kcal;
-                    }
-                }
-                listValues.Add(i.ToString());
-            }
-            bool visible = true;
-            foreach (string item in listValues)
-            {
-                if (item != "0")
-                {
-                    visible = false;
-                }
-            }
-            LblDataKcal.IsVisible = visible;
+        //private void MakeEntriesKcal()
+        //{
+        //    List<string> listKleuren = new List<string> {
+        //        "#EE9F44","#EE9944","#EE9344","#EE8E44","#EE8844","#EE8244","#EE7D44","#EE8244"
+        //    };
+        //    List<string> listLabels = new List<string>();
+        //    for (int i = 6; i >= 0; i--)
+        //    {
+        //        listLabels.Add(DateTime.Now.AddDays(-i).ToString("dddd", dutch).First().ToString().ToUpper() + DateTime.Now.AddDays(-i).ToString("dddd", dutch).Substring(1, 2));
+        //    }
+        //    List<string> listValues = new List<string>();
+        //    foreach (string date in listLabels)
+        //    {
+        //        int i = 0;
+        //        foreach (OefeningDB oefening in weekOef)
+        //        {
+        //            if (date == (oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1, 2)))
+        //            {
+        //                i += oefening.Kcal;
+        //            }
+        //        }
+        //        listValues.Add(i.ToString());
+        //    }
+        //    bool visible = true;
+        //    foreach (string item in listValues)
+        //    {
+        //        if (item != "0")
+        //        {
+        //            visible = false;
+        //        }
+        //    }
+        //    LblDataKcal.IsVisible = visible;
 
 
-            List<Entry> entriesKcal2 = new List<Entry> { };
-            for (int i = 0; i < 7; i++)
-            {
-                float value = float.Parse(listValues[i]);
+        //    List<Entry> entriesKcal2 = new List<Entry> { };
+        //    for (int i = 0; i < 7; i++)
+        //    {
+        //        float value = float.Parse(listValues[i]);
 
-                entriesKcal2.Add(new Entry(value)
-                {
-                    Color = SKColor.Parse(listKleuren[i]),
-                    Label = listLabels[i],
-                    ValueLabel = listValues[i]
-                });
-            }
-            chartKcal.Chart = new LineChart()
-            {
-                Entries = entriesKcal2,
-                BackgroundColor = SKColors.Transparent,
-                PointSize = 22,
-                LabelTextSize = 22,
-                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelColor = SKColor.Parse("#FFFFFF")
-            };
-        }
+        //        entriesKcal2.Add(new Entry(value)
+        //        {
+        //            Color = SKColor.Parse(listKleuren[i]),
+        //            Label = listLabels[i],
+        //            ValueLabel = listValues[i]
+        //        });
+        //    }
+        //    chartKcal.Chart = new LineChart()
+        //    {
+        //        Entries = entriesKcal2,
+        //        BackgroundColor = SKColors.Transparent,
+        //        PointSize = 22,
+        //        LabelTextSize = 22,
+        //        ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+        //        LabelOrientation = Microcharts.Orientation.Horizontal,
+        //        LabelColor = SKColor.Parse("#FFFFFF")
+        //    };
+        //}
         private void MakeEntriesOef()
         {
             List<string> listKleuren = new List<string> {

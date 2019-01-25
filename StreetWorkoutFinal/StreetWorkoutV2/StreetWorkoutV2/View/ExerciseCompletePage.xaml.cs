@@ -22,7 +22,7 @@ namespace StreetWorkoutV2.View
     public partial class ExerciseCompletePage : AnimationPage
     {
         string _Repetitions;
-        private string _KcalAPI = "0";
+       // private string _KcalAPI = "0";
         public ExerciseCompletePage(Oefening Exercise,int Repetitions)
         {
             InitializeComponent();
@@ -35,12 +35,12 @@ namespace StreetWorkoutV2.View
             });
 
 
-            if (Preferences.Get("API", "") == "FitBit")
-            {
-                FrmChart.IsVisible = true;
-                GrdAPIData.IsVisible = true;
-                MakeEntriesHartslag();
-            }
+            //if (Preferences.Get("API", "") == "FitBit")
+            //{
+            //    FrmChart.IsVisible = true;
+            //    GrdAPIData.IsVisible = true;
+            //    MakeEntriesHartslag();
+            //}
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
             Repetition1.Text = Preferences.Get("Repetition0", "").Substring(0, Preferences.Get("Repetition0", "").Length - 1);
@@ -204,42 +204,42 @@ namespace StreetWorkoutV2.View
             if (popExerciseReview.IsEnabled == false)
             {
 
-                if (Preferences.Get("API", "") == "FitBit")
-                {
-                    //In if steken
-                    JObject oefening = new JObject();
-                    var fitbitName = Preferences.Get("Naam", "");
-                    var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
-                    var fitbitEndDate = DateTime.Now;
-                    Preferences.Set("StartDate", null);
-                    var fitbitDuration = Preferences.Get("WorkTime", 0);
-                    var fitbitExercise = Preferences.Get("Workout", "");
-                    var fitbitDifficulty = Preferences.Get("Difficulty", "").Substring(4).Replace(" ", "");
-                    var fitbitActivityId = 0;
-                    switch (fitbitDifficulty)
-                    {
-                        case "Simpel":
-                            fitbitActivityId = 2030;
-                            break;
-                        case "Gevorderd":
-                            fitbitActivityId = 2060;
-                            break;
-                        case "Expert":
-                            fitbitActivityId = 2020;
-                            break;
-                        default:
-                            fitbitActivityId = 2101;
-                            break;
-                    }
+                //if (Preferences.Get("API", "") == "FitBit")
+                //{
+                //    //In if steken
+                //    JObject oefening = new JObject();
+                //    var fitbitName = Preferences.Get("Naam", "");
+                //    var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
+                //    var fitbitEndDate = DateTime.Now;
+                //    Preferences.Set("StartDate", null);
+                //    var fitbitDuration = Preferences.Get("WorkTime", 0);
+                //    var fitbitExercise = Preferences.Get("Workout", "");
+                //    var fitbitDifficulty = Preferences.Get("Difficulty", "").Substring(4).Replace(" ", "");
+                //    var fitbitActivityId = 0;
+                //    switch (fitbitDifficulty)
+                //    {
+                //        case "Simpel":
+                //            fitbitActivityId = 2030;
+                //            break;
+                //        case "Gevorderd":
+                //            fitbitActivityId = 2060;
+                //            break;
+                //        case "Expert":
+                //            fitbitActivityId = 2020;
+                //            break;
+                //        default:
+                //            fitbitActivityId = 2101;
+                //            break;
+                //    }
 
-                    var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
-                    _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
-                    var HeartRateObject = await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
-                    await popExerciseReview.FadeTo(0.3, 75);
-                    await popExerciseReview.FadeTo(1, 75);
-                    popExerciseReview.IsVisible = false;
-                    popExerciseReview.IsEnabled = false;
-                }
+                //    var ExerciseResponse = await FitBitManager.FitBitPostExercise(fitbitActivityId, fitbitStartDate, fitbitDuration);
+                //    _KcalAPI = ExerciseResponse["activityLog"]["calories"].ToString();
+                //    var HeartRateObject = await FitBitManager.FitBitGetHeartRate(fitbitStartDate, fitbitEndDate);
+                //    await popExerciseReview.FadeTo(0.3, 75);
+                //    await popExerciseReview.FadeTo(1, 75);
+                //    popExerciseReview.IsVisible = false;
+                //    popExerciseReview.IsEnabled = false;
+                //}
                 if (inputRepetitions.Text != "")
                 {
                     if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
@@ -413,18 +413,18 @@ namespace StreetWorkoutV2.View
                 {
                     oefening["Gevoel"] = "1";
                 }
-                if (Preferences.Get("API", "") == "FitBit")
-                {
-                    oefening["Kcal"] = _KcalAPI;
-                    oefening["MaxHeart"] = "0";
-                    oefening["AverageHeart"] = "0";
-                }
-                else
-                {
+                //if (Preferences.Get("API", "") == "FitBit")
+                //{
+                //    oefening["Kcal"] = _KcalAPI;
+                //    oefening["MaxHeart"] = "0";
+                //    oefening["AverageHeart"] = "0";
+                //}
+                //else
+                //{
                     oefening["Kcal"] = 0;
                     oefening["MaxHeart"] = 0;
                     oefening["AverageHeart"] = 0;
-                }
+                //}
                 await DBManager.PostOefening(oefening);
                 JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
                 var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
@@ -488,18 +488,18 @@ namespace StreetWorkoutV2.View
                 {
                     oefening["Gevoel"] = "1";
                 }
-                if (Preferences.Get("API", "") == "FitBit")
-                {
-                    oefening["Kcal"] = _KcalAPI;
-                    oefening["MaxHeart"] = "0";
-                    oefening["AverageHeart"] = "0";
-                }
-                else
-                {
+                //if (Preferences.Get("API", "") == "FitBit")
+                //{
+                //    oefening["Kcal"] = _KcalAPI;
+                //    oefening["MaxHeart"] = "0";
+                //    oefening["AverageHeart"] = "0";
+                //}
+                //else
+                //{
                     oefening["Kcal"] = 0;
                     oefening["MaxHeart"] = 0;
                     oefening["AverageHeart"] = 0;
-                }
+                //}
                 await DBManager.PostOefening(oefening);
                 JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
                 var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
