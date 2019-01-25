@@ -22,20 +22,20 @@ namespace StreetWorkoutV2.View
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-            PasswordEntryRepeat.IsPassword = true;
-            PasswordEntry.IsPassword = true;
+            entryPasswordRepeat.IsPassword = true;
+            entryPassword.IsPassword = true;
             imgEye.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
                 {
-                    if (PasswordEntry.IsPassword == true)
+                    if (entryPassword.IsPassword == true)
                     {
-                        PasswordEntry.IsPassword = false;
+                        entryPassword.IsPassword = false;
                         imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
-                        PasswordEntry.IsPassword = true;
+                        entryPassword.IsPassword = true;
                         imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
@@ -45,19 +45,19 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(() =>
                 {
-                    if (PasswordEntryRepeat.IsPassword == true)
+                    if (entryPasswordRepeat.IsPassword == true)
                     {
-                        PasswordEntryRepeat.IsPassword = false;
+                        entryPasswordRepeat.IsPassword = false;
                         imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
-                        PasswordEntryRepeat.IsPassword = true;
+                        entryPasswordRepeat.IsPassword = true;
                         imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });
-            Login.GestureRecognizers.Add(new TapGestureRecognizer
+            lblLogin.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
@@ -71,29 +71,29 @@ namespace StreetWorkoutV2.View
             return true;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void BtnRegister_Clicked(object sender, EventArgs e)
         {
             if (Connection.CheckConnection())
             {
                 lblError.IsVisible = false;
                 LoadingIndicator.IsRunning = false;
-                if (PasswordEntry.Text != null && UserNameEntry.Text != null && EmailEntry.Text != null)
+                if (entryPassword.Text != null && UserNameEntry.Text != null && entryEmail.Text != null)
                 {
-                    if (PasswordEntry.Text.Length >= 8)
+                    if (entryPassword.Text.Length >= 8)
                     {
-                        if (PasswordEntry.Text == PasswordEntryRepeat.Text)
+                        if (entryPassword.Text == entryPasswordRepeat.Text)
                         {
                             if (!UserNameEntry.Text.ToLower().Contains(' '))
                             {
-                                if (EmailEntry.Text.ToLower().Contains('@'))
+                                if (entryEmail.Text.ToLower().Contains('@'))
                                 {
-                                    string Email = EmailEntry.Text.Replace(" ", "");
+                                    string Email = entryEmail.Text.Replace(" ", "");
                                     bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
                                     bool EmailCheck = await DBManager.CheckUserData(Email, "Email");
                                     if (UserNameCheck == false && EmailCheck == false)
                                     {
                                         LoadingIndicator.IsRunning = true;
-                                        var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(PasswordEntry.Text));
+                                        var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(entryPassword.Text));
                                         if (response)
                                         {
                                             await Navigation.PushAsync(new LoginPage());

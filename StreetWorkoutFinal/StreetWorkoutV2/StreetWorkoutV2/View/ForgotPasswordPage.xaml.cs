@@ -38,11 +38,11 @@ namespace StreetWorkoutV2.View
         {
             if (Connection.CheckConnection())
             {
-                if (EmailEntry.Text != null)
+                if (entryEmail.Text != null)
                 {
-                    if (EmailEntry.Text.ToLower().Contains("@"))
+                    if (entryEmail.Text.ToLower().Contains("@"))
                     {
-                        string email = EmailEntry.Text.Replace(" ", "");
+                        string email = entryEmail.Text.Replace(" ", "");
                         bool EmailCheck = await DBManager.CheckUserData(email, "Email");
                         if (EmailCheck == true)
                         {
@@ -50,10 +50,10 @@ namespace StreetWorkoutV2.View
                             string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Naam"].ToString()));
                             if (ww != null)
                             {
-                                JObject gegevens = new JObject();
-                                gegevens["Wachtwoord"] = ww;
+                                JObject userData = new JObject();
+                                userData["Wachtwoord"] = ww;
                                 await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
-                                await DBManager.PutUserData(email, "Email", gegevens);
+                                await DBManager.PutUserData(email, "Email", userData);
                                 await Navigation.PopAsync();
                             }
                             else

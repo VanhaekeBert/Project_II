@@ -13,21 +13,21 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkoutV2
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PopUpAccountDelete : PopupPage
-	{
-		public PopUpAccountDelete ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PopUpAccountDelete : PopupPage
+    {
+        public PopUpAccountDelete()
+        {
+            InitializeComponent();
         }
 
-        private async void Annuleren(object sender, EventArgs e)
+        private async void Cancel(object sender, EventArgs e)
         {
             await Navigation.PopAllPopupAsync();
 
         }
 
-        private async void Verwijderen(object sender, EventArgs e)
+        private async void Delete(object sender, EventArgs e)
         {
             await DBManager.DeleteProfilePicture(Preferences.Get("Naam", ""));
             await DBManager.DeleteUserData(Preferences.Get("Naam", ""));

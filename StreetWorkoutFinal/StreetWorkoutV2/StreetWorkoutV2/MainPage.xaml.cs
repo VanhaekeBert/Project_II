@@ -22,7 +22,7 @@ namespace StreetWorkoutV2
             {
                 if (Connection.CheckConnection())
                 {
-                    Inladen();
+                    DataLoader();
                     Preferences.Set("Connection", true);
                 }
                 else
@@ -45,19 +45,19 @@ namespace StreetWorkoutV2
             CurrentPage = Children[1];
 
 
-       
+
         }
 
-        public async Task Inladen()
+        public async Task DataLoader()
         {
-            JObject gebruiker = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
-            JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+            JObject user = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
+            JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
             JArray water = await DBManager.GetWater(Preferences.Get("Naam", ""));
             var latestWater = await DBManager.GetLatestWater(Preferences.Get("Naam", ""));
             if (latestWater != null)
             {
-                DateTime datum = (DateTime)latestWater["Datum"];
-                if (datum.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
+                DateTime date = (DateTime)latestWater["Datum"];
+                if (date.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
                 {
                     Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
                     Preferences.Set("WaterGedronken", int.Parse(latestWater["WaterGedronken"].ToString()));
@@ -76,17 +76,17 @@ namespace StreetWorkoutV2
                 Preferences.Set("WaterGedronken", 0);
             }
             var waterTojson = JsonConvert.SerializeObject(water);
-            var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
-            Preferences.Set("Naam", gebruiker["Naam"].ToString());
-            Preferences.Set("ApiNaam", gebruiker["ApiNaam"].ToString());
-            Preferences.Set("Email", gebruiker["Email"].ToString());
-            Preferences.Set("Leeftijd", gebruiker["Leeftijd"].ToString());
-            Preferences.Set("Lengte", gebruiker["Lengte"].ToString());
-            Preferences.Set("Gewicht", gebruiker["Gewicht"].ToString());
-            Preferences.Set("API", gebruiker["API"].ToString());
+            var jsonToSaveValue = JsonConvert.SerializeObject(exercises);
+            Preferences.Set("Naam", user["Naam"].ToString());
+            Preferences.Set("ApiNaam", user["ApiNaam"].ToString());
+            Preferences.Set("Email", user["Email"].ToString());
+            Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
+            Preferences.Set("Lengte", user["Lengte"].ToString());
+            Preferences.Set("Gewicht", user["Gewicht"].ToString());
+            Preferences.Set("API", user["API"].ToString());
             Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
             Preferences.Set("Water", waterTojson.ToString());
         }
-       
+
     }
 }

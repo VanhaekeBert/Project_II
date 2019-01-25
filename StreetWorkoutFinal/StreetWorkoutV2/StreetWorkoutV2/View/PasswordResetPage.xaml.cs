@@ -99,9 +99,9 @@ namespace StreetWorkoutV2.View
                             if (CheckOldWW)
                             {
                                 JObject data = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
-                                JObject gegevens = new JObject();
-                                gegevens["Wachtwoord"] = DBManager.Encrypt(entryPasswordNew.Text);
-                                await DBManager.PutUserData(data["Email"].ToString(), "Email", gegevens);
+                                JObject dataTemp = new JObject();
+                                dataTemp["Wachtwoord"] = DBManager.Encrypt(entryPasswordNew.Text);
+                                await DBManager.PutUserData(data["Email"].ToString(), "Email", dataTemp);
                                 await Navigation.PopAsync();
                             }
                             else

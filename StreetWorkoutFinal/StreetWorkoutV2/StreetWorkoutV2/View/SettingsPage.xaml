@@ -43,7 +43,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="FraWWR">
+                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="framePasswordReset">
                         <renderers:GradientLayout
                                             ColorsList="#484E6D,#2D324B"
                                             Mode="ToTopLeft">
@@ -52,7 +52,7 @@
                             </StackLayout>
                         </renderers:GradientLayout>
                     </StreetWorkoutV2:CustomFrame>
-                    <StreetWorkoutV2:CustomFrame x:Name="FraAD" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
+                    <StreetWorkoutV2:CustomFrame x:Name="frameDeleteAccount" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
 
                         <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
                             <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -66,7 +66,7 @@
                 </Grid>
                 <StackLayout Margin="24,0" Grid.Row="3" Opacity="0.5">
                     <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
-                    <Label FontSize="12" Text="Foto's en beschrijving oefeningen -  Remi Overstijns " TextColor="White"></Label>
+                    <Label FontSize="12" Text="Foto's en beschrijving exercises -  Remi Overstijns " TextColor="White"></Label>
                     <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
                 </StackLayout>
                 <!--<StackLayout Grid.Row="3"  Margin="24" Orientation="Vertical">
@@ -76,7 +76,7 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="FraWWR">
+                        <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="framePasswordReset">
                             <renderers:GradientLayout
                                             ColorsList="#484E6D,#2D324B"
                                             Mode="ToTopLeft">
@@ -85,7 +85,7 @@
                                 </StackLayout>
                             </renderers:GradientLayout>
                         </StreetWorkoutV2:CustomFrame>
-                        <StreetWorkoutV2:CustomFrame x:Name="FraAD" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
+                        <StreetWorkoutV2:CustomFrame x:Name="frameDeleteAccount" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
 
                             <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
                                 <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
@@ -99,7 +99,7 @@
                     </Grid>
                     <StackLayout  Grid.Row="4" Opacity="0.5">
                         <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
-                        <Label FontSize="12" Text="Foto's en beschrijving oefeningen -  Remi Overstijns " TextColor="White"></Label>
+                        <Label FontSize="12" Text="Foto's en beschrijving exercises -  Remi Overstijns " TextColor="White"></Label>
                         <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
                     </StackLayout>
                 </StackLayout>-->

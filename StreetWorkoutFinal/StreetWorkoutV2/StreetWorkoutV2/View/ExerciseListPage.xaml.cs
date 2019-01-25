@@ -21,102 +21,102 @@ namespace StreetWorkoutV2.View
     public partial class ExerciseListPage : AnimationPage
     {
 
-        Oefening _TappedExercise;
-        int _ChosenRepetitionState = 4;
-        int _ChosenDifficultyState = 4;
-        List<Oefening> _ExerciseList = new List<Oefening>();
-        List<OefeningDB> oefeningen = new List<OefeningDB>();
+        private Oefening _TappedExercise;
+        private int _ChosenRepetitionState = 4;
+        private int _ChosenDifficultyState = 4;
+        private List<Oefening> _ExerciseList = new List<Oefening>();
+        private List<OefeningDB> exercises = new List<OefeningDB>();
 
         public ExerciseListPage(List<Oefening> ExerciseList)
         {
             InitializeComponent();
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
-                var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                for (int i = 0; i < rawOefeningen.Count(); i++)
+                var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString() + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
                     }
-                    else if (i != (rawOefeningen.Count() - 1))
+                    else if (i != (exercisesRaw.Count() - 1))
                     {
-                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
             }
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             imgHearts.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Hearts_4.png");
-            Titlelabel.Text = ExerciseList[0].Toestel;
+            lblTitle.Text = ExerciseList[0].Toestel;
             lvwExercices.ItemsSource = ExerciseList;
             _ExerciseList = ExerciseList;
 
-            stkReps.GestureRecognizers.Add(new TapGestureRecognizer
+            stackReps.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
-                {
-
+                Command = new Command(() =>
+               {
+                    // Om doorklikken te vermijden
                 })
             });
-            stkMoeilijkheidsgraad.GestureRecognizers.Add(new TapGestureRecognizer
+            stackDifficulty.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
-                {
-
+                Command = new Command(() =>
+               {
+                    // Om doorklikken te vermijden
                 })
             });
-            lvwExercices.ItemSelected += async (o, e) =>
-            {
+            lvwExercices.ItemSelected += (o, e) =>
+           {
 
-                var myList = (ListView)o;
-                popSelectDetails.IsEnabled = true;
-                popSelectDetails.IsVisible = true;
+               var myList = (ListView)o;
+               popSelectDetails.IsEnabled = true;
+               popSelectDetails.IsVisible = true;
 
-                if (lvwExercices.SelectedItem as Oefening != null)
-                {
-                    StkAanbeveling.IsVisible = false;
-                    _TappedExercise = (lvwExercices.SelectedItem as Oefening);
-                    List<OefeningDB> tempOefeningen = new List<OefeningDB>();
-                    foreach (OefeningDB oefening in oefeningen)
-                    {
-                        if (oefening.Workout == _TappedExercise.Groepering.ToString())
-                        {
-                            tempOefeningen.Add(oefening);
-                        }
-                    }
+               if (lvwExercices.SelectedItem as Oefening != null)
+               {
+                   stackRecommendation.IsVisible = false;
+                   _TappedExercise = (lvwExercices.SelectedItem as Oefening);
+                   List<OefeningDB> tempExerciseList = new List<OefeningDB>();
+                   foreach (OefeningDB oefening in exercises)
+                   {
+                       if (oefening.Workout == _TappedExercise.Groepering.ToString())
+                       {
+                           tempExerciseList.Add(oefening);
+                       }
+                   }
 
-                    if (tempOefeningen.Count() != 0)
-                    {
-                        LblOefening.Text = tempOefeningen[tempOefeningen.Count() - 1].Moeilijkheidsgraad;
-                        imgHearts.Source = FileImageSource.FromResource($"StreetWorkoutV2.Asset.Hearts_{tempOefeningen[tempOefeningen.Count() - 1].Gevoel}.png");
-                        StkAanbeveling.IsVisible = true;
-                    }
-                }
+                   if (tempExerciseList.Count() != 0)
+                   {
+                       lblExercise.Text = tempExerciseList[tempExerciseList.Count() - 1].Moeilijkheidsgraad;
+                       imgHearts.Source = FileImageSource.FromResource($"StreetWorkoutV2.Asset.Hearts_{tempExerciseList[tempExerciseList.Count() - 1].Gevoel}.png");
+                       stackRecommendation.IsVisible = true;
+                   }
+               }
 
 
-                if (lvwExercices.SelectedItem as Oefening != null)
-                {
-                    _TappedExercise = (lvwExercices.SelectedItem as Oefening);
-                    if (_TappedExercise.Herhalingen.Count == 0)
-                    {
-                        txtRepMakkelijk.Text = "3x" + _TappedExercise.Duurtijd[0].ToString();
-                        txtRepGemiddeld.Text = "3x" + _TappedExercise.Duurtijd[1].ToString();
-                        txtRepMoeilijk.Text = "3x" + _TappedExercise.Duurtijd[2].ToString();
-                        lblSelectGoal.Text = "Selecteer uw tijdsdoel";
-                    }
-                    else
-                    {
-                        txtRepMakkelijk.Text = "3x" + _TappedExercise.Herhalingen[0].ToString();
-                        txtRepGemiddeld.Text = "3x" + _TappedExercise.Herhalingen[1].ToString();
-                        txtRepMoeilijk.Text = "3x" + _TappedExercise.Herhalingen[2].ToString();
-                        lblSelectGoal.Text = "Selecteer uw repetitiedoel";
-                    }
-                }
-                _ChosenRepetitionState = 4;
-                _ChosenDifficultyState = 4;
-                ((ListView)o).SelectedItem = null;
+               if (lvwExercices.SelectedItem as Oefening != null)
+               {
+                   _TappedExercise = (lvwExercices.SelectedItem as Oefening);
+                   if (_TappedExercise.Herhalingen.Count == 0)
+                   {
+                       btnRepEasy.Text = "3x" + _TappedExercise.Duurtijd[0].ToString();
+                       btnRepAverage.Text = "3x" + _TappedExercise.Duurtijd[1].ToString();
+                       btnRepHard.Text = "3x" + _TappedExercise.Duurtijd[2].ToString();
+                       lblSelectGoal.Text = "Selecteer uw tijdsdoel";
+                   }
+                   else
+                   {
+                       btnRepEasy.Text = "3x" + _TappedExercise.Herhalingen[0].ToString();
+                       btnRepAverage.Text = "3x" + _TappedExercise.Herhalingen[1].ToString();
+                       btnRepHard.Text = "3x" + _TappedExercise.Herhalingen[2].ToString();
+                       lblSelectGoal.Text = "Selecteer uw repetitiedoel";
+                   }
+               }
+               _ChosenRepetitionState = 4;
+               _ChosenDifficultyState = 4;
+               ((ListView)o).SelectedItem = null;
 
-            };
+           };
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -129,28 +129,29 @@ namespace StreetWorkoutV2.View
                 Command = new Command(() =>
                 {
                     popSelectDetails.IsVisible = false;
+                    popSelectDetails.IsVisible = false;
                     popSelectDetails.IsEnabled = false;
-                    stkRep1.Opacity = 1;
-                    stkRep2.Opacity = 1;
-                    stkRep3.Opacity = 1;
-                    stkDiff1.Opacity = 1;
-                    stkDiff2.Opacity = 1;
-                    stkDiff3.Opacity = 1;
+                    stackRep1.Opacity = 1;
+                    stackRep2.Opacity = 1;
+                    stackRep3.Opacity = 1;
+                    stackDiff1.Opacity = 1;
+                    stackDiff2.Opacity = 1;
+                    stackDiff3.Opacity = 1;
                     _ChosenRepetitionState = 4;
                     _ChosenDifficultyState = 4;
                 })
             });
         }
-        private void OefeningNaamEntry_TextChanged(object sender, TextChangedEventArgs e)
+        private void entryExerciseName_TextChanged(object sender, TextChangedEventArgs e)
         {
             List<Oefening> filteredExerciseList = new List<Oefening>();
-            if (OefeningNaamEntry.Text != null)
+            if (entryExerciseName.Text != null)
             {
-                foreach (Oefening oefening in _ExerciseList)
+                foreach (Oefening exercise in _ExerciseList)
                 {
-                    if (oefening.Groepering.ToLower().Contains(OefeningNaamEntry.Text.ToLower()))
+                    if (exercise.Groepering.ToLower().Contains(entryExerciseName.Text.ToLower()))
                     {
-                        filteredExerciseList.Add(oefening);
+                        filteredExerciseList.Add(exercise);
                     }
                 }
                 lvwExercices.ItemsSource = filteredExerciseList;
@@ -160,61 +161,61 @@ namespace StreetWorkoutV2.View
                 lvwExercices.ItemsSource = _ExerciseList;
             }
         }
-        private void btnRep1_Clicked(object sender, EventArgs e)
+        private void BtnRep1_Clicked(object sender, EventArgs e)
         {
             _ChosenRepetitionState = 0;
-            stkRep1.Opacity = 1;
-            stkRep2.Opacity = 0.4;
-            stkRep3.Opacity = 0.4;
+            stackRep1.Opacity = 1;
+            stackRep2.Opacity = 0.4;
+            stackRep3.Opacity = 0.4;
         }
 
-        private void btnRep2_Clicked(object sender, EventArgs e)
+        private void BtnRep2_Clicked(object sender, EventArgs e)
         {
 
             _ChosenRepetitionState = 1;
-            stkRep1.Opacity = 0.4;
-            stkRep2.Opacity = 1;
-            stkRep3.Opacity = 0.4;
+            stackRep1.Opacity = 0.4;
+            stackRep2.Opacity = 1;
+            stackRep3.Opacity = 0.4;
         }
 
-        private void btnRep3_Clicked(object sender, EventArgs e)
+        private void BtnRep3_Clicked(object sender, EventArgs e)
         {
 
             _ChosenRepetitionState = 2;
-            stkRep1.Opacity = 0.4;
-            stkRep2.Opacity = 0.4;
-            stkRep3.Opacity = 1;
+            stackRep1.Opacity = 0.4;
+            stackRep2.Opacity = 0.4;
+            stackRep3.Opacity = 1;
         }
 
 
-        private void btnDiff1_Clicked(object sender, EventArgs e)
+        private void BtnDiff1_Clicked(object sender, EventArgs e)
         {
             _ChosenDifficultyState = 0;
-            stkDiff1.Opacity = 1;
-            stkDiff2.Opacity = 0.4;
-            stkDiff3.Opacity = 0.4;
+            stackDiff1.Opacity = 1;
+            stackDiff2.Opacity = 0.4;
+            stackDiff3.Opacity = 0.4;
         }
 
-        private void btnDiff2_Clicked(object sender, EventArgs e)
+        private void BtnDiff2_Clicked(object sender, EventArgs e)
         {
 
             _ChosenDifficultyState = 1;
-            stkDiff1.Opacity = 0.4;
-            stkDiff2.Opacity = 1;
-            stkDiff3.Opacity = 0.4;
+            stackDiff1.Opacity = 0.4;
+            stackDiff2.Opacity = 1;
+            stackDiff3.Opacity = 0.4;
         }
 
-        private void btnDiff3_Clicked(object sender, EventArgs e)
+        private void BtnDiff3_Clicked(object sender, EventArgs e)
         {
 
             _ChosenDifficultyState = 2;
-            stkDiff1.Opacity = 0.4;
-            stkDiff2.Opacity = 0.4;
-            stkDiff3.Opacity = 1;
+            stackDiff1.Opacity = 0.4;
+            stackDiff2.Opacity = 0.4;
+            stackDiff3.Opacity = 1;
         }
 
 
-        private async void btnConfirm_Clicked(object sender, EventArgs e)
+        private async void BtnConfirm_Clicked(object sender, EventArgs e)
         {
 
             if (_ChosenDifficultyState != 4)
@@ -241,14 +242,14 @@ namespace StreetWorkoutV2.View
                     await btnConfirm.FadeTo(1, 75);
                     popSelectDetails.IsEnabled = false;
                     popSelectDetails.IsVisible = false;
-                    stkRep1.Opacity = 1;
-                    stkRep2.Opacity = 1;
-                    stkRep3.Opacity = 1;
-                    stkDiff1.Opacity = 1;
-                    stkDiff2.Opacity = 1;
-                    stkDiff3.Opacity = 1;
+                    stackRep1.Opacity = 1;
+                    stackRep2.Opacity = 1;
+                    stackRep3.Opacity = 1;
+                    stackDiff1.Opacity = 1;
+                    stackDiff2.Opacity = 1;
+                    stackDiff3.Opacity = 1;
 
-                    
+
                     await Navigation.PushAsync(new ExercisePage(_TappedExercise, _ChosenRepetitionState, _ChosenDifficultyState, "1/3"));
                 }
             }

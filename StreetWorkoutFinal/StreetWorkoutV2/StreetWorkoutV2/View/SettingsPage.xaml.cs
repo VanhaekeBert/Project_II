@@ -95,24 +95,24 @@ namespace StreetWorkoutV2.View
             //};
 
 
-            FraWWR.GestureRecognizers.Add(new TapGestureRecognizer
+            framePasswordReset.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
-                    await FraWWR.FadeTo(0.5, 100);
-                    FraWWR.FadeTo(1, 75);
+                    await framePasswordReset.FadeTo(0.5, 100);
+                    framePasswordReset.FadeTo(1, 75);
                     await Navigation.PushAsync(new PasswordResetPage());
                 })
             });
 
-            FraAD.GestureRecognizers.Add(new TapGestureRecognizer
+            frameDeleteAccount.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
                     if (Connection.CheckConnection())
                     {
-                        await FraAD.FadeTo(0.5, 100);
-                        FraAD.FadeTo(1, 75);
+                        await frameDeleteAccount.FadeTo(0.5, 100);
+                        frameDeleteAccount.FadeTo(1, 75);
                         await Navigation.PushPopupAsync(new PopUpAccountDelete());
                     }
                     else

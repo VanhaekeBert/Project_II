@@ -16,9 +16,10 @@ using Xamarin.Forms.Platform.Android;
 
 namespace StreetWorkoutV2.Droid
 {
-    public class MaterialFrameRenderer: Xamarin.Forms.Platform.Android.AppCompat.FrameRenderer
+#pragma warning disable CS0618 // Type or member is obsolete
+    public class MaterialFrameRenderer : Xamarin.Forms.Platform.Android.AppCompat.FrameRenderer
     {
-  
+
 
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
@@ -51,4 +52,5 @@ namespace StreetWorkoutV2.Droid
             }
         }
     }
+#pragma warning restore CS0618 // Type or member is obsolete
 }

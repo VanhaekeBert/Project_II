@@ -7,9 +7,8 @@
     xmlns:custom="clr-namespace:StreetWorkoutV2"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="StreetWorkoutV2.View.DashboardPage"
-             NavigationPage.HasNavigationBar="False"
-    BackgroundColor="{StaticResource MainDarkColor}"
-             >
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="{StaticResource MainDarkColor}">
     <controls:AnimationPage.PageAnimation>
         <controls:EmptyPageAnimation  Duration="Zero" Type="Empty"/>
     </controls:AnimationPage.PageAnimation>
@@ -22,8 +21,9 @@
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"></ff:CachedImage>
             <!-- ================= -->
-            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="7*"/>
                     <RowDefinition Height="16*"/>
@@ -41,16 +41,14 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <custom:CustomFrame x:Name="frameLog" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0">
-                        <renderers:GradientLayout
-                                            ColorsList="#ee7345,#ee4b66"
-                                            Mode="ToTopLeft">
+                        <renderers:GradientLayout ColorsList="#ee7345,#ee4b66" Mode="ToTopLeft">
                             <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                 <Image   x:Name="imgLog" HeightRequest="38" Margin="15,0,10,0"/>
                                 <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
                                     <Label TextColor="White">
                                         <Label.FormattedText >
                                             <FormattedString>
-                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblLogs"/>
+                                                <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblLogs"/>
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=" logs"/>
                                             </FormattedString>
                                         </Label.FormattedText>
@@ -61,9 +59,7 @@
                         </renderers:GradientLayout>
                     </custom:CustomFrame>
                     <custom:CustomFrame  x:Name="frameWater" CornerRadius="10"  Grid.Column="1"  HorizontalOptions="Fill" HeightRequest="110"  Padding="0">
-                        <renderers:GradientLayout
-                                            ColorsList="#447DEE,#44C5EE"
-                                            Mode="ToTopLeft">
+                        <renderers:GradientLayout ColorsList="#447DEE,#44C5EE" Mode="ToTopLeft">
                             <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand"  >
                                 <Image   x:Name="imgWater" HeightRequest="36" Margin="15,0,10,0"/>
                                 <StackLayout  Spacing="0"  VerticalOptions="CenterAndExpand">
@@ -72,7 +68,7 @@
                                             <FormattedString>
                                                 <Span x:Name="lblWaterGedronken" FontSize="17" FontFamily="{StaticResource BoldFont}" Text="0"/>
                                                 <Span  FontSize="17" FontFamily="{StaticResource BoldFont}" Text=" / " />
-                                                <Span x:Name="lblWaterTotaal" FontSize="17" FontFamily="{StaticResource BoldFont}" Text="0" />
+                                                <Span x:Name="lblWaterTotal" FontSize="17" FontFamily="{StaticResource BoldFont}" Text="0" />
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text="ml"/>
                                             </FormattedString>
                                         </Label.FormattedText>
@@ -119,16 +115,14 @@
             </Grid>
             <!--Popup-->
             <StackLayout x:Name="popWater" IsVisible="False" IsEnabled="False" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                  
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="0">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame  x:Name="innerPopWater" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" HeightRequest="270"  Padding="0" >
-                        <renderers:GradientLayout
-                                            ColorsList="#448CEE,#44C5EE"
-                                            Mode="ToTopLeft">
+                    <Frame x:Name="frameInnerPopWater" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" HeightRequest="270"  Padding="0" >
+                        <renderers:GradientLayout ColorsList="#448CEE,#44C5EE" Mode="ToTopLeft">
                             <Grid ColumnSpacing="6" VerticalOptions="StartAndExpand">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" ></ColumnDefinition>
@@ -144,17 +138,17 @@
                                     <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1"  HeightRequest="36" Text="0" x:Name="TotalWater" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Darkcolor}" FontSize="14" Margin="0,3,0,8" Keyboard="Numeric" FontFamily="{StaticResource NormalFont}"  HorizontalTextAlignment="Center"/>
                                     <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,-2,12,0" VerticalOptions="Center" Text="ml" FontFamily="{StaticResource Darkcolor}"/>
                                 </Grid>
-                                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0" x:Name="click_one_glass">
+                                <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="0" x:Name="stackGlassOne">
                                     <!--<Image/>-->
-                                    <ff:CachedImage  x:Name="one_glass" HorizontalOptions="Center" HeightRequest="60" />
+                                    <ff:CachedImage  x:Name="imgGlassOne" HorizontalOptions="Center" HeightRequest="60" />
                                     <Label Text="250ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
-                                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="0" x:Name="click_two_glass">
-                                    <ff:CachedImage x:Name="two_glass" HorizontalOptions="Center" HeightRequest="60"/>
+                                <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="0" x:Name="stackGlassTwo">
+                                    <ff:CachedImage x:Name="imgGlassTwo" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="500ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
-                                <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Spacing="0" x:Name="click_four_glass">
-                                    <ff:CachedImage x:Name="four_glass" HorizontalOptions="Center" HeightRequest="60"/>
+                                <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Spacing="0" x:Name="stackGlassFour">
+                                    <ff:CachedImage x:Name="imgGlassFour" HorizontalOptions="Center" HeightRequest="60"/>
                                     <Label Text="1000ml" TextColor="{StaticResource LightColor}" FontSize="20" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" HeightRequest="45"/>
                                 </StackLayout>
                                 <Button Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="Center" HeightRequest="40" WidthRequest="145" HorizontalOptions="Center" Text="Bevestigen" BorderRadius="100" BackgroundColor="Transparent" BorderColor="{StaticResource LightColor}" FontSize="18" BorderWidth="2" x:Name="SubmitWaterInput" TextColor="{StaticResource LightColor}" FontFamily="{StaticResource NormalFont}" Clicked="SubmitWaterInput_Clicked"/>
@@ -166,10 +160,10 @@
             </StackLayout>
             <!--<PopUps>-->
             <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                 
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="0">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
                     <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
@@ -182,10 +176,10 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="popNoConnectionQR" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                  
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="0">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
                     <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
@@ -198,10 +192,10 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="popNoConnectionWater" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                  
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="0">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
                     <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">

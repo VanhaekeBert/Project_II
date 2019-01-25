@@ -132,30 +132,30 @@ namespace StreetWorkoutV2.View
             SlideshowToggle_Start.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Play.png");
             TapGestureRecognizer Slideshow_Gesture = new TapGestureRecognizer
             {
-                Command = new Command(async () =>
-                {
+                Command = new Command(() =>
+               {
 
-                    _isSlideshowRunning = !_isSlideshowRunning;
-                    if (_isSlideshowRunning)
-                    {
-                        SlideshowToggle_Stop.IsEnabled = true;
-                        SlideshowToggle_Stop.IsVisible = true;
-                        SlideshowToggle_Start.IsEnabled = false;
-                        SlideshowToggle_Start.IsVisible = false;
-                        RunSlideshow();
-
-
-                    }
-                    else
-                    {
-                        SlideshowToggle_Start.IsEnabled = true;
-                        SlideshowToggle_Start.IsVisible = true;
-                        SlideshowToggle_Stop.IsEnabled = false;
-                        SlideshowToggle_Stop.IsVisible = false;
+                   _isSlideshowRunning = !_isSlideshowRunning;
+                   if (_isSlideshowRunning)
+                   {
+                       SlideshowToggle_Stop.IsEnabled = true;
+                       SlideshowToggle_Stop.IsVisible = true;
+                       SlideshowToggle_Start.IsEnabled = false;
+                       SlideshowToggle_Start.IsVisible = false;
+                       RunSlideshow();
 
 
-                    }
-                })
+                   }
+                   else
+                   {
+                       SlideshowToggle_Start.IsEnabled = true;
+                       SlideshowToggle_Start.IsVisible = true;
+                       SlideshowToggle_Stop.IsEnabled = false;
+                       SlideshowToggle_Stop.IsVisible = false;
+
+
+                   }
+               })
             };
             if (!Preferences.Get("Difficulty", "").Contains("3x"))
             {
@@ -213,12 +213,8 @@ namespace StreetWorkoutV2.View
                     else
                     {
                         imgExerciseSwap.IsVisible = false;
-
                     }
-
-
                 });
-
                 return _isSlideshowRunning;
             });
         }
@@ -253,5 +249,5 @@ namespace StreetWorkoutV2.View
                 await Navigation.PushAsync(new ExerciseCompletePage(_CurrentExercise, _Repetitions));
             }
         }
-    } }
- 
+    }
+}

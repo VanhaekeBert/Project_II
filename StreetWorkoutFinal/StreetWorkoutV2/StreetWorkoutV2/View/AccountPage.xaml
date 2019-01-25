@@ -6,27 +6,27 @@
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
     xmlns:local="clr-namespace:StreetWorkoutV2.Model"
     xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
-             x:Class="StreetWorkoutV2.View.AccountPage"
+    x:Class="StreetWorkoutV2.View.AccountPage"
     xmlns:local1="clr-namespace:StreetWorkoutV2"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             NavigationPage.HasNavigationBar="False"
-        BackgroundColor="{StaticResource MainDarkColor}"
->
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="{StaticResource MainDarkColor}">
     <controls:AnimationPage.PageAnimation>
         <controls:EmptyPageAnimation  Duration="Long" Type="Fade"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
-        <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+        <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             <ScrollView x:Name="MainScroll">
                 <RelativeLayout Padding="0">
                     <ff:CachedImage                        
                         x:Name="imgBackground"
-                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-341}"
-        RelativeLayout.WidthConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
-        RelativeLayout.HeightConstraint="{ConstraintExpression            Type=RelativeToParent,Property=Height,Factor=1,Constant=10}"
-                  />
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-341}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=10}"
+                    />
                     <!-- ================= -->
                     <StackLayout Spacing="0" Margin="24,16,24,24">
                         <!-- Icon + Naam-->
@@ -44,8 +44,8 @@
                             </ff:CachedImage>
                             <Image Grid.Row="0" x:Name="imgSelector" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="40" Margin="72,0,0,0"/>
                             <Grid Grid.Row="1">
-                                <local1:CustomSmallEntry x:Name="NameChangeEntry" Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5"  HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
-                                <StackLayout  x:Name="NameChanger" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                                <local1:CustomSmallEntry x:Name="entryNameChange" Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5"  HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
+                                <StackLayout  x:Name="stackNameChanger" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
                                     <Label x:Name="lblUsername" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text=""  TextColor="White" Margin="23,16,0,0"/>
                                     <ff:CachedImage x:Name="imgPencil" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
                                 </StackLayout>
@@ -53,7 +53,6 @@
                         </Grid>
                         <!-- Historiek-->
                         <StackLayout Spacing="0">
-                          
                             <Frame CornerRadius="10" HeightRequest="200" Padding="0" Margin="0,24,0,24">
                                 <Grid>
                                     <renderers:GradientLayout
@@ -65,7 +64,7 @@
                                         </StackLayout>
                                         <!-- Grafiek-->
                                     </renderers:GradientLayout>
-                                    <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="LblDataOef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
+                                    <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="lblDataOef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
                                 </Grid>
                             </Frame>
                             <!--Aantal oef per week-->
@@ -84,7 +83,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblOefWeek"/>
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblOefWeek"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
@@ -110,7 +109,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblOefMaand"/>
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblOefMaand"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
@@ -127,12 +126,12 @@
                                             ColorsList="#484E6D,#2F344E"
                                             Mode="ToTopLeft">
                                         <StackLayout VerticalOptions="Start" Spacing="0" Margin="0,24,0,24">
-                                            <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="water gedronken / dag" TextColor="White"/>
+                                            <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Water gedronken / dag" TextColor="White"/>
                                             <forms:ChartView x:Name="chartWater" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
                                         </StackLayout>
                                         <!-- Grafiek-->
                                     </renderers:GradientLayout>
-                                    <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="LblDataWater" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
+                                    <Label Text="Geen data beschikbaar" IsVisible="False" x:Name="lblDataWater" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="{StaticResource NormalFont}" TextColor="White" FontSize="24"/>
                                 </Grid>
                             </Frame>
                             <!--Aantal water per week-->
@@ -151,7 +150,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblWaterWeek"/>
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblWaterWeek"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
@@ -177,7 +176,7 @@
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
                                                         <FormattedString>
-                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="LblWaterMaand"/>
+                                                            <Span FontSize="18" FontFamily="{StaticResource BoldFont}" Text="--" x:Name="lblWaterMaand"/>
                                                             <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text=""/>
                                                         </FormattedString>
                                                     </Label.FormattedText>
@@ -233,11 +232,12 @@
                 </RelativeLayout>
             </ScrollView>
             <!--<PopUps>-->
-            <StackLayout x:Name="popNoConnectionProfilePicture" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="popNoConnectionProfilePicture" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000"
+                RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="0">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
                     <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
@@ -250,10 +250,10 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                  
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="0">
                 <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
                     <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">

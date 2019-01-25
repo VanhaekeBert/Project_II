@@ -31,7 +31,7 @@ namespace StreetWorkoutV2.View
             _Difficulty = Difficulty;
             _Repetitions = Repetitions;
 
-            
+
 
             if (_CurrentProgress == "1/3")
             {
@@ -43,7 +43,7 @@ namespace StreetWorkoutV2.View
             }
 
             lblProgress.Text = _CurrentProgress;
-       
+
 
             if (_CurrentExercise.Herhalingen.Count == 0)
             {
@@ -61,7 +61,8 @@ namespace StreetWorkoutV2.View
             frameNextExercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     if (inputRepetitions.Text != "")
                     {
                         if (inputRepetitions.Text.Contains("-") || inputRepetitions.Text.Contains(".") || inputRepetitions.Text.Contains(","))
@@ -83,22 +84,18 @@ namespace StreetWorkoutV2.View
                                 Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                             }
                             lblCheckEntry.Text = "";
-                         
+
                             await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                         }
                     }
                     else
                     {
-                      
                         Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
                         Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                     }
-                    
                 })
             });
-
-
             int TimeKeeper = 0;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -106,7 +103,6 @@ namespace StreetWorkoutV2.View
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     lblTimerText.Text = (TimeKeeper / 60).ToString("00") + " : " + (TimeKeeper % 60).ToString("00") + " /  01 : 00 ";
-
                     TimerBarInner.Progress = ((100.0 / 60.0) * TimeKeeper) / 100.0;
                 });
                 if (TimeKeeper == 60)
@@ -116,11 +112,7 @@ namespace StreetWorkoutV2.View
                 }
                 return true;
             });
-
-
-
         }
-
         protected override bool OnBackButtonPressed()
         {
             return true;

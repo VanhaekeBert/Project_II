@@ -47,9 +47,9 @@
                 </Frame>
                 <ScrollView Grid.Row="3" Margin="0,-40,0,0">
                     <StackLayout>
-                        <ListView Margin="24,0,24,0" x:Name="lvwDag1" HasUnevenRows="True" VerticalOptions="FillAndExpand" IsVisible="False">
+                        <ListView Margin="24,0,24,0" x:Name="lvwDay1" HasUnevenRows="True" VerticalOptions="FillAndExpand" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag1" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay1" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag1">
@@ -66,7 +66,7 @@
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
                                                             <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
-                                                          
+
                                                         </StackLayout>
                                                         <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
@@ -112,9 +112,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0"  x:Name="lvwDag2" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0"  x:Name="lvwDay2" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag2" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay2" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag2">
@@ -177,9 +177,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0" x:Name="lvwDag3" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDay3" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag3" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay3" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag3">
@@ -242,9 +242,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0" x:Name="lvwDag4" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDay4" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag4" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay4" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag4">
@@ -307,9 +307,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0" x:Name="lvwDag5" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDay5" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag5" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay5" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag5">
@@ -372,9 +372,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0" x:Name="lvwDag6" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDay6" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag6" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay6" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag6">
@@ -437,9 +437,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <ListView Margin="24,24,24,0" x:Name="lvwDag7" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
+                        <ListView Margin="24,24,24,0" x:Name="lvwDay7" HasUnevenRows="True" VerticalOptions="Start" IsVisible="False">
                             <ListView.Header>
-                                <Label x:Name="lblDag7" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
+                                <Label x:Name="lblDay7" Margin="0,0,0,8" FontFamily="{StaticResource BoldFont}" FontSize="30" TextColor="{StaticResource LightColor}"/>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate x:Name="DtDag7">

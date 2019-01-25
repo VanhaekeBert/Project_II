@@ -21,16 +21,16 @@ namespace StreetWorkoutV2.View
     public partial class PickerPage : AnimationPage
     {
         PickerClass _SelectedItem = new PickerClass();
-        List<Oefening> _Oefeningslijst = new List<Oefening>();
-        string _json;
-        public PickerPage(string uitvoering)
+        List<Oefening> _ExerciseList = new List<Oefening>();
+      //  string _json;
+        public PickerPage(string pickerType)
         {
 
             InitializeComponent();
             Task.Run(async () =>
             {
-                JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
-                var jsonToSaveValue = JsonConvert.SerializeObject(oefeningen);
+                JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                var jsonToSaveValue = JsonConvert.SerializeObject(exercises);
                 Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
             });
 
@@ -42,34 +42,34 @@ namespace StreetWorkoutV2.View
             Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.oefeningenV2.json");
             StreamReader oSR = new StreamReader(stream);
             string json = oSR.ReadToEnd();
-            _Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
+            _ExerciseList = JsonConvert.DeserializeObject<List<Oefening>>(json);
             //-----------------------------------------------
-            if (uitvoering == "Toestel")
+            if (pickerType == "Toestel")
             {
                 //-----TOESTEL---------------------
 
-                List<string> Filteredlisttoestel = new List<string>();
-                Dictionary<string, int> Toestel = new Dictionary<string, int>();
+                List<string> filteredDeviceList = new List<string>();
+                Dictionary<string, int> Device = new Dictionary<string, int>();
                 lblTitle.Text = "Toestellen";
-                foreach (Oefening oefening in _Oefeningslijst)
+                foreach (Oefening exercise in _ExerciseList)
                 {
-                    PickerClass toestel = new PickerClass() { Name = oefening.Toestel };
-                    if (!Filteredlisttoestel.Contains(toestel.Name))
+                    PickerClass pickerDevice = new PickerClass() { Name = exercise.Toestel };
+                    if (!filteredDeviceList.Contains(pickerDevice.Name))
                     {
-                        Filteredlisttoestel.Add(toestel.Name);
-                        Toestel.Add(toestel.Name, toestel.AantalOefeningen);
+                        filteredDeviceList.Add(pickerDevice.Name);
+                        Device.Add(pickerDevice.Name, pickerDevice.AantalOefeningen);
                     }
                     else
                     {
-                        Toestel[toestel.Name] += 1;
+                        Device[pickerDevice.Name] += 1;
                     }
                 }
                 List<PickerClass> deviceList = new List<PickerClass>();
 
-                foreach (var toestel in Toestel)
+                foreach (var toestel in Device)
                 {
-                    PickerClass toestelname = new PickerClass() { Name = toestel.Key, AantalOefeningen = toestel.Value, Type = "Toestel" };
-                    deviceList.Add(toestelname);
+                    PickerClass deviceName = new PickerClass() { Name = toestel.Key, AantalOefeningen = toestel.Value, Type = "Toestel" };
+                    deviceList.Add(deviceName);
                 }
                 lvwDevices.ItemsSource = deviceList;
                 //----------------------------------------------------------
@@ -79,25 +79,25 @@ namespace StreetWorkoutV2.View
             {
                 //-----SPIER---------------------
 
-                List<string> Filteredlisttoestel = new List<string>();
-                Dictionary<string, int> MuscleGroupSet = new Dictionary<string, int>();
+                List<string> filteredDeviceList = new List<string>();
+                Dictionary<string, int> muscleGroupSet = new Dictionary<string, int>();
                 lblTitle.Text = "Spiergroepen";
-                foreach (Oefening oefening in _Oefeningslijst)
+                foreach (Oefening oefening in _ExerciseList)
                 {
                     PickerClass muscleGroup = new PickerClass() { Name = oefening.Spiergroep };
-                    if (!Filteredlisttoestel.Contains(muscleGroup.Name))
+                    if (!filteredDeviceList.Contains(muscleGroup.Name))
                     {
-                        Filteredlisttoestel.Add(muscleGroup.Name);
-                        MuscleGroupSet.Add(muscleGroup.Name, muscleGroup.AantalOefeningen);
+                        filteredDeviceList.Add(muscleGroup.Name);
+                        muscleGroupSet.Add(muscleGroup.Name, muscleGroup.AantalOefeningen);
                     }
                     else
                     {
-                        MuscleGroupSet[muscleGroup.Name] += 1;
+                        muscleGroupSet[muscleGroup.Name] += 1;
                     }
                 }
                 List<PickerClass> muscleList = new List<PickerClass>();
 
-                foreach (var muscleGroup in MuscleGroupSet)
+                foreach (var muscleGroup in muscleGroupSet)
                 {
                     PickerClass muscleName = new PickerClass() { Name = muscleGroup.Key, AantalOefeningen = muscleGroup.Value, Type = "Spiergroep" };
                     muscleList.Add(muscleName);
@@ -117,18 +117,13 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-
-
-
             lvwDevices.ItemTapped += async (o, e) =>
             {
                 var myList = (ListView)o;
                 _SelectedItem = (myList.SelectedItem as PickerClass);
                 List<Oefening> PassList = new List<Oefening>();
 
-
-
-                foreach (Oefening oefening in _Oefeningslijst)
+                foreach (Oefening oefening in _ExerciseList)
                 {
                    
                     if (oefening.Spiergroep == _SelectedItem.Name)
@@ -141,14 +136,8 @@ namespace StreetWorkoutV2.View
                         PassList.Add(oefening);
                     }
                 }
-
-
-
-
-
                 await Navigation.PushAsync(new ExerciseListPage(PassList));
                 myList.SelectedItem = null;
-
             };
 
 

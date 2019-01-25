@@ -20,7 +20,7 @@ namespace StreetWorkoutV2.View
     public partial class DashboardPage : AnimationPage
     {
 
-        string _result;
+      //  string _result;
         public DashboardPage()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace StreetWorkoutV2.View
             });
             MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender,arg) =>
             {
-                lblWaterTotaal.Text =arg;
+                lblWaterTotal.Text =arg;
 
             });
             MessagingCenter.Subscribe<AccountPage, string>(this, "PassName", (sender,arg) =>
@@ -63,58 +63,58 @@ namespace StreetWorkoutV2.View
 
             MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
             {
-                List<OefeningDB> listweekOef = new List<OefeningDB>();
+                List<OefeningDB> weekExercise = new List<OefeningDB>();
                 if (arg != "[]")
                 {
-                    var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<OefeningDB> oefeningen = new List<OefeningDB>();
-                    for (int i = 0; i < rawOefeningen.Count(); i++)
+                    var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                    List<OefeningDB> exercises = new List<OefeningDB>();
+                    for (int i = 0; i < exercisesRaw.Count(); i++)
                     {
                         if (i == 0)
                         {
-                            oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString() + "}"));
+                            exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
                         }
-                        else if (i != (rawOefeningen.Count() - 1))
+                        else if (i != (exercisesRaw.Count() - 1))
                         {
-                            oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                            exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                         }
                     }
-                    foreach (OefeningDB oefening in oefeningen)
+                    foreach (OefeningDB oefening in exercises)
                     {
                         if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
                         {
-                            listweekOef.Add(oefening);
+                            weekExercise.Add(oefening);
                         }
                     }
                 }
-                LblLogs.Text = listweekOef.Count().ToString();
+                lblLogs.Text = weekExercise.Count().ToString();
             });
 
-                List<OefeningDB> weekOef = new List<OefeningDB>();
+                List<OefeningDB> weekExerciseList = new List<OefeningDB>();
             if (Preferences.Get("Oefeningen", "") != "[]")
             {
-                var rawOefeningen = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                List<OefeningDB> oefeningen = new List<OefeningDB>();
-                for (int i = 0; i < rawOefeningen.Count(); i++)
+                var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<OefeningDB> exercises = new List<OefeningDB>();
+                for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString() + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
                     }
-                    else if (i != (rawOefeningen.Count() - 1))
+                    else if (i != (exercisesRaw.Count() - 1))
                     {
-                        oefeningen.Add(JsonConvert.DeserializeObject<OefeningDB>(rawOefeningen[i].ToString().Remove(0, 1) + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
-                foreach (OefeningDB oefening in oefeningen)
+                foreach (OefeningDB oefening in exercises)
                 {
                     if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
                     {
-                        weekOef.Add(oefening);
+                        weekExerciseList.Add(oefening);
                     }
                 }
             }
-            LblLogs.Text = weekOef.Count().ToString();
+            lblLogs.Text = weekExerciseList.Count().ToString();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");
             imgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
@@ -124,17 +124,17 @@ namespace StreetWorkoutV2.View
             imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
             lblWelcome.Text = "Welkom " + Preferences.Get("ApiNaam", "");
-            one_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
-            two_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
-            four_glass.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
-            if (Preferences.Get("WaterDoel", 0) != null)
-            {
-                if (Preferences.Get("WaterGedronken", 0) != null)
-                {
+            imgGlassOne.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
+            imgGlassTwo.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
+            imgGlassFour.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
+          //  if (Preferences.Get("WaterDoel", 0) != null)
+          //  {
+               // if (Preferences.Get("WaterGedronken", 0) != null)
+               // {
                     lblWaterGedronken.Text = Preferences.Get("WaterGedronken", 0).ToString();
-                }
-                lblWaterTotaal.Text = Preferences.Get("WaterDoel", 0).ToString();
-            }
+               // }
+                lblWaterTotal.Text = Preferences.Get("WaterDoel", 0).ToString();
+         //   }
 
 
             frameWater.GestureRecognizers.Add(new TapGestureRecognizer
@@ -161,7 +161,7 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            innerPopWater.GestureRecognizers.Add(new TapGestureRecognizer
+            frameInnerPopWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command( () =>
                 {
@@ -224,41 +224,41 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            click_one_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            stackGlassOne.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
-                    await click_one_glass.FadeTo(0.3, 75);
+                    await stackGlassOne.FadeTo(0.3, 75);
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 250;
                     TotalWater.Text = Water_update.ToString();
-                    await click_one_glass.FadeTo(1, 75);
+                    await stackGlassOne.FadeTo(1, 75);
 
                 })
             });
 
-            click_two_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            stackGlassTwo.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
-                    await click_two_glass.FadeTo(0.3, 75);
+                    await stackGlassTwo.FadeTo(0.3, 75);
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 500;
                     TotalWater.Text = Water_update.ToString();
-                    await click_two_glass.FadeTo(1, 75);
+                    await stackGlassTwo.FadeTo(1, 75);
 
                 })
             });
 
-            click_four_glass.GestureRecognizers.Add(new TapGestureRecognizer
+            stackGlassFour.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
-                    await click_four_glass.FadeTo(0.3, 75);
+                    await stackGlassFour.FadeTo(0.3, 75);
                     int Water_now = int.Parse(TotalWater.Text);
                     int Water_update = Water_now + 1000;
                     TotalWater.Text = Water_update.ToString();
-                    await click_four_glass.FadeTo(1, 75);
+                    await stackGlassFour.FadeTo(1, 75);
 
                 })
             });

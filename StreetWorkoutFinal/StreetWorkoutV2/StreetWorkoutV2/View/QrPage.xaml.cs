@@ -131,6 +131,7 @@ namespace StreetWorkoutV2.View
             }
             catch (Exception ex)
             {
+
             }
 
         }

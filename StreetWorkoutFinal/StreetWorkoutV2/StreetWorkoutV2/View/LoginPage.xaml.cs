@@ -26,18 +26,20 @@ namespace StreetWorkoutV2.View
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
-            PasswordEntry.IsPassword = true;
+            entryPassword.IsPassword = true;
 
             Password_reset.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     await Navigation.PushAsync(new ForgotPasswordPage());
                 })
             });
 
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
 
                     await Navigation.PushAsync(new RegisterPage());
                 })
@@ -45,21 +47,22 @@ namespace StreetWorkoutV2.View
 
             eyeimage.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
-                    if (PasswordEntry.IsPassword == true)
+                Command = new Command(() =>
+                {
+                    if (entryPassword.IsPassword == true)
                     {
-                        PasswordEntry.IsPassword = false;
+                        entryPassword.IsPassword = false;
                         eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
                     }
                     else
                     {
-                        PasswordEntry.IsPassword = true;
+                        entryPassword.IsPassword = true;
                         eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
                     }
                 })
             });
         }
-        
+
         protected override bool OnBackButtonPressed()
         {
             return true;
@@ -70,71 +73,71 @@ namespace StreetWorkoutV2.View
             if (Connection.CheckConnection())
             {
                 LoadingIndicator.IsRunning = false;
-            lblError.IsVisible = true;
-            if (PasswordEntry.Text != null && UserNameEntry.Text != null)
-            {
-                LoadingIndicator.IsRunning = true;
-
-                bool Login = await DBManager.LoginAsync(UserNameEntry.Text.Replace(" ", ""), DBManager.Encrypt(PasswordEntry.Text));
-                if (Login)
+                lblError.IsVisible = true;
+                if (entryPassword.Text != null && entryUserName.Text != null)
                 {
-                    JObject gebruiker = await DBManager.GetUserData(UserNameEntry.Text.Replace(" ", ""), "Naam");
-                    JArray oefeningen = await DBManager.GetOefeningenData(UserNameEntry.Text.Replace(" ", ""));
-                    JArray water = await DBManager.GetWater(UserNameEntry.Text.Replace(" ", ""));
-                    var latestWater = await DBManager.GetLatestWater(UserNameEntry.Text.Replace(" ", ""));
-                    if (latestWater != null)
+                    LoadingIndicator.IsRunning = true;
+
+                    bool Login = await DBManager.LoginAsync(entryUserName.Text.Replace(" ", ""), DBManager.Encrypt(entryPassword.Text));
+                    if (Login)
                     {
-                        DateTime datum = (DateTime)latestWater["Datum"];
-                        if (datum.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
+                        JObject user = await DBManager.GetUserData(entryUserName.Text.Replace(" ", ""), "Naam");
+                        JArray exercises = await DBManager.GetOefeningenData(entryUserName.Text.Replace(" ", ""));
+                        JArray water = await DBManager.GetWater(entryUserName.Text.Replace(" ", ""));
+                        var latestWater = await DBManager.GetLatestWater(entryUserName.Text.Replace(" ", ""));
+                        if (latestWater != null)
                         {
-                            Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
-                            Preferences.Set("WaterGedronken", int.Parse(latestWater["WaterGedronken"].ToString()));
+                            DateTime date = (DateTime)latestWater["Datum"];
+                            if (date.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
+                            {
+                                Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
+                                Preferences.Set("WaterGedronken", int.Parse(latestWater["WaterGedronken"].ToString()));
+                            }
+                            else
+                            {
+                                DBManager.PostWater(entryUserName.Text.Replace(" ", ""), int.Parse(latestWater["WaterDoel"].ToString()), 0);
+                                Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
+                                Preferences.Set("WaterGedronken", 0);
+                            }
                         }
                         else
                         {
-                            DBManager.PostWater(UserNameEntry.Text.Replace(" ", ""), int.Parse(latestWater["WaterDoel"].ToString()), 0);
-                            Preferences.Set("WaterDoel", int.Parse(latestWater["WaterDoel"].ToString()));
+                            DBManager.PostWater(entryUserName.Text.Replace(" ", ""), 0, 0);
+                            Preferences.Set("WaterDoel", 0);
                             Preferences.Set("WaterGedronken", 0);
                         }
+                        var waterTojson = JsonConvert.SerializeObject(water);
+                        var exerciseTojson = JsonConvert.SerializeObject(exercises);
+                        Preferences.Set("Naam", user["Naam"].ToString());
+                        Preferences.Set("ApiNaam", user["ApiNaam"].ToString());
+                        Preferences.Set("Email", user["Email"].ToString());
+                        Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
+                        Preferences.Set("Lengte", user["Lengte"].ToString());
+                        Preferences.Set("Gewicht", user["Gewicht"].ToString());
+                        Preferences.Set("API", user["API"].ToString());
+                        Preferences.Set("Oefeningen", exerciseTojson.ToString());
+                        Preferences.Set("Water", waterTojson.ToString());
+                        await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                     }
                     else
                     {
-                        DBManager.PostWater(UserNameEntry.Text.Replace(" ", ""), 0, 0);
-                        Preferences.Set("WaterDoel", 0);
-                        Preferences.Set("WaterGedronken", 0);
+                        lblError.Text = "Onjuiste ingave.";
+                        lblError.IsVisible = true;
+                        LoadingIndicator.IsRunning = false;
                     }
-                    var waterTojson = JsonConvert.SerializeObject(water);
-                    var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
-                    Preferences.Set("Naam", gebruiker["Naam"].ToString());
-                    Preferences.Set("ApiNaam", gebruiker["ApiNaam"].ToString());
-                    Preferences.Set("Email", gebruiker["Email"].ToString());
-                    Preferences.Set("Leeftijd", gebruiker["Leeftijd"].ToString());
-                    Preferences.Set("Lengte", gebruiker["Lengte"].ToString());
-                    Preferences.Set("Gewicht", gebruiker["Gewicht"].ToString());
-                    Preferences.Set("API", gebruiker["API"].ToString());
-                    Preferences.Set("Oefeningen", oefeningTojson.ToString());
-                    Preferences.Set("Water", waterTojson.ToString());
-                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else
                 {
-                    lblError.Text = "Onjuiste ingave.";
+                    lblError.Text = "Vul alle gegevens in.";
                     lblError.IsVisible = true;
                     LoadingIndicator.IsRunning = false;
                 }
             }
             else
             {
-                lblError.Text = "Vul alle gegevens in.";
-                lblError.IsVisible = true;
-                LoadingIndicator.IsRunning = false;
-            }
-        }
-            else
-            {
                 lblError.Text = "Oeps, zorg voor een internetverbinding.";
                 lblError.IsVisible = true;
             }
-}
+        }
     }
 }

@@ -22,8 +22,8 @@ namespace StreetWorkoutV2.View
     public partial class ExerciseCompletePage : AnimationPage
     {
         string _Repetitions;
-       // private string _KcalAPI = "0";
-        public ExerciseCompletePage(Oefening Exercise,int Repetitions)
+        // private string _KcalAPI = "0";
+        public ExerciseCompletePage(Oefening Exercise, int Repetitions)
         {
             InitializeComponent();
             popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
@@ -86,88 +86,88 @@ namespace StreetWorkoutV2.View
             this.BackgroundColor = Color.FromHex("2B3049");
 
             //houd  rating bij tussen 1-5 (wordt nog niets mee gedaan )
-            int rating;
+          //  int rating;
 
             imgRatingHeart1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate1Star();
-                    rating = 1;
+                   // rating = 1;
                 })
             });
             imgRatingHeart2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate2Stars();
-                    rating = 2;
+                   // rating = 2;
                 })
             });
             imgRatingHeart3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate3Stars();
-                    rating = 3;
+                  //  rating = 3;
                 })
             });
             imgRatingHeart4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate4Stars();
-                    rating = 4;
+                   // rating = 4;
                 })
             });
             imgRatingHeart5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate5Stars();
-                    rating = 5;
+                   // rating = 5;
                 })
             });
 
             imgRatingHeartFull1.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate1Star();
-                    rating = 1;
+                   // rating = 1;
                 })
             });
             imgRatingHeartFull2.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate2Stars();
-                    rating = 2;
+                   // rating = 2;
                 })
             });
             imgRatingHeartFull3.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate3Stars();
-                    rating = 3;
+                    //rating = 3;
 
                 })
             });
             imgRatingHeartFull4.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate4Stars();
-                    rating = 4;
+                  //  rating = 4;
                 })
             });
             imgRatingHeartFull5.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
+                Command = new Command( () =>
                 {
                     Rate5Stars();
-                    rating = 5;
+                   // rating = 5;
                 })
             });
         }
@@ -422,14 +422,14 @@ namespace StreetWorkoutV2.View
                 //}
                 //else
                 //{
-                    oefening["Kcal"] = 0;
-                    oefening["MaxHeart"] = 0;
-                    oefening["AverageHeart"] = 0;
+                oefening["Kcal"] = 0;
+                oefening["MaxHeart"] = 0;
+                oefening["AverageHeart"] = 0;
                 //}
                 await DBManager.PostOefening(oefening);
-                JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
-                var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
-                Preferences.Set("Oefeningen", oefeningTojson.ToString());
+                JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                var exercisesTojson = JsonConvert.SerializeObject(exercises);
+                Preferences.Set("Oefeningen", exercisesTojson.ToString());
                 MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
                 LoadingIndicator.IsRunning = false;
                 await btnHome.FadeTo(0.3, 75);
@@ -451,62 +451,62 @@ namespace StreetWorkoutV2.View
                 {
                     this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
                 }
-                JObject oefening = new JObject();
-                string herhalingen = "[";
-                oefening["Naam"] = Preferences.Get("Naam", "");
-                oefening["Datum"] = DateTime.Now.ToString();
-                oefening["Duur"] = Preferences.Get("WorkTime", 0);
+                JObject exercise = new JObject();
+                string repetitions = "[";
+                exercise["Naam"] = Preferences.Get("Naam", "");
+                exercise["Datum"] = DateTime.Now.ToString();
+                exercise["Duur"] = Preferences.Get("WorkTime", 0);
                 Preferences.Set("WorkTime", 0);
-                oefening["Workout"] = Preferences.Get("Workout", ""); ;
-                oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+                exercise["Workout"] = Preferences.Get("Workout", ""); ;
+                exercise["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
                 for (int i = 0; i < 3; i++)
                 {
                     if (i == 2)
                     {
-                        herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                        repetitions += Preferences.Get($"Repetition{i}", "") + "]";
                     }
                     else
                     {
-                        herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
+                        repetitions += Preferences.Get($"Repetition{i}", "") + ", ";
                     }
                 }
-                oefening["Herhalingen"] = herhalingen;
+                exercise["repetitions"] = repetitions;
                 if (imgRatingHeartFull5.IsVisible)
                 {
-                    oefening["Gevoel"] = "5";
+                    exercise["Gevoel"] = "5";
                 }
                 else if (imgRatingHeartFull4.IsVisible)
                 {
-                    oefening["Gevoel"] = "4";
+                    exercise["Gevoel"] = "4";
                 }
                 else if (imgRatingHeartFull3.IsVisible)
                 {
-                    oefening["Gevoel"] = "3";
+                    exercise["Gevoel"] = "3";
                 }
                 else if (imgRatingHeartFull2.IsVisible)
                 {
-                    oefening["Gevoel"] = "2";
+                    exercise["Gevoel"] = "2";
                 }
                 else
                 {
-                    oefening["Gevoel"] = "1";
+                    exercise["Gevoel"] = "1";
                 }
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
-                //    oefening["Kcal"] = _KcalAPI;
-                //    oefening["MaxHeart"] = "0";
-                //    oefening["AverageHeart"] = "0";
+                //    exercise["Kcal"] = _KcalAPI;
+                //    exercise["MaxHeart"] = "0";
+                //    exercise["AverageHeart"] = "0";
                 //}
                 //else
                 //{
-                    oefening["Kcal"] = 0;
-                    oefening["MaxHeart"] = 0;
-                    oefening["AverageHeart"] = 0;
+                exercise["Kcal"] = 0;
+                exercise["MaxHeart"] = 0;
+                exercise["AverageHeart"] = 0;
                 //}
-                await DBManager.PostOefening(oefening);
-                JArray oefeningen = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
-                var oefeningTojson = JsonConvert.SerializeObject(oefeningen);
-                Preferences.Set("Oefeningen", oefeningTojson.ToString());
+                await DBManager.PostOefening(exercise);
+                JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                var exercisesTojson = JsonConvert.SerializeObject(exercises);
+                Preferences.Set("Oefeningen", exercisesTojson.ToString());
                 MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
                 LoadingIndicator.IsRunning = false;
                 await btnMoreEx.FadeTo(0.3, 75);
@@ -523,12 +523,12 @@ namespace StreetWorkoutV2.View
             return true;
         }
 
-        private void btnOpnieuw_Clicked(object sender, EventArgs e)
+        private void BtnRepeat_Clicked(object sender, EventArgs e)
         {
 
         }
 
-        private async void btnDashboard_Clicked(object sender, EventArgs e)
+        private async void BtnDashboard_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopToRootAsync();
         }
