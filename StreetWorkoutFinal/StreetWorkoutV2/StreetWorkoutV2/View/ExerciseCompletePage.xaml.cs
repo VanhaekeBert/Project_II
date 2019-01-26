@@ -384,7 +384,7 @@ namespace StreetWorkoutV2.View
                         repetitions += Preferences.Get($"Repetition{i}", "") + ", ";
                     }
                 }
-                exercise["Repeats"] = repetitions;
+                exercise["Repetitions"] = repetitions;
                 if (imgRatingHeartFull5.IsVisible)
                 {
                     exercise["Feeling"] = "5";
@@ -421,7 +421,7 @@ namespace StreetWorkoutV2.View
                 JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);
                 Preferences.Set("Exercises", exercisesTojson.ToString());
-                MessagingCenter.Send(this, "PassExercises", Preferences.Get("Exercises", ""));
+                MessagingCenter.Send(this, "PassExercise", Preferences.Get("Exercises", ""));
                 LoadingIndicator.IsRunning = false;
                 await btnHome.FadeTo(0.3, 75);
                 btnHome.FadeTo(1, 75);

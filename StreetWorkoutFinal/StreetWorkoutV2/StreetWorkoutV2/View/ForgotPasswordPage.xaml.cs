@@ -47,7 +47,7 @@ namespace StreetWorkoutV2.View
                         if (EmailCheck == true)
                         {
                             JObject data = await DBManager.GetUserData(email, "Email");
-                            string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Name"].ToString()));
+                            string ww = DBManager.Encrypt(await DBManager.MailService(email, data["name"].ToString()));
                             if (ww != null)
                             {
                                 JObject userData = new JObject();

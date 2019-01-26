@@ -68,8 +68,8 @@ namespace StreetWorkoutV2.Model
                 JObject reg = new JObject();
                 reg["Email"] = email;
                 reg["Name"] = name;
-                reg["ApiNaam"] = name;
-                reg["Wachtwoord"] = password;
+                reg["ApiName"] = name;
+                reg["Password"] = password;
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
                 var request = JsonConvert.SerializeObject(reg);
@@ -172,7 +172,6 @@ namespace StreetWorkoutV2.Model
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
                 string url = "https://streetworkout.azurewebsites.net/api/PutUserData";
                 var message = await client.PutAsync(url, httpContent);
-                var responseString = await message.Content.ReadAsStringAsync();
             }
             catch (Exception ex)
             {

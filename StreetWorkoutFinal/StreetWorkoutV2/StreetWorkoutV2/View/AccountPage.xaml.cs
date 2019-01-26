@@ -55,41 +55,41 @@ namespace StreetWorkoutV2.View
             lblUsername.Text = Preferences.Get("ApiName", "");
             entryNameChange.Placeholder = Preferences.Get("ApiName", "");
 
-            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExercise", (sender, arg) =>
-            {
-                if (arg != "[]")
-                {
-                    weekExerciseList = new List<ExerciseDB>();
-                    monthExerciseList = new List<ExerciseDB>();
-                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<ExerciseDB> exercises = new List<ExerciseDB>();
-                    for (int i = 0; i < exercisesRaw.Count(); i++)
-                    {
-                        if (i == 0)
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
-                        }
-                        else if (i != (exercisesRaw.Count() - 1))
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
-                        }
-                    }
-                    foreach (ExerciseDB exercise in exercises)
-                    {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
-                        {
-                            weekExerciseList.Add(exercise);
-                        }
-                        if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
-                        {
-                            monthExerciseList.Add(exercise);
-                        }
-                    }
-                    lblOefWeek.Text = weekExerciseList.Count().ToString();
-                    lblOefMaand.Text = monthExerciseList.Count().ToString();
-                    MakeEntriesOef();
-                }
-            });
+            //MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExercise", (sender, arg) =>
+            //{
+            //    if (arg != "[]")
+            //    {
+            //        weekExerciseList = new List<ExerciseDB>();
+            //        monthExerciseList = new List<ExerciseDB>();
+            //        var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+            //        List<ExerciseDB> exercises = new List<ExerciseDB>();
+            //        for (int i = 0; i < exercisesRaw.Count(); i++)
+            //        {
+            //            if (i == 0)
+            //            {
+            //                exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
+            //            }
+            //            else if (i != (exercisesRaw.Count() - 1))
+            //            {
+            //                exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+            //            }
+            //        }
+            //        foreach (ExerciseDB exercise in exercises)
+            //        {
+            //            if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
+            //            {
+            //                weekExerciseList.Add(exercise);
+            //            }
+            //            if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
+            //            {
+            //                monthExerciseList.Add(exercise);
+            //            }
+            //        }
+            //        lblOefWeek.Text = weekExerciseList.Count().ToString();
+            //        lblOefMaand.Text = monthExerciseList.Count().ToString();
+            //        MakeEntriesOef();
+            //    }
+            //});
 
             MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterDrunk", (sender, arg) =>
             {
@@ -181,41 +181,45 @@ namespace StreetWorkoutV2.View
             {
                 lblDataWater.IsVisible = true;
             }
-
-            if (Preferences.Get("Exercises", "") != "[]")
+            Debug.WriteLine(Preferences.Get("Exercises", ""));
+            if (Preferences.Get("Exercises", "") != "null")
             {
-                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                List<ExerciseDB> exercises = new List<ExerciseDB>();
-                for (int i = 0; i < exercisesRaw.Count(); i++)
+                if (Preferences.Get("Exercises", "") != "")
                 {
-                    if (i == 0)
+                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                    List<ExerciseDB> exercises = new List<ExerciseDB>();
+                    for (int i = 0; i < exercisesRaw.Count(); i++)
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
+                        if (i == 0)
+                        {
+                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
+                        }
+                        else if (i != (exercisesRaw.Count() - 1))
+                        {
+                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                        }
                     }
-                    else if (i != (exercisesRaw.Count() - 1))
+                    foreach (ExerciseDB exercise in exercises)
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
+                        {
+                            weekExerciseList.Add(exercise);
+                        }
+                        if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
+                        {
+                            monthExerciseList.Add(exercise);
+                        }
                     }
+                    lblOefWeek.Text = weekExerciseList.Count().ToString();
+                    lblOefMaand.Text = monthExerciseList.Count().ToString();
+                    MakeEntriesOef();
                 }
-                foreach (ExerciseDB exercise in exercises)
+                else
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
-                    {
-                        weekExerciseList.Add(exercise);
-                    }
-                    if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
-                    {
-                        monthExerciseList.Add(exercise);
-                    }
+                    lblDataOef.IsVisible = true;
                 }
-                lblOefWeek.Text = weekExerciseList.Count().ToString();
-                lblOefMaand.Text = monthExerciseList.Count().ToString();
-                MakeEntriesOef();
             }
-            else
-            {
-                lblDataOef.IsVisible = true;
-            }
+            
             this.BackgroundColor = Color.FromHex("2B3049");
 
 
@@ -436,8 +440,8 @@ namespace StreetWorkoutV2.View
                 JObject water = new JObject();
                     user["Length"] = heightInput.Text.ToString();
                     Preferences.Set("Length", user["Length"].ToString());
-                    user["Weigth"] = weightInput.Text.ToString();
-                    Preferences.Set("Weigth", user["Weigth"].ToString());
+                    user["Weight"] = weightInput.Text.ToString();
+                    Preferences.Set("Weight", user["Weight"].ToString());
                     user["Age"] = ageInput.Text.ToString();
                     Preferences.Set("Age", user["Age"].ToString());
                     water["WaterGoal"] = int.Parse(waterInput.Text);

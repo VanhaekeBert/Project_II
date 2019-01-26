@@ -101,7 +101,7 @@ namespace StreetWorkoutV2.View
                                 JObject data = await DBManager.GetUserData(Preferences.Get("Name", ""), "Name");
                                 JObject dataTemp = new JObject();
                                 dataTemp["Password"] = DBManager.Encrypt(entryPasswordNew.Text);
-                                await DBManager.PutUserData(data["Email"].ToString(), "Email", dataTemp);
+                                await DBManager.PutUserData(data["email"].ToString(), "Email", dataTemp);
                                 await Navigation.PopAsync();
                             }
                             else

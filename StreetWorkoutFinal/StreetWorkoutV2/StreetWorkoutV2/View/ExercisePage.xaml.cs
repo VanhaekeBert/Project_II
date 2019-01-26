@@ -185,15 +185,18 @@ namespace StreetWorkoutV2.View
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     TimerText.Text = (TimeKeeper / 60).ToString("00") + " : " + (TimeKeeper % 60).ToString("00");
-                    if (TimeKeeper == _CurrentExercise.Duration[_Repetitions])
+                    if (_CurrentExercise.Duration.Count != 0)
                     {
-                        TimerText.TextColor = Color.FromHex("#EE4444");
-                        var assembly = typeof(App).GetTypeInfo().Assembly;
-                        Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
-                        var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                        if (TimeKeeper == _CurrentExercise.Duration[_Repetitions])
+                        {
+                            TimerText.TextColor = Color.FromHex("#EE4444");
+                            var assembly = typeof(App).GetTypeInfo().Assembly;
+                            Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
+                            var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
 
-                        player.Load(audioStream);
-                        player.Play();
+                            player.Load(audioStream);
+                            player.Play();
+                        }
                     }
 
                 });

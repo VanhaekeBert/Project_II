@@ -109,12 +109,12 @@ namespace StreetWorkoutV2.View
                         var waterTojson = JsonConvert.SerializeObject(water);
                         var exerciseTojson = JsonConvert.SerializeObject(exercises);
                         Preferences.Set("Name", user["name"].ToString());
-                        Preferences.Set("ApiNaam", user["apiName"].ToString());
+                        Preferences.Set("ApiName", user["apiName"].ToString());
                         Preferences.Set("Email", user["email"].ToString());
                         Preferences.Set("Age", user["age"].ToString());
                         Preferences.Set("Length", user["length"].ToString());
                         Preferences.Set("Weigth", user["weight"].ToString());
-                        Preferences.Set("Oefeningen", exerciseTojson.ToString());
+                        Preferences.Set("Exercises", exerciseTojson.ToString());
                         Preferences.Set("Water", waterTojson.ToString());
                         await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                     }

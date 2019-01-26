@@ -30,21 +30,21 @@ namespace StreetWorkoutV2.View
         public ExerciseListPage(List<Oefening> ExerciseList)
         {
             InitializeComponent();
-            if (Preferences.Get("Exercises", "") != "[]")
-            {
-                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                for (int i = 0; i < exercisesRaw.Count(); i++)
-                {
-                    if (i == 0)
-                    {
-                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
-                    }
-                    else if (i != (exercisesRaw.Count() - 1))
-                    {
-                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
-                    }
-                }
-            }
+            //if (Preferences.Get("Exercises", "") != "[]")
+            //{
+            //    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+            //    for (int i = 0; i < exercisesRaw.Count(); i++)
+            //    {
+            //        if (i == 0)
+            //        {
+            //            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
+            //        }
+            //        else if (i != (exercisesRaw.Count() - 1))
+            //        {
+            //            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+            //        }
+            //    }
+            //}
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             imgHearts.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Hearts_4.png");
             lblTitle.Text = ExerciseList[0].Device;
