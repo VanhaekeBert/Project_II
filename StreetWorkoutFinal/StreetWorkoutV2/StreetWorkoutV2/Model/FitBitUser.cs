@@ -58,21 +58,21 @@ namespace StreetWorkoutV2.Model
             }
             set { _length = value; }
         }
-        private string _weigth;
-        public string Weigth
+        private string _weight;
+        public string Weight
         {
             get
             {
-                if (_weigth == null)
+                if (_weight == null)
                 {
                     return FullJson["weight"].ToString();
                 }
                 else
                 {
-                    return _weigth;
+                    return _weight;
                 };
             }
-            set { _weigth = value; }
+            set { _weight = value; }
         }
         public string API { get; set; }
         public string WaterGoal { get; set; }

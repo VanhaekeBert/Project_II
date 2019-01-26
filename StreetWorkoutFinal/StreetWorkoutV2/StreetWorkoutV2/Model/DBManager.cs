@@ -303,13 +303,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<JObject> GetLatestWater(string name)
+        public static async Task<JObject> GetLatestWaterData(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/GetLatestWater/{name}";
+                string url = $"https://streetworkout.azurewebsites.net/api/GetLatestWaterData/{name}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
                 JObject data = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
@@ -328,7 +328,7 @@ namespace StreetWorkoutV2.Model
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/DeleteWaterData/{name}?code=cvCM8haZ00J5YYzWHglXIyJh9eANDVel5PSZsymy83Hv18rPnstrQA==";
+                string url = $"https://streetworkout.azurewebsites.net/api/DeleteWaterData/{name}?code=bk6UkwIfGGQRaWzcO9KEW45OxtkLbzkgEAoJbXhAZLnNjeINMcFNhQ==";
                 var message = await client.DeleteAsync(url);
             }
             catch (Exception ex)

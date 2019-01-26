@@ -14,7 +14,7 @@ namespace StreetWorkoutV2.Model
         [JsonProperty(propertyName: "birthdate")]
         public string BirthDate { get; set; }
         [JsonProperty(propertyName: "weight")]
-        public string Weigth { get; set; }
+        public string Weight { get; set; }
         [JsonProperty(propertyName: "height")]
         public string Length { get; set; }
         private string _name;

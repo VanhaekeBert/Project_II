@@ -53,7 +53,7 @@ namespace StreetWorkoutV2
             JObject user = await DBManager.GetUserData(Preferences.Get("Name", ""), "Name");
             JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
             JArray water = await DBManager.GetWaterData(Preferences.Get("Name", ""));
-            var latestWater = await DBManager.GetLatestWater(Preferences.Get("Name", ""));
+            var latestWater = await DBManager.GetLatestWaterData(Preferences.Get("Name", ""));
             if (latestWater != null)
             {
                 DateTime date = (DateTime)latestWater["Date"];

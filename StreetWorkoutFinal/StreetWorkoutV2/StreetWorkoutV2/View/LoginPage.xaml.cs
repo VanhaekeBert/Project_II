@@ -84,10 +84,10 @@ namespace StreetWorkoutV2.View
                         JObject user = await DBManager.GetUserData(entryUserName.Text.Replace(" ", ""), "Name");
                         JArray exercises = await DBManager.GetExerciseData(entryUserName.Text.Replace(" ", ""));
                         JArray water = await DBManager.GetWaterData(entryUserName.Text.Replace(" ", ""));
-                        var latestWater = await DBManager.GetLatestWater(entryUserName.Text.Replace(" ", ""));
+                        var latestWater = await DBManager.GetLatestWaterData(entryUserName.Text.Replace(" ", ""));
                         if (latestWater != null)
                         {
-                            DateTime date = (DateTime)latestWater["Date"];
+                            DateTime date = (DateTime)latestWater["date"];
                             if (date.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
                             {
                                 Preferences.Set("WaterGoal", int.Parse(latestWater["waterGoal"].ToString()));
@@ -113,7 +113,7 @@ namespace StreetWorkoutV2.View
                         Preferences.Set("Email", user["email"].ToString());
                         Preferences.Set("Age", user["age"].ToString());
                         Preferences.Set("Length", user["length"].ToString());
-                        Preferences.Set("Weigth", user["weight"].ToString());
+                        Preferences.Set("Weight", user["weight"].ToString());
                         Preferences.Set("Exercises", exerciseTojson.ToString());
                         Preferences.Set("Water", waterTojson.ToString());
                         await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
