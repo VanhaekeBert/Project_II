@@ -6,7 +6,7 @@ namespace StreetWorkoutV2.Model
 {
     public class Water
     {
-        public int WaterGedronken { get; set; }
-        public DateTime Datum { get; set; }
+        public int waterGedronken { get; set; }
+        public DateTime datum { get; set; }
     }
 }

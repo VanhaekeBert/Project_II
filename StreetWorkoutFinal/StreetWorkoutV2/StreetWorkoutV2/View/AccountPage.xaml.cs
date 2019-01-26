@@ -97,10 +97,7 @@ namespace StreetWorkoutV2.View
                     {
                         kcalmaand += oefening.Kcal;
                     }
-                   // lblKcalWeek.Text = kcalweek.ToString();
-                   // lblKcalMaand.Text = kcalmaand.ToString();
                     MakeEntriesOef();
-                   // MakeEntriesKcal();
                 }
             });
 
@@ -125,11 +122,11 @@ namespace StreetWorkoutV2.View
                     }
                     foreach (Water item in water)
                     {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.Datum.Day))
+                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.datum.Day))
                         {
                             weekWaterList.Add(item);
                         }
-                        if (int.Parse(DateTime.Now.ToString("MM")) == item.Datum.Month)
+                        if (int.Parse(DateTime.Now.ToString("MM")) == item.datum.Month)
                         {
                             monthWaterList.Add(item);
                         }
@@ -137,13 +134,13 @@ namespace StreetWorkoutV2.View
                     int sum = 0;
                     foreach (Water item in weekWaterList)
                     {
-                        sum += item.WaterGedronken;
+                        sum += item.waterGedronken;
                     }
                     lblWaterWeek.Text = (sum / 1000.0).ToString() + " L";
                     sum = 0;
                     foreach (Water item in monthWaterList)
                     {
-                        sum += item.WaterGedronken;
+                        sum += item.waterGedronken;
                     }
                     lblWaterMaand.Text = (sum / 1000.0).ToString() + " L";
                     MakeEntriesWater();
@@ -167,11 +164,11 @@ namespace StreetWorkoutV2.View
                 }
                 foreach (Water item in water)
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.Datum.Day))
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.datum.Day))
                     {
                         weekWaterList.Add(item);
                     }
-                    if (int.Parse(DateTime.Now.ToString("MM")) == item.Datum.Month)
+                    if (int.Parse(DateTime.Now.ToString("MM")) == item.datum.Month)
                     {
                         monthWaterList.Add(item);
                     }
@@ -179,13 +176,13 @@ namespace StreetWorkoutV2.View
                 int sum = 0;
                 foreach (Water item in weekWaterList)
                 {
-                    sum += item.WaterGedronken;
+                    sum += item.waterGedronken;
                 }
                 lblWaterWeek.Text = (sum / 1000.0).ToString() + " L";
                 sum = 0;
                 foreach (Water item in monthWaterList)
                 {
-                    sum += item.WaterGedronken;
+                    sum += item.waterGedronken;
                 }
                 lblWaterMaand.Text = (sum/1000.0).ToString() + " L";
                 MakeEntriesWater();
@@ -233,15 +230,11 @@ namespace StreetWorkoutV2.View
                 {
                     kcalmaand += oefening.Kcal;
                 }
-               // lblKcalWeek.Text = kcalweek.ToString();
-               // lblKcalMaand.Text = kcalmaand.ToString();
                 MakeEntriesOef();
-              //  MakeEntriesKcal();
             }
             else
             {
                 lblDataOef.IsVisible = true;
-               // lblDataKcal.IsVisible = true;
             }
             this.BackgroundColor = Color.FromHex("2B3049");
 
@@ -328,64 +321,7 @@ namespace StreetWorkoutV2.View
                 imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
             });
         }
-
-        //private void MakeEntriesKcal()
-        //{
-        //    List<string> listKleuren = new List<string> {
-        //        "#EE9F44","#EE9944","#EE9344","#EE8E44","#EE8844","#EE8244","#EE7D44","#EE8244"
-        //    };
-        //    List<string> listLabels = new List<string>();
-        //    for (int i = 6; i >= 0; i--)
-        //    {
-        //        listLabels.Add(DateTime.Now.AddDays(-i).ToString("dddd", dutch).First().ToString().ToUpper() + DateTime.Now.AddDays(-i).ToString("dddd", dutch).Substring(1, 2));
-        //    }
-        //    List<string> listValues = new List<string>();
-        //    foreach (string date in listLabels)
-        //    {
-        //        int i = 0;
-        //        foreach (OefeningDB oefening in weekExerciseList)
-        //        {
-        //            if (date == (oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1, 2)))
-        //            {
-        //                i += oefening.Kcal;
-        //            }
-        //        }
-        //        listValues.Add(i.ToString());
-        //    }
-        //    bool visible = true;
-        //    foreach (string item in listValues)
-        //    {
-        //        if (item != "0")
-        //        {
-        //            visible = false;
-        //        }
-        //    }
-        //    lblDataKcal.IsVisible = visible;
-
-
-        //    List<Entry> entriesKcal2 = new List<Entry> { };
-        //    for (int i = 0; i < 7; i++)
-        //    {
-        //        float value = float.Parse(listValues[i]);
-
-        //        entriesKcal2.Add(new Entry(value)
-        //        {
-        //            Color = SKColor.Parse(listKleuren[i]),
-        //            Label = listLabels[i],
-        //            ValueLabel = listValues[i]
-        //        });
-        //    }
-        //    chartKcal.Chart = new LineChart()
-        //    {
-        //        Entries = entriesKcal2,
-        //        BackgroundColor = SKColors.Transparent,
-        //        PointSize = 22,
-        //        LabelTextSize = 22,
-        //        ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-        //        LabelOrientation = Microcharts.Orientation.Horizontal,
-        //        LabelColor = SKColor.Parse("#FFFFFF")
-        //    };
-        //}
+        
         private void MakeEntriesOef()
         {
             List<string> listKleuren = new List<string> {
@@ -457,7 +393,7 @@ namespace StreetWorkoutV2.View
             List<string> listValues = new List<string>();
             foreach (Water item in weekWaterList)
             {
-                listValues.Add((item.WaterGedronken/1000.0).ToString());
+                listValues.Add((item.waterGedronken/1000.0).ToString());
             }
             int length = listValues.Count();
             if (length < 7)
