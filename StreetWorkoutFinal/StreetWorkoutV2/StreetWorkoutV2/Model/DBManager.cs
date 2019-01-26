@@ -160,7 +160,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<string> PutUserData(string value, string referentie, JObject data)
+        public static async Task PutUserData(string value, string referentie, JObject data)
         {
             try
             {
@@ -171,9 +171,8 @@ namespace StreetWorkoutV2.Model
                 var request = JsonConvert.SerializeObject(data);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
                 string url = "https://streetworkout.azurewebsites.net/api/PutUserData";
-                var message = await client.PostAsync(url, httpContent);
+                var message = await client.PutAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
-                return responseString.ToString();
             }
             catch (Exception ex)
             {
@@ -340,7 +339,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<string> PutWater(JObject data)
+        public static async Task PutWater(JObject data)
         {
             try
             {
@@ -350,9 +349,8 @@ namespace StreetWorkoutV2.Model
                 var request = JsonConvert.SerializeObject(data);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
                 string url = "https://streetworkout.azurewebsites.net/api/PutWater";
-                var message = await client.PostAsync(url, httpContent);
+                var message = await client.PutAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
-                return responseString.ToString();
             }
             catch (Exception ex)
             {
