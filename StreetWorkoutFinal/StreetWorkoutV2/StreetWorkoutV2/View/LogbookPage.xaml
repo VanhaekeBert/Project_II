@@ -65,10 +65,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>
@@ -130,10 +130,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>
@@ -195,10 +195,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>
@@ -260,10 +260,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>
@@ -325,10 +325,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>
@@ -390,10 +390,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>
@@ -455,10 +455,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="0" Spacing="5">
                                                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" >
-                                                            <Label VerticalOptions="Center" Text="{Binding Naam}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
+                                                            <Label VerticalOptions="Center" Text="{Binding Name}" FontFamily="{StaticResource BoldFont}"  FontSize="18" TextColor="{StaticResource LightColor}" />
 
                                                         </StackLayout>
-                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Moeilijkheidsgraad,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                        <Label Margin=" 0,3,0,0" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="{Binding Difficulty,StringFormat='({0})'}" FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                         <StackLayout Orientation="Horizontal" Grid.Row="2"  HorizontalOptions="Start" VerticalOptions="End">
                                                             <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Start" Text="Beoordeling: " FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" />
                                                             <ff:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="140"   Source="{Binding Heartrate}"/>

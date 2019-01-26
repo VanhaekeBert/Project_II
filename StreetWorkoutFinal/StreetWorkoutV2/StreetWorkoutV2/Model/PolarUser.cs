@@ -8,33 +8,33 @@ namespace StreetWorkoutV2.Model
     public class PolarUser
     {
         [JsonProperty(propertyName: "first-name")]
-        public string Voornaam { get; set; }
+        public string Firstname { get; set; }
         [JsonProperty(propertyName: "last-name")]
-        public string Achternaam { get; set; }
+        public string Lastname { get; set; }
         [JsonProperty(propertyName: "birthdate")]
-        public string GeboorteDatum { get; set; }
+        public string BirthDate { get; set; }
         [JsonProperty(propertyName: "weight")]
-        public string Gewicht { get; set; }
+        public string Weigth { get; set; }
         [JsonProperty(propertyName: "height")]
-        public string Lengte { get; set; }
-        private string _naam;
+        public string Length { get; set; }
+        private string _name;
 
-        public string Naam
+        public string Name
         {
             get
             {
-                if (_naam == null)
+                if (_name == null)
                 {
-                    return Voornaam + " " + Achternaam;
+                    return Firstname + " " + Lastname;
                 }
                 else
                 {
-                    return _naam;
+                    return _name;
                 };
             }
-            set { _naam = value; }
+            set { _name = value; }
         }
-        public string Leeftijd { get { return ((DateTime.Now - DateTime.Parse(GeboorteDatum)).TotalDays/365.24).ToString().Split(',')[0]; } }
+        public string Age { get { return ((DateTime.Now - DateTime.Parse(BirthDate)).TotalDays/365.24).ToString().Split(',')[0]; } }
         public string API { get; set; }
     }
 }

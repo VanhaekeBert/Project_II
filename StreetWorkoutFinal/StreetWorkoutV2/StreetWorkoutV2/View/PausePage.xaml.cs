@@ -3,7 +3,9 @@ using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -24,7 +26,7 @@ namespace StreetWorkoutV2.View
             InitializeComponent();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             imgContinue.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
-            imgExercise.Source = Exercise.AfbeeldingenResource[Difficulty][0];
+            imgExercise.Source = Exercise.ImageResource[Difficulty][0];
 
             _CurrentExercise = Exercise;
             _CurrentProgress = Progress;
@@ -45,17 +47,17 @@ namespace StreetWorkoutV2.View
             lblProgress.Text = _CurrentProgress;
 
 
-            if (_CurrentExercise.Herhalingen.Count == 0)
+            if (_CurrentExercise.Repeats.Count == 0)
             {
-                inputRepetitions.Placeholder = Exercise.Duurtijd[Repetitions].ToString();
+                inputRepetitions.Placeholder = Exercise.Duration[Repetitions].ToString();
                 lblInputRepetitions.Text = "Vul uw behaalde aantal seconden in";
-                lblRepetitions.Text = _CurrentExercise.Duurtijd[Repetitions].ToString() + " Seconden";
+                lblRepetitions.Text = _CurrentExercise.Duration[Repetitions].ToString() + " Seconden";
             }
             else
             {
-                inputRepetitions.Placeholder = Exercise.Herhalingen[Repetitions].ToString();
+                inputRepetitions.Placeholder = Exercise.Repeats[Repetitions].ToString();
                 lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
-                lblRepetitions.Text = _CurrentExercise.Herhalingen[Repetitions].ToString() + " Herhalingen";
+                lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Repeats";
             }
 
             frameNextExercise.GestureRecognizers.Add(
@@ -107,6 +109,13 @@ namespace StreetWorkoutV2.View
                 });
                 if (TimeKeeper == 60)
                 {
+                    var assembly = typeof(App).GetTypeInfo().Assembly;
+                    Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
+                    var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                    lblTimerText.TextColor = Color.FromHex("#EE4444");
+
+                    player.Load(audioStream);
+                    player.Play();
                     GaDoor.Text = "Ga nu verder";
                     return false;
                 }

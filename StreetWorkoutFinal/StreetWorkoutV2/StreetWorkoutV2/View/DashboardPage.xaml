@@ -103,11 +103,11 @@
                             </StackLayout>
                             <StackLayout  x:Name="btnDevice" Grid.Column="1" Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical">
                                 <ff:CachedImage x:Name="imgDevice"  WidthRequest="50" VerticalOptions="Center"/>
-                                <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="Toestel"></Label>
+                                <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="Device"></Label>
                             </StackLayout>
                             <StackLayout x:Name="btnMuscle" Grid.Column="2" Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical"  >
                                 <ff:CachedImage x:Name="imgMuscle"  WidthRequest="40" VerticalOptions="Center"/>
-                                <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="Spiergroep"></Label>
+                                <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="MuscleGroup"></Label>
                             </StackLayout>
                         </Grid>
                     </Grid>

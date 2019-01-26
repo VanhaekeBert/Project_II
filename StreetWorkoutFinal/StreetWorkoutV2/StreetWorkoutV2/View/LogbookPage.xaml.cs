@@ -18,53 +18,53 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LogbookPage : AnimationPage
     {
-        List<OefeningDB> weekExerciseList = new List<OefeningDB>();
+        List<ExerciseDB> weekExerciseList = new List<ExerciseDB>();
         List<string> data = new List<string>();
-        List<List<Logboek>> logbookList = new List<List<Logboek>>();
+        List<List<Logbook>> logbookList = new List<List<Logbook>>();
         public LogbookPage()
         {
             InitializeComponent();
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             CultureInfo dutch = new CultureInfo("nl-BE");
 
-            if (Preferences.Get("Oefeningen", "") != "[]")
+            if (Preferences.Get("Exercises", "") != "[]")
             {
-                var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                List<OefeningDB> exerciseList = new List<OefeningDB>();
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<ExerciseDB> exerciseList = new List<ExerciseDB>();
                 for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        exerciseList.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
+                        exerciseList.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                     }
                     else if (i != (exercisesRaw.Count() - 1))
                     {
-                        exerciseList.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                        exerciseList.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
-                foreach (OefeningDB exercise in exerciseList)
+                foreach (ExerciseDB exercise in exerciseList)
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Datum.Day))
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
                     {
                         weekExerciseList.Add(exercise);
                     }
                 }
             }
-            foreach (OefeningDB exercise in weekExerciseList)
+            foreach (ExerciseDB exercise in weekExerciseList)
             {
                 if (logbookList.Count == 0)
                 {
-                    string dayName = exercise.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Datum.ToString("dddd", dutch).Substring(1);
-                    data.Add(dayName + " " + exercise.Datum.ToString("MM-dd"));
-                    List<Logboek> lijst = new List<Logboek>();
-                    Logboek logbook = new Logboek();
-                    logbook.Naam = exercise.Workout;
+                    string dayName = exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1);
+                    data.Add(dayName + " " + exercise.Date.ToString("MM-dd"));
+                    List<Logbook> list = new List<Logbook>();
+                    Logbook logbook = new Logbook();
+                    logbook.Name = exercise.Workout;
 
-                    logbook.Date = dayName + " " + exercise.Datum.ToString("MM-dd");
-                    logbook.Moeilijkheidsgraad = exercise.Moeilijkheidsgraad;
-                    logbook.Total_hearts_given = int.Parse(exercise.Gevoel);
+                    logbook.Date = dayName + " " + exercise.Date.ToString("MM-dd");
+                    logbook.Difficulty = exercise.Difficulty;
+                    logbook.Total_hearts_given = int.Parse(exercise.Feeling);
                     List<int> repetitions = new List<int>();
-                    var repetitionsTemp = exercise.Herhalingen.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
+                    var repetitionsTemp = exercise.Repetitions.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
                     foreach (var item in repetitionsTemp)
                     {
                         repetitions.Add(int.Parse(item.Substring(0, item.Length - 1)));
@@ -83,8 +83,8 @@ namespace StreetWorkoutV2.View
                         }
                     }
                     logbook.Color = colorList;
-                    lijst.Add(logbook);
-                    logbookList.Add(lijst);
+                    list.Add(logbook);
+                    logbookList.Add(list);
                 }
                 else
                 {
@@ -92,18 +92,18 @@ namespace StreetWorkoutV2.View
                     {
                         if (i != logbookList.Count)
                         {
-                            string dayName = exercise.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Datum.ToString("dddd", dutch).Substring(1);
+                            string dayName = exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1);
 
-                            if (dayName + " " + exercise.Datum.ToString("MM-dd") == logbookList[i][0].Date)
+                            if (dayName + " " + exercise.Date.ToString("MM-dd") == logbookList[i][0].Date)
                             {
-                                Logboek logbook = new Logboek();
-                                logbook.Naam = exercise.Workout;
-                                logbook.Date = dayName + " " + exercise.Datum.ToString("MM-dd");
+                                Logbook logbook = new Logbook();
+                                logbook.Name = exercise.Workout;
+                                logbook.Date = dayName + " " + exercise.Date.ToString("MM-dd");
 
-                                logbook.Moeilijkheidsgraad = exercise.Moeilijkheidsgraad;
-                                logbook.Total_hearts_given = int.Parse(exercise.Gevoel);
+                                logbook.Difficulty = exercise.Difficulty;
+                                logbook.Total_hearts_given = int.Parse(exercise.Feeling);
                                 List<int> repetitions = new List<int>();
-                                var repetitionsTemp = exercise.Herhalingen.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
+                                var repetitionsTemp = exercise.Repetitions.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
                                 foreach (var item in repetitionsTemp)
                                 {
                                     repetitions.Add(int.Parse(item.Substring(0, item.Length - 1)));
@@ -128,17 +128,17 @@ namespace StreetWorkoutV2.View
                         }
                         else
                         {
-                            string dayName = exercise.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Datum.ToString("dddd", dutch).Substring(1);
+                            string dayName = exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1);
 
-                            data.Add(dayName + " " + exercise.Datum.ToString("MM-dd"));
-                            List<Logboek> list = new List<Logboek>();
-                            Logboek logbook = new Logboek();
-                            logbook.Naam = exercise.Workout;
-                            logbook.Date = dayName + " " + exercise.Datum.ToString("MM-dd");
-                            logbook.Moeilijkheidsgraad = exercise.Moeilijkheidsgraad;
-                            logbook.Total_hearts_given = int.Parse(exercise.Gevoel);
+                            data.Add(dayName + " " + exercise.Date.ToString("MM-dd"));
+                            List<Logbook> list = new List<Logbook>();
+                            Logbook logbook = new Logbook();
+                            logbook.Name = exercise.Workout;
+                            logbook.Date = dayName + " " + exercise.Date.ToString("MM-dd");
+                            logbook.Difficulty = exercise.Difficulty;
+                            logbook.Total_hearts_given = int.Parse(exercise.Feeling);
                             List<int> repetitions = new List<int>();
-                            var repetitionsTemp = exercise.Herhalingen.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
+                            var repetitionsTemp = exercise.Repetitions.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
                             foreach (var item in repetitionsTemp)
                             {
                                 repetitions.Add(int.Parse(item.Substring(0, item.Length - 1)));
@@ -169,7 +169,7 @@ namespace StreetWorkoutV2.View
             {
                 if (i == 1)
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);
@@ -181,7 +181,7 @@ namespace StreetWorkoutV2.View
                 }
                 else if (i == 2)
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);
@@ -193,7 +193,7 @@ namespace StreetWorkoutV2.View
                 }
                 else if (i == 3)
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);
@@ -205,7 +205,7 @@ namespace StreetWorkoutV2.View
                 }
                 else if (i == 4)
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);
@@ -217,7 +217,7 @@ namespace StreetWorkoutV2.View
                 }
                 else if (i == 5)
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);
@@ -229,7 +229,7 @@ namespace StreetWorkoutV2.View
                 }
                 else if (i == 6)
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);
@@ -241,7 +241,7 @@ namespace StreetWorkoutV2.View
                 }
                 else
                 {
-                    List<Logboek> lvwList = new List<Logboek>();
+                    List<Logbook> lvwList = new List<Logbook>();
                     for (int j = logbookList[logbookList.Count - i].Count - 1; j >= 0; j--)
                     {
                         lvwList.Add(logbookList[logbookList.Count - i][j]);

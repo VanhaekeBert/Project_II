@@ -9,8 +9,8 @@ namespace StreetWorkoutV2.Model
     {
         public static bool CheckConnection()
         {
-            bool connectie = CrossConnectivity.Current.IsConnected;
-            return connectie;
+            bool connection = CrossConnectivity.Current.IsConnected;
+            return connection;
         }
     }
 }

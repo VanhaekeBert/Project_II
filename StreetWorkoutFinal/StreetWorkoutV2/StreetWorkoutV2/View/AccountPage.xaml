@@ -29,7 +29,7 @@
                     />
                     <!-- ================= -->
                     <StackLayout Spacing="0" Margin="24,16,24,24">
-                        <!-- Icon + Naam-->
+                        <!-- Icon + Name-->
                         <Grid HeightRequest="240" RowSpacing="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="140"/>
@@ -206,9 +206,9 @@
                                             <ColumnDefinition Width="5*"/>
                                             <ColumnDefinition Width="3*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label  Grid.Row="0" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Gewicht" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        <Label  Grid.Row="1" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Lengte" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        <Label  Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Leeftijd" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <Label  Grid.Row="0" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Weigth" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <Label  Grid.Row="1" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Length" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <Label  Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Age" TextColor="White" VerticalOptions="CenterAndExpand" />
                                         <Label  Grid.Row="3" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Water Doel" TextColor="White" VerticalOptions="CenterAndExpand" />
                                         <!--<Label  Grid.Row="0" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="56" TextColor="White" /><Label  Grid.Row="1" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="174" TextColor="White" /><Label  Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="22" TextColor="White" /><Label  Grid.Row="3" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="2000" TextColor="White" />-->
                                         <!--<Frame Padding="0" Margin="0,0,0,8" Grid.Row="0" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="56" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame><Frame Padding="0" Margin="0,0,0,8" Grid.Row="1" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="174" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame><Frame Padding="0" Margin="0,0,0,8" Grid.Row="2" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="22" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame>-->

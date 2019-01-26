@@ -47,11 +47,11 @@ namespace StreetWorkoutV2.View
                         if (EmailCheck == true)
                         {
                             JObject data = await DBManager.GetUserData(email, "Email");
-                            string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Naam"].ToString()));
+                            string ww = DBManager.Encrypt(await DBManager.MailService(email, data["Name"].ToString()));
                             if (ww != null)
                             {
                                 JObject userData = new JObject();
-                                userData["Wachtwoord"] = ww;
+                                userData["Password"] = ww;
                                 await PopupNavigation.Instance.PushAsync(new PopUp_ForgotPassword());
                                 await DBManager.PutUserData(email, "Email", userData);
                                 await Navigation.PopAsync();

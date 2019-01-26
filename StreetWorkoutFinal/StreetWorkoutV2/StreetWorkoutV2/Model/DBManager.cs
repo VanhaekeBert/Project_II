@@ -38,13 +38,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<string> MailService(string email, string naam)
+        public static async Task<string> MailService(string email, string name)
         {
             try
             {
                 JObject reg = new JObject();
                 reg["Email"] = email;
-                reg["Naam"] = naam;
+                reg["Name"] = name;
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
                 var request = JsonConvert.SerializeObject(reg);
@@ -61,20 +61,20 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> RegistrerenAsync(string email, string naam, string wachtwoord)
+        public static async Task<bool> Register(string email, string name, string password)
         {
             try
             {
                 JObject reg = new JObject();
                 reg["Email"] = email;
-                reg["Naam"] = naam;
-                reg["ApiNaam"] = naam;
-                reg["Wachtwoord"] = wachtwoord;
+                reg["Name"] = name;
+                reg["ApiNaam"] = name;
+                reg["Wachtwoord"] = password;
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
                 var request = JsonConvert.SerializeObject(reg);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-                string url = "https://streetworkout.azurewebsites.net/api/Registreren";
+                string url = "https://streetworkout.azurewebsites.net/api/Register";
                 var message = await client.PostAsync(url, httpContent);
                 return message.IsSuccessStatusCode;
             }
@@ -85,13 +85,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> LoginAsync(string naam, string wachtwoord)
+        public static async Task<bool> Login(string name, string password)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/Login/{naam}/{wachtwoord}";
+                string url = $"https://streetworkout.azurewebsites.net/api/Login/{name}/{password}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
                 if (responseString.ToString() == "true")
@@ -111,13 +111,13 @@ namespace StreetWorkoutV2.Model
         }
 
 
-        public static async Task<bool> CheckUserData(string value, string referentie)
+        public static async Task<bool> CheckUserData(string value, string reference)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/CheckUserData/{value}/{referentie}";
+                string url = $"https://streetworkout.azurewebsites.net/api/CheckUserData/{value}/{reference}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
                 if (responseString.ToString() == "true")
@@ -136,18 +136,18 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        internal static Task<bool> LoginAsync(object p, string v)
+        internal static Task<bool> Login(object p, string v)
         {
             throw new NotImplementedException();
         }
 
-        public static async Task<JObject> GetUserData(string value, string referentie)
+        public static async Task<JObject> GetUserData(string value, string reference)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/GetUserData/{value}/{referentie}";
+                string url = $"https://streetworkout.azurewebsites.net/api/GetUserData/{value}/{reference}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
                 JObject gegevens = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
@@ -160,12 +160,12 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task PutUserData(string value, string referentie, JObject data)
+        public static async Task PutUserData(string value, string reference, JObject data)
         {
             try
             {
-                data[referentie] = value;
-                data["Referentie"] = referentie;
+                data[reference] = value;
+                data["Reference"] = reference;
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
                 var request = JsonConvert.SerializeObject(data);
@@ -181,13 +181,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task DeleteUserData(string naam)
+        public static async Task DeleteUserData(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/DeleteUserData/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/DeleteUserData/{name}";
                 var message = await client.DeleteAsync(url);
             }
             catch (Exception ex)
@@ -197,7 +197,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> PostOefening(JObject data)
+        public static async Task<bool> PostExerciseData(JObject data)
         {
             try
             {
@@ -205,7 +205,7 @@ namespace StreetWorkoutV2.Model
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
                 var request = JsonConvert.SerializeObject(data);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-                string url = "https://streetworkout.azurewebsites.net/api/PostOefening";
+                string url = "https://streetworkout.azurewebsites.net/api/PostExerciseData";
                 var message = await client.PostAsync(url, httpContent);
                 return message.IsSuccessStatusCode;
             }
@@ -216,17 +216,17 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<JArray> GetOefeningenData(string naam)
+        public static async Task<JArray> GetExerciseData(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/GetOefening/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/GetExerciseData/{name}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
-                JArray gegevens = JsonConvert.DeserializeObject<JArray>(responseString.ToString());
-                return gegevens;
+                JArray data = JsonConvert.DeserializeObject<JArray>(responseString.ToString());
+                return data;
             }
             catch (Exception ex)
             {
@@ -235,13 +235,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task DeleteOefeningenData(string naam)
+        public static async Task DeleteExerciseData(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/DeleteOefeningenData/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/DeleteExerciseData/{name}";
                 var message = await client.DeleteAsync(url);
             }
             catch (Exception ex)
@@ -251,30 +251,30 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> PostWater(string naam, int waterdoel, int watergedronken)
+        public static async Task<bool> PostWaterData(string name, int watergoal, int waterdrunk)
         {
             try
             {
                 TimeZone localZone = TimeZone.CurrentTimeZone;
                 TimeSpan currentOffset = localZone.GetUtcOffset(DateTime.Now);
-                JObject reg = new JObject();
-                reg["WaterDoel"] = waterdoel;
-                reg["Naam"] = naam;
-                reg["WaterGedronken"] = watergedronken;
-                reg["Datum"] = DateTime.Now.ToString("MM-dd-yyyy");
+                JObject water = new JObject();
+                water["WaterGoal"] = watergoal;
+                water["Name"] = name;
+                water["WaterDrunk"] = waterdrunk;
+                water["Date"] = DateTime.Now.ToString("MM-dd-yyyy");
                 if (currentOffset.ToString().Substring(0, 1) == "-")
                 {
-                    reg["DatumTijd"] = DateTime.Now.AddHours(-int.Parse(currentOffset.ToString().Substring(1, 2)));
+                    water["DateTime"] = DateTime.Now.AddHours(-int.Parse(currentOffset.ToString().Substring(1, 2)));
                 }
                 else
                 {
-                    reg["DatumTijd"] = DateTime.Now.AddHours(int.Parse(currentOffset.ToString().Substring(0, 2)));
+                    water["DateTime"] = DateTime.Now.AddHours(int.Parse(currentOffset.ToString().Substring(0, 2)));
                 }
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                var request = JsonConvert.SerializeObject(reg);
+                var request = JsonConvert.SerializeObject(water);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-                string url = "https://streetworkout.azurewebsites.net/api/PostWater";
+                string url = "https://streetworkout.azurewebsites.net/api/PostWaterData";
                 var message = await client.PostAsync(url, httpContent);
                 return message.IsSuccessStatusCode;
             }
@@ -285,13 +285,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<JArray> GetWater(string naam)
+        public static async Task<JArray> GetWaterData(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/GetWater/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/GetWaterData/{name}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
                 JArray gegevens = JsonConvert.DeserializeObject<JArray>(responseString.ToString());
@@ -304,17 +304,17 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<JObject> GetLatestWater(string naam)
+        public static async Task<JObject> GetLatestWater(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/GetLatestWater/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/GetLatestWater/{name}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
-                JObject gegevens = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
-                return gegevens;
+                JObject data = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
+                return data;
             }
             catch (Exception ex)
             {
@@ -323,13 +323,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task DeleteWater(string naam)
+        public static async Task DeleteWaterData(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/DeleteWater/{naam}?code=cvCM8haZ00J5YYzWHglXIyJh9eANDVel5PSZsymy83Hv18rPnstrQA==";
+                string url = $"https://streetworkout.azurewebsites.net/api/DeleteWaterData/{name}?code=cvCM8haZ00J5YYzWHglXIyJh9eANDVel5PSZsymy83Hv18rPnstrQA==";
                 var message = await client.DeleteAsync(url);
             }
             catch (Exception ex)
@@ -339,16 +339,16 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task PutWater(JObject data)
+        public static async Task PutWaterData(JObject data)
         {
             try
             {
-                data["Datum"] = DateTime.Now.ToString("MM-dd-yyyy");
+                data["Date"] = DateTime.Now.ToString("MM-dd-yyyy");
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
                 var request = JsonConvert.SerializeObject(data);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
-                string url = "https://streetworkout.azurewebsites.net/api/PutWater";
+                string url = "https://streetworkout.azurewebsites.net/api/PutWaterData";
                 var message = await client.PutAsync(url, httpContent);
                 var responseString = await message.Content.ReadAsStringAsync();
             }
@@ -359,7 +359,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> PostProfilePicture(string naam, Stream content)
+        public static async Task<bool> PostProfilePicture(string name, Stream content)
         {
             try
             {
@@ -374,10 +374,10 @@ namespace StreetWorkoutV2.Model
                     }
                     bytes = ms.ToArray();
                 }
-                ProfilePicture foto = new ProfilePicture() { Naam = naam, stream = bytes };
+                ProfilePicture picture = new ProfilePicture() { Name = name, stream = bytes };
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                var request = JsonConvert.SerializeObject(foto);
+                var request = JsonConvert.SerializeObject(picture);
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
                 string url = "https://streetworkout.azurewebsites.net/api/PostProfilePicture";
                 var message = await client.PostAsync(url, httpContent);
@@ -390,13 +390,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<Uri> GetProfilePicture(string naam)
+        public static async Task<Uri> GetProfilePicture(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                string url = $"https://streetworkout.azurewebsites.net/api/GetProfilePicture/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/GetProfilePicture/{name}";
                 var message = await client.GetAsync(url);
                 var responseString = await message.Content.ReadAsStringAsync();
                 JObject uri = JsonConvert.DeserializeObject<JObject>(responseString.ToString());
@@ -409,13 +409,13 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task DeleteProfilePicture(string naam)
+        public static async Task DeleteProfilePicture(string name)
         {
             try
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/string");
-                string url = $"https://streetworkout.azurewebsites.net/api/DeleteProfilePicture/{naam}";
+                string url = $"https://streetworkout.azurewebsites.net/api/DeleteProfilePicture/{name}";
                 var message = await client.DeleteAsync(url);
             }
             catch (Exception ex)

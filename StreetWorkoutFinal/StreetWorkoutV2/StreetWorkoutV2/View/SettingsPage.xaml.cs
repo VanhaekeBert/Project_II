@@ -57,16 +57,16 @@ namespace StreetWorkoutV2.View
             //    {
             //        FitBitUser user = await FitBitManager.FitBitAsync();
         
-            //        user.Naam = Preferences.Get("Naam", "").ToString();
+            //        user.Name = Preferences.Get("Name", "").ToString();
             //        string text = JsonConvert.SerializeObject(user);
             //        JObject data = JsonConvert.DeserializeObject<JObject>(text);
-            //        Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
-            //        Preferences.Set("Lengte", data["Lengte"].ToString());
-            //        Preferences.Set("Gewicht", data["Gewicht"].ToString());
+            //        Preferences.Set("Age", data["Age"].ToString());
+            //        Preferences.Set("Length", data["Length"].ToString());
+            //        Preferences.Set("Weigth", data["Weigth"].ToString());
             //        Preferences.Set("API", data["API"].ToString());
             //        MessagingCenter.Send(this, "PassFitbitConnected", "Verbonden");
 
-            //        DBManager.PutUserData(user.Naam, "Naam", data);
+            //        DBManager.PutUserData(user.Name, "Name", data);
             //    });
             //};
 
@@ -82,14 +82,14 @@ namespace StreetWorkoutV2.View
             //        Task.Run(async () =>
             //        {
             //            PolarUser user = await PolarManager.GetPolarToken();
-            //            user.Naam = Preferences.Get("Naam", "");
+            //            user.Name = Preferences.Get("Name", "");
             //            string text = JsonConvert.SerializeObject(user);
             //            JObject data = JsonConvert.DeserializeObject<JObject>(text);
-            //            Preferences.Set("Leeftijd", data["Leeftijd"].ToString());
-            //            Preferences.Set("Lengte", data["Lengte"].ToString());
-            //            Preferences.Set("Gewicht", data["Gewicht"].ToString());
+            //            Preferences.Set("Age", data["Age"].ToString());
+            //            Preferences.Set("Length", data["Length"].ToString());
+            //            Preferences.Set("Weigth", data["Weigth"].ToString());
             //            Preferences.Set("API", data["API"].ToString());
-            //            DBManager.PutUserData(user.Naam, "Naam", data);
+            //            DBManager.PutUserData(user.Name, "Name", data);
             //        });
             //    };
             //};
@@ -129,17 +129,16 @@ namespace StreetWorkoutV2.View
 
         private async void Logout(object sender, EventArgs e)
         {
-            Preferences.Set("Naam", null);
+            Preferences.Set("Name", null);
+            Preferences.Set("ApiName", null);
             Preferences.Set("Email", null);
-            Preferences.Set("Leeftijd", null);
-            Preferences.Set("Lengte", null);
-            Preferences.Set("Gewicht", null);
-            Preferences.Set("API", null);
-            Preferences.Set("WaterDoel", null);
-            Preferences.Set("WaterGedronken", null);
-            Preferences.Set("Oefeningen", null);
+            Preferences.Set("Age", null);
+            Preferences.Set("Length", null);
+            Preferences.Set("Weight", null);
+            Preferences.Set("WaterGoal", null);
+            Preferences.Set("WaterDrunk", null);
+            Preferences.Set("Exercises", null);
             Preferences.Set("Water", null);
-            Preferences.Set("Token", null);
             await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
         protected override bool OnBackButtonPressed()

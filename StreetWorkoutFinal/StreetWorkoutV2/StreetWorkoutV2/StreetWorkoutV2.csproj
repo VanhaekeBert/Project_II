@@ -43,6 +43,7 @@
     <None Remove="Asset\ImageSelect.png" />
     <None Remove="Asset\LogIcon.png" />
     <None Remove="Asset\Login_Background.png" />
+    <None Remove="Asset\notification.wav" />
     <None Remove="Asset\oefeningen.json" />
     <None Remove="Asset\oefeningenV2.json" />
     <None Remove="Asset\Oefeningen_Background.png" />
@@ -236,6 +237,7 @@
     <EmbeddedResource Include="Asset\Heart_Uncolored.png" />
     <EmbeddedResource Include="Asset\ImageSelect.png" />
     <EmbeddedResource Include="Asset\LogIcon.png" />
+    <EmbeddedResource Include="Asset\notification.wav" />
     <EmbeddedResource Include="Asset\oefeningenV2.json" />
     <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
     <EmbeddedResource Include="Asset\Oefening_Background.png" />
@@ -420,6 +422,7 @@
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.180" />
     <PackageReference Include="Sendgrid" Version="9.10.0" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.3.0" />
     <PackageReference Include="Xamarin.Auth" Version="1.6.0.4" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />

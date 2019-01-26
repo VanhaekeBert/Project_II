@@ -95,12 +95,12 @@ namespace StreetWorkoutV2.View
                     {
                         if (entryPasswordNew.Text.Length >= 8)
                         {
-                            bool CheckOldWW = await DBManager.LoginAsync(Preferences.Get("Naam", ""), DBManager.Encrypt(entryPasswordOld.Text));
+                            bool CheckOldWW = await DBManager.Login(Preferences.Get("Name", ""), DBManager.Encrypt(entryPasswordOld.Text));
                             if (CheckOldWW)
                             {
-                                JObject data = await DBManager.GetUserData(Preferences.Get("Naam", ""), "Naam");
+                                JObject data = await DBManager.GetUserData(Preferences.Get("Name", ""), "Name");
                                 JObject dataTemp = new JObject();
-                                dataTemp["Wachtwoord"] = DBManager.Encrypt(entryPasswordNew.Text);
+                                dataTemp["Password"] = DBManager.Encrypt(entryPasswordNew.Text);
                                 await DBManager.PutUserData(data["Email"].ToString(), "Email", dataTemp);
                                 await Navigation.PopAsync();
                             }

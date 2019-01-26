@@ -3,7 +3,9 @@ using StreetWorkoutV2.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -15,8 +17,8 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExercisePage : AnimationPage
     {
-        private int TimeKeeper = 0;
-        private bool _isRunning = true;
+        private int TimeKeeper = -1;
+        private bool _isRunning = false;
         private bool _isSlideshowRunning = false;
         Oefening _CurrentExercise;
         string _CurrentProgress;
@@ -34,23 +36,23 @@ namespace StreetWorkoutV2.View
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
             imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
-            imgExercise.Source = Exercise.AfbeeldingenResource[Difficulty][0];
-            lblDescription.Text = Exercise.BeschrijvingNewLine[Difficulty];
-            lblExerciseName.Text = Exercise.Oefeningnaam[Difficulty];
+            imgExercise.Source = Exercise.ImageResource[Difficulty][0];
+            lblDescription.Text = Exercise.DescriptionNewLine[Difficulty];
+            lblExerciseName.Text = Exercise.ExerciseName[Difficulty];
 
             _CurrentExercise = Exercise;
             _CurrentProgress = Progress;
             _Difficulty = Difficulty;
             _Repetitions = Repetitions;
 
-            if (Exercise.AfbeeldingenResource[Difficulty].Count <= 1)
+            if (Exercise.ImageResource[Difficulty].Count <= 1)
             {
                 SlideshowToggle_Start.IsVisible = false;
                 SlideshowToggle_Stop.IsVisible = false;
             }
             else
             {
-                imgExerciseSwap.Source = Exercise.AfbeeldingenResource[Difficulty][1];
+                imgExerciseSwap.Source = Exercise.ImageResource[Difficulty][1];
             }
 
             lblProgress.Text = _CurrentProgress;
@@ -60,13 +62,13 @@ namespace StreetWorkoutV2.View
                 btnBack.IsEnabled = false;
             }
 
-            if (_CurrentExercise.Herhalingen.Count == 0)
+            if (_CurrentExercise.Repeats.Count == 0)
             {
-                lblRepetitions.Text = _CurrentExercise.Duurtijd[Repetitions].ToString() + " Seconden";
+                lblRepetitions.Text = _CurrentExercise.Duration[Repetitions].ToString() + " Seconden";
             }
             else
             {
-                lblRepetitions.Text = _CurrentExercise.Herhalingen[Repetitions].ToString() + " Herhalingen";
+                lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Repeats";
             }
 
 
@@ -179,13 +181,23 @@ namespace StreetWorkoutV2.View
         {
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                TimeKeeper += 1;
+
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     TimerText.Text = (TimeKeeper / 60).ToString("00") + " : " + (TimeKeeper % 60).ToString("00");
+                    if (TimeKeeper == _CurrentExercise.Duration[_Repetitions])
+                    {
+                        TimerText.TextColor = Color.FromHex("#EE4444");
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+                        Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
+                        var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
 
+                        player.Load(audioStream);
+                        player.Play();
+                    }
 
                 });
+                TimeKeeper += 1;
 
                 return _isRunning;
             });

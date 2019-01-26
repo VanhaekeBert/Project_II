@@ -88,12 +88,12 @@ namespace StreetWorkoutV2.View
                                 if (entryEmail.Text.ToLower().Contains('@'))
                                 {
                                     string Email = entryEmail.Text.Replace(" ", "");
-                                    bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Naam");
+                                    bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Name");
                                     bool EmailCheck = await DBManager.CheckUserData(Email, "Email");
                                     if (UserNameCheck == false && EmailCheck == false)
                                     {
                                         LoadingIndicator.IsRunning = true;
-                                        var response = await DBManager.RegistrerenAsync(Email, UserNameEntry.Text, DBManager.Encrypt(entryPassword.Text));
+                                        var response = await DBManager.Register(Email, UserNameEntry.Text, DBManager.Encrypt(entryPassword.Text));
                                         if (response)
                                         {
                                             await Navigation.PushAsync(new LoginPage());

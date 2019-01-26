@@ -13,7 +13,7 @@ namespace StreetWorkoutV2
         public App()
         {
             InitializeComponent();
-            if (Preferences.Get("Naam", "") != "")
+            if (Preferences.Get("Name", "") != "")
             {
                 Preferences.Set("From", true);
                 MainPage = new NavigationPage(new MainPage());

@@ -61,7 +61,7 @@ namespace StreetWorkoutV2.View
             List<Oefening> PassList = new List<Oefening>();
             foreach (Oefening oefening in _Oefeningslijst)
             {
-                if (oefening.Toestel == ScannedDevice)
+                if (oefening.Device == ScannedDevice)
                 {
                     PassList.Add(oefening);
                 }
@@ -111,7 +111,7 @@ namespace StreetWorkoutV2.View
                             List<string> devices = new List<string>();
                             foreach (var oefening in _Oefeningslijst)
                             {
-                                devices.Add(oefening.Toestel);
+                                devices.Add(oefening.Device);
                             }
 
                             if (devices.Contains(result.Text))

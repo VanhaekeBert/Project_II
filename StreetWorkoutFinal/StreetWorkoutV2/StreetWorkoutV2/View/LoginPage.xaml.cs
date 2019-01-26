@@ -78,42 +78,42 @@ namespace StreetWorkoutV2.View
                 {
                     LoadingIndicator.IsRunning = true;
 
-                    bool Login = await DBManager.LoginAsync(entryUserName.Text.Replace(" ", ""), DBManager.Encrypt(entryPassword.Text));
+                    bool Login = await DBManager.Login(entryUserName.Text.Replace(" ", ""), DBManager.Encrypt(entryPassword.Text));
                     if (Login)
                     {
-                        JObject user = await DBManager.GetUserData(entryUserName.Text.Replace(" ", ""), "Naam");
-                        JArray exercises = await DBManager.GetOefeningenData(entryUserName.Text.Replace(" ", ""));
-                        JArray water = await DBManager.GetWater(entryUserName.Text.Replace(" ", ""));
+                        JObject user = await DBManager.GetUserData(entryUserName.Text.Replace(" ", ""), "Name");
+                        JArray exercises = await DBManager.GetExerciseData(entryUserName.Text.Replace(" ", ""));
+                        JArray water = await DBManager.GetWaterData(entryUserName.Text.Replace(" ", ""));
                         var latestWater = await DBManager.GetLatestWater(entryUserName.Text.Replace(" ", ""));
                         if (latestWater != null)
                         {
-                            DateTime date = (DateTime)latestWater["datum"];
+                            DateTime date = (DateTime)latestWater["Date"];
                             if (date.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
                             {
-                                Preferences.Set("WaterDoel", int.Parse(latestWater["waterDoel"].ToString()));
-                                Preferences.Set("WaterGedronken", int.Parse(latestWater["waterGedronken"].ToString()));
+                                Preferences.Set("WaterGoal", int.Parse(latestWater["waterGoal"].ToString()));
+                                Preferences.Set("WaterDrunk", int.Parse(latestWater["waterDrunk"].ToString()));
                             }
                             else
                             {
-                                DBManager.PostWater(entryUserName.Text.Replace(" ", ""), int.Parse(latestWater["waterDoel"].ToString()), 0);
-                                Preferences.Set("WaterDoel", int.Parse(latestWater["waterDoel"].ToString()));
-                                Preferences.Set("WaterGedronken", 0);
+                                DBManager.PostWaterData(entryUserName.Text.Replace(" ", ""), int.Parse(latestWater["waterGoal"].ToString()), 0);
+                                Preferences.Set("WaterGoal", int.Parse(latestWater["waterGoal"].ToString()));
+                                Preferences.Set("WaterDrunk", 0);
                             }
                         }
                         else
                         {
-                            DBManager.PostWater(entryUserName.Text.Replace(" ", ""), 0, 0);
-                            Preferences.Set("WaterDoel", 0);
-                            Preferences.Set("WaterGedronken", 0);
+                            DBManager.PostWaterData(entryUserName.Text.Replace(" ", ""), 0, 0);
+                            Preferences.Set("WaterGoal", 0);
+                            Preferences.Set("WaterDrunk", 0);
                         }
                         var waterTojson = JsonConvert.SerializeObject(water);
                         var exerciseTojson = JsonConvert.SerializeObject(exercises);
-                        Preferences.Set("Naam", user["naam"].ToString());
-                        Preferences.Set("ApiNaam", user["apiNaam"].ToString());
+                        Preferences.Set("Name", user["name"].ToString());
+                        Preferences.Set("ApiNaam", user["apiName"].ToString());
                         Preferences.Set("Email", user["email"].ToString());
-                        Preferences.Set("Leeftijd", user["leeftijd"].ToString());
-                        Preferences.Set("Lengte", user["lengte"].ToString());
-                        Preferences.Set("Gewicht", user["gewicht"].ToString());
+                        Preferences.Set("Age", user["age"].ToString());
+                        Preferences.Set("Length", user["length"].ToString());
+                        Preferences.Set("Weigth", user["weight"].ToString());
                         Preferences.Set("Oefeningen", exerciseTojson.ToString());
                         Preferences.Set("Water", waterTojson.ToString());
                         await Navigation.PushModalAsync(new NavigationPage(new MainPage()));

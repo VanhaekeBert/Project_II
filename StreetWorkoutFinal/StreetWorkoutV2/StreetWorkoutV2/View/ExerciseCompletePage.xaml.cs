@@ -22,7 +22,6 @@ namespace StreetWorkoutV2.View
     public partial class ExerciseCompletePage : AnimationPage
     {
         string _Repetitions;
-        // private string _KcalAPI = "0";
         public ExerciseCompletePage(Oefening Exercise, int Repetitions)
         {
             InitializeComponent();
@@ -33,14 +32,6 @@ namespace StreetWorkoutV2.View
                     popNoConnection.IsVisible = false;
                 })
             });
-
-
-            //if (Preferences.Get("API", "") == "FitBit")
-            //{
-            //    FrmChart.IsVisible = true;
-            //    GrdAPIData.IsVisible = true;
-            //    MakeEntriesHartslag();
-            //}
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
             Repetition1.Text = Preferences.Get("Repetition0", "").Substring(0, Preferences.Get("Repetition0", "").Length - 1);
@@ -53,17 +44,17 @@ namespace StreetWorkoutV2.View
             {
                 Repetition2.TextColor = Color.Red;
             }
-            if (Exercise.Herhalingen.Count == 0)
+            if (Exercise.Repeats.Count == 0)
             {
-                inputRepetitions.Placeholder = Exercise.Duurtijd[Repetitions].ToString();
+                inputRepetitions.Placeholder = Exercise.Duration[Repetitions].ToString();
                 lblInputRepetitions.Text = "Vul uw behaalde aantal seconden in";
-                _Repetitions = Exercise.Duurtijd[Repetitions].ToString();
+                _Repetitions = Exercise.Duration[Repetitions].ToString();
             }
             else
             {
-                inputRepetitions.Placeholder = Exercise.Herhalingen[Repetitions].ToString();
+                inputRepetitions.Placeholder = Exercise.Repeats[Repetitions].ToString();
                 lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
-                _Repetitions = Exercise.Herhalingen[Repetitions].ToString();
+                _Repetitions = Exercise.Repeats[Repetitions].ToString();
             }
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
 
@@ -207,8 +198,8 @@ namespace StreetWorkoutV2.View
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
                 //    //In if steken
-                //    JObject oefening = new JObject();
-                //    var fitbitName = Preferences.Get("Naam", "");
+                //    JObject exercise = new JObject();
+                //    var fitbitName = Preferences.Get("Name", "");
                 //    var fitbitStartDate = Preferences.Get("StartDate", DateTime.Now);
                 //    var fitbitEndDate = DateTime.Now;
                 //    Preferences.Set("StartDate", null);
@@ -333,104 +324,104 @@ namespace StreetWorkoutV2.View
         }
 
 
-        private void MakeEntriesHartslag()
-        {
-            List<string> listKleuren = new List<string> {
-                "#FF4A4A","#F74848","#F74848","#F74848","#E64343","#E64343","#E64343","#E64343"
-            };
-            List<string> listLabels = new List<string> {
-                "13:01","13:02","13:02","13:03","13:04","13:05","13:06","13:07"
-            };
-            List<string> listValues = new List<string> {
-                "42","45","40","120","81","83","60","5"
-            };
+        //private void MakeEntriesHartslag()
+        //{
+        //    List<string> listKleuren = new List<string> {
+        //        "#FF4A4A","#F74848","#F74848","#F74848","#E64343","#E64343","#E64343","#E64343"
+        //    };
+        //    List<string> listLabels = new List<string> {
+        //        "13:01","13:02","13:02","13:03","13:04","13:05","13:06","13:07"
+        //    };
+        //    List<string> listValues = new List<string> {
+        //        "42","45","40","120","81","83","60","5"
+        //    };
 
-            List<Entry> entriesOef = new List<Entry> { };
-            for (int i = 0; i < 8; i++)
-            {
-                float value = float.Parse(listValues[i]);
+        //    List<Entry> entriesOef = new List<Entry> { };
+        //    for (int i = 0; i < 8; i++)
+        //    {
+        //        float value = float.Parse(listValues[i]);
 
-                entriesOef.Add(new Entry(value)
-                {
-                    Color = SKColor.Parse(listKleuren[i]),
-                    Label = listLabels[i],
-                    ValueLabel = listValues[i]
-                });
-            }
-            chartHartslag.Chart = new LineChart()
-            {
-                Entries = entriesOef,
-                BackgroundColor = SKColors.Transparent,
-                PointSize = 22,
-                LabelTextSize = 22,
-                ValueLabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelOrientation = Microcharts.Orientation.Horizontal,
-                LabelColor = SKColor.Parse("#FFFFFF"),
-            };
-        }
+        //        entriesOef.Add(new Entry(value)
+        //        {
+        //            Color = SKColor.Parse(listKleuren[i]),
+        //            Label = listLabels[i],
+        //            ValueLabel = listValues[i]
+        //        });
+        //    }
+        //    chartHartslag.Chart = new LineChart()
+        //    {
+        //        Entries = entriesOef,
+        //        BackgroundColor = SKColors.Transparent,
+        //        PointSize = 22,
+        //        LabelTextSize = 22,
+        //        ValueLabelOrientation = Microcharts.Orientation.Horizontal,
+        //        LabelOrientation = Microcharts.Orientation.Horizontal,
+        //        LabelColor = SKColor.Parse("#FFFFFF"),
+        //    };
+        //}
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             LoadingIndicator.IsRunning = true;
             if (Connection.CheckConnection())
             {
-                JObject oefening = new JObject();
-                string herhalingen = "[";
-                oefening["Naam"] = Preferences.Get("Naam", "");
-                oefening["Datum"] = DateTime.Now.ToString();
-                oefening["Duur"] = Preferences.Get("WorkTime", 0);
+                JObject exercise = new JObject();
+                string repetitions = "[";
+                exercise["Name"] = Preferences.Get("Name", "");
+                exercise["Date"] = DateTime.Now.ToString();
+                exercise["Duration"] = Preferences.Get("WorkTime", 0);
                 Preferences.Set("WorkTime", 0);
-                oefening["Workout"] = Preferences.Get("Workout", "");
-                oefening["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+                exercise["Workout"] = Preferences.Get("Workout", "");
+                exercise["Difficulty"] = Preferences.Get("Difficulty", "");
                 for (int i = 0; i < 3; i++)
                 {
                     if (i == 2)
                     {
-                        herhalingen += Preferences.Get($"Repetition{i}", "") + "]";
+                        repetitions += Preferences.Get($"Repetition{i}", "") + "]";
                     }
                     else
                     {
-                        herhalingen += Preferences.Get($"Repetition{i}", "") + ", ";
+                        repetitions += Preferences.Get($"Repetition{i}", "") + ", ";
                     }
                 }
-                oefening["Herhalingen"] = herhalingen;
+                exercise["Repeats"] = repetitions;
                 if (imgRatingHeartFull5.IsVisible)
                 {
-                    oefening["Gevoel"] = "5";
+                    exercise["Feeling"] = "5";
                 }
                 else if (imgRatingHeartFull4.IsVisible)
                 {
-                    oefening["Gevoel"] = "4";
+                    exercise["Feeling"] = "4";
                 }
                 else if (imgRatingHeartFull3.IsVisible)
                 {
-                    oefening["Gevoel"] = "3";
+                    exercise["Feeling"] = "3";
                 }
                 else if (imgRatingHeartFull2.IsVisible)
                 {
-                    oefening["Gevoel"] = "2";
+                    exercise["Feeling"] = "2";
                 }
                 else
                 {
-                    oefening["Gevoel"] = "1";
+                    exercise["Feeling"] = "1";
                 }
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
-                //    oefening["Kcal"] = _KcalAPI;
-                //    oefening["MaxHeart"] = "0";
-                //    oefening["AverageHeart"] = "0";
+                //    exercise["Kcal"] = _KcalAPI;
+                //    exercise["MaxHeartrate"] = "0";
+                //    exercise["AverageHeartrate"] = "0";
                 //}
                 //else
                 //{
-                oefening["Kcal"] = 0;
-                oefening["MaxHeart"] = 0;
-                oefening["AverageHeart"] = 0;
+                //exercise["Kcal"] = 0;
+                //exercise["MaxHeartrate"] = 0;
+                //exercise["AverageHeartrate"] = 0;
                 //}
-                await DBManager.PostOefening(oefening);
-                JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                await DBManager.PostExerciseData(exercise);
+                JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);
-                Preferences.Set("Oefeningen", exercisesTojson.ToString());
-                MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+                Preferences.Set("Exercises", exercisesTojson.ToString());
+                MessagingCenter.Send(this, "PassExercises", Preferences.Get("Exercises", ""));
                 LoadingIndicator.IsRunning = false;
                 await btnHome.FadeTo(0.3, 75);
                 btnHome.FadeTo(1, 75);
@@ -453,12 +444,12 @@ namespace StreetWorkoutV2.View
                 }
                 JObject exercise = new JObject();
                 string repetitions = "[";
-                exercise["Naam"] = Preferences.Get("Naam", "");
-                exercise["Datum"] = DateTime.Now.ToString();
-                exercise["Duur"] = Preferences.Get("WorkTime", 0);
+                exercise["Name"] = Preferences.Get("Name", "");
+                exercise["Date"] = DateTime.Now.ToString();
+                exercise["Duration"] = Preferences.Get("WorkTime", 0);
                 Preferences.Set("WorkTime", 0);
                 exercise["Workout"] = Preferences.Get("Workout", ""); ;
-                exercise["Moeilijkheidsgraad"] = Preferences.Get("Difficulty", "");
+                exercise["Difficulty"] = Preferences.Get("Difficulty", "");
                 for (int i = 0; i < 3; i++)
                 {
                     if (i == 2)
@@ -473,41 +464,41 @@ namespace StreetWorkoutV2.View
                 exercise["repetitions"] = repetitions;
                 if (imgRatingHeartFull5.IsVisible)
                 {
-                    exercise["Gevoel"] = "5";
+                    exercise["Feeling"] = "5";
                 }
                 else if (imgRatingHeartFull4.IsVisible)
                 {
-                    exercise["Gevoel"] = "4";
+                    exercise["Feeling"] = "4";
                 }
                 else if (imgRatingHeartFull3.IsVisible)
                 {
-                    exercise["Gevoel"] = "3";
+                    exercise["Feeling"] = "3";
                 }
                 else if (imgRatingHeartFull2.IsVisible)
                 {
-                    exercise["Gevoel"] = "2";
+                    exercise["Feeling"] = "2";
                 }
                 else
                 {
-                    exercise["Gevoel"] = "1";
+                    exercise["Feeling"] = "1";
                 }
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
                 //    exercise["Kcal"] = _KcalAPI;
-                //    exercise["MaxHeart"] = "0";
-                //    exercise["AverageHeart"] = "0";
+                //    exercise["MaxHeartrate"] = "0";
+                //    exercise["AverageHeartrate"] = "0";
                 //}
                 //else
                 //{
-                exercise["Kcal"] = 0;
-                exercise["MaxHeart"] = 0;
-                exercise["AverageHeart"] = 0;
+                //exercise["Kcal"] = 0;
+                //exercise["MaxHeartrate"] = 0;
+                //exercise["AverageHeartrate"] = 0;
                 //}
-                await DBManager.PostOefening(exercise);
-                JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                await DBManager.PostExerciseData(exercise);
+                JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);
-                Preferences.Set("Oefeningen", exercisesTojson.ToString());
-                MessagingCenter.Send(this, "PassOefeningen", Preferences.Get("Oefeningen", ""));
+                Preferences.Set("Exercises", exercisesTojson.ToString());
+                MessagingCenter.Send(this, "PassExercises", Preferences.Get("Exercises", ""));
                 LoadingIndicator.IsRunning = false;
                 await btnMoreEx.FadeTo(0.3, 75);
                 btnMoreEx.FadeTo(1, 75);

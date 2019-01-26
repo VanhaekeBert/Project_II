@@ -10,71 +10,71 @@ namespace StreetWorkoutV2.Model
     {
         [JsonProperty(propertyName: "user")]
         public JObject FullJson { get; set; }
-        private string _leeftijd;
-        public string Leeftijd
+        private string _age;
+        public string Age
         {
             get
             {
-                if (_leeftijd == null)
+                if (_age == null)
                 {
                     return FullJson["age"].ToString();
                 }
                 else
                 {
-                    return _leeftijd;
+                    return _age;
                 };
             }
-            set { _leeftijd = value; }
+            set { _age = value; }
         }
-        private string _naam;
+        private string _name;
 
-        public string Naam
+        public string Name
         {
             get
             {
-                if (_naam == null)
+                if (_name == null)
                 {
                     return FullJson["fullName"].ToString();
                 }
                 else
                 {
-                    return _naam;
+                    return _name;
                 }; }
-            set { _naam = value; }
+            set { _name = value; }
         }
-        private string _lengte;
-        public string Lengte
+        private string _length;
+        public string Length
         {
             get
             {
-                if (_lengte == null)
+                if (_length == null)
                 {
                     return FullJson["height"].ToString();
                 }
                 else
                 {
-                    return _lengte;
+                    return _length;
                 };
             }
-            set { _lengte = value; }
+            set { _length = value; }
         }
-        private string _gewicht;
-        public string Gewicht
+        private string _weigth;
+        public string Weigth
         {
             get
             {
-                if (_gewicht == null)
+                if (_weigth == null)
                 {
                     return FullJson["weight"].ToString();
                 }
                 else
                 {
-                    return _gewicht;
+                    return _weigth;
                 };
             }
-            set { _gewicht = value; }
+            set { _weigth = value; }
         }
         public string API { get; set; }
-        public string WaterDoel { get; set; }
+        public string WaterGoal { get; set; }
     }
 }

@@ -5,11 +5,11 @@ using Xamarin.Forms;
 
 namespace StreetWorkoutV2.Model
 {
-    public class Logboek
+    public class Logbook
     {
-        public string Naam { get; set; }
+        public string Name { get; set; }
         public string Date { get; set; }
-        public string Moeilijkheidsgraad { get; set; }
+        public string Difficulty { get; set; }
         public int Total_hearts_given { get; set; }
         public List<int> ExerciseRepetitions { get; set; }
         public List<Color> Color { get; set; }

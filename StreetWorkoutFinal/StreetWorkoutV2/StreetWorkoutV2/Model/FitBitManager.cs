@@ -31,7 +31,7 @@ namespace StreetWorkoutV2.Model
                 token["Token"] = $"Bearer {account.Token}";
                 _BearerToken = $"Bearer {account.Token}";
                 Preferences.Set("Token", $"Bearer {account.Token}");
-                DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", token);
+                await DBManager.PutUserData(Preferences.Get("Name", ""), "Name", token);
                 response.API = "FitBit";
                 return response;
             }
@@ -51,7 +51,8 @@ namespace StreetWorkoutV2.Model
                 var postEndTime = endTime.ToString("HH:mm:ss");
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwNzk0Mjh9.m39NX6x91xwD6jT2oUVuZBs-kdGbQi6ll_i-veW0P9k";
+                //string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwNzk0Mjh9.m39NX6x91xwD6jT2oUVuZBs-kdGbQi6ll_i-veW0P9k";
+                string authToken = _BearerToken;
                 client.DefaultRequestHeaders.Add("Authorization", authToken);
                 string url = $"https://api.fitbit.com/1/user/-/activities/heart/date/today/1d/1sec/time/{postStartTime}/{postEndTime}.json";
 
@@ -79,7 +80,9 @@ namespace StreetWorkoutV2.Model
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
-                string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwODQ4MjJ9.39Wk-eblMXId2YodXEVIV6G_WHXAsuhabUfWfftGc4w";
+                //string authToken = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ5SjUiLCJzdWIiOiI3N1NRUUoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd3BybyB3bnV0IHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQ4NDIzNzY1LCJpYXQiOjE1NDgwODQ4MjJ9.39Wk-eblMXId2YodXEVIV6G_WHXAsuhabUfWfftGc4w";
+
+                string authToken = _BearerToken;
                 client.DefaultRequestHeaders.Add("Authorization", authToken);
                 var postTime = startTime.ToString("HH:mm:ss");
                 var postDate = startTime.ToString("yyyy-MM-dd");

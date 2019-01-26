@@ -23,8 +23,8 @@ namespace StreetWorkoutV2.View
     public partial class AccountPage : AnimationPage
     {
         public Color JObject { get; }
-        List<OefeningDB> weekExerciseList = new List<OefeningDB>();
-        List<OefeningDB> monthExerciseList = new List<OefeningDB>();
+        List<ExerciseDB> weekExerciseList = new List<ExerciseDB>();
+        List<ExerciseDB> monthExerciseList = new List<ExerciseDB>();
         List<Water> weekWaterList = new List<Water>();
         List<Water> monthWaterList = new List<Water>();
         CultureInfo dutch = new CultureInfo("nl-BE");
@@ -52,56 +52,46 @@ namespace StreetWorkoutV2.View
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
             imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
-            lblUsername.Text = Preferences.Get("ApiNaam", "");
-            entryNameChange.Placeholder = Preferences.Get("ApiNaam", "");
+            lblUsername.Text = Preferences.Get("ApiName", "");
+            entryNameChange.Placeholder = Preferences.Get("ApiName", "");
 
-            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
+            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExercise", (sender, arg) =>
             {
                 if (arg != "[]")
                 {
-                    weekExerciseList = new List<OefeningDB>();
-                    monthExerciseList = new List<OefeningDB>();
-                    var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<OefeningDB> exercises = new List<OefeningDB>();
+                    weekExerciseList = new List<ExerciseDB>();
+                    monthExerciseList = new List<ExerciseDB>();
+                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                    List<ExerciseDB> exercises = new List<ExerciseDB>();
                     for (int i = 0; i < exercisesRaw.Count(); i++)
                     {
                         if (i == 0)
                         {
-                            exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
+                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                         }
                         else if (i != (exercisesRaw.Count() - 1))
                         {
-                            exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                         }
                     }
-                    foreach (OefeningDB oefening in exercises)
+                    foreach (ExerciseDB exercise in exercises)
                     {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
                         {
-                            weekExerciseList.Add(oefening);
+                            weekExerciseList.Add(exercise);
                         }
-                        if (int.Parse(DateTime.Now.ToString("MM")) == oefening.Datum.Month)
+                        if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
                         {
-                            monthExerciseList.Add(oefening);
+                            monthExerciseList.Add(exercise);
                         }
                     }
                     lblOefWeek.Text = weekExerciseList.Count().ToString();
                     lblOefMaand.Text = monthExerciseList.Count().ToString();
-                    int kcalweek = 0;
-                    foreach (OefeningDB oefening in weekExerciseList)
-                    {
-                        kcalweek += oefening.Kcal;
-                    }
-                    int kcalmaand = 0;
-                    foreach (OefeningDB oefening in weekExerciseList)
-                    {
-                        kcalmaand += oefening.Kcal;
-                    }
                     MakeEntriesOef();
                 }
             });
 
-            MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterGedronken", (sender, arg) =>
+            MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterDrunk", (sender, arg) =>
             {
                 if (arg != "[]")
                 {
@@ -122,11 +112,11 @@ namespace StreetWorkoutV2.View
                     }
                     foreach (Water item in water)
                     {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.datum.Day))
+                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.Date.Day))
                         {
                             weekWaterList.Add(item);
                         }
-                        if (int.Parse(DateTime.Now.ToString("MM")) == item.datum.Month)
+                        if (int.Parse(DateTime.Now.ToString("MM")) == item.Date.Month)
                         {
                             monthWaterList.Add(item);
                         }
@@ -134,13 +124,13 @@ namespace StreetWorkoutV2.View
                     int sum = 0;
                     foreach (Water item in weekWaterList)
                     {
-                        sum += item.waterGedronken;
+                        sum += item.WaterDrunk;
                     }
                     lblWaterWeek.Text = (sum / 1000.0).ToString() + " L";
                     sum = 0;
                     foreach (Water item in monthWaterList)
                     {
-                        sum += item.waterGedronken;
+                        sum += item.WaterDrunk;
                     }
                     lblWaterMaand.Text = (sum / 1000.0).ToString() + " L";
                     MakeEntriesWater();
@@ -164,11 +154,11 @@ namespace StreetWorkoutV2.View
                 }
                 foreach (Water item in water)
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.datum.Day))
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(item.Date.Day))
                     {
                         weekWaterList.Add(item);
                     }
-                    if (int.Parse(DateTime.Now.ToString("MM")) == item.datum.Month)
+                    if (int.Parse(DateTime.Now.ToString("MM")) == item.Date.Month)
                     {
                         monthWaterList.Add(item);
                     }
@@ -176,13 +166,13 @@ namespace StreetWorkoutV2.View
                 int sum = 0;
                 foreach (Water item in weekWaterList)
                 {
-                    sum += item.waterGedronken;
+                    sum += item.WaterDrunk;
                 }
                 lblWaterWeek.Text = (sum / 1000.0).ToString() + " L";
                 sum = 0;
                 foreach (Water item in monthWaterList)
                 {
-                    sum += item.waterGedronken;
+                    sum += item.WaterDrunk;
                 }
                 lblWaterMaand.Text = (sum/1000.0).ToString() + " L";
                 MakeEntriesWater();
@@ -192,44 +182,34 @@ namespace StreetWorkoutV2.View
                 lblDataWater.IsVisible = true;
             }
 
-            if (Preferences.Get("Oefeningen", "") != "[]")
+            if (Preferences.Get("Exercises", "") != "[]")
             {
-                var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                List<OefeningDB> exercises = new List<OefeningDB>();
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<ExerciseDB> exercises = new List<ExerciseDB>();
                 for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                     }
                     else if (i != (exercisesRaw.Count() - 1))
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
-                foreach (OefeningDB oefening in exercises)
+                foreach (ExerciseDB exercise in exercises)
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
                     {
-                        weekExerciseList.Add(oefening);
+                        weekExerciseList.Add(exercise);
                     }
-                    if (int.Parse(DateTime.Now.ToString("MM")) == oefening.Datum.Month)
+                    if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
                     {
-                        monthExerciseList.Add(oefening);
+                        monthExerciseList.Add(exercise);
                     }
                 }
                 lblOefWeek.Text = weekExerciseList.Count().ToString();
                 lblOefMaand.Text = monthExerciseList.Count().ToString();
-                int kcalweek = 0;
-                foreach (OefeningDB oefening in weekExerciseList)
-                {
-                    kcalweek += oefening.Kcal;
-                }
-                int kcalmaand = 0;
-                foreach (OefeningDB oefening in weekExerciseList)
-                {
-                    kcalmaand += oefening.Kcal;
-                }
                 MakeEntriesOef();
             }
             else
@@ -249,8 +229,8 @@ namespace StreetWorkoutV2.View
                     {
                         if (Connection.CheckConnection())
                         {
-                            await DBManager.PostProfilePicture(Preferences.Get("Naam", "") + ".jpg", stream);
-                            imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
+                            await DBManager.PostProfilePicture(Preferences.Get("Name", "") + ".jpg", stream);
+                            imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Name", ""));
                         }
                         else
                         {
@@ -267,7 +247,7 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command( () =>
                 {
-                    entryNameChange.Placeholder = Preferences.Get("ApiNaam", "");
+                    entryNameChange.Placeholder = Preferences.Get("ApiName", "");
                     entryNameChange.IsVisible = true;
                     entryNameChange.IsEnabled = true;
                     entryNameChange.Focus();
@@ -281,16 +261,16 @@ namespace StreetWorkoutV2.View
                 if (entryNameChange.Text != null)
                 {
                     JObject user = new JObject();
-                    user["ApiNaam"] = entryNameChange.Text.ToString();
+                    user["ApiName"] = entryNameChange.Text.ToString();
                     if (Connection.CheckConnection())
                     {
-                        await DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
+                        await DBManager.PutUserData(Preferences.Get("Name", ""), "Name", user);
                     }
                     else
                     {
                         popNoConnection.IsVisible = true;
                     }
-                    Preferences.Set("ApiNaam", entryNameChange.Text.ToString());
+                    Preferences.Set("ApiName", entryNameChange.Text.ToString());
                     MessagingCenter.Send(this, "PassName", entryNameChange.Text.ToString());
                     lblUsername.Text = entryNameChange.Text;
                 }
@@ -300,25 +280,25 @@ namespace StreetWorkoutV2.View
                 lblUsername.IsVisible = true;
                 imgPencil.IsVisible = true;
             };
-            if (Preferences.Get("Gewicht", "") != "")
+            if (Preferences.Get("Weigth", "") != "")
             {
-                weightInput.Text = Preferences.Get("Gewicht", "");
+                weightInput.Text = Preferences.Get("Weigth", "");
             }
-            if (Preferences.Get("Leeftijd", "") != "")
+            if (Preferences.Get("Age", "") != "")
             {
-                ageInput.Text = Preferences.Get("Leeftijd", "");
+                ageInput.Text = Preferences.Get("Age", "");
             }
-            if (Preferences.Get("Lengte", "") != "")
+            if (Preferences.Get("Length", "") != "")
             {
-                heightInput.Text = Preferences.Get("Lengte", "");
+                heightInput.Text = Preferences.Get("Length", "");
             }
-            if (Preferences.Get("WaterDoel", 0) != 0)
+            if (Preferences.Get("WaterGoal", 0) != 0)
             {
-                waterInput.Text = Preferences.Get("WaterDoel", 0).ToString();
+                waterInput.Text = Preferences.Get("WaterGoal", 0).ToString();
             }
             Task.Run(async () =>
             {
-                imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Naam", ""));
+                imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Name", ""));
             });
         }
         
@@ -336,9 +316,9 @@ namespace StreetWorkoutV2.View
             foreach (string date in listLabels)
             {
                 int i = 0;
-                foreach (OefeningDB oefening in weekExerciseList)
+                foreach (ExerciseDB exercise in weekExerciseList)
                 {
-                    if (date == (oefening.Datum.ToString("dddd", dutch).First().ToString().ToUpper() + oefening.Datum.ToString("dddd", dutch).Substring(1, 2)))
+                    if (date == (exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1, 2)))
                     
                         {
                         i++;
@@ -393,7 +373,7 @@ namespace StreetWorkoutV2.View
             List<string> listValues = new List<string>();
             foreach (Water item in weekWaterList)
             {
-                listValues.Add((item.waterGedronken/1000.0).ToString());
+                listValues.Add((item.WaterDrunk/1000.0).ToString());
             }
             int length = listValues.Count();
             if (length < 7)
@@ -454,20 +434,20 @@ namespace StreetWorkoutV2.View
                 LoadingIndicator.IsRunning = true;
                 JObject user = new JObject();
                 JObject water = new JObject();
-                    user["Lengte"] = heightInput.Text.ToString();
-                    Preferences.Set("Lengte", user["Lengte"].ToString());
-                    user["Gewicht"] = weightInput.Text.ToString();
-                    Preferences.Set("Gewicht", user["Gewicht"].ToString());
-                    user["Leeftijd"] = ageInput.Text.ToString();
-                    Preferences.Set("Leeftijd", user["Leeftijd"].ToString());
-                    water["WaterDoel"] = int.Parse(waterInput.Text);
-                    Preferences.Set("WaterDoel", int.Parse(water["WaterDoel"].ToString()));
+                    user["Length"] = heightInput.Text.ToString();
+                    Preferences.Set("Length", user["Length"].ToString());
+                    user["Weigth"] = weightInput.Text.ToString();
+                    Preferences.Set("Weigth", user["Weigth"].ToString());
+                    user["Age"] = ageInput.Text.ToString();
+                    Preferences.Set("Age", user["Age"].ToString());
+                    water["WaterGoal"] = int.Parse(waterInput.Text);
+                    Preferences.Set("WaterGoal", int.Parse(water["WaterGoal"].ToString()));
                     MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
-                    water["Naam"] = Preferences.Get("Naam", "");
+                    water["Name"] = Preferences.Get("Name", "");
                 if (Connection.CheckConnection())
                 {
-                    DBManager.PutUserData(Preferences.Get("Naam", ""), "Naam", user);
-                    DBManager.PutWater(water);
+                    DBManager.PutUserData(Preferences.Get("Name", ""), "Name", user);
+                    DBManager.PutWaterData(water);
                     LoadingIndicator.IsRunning = false;
                     var vUpdatedPage = new AccountPage();
                     Navigation.InsertPageBefore(vUpdatedPage, this);

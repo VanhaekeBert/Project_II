@@ -25,29 +25,29 @@ namespace StreetWorkoutV2.View
         private int _ChosenRepetitionState = 4;
         private int _ChosenDifficultyState = 4;
         private List<Oefening> _ExerciseList = new List<Oefening>();
-        private List<OefeningDB> exercises = new List<OefeningDB>();
+        private List<ExerciseDB> exercises = new List<ExerciseDB>();
 
         public ExerciseListPage(List<Oefening> ExerciseList)
         {
             InitializeComponent();
-            if (Preferences.Get("Oefeningen", "") != "[]")
+            if (Preferences.Get("Exercises", "") != "[]")
             {
-                var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
                 for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                     }
                     else if (i != (exercisesRaw.Count() - 1))
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
             }
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             imgHearts.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Hearts_4.png");
-            lblTitle.Text = ExerciseList[0].Toestel;
+            lblTitle.Text = ExerciseList[0].Device;
             lvwExercices.ItemsSource = ExerciseList;
             _ExerciseList = ExerciseList;
 
@@ -76,10 +76,10 @@ namespace StreetWorkoutV2.View
                {
                    stackRecommendation.IsVisible = false;
                    _TappedExercise = (lvwExercices.SelectedItem as Oefening);
-                   List<OefeningDB> tempExerciseList = new List<OefeningDB>();
-                   foreach (OefeningDB oefening in exercises)
+                   List<ExerciseDB> tempExerciseList = new List<ExerciseDB>();
+                   foreach (ExerciseDB oefening in exercises)
                    {
-                       if (oefening.Workout == _TappedExercise.Groepering.ToString())
+                       if (oefening.Workout == _TappedExercise.Grouping.ToString())
                        {
                            tempExerciseList.Add(oefening);
                        }
@@ -87,8 +87,8 @@ namespace StreetWorkoutV2.View
 
                    if (tempExerciseList.Count() != 0)
                    {
-                       lblExercise.Text = tempExerciseList[tempExerciseList.Count() - 1].Moeilijkheidsgraad;
-                       imgHearts.Source = FileImageSource.FromResource($"StreetWorkoutV2.Asset.Hearts_{tempExerciseList[tempExerciseList.Count() - 1].Gevoel}.png");
+                       lblExercise.Text = tempExerciseList[tempExerciseList.Count() - 1].Difficulty;
+                       imgHearts.Source = FileImageSource.FromResource($"StreetWorkoutV2.Asset.Hearts_{tempExerciseList[tempExerciseList.Count() - 1].Feeling}.png");
                        stackRecommendation.IsVisible = true;
                    }
                }
@@ -97,18 +97,18 @@ namespace StreetWorkoutV2.View
                if (lvwExercices.SelectedItem as Oefening != null)
                {
                    _TappedExercise = (lvwExercices.SelectedItem as Oefening);
-                   if (_TappedExercise.Herhalingen.Count == 0)
+                   if (_TappedExercise.Repeats.Count == 0)
                    {
-                       btnRepEasy.Text = "3x" + _TappedExercise.Duurtijd[0].ToString();
-                       btnRepAverage.Text = "3x" + _TappedExercise.Duurtijd[1].ToString();
-                       btnRepHard.Text = "3x" + _TappedExercise.Duurtijd[2].ToString();
+                       btnRepEasy.Text = "3x" + _TappedExercise.Duration[0].ToString() + "sec";
+                       btnRepAverage.Text = "3x" + _TappedExercise.Duration[1].ToString() + "sec";
+                       btnRepHard.Text = "3x" + _TappedExercise.Duration[2].ToString() + "sec";
                        lblSelectGoal.Text = "Selecteer uw tijdsdoel";
                    }
                    else
                    {
-                       btnRepEasy.Text = "3x" + _TappedExercise.Herhalingen[0].ToString();
-                       btnRepAverage.Text = "3x" + _TappedExercise.Herhalingen[1].ToString();
-                       btnRepHard.Text = "3x" + _TappedExercise.Herhalingen[2].ToString();
+                       btnRepEasy.Text = "3x" + _TappedExercise.Repeats[0].ToString();
+                       btnRepAverage.Text = "3x" + _TappedExercise.Repeats[1].ToString();
+                       btnRepHard.Text = "3x" + _TappedExercise.Repeats[2].ToString();
                        lblSelectGoal.Text = "Selecteer uw repetitiedoel";
                    }
                }
@@ -149,7 +149,7 @@ namespace StreetWorkoutV2.View
             {
                 foreach (Oefening exercise in _ExerciseList)
                 {
-                    if (exercise.Groepering.ToLower().Contains(entryExerciseName.Text.ToLower()))
+                    if (exercise.Grouping.ToLower().Contains(entryExerciseName.Text.ToLower()))
                     {
                         filteredExerciseList.Add(exercise);
                     }
@@ -237,7 +237,7 @@ namespace StreetWorkoutV2.View
                     }
                     Preferences.Set("Difficulty", diff);
                     Preferences.Set("Counter", 0);
-                    Preferences.Set("Workout", _TappedExercise.Groepering);
+                    Preferences.Set("Workout", _TappedExercise.Grouping);
                     await btnConfirm.FadeTo(0.3, 75);
                     await btnConfirm.FadeTo(1, 75);
                     popSelectDetails.IsEnabled = false;

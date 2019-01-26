@@ -29,9 +29,9 @@ namespace StreetWorkoutV2.View
             InitializeComponent();
             Task.Run(async () =>
             {
-                JArray exercises = await DBManager.GetOefeningenData(Preferences.Get("Naam", ""));
+                JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var jsonToSaveValue = JsonConvert.SerializeObject(exercises);
-                Preferences.Set("Oefeningen", jsonToSaveValue.ToString());
+                Preferences.Set("Exercises", jsonToSaveValue.ToString());
             });
 
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Picker_Background.png");
@@ -44,7 +44,7 @@ namespace StreetWorkoutV2.View
             string json = oSR.ReadToEnd();
             _ExerciseList = JsonConvert.DeserializeObject<List<Oefening>>(json);
             //-----------------------------------------------
-            if (pickerType == "Toestel")
+            if (pickerType == "Device")
             {
                 //-----TOESTEL---------------------
 
@@ -53,11 +53,11 @@ namespace StreetWorkoutV2.View
                 lblTitle.Text = "Toestellen";
                 foreach (Oefening exercise in _ExerciseList)
                 {
-                    PickerClass pickerDevice = new PickerClass() { Name = exercise.Toestel };
+                    PickerClass pickerDevice = new PickerClass() { Name = exercise.Device };
                     if (!filteredDeviceList.Contains(pickerDevice.Name))
                     {
                         filteredDeviceList.Add(pickerDevice.Name);
-                        Device.Add(pickerDevice.Name, pickerDevice.AantalOefeningen);
+                        Device.Add(pickerDevice.Name, pickerDevice.NumberOfExercises);
                     }
                     else
                     {
@@ -68,7 +68,7 @@ namespace StreetWorkoutV2.View
 
                 foreach (var toestel in Device)
                 {
-                    PickerClass deviceName = new PickerClass() { Name = toestel.Key, AantalOefeningen = toestel.Value, Type = "Toestel" };
+                    PickerClass deviceName = new PickerClass() { Name = toestel.Key, NumberOfExercises = toestel.Value, Type = "Device" };
                     deviceList.Add(deviceName);
                 }
                 lvwDevices.ItemsSource = deviceList;
@@ -84,11 +84,11 @@ namespace StreetWorkoutV2.View
                 lblTitle.Text = "Spiergroepen";
                 foreach (Oefening oefening in _ExerciseList)
                 {
-                    PickerClass muscleGroup = new PickerClass() { Name = oefening.Spiergroep };
+                    PickerClass muscleGroup = new PickerClass() { Name = oefening.MuscleGroup };
                     if (!filteredDeviceList.Contains(muscleGroup.Name))
                     {
                         filteredDeviceList.Add(muscleGroup.Name);
-                        muscleGroupSet.Add(muscleGroup.Name, muscleGroup.AantalOefeningen);
+                        muscleGroupSet.Add(muscleGroup.Name, muscleGroup.NumberOfExercises);
                     }
                     else
                     {
@@ -99,7 +99,7 @@ namespace StreetWorkoutV2.View
 
                 foreach (var muscleGroup in muscleGroupSet)
                 {
-                    PickerClass muscleName = new PickerClass() { Name = muscleGroup.Key, AantalOefeningen = muscleGroup.Value, Type = "Spiergroep" };
+                    PickerClass muscleName = new PickerClass() { Name = muscleGroup.Key, NumberOfExercises = muscleGroup.Value, Type = "MuscleGroup" };
                     muscleList.Add(muscleName);
                 }
                 lvwDevices.ItemsSource = muscleList;
@@ -126,12 +126,12 @@ namespace StreetWorkoutV2.View
                 foreach (Oefening oefening in _ExerciseList)
                 {
                    
-                    if (oefening.Spiergroep == _SelectedItem.Name)
+                    if (oefening.MuscleGroup == _SelectedItem.Name)
                     {
                         PassList.Add(oefening);
                     }
                     
-                    if (oefening.Toestel == _SelectedItem.Name)
+                    if (oefening.Device == _SelectedItem.Name)
                     {
                         PassList.Add(oefening);
                     }

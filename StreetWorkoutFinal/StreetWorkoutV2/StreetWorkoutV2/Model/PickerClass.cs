@@ -17,7 +17,7 @@ namespace StreetWorkoutV2.Model
                 return image;
             }
         }
-        public int AantalOefeningen { get; set; } = 1;
+        public int NumberOfExercises { get; set; } = 1;
         public ImageSource Go_To_button { get { return FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png"); } }
     }
 }

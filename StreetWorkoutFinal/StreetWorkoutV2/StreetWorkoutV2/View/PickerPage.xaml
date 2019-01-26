@@ -58,7 +58,7 @@
                                                 <ff:CachedImage Source="{Binding Image}" Grid.Column="0"  Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                                                 <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
                                                     <Label Text="{Binding Name}" Margin="10,2,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
-                                                    <Label Text="{Binding AantalOefeningen, StringFormat='Aantal oefeningen: {0}'}" Margin="10,-5,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
+                                                    <Label Text="{Binding NumberOfExercises, StringFormat='Aantal oefeningen: {0}'}" Margin="10,-5,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />
                                                 </StackLayout>
                                                 <ff:CachedImage  x:Name="GoToOefeningen" Source="{Binding Go_To_button}" Margin="0,2,0,0"  Grid.Column="2"  VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="20" />
                                             </Grid>

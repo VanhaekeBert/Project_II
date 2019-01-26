@@ -8,33 +8,33 @@ namespace StreetWorkoutV2.Model
     public class Oefening
     {
         [JsonProperty("groepering")]
-        public string Groepering { get; set; }
+        public string Grouping { get; set; }
         [JsonProperty("oefening")]
-        public List<string> Oefeningnaam { get; set; }
+        public List<string> ExerciseName { get; set; }
         [JsonProperty("spiergroep")]
-        public string Spiergroep { get; set; }
+        public string MuscleGroup { get; set; }
         [JsonProperty("toestel")]
-        public string Toestel { get; set; }
+        public string Device { get; set; }
         [JsonProperty("moeilijkheidsgraad")]
-        public List<string> Moeilijkheidsgraad { get; set; }
+        public List<string> Difficulty { get; set; }
         [JsonProperty("beschrijving")]
-        public List<string> Beschrijving { get; set; }
+        public List<string> Description { get; set; }
         [JsonProperty("herhalingen")]
-        public List<int> Herhalingen { get; set; }
+        public List<int> Repeats { get; set; }
         [JsonProperty("duurtijd")]
-        public List<int> Duurtijd { get; set; }
+        public List<int> Duration { get; set; }
         [JsonProperty("afbeeldingen")]
-        public List<List<string>> AfbeeldingenLists { get; set; }
+        public List<List<string>> ImageList { get; set; }
 
-        public int AantalOefeningen { get; set; } = 3;
-        public DateTime Datum { get; set; }
-        public List<string> BeschrijvingNewLine
+        public int NumberOfExercises { get; set; } = 3;
+        public DateTime Date { get; set; }
+        public List<string> DescriptionNewLine
         {
             get
             {
 
                 List<string> ReturnList = new List<string>();
-                foreach (var subItem in Beschrijving)
+                foreach (var subItem in Description)
                 {
                     ReturnList.Add(subItem.Replace(". ", ". " + Environment.NewLine));
                 }
@@ -44,31 +44,31 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public ImageSource OefeningCover
-        {
-            get
-            { 
-            
-          return FileImageSource.FromResource($"StreetWorkoutV2.Asset.Oef_Afbeeldingen.{AfbeeldingenLists[0][0]}");
-            }
-        }
-
-        public List<List<ImageSource>> AfbeeldingenResource
+        public ImageSource ExerciseCover
         {
             get
             {
-                List<List<ImageSource>> sourcelistset = new List<List<ImageSource>>();
-                foreach (List<string> afbeeldinglist in AfbeeldingenLists)
+
+                return FileImageSource.FromResource($"StreetWorkoutV2.Asset.Oef_Afbeeldingen.{ImageList[0][0]}");
+            }
+        }
+
+        public List<List<ImageSource>> ImageResource
+        {
+            get
+            {
+                List<List<ImageSource>> imageSourceList = new List<List<ImageSource>>();
+                foreach (List<string> imageList in ImageList)
                 {
-                    List<ImageSource> sourcelist = new List<ImageSource>();
-                    foreach (var afbeelding in afbeeldinglist)
+                    List<ImageSource> sourceList = new List<ImageSource>();
+                    foreach (var image in imageList)
                     {
-                        sourcelist.Add(FileImageSource.FromResource($"StreetWorkoutV2.Asset.Oef_Afbeeldingen.{afbeelding}"));
+                        sourceList.Add(FileImageSource.FromResource($"StreetWorkoutV2.Asset.Oef_Afbeeldingen.{image}"));
                     }
-                    sourcelistset.Add(sourcelist);
+                    imageSourceList.Add(sourceList);
                 }
 
-                return sourcelistset;
+                return imageSourceList;
             }
         }
 

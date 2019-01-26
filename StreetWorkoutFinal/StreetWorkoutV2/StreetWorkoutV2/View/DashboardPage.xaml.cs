@@ -19,8 +19,6 @@ namespace StreetWorkoutV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DashboardPage : AnimationPage
     {
-
-      //  string _result;
         public DashboardPage()
         {
             InitializeComponent();
@@ -61,56 +59,56 @@ namespace StreetWorkoutV2.View
 
             });
 
-            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassOefeningen", (sender, arg) =>
+            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExercises", (sender, arg) =>
             {
-                List<OefeningDB> weekExercise = new List<OefeningDB>();
+                List<ExerciseDB> weekExercise = new List<ExerciseDB>();
                 if (arg != "[]")
                 {
-                    var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<OefeningDB> exercises = new List<OefeningDB>();
+                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                    List<ExerciseDB> exercises = new List<ExerciseDB>();
                     for (int i = 0; i < exercisesRaw.Count(); i++)
                     {
                         if (i == 0)
                         {
-                            exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
+                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                         }
                         else if (i != (exercisesRaw.Count() - 1))
                         {
-                            exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                         }
                     }
-                    foreach (OefeningDB oefening in exercises)
+                    foreach (ExerciseDB exercise in exercises)
                     {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
                         {
-                            weekExercise.Add(oefening);
+                            weekExercise.Add(exercise);
                         }
                     }
                 }
                 lblLogs.Text = weekExercise.Count().ToString();
             });
 
-                List<OefeningDB> weekExerciseList = new List<OefeningDB>();
-            if (Preferences.Get("Oefeningen", "") != "[]")
+                List<ExerciseDB> weekExerciseList = new List<ExerciseDB>();
+            if (Preferences.Get("Exercises", "") != "[]")
             {
-                var exercisesRaw = Preferences.Get("Oefeningen", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                List<OefeningDB> exercises = new List<OefeningDB>();
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<ExerciseDB> exercises = new List<ExerciseDB>();
                 for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
                     if (i == 0)
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString() + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                     }
                     else if (i != (exercisesRaw.Count() - 1))
                     {
-                        exercises.Add(JsonConvert.DeserializeObject<OefeningDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
-                foreach (OefeningDB oefening in exercises)
+                foreach (ExerciseDB exercise in exercises)
                 {
-                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(oefening.Datum.Day))
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
                     {
-                        weekExerciseList.Add(oefening);
+                        weekExerciseList.Add(exercise);
                     }
                 }
             }
@@ -123,18 +121,12 @@ namespace StreetWorkoutV2.View
             imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.qrcode.png");
             imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
-            lblWelcome.Text = "Welkom " + Preferences.Get("ApiNaam", "");
+            lblWelcome.Text = "Welkom " + Preferences.Get("ApiName", "");
             imgGlassOne.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             imgGlassTwo.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             imgGlassFour.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
-          //  if (Preferences.Get("WaterDoel", 0) != null)
-          //  {
-               // if (Preferences.Get("WaterGedronken", 0) != null)
-               // {
-                    lblWaterGedronken.Text = Preferences.Get("WaterGedronken", 0).ToString();
-               // }
-                lblWaterTotal.Text = Preferences.Get("WaterDoel", 0).ToString();
-         //   }
+            lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
+            lblWaterTotal.Text = Preferences.Get("WaterGoal", 0).ToString();
 
 
             frameWater.GestureRecognizers.Add(new TapGestureRecognizer
@@ -191,7 +183,7 @@ namespace StreetWorkoutV2.View
                 {
                     await btnMuscle.FadeTo(0.3, 75);
                     await btnMuscle.FadeTo(1, 75);
-                    await Navigation.PushAsync(new PickerPage("Spiergroep"));
+                    await Navigation.PushAsync(new PickerPage("MuscleGroup"));
                     
 
                 })
@@ -202,7 +194,7 @@ namespace StreetWorkoutV2.View
                 {
                     await btnDevice.FadeTo(0.3, 75);
                     await btnDevice.FadeTo(1, 75);
-                    await Navigation.PushAsync(new PickerPage("Toestel"));
+                    await Navigation.PushAsync(new PickerPage("Device"));
 
                 })
             });
@@ -281,15 +273,15 @@ namespace StreetWorkoutV2.View
            LoadingIndicator.IsRunning = true;
            await SubmitWaterInput.FadeTo(0.3, 75);
 
-            Preferences.Set("WaterGedronken", Preferences.Get("WaterGedronken", 0) + int.Parse(TotalWater.Text.ToString()));
-            lblWaterGedronken.Text = Preferences.Get("WaterGedronken", 0).ToString();
+            Preferences.Set("WaterDrunk", Preferences.Get("WaterDrunk", 0) + int.Parse(TotalWater.Text.ToString()));
+            lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
             JObject water = new JObject();
-            water["Naam"] = Preferences.Get("Naam", "");
-            water["WaterGedronken"] = Preferences.Get("WaterGedronken", 0);
+            water["Name"] = Preferences.Get("Name", "");
+            water["WaterDrunk"] = Preferences.Get("WaterDrunk", 0);
             if (Connection.CheckConnection())
             {
-                await DBManager.PutWater(water);
-                JArray waterlist = await DBManager.GetWater(Preferences.Get("Naam", ""));
+                await DBManager.PutWaterData(water);
+                JArray waterlist = await DBManager.GetWaterData(Preferences.Get("Name", ""));
                 var waterTojson = JsonConvert.SerializeObject(waterlist);
                 Preferences.Set("Water", waterTojson.ToString());
             }
@@ -297,7 +289,7 @@ namespace StreetWorkoutV2.View
             {
                 popNoConnectionWater.IsVisible = true;
             }
-            MessagingCenter.Send(this, "PassWaterGedronken", Preferences.Get("Water", ""));
+            MessagingCenter.Send(this, "PassWaterDrunk", Preferences.Get("Water", ""));
             LoadingIndicator.IsRunning = false;
             await SubmitWaterInput.FadeTo(1, 75);
             TotalWater.Text = "0";

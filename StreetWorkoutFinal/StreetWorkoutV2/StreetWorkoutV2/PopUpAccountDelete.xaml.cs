@@ -29,19 +29,19 @@ namespace StreetWorkoutV2
 
         private async void Delete(object sender, EventArgs e)
         {
-            await DBManager.DeleteProfilePicture(Preferences.Get("Naam", ""));
-            await DBManager.DeleteUserData(Preferences.Get("Naam", ""));
-            await DBManager.DeleteOefeningenData(Preferences.Get("Naam", ""));
-            await DBManager.DeleteWater(Preferences.Get("Naam", ""));
-            Preferences.Set("Naam", null);
+            await DBManager.DeleteProfilePicture(Preferences.Get("Name", ""));
+            await DBManager.DeleteUserData(Preferences.Get("Name", ""));
+            await DBManager.DeleteExerciseData(Preferences.Get("Name", ""));
+            await DBManager.DeleteWaterData(Preferences.Get("Name", ""));
+            Preferences.Set("Name", null);
             Preferences.Set("Email", null);
-            Preferences.Set("Leeftijd", null);
-            Preferences.Set("Lengte", null);
-            Preferences.Set("Gewicht", null);
+            Preferences.Set("Age", null);
+            Preferences.Set("Length", null);
+            Preferences.Set("Weight", null);
             Preferences.Set("API", null);
-            Preferences.Set("WaterDoel", null);
-            Preferences.Set("WaterGedronken", null);
-            Preferences.Set("Oefeningen", null);
+            Preferences.Set("WaterGoal", null);
+            Preferences.Set("WaterDrunk", null);
+            Preferences.Set("Exercises", null);
             await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
             await Navigation.PopPopupAsync();
 
