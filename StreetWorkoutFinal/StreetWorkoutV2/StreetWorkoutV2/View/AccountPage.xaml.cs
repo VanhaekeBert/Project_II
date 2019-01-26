@@ -32,7 +32,8 @@ namespace StreetWorkoutV2.View
         public AccountPage()
         {
             InitializeComponent();
-
+            imgNoConnectionSave.Source= FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnectionProfile.Source= FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
             popNoConnectionProfilePicture.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>

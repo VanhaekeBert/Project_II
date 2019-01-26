@@ -22,6 +22,7 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
+   
             if (!Preferences.Get("Connection", true))
             {
                 popNoConnection.IsVisible = true;
@@ -34,13 +35,7 @@ namespace StreetWorkoutV2.View
                     popNoConnection.IsVisible = false;
                 })
             });
-            popNoConnectionQR.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    popNoConnectionQR.IsVisible = false;
-                })
-            });
+          
             popNoConnectionWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -130,6 +125,8 @@ namespace StreetWorkoutV2.View
             imgGlassFour.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
             lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
             lblWaterTotal.Text = Preferences.Get("WaterGoal", 0).ToString();
+            imgNoConnectionWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
 
 
             frameWater.GestureRecognizers.Add(new TapGestureRecognizer
@@ -206,16 +203,12 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                    if (Connection.CheckConnection())
-                    {
+                   
                         await btnQR.FadeTo(0.3, 75);
                         await btnQR.FadeTo(1, 75);
                         await Navigation.PushAsync(new QrPage());
-                    }
-                    else
-                    {
-                        popNoConnectionQR.IsVisible = true;
-                    }
+                  
+                    
                 })
             });
 

@@ -70,6 +70,7 @@ namespace StreetWorkoutV2.View
             {
                 lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Herhalingen";
             }
+          
 
 
 
@@ -193,7 +194,6 @@ namespace StreetWorkoutV2.View
                             var assembly = typeof(App).GetTypeInfo().Assembly;
                             Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
                             var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-
                             player.Load(audioStream);
                             player.Play();
                         }
@@ -205,6 +205,8 @@ namespace StreetWorkoutV2.View
                 return _isRunning;
             });
         }
+
+
         // -------------------------------------------------------------------
         // END OF PLAY PAUSE TIMER CODE --------------------------------------
         // -------------------------------------------------------------------

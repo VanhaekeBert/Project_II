@@ -21,9 +21,12 @@ namespace StreetWorkoutV2.View
         string _CurrentProgress;
         int _Repetitions;
         int _Difficulty;
+        bool _OnPage;
         public PausePage(Oefening Exercise, int Repetitions, int Difficulty, string Progress)
         {
             InitializeComponent();
+            _OnPage = true;
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             imgContinue.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
             imgExercise.Source = Exercise.ImageResource[Difficulty][0];
@@ -86,7 +89,7 @@ namespace StreetWorkoutV2.View
                                 Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                             }
                             lblCheckEntry.Text = "";
-
+                            _OnPage = false;
                             await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                         }
                     }
@@ -94,6 +97,8 @@ namespace StreetWorkoutV2.View
                     {
                         Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
                         Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
+                        _OnPage = false;
+
                         await Navigation.PushAsync(new ExercisePage(_CurrentExercise, _Repetitions, _Difficulty, _CurrentProgress));
                     }
                 })
@@ -109,18 +114,24 @@ namespace StreetWorkoutV2.View
                 });
                 if (TimeKeeper == 60)
                 {
-                    var assembly = typeof(App).GetTypeInfo().Assembly;
-                    Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
-                    var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-                    lblTimerText.TextColor = Color.FromHex("#EE4444");
+                    if (_OnPage)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+                        Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
+                        var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                        lblTimerText.TextColor = Color.FromHex("#EE4444");
 
-                    player.Load(audioStream);
-                    player.Play();
-                    GaDoor.Text = "Ga nu verder";
+                        player.Load(audioStream);
+                        player.Play();
+                        GaDoor.Text = "Ga nu verder";
+                    }
+                   
                     return false;
                 }
                 return true;
+
             });
+
         }
         protected override bool OnBackButtonPressed()
         {

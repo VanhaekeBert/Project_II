@@ -21,6 +21,7 @@
     <None Remove="Asset\BackgroundSettings.png" />
     <None Remove="Asset\BackgroundSettings_2x.png" />
     <None Remove="Asset\Beker.png" />
+    <None Remove="Asset\connection.png" />
     <None Remove="Asset\energy_empty.png" />
     <None Remove="Asset\energy_fill.png" />
     <None Remove="Asset\eye-off.png" />
@@ -216,6 +217,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Asset\BackgroundAccount.png" />
     <EmbeddedResource Include="Asset\BackgroundDashboard_alt.png" />
+    <EmbeddedResource Include="Asset\connection.png" />
     <EmbeddedResource Include="Asset\Glass_1.png" />
     <EmbeddedResource Include="Asset\Glass_2.png" />
     <EmbeddedResource Include="Asset\Glass_4.png" />

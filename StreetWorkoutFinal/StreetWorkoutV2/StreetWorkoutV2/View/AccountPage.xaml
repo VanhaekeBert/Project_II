@@ -238,14 +238,19 @@
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="FillAndExpand"
                 Margin="0">
-                <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                <StackLayout  Margin="24" HeightRequest="150"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
-                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
-                            <Grid>
-                                <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw profielfoto niet opslaan." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
+                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
+                       
+                            <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="8*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="imgNoConnectionProfile" HeightRequest="40" Grid.Column="0"/>
+                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw profielfoto niet opslaan."  FontSize="18" />
                             </Grid>
-                        </renderers:GradientLayout>
+                    
                     </Frame>
                 </StackLayout>
             </StackLayout>
@@ -254,14 +259,19 @@
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="FillAndExpand"
                 Margin="0">
-                <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
+                <StackLayout  Margin="24" HeightRequest="150"  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
-                        <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
-                            <Grid>
-                                <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw wijzigingen niet opslaan." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
-                            </Grid>
-                        </renderers:GradientLayout>
+                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
+
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="8*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="imgNoConnectionSave" HeightRequest="40" Grid.Column="0"/>
+                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw wijzigingen niet opslaan."  FontSize="18" />
+                        </Grid>
+
                     </Frame>
                 </StackLayout>
             </StackLayout>

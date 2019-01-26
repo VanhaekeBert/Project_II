@@ -171,24 +171,27 @@
                  
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="FillAndExpand">
-                <StackLayout Margin="24,0" HorizontalOptions="CenterAndExpand"
+               
+                <StackLayout  Margin="24"   HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
-                    <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
-                        <renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20,20,20,10" Margin="0">
                             <Grid Margin="0,24">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw oefening niet opslaan. Verbind opnieuw met het internet en drup op opnieuw of ga verder naar het dashboard." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
-                                <Button Grid.Row="2" Grid.Column="1" x:Name="btnRepeat" WidthRequest="100" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" HeightRequest="30" Padding="0" Text="Opnieuw" Clicked="BtnRepeat_Clicked"/>
-                                <Button Grid.Row="2" Grid.Column="2" x:Name="btnDashboard" WidthRequest="100" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" HeightRequest="30" Padding="0" Text="Dashboard" Clicked="BtnDashboard_Clicked"/>
-                            </Grid>
-                        </renderers:GradientLayout>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="imgNoConnection" HeightRequest="40" Grid.Column="0" Grid.Row="0"/>
+
+                            <Label  Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Verbind met het internet om uw data op te kunnen slaan en verder te gaan." TextColor="{StaticResource LightColor}" FontSize="18" />
+                            <StackLayout Margin="0,25,0,0" Spacing="40" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Orientation="Horizontal"  Padding="0" HeightRequest="40">
+                                <Button x:Name="btnRepeat" WidthRequest="140" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="15" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" HeightRequest="40" Padding="0" Text="Opnieuw proberen" Clicked="BtnRepeat_Clicked"/>
+                                <Button x:Name="btnDashboard" WidthRequest="110" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="15" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" HeightRequest="40" Padding="0" Text="Niet opslaan" Clicked="BtnDashboard_Clicked"/>
+                            </StackLayout>
+                              </Grid>
                     </Frame>
                 </StackLayout>
             </StackLayout>

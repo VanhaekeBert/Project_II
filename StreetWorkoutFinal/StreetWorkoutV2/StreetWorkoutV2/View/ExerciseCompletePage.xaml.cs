@@ -71,6 +71,8 @@ namespace StreetWorkoutV2.View
             imgRatingHeartFull3.Source = picColored;
             imgRatingHeartFull4.Source = picColored;
             imgRatingHeartFull5.Source = picColored;
+            imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+
 
             Rate3Stars();
 
