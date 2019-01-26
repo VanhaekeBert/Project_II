@@ -55,7 +55,7 @@
                                                     <ColumnDefinition Width="4*"/>
                                                     <ColumnDefinition Width="0.5*"/>
                                                 </Grid.ColumnDefinitions>
-                                                <ff:CachedImage Source="{Binding Image}" Grid.Column="0"  Margin="10" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                                <ff:CachedImage Source="{Binding Image}" Grid.Column="0"  Margin="10" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                                                 <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
                                                     <Label Text="{Binding Name}" Margin="10,2,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="22" TextColor="{StaticResource LightColor}" />
                                                     <Label Text="{Binding NumberOfExercises, StringFormat='Aantal oefeningen: {0}'}" Margin="10,-5,0,0"  HorizontalOptions="Start" VerticalOptions="Center"   FontFamily="{StaticResource NormalFont}"  FontSize="16" TextColor="{StaticResource LightColor}" />

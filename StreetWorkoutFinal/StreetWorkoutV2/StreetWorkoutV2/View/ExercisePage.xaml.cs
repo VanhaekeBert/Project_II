@@ -68,7 +68,7 @@ namespace StreetWorkoutV2.View
             }
             else
             {
-                lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Repeats";
+                lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Herhalingen";
             }
 
 
