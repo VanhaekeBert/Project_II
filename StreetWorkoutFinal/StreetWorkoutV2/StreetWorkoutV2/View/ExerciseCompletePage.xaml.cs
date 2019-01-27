@@ -529,7 +529,8 @@ namespace StreetWorkoutV2.View
 
         private void BtnRepeat_Clicked(object sender, EventArgs e)
         {
-
+            popNoConnection.IsVisible = false;
+            LoadingIndicator.IsRunning = false;
         }
 
         private async void BtnDashboard_Clicked(object sender, EventArgs e)
