@@ -91,8 +91,9 @@ namespace StreetWorkoutV2.View
                     MakeEntriesOef();
                 }
             });
+            // MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterDrunk", (sender, arg) =>
 
-            MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterDrunk", (sender, arg) =>
+            MessagingCenter.Subscribe<PopUpWater, string>(this, "PassWaterDrunk", (sender, arg) =>
             {
                 if (arg != "[]")
                 {

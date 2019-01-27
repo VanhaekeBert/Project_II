@@ -79,7 +79,7 @@
             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"                
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="FillAndExpand">
-                <StackLayout  Margin="24" Spacing="0" HorizontalOptions="FillAndExpand"
+                <StackLayout  Margin="24,24,24,12" Spacing="0" HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand">
                     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand"  >
                         <StackLayout Margin="0" Orientation="Vertical" VerticalOptions="CenterAndExpand"  x:Name="stackRecommendation" IsVisible="False">
@@ -88,81 +88,58 @@
                             <ff:CachedImage x:Name="imgHearts" Aspect="AspectFill" HeightRequest="35" HorizontalOptions="Center" Margin="0,0,0,0"></ff:CachedImage>
                         </StackLayout>
                         <StackLayout  VerticalOptions="CenterAndExpand"  Padding="0,0,0,0" HeightRequest="150" HorizontalOptions="Fill"   Margin="0,0,0,30" x:Name="frameRepetions">
-                            <!--<renderers:GradientLayout
-                                            ColorsList="#484E6D,#323751"
-                                            Mode="ToTopLeft">-->
-                            <Frame Padding="0" Margin="0,0,0,1" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" CornerRadius="10" >
-                                <renderers:GradientLayout
-                                            ColorsList="#EE4444,#9E3333"
-                                            Mode="ToTopLeft">
-                                    <Grid Margin="0,0,0,0" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="3*"></RowDefinition>
-                                            <RowDefinition Height="5*"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Label Grid.Row="0" x:Name="lblSelectGoal" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw repetitiedoel" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                        <Frame HasShadow="True" x:Name="stackReps" Grid.Row="1"  CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="350"  HorizontalOptions="FillAndExpand"  Padding="0"  >
-                                            <renderers:GradientLayout
-                                            ColorsList="#484E6D,#313751"
-                                            Mode="ToTopLeft">
-                                                <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="12" Padding="0" VerticalOptions="CenterAndExpand">
-                                                    <StackLayout x:Name="stackRep1" >
-                                                        <Label HorizontalOptions="Center" FontSize="14" Text="Makkelijk" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" />
-                                                        <Button Clicked="BtnRep1_Clicked"  x:Name="btnRepEasy"  WidthRequest="100"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="37" Padding="0"/>
-                                                    </StackLayout>
-                                                    <StackLayout x:Name="stackRep2">
-                                                        <Label HorizontalOptions="Center" FontSize="14" Text="Gemiddeld" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" />
-                                                        <Button Clicked="BtnRep2_Clicked" x:Name="btnRepAverage"  BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="37" Padding="0"/>
-                                                    </StackLayout>
-                                                    <StackLayout x:Name="stackRep3">
-                                                        <Label HorizontalOptions="Center" FontSize="14" Text="Moeilijk"  FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor} " />
-                                                        <Button  Clicked="BtnRep3_Clicked" x:Name="btnRepHard"   BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="37"  Padding="0"/>
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </renderers:GradientLayout>
-                                        </Frame>
-                                    </Grid>
-                                </renderers:GradientLayout>
-                            </Frame>
-                            <!--</renderers:GradientLayout>-->
+
+                            <Grid Margin="0,0,0,0" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition> 
+                                    <RowDefinition Height="5*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" x:Name="lblSelectGoal" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw repetitiedoel" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                                <Frame BackgroundColor="Transparent" HasShadow="True" x:Name="stackReps" Grid.Row="1"  CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="350"  HorizontalOptions="FillAndExpand"  Padding="0"  >
+
+                                    <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="12" Padding="0" VerticalOptions="CenterAndExpand">
+                                        <StackLayout x:Name="stackRep1" >
+                                            <Label HorizontalOptions="Center" FontSize="14" Text="Makkelijk" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" />
+                                            <Button Clicked="BtnRep1_Clicked"  x:Name="btnRepEasy"  WidthRequest="100"  BackgroundColor="#484E6D" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center"  HeightRequest="37" Padding="0"/>
+                                        </StackLayout>
+                                        <StackLayout x:Name="stackRep2">
+                                            <Label HorizontalOptions="Center" FontSize="14" Text="Gemiddeld" FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" />
+                                            <Button Clicked="BtnRep2_Clicked" x:Name="btnRepAverage"  BackgroundColor="#484E6D" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center"   HeightRequest="37" Padding="0"/>
+                                        </StackLayout>
+                                        <StackLayout x:Name="stackRep3">
+                                            <Label HorizontalOptions="Center" FontSize="14" Text="Moeilijk"  FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor} " />
+                                            <Button  Clicked="BtnRep3_Clicked" x:Name="btnRepHard"   BackgroundColor="#484E6D" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center"  HeightRequest="37"  Padding="0"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+
                         </StackLayout>
                         <StackLayout  VerticalOptions="Center"  Padding="0,0,0,0" HeightRequest="140" HorizontalOptions="Fill"   Margin="0,0,0,40" x:Name="frameDifficulty">
-                            <!--<renderers:GradientLayout
-                                            ColorsList="#484E6D,#323751"
-                                            Mode="ToTopLeft">-->
-                            <Frame Padding="0" Margin="0,0,0,1" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" CornerRadius="10" >
-                                <renderers:GradientLayout
-                                            ColorsList="#EE4444,#9E3333"
-                                            Mode="ToTopLeft">
-                                    <Grid Margin="0,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="2*"></RowDefinition>
-                                            <RowDefinition Height="3*"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Label Grid.Row="0" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                                        <Frame Grid.Row="1" x:Name="stackDifficulty" CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="350"  HorizontalOptions="FillAndExpand"  Padding="0,0,0,2" Margin="0,2,0,0" >
-                                            <renderers:GradientLayout
-                                          ColorsList="#484E6D,#313751"
-                                            Mode="ToTopLeft">
-                                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="12" Padding="0" VerticalOptions="CenterAndExpand">
-                                                    <StackLayout x:Name="stackDiff1">
-                                                        <Button Clicked="BtnDiff1_Clicked"  Text="Simpel" WidthRequest="100"  BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="37" Padding="0"/>
-                                                    </StackLayout>
-                                                    <StackLayout x:Name="stackDiff2">
-                                                        <Button Clicked="BtnDiff2_Clicked"  Text="Gevorderd"  BackgroundColor="Transparent" WidthRequest="110" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"   HeightRequest="37" Padding="0"/>
-                                                    </StackLayout>
-                                                    <StackLayout x:Name="stackDiff3">
-                                                        <Button Clicked="BtnDiff3_Clicked" Text="Expert"  BackgroundColor="Transparent" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center"  HeightRequest="37"  Padding="0"/>
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </renderers:GradientLayout>
-                                        </Frame>
-                                    </Grid>
-                                </renderers:GradientLayout>
-                            </Frame>
-                            <!--</renderers:GradientLayout>-->
+
+                            <Grid Margin="0,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Margin="0,10,0,0" HorizontalTextAlignment="Center" Text="Selecteer uw moeilijkheidsgraad" FontFamily="{StaticResource NormalFont}" FontSize="20" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                                <Frame BackgroundColor="Transparent" Grid.Row="1" x:Name="stackDifficulty" CornerRadius="10" VerticalOptions="FillAndExpand" HeightRequest="350"  HorizontalOptions="FillAndExpand"  Padding="0,0,0,2" Margin="0,2,0,0" >
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="12" Padding="0" VerticalOptions="CenterAndExpand">
+                                        <StackLayout x:Name="stackDiff1">
+                                            <Button Clicked="BtnDiff1_Clicked"  Text="Simpel" WidthRequest="100"  BackgroundColor="#484E6D" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center"  HeightRequest="37" Padding="0"/>
+                                        </StackLayout>
+                                        <StackLayout x:Name="stackDiff2">
+                                            <Button Clicked="BtnDiff2_Clicked"  Text="Gevorderd"  BackgroundColor="#484E6D" WidthRequest="110" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center"   HeightRequest="37" Padding="0"/>
+                                        </StackLayout>
+                                        <StackLayout x:Name="stackDiff3">
+                                            <Button Clicked="BtnDiff3_Clicked" Text="Expert"  BackgroundColor="#484E6D" WidthRequest="100" TextColor="{StaticResource LightColor}" FontSize="16" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center"  HeightRequest="37"  Padding="0"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
                         </StackLayout>
-                        <Button Grid.Row="0" x:Name="btnConfirm" Clicked="BtnConfirm_Clicked" Text="Bevestigen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="18" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource LightColor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" />
+                        <Button Grid.Row="0" x:Name="btnConfirm" Clicked="BtnConfirm_Clicked" Text="Bevestigen" BackgroundColor="Transparent" TextColor="{StaticResource LightColor}" FontSize="18" FontFamily="{StaticResource NormalFont}" BorderColor="#484E6D" BorderWidth="2" BorderRadius="10" HorizontalOptions="Center" WidthRequest="140" HeightRequest="40" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

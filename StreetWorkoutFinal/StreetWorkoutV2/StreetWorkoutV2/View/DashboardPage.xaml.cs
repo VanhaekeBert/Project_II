@@ -36,13 +36,13 @@ namespace StreetWorkoutV2.View
                 })
             });
           
-            popNoConnectionWater.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    popNoConnectionWater.IsVisible = false;
-                })
-            });
+            //popNoConnectionWater.GestureRecognizers.Add(new TapGestureRecognizer
+            //{
+            //    Command = new Command(() =>
+            //    {
+            //        popNoConnectionWater.IsVisible = false;
+            //    })
+            //});
             MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender,arg) =>
             {
                 lblWaterTotal.Text =arg;
@@ -51,6 +51,11 @@ namespace StreetWorkoutV2.View
             MessagingCenter.Subscribe<AccountPage, string>(this, "PassName", (sender,arg) =>
             {
                 lblWelcome.Text = "Welkom " + arg;
+
+            });
+            MessagingCenter.Subscribe<PopUpWater, string>(this, "PassCurrentWater", (sender, arg) =>
+            {
+                lblWaterGedronken.Text = arg;
 
             });
 
@@ -117,12 +122,9 @@ namespace StreetWorkoutV2.View
             imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
             lblWelcome.Text = "Welkom " + Preferences.Get("ApiName", "");
-            imgGlassOne.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
-            imgGlassTwo.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
-            imgGlassFour.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
+           
             lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
             lblWaterTotal.Text = Preferences.Get("WaterGoal", 0).ToString();
-            imgNoConnectionWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
             imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
 
 
@@ -130,10 +132,8 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                    await frameWater.FadeTo(0.5, 100);
-                    frameWater.FadeTo(1, 75);
-                    popWater.IsEnabled = true;
-                    popWater.IsVisible = true;
+                  
+                   await PopupNavigation.PushAsync(new PopUpWater());
                     
                 })
             });
@@ -150,26 +150,7 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            frameInnerPopWater.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    popWater.IsEnabled = true;
-                    popWater.IsVisible = true;
-                    TotalWater.Text = "0";
-                })
-            });
-            popWater.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    TotalWater.Text = "0";
-
-                    popWater.IsEnabled = false;
-                    popWater.IsVisible = false;
-                })
-            });
-
+           
  
             // -------------------------------------------------------------------
             // --------------------------TAPGESTURES -----------------------------
@@ -209,44 +190,7 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            stackGlassOne.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () =>
-                {
-                    await stackGlassOne.FadeTo(0.3, 75);
-                    int Water_now = int.Parse(TotalWater.Text);
-                    int Water_update = Water_now + 250;
-                    TotalWater.Text = Water_update.ToString();
-                    await stackGlassOne.FadeTo(1, 75);
-
-                })
-            });
-
-            stackGlassTwo.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () =>
-                {
-                    await stackGlassTwo.FadeTo(0.3, 75);
-                    int Water_now = int.Parse(TotalWater.Text);
-                    int Water_update = Water_now + 500;
-                    TotalWater.Text = Water_update.ToString();
-                    await stackGlassTwo.FadeTo(1, 75);
-
-                })
-            });
-
-            stackGlassFour.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () =>
-                {
-                    await stackGlassFour.FadeTo(0.3, 75);
-                    int Water_now = int.Parse(TotalWater.Text);
-                    int Water_update = Water_now + 1000;
-                    TotalWater.Text = Water_update.ToString();
-                    await stackGlassFour.FadeTo(1, 75);
-
-                })
-            });
+           
             // -------------------------------------------------------------------
             // -------------------------------------------------------------------
             // -------------------------------------------------------------------
@@ -261,35 +205,35 @@ namespace StreetWorkoutV2.View
             return true;
         }
 
-        private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
-        {
-           LoadingIndicator.IsRunning = true;
-           await SubmitWaterInput.FadeTo(0.3, 75);
+        //private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
+        //{
+        //   LoadingIndicator.IsRunning = true;
+        //   await SubmitWaterInput.FadeTo(0.3, 75);
 
-            Preferences.Set("WaterDrunk", Preferences.Get("WaterDrunk", 0) + int.Parse(TotalWater.Text.ToString()));
-            lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
-            JObject water = new JObject();
-            water["Name"] = Preferences.Get("Name", "");
-            water["WaterDrunk"] = Preferences.Get("WaterDrunk", 0);
-            if (Connection.CheckConnection())
-            {
-                await DBManager.PutWaterData(water);
-                JArray waterlist = await DBManager.GetWaterData(Preferences.Get("Name", ""));
-                var waterTojson = JsonConvert.SerializeObject(waterlist);
-                Preferences.Set("Water", waterTojson.ToString());
-                Debug.WriteLine(Preferences.Get("Water", ""));
-            }
-            else
-            {
-                popNoConnectionWater.IsVisible = true;
-            }
-            MessagingCenter.Send(this, "PassWaterDrunk", Preferences.Get("Water", ""));
-            LoadingIndicator.IsRunning = false;
-            await SubmitWaterInput.FadeTo(1, 75);
-            TotalWater.Text = "0";
-            popWater.IsEnabled = false;
-            popWater.IsVisible = false;
-        }
+        //    Preferences.Set("WaterDrunk", Preferences.Get("WaterDrunk", 0) + int.Parse(TotalWater.Text.ToString()));
+        //    lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
+        //    JObject water = new JObject();
+        //    water["Name"] = Preferences.Get("Name", "");
+        //    water["WaterDrunk"] = Preferences.Get("WaterDrunk", 0);
+        //    if (Connection.CheckConnection())
+        //    {
+        //        await DBManager.PutWaterData(water);
+        //        JArray waterlist = await DBManager.GetWaterData(Preferences.Get("Name", ""));
+        //        var waterTojson = JsonConvert.SerializeObject(waterlist);
+        //        Preferences.Set("Water", waterTojson.ToString());
+        //        Debug.WriteLine(Preferences.Get("Water", ""));
+        //    }
+        //    else
+        //    {
+        //        popNoConnectionWater.IsVisible = true;
+        //    }
+        //    MessagingCenter.Send(this, "PassWaterDrunk", Preferences.Get("Water", ""));
+        //    LoadingIndicator.IsRunning = false;
+        //    await SubmitWaterInput.FadeTo(1, 75);
+        //    TotalWater.Text = "0";
+        //    popWater.IsEnabled = false;
+        //    popWater.IsVisible = false;
+        //}
 
         
     }
