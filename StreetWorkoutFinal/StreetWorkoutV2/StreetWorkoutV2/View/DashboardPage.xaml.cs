@@ -22,7 +22,7 @@ namespace StreetWorkoutV2.View
         public DashboardPage()
         {
             InitializeComponent();
-   
+
             if (!Preferences.Get("Connection", true))
             {
                 popNoConnection.IsVisible = true;
@@ -35,20 +35,14 @@ namespace StreetWorkoutV2.View
                     popNoConnection.IsVisible = false;
                 })
             });
-          
-            //popNoConnectionWater.GestureRecognizers.Add(new TapGestureRecognizer
-            //{
-            //    Command = new Command(() =>
-            //    {
-            //        popNoConnectionWater.IsVisible = false;
-            //    })
-            //});
-            MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender,arg) =>
+
+
+            MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender, arg) =>
             {
-                lblWaterTotal.Text =arg;
+                lblWaterTotal.Text = arg;
 
             });
-            MessagingCenter.Subscribe<AccountPage, string>(this, "PassName", (sender,arg) =>
+            MessagingCenter.Subscribe<AccountPage, string>(this, "PassName", (sender, arg) =>
             {
                 lblWelcome.Text = "Welkom " + arg;
 
@@ -89,29 +83,29 @@ namespace StreetWorkoutV2.View
             });
 
             List<ExerciseDB> weekExerciseList = new List<ExerciseDB>();
-                if (Preferences.Get("Exercises", "") != "[]")
+            if (Preferences.Get("Exercises", "") != "[]")
+            {
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<ExerciseDB> exercises = new List<ExerciseDB>();
+                for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
-                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<ExerciseDB> exercises = new List<ExerciseDB>();
-                    for (int i = 0; i < exercisesRaw.Count(); i++)
+                    if (i == 0)
                     {
-                        if (i == 0)
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
-                        }
-                        else if (i != (exercisesRaw.Count() - 1))
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
-                        }
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                     }
-                    foreach (ExerciseDB exercise in exercises)
+                    else if (i != (exercisesRaw.Count() - 1))
                     {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
-                        {
-                            weekExerciseList.Add(exercise);
-                        }
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
                 }
+                foreach (ExerciseDB exercise in exercises)
+                {
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
+                    {
+                        weekExerciseList.Add(exercise);
+                    }
+                }
+            }
             lblLogs.Text = weekExerciseList.Count().ToString();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");
@@ -122,7 +116,7 @@ namespace StreetWorkoutV2.View
             imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
             imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
             lblWelcome.Text = "Welkom " + Preferences.Get("ApiName", "");
-           
+
             lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
             lblWaterTotal.Text = Preferences.Get("WaterGoal", 0).ToString();
             imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
@@ -132,9 +126,9 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                  
-                   await PopupNavigation.PushAsync(new PopUpWater());
-                    
+
+                    await PopupNavigation.PushAsync(new PopUpWater());
+
                 })
             });
 
@@ -145,13 +139,13 @@ namespace StreetWorkoutV2.View
                     await frameLog.FadeTo(0.5, 100);
                     frameLog.FadeTo(1, 75);
                     await Navigation.PushAsync(new LogbookPage());
-                    
+
 
                 })
             });
 
-           
- 
+
+
             // -------------------------------------------------------------------
             // --------------------------TAPGESTURES -----------------------------
             // -------------------------------------------------------------------
@@ -162,7 +156,7 @@ namespace StreetWorkoutV2.View
                     await btnMuscle.FadeTo(0.3, 75);
                     await btnMuscle.FadeTo(1, 75);
                     await Navigation.PushAsync(new PickerPage("MuscleGroup"));
-                    
+
 
                 })
             });
@@ -181,23 +175,23 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(async () =>
                 {
-                   
-                        await btnQR.FadeTo(0.3, 75);
-                        await btnQR.FadeTo(1, 75);
-                        await Navigation.PushAsync(new QrPage());
-                  
-                    
+
+                    await btnQR.FadeTo(0.3, 75);
+                    await btnQR.FadeTo(1, 75);
+                    await Navigation.PushAsync(new QrPage());
+
+
                 })
             });
 
-           
+
             // -------------------------------------------------------------------
             // -------------------------------------------------------------------
             // -------------------------------------------------------------------
         }
 
 
-       
+
 
 
         protected override bool OnBackButtonPressed()
@@ -205,36 +199,6 @@ namespace StreetWorkoutV2.View
             return true;
         }
 
-        //private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
-        //{
-        //   LoadingIndicator.IsRunning = true;
-        //   await SubmitWaterInput.FadeTo(0.3, 75);
 
-        //    Preferences.Set("WaterDrunk", Preferences.Get("WaterDrunk", 0) + int.Parse(TotalWater.Text.ToString()));
-        //    lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
-        //    JObject water = new JObject();
-        //    water["Name"] = Preferences.Get("Name", "");
-        //    water["WaterDrunk"] = Preferences.Get("WaterDrunk", 0);
-        //    if (Connection.CheckConnection())
-        //    {
-        //        await DBManager.PutWaterData(water);
-        //        JArray waterlist = await DBManager.GetWaterData(Preferences.Get("Name", ""));
-        //        var waterTojson = JsonConvert.SerializeObject(waterlist);
-        //        Preferences.Set("Water", waterTojson.ToString());
-        //        Debug.WriteLine(Preferences.Get("Water", ""));
-        //    }
-        //    else
-        //    {
-        //        popNoConnectionWater.IsVisible = true;
-        //    }
-        //    MessagingCenter.Send(this, "PassWaterDrunk", Preferences.Get("Water", ""));
-        //    LoadingIndicator.IsRunning = false;
-        //    await SubmitWaterInput.FadeTo(1, 75);
-        //    TotalWater.Text = "0";
-        //    popWater.IsEnabled = false;
-        //    popWater.IsVisible = false;
-        //}
-
-        
     }
 }

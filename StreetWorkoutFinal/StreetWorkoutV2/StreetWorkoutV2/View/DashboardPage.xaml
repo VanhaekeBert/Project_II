@@ -10,7 +10,7 @@
     NavigationPage.HasNavigationBar="False"
     BackgroundColor="{StaticResource MainDarkColor}">
     <controls:AnimationPage.PageAnimation>
-        <controls:EmptyPageAnimation  Duration="Zero" Type="Empty"/>
+        <controls:EmptyPageAnimation Duration="Zero" Type="Empty"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -32,18 +32,18 @@
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
                 <StackLayout VerticalOptions="StartAndExpand" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Margin="24,14,24,0">
-                    <Label  FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Dashboard" TextColor="White"/>
-                    <Label x:Name="lblWelcome"  FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo" TextColor="White"/>
+                    <Label FontFamily="{StaticResource BoldFont}" FontSize="34" Text="Dashboard" TextColor="White"/>
+                    <Label x:Name="lblWelcome" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Hallo" TextColor="White"/>
                 </StackLayout>
-                <Grid VerticalOptions="CenterAndExpand" Grid.Row="2" Grid.ColumnSpan="2"  Margin="24,0" ColumnSpacing="10">
+                <Grid VerticalOptions="CenterAndExpand" Grid.Row="2" Grid.ColumnSpan="2" Margin="24,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <custom:CustomFrame x:Name="frameLog" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="110" Padding="0">
+                    <custom:CustomFrame x:Name="frameLog" CornerRadius="10" Grid.Column="0" HorizontalOptions="Fill" HeightRequest="110" Padding="0">
                         <renderers:GradientLayout ColorsList="#ee7345,#ee4b66" Mode="ToTopLeft">
-                            <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
-                                <Image   x:Name="imgLog" HeightRequest="38" Margin="15,0,10,0"/>
+                            <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                <Image x:Name="imgLog" HeightRequest="38" Margin="15,0,10,0"/>
                                 <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
                                     <Label TextColor="White">
                                         <Label.FormattedText >
@@ -58,16 +58,16 @@
                             </StackLayout>
                         </renderers:GradientLayout>
                     </custom:CustomFrame>
-                    <custom:CustomFrame  x:Name="frameWater" CornerRadius="10"  Grid.Column="1"  HorizontalOptions="Fill" HeightRequest="110"  Padding="0">
+                    <custom:CustomFrame x:Name="frameWater" CornerRadius="10" Grid.Column="1" HorizontalOptions="Fill" HeightRequest="110" Padding="0">
                         <renderers:GradientLayout ColorsList="#447DEE,#44C5EE" Mode="ToTopLeft">
-                            <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand"  >
-                                <Image   x:Name="imgWater" HeightRequest="36" Margin="15,0,10,0"/>
-                                <StackLayout  Spacing="0"  VerticalOptions="CenterAndExpand">
+                            <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand" >
+                                <Image x:Name="imgWater" HeightRequest="36" Margin="15,0,10,0"/>
+                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
                                     <Label TextColor="White">
                                         <Label.FormattedText >
                                             <FormattedString>
                                                 <Span x:Name="lblWaterGedronken" FontSize="17" FontFamily="{StaticResource BoldFont}" Text="0"/>
-                                                <Span  FontSize="17" FontFamily="{StaticResource BoldFont}" Text=" / " />
+                                                <Span FontSize="17" FontFamily="{StaticResource BoldFont}" Text=" / " />
                                                 <Span x:Name="lblWaterTotal" FontSize="17" FontFamily="{StaticResource BoldFont}" Text="0" />
                                                 <Span FontSize="18" FontFamily="{StaticResource NormalFont}" Text="ml"/>
                                             </FormattedString>
@@ -79,7 +79,7 @@
                         </renderers:GradientLayout>
                     </custom:CustomFrame>
                 </Grid>
-                <custom:CustomFrame CornerRadius="10"  Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="190" BackgroundColor="#44C4EC" Margin="24" Padding="0">
+                <custom:CustomFrame CornerRadius="10" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="190" BackgroundColor="#44C4EC" Margin="24" Padding="0">
                     <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0">
                         <ff:CachedImage x:Name="imgStartWorkout" Aspect="AspectFill"/>
                         <ff:CachedImage x:Name="imgStartWorkout_Cover" Aspect="AspectFill"/>
@@ -94,68 +94,50 @@
                                 <RowDefinition Height="3*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <StackLayout Grid.ColumnSpan="3" Grid.Row="0" Margin="0" >
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="24"  Text="Start nieuwe workout" TextColor="White" Margin="0,0,0,0"/>
-                                <Label FontFamily="{StaticResource NormalFont}" FontSize="14"  Text="Maak selectie via:" TextColor="White" Margin="0,0,0,0"/>
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="24" Text="Start nieuwe workout" TextColor="White" Margin="0,0,0,0"/>
+                                <Label FontFamily="{StaticResource NormalFont}" FontSize="14" Text="Maak selectie via:" TextColor="White" Margin="0,0,0,0"/>
                             </StackLayout>
-                            <StackLayout  x:Name="btnQR" Grid.Column="0" Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical" >
-                                <ff:CachedImage x:Name="imgQr"  WidthRequest="38" VerticalOptions="Center"/>
+                            <StackLayout x:Name="btnQR" Grid.Column="0" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical" >
+                                <ff:CachedImage x:Name="imgQr" WidthRequest="38" VerticalOptions="Center"/>
                                 <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="QR Code"></Label>
                             </StackLayout>
-                            <StackLayout  x:Name="btnDevice" Grid.Column="1" Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical">
-                                <ff:CachedImage x:Name="imgDevice"  WidthRequest="50" VerticalOptions="Center"/>
+                            <StackLayout x:Name="btnDevice" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical">
+                                <ff:CachedImage x:Name="imgDevice" WidthRequest="50" VerticalOptions="Center"/>
                                 <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="Toestel"></Label>
                             </StackLayout>
-                            <StackLayout x:Name="btnMuscle" Grid.Column="2" Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical"  >
-                                <ff:CachedImage x:Name="imgMuscle"  WidthRequest="40" VerticalOptions="Center"/>
+                            <StackLayout x:Name="btnMuscle" Grid.Column="2" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="End" Orientation="Vertical" >
+                                <ff:CachedImage x:Name="imgMuscle" WidthRequest="40" VerticalOptions="Center"/>
                                 <Label FontFamily="{StaticResource NormalFont}" TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Text="Spiergroep"></Label>
                             </StackLayout>
                         </Grid>
                     </Grid>
                 </custom:CustomFrame>
             </Grid>
-           
             <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                 
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" 
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="FillAndExpand"
                 Margin="0">
-                <StackLayout  Margin="24" HeightRequest="150"  HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
-                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
+                <StackLayout Margin="24" HeightRequest="150" HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
                         <Grid VerticalOptions="CenterAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="8*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="imgNoConnection" WidthRequest="40" Grid.Column="0"/>
-                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet beschikt u niet over de laatste gegevens."  FontSize="18" />
+                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet beschikt u niet over de laatste gegevens." FontSize="18" />
                         </Grid>
                     </Frame>
                 </StackLayout>
-
             </StackLayout>
-            
-           
             <!--<StackLayout x:Name="popNoConnectionWater" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                  
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="FillAndExpand"
-                Margin="0">
-                <StackLayout  Margin="24" HeightRequest="150"  HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
-                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
-
-                        <Grid VerticalOptions="CenterAndExpand">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"></ColumnDefinition>
-                                <ColumnDefinition Width="8*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image x:Name="imgNoConnectionWater" HeightRequest="40" Grid.Column="0"/>
-                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw data niet opslaan op onze servers."  FontSize="18" />
-                        </Grid>
-                    </Frame>
-                </StackLayout>
-            </StackLayout>-->
+ RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" 
+ HorizontalOptions="CenterAndExpand"
+ VerticalOptions="FillAndExpand"
+ Margin="0"><StackLayout Margin="24" HeightRequest="150" HorizontalOptions="CenterAndExpand"
+ VerticalOptions="CenterAndExpand"><Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30"><Grid VerticalOptions="CenterAndExpand"><Grid.ColumnDefinitions><ColumnDefinition Width="1*"></ColumnDefinition><ColumnDefinition Width="8*"></ColumnDefinition></Grid.ColumnDefinitions><Image x:Name="imgNoConnectionWater" HeightRequest="40" Grid.Column="0"/><Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw data niet opslaan op onze servers." FontSize="18" /></Grid></Frame></StackLayout></StackLayout>-->
             <!--========-->
         </RelativeLayout>
     </ContentPage.Content>

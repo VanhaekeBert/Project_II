@@ -105,7 +105,7 @@
                 </StackLayout>-->
 
                 
-                <Button Grid.Row="4" Text="Account Uitloggen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="210" HeightRequest="45" Clicked="Logout"/>
+                <Button Grid.Row="4" Text="Afmelden" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="10" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100" HeightRequest="45" Clicked="Logout"/>
 
                 <!--<PopUps>-->
                 <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"

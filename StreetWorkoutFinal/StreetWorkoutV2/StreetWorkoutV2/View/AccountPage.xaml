@@ -13,19 +13,19 @@
     NavigationPage.HasNavigationBar="False"
     BackgroundColor="{StaticResource MainDarkColor}">
     <controls:AnimationPage.PageAnimation>
-        <controls:EmptyPageAnimation  Duration="Long" Type="Fade"/>
+        <controls:EmptyPageAnimation Duration="Long" Type="Fade"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
-        <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  
-                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                             RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+        <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" 
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
             <ScrollView x:Name="MainScroll">
                 <RelativeLayout Padding="0">
-                    <ff:CachedImage                        
-                        x:Name="imgBackground"
-                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-341}"
-                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
-                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=10}"
+                    <ff:CachedImage 
+                    x:Name="imgBackground"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=-341}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=10}"
                     />
                     <!-- ================= -->
                     <StackLayout Spacing="0" Margin="24,16,24,24">
@@ -44,9 +44,9 @@
                             </ff:CachedImage>
                             <Image Grid.Row="0" x:Name="imgSelector" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="40" Margin="72,0,0,0"/>
                             <Grid Grid.Row="1">
-                                <local1:CustomSmallEntry x:Name="entryNameChange" Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5"  HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
-                                <StackLayout  x:Name="stackNameChanger" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
-                                    <Label x:Name="lblUsername" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text=""  TextColor="White" Margin="23,16,0,0"/>
+                                <local1:CustomSmallEntry x:Name="entryNameChange" Grid.Row="0" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="24" FontFamily="{StaticResource NormalFont}" Margin="48,8,48,5" HorizontalTextAlignment="Center" IsEnabled="False" IsVisible="False"/>
+                                <StackLayout x:Name="stackNameChanger" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                                    <Label x:Name="lblUsername" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="" TextColor="White" Margin="23,16,0,0"/>
                                     <ff:CachedImage x:Name="imgPencil" HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="8,8,0,0"/>
                                 </StackLayout>
                             </Grid>
@@ -56,8 +56,8 @@
                             <Frame CornerRadius="10" HeightRequest="200" Padding="0" Margin="0,24,0,24">
                                 <Grid>
                                     <renderers:GradientLayout
-                                            ColorsList="#484E6D,#2F344E"
-                                            Mode="ToTopLeft">
+                                        ColorsList="#484E6D,#2F344E"
+                                        Mode="ToTopLeft">
                                         <StackLayout VerticalOptions="Start" Spacing="0" Padding="0" Margin="0,24,0,24">
                                             <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Oefeningen uitgevoerd / dag" TextColor="White"/>
                                             <forms:ChartView x:Name="chartOef" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
@@ -74,11 +74,11 @@
                                     <ColumnDefinition Width="8*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label VerticalOptions="CenterAndExpand" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Totaal in de voorbije week:" TextColor="White"/>
-                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill"   HeightRequest="44" WidthRequest="46" Padding="0">
+                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill" HeightRequest="44" WidthRequest="46" Padding="0">
                                     <renderers:GradientLayout
-                                            ColorsList="#B03E46,#ED4444"
-                                            Mode="ToTopLeft">
-                                        <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                        ColorsList="#B03E46,#ED4444"
+                                        Mode="ToTopLeft">
+                                        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                             <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
@@ -100,11 +100,11 @@
                                     <ColumnDefinition Width="8*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label VerticalOptions="CenterAndExpand" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Totaal in de voorbije maand:" TextColor="White"/>
-                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill"   HeightRequest="44" WidthRequest="46" Padding="0">
+                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill" HeightRequest="44" WidthRequest="46" Padding="0">
                                     <renderers:GradientLayout
-                                            ColorsList="#B03E46,#ED4444"
-                                            Mode="ToTopLeft">
-                                        <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                        ColorsList="#B03E46,#ED4444"
+                                        Mode="ToTopLeft">
+                                        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                             <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
@@ -123,8 +123,8 @@
                             <Frame CornerRadius="10" Padding="0" HeightRequest="200" Margin="0,24,0,24" >
                                 <Grid>
                                     <renderers:GradientLayout
-                                            ColorsList="#484E6D,#2F344E"
-                                            Mode="ToTopLeft">
+                                        ColorsList="#484E6D,#2F344E"
+                                        Mode="ToTopLeft">
                                         <StackLayout VerticalOptions="Start" Spacing="0" Margin="0,24,0,24">
                                             <Label Margin="24,-8,0,8" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Water gedronken / dag" TextColor="White"/>
                                             <forms:ChartView x:Name="chartWater" VerticalOptions="Center" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
@@ -141,11 +141,11 @@
                                     <ColumnDefinition Width="8*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label VerticalOptions="CenterAndExpand" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Totaal in de voorbije week:" TextColor="White"/>
-                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill"   HeightRequest="44" WidthRequest="46" Padding="0">
+                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill" HeightRequest="44" WidthRequest="46" Padding="0">
                                     <renderers:GradientLayout
-                                            ColorsList="#447DEE,#44C5EE"
-                                            Mode="ToTopLeft">
-                                        <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                        ColorsList="#447DEE,#44C5EE"
+                                        Mode="ToTopLeft">
+                                        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                             <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
@@ -167,11 +167,11 @@
                                     <ColumnDefinition Width="8*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label VerticalOptions="CenterAndExpand" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Totaal in de voorbije maand:" TextColor="White"/>
-                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill"   HeightRequest="44" WidthRequest="46" Padding="0">
+                                <Frame VerticalOptions="CenterAndExpand" Grid.Column="1" CornerRadius="10" HorizontalOptions="Fill" HeightRequest="44" WidthRequest="46" Padding="0">
                                     <renderers:GradientLayout
-                                            ColorsList="#447DEE,#44C5EE"
-                                            Mode="ToTopLeft">
-                                        <StackLayout  Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
+                                        ColorsList="#447DEE,#44C5EE"
+                                        Mode="ToTopLeft">
+                                        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="FillAndExpand">
                                             <StackLayout Spacing="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                                                 <Label TextColor="White" >
                                                     <Label.FormattedText >
@@ -189,11 +189,11 @@
                         </StackLayout>
                         <!-- Persoonsgegevens-->
                         <StackLayout Spacing="0" Margin="0,48,0,0">
-                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28"  Text="Persoonsgegevens" TextColor="White"/>
+                            <Label Grid.Row="1" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Persoonsgegevens" TextColor="White"/>
                             <Frame CornerRadius="10" Padding="0" Margin="0,24,0,36">
                                 <renderers:GradientLayout
-                                            ColorsList="#484E6D,#2F344E"
-                                            Mode="ToTopLeft">
+                                    ColorsList="#484E6D,#2F344E"
+                                    Mode="ToTopLeft">
                                     <Grid RowSpacing="0" Padding="24,24,0,24">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50"/>
@@ -206,20 +206,20 @@
                                             <ColumnDefinition Width="5*"/>
                                             <ColumnDefinition Width="3*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label  Grid.Row="0" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Gewicht" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        <Label  Grid.Row="1" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Lengte" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        <Label  Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Leeftijd" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        <Label  Grid.Row="3" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Water Doel" TextColor="White" VerticalOptions="CenterAndExpand" />
-                                        <!--<Label  Grid.Row="0" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="56" TextColor="White" /><Label  Grid.Row="1" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="174" TextColor="White" /><Label  Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="22" TextColor="White" /><Label  Grid.Row="3" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="2000" TextColor="White" />-->
-                                        <!--<Frame Padding="0" Margin="0,0,0,8" Grid.Row="0" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="56" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame><Frame Padding="0" Margin="0,0,0,8" Grid.Row="1" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="174" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame><Frame Padding="0" Margin="0,0,0,8" Grid.Row="2" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="22" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame>-->
-                                        <!--<Frame Padding="0" Margin="0,0,0,8" Grid.Row="3" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18"  Text="2000" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame>-->
+                                        <Label Grid.Row="0" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Gewicht" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <Label Grid.Row="1" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Lengte" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <Label Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Leeftijd" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <Label Grid.Row="3" Grid.Column="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="Water Doel" TextColor="White" VerticalOptions="CenterAndExpand" />
+                                        <!--<Label Grid.Row="0" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="56" TextColor="White" /><Label Grid.Row="1" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="174" TextColor="White" /><Label Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="22" TextColor="White" /><Label Grid.Row="3" Grid.Column="1" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="2000" TextColor="White" />-->
+                                        <!--<Frame Padding="0" Margin="0,0,0,8" Grid.Row="0" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="56" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame><Frame Padding="0" Margin="0,0,0,8" Grid.Row="1" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="174" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame><Frame Padding="0" Margin="0,0,0,8" Grid.Row="2" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="22" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame>-->
+                                        <!--<Frame Padding="0" Margin="0,0,0,8" Grid.Row="3" Grid.Column="1" CornerRadius="100" BackgroundColor="White" ><Label TextColor="Black" Margin="0" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="2000" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label></Frame>-->
                                         <local1:CustomSmallEntry Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="weightInput" HorizontalTextAlignment="Center" Keyboard="Numeric" Text="0"/>
                                         <local1:CustomSmallEntry Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="heightInput" HorizontalTextAlignment="Center" Keyboard="Numeric" Text="0"/>
                                         <local1:CustomSmallEntry Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="ageInput" HorizontalTextAlignment="Center" Keyboard="Numeric" Text="0"/>
-                                        <local1:CustomSmallEntry Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}"  Margin="0,5,0,5" x:Name="waterInput" HorizontalTextAlignment="Center" Keyboard="Numeric" Text="0"/>
-                                        <Label  Grid.Row="0" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="kg" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-                                        <Label  Grid.Row="1" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="cm" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-                                        <Label  Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="yr" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                        <local1:CustomSmallEntry Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HeightRequest="30" TextColor="{StaticResource Darkcolor}" FontSize="14" FontFamily="{StaticResource NormalFont}" Margin="0,5,0,5" x:Name="waterInput" HorizontalTextAlignment="Center" Keyboard="Numeric" Text="0"/>
+                                        <Label Grid.Row="0" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="kg" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                                        <Label Grid.Row="1" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="cm" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                        <Label Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="yr" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                                         <Label Grid.Row="3" Grid.Column="2" FontFamily="{StaticResource NormalFont}" FontSize="18" Text="ml" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                                     </Grid>
                                     <!-- Grafiek-->
@@ -238,40 +238,36 @@
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="FillAndExpand"
                 Margin="0">
-                <StackLayout  Margin="24" HeightRequest="150"  HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
-                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
-                       
-                            <Grid VerticalOptions="CenterAndExpand">
+                <StackLayout Margin="24" HeightRequest="150" HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
+                        <Grid VerticalOptions="CenterAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="8*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="imgNoConnectionProfile" HeightRequest="40" Grid.Column="0"/>
-                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw profielfoto niet opslaan."  FontSize="18" />
-                            </Grid>
-                    
+                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw profielfoto niet opslaan." FontSize="18" />
+                        </Grid>
                     </Frame>
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"                  
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" 
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="FillAndExpand"
                 Margin="0">
-                <StackLayout  Margin="24" HeightRequest="150"  HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
-                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10"  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
-
+                <StackLayout Margin="24" HeightRequest="150" HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Frame BackgroundColor="{StaticResource Maincolor}" CornerRadius="10" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20" Margin="0,0,0,30">
                         <Grid VerticalOptions="CenterAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="8*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="imgNoConnectionSave" HeightRequest="40" Grid.Column="0"/>
-                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw wijzigingen niet opslaan."  FontSize="18" />
+                            <Label Grid.Column="1" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw wijzigingen niet opslaan." FontSize="18" />
                         </Grid>
-
                     </Frame>
                 </StackLayout>
             </StackLayout>

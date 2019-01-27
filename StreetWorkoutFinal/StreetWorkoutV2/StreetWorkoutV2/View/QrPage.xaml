@@ -12,8 +12,8 @@
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
-            <Grid HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid HorizontalOptions="FillAndExpand" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="85"/>
                     <RowDefinition Height="75"/>
@@ -21,7 +21,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Frame HasShadow="True" CornerRadius="10" BackgroundColor="Transparent" Padding="0" Grid.RowSpan="2" HeightRequest="150" Margin="0,-10,0,0" VerticalOptions="StartAndExpand">
-                    <renderers:GradientLayout   ColorsList="#EE4444,#AD3232"   Mode="ToTopLeft">
+                    <renderers:GradientLayout ColorsList="#EE4444,#AD3232" Mode="ToTopLeft">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="75"/>
@@ -33,12 +33,12 @@
                             </Grid.ColumnDefinitions>
                             <!--Back button + heartbeat +10px down -->
                             <StackLayout x:Name="btnBack" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="24,10,0,0">
-                                <Image  WidthRequest="18" HorizontalOptions="Start" x:Name="imgBtnBack"/>
+                                <Image WidthRequest="18" HorizontalOptions="Start" x:Name="imgBtnBack"/>
                                 <Label Text="Dashboard" FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center" />
                             </StackLayout>
                             <!-- ================= -->
                             <StackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand">
-                                <Label  FontFamily="{StaticResource BoldFont}" FontSize="30" Text="" x:Name="lblTitle" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
+                                <Label FontFamily="{StaticResource BoldFont}" FontSize="30" Text="" x:Name="lblTitle" TextColor="{StaticResource LightColor}" Margin="20,0,0,0"/>
                             </StackLayout>
                         </Grid>
                     </renderers:GradientLayout>
