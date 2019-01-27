@@ -32,8 +32,24 @@ namespace StreetWorkoutV2.View
         public AccountPage()
         {
             InitializeComponent();
-            imgNoConnectionSave.Source= FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
-            imgNoConnectionProfile.Source= FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Variable Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
+            imgNoConnectionSave.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnectionProfile.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
+            imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
+            imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
+            lblUsername.Text = Preferences.Get("ApiName", "");
+            entryNameChange.Placeholder = Preferences.Get("ApiName", "");
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             popNoConnectionProfilePicture.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -50,11 +66,10 @@ namespace StreetWorkoutV2.View
                 })
             });
 
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
-            imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
-            imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
-            lblUsername.Text = Preferences.Get("ApiName", "");
-            entryNameChange.Placeholder = Preferences.Get("ApiName", "");
+
+            //---------------------------------------------------------------------------------------//
+            //--------------------------Oefening updaten via Messagingcenter-------------------------//
+            //---------------------------------------------------------------------------------------//
 
             MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExercise", (sender, arg) =>
             {
@@ -91,7 +106,11 @@ namespace StreetWorkoutV2.View
                     MakeEntriesOef();
                 }
             });
-            // MessagingCenter.Subscribe<DashboardPage, string>(this, "PassWaterDrunk", (sender, arg) =>
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------Water updaten via Messagingcenter--------------------------//
+            //---------------------------------------------------------------------------------------//
 
             MessagingCenter.Subscribe<PopUpWater, string>(this, "PassWaterDrunk", (sender, arg) =>
             {
@@ -176,7 +195,7 @@ namespace StreetWorkoutV2.View
                 {
                     sum += item.WaterDrunk;
                 }
-                lblWaterMaand.Text = (sum/1000.0).ToString() + " L";
+                lblWaterMaand.Text = (sum / 1000.0).ToString() + " L";
                 MakeEntriesWater();
             }
             else
@@ -184,45 +203,50 @@ namespace StreetWorkoutV2.View
                 lblDataWater.IsVisible = true;
             }
 
+            //---------------------------------------------------------------------------------------//
+            //------------------------Oefeningen ophalen en Entries aanmaken-------------------------//
+            //---------------------------------------------------------------------------------------//
+
             if (Preferences.Get("Exercises", "") != "[]")
+            {
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<ExerciseDB> exercises = new List<ExerciseDB>();
+                for (int i = 0; i < exercisesRaw.Count(); i++)
                 {
-                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<ExerciseDB> exercises = new List<ExerciseDB>();
-                    for (int i = 0; i < exercisesRaw.Count(); i++)
+                    if (i == 0)
                     {
-                        if (i == 0)
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
-                        }
-                        else if (i != (exercisesRaw.Count() - 1))
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
-                        }
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
                     }
-                    foreach (ExerciseDB exercise in exercises)
+                    else if (i != (exercisesRaw.Count() - 1))
                     {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
-                        {
-                            weekExerciseList.Add(exercise);
-                        }
-                        if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
-                        {
-                            monthExerciseList.Add(exercise);
-                        }
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
                     }
-                    lblOefWeek.Text = weekExerciseList.Count().ToString();
-                    lblOefMaand.Text = monthExerciseList.Count().ToString();
-                    MakeEntriesOef();
                 }
-                else
+                foreach (ExerciseDB exercise in exercises)
                 {
-                    lblDataOef.IsVisible = true;
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
+                    {
+                        weekExerciseList.Add(exercise);
+                    }
+                    if (int.Parse(DateTime.Now.ToString("MM")) == exercise.Date.Month)
+                    {
+                        monthExerciseList.Add(exercise);
+                    }
                 }
-            
-            this.BackgroundColor = Color.FromHex("2B3049");
+                lblOefWeek.Text = weekExerciseList.Count().ToString();
+                lblOefMaand.Text = monthExerciseList.Count().ToString();
+                MakeEntriesOef();
+            }
+            else
+            {
+                lblDataOef.IsVisible = true;
+            }
 
 
-            //Profile picture ophalen
+            //---------------------------------------------------------------------------------------//
+            //------------------------------Profile picture/naam ophalen-----------------------------//
+            //---------------------------------------------------------------------------------------//
+
             TapGestureRecognizer ImageHandler = new TapGestureRecognizer()
             {
                 Command = new Command(async () =>
@@ -248,15 +272,15 @@ namespace StreetWorkoutV2.View
 
             stackNameChanger.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                Command = new Command( () =>
-                {
-                    entryNameChange.Placeholder = Preferences.Get("ApiName", "");
-                    entryNameChange.IsVisible = true;
-                    entryNameChange.IsEnabled = true;
-                    entryNameChange.Focus();
-                    lblUsername.IsVisible = false;
-                    imgPencil.IsVisible = false;
-                })
+                Command = new Command(() =>
+               {
+                   entryNameChange.Placeholder = Preferences.Get("ApiName", "");
+                   entryNameChange.IsVisible = true;
+                   entryNameChange.IsEnabled = true;
+                   entryNameChange.Focus();
+                   lblUsername.IsVisible = false;
+                   imgPencil.IsVisible = false;
+               })
             });
 
             entryNameChange.Unfocused += async (sender, e) =>
@@ -283,6 +307,10 @@ namespace StreetWorkoutV2.View
                 lblUsername.IsVisible = true;
                 imgPencil.IsVisible = true;
             };
+            //---------------------------------------------------------------------------------------//
+            //-------------------------Reeds bekende data invullen in fields-------------------------//
+            //---------------------------------------------------------------------------------------//
+
             if (Preferences.Get("Weight", "") != "")
             {
                 weightInput.Text = Preferences.Get("Weight", "");
@@ -304,7 +332,9 @@ namespace StreetWorkoutV2.View
                 imgProfile.Source = await DBManager.GetProfilePicture(Preferences.Get("Name", ""));
             });
         }
-        
+        //---------------------------------------------------------------------------------------//
+        //--------------------------Vullen van alle Oefening Chart data--------------------------//
+        //---------------------------------------------------------------------------------------//
         private void MakeEntriesOef()
         {
             List<string> listKleuren = new List<string> {
@@ -322,8 +352,8 @@ namespace StreetWorkoutV2.View
                 foreach (ExerciseDB exercise in weekExerciseList)
                 {
                     if (date == (exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1, 2)))
-                    
-                        {
+
+                    {
                         i++;
                     }
                 }
@@ -363,6 +393,11 @@ namespace StreetWorkoutV2.View
             };
         }
 
+
+        //---------------------------------------------------------------------------------------//
+        //---------------------------Vullen van alle Water Chart data----------------------------//
+        //---------------------------------------------------------------------------------------//
+
         private void MakeEntriesWater()
         {
             List<string> listKleuren = new List<string> {
@@ -376,12 +411,12 @@ namespace StreetWorkoutV2.View
             List<string> listValues = new List<string>();
             foreach (Water item in weekWaterList)
             {
-                listValues.Add((item.WaterDrunk/1000.0).ToString());
+                listValues.Add((item.WaterDrunk / 1000.0).ToString());
             }
             int length = listValues.Count();
             if (length < 7)
             {
-                for (int i = 0; i < (7-length); i++)
+                for (int i = 0; i < (7 - length); i++)
                 {
                     listValues.Insert(0, "0");
                 }
@@ -419,12 +454,16 @@ namespace StreetWorkoutV2.View
                 LabelColor = SKColor.Parse("#FFFFFF"),
             };
         }
-
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
-
+        //---------------------------------------------------------------------------------------//
+        //------------------------------Opslaan van data + refresh-------------------------------//
+        //---------------------------------------------------------------------------------------//
         private async void Button_Clicked(object sender, EventArgs e)
         {
             char[] chars = { '-' };
@@ -437,16 +476,16 @@ namespace StreetWorkoutV2.View
                 LoadingIndicator.IsRunning = true;
                 JObject user = new JObject();
                 JObject water = new JObject();
-                    user["Length"] = heightInput.Text.ToString();
-                    Preferences.Set("Length", user["Length"].ToString());
-                    user["Weight"] = weightInput.Text.ToString();
-                    Preferences.Set("Weight", user["Weight"].ToString());
-                    user["Age"] = ageInput.Text.ToString();
-                    Preferences.Set("Age", user["Age"].ToString());
-                    water["WaterGoal"] = int.Parse(waterInput.Text);
-                    Preferences.Set("WaterGoal", int.Parse(water["WaterGoal"].ToString()));
-                    MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
-                    water["Name"] = Preferences.Get("Name", "");
+                user["Length"] = heightInput.Text.ToString();
+                Preferences.Set("Length", user["Length"].ToString());
+                user["Weight"] = weightInput.Text.ToString();
+                Preferences.Set("Weight", user["Weight"].ToString());
+                user["Age"] = ageInput.Text.ToString();
+                Preferences.Set("Age", user["Age"].ToString());
+                water["WaterGoal"] = int.Parse(waterInput.Text);
+                Preferences.Set("WaterGoal", int.Parse(water["WaterGoal"].ToString()));
+                MessagingCenter.Send(this, "PassWaterGoal", waterInput.Text);
+                water["Name"] = Preferences.Get("Name", "");
                 if (Connection.CheckConnection())
                 {
                     DBManager.PutUserData(Preferences.Get("Name", ""), "Name", user);

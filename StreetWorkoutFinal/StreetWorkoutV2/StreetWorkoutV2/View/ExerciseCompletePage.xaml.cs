@@ -25,6 +25,9 @@ namespace StreetWorkoutV2.View
         public ExerciseCompletePage(Oefening Exercise, int Repetitions)
         {
             InitializeComponent();
+            //---------------------------------------------------------------------------------------//
+            //-----------------------PopUp om Internetverbinding te checken--------------------------//
+            //---------------------------------------------------------------------------------------//
             popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -32,18 +35,29 @@ namespace StreetWorkoutV2.View
                     popNoConnection.IsVisible = false;
                 })
             });
+
+            //---------------------------------------------------------------------------------------//
+            //---Zet het kleur van de repetities in Groen/Rood naargelang doel gehaald is of niet ---//
+            //---------------------------------------------------------------------------------------//
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
             Repetition1.Text = Preferences.Get("Repetition0", "");
+
             if (Preferences.Get("RepetitionColor0", "") == "R")
             {
                 Repetition1.TextColor = Color.Red;
             }
+
             Repetition2.Text = Preferences.Get("Repetition1", "");
             if (Preferences.Get("RepetitionColor1", "") == "R")
             {
                 Repetition2.TextColor = Color.Red;
             }
+
+
+            //---------------------------------------------------------------------------------------//
+            //------Kijk of oefening op basis van seconden/herhalingen is en label aanpassen---------//
+            //---------------------------------------------------------------------------------------//
             if (Exercise.Repeats.Count == 0)
             {
                 inputRepetitions.Placeholder = Exercise.Duration[Repetitions].ToString();
@@ -56,10 +70,14 @@ namespace StreetWorkoutV2.View
                 lblInputRepetitions.Text = "Vul uw behaalde aantal herhalingen in";
                 _Repetitions = Exercise.Repeats[Repetitions].ToString();
             }
+
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Variable Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
-
             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Uncolored.png");
-
             imgRatingHeart1.Source = picUncolored;
             imgRatingHeart2.Source = picUncolored;
             imgRatingHeart3.Source = picUncolored;
@@ -72,98 +90,31 @@ namespace StreetWorkoutV2.View
             imgRatingHeartFull4.Source = picColored;
             imgRatingHeartFull5.Source = picColored;
             imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
-
-
             Rate3Stars();
+            // this.BackgroundColor = Color.FromHex("2B3049");
 
-            this.BackgroundColor = Color.FromHex("2B3049");
 
-            //houd  rating bij tussen 1-5 (wordt nog niets mee gedaan )
-          //  int rating;
 
-            imgRatingHeart1.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate1Star();
-                   // rating = 1;
-                })
-            });
-            imgRatingHeart2.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate2Stars();
-                   // rating = 2;
-                })
-            });
-            imgRatingHeart3.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate3Stars();
-                  //  rating = 3;
-                })
-            });
-            imgRatingHeart4.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate4Stars();
-                   // rating = 4;
-                })
-            });
-            imgRatingHeart5.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate5Stars();
-                   // rating = 5;
-                })
-            });
+            //---------------------------------------------------------------------------------------//
+            //------------------------------Heart Gesure Recognisers---------------------------------//
+            //---------------------------------------------------------------------------------------//
 
-            imgRatingHeartFull1.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate1Star();
-                   // rating = 1;
-                })
-            });
-            imgRatingHeartFull2.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate2Stars();
-                   // rating = 2;
-                })
-            });
-            imgRatingHeartFull3.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate3Stars();
-                    //rating = 3;
-
-                })
-            });
-            imgRatingHeartFull4.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate4Stars();
-                  //  rating = 4;
-                })
-            });
-            imgRatingHeartFull5.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command( () =>
-                {
-                    Rate5Stars();
-                   // rating = 5;
-                })
-            });
+            imgRatingHeart1.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate1Star(); }) });
+            imgRatingHeart2.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate2Stars(); }) });
+            imgRatingHeart3.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate3Stars(); }) });
+            imgRatingHeart4.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate4Stars(); }) });
+            imgRatingHeart5.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate5Stars(); }) });
+            imgRatingHeartFull1.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate1Star(); }) });
+            imgRatingHeartFull2.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate2Stars(); }) });
+            imgRatingHeartFull3.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate3Stars(); }) });
+            imgRatingHeartFull4.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate4Stars(); }) });
+            imgRatingHeartFull5.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => { Rate5Stars(); }) });
         }
+
+
+        //---------------------------------------------------------------------------------------//
+        //------------------------------Repetitions Popup Handler--------------------------------//
+        //---------------------------------------------------------------------------------------//
         private async void PopupRepetitionsConfirm_Clicked(object sender, EventArgs e)
         {
 
@@ -196,6 +147,12 @@ namespace StreetWorkoutV2.View
 
             if (popExerciseReview.IsEnabled == false)
             {
+
+
+
+                //---------------------------------------------------------------------------------------//
+                //-----------------------------------FITBIT & POLAR--------------------------------------//
+                //---------------------------------------------------------------------------------------//
 
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
@@ -259,6 +216,11 @@ namespace StreetWorkoutV2.View
             }
         }
 
+
+        //---------------------------------------------------------------------------------------//
+        //---------------------------Heart Image switching functies------------------------------//
+        //---------------------------------------------------------------------------------------//
+
         private void Rate1Star()
         {
             imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;
@@ -272,7 +234,6 @@ namespace StreetWorkoutV2.View
             imgRatingHeart4.IsVisible = true; imgRatingHeart4.IsEnabled = true;
             imgRatingHeart5.IsVisible = true; imgRatingHeart4.IsEnabled = true;
         }
-
         private void Rate2Stars()
         {
             imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;
@@ -285,9 +246,7 @@ namespace StreetWorkoutV2.View
             imgRatingHeart3.IsVisible = true; imgRatingHeart3.IsEnabled = true;
             imgRatingHeart4.IsVisible = true; imgRatingHeart4.IsEnabled = true;
             imgRatingHeart5.IsVisible = true; imgRatingHeart4.IsEnabled = true;
-
         }
-
         private void Rate3Stars()
         {
             imgRatingHeartFull1.IsVisible = true; imgRatingHeartFull1.IsEnabled = true;
@@ -365,11 +324,18 @@ namespace StreetWorkoutV2.View
         //    };
         //}
 
-        private async void Button_Clicked_1(object sender, EventArgs e)
+        //---------------------------------------------------------------------------------------//
+        //------------------------------Home button + opslaan data-------------------------------//
+        //---------------------------------------------------------------------------------------//
+        private async void BtnHome_Clicked(object sender, EventArgs e)
         {
+
+            //---Kijken of er internetverbinding is---//
             LoadingIndicator.IsRunning = true;
             if (Connection.CheckConnection())
             {
+
+                //---Klaarmaken van alle data en lokaal opslaan---//
                 JObject exercise = new JObject();
                 string repetitions = "[";
                 string repetitionscolor = "[";
@@ -414,6 +380,7 @@ namespace StreetWorkoutV2.View
                 {
                     exercise["Feeling"] = "1";
                 }
+
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
                 //    exercise["Kcal"] = _KcalAPI;
@@ -426,6 +393,8 @@ namespace StreetWorkoutV2.View
                 //exercise["MaxHeartrate"] = 0;
                 //exercise["AverageHeartrate"] = 0;
                 //}
+
+
                 await DBManager.PostExerciseData(exercise);
                 JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);
@@ -442,15 +411,23 @@ namespace StreetWorkoutV2.View
             }
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        //---------------------------------------------------------------------------------------//
+        //-------------------------Meer oefeningen button + opslaan data-------------------------//
+        //---------------------------------------------------------------------------------------//
+        private async void BtnMoreExercises_Clicked(object sender, EventArgs e)
         {
+            //---Kijken of er internetverbinding is---//
             LoadingIndicator.IsRunning = true;
             if (Connection.CheckConnection())
             {
+
+                //---Poppen van alle paginas tot aan de toestel/spiergroep keuze---//
                 for (int i = 0; i < 5; i++)
                 {
                     this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
                 }
+
+                //---Klaarmaken van alle data en lokaal opslaan---//
                 JObject exercise = new JObject();
                 string repetitions = "[";
                 string repetitionscolor = "[";
@@ -495,6 +472,8 @@ namespace StreetWorkoutV2.View
                 {
                     exercise["Feeling"] = "1";
                 }
+
+
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
                 //    exercise["Kcal"] = _KcalAPI;
@@ -507,6 +486,9 @@ namespace StreetWorkoutV2.View
                 //exercise["MaxHeartrate"] = 0;
                 //exercise["AverageHeartrate"] = 0;
                 //}
+
+
+                //---Klaargemaakte data posten naar de Database en navgeren naar pagina---//
                 await DBManager.PostExerciseData(exercise);
                 JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);
@@ -522,6 +504,10 @@ namespace StreetWorkoutV2.View
                 popNoConnection.IsVisible = true;
             }
         }
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
         protected override bool OnBackButtonPressed()
         {
             return true;
@@ -532,7 +518,9 @@ namespace StreetWorkoutV2.View
             popNoConnection.IsVisible = false;
             LoadingIndicator.IsRunning = false;
         }
-
+        //---------------------------------------------------------------------------------------//
+        //-----------------------------Terug naar Dashboard button-------------------------------//
+        //---------------------------------------------------------------------------------------//
         private async void BtnDashboard_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopToRootAsync();

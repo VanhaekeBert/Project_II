@@ -8,7 +8,8 @@
     x:Class="StreetWorkoutV2.View.ExerciseCompletePage"
     xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-     NavigationPage.HasNavigationBar="False">
+     NavigationPage.HasNavigationBar="False"
+     BackgroundColor = "#2B3049">
     <controls:AnimationPage.PageAnimation>
         <controls:PushPageAnimation Duration="Short" Subtype="FromRight"/>
     </controls:AnimationPage.PageAnimation>
@@ -158,8 +159,8 @@
                             </custom:CustomFrame>
                         </StackLayout>
                         <Grid Grid.Row="5" Grid.ColumnSpan="2" Margin="24" VerticalOptions="StartAndExpand">
-                            <Button Grid.Column="0" x:Name="btnMoreEx" Text="Meer oefeningen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="Button_Clicked"/>
-                            <Button Grid.Column="1" x:Name="btnHome" Text="Home" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="100" HeightRequest="45" Clicked="Button_Clicked_1"/>
+                            <Button Grid.Column="0" x:Name="btnMoreEx" Text="Meer oefeningen" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="BtnMoreExercises_Clicked"/>
+                            <Button Grid.Column="1" x:Name="btnHome" Text="Home" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="100" HeightRequest="45" Clicked="BtnHome_Clicked"/>
                         </Grid>
                         <ActivityIndicator x:Name="LoadingIndicator" Color="White" IsRunning="false" HeightRequest="20" HorizontalOptions="Center" Grid.Row="6"/>
                     </StackLayout>

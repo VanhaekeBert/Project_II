@@ -23,11 +23,17 @@ namespace StreetWorkoutV2.View
         {
             InitializeComponent();
 
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------PopUp voor Internetverbinding te checken-------------------------//
+            //---------------------------------------------------------------------------------------//
+
             if (!Preferences.Get("Connection", true))
             {
                 popNoConnection.IsVisible = true;
                 Preferences.Set("Connection", true);
             }
+
             popNoConnection.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -36,6 +42,9 @@ namespace StreetWorkoutV2.View
                 })
             });
 
+            //---------------------------------------------------------------------------------------//
+            //---------------Messagingcenter voor Updaten Water,Naam en Waterdoel--------------------//
+            //---------------------------------------------------------------------------------------//
 
             MessagingCenter.Subscribe<AccountPage, string>(this, "PassWaterGoal", (sender, arg) =>
             {
@@ -82,6 +91,11 @@ namespace StreetWorkoutV2.View
                 lblLogs.Text = weekExercise.Count().ToString();
             });
 
+
+            //---------------------------------------------------------------------------------------//
+            //------------------------------Lijst vullen van oefening--------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             List<ExerciseDB> weekExerciseList = new List<ExerciseDB>();
             if (Preferences.Get("Exercises", "") != "[]")
             {
@@ -106,6 +120,12 @@ namespace StreetWorkoutV2.View
                     }
                 }
             }
+
+
+            //---------------------------------------------------------------------------------------//
+            //--------------------------------------Assignments--------------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             lblLogs.Text = weekExerciseList.Count().ToString();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");
@@ -122,13 +142,44 @@ namespace StreetWorkoutV2.View
             imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
 
 
+            //---------------------------------------------------------------------------------------//
+            //------------------------Tap gestures voor oefening selectie type-----------------------//
+            //---------------------------------------------------------------------------------------//
+
+            btnMuscle.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
+                {
+                    await btnMuscle.FadeTo(0.3, 75);
+                    await btnMuscle.FadeTo(1, 75);
+                    await Navigation.PushAsync(new PickerPage("MuscleGroup"));
+                })
+            });
+            btnDevice.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
+                {
+                    await btnDevice.FadeTo(0.3, 75);
+                    await btnDevice.FadeTo(1, 75);
+                    await Navigation.PushAsync(new PickerPage("Device"));
+                })
+            });
+
+            btnQR.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () =>
+                {
+                    await btnQR.FadeTo(0.3, 75);
+                    await btnQR.FadeTo(1, 75);
+                    await Navigation.PushAsync(new QrPage());
+                })
+            });
+
             frameWater.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
                 {
-
                     await PopupNavigation.PushAsync(new PopUpWater());
-
                 })
             });
 
@@ -139,60 +190,14 @@ namespace StreetWorkoutV2.View
                     await frameLog.FadeTo(0.5, 100);
                     frameLog.FadeTo(1, 75);
                     await Navigation.PushAsync(new LogbookPage());
-
-
                 })
             });
-
-
-
-            // -------------------------------------------------------------------
-            // --------------------------TAPGESTURES -----------------------------
-            // -------------------------------------------------------------------
-            btnMuscle.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () =>
-                {
-                    await btnMuscle.FadeTo(0.3, 75);
-                    await btnMuscle.FadeTo(1, 75);
-                    await Navigation.PushAsync(new PickerPage("MuscleGroup"));
-
-
-                })
-            });
-            btnDevice.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () =>
-                {
-                    await btnDevice.FadeTo(0.3, 75);
-                    await btnDevice.FadeTo(1, 75);
-                    await Navigation.PushAsync(new PickerPage("Device"));
-
-                })
-            });
-
-            btnQR.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(async () =>
-                {
-
-                    await btnQR.FadeTo(0.3, 75);
-                    await btnQR.FadeTo(1, 75);
-                    await Navigation.PushAsync(new QrPage());
-
-
-                })
-            });
-
-
-            // -------------------------------------------------------------------
-            // -------------------------------------------------------------------
-            // -------------------------------------------------------------------
         }
 
 
-
-
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
 
         protected override bool OnBackButtonPressed()
         {

@@ -4,20 +4,25 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
-    x:Class="StreetWorkoutV2.PopUpAccountDelete">
-    <StackLayout Margin="24" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-        <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0">
-            <renderers:GradientLayout ColorsList="#484E6D,#323751" Mode="ToTopLeft">
-                <Grid Margin="12,24" ColumnSpacing="10" RowSpacing="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+    x:Class="StreetWorkoutV2.PopUpAccountDelete"
+    BackgroundColor="#d0000000">
+    <StackLayout Margin="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+        
+                <Grid  ColumnSpacing="15" RowSpacing="35" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
-                    <Label Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="Weet u zeker dat u uw account wil verwijderen? &#x0a; Deze actie kan niet ongedaan gemaakt worden." FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
-                    <Button Clicked="Cancel" Grid.Row="1" Grid.Column="0" Text="Annuleren" BackgroundColor="{StaticResource Maincolor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center" WidthRequest="140"  />
-                    <Button Clicked="Delete" Grid.Row="1" Grid.Column="1" Text="VERWIJDEREN" BackgroundColor="{StaticResource Maincolor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Center" WidthRequest="140"  />
+
+            <StackLayout  Grid.ColumnSpan="2">
+                <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="Weet u zeker dat u uw account wil verwijderen?" FontFamily="{StaticResource NormalFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+                <Label HorizontalTextAlignment="Center" Text="Deze actie kan niet ongedaan gemaakt worden." FontFamily="{StaticResource NormalFont}" FontSize="16" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/>
+
+            </StackLayout>
+                    <Button Clicked="Cancel" Grid.Row="1" Grid.Column="0" Text="Annuleren" BackgroundColor="{StaticResource Maincolor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="End" WidthRequest="140"  />
+                    <Button Clicked="Delete" Grid.Row="1" Grid.Column="1" Text="VERWIJDEREN" BackgroundColor="{StaticResource Maincolor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="0" BorderRadius="10" HorizontalOptions="Start" WidthRequest="140"  />
                 </Grid>
-            </renderers:GradientLayout>
-        </Frame>
+            <!--</renderers:GradientLayout>-->
+        
     </StackLayout>
 </pages:PopupPage>

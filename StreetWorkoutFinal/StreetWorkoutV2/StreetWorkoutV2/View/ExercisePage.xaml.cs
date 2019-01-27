@@ -30,7 +30,6 @@ namespace StreetWorkoutV2.View
             if (Progress == "1/3")
             {
                 Preferences.Set("StartDate", DateTime.Now);
-
             }
 
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
@@ -70,7 +69,7 @@ namespace StreetWorkoutV2.View
             {
                 lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Repeats";
             }
-          
+
 
 
 

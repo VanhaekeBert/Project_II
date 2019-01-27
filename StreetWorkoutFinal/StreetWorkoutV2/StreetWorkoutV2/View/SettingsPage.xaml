@@ -1,18 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <controls:AnimationPage
-    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base" 
+    xmlns:controls="clr-namespace:FormsControls.Base;assembly=FormsControls.Base"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
     xmlns:StreetWorkoutV2="clr-namespace:StreetWorkoutV2"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="StreetWorkoutV2.View.SettingsPage"
-             Icon="settings.png" Title="Settings"
-                 NavigationPage.HasNavigationBar="False"
-        BackgroundColor="{StaticResource MainDarkColor}">
-    
+    Icon="settings.png" Title="Settings"
+     NavigationPage.HasNavigationBar="False"
+    BackgroundColor="{StaticResource MainDarkColor}">
     <controls:AnimationPage.PageAnimation>
-        <controls:PushPageAnimation  Duration="Short" Type="Landing"/>
+        <controls:PushPageAnimation Duration="Short" Type="Landing"/>
     </controls:AnimationPage.PageAnimation>
     <ContentPage.Content>
         <RelativeLayout Padding="0">
@@ -21,11 +20,10 @@
             x:Name="imgBackground"
             Aspect="Fill"
             RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
-            </ff:CachedImage>
+            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"></ff:CachedImage>
             <!-- ================= -->
-            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-                                           RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="7*"/>
                     <RowDefinition Height="16*"/>
@@ -33,90 +31,49 @@
                     <RowDefinition Height="25*"/>
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
-                <!--<StackLayout   Grid.Row="0" Orientation="Horizontal" Margin="0,0,24,0"><Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/><Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/></StackLayout>-->
+                <!--<StackLayout Grid.Row="0" Orientation="Horizontal" Margin="0,0,24,0"><Image HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand" x:Name="Heart"/><Label Text="80" FontFamily="{StaticResource BoldFont}" FontSize="18" TextColor="{StaticResource LightColor}" VerticalOptions="Center"/></StackLayout>-->
                 <StackLayout VerticalOptions="FillAndExpand" Grid.Row="1" Orientation="Vertical" Margin="24,14,24,0">
-                    <Label VerticalOptions="StartAndExpand" FontFamily="{StaticResource BoldFont}" FontSize="34"  Text="Instellingen" TextColor="White" />
+                    <Label VerticalOptions="StartAndExpand" FontFamily="{StaticResource BoldFont}" FontSize="34" Text="Instellingen" TextColor="White" />
                     <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Account" TextColor="White" Margin="5,0,0,-15" />
                 </StackLayout>
-                <Grid VerticalOptions="CenterAndExpand" Grid.Row="2"  Margin="24,0" ColumnSpacing="10">
+                <Grid VerticalOptions="CenterAndExpand" Grid.Row="2" Margin="24,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="framePasswordReset">
+                    <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10" Grid.Column="0" HorizontalOptions="Fill" HeightRequest="60" Padding="0" x:Name="framePasswordReset">
                         <renderers:GradientLayout
-                                            ColorsList="#484E6D,#2D324B"
-                                            Mode="ToTopLeft">
-                            <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            ColorsList="#484E6D,#2D324B"
+                            Mode="ToTopLeft">
+                            <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                 <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Wachtwoord resetten" TextColor="White"/>
                             </StackLayout>
                         </renderers:GradientLayout>
                     </StreetWorkoutV2:CustomFrame>
-                    <StreetWorkoutV2:CustomFrame x:Name="frameDeleteAccount" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
-
+                    <StreetWorkoutV2:CustomFrame x:Name="frameDeleteAccount" HasShadow="True" CornerRadius="10" Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60" Padding="0">
                         <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
-                            <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-
+                            <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                 <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Account verwijderen" TextColor="White"/>
                             </StackLayout>
                         </renderers:GradientLayout>
                     </StreetWorkoutV2:CustomFrame>
-                    
                 </Grid>
-                <StackLayout Margin="24,0" Grid.Row="3" Opacity="0.5">
-                    <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
-                    <Label FontSize="12" Text="Foto's en beschrijving exercises -  Remi Overstijns " TextColor="White"></Label>
-                    <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
-                </StackLayout>
-                <!--<StackLayout Grid.Row="3"  Margin="24" Orientation="Vertical">
-                    <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Account" TextColor="White" Margin="5,0,0,0" />
-                    <Grid VerticalOptions="StartAndExpand"  ColumnSpacing="10" Margin="0,6,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <StreetWorkoutV2:CustomFrame HasShadow="True" CornerRadius="10"  Grid.Column="0" HorizontalOptions="Fill"   HeightRequest="60" Padding="0" x:Name="framePasswordReset">
-                            <renderers:GradientLayout
-                                            ColorsList="#484E6D,#2D324B"
-                                            Mode="ToTopLeft">
-                                <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Wachtwoord resetten" TextColor="White"/>
-                                </StackLayout>
-                            </renderers:GradientLayout>
-                        </StreetWorkoutV2:CustomFrame>
-                        <StreetWorkoutV2:CustomFrame x:Name="frameDeleteAccount" HasShadow="True" CornerRadius="10"  Grid.Column="1" HorizontalOptions="Fill" HeightRequest="60"  Padding="0">
-
-                            <renderers:GradientLayout ColorsList="#EB2C2C,#762E3D" Mode="ToTopLeft">
-                                <StackLayout  Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-
-                                    <Label FontFamily="{StaticResource NormalFont}" FontSize="16" Text="Account verwijderen" TextColor="White"/>
-                                </StackLayout>
-                            </renderers:GradientLayout>
-                        </StreetWorkoutV2:CustomFrame>
-
-                    </Grid>
-                    <StackLayout  Grid.Row="4" Opacity="0.5">
-                        <Label FontSize="12"  Text="Credits:" TextColor="White"></Label>
-                        <Label FontSize="12" Text="Foto's en beschrijving exercises -  Remi Overstijns " TextColor="White"></Label>
-                        <Label FontSize="12" Text="Icoontjes - www.flaticon.com" TextColor="White"></Label>
-                    </StackLayout>
-                </StackLayout>-->
-
-                
-                <Button Grid.Row="4" Text="Afmelden" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="10" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="100" HeightRequest="45" Clicked="Logout"/>
-
+                <StackLayout Margin="24,0" Grid.Row="3" Spacing="10" Opacity="1">
+                    <Label VerticalOptions="End" VerticalTextAlignment="End" FontFamily="{StaticResource NormalFont}" FontSize="28" Text="Credits" TextColor="White" Margin="0,0,0,15" />
+                    <Label FontSize="13" Text="Foto's en beschrijving oefeningen - Remi Overstijns " TextColor="White"></Label>
+                    <Label FontSize="13" Text="Iconen - www.flaticon.com" TextColor="White"></Label>
+                </StackLayout>               
+                <Button Grid.Row="4" Text="Afmelden" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="10" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="110" HeightRequest="40" Clicked="Logout"/>
                 <!--<PopUps>-->
                 <StackLayout x:Name="popNoConnection" IsVisible="False" IsEnabled="True" BackgroundColor="#8f000000" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
-            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
-                 
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="FillAndExpand">
-                    <StackLayout  Margin="24,0"  HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
+                    RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" Margin="0"
+
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout Margin="24,0" HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
                         <Frame CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Padding="0" Margin="0,0,0,30">
-                            <renderers:GradientLayout   ColorsList="#484E6D,#313650" Mode="ToTopLeft">
+                            <renderers:GradientLayout ColorsList="#484E6D,#313650" Mode="ToTopLeft">
                                 <Grid>
                                     <Label VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Doordat u niet verbonden bent met het internet kunnen we uw account niet verwijderen." TextColor="{StaticResource LightColor}" FontSize="18" HeightRequest="54"/>
                                 </Grid>
