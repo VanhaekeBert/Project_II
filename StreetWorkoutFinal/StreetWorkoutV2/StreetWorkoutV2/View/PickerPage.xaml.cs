@@ -22,11 +22,15 @@ namespace StreetWorkoutV2.View
     {
         PickerClass _SelectedItem = new PickerClass();
         List<Oefening> _ExerciseList = new List<Oefening>();
-      //  string _json;
         public PickerPage(string pickerType)
         {
 
             InitializeComponent();
+
+            //---------------------------------------------------------------------------------------//
+            //-------------------------------Ophalen van oefeningendata------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             Task.Run(async () =>
             {
                 JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
@@ -34,19 +38,33 @@ namespace StreetWorkoutV2.View
                 Preferences.Set("Exercises", jsonToSaveValue.ToString());
             });
 
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Diverse Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Picker_Background.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------Uitlezen van json bestand met oefeningdata-----------------------//
+            //---------------------------------------------------------------------------------------//
 
             var assembly = typeof(Oefening).GetTypeInfo().Assembly;
             Stream stream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.oefeningenV2.json");
             StreamReader oSR = new StreamReader(stream);
             string json = oSR.ReadToEnd();
             _ExerciseList = JsonConvert.DeserializeObject<List<Oefening>>(json);
-            //-----------------------------------------------
+
+
+            //---------------------------------------------------------------------------------------//
+            //-------------------------Selectie tussen Spiergroep / Toestel--------------------------//
+            //---------------------------------------------------------------------------------------//
+
             if (pickerType == "Device")
             {
-                //-----TOESTEL---------------------
+                //--- Sorteren van oefeningen op "Toestel" en doorgeven aan volgende pagina---//
 
                 List<string> filteredDeviceList = new List<string>();
                 Dictionary<string, int> Device = new Dictionary<string, int>();
@@ -72,12 +90,11 @@ namespace StreetWorkoutV2.View
                     deviceList.Add(deviceName);
                 }
                 lvwDevices.ItemsSource = deviceList;
-                //----------------------------------------------------------
             }
 
             else
             {
-                //-----SPIER---------------------
+                //--- Sorteren van oefeningen op "Spiergroep" en doorgeven aan volgende pagina---//
 
                 List<string> filteredDeviceList = new List<string>();
                 Dictionary<string, int> muscleGroupSet = new Dictionary<string, int>();
@@ -104,7 +121,11 @@ namespace StreetWorkoutV2.View
                 }
                 lvwDevices.ItemsSource = muscleList;
             }
-            this.BackgroundColor = Color.FromHex("2B3049");
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
 
             btnBack.GestureRecognizers.Add(
             new TapGestureRecognizer()
@@ -125,12 +146,12 @@ namespace StreetWorkoutV2.View
 
                 foreach (Oefening oefening in _ExerciseList)
                 {
-                   
+
                     if (oefening.MuscleGroup == _SelectedItem.Name)
                     {
                         PassList.Add(oefening);
                     }
-                    
+
                     if (oefening.Device == _SelectedItem.Name)
                     {
                         PassList.Add(oefening);

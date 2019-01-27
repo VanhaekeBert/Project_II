@@ -43,7 +43,7 @@
                         </Grid>
                     </renderers:GradientLayout>
                 </Frame>
-                <Button Grid.Row="3" Text="open scanner" BackgroundColor="{StaticResource MainDarkColor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="2" BorderRadius="100" Margin="0,-200,0,0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="Button_Clicked"/>
+                <Button Grid.Row="3" Text="open scanner" BackgroundColor="{StaticResource Maincolor}" TextColor="{StaticResource LightColor}" FontSize="14" FontFamily="{StaticResource NormalFont}" BorderColor="{StaticResource Maincolor}" BorderWidth="0" BorderRadius="10" Margin="0,-200,0,0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="160" HeightRequest="45" Clicked="BtnScanner_Clicked"/>
             </Grid>
         </RelativeLayout>
     </ContentPage.Content>

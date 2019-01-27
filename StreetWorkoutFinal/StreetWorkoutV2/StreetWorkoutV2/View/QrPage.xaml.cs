@@ -42,8 +42,13 @@ namespace StreetWorkoutV2.View
                     await Navigation.PopAsync();
                 })
             });
-           
+
         }
+
+
+        //---------------------------------------------------------------------------------------//
+        //-------------------------------Ophalen van oefeningendata------------------------------//
+        //---------------------------------------------------------------------------------------//
 
         public void GrabJson()
         {
@@ -54,6 +59,10 @@ namespace StreetWorkoutV2.View
             _Oefeningslijst = JsonConvert.DeserializeObject<List<Oefening>>(json);
             CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera);
         }
+
+        //---------------------------------------------------------------------------------------//
+        //-------------------Ophalen van Toestel waarvan naam ingescanned is---------------------//
+        //---------------------------------------------------------------------------------------//
 
         public void GetDevice(string ScannedDevice)
         {
@@ -69,7 +78,11 @@ namespace StreetWorkoutV2.View
             Navigation.PushAsync(new ExerciseListPage(PassList));
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+
+        //---------------------------------------------------------------------------------------//
+        //---------------------------------Openen van QR Scanner---------------------------------//
+        //---------------------------------------------------------------------------------------//
+        private async void BtnScanner_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -100,11 +113,9 @@ namespace StreetWorkoutV2.View
                 {
                     QRScanner.OnScanResult += (result) =>
                     {
-                        // Stop scanning
                         QRScanner.IsScanning = false;
 
-                        // Pop the page and show the result
-
+                        //---Doorgeven van gescanned toestel---//
                         Device.BeginInvokeOnMainThread(() =>
                         {
 
@@ -133,7 +144,6 @@ namespace StreetWorkoutV2.View
             {
 
             }
-
         }
     }
 }

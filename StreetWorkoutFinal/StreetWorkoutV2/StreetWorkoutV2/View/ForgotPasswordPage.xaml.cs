@@ -20,12 +20,24 @@ namespace StreetWorkoutV2.View
         public ForgotPasswordPage()
         {
             InitializeComponent();
+
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Diverse Assignments-----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Forgot-Password_Background.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     await btnBack.FadeTo(0.3, 150);
                     await btnBack.FadeTo(1, 150);
                     await Navigation.PushAsync(new LoginPage());
@@ -36,12 +48,16 @@ namespace StreetWorkoutV2.View
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            //---Kijken of er internetverbinding is---//
             if (Connection.CheckConnection())
             {
+                //---Kijken of inputveld leeg is---//
                 if (entryEmail.Text != null)
                 {
+                    //---Kijken of er @ teken aanwezig is---//
                     if (entryEmail.Text.ToLower().Contains("@"))
                     {
+                        //---Kijken of emailadres aanwezig is in DB---//
                         string email = entryEmail.Text.Replace(" ", "");
                         bool EmailCheck = await DBManager.CheckUserData(email, "Email");
                         if (EmailCheck == true)
@@ -72,12 +88,12 @@ namespace StreetWorkoutV2.View
                         lblError.Text = "Uw email is onjuist.";
                     lblError.IsVisible = true;
                 }
-            else
-            {
-                lblError.Text = "Geliewe uw email in te voeren";
-                lblError.IsVisible = true;
+                else
+                {
+                    lblError.Text = "Geliewe uw email in te voeren";
+                    lblError.IsVisible = true;
+                }
             }
-        }
             else
             {
                 lblError.Text = "Oeps, zorg voor een internetverbinding.";

@@ -27,11 +27,21 @@ namespace StreetWorkoutV2.View
         public ExercisePage(Oefening Exercise, int Repetitions, int Difficulty, string Progress)
         {
             InitializeComponent();
+
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------Zetten van startdatum bij eerste doorloop-------------------------//
+            //---------------------------------------------------------------------------------------//
+
             if (Progress == "1/3")
             {
                 Preferences.Set("StartDate", DateTime.Now);
             }
 
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Diverse Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
             imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
@@ -43,6 +53,11 @@ namespace StreetWorkoutV2.View
             _CurrentProgress = Progress;
             _Difficulty = Difficulty;
             _Repetitions = Repetitions;
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------Zetten van labels en toggles-------------------------------//
+            //---------------------------------------------------------------------------------------//
 
             if (Exercise.ImageResource[Difficulty].Count <= 1)
             {
@@ -71,25 +86,21 @@ namespace StreetWorkoutV2.View
             }
 
 
-
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
 
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () =>
-                {
-                    if (_CurrentProgress == "1/3")
-                    {
-
-                        await Navigation.PopAsync();
-                    }
-                })
+                Command = new Command(async () => { if (_CurrentProgress == "1/3") { await Navigation.PopAsync(); } })
             });
-            // -------------------------------------------------------------------
-            // START OF PLAY PAUSE CODE ------------------------------------------
-            // -------------------------------------------------------------------
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Play / Pauze Logic-----------------------------------//
+            //---------------------------------------------------------------------------------------//
 
             RunTimer();
-
             Pause_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.PauseButton.png");
             Play_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.PlayButton.png");
 
@@ -122,21 +133,17 @@ namespace StreetWorkoutV2.View
             };
             Pause_Button.GestureRecognizers.Add(Pause_Play_Gesture);
             Play_Button.GestureRecognizers.Add(Pause_Play_Gesture);
-            // -------------------------------------------------------------------
-            // END OF PLAY PAUSE CODE ------------------------------------------
-            // -------------------------------------------------------------------
 
+            //---------------------------------------------------------------------------------------//
+            //-----------------------------------Slideshow Logic-------------------------------------//
+            //---------------------------------------------------------------------------------------//
 
-            // -------------------------------------------------------------------
-            // START OF SLIDESHOW CODE ------------------------------------------
-            // -------------------------------------------------------------------
             SlideshowToggle_Stop.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Pause.png");
             SlideshowToggle_Start.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Play.png");
             TapGestureRecognizer Slideshow_Gesture = new TapGestureRecognizer
             {
                 Command = new Command(() =>
                {
-
                    _isSlideshowRunning = !_isSlideshowRunning;
                    if (_isSlideshowRunning)
                    {
@@ -145,8 +152,6 @@ namespace StreetWorkoutV2.View
                        SlideshowToggle_Start.IsEnabled = false;
                        SlideshowToggle_Start.IsVisible = false;
                        RunSlideshow();
-
-
                    }
                    else
                    {
@@ -154,8 +159,6 @@ namespace StreetWorkoutV2.View
                        SlideshowToggle_Start.IsVisible = true;
                        SlideshowToggle_Stop.IsEnabled = false;
                        SlideshowToggle_Stop.IsVisible = false;
-
-
                    }
                })
             };
@@ -164,18 +167,14 @@ namespace StreetWorkoutV2.View
                 Preferences.Set("Difficulty", "3x" + lblRepetitions.Text.Split(' ')[0] + " " + Preferences.Get("Difficulty", ""));
             }
             Preferences.Set("Doel", int.Parse(lblRepetitions.Text.Split(' ')[0]));
-
             SlideshowToggle_Start.GestureRecognizers.Add(Slideshow_Gesture);
             SlideshowToggle_Stop.GestureRecognizers.Add(Slideshow_Gesture);
-            // -------------------------------------------------------------------
-            // END OF SLIDESHOW CODE --------------------------------------------
-            // -------------------------------------------------------------------
-
         }
 
-        // -------------------------------------------------------------------
-        // START OF PLAY PAUSE TIMER CODE ------------------------------------
-        // -------------------------------------------------------------------
+
+        //---------------------------------------------------------------------------------------//
+        //-------------------------------Play / Pauze Timer Logic--------------------------------//
+        //---------------------------------------------------------------------------------------//
 
         public void RunTimer()
         {
@@ -197,22 +196,17 @@ namespace StreetWorkoutV2.View
                             player.Play();
                         }
                     }
-
                 });
                 TimeKeeper += 1;
-
                 return _isRunning;
             });
         }
 
 
-        // -------------------------------------------------------------------
-        // END OF PLAY PAUSE TIMER CODE --------------------------------------
-        // -------------------------------------------------------------------
 
-        // -------------------------------------------------------------------
-        // START OF SLIDESHOW TIMER CODE -------------------------------------
-        // -------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------//
+        //---------------------------------Slideshow Timer Logic---------------------------------//
+        //---------------------------------------------------------------------------------------//
         bool slideshowstate = false;
 
         public void RunSlideshow()
@@ -234,9 +228,11 @@ namespace StreetWorkoutV2.View
                 return _isSlideshowRunning;
             });
         }
-        // -------------------------------------------------------------------
-        // END OF SLIDESHOW TIMER CODE ---------------------------------------
-        // -------------------------------------------------------------------
+
+
+        //---------------------------------------------------------------------------------------//
+        //---------------------Done button, doorgaan naar volgende pagina------------------------//
+        //---------------------------------------------------------------------------------------//
 
         private async void btnDone_Clicked(object sender, EventArgs e)
         {

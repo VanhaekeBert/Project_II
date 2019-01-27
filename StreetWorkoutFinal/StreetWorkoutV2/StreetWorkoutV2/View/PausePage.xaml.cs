@@ -25,6 +25,8 @@ namespace StreetWorkoutV2.View
         public PausePage(Oefening Exercise, int Repetitions, int Difficulty, string Progress)
         {
             InitializeComponent();
+
+
             _OnPage = true;
 
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
@@ -128,7 +130,7 @@ namespace StreetWorkoutV2.View
                         player.Play();
                         GaDoor.Text = "Ga nu verder";
                     }
-                   
+
                     return false;
                 }
                 return true;

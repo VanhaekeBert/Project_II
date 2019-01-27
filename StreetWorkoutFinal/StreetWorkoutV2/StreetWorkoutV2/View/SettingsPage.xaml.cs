@@ -56,7 +56,7 @@ namespace StreetWorkoutV2.View
             //    Task.Run(async () =>
             //    {
             //        FitBitUser user = await FitBitManager.FitBitAsync();
-        
+
             //        user.Name = Preferences.Get("Name", "").ToString();
             //        string text = JsonConvert.SerializeObject(user);
             //        JObject data = JsonConvert.DeserializeObject<JObject>(text);
@@ -95,6 +95,10 @@ namespace StreetWorkoutV2.View
             //};
 
 
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             framePasswordReset.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
@@ -127,6 +131,9 @@ namespace StreetWorkoutV2.View
             //FraP.GestureRecognizers.Add(tapGestureRecognizerP);
         }
 
+        //---------------------------------------------------------------------------------------//
+        //------------------------Uitloggen en alle lokale data leegmaken------------------------//
+        //---------------------------------------------------------------------------------------//
         private async void Logout(object sender, EventArgs e)
         {
             Preferences.Set("Name", null);
@@ -141,6 +148,10 @@ namespace StreetWorkoutV2.View
             Preferences.Set("Water", null);
             await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
         protected override bool OnBackButtonPressed()
         {
             return true;

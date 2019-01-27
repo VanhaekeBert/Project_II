@@ -7,7 +7,8 @@
     xmlns:renderers="clr-namespace:StreetWorkoutV2.Renderers"
     xmlns:custom="clr-namespace:StreetWorkoutV2"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="{StaticResource MainDarkColor}" >
     <controls:AnimationPage.PageAnimation>
         <controls:PushPageAnimation Duration="Zero" Subtype="FromBottom"/>
     </controls:AnimationPage.PageAnimation>

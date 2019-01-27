@@ -19,11 +19,21 @@ namespace StreetWorkoutV2.View
         public RegisterPage()
         {
             InitializeComponent();
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Diverse Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             entryPasswordRepeat.IsPassword = true;
             entryPassword.IsPassword = true;
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             imgEye.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -66,27 +76,48 @@ namespace StreetWorkoutV2.View
             });
         }
 
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
+
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
 
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------------Registreer button------------------------------------//
+        //---------------------------------------------------------------------------------------//
         private async void BtnRegister_Clicked(object sender, EventArgs e)
         {
             if (Connection.CheckConnection())
             {
                 lblError.IsVisible = false;
                 LoadingIndicator.IsRunning = false;
+
+                //--- Kijken of alle inputs ingevuld zijn ---//
                 if (entryPassword.Text != null && UserNameEntry.Text != null && entryEmail.Text != null)
                 {
+                    //--- Kijken of nieuw wachtwoord langer is dan 8 karakters---//
+
                     if (entryPassword.Text.Length >= 8)
                     {
+                        //--- Kijken of wachtwoorden gelijk zijn ---//
+
                         if (entryPassword.Text == entryPasswordRepeat.Text)
                         {
+                            //--- Kijken of er een spatie in de username zit ---//
+
                             if (!UserNameEntry.Text.ToLower().Contains(' '))
                             {
+                                //--- Kijken of er een @ teken in email zit ---//
+
                                 if (entryEmail.Text.ToLower().Contains('@'))
                                 {
+                                    //--- Kijken of gebruikersnaam en email al bestaan ---//
+
                                     string Email = entryEmail.Text.Replace(" ", "");
                                     bool UserNameCheck = await DBManager.CheckUserData(UserNameEntry.Text, "Name");
                                     bool EmailCheck = await DBManager.CheckUserData(Email, "Email");

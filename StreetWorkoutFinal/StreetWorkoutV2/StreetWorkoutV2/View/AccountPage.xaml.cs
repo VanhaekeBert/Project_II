@@ -34,7 +34,7 @@ namespace StreetWorkoutV2.View
             InitializeComponent();
 
             //---------------------------------------------------------------------------------------//
-            //---------------------------------Variable Assignments----------------------------------//
+            //---------------------------------Diverse Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
 
             imgNoConnectionSave.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");

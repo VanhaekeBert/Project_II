@@ -13,12 +13,15 @@ using Xamarin.Forms.Xaml;
 
 namespace StreetWorkoutV2.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PasswordResetPage : AnimationPage
-	{
-		public PasswordResetPage ()
-		{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PasswordResetPage : AnimationPage
+    {
+        public PasswordResetPage()
+        {
             InitializeComponent();
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Several Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             imgEyeOld.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             imgEyeNew.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
@@ -28,9 +31,14 @@ namespace StreetWorkoutV2.View
             entryPasswordNewRepeat.IsPassword = true;
             entryPasswordOld.IsPassword = true;
 
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Gesture Recognisers-----------------------------------//
+            //---------------------------------------------------------------------------------------//
             imgEyeNew.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () => {
+                Command = new Command(() =>
+                {
                     if (entryPasswordNew.IsPassword == true)
                     {
                         entryPasswordNew.IsPassword = false;
@@ -46,7 +54,8 @@ namespace StreetWorkoutV2.View
 
             imgEyeNewRepeat.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(() => {
+                Command = new Command(() =>
+                {
                     if (entryPasswordNewRepeat.IsPassword == true)
                     {
                         entryPasswordNewRepeat.IsPassword = false;
@@ -62,7 +71,8 @@ namespace StreetWorkoutV2.View
 
             imgEyeOld.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command( () => {
+                Command = new Command(() =>
+                {
                     if (entryPasswordOld.IsPassword == true)
                     {
                         entryPasswordOld.IsPassword = false;
@@ -78,26 +88,38 @@ namespace StreetWorkoutV2.View
 
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => {
+                Command = new Command(async () =>
+                {
                     await Navigation.PopAsync();
                 })
             });
         }
 
-
-        private async void Button_Clicked(object sender, EventArgs e)
+        //---------------------------------------------------------------------------------------//
+        //---------------------------------Gesture Recognisers-----------------------------------//
+        //---------------------------------------------------------------------------------------//
+        private async void BtnConfirm_Clicked(object sender, EventArgs e)
         {
+            //---Kijken of er internetverbinding is---//
             if (Connection.CheckConnection())
             {
+                //---Kijken of de inputvelden niet leeg zijn---//
                 if (entryPasswordOld.Text != null && entryPasswordNew.Text != null)
                 {
+                    //---Kijken of beide wachtwoorden gelijk zijn---//
+
                     if (entryPasswordNew.Text == entryPasswordNewRepeat.Text)
                     {
+                        //---Kijken of het wachtwoord langer is dan 8 tekens---//
+
                         if (entryPasswordNew.Text.Length >= 8)
                         {
                             bool CheckOldWW = await DBManager.Login(Preferences.Get("Name", ""), DBManager.Encrypt(entryPasswordOld.Text));
+                            //---Kijken of oude wachtwoord correct is---//
+
                             if (CheckOldWW)
                             {
+                                //---Veranderen en opslaan van nieuwe wachtwoord---//
                                 JObject data = await DBManager.GetUserData(Preferences.Get("Name", ""), "Name");
                                 JObject dataTemp = new JObject();
                                 dataTemp["Password"] = DBManager.Encrypt(entryPasswordNew.Text);

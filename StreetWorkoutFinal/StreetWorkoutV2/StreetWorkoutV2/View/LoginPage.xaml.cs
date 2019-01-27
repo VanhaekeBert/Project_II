@@ -22,12 +22,18 @@ namespace StreetWorkoutV2.View
         public LoginPage()
         {
             InitializeComponent();
-
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Diverse Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
             eyeimage.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             entryPassword.IsPassword = true;
 
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Gesture Recognisers-----------------------------------//
+            //---------------------------------------------------------------------------------------//
             Password_reset.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
@@ -62,25 +68,37 @@ namespace StreetWorkoutV2.View
                 })
             });
         }
-
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------Uitschakelen van de backbutton-----------------------------//
+        //---------------------------------------------------------------------------------------//
+
+        private async void BtnLogin_Clicked(object sender, EventArgs e)
         {
+            //---Kijken of er internetverbinding is---//
             if (Connection.CheckConnection())
             {
                 LoadingIndicator.IsRunning = false;
                 lblError.IsVisible = true;
+
+                //---Kijken of de inputvelden niet leeg zijn---//
                 if (entryPassword.Text != null && entryUserName.Text != null)
                 {
                     LoadingIndicator.IsRunning = true;
-
                     bool Login = await DBManager.Login(entryUserName.Text.Replace(" ", ""), DBManager.Encrypt(entryPassword.Text));
+
+                    //---Kijken of de login gegevens correct zijn---//
                     if (Login)
                     {
+                        //---Ophalen van alle userdata om op de dashboard dan te tonen---//
                         JObject user = await DBManager.GetUserData(entryUserName.Text.Replace(" ", ""), "Name");
                         JArray exercises = await DBManager.GetExerciseData(entryUserName.Text.Replace(" ", ""));
                         JArray water = await DBManager.GetWaterData(entryUserName.Text.Replace(" ", ""));
