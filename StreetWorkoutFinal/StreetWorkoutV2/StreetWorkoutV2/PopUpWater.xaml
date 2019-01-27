@@ -25,7 +25,7 @@
                 <custom:CustomSmallEntry Grid.Row="0" Grid.Column="1"  HeightRequest="36" Text="0" x:Name="TotalWater" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Darkcolor}" FontSize="14" Margin="0,3,0,8" Keyboard="Numeric" FontFamily="{StaticResource NormalFont}"  HorizontalTextAlignment="Center"/>
                 <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" Margin="0,-2,12,0" VerticalOptions="Center" Text="ml" FontFamily="{StaticResource Darkcolor}"/>
             </Grid>
-            <Frame x:Name="frameInnerPopWater" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Margin="0,12,0,24"   Padding="0,12" >
+            <Frame x:Name="frameInnerPopWater" CornerRadius="10" VerticalOptions="Center" HorizontalOptions="Fill" Margin="0,12,0,24"   Padding="0,12">
                 <renderers:GradientLayout ColorsList="#448CEE,#44C5EE" Mode="ToTopLeft">
                     <Grid ColumnSpacing="6" VerticalOptions="StartAndExpand">
                         <Grid.ColumnDefinitions>

@@ -64,16 +64,18 @@ namespace StreetWorkoutV2.View
                     logbook.Difficulty = exercise.Difficulty;
                     logbook.Total_hearts_given = int.Parse(exercise.Feeling);
                     List<int> repetitions = new List<int>();
+                    List<string> repetitionscolor = new List<string>();
                     var repetitionsTemp = exercise.Repetitions.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
+                    var repetitionscolorTemp = exercise.RepetitionsColor.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
                     foreach (var item in repetitionsTemp)
                     {
-                        repetitions.Add(int.Parse(item.Substring(0, item.Length - 1)));
+                        repetitions.Add(int.Parse(item));
                     }
                     logbook.ExerciseRepetitions = repetitions;
                     List<Color> colorList = new List<Color>();
-                    foreach (var item in repetitionsTemp)
+                    foreach (var item in repetitionscolorTemp)
                     {
-                        if (item.Substring(item.ToString().Length - 1, 1) == "G")
+                        if (item == "G")
                         {
                             colorList.Add(Color.LightGreen);
                         }
@@ -103,16 +105,18 @@ namespace StreetWorkoutV2.View
                                 logbook.Difficulty = exercise.Difficulty;
                                 logbook.Total_hearts_given = int.Parse(exercise.Feeling);
                                 List<int> repetitions = new List<int>();
+                                List<string> repetitionscolor = new List<string>();
                                 var repetitionsTemp = exercise.Repetitions.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
+                                var repetitionscolorTemp = exercise.RepetitionsColor.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
                                 foreach (var item in repetitionsTemp)
                                 {
-                                    repetitions.Add(int.Parse(item.Substring(0, item.Length - 1)));
+                                    repetitions.Add(int.Parse(item));
                                 }
                                 logbook.ExerciseRepetitions = repetitions;
                                 List<Color> colorList = new List<Color>();
-                                foreach (var item in repetitionsTemp)
+                                foreach (var item in repetitionscolorTemp)
                                 {
-                                    if (item.Substring(item.ToString().Length - 1, 1) == "G")
+                                    if (item == "G")
                                     {
                                         colorList.Add(Color.LightGreen);
                                     }
@@ -138,16 +142,18 @@ namespace StreetWorkoutV2.View
                             logbook.Difficulty = exercise.Difficulty;
                             logbook.Total_hearts_given = int.Parse(exercise.Feeling);
                             List<int> repetitions = new List<int>();
+                            List<string> repetitionscolor = new List<string>();
                             var repetitionsTemp = exercise.Repetitions.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
+                            var repetitionscolorTemp = exercise.RepetitionsColor.Replace("[", "").Replace("]", "").Replace(" ", "").Split(',');
                             foreach (var item in repetitionsTemp)
                             {
-                                repetitions.Add(int.Parse(item.Substring(0, item.Length - 1)));
+                                repetitions.Add(int.Parse(item));
                             }
                             logbook.ExerciseRepetitions = repetitions;
                             List<Color> colorList = new List<Color>();
-                            foreach (var item in repetitionsTemp)
+                            foreach (var item in repetitionscolorTemp)
                             {
-                                if (item.Substring(item.ToString().Length - 1, 1) == "G")
+                                if (item == "G")
                                 {
                                     colorList.Add(Color.LightGreen);
                                 }

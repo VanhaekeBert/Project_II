@@ -80,12 +80,14 @@ namespace StreetWorkoutV2.View
                         {
                             if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
                             {
-                                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
+                                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                                Preferences.Set($"RepetitionColor{Preferences.Get("Counter", 0)}", "G");
                                 Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                             }
                             else
                             {
-                                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
+                                Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                                Preferences.Set($"RepetitionColor{Preferences.Get("Counter", 0)}", "R");
                                 Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                             }
                             lblCheckEntry.Text = "";
@@ -95,7 +97,8 @@ namespace StreetWorkoutV2.View
                     }
                     else
                     {
-                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder);
+                        Preferences.Set($"RepetitionColor{Preferences.Get("Counter", 0)}", "G");
                         Preferences.Set("Counter", Preferences.Get("Counter", 0) + 1);
                         _OnPage = false;
 

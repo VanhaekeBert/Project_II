@@ -34,13 +34,13 @@ namespace StreetWorkoutV2.View
             });
             Preferences.Set("EndWorkout", DateTime.Now);
             NameToestel.Text = Preferences.Get("Workout", "");
-            Repetition1.Text = Preferences.Get("Repetition0", "").Substring(0, Preferences.Get("Repetition0", "").Length - 1);
-            if (Preferences.Get("Repetition0", "").Substring(Preferences.Get("Repetition0", "").Length - 1, 1) == "R")
+            Repetition1.Text = Preferences.Get("Repetition0", "");
+            if (Preferences.Get("RepetitionColor0", "") == "R")
             {
                 Repetition1.TextColor = Color.Red;
             }
-            Repetition2.Text = Preferences.Get("Repetition1", "").Substring(0, Preferences.Get("Repetition0", "").Length - 1);
-            if (Preferences.Get("Repetition1", "").Substring(Preferences.Get("Repetition1", "").Length - 1, 1) == "R")
+            Repetition2.Text = Preferences.Get("Repetition1", "");
+            if (Preferences.Get("RepetitionColor1", "") == "R")
             {
                 Repetition2.TextColor = Color.Red;
             }
@@ -175,12 +175,12 @@ namespace StreetWorkoutV2.View
                 }
                 else
                 {
-                    Repetition3.Text = inputRepetitions.Text;
+                    //Repetition3.Text = inputRepetitions.Text;
                     Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", _Repetitions);
-                    if (int.Parse(_Repetitions) > int.Parse(Repetition3.Text))
-                    {
-                        Repetition3.TextColor = Color.Red;
-                    }
+                    //if (int.Parse(_Repetitions) > int.Parse(Repetition3.Text))
+                    //{
+                    //    Repetition3.TextColor = Color.Red;
+                    //}
                     await PopupRepetitionsConfirm.FadeTo(0.3, 75);
                     await PopupRepetitionsConfirm.FadeTo(1, 75);
                     popExerciseReview.IsVisible = false;
@@ -237,19 +237,22 @@ namespace StreetWorkoutV2.View
                 {
                     if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
                     {
-                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "G");
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                        Preferences.Set($"RepetitionColor{Preferences.Get("Counter", 0)}", "G");
                     }
                     else
                     {
-                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text + "R");
+                        Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Text);
+                        Preferences.Set($"RepetitionColor{Preferences.Get("Counter", 0)}", "R");
                     }
                 }
                 else
                 {
-                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder + "G");
+                    Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", inputRepetitions.Placeholder);
+                    Preferences.Set($"RepetitionColor{Preferences.Get("Counter", 0)}", "G");
                 }
-                Repetition3.Text = Preferences.Get("Repetition2", "").Substring(0, Preferences.Get("Repetition2", "").Length - 1);
-                if (Preferences.Get("Repetition2", "").Substring(Preferences.Get("Repetition2", "").Length - 1, 1) == "R")
+                Repetition3.Text = Preferences.Get("Repetition2", "");
+                if (Preferences.Get("RepetitionColor2", "") == "R")
                 {
                     Repetition3.TextColor = Color.Red;
                 }
@@ -369,6 +372,7 @@ namespace StreetWorkoutV2.View
             {
                 JObject exercise = new JObject();
                 string repetitions = "[";
+                string repetitionscolor = "[";
                 exercise["Name"] = Preferences.Get("Name", "");
                 exercise["Date"] = DateTime.Now.ToString();
                 exercise["Duration"] = Preferences.Get("WorkTime", 0);
@@ -380,13 +384,16 @@ namespace StreetWorkoutV2.View
                     if (i == 2)
                     {
                         repetitions += Preferences.Get($"Repetition{i}", "") + "]";
+                        repetitionscolor += Preferences.Get($"RepetitionColor{i}", "") + "]";
                     }
                     else
                     {
                         repetitions += Preferences.Get($"Repetition{i}", "") + ", ";
+                        repetitionscolor += Preferences.Get($"RepetitionColor{i}", "") + ", ";
                     }
                 }
                 exercise["Repetitions"] = repetitions;
+                exercise["RepetitionsColor"] = repetitionscolor;
                 if (imgRatingHeartFull5.IsVisible)
                 {
                     exercise["Feeling"] = "5";
@@ -446,6 +453,7 @@ namespace StreetWorkoutV2.View
                 }
                 JObject exercise = new JObject();
                 string repetitions = "[";
+                string repetitionscolor = "[";
                 exercise["Name"] = Preferences.Get("Name", "");
                 exercise["Date"] = DateTime.Now.ToString();
                 exercise["Duration"] = Preferences.Get("WorkTime", 0);
@@ -457,13 +465,16 @@ namespace StreetWorkoutV2.View
                     if (i == 2)
                     {
                         repetitions += Preferences.Get($"Repetition{i}", "") + "]";
+                        repetitionscolor += Preferences.Get($"RepetitionColor{i}", "") + "]";
                     }
                     else
                     {
                         repetitions += Preferences.Get($"Repetition{i}", "") + ", ";
+                        repetitionscolor += Preferences.Get($"RepetitionColor{i}", "") + ", ";
                     }
                 }
-                exercise["repetitions"] = repetitions;
+                exercise["Repetitions"] = repetitions;
+                exercise["RepetitionsColor"] = repetitionscolor;
                 if (imgRatingHeartFull5.IsVisible)
                 {
                     exercise["Feeling"] = "5";
