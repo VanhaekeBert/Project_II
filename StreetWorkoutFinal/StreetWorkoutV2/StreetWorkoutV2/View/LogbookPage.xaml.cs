@@ -23,9 +23,17 @@ namespace StreetWorkoutV2.View
         List<List<Logbook>> logbookList = new List<List<Logbook>>();
         public LogbookPage()
         {
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Diverse Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
             InitializeComponent();
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             CultureInfo dutch = new CultureInfo("nl-BE");
+
+            //---------------------------------------------------------------------------------------//
+            //-----------------------------Alle exercises ophalen------------------------------------//
+            //---------------------------------------------------------------------------------------//
 
             if (Preferences.Get("Exercises", "") != "[]")
             {
@@ -50,8 +58,11 @@ namespace StreetWorkoutV2.View
                     }
                 }
             }
+
+            //---Overlopen van exercises om deze toe te voegen aan een list per dag, en dan alle daglists in de logboek list---//
             foreach (ExerciseDB exercise in weekExerciseList)
             {
+                //---eerste oefening is automatisch de eerste oefening die wordt toegevoegd, dus een eerste dag lijst wordt aangemaakt met deze oefening---//
                 if (logbookList.Count == 0)
                 {
                     string dayName = exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1);
@@ -88,14 +99,18 @@ namespace StreetWorkoutV2.View
                     list.Add(logbook);
                     logbookList.Add(list);
                 }
+                //---indien de oefening niet de eerste oefening is, beland deze hier---//
                 else
                 {
+                    //---hier worden alle dag lijsten in de logboek lijst overlopen---//
                     for (int i = 0; i <= logbookList.Count; i++)
                     {
+                        //---als we de laatste daglijst voorbij zijn en de oefening is nog niet toegevoegd aan een daglijst, dan wordt in de else van deze if een nieuwe dag lijst teogevoegd met deze oefening---//
                         if (i != logbookList.Count)
                         {
                             string dayName = exercise.Date.ToString("dddd", dutch).First().ToString().ToUpper() + exercise.Date.ToString("dddd", dutch).Substring(1);
 
+                            //---als de data overeenkomen, wordt de oefening aan deze lijst toegevoegd---//
                             if (dayName + " " + exercise.Date.ToString("MM-dd") == logbookList[i][0].Date)
                             {
                                 Logbook logbook = new Logbook();
@@ -170,7 +185,10 @@ namespace StreetWorkoutV2.View
                     }
                 }
             }
-
+            //---------------------------------------------------------------------------------------//
+            //-----------------------------Listviews opvullen aan de hand----------------------------//
+            //--------------------------van een lijst die per dag opgevult is------------------------//
+            //---------------------------------------------------------------------------------------//
             for (int i = 1; i <= data.Count; i++)
             {
                 if (i == 1)
@@ -258,6 +276,11 @@ namespace StreetWorkoutV2.View
                     lvwDay7.HeightRequest = (115 * logbookList[logbookList.Count - i].Count) + 125;
                 }
             }
+
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Backbutton tapgesture---------------------------------//
+            //---------------------------------------------------------------------------------------//
             btnBack.GestureRecognizers.Add(
            new TapGestureRecognizer()
            {

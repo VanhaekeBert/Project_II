@@ -5,6 +5,10 @@ using Xamarin.Forms;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //------------------Oefening Object voor oefeningen uit de lokale json-------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class Oefening
     {
         [JsonProperty("groepering")]
@@ -72,6 +76,6 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public ImageSource Go_To_button { get { return FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png"); } }
+        public ImageSource Go_To_button { get { return FileImageSource.FromResource("StreetWorkoutV2.Asset.GoToButton.png"); } }
     }
 }

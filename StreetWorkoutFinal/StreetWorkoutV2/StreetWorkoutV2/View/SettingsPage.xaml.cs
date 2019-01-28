@@ -48,7 +48,7 @@ namespace StreetWorkoutV2.View
             //    lblFBverbonden.Text = "Niet Verbonden";
             //    lblPverbonden.Text = "Niet Verbonden";
             //}
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings_2x.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundSettings.png");
 
             //var tapGestureRecognizerFB = new TapGestureRecognizer();
             //tapGestureRecognizerFB.Tapped += (s, e) =>

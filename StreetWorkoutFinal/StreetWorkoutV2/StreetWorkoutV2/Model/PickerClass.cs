@@ -5,6 +5,10 @@ using Xamarin.Forms;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //----------------Object PickerClass voor elementen in de ExercisePicker-----------------//
+    //---------------------------------------------------------------------------------------//
+
     public class PickerClass
     {
         public string Name { get; set; }
@@ -18,6 +22,6 @@ namespace StreetWorkoutV2.Model
             }
         }
         public int NumberOfExercises { get; set; } = 1;
-        public ImageSource Go_To_button { get { return FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png"); } }
+        public ImageSource Go_To_button { get { return FileImageSource.FromResource("StreetWorkoutV2.Asset.GoToButton.png"); } }
     }
 }

@@ -12,9 +12,14 @@ using Xamarin.Forms;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //------------------FitBitManager, alles wat temaken heeft met FitBit--------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class FitBitManager
     {
         static string _BearerToken = "";
+        //---Authentificatie van de FitBit gebruiker---//
         public static async Task<FitBitUser> FitBitAsync()
         {
             try
@@ -42,6 +47,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Ophalen van de "Real time" hartslag---//
         public static async Task<JObject> FitBitGetHeartRate(DateTime startTime, DateTime endTime)
         {
             try
@@ -59,7 +65,7 @@ namespace StreetWorkoutV2.Model
                 string json = await client.GetStringAsync(url);
                 if (json != null)
                 {
-                    
+
                     JObject hearRateObject = JsonConvert.DeserializeObject<JObject>(json);
                     return hearRateObject;
                 }
@@ -74,6 +80,8 @@ namespace StreetWorkoutV2.Model
                 throw ex;
             }
         }
+
+        //---Exercise aanmaken in FitBit---//
         public static async Task<JObject> FitBitPostExercise(int activityId, DateTime startTime, int duration)
         {
             try
@@ -101,7 +109,7 @@ namespace StreetWorkoutV2.Model
                 {
                     return null;
                 }
-           
+
 
             }
             catch (Exception ex)

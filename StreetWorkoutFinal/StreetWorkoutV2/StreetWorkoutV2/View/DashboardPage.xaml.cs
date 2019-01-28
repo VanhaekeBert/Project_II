@@ -109,17 +109,17 @@ namespace StreetWorkoutV2.View
             lblLogs.Text = weekExerciseList.Count().ToString();
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundDashboard_alt.png");
             imgLog.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.LogIcon.png");
-            imgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Beker.png");
+            imgWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             imgStartWorkout.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout.png");
-            imgStartWorkout_Cover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkout_Cover.png");
-            imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.qrcode.png");
-            imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.spier.png");
-            imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.toestel.png");
+            imgStartWorkout_Cover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.StartWorkoutCover.png");
+            imgQr.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.QR.png");
+            imgMuscle.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Muscle.png");
+            imgDevice.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Device.png");
             lblWelcome.Text = "Welkom " + Preferences.Get("ApiName", "");
 
             lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
             lblWaterTotal.Text = Preferences.Get("WaterGoal", 0).ToString();
-            imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Connection.png");
 
 
             //---------------------------------------------------------------------------------------//

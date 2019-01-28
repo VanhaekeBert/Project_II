@@ -30,6 +30,11 @@ namespace StreetWorkoutV2.View
         public ExerciseListPage(List<Oefening> ExerciseList)
         {
             InitializeComponent();
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Exercises ophalen------------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             if (Preferences.Get("Exercises", "") != "[]")
             {
                 var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
@@ -45,11 +50,21 @@ namespace StreetWorkoutV2.View
                     }
                 }
             }
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Several Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             imgHearts.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Hearts_4.png");
             lblTitle.Text = ExerciseList[0].Device;
             lvwExercices.ItemsSource = ExerciseList;
             _ExerciseList = ExerciseList;
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
 
             stackReps.GestureRecognizers.Add(new TapGestureRecognizer
             {
@@ -65,10 +80,17 @@ namespace StreetWorkoutV2.View
                     // Om doorklikken te vermijden
                 })
             });
+
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Listview Clicked-------------------------------------//
+            //---------------------------------------------------------------------------------------//
             lvwExercices.ItemSelected += (o, e) =>
            {
 
                var myList = (ListView)o;
+               //---Show Popup---//
+
                popSelectDetails.IsEnabled = true;
                popSelectDetails.IsVisible = true;
 
@@ -97,8 +119,12 @@ namespace StreetWorkoutV2.View
                if (lvwExercices.SelectedItem as Oefening != null)
                {
                    _TappedExercise = (lvwExercices.SelectedItem as Oefening);
+                   //---check if tijdsdoel of repetitiedoel---//
+
                    if (_TappedExercise.Repeats.Count == 0)
                    {
+                       //---Popup text invullen---//
+
                        btnRepEasy.Text = "3x" + _TappedExercise.Duration[0].ToString() + "sec";
                        btnRepAverage.Text = "3x" + _TappedExercise.Duration[1].ToString() + "sec";
                        btnRepHard.Text = "3x" + _TappedExercise.Duration[2].ToString() + "sec";
@@ -106,6 +132,8 @@ namespace StreetWorkoutV2.View
                    }
                    else
                    {
+                       //---Popup text invullen---//
+
                        btnRepEasy.Text = "3x" + _TappedExercise.Repeats[0].ToString();
                        btnRepAverage.Text = "3x" + _TappedExercise.Repeats[1].ToString();
                        btnRepHard.Text = "3x" + _TappedExercise.Repeats[2].ToString();
@@ -117,6 +145,11 @@ namespace StreetWorkoutV2.View
                ((ListView)o).SelectedItem = null;
 
            };
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizers----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             btnBack.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() =>
@@ -128,6 +161,8 @@ namespace StreetWorkoutV2.View
             {
                 Command = new Command(() =>
                 {
+                    //---reset popSelectDetails---//
+
                     popSelectDetails.IsVisible = false;
                     popSelectDetails.IsVisible = false;
                     popSelectDetails.IsEnabled = false;
@@ -142,6 +177,10 @@ namespace StreetWorkoutV2.View
                 })
             });
         }
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------------Zoek Functies----------------------------------------//
+        //---------------------------------------------------------------------------------------//
         private void entryExerciseName_TextChanged(object sender, TextChangedEventArgs e)
         {
             List<Oefening> filteredExerciseList = new List<Oefening>();
@@ -161,6 +200,11 @@ namespace StreetWorkoutV2.View
                 lvwExercices.ItemsSource = _ExerciseList;
             }
         }
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------------Pop-Up-----------------------------------------------//
+        //---------------------------------------------------------------------------------------//
+
         private void BtnRep1_Clicked(object sender, EventArgs e)
         {
             _ChosenRepetitionState = 0;

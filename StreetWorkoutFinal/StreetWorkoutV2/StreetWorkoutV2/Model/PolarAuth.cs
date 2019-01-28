@@ -4,6 +4,10 @@ using System.Text;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //--------------------PolarAuth Object, Polar auhtenticatie gegevens---------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class PolarAuth
     {
         public static string Grant_type { get; set; } = "authorization_code";

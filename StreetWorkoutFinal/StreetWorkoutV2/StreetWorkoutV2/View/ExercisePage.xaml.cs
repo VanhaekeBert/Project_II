@@ -42,8 +42,8 @@ namespace StreetWorkoutV2.View
             //---------------------------------------------------------------------------------------//
             //---------------------------------Diverse Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Background.png");
-            imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Cover.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundExercise.png");
+            imgExerciseCover.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ExerciseCover.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
             imgExercise.Source = Exercise.ImageResource[Difficulty][0];
             lblDescription.Text = Exercise.DescriptionNewLine[Difficulty];
@@ -101,8 +101,8 @@ namespace StreetWorkoutV2.View
             //---------------------------------------------------------------------------------------//
 
             RunTimer();
-            Pause_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.PauseButton.png");
-            Play_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.PlayButton.png");
+            Pause_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ButtonPause.png");
+            Play_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ButtonPlay.png");
 
             TapGestureRecognizer Pause_Play_Gesture = new TapGestureRecognizer
             {
@@ -138,8 +138,8 @@ namespace StreetWorkoutV2.View
             //-----------------------------------Slideshow Logic-------------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            SlideshowToggle_Stop.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Pause.png");
-            SlideshowToggle_Start.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Slideshow_Play.png");
+            SlideshowToggle_Stop.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.SlideshowPause.png");
+            SlideshowToggle_Start.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.SlideshowPlay.png");
             TapGestureRecognizer Slideshow_Gesture = new TapGestureRecognizer
             {
                 Command = new Command(() =>

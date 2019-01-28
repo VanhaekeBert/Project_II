@@ -76,7 +76,7 @@ namespace StreetWorkoutV2.View
             //---------------------------------Variable Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundExerciseComplete.png");
             var picUncolored = FileImageSource.FromResource("StreetWorkoutV2.Asset.Heart_Uncolored.png");
             imgRatingHeart1.Source = picUncolored;
             imgRatingHeart2.Source = picUncolored;
@@ -89,9 +89,8 @@ namespace StreetWorkoutV2.View
             imgRatingHeartFull3.Source = picColored;
             imgRatingHeartFull4.Source = picColored;
             imgRatingHeartFull5.Source = picColored;
-            imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnection.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Connection.png");
             Rate3Stars();
-            // this.BackgroundColor = Color.FromHex("2B3049");
 
 
 
@@ -126,12 +125,8 @@ namespace StreetWorkoutV2.View
                 }
                 else
                 {
-                    //Repetition3.Text = inputRepetitions.Text;
                     Preferences.Set($"Repetition{Preferences.Get("Counter", 0)}", _Repetitions);
-                    //if (int.Parse(_Repetitions) > int.Parse(Repetition3.Text))
-                    //{
-                    //    Repetition3.TextColor = Color.Red;
-                    //}
+
                     await PopupRepetitionsConfirm.FadeTo(0.3, 75);
                     await PopupRepetitionsConfirm.FadeTo(1, 75);
                     popExerciseReview.IsVisible = false;
@@ -327,6 +322,9 @@ namespace StreetWorkoutV2.View
         //---------------------------------------------------------------------------------------//
         //------------------------------Home button + opslaan data-------------------------------//
         //---------------------------------------------------------------------------------------//
+        //---------------------------------------------------------------------------------------//
+        //------------------------------Home button + opslaan data-------------------------------//
+        //---------------------------------------------------------------------------------------//
         private async void BtnHome_Clicked(object sender, EventArgs e)
         {
 
@@ -336,15 +334,15 @@ namespace StreetWorkoutV2.View
             {
 
                 //---Klaarmaken van alle data en lokaal opslaan---//
-                JObject exercise = new JObject();
+                ExerciseDB exercise = new ExerciseDB();
                 string repetitions = "[";
                 string repetitionscolor = "[";
-                exercise["Name"] = Preferences.Get("Name", "");
-                exercise["Date"] = DateTime.Now.ToString();
-                exercise["Duration"] = Preferences.Get("WorkTime", 0);
+                exercise.Name = Preferences.Get("Name", "");
+                exercise.Date = DateTime.Now;
+                exercise.Duration = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", 0);
-                exercise["Workout"] = Preferences.Get("Workout", "");
-                exercise["Difficulty"] = Preferences.Get("Difficulty", "");
+                exercise.Workout = Preferences.Get("Workout", "");
+                exercise.Difficulty = Preferences.Get("Difficulty", "");
                 for (int i = 0; i < 3; i++)
                 {
                     if (i == 2)
@@ -358,27 +356,27 @@ namespace StreetWorkoutV2.View
                         repetitionscolor += Preferences.Get($"RepetitionColor{i}", "") + ", ";
                     }
                 }
-                exercise["Repetitions"] = repetitions;
-                exercise["RepetitionsColor"] = repetitionscolor;
+                exercise.Repetitions = repetitions;
+                exercise.RepetitionsColor = repetitionscolor;
                 if (imgRatingHeartFull5.IsVisible)
                 {
-                    exercise["Feeling"] = "5";
+                    exercise.Feeling = "5";
                 }
                 else if (imgRatingHeartFull4.IsVisible)
                 {
-                    exercise["Feeling"] = "4";
+                    exercise.Feeling = "4";
                 }
                 else if (imgRatingHeartFull3.IsVisible)
                 {
-                    exercise["Feeling"] = "3";
+                    exercise.Feeling = "3";
                 }
                 else if (imgRatingHeartFull2.IsVisible)
                 {
-                    exercise["Feeling"] = "2";
+                    exercise.Feeling = "2";
                 }
                 else
                 {
-                    exercise["Feeling"] = "1";
+                    exercise.Feeling = "1";
                 }
 
                 //if (Preferences.Get("API", "") == "FitBit")
@@ -428,15 +426,15 @@ namespace StreetWorkoutV2.View
                 }
 
                 //---Klaarmaken van alle data en lokaal opslaan---//
-                JObject exercise = new JObject();
+                ExerciseDB exercise = new ExerciseDB();
                 string repetitions = "[";
                 string repetitionscolor = "[";
-                exercise["Name"] = Preferences.Get("Name", "");
-                exercise["Date"] = DateTime.Now.ToString();
-                exercise["Duration"] = Preferences.Get("WorkTime", 0);
+                exercise.Name = Preferences.Get("Name", "");
+                exercise.Date = DateTime.Now;
+                exercise.Duration = Preferences.Get("WorkTime", 0).ToString();
                 Preferences.Set("WorkTime", 0);
-                exercise["Workout"] = Preferences.Get("Workout", ""); ;
-                exercise["Difficulty"] = Preferences.Get("Difficulty", "");
+                exercise.Workout = Preferences.Get("Workout", "");
+                exercise.Difficulty = Preferences.Get("Difficulty", "");
                 for (int i = 0; i < 3; i++)
                 {
                     if (i == 2)
@@ -450,29 +448,28 @@ namespace StreetWorkoutV2.View
                         repetitionscolor += Preferences.Get($"RepetitionColor{i}", "") + ", ";
                     }
                 }
-                exercise["Repetitions"] = repetitions;
-                exercise["RepetitionsColor"] = repetitionscolor;
+                exercise.Repetitions = repetitions;
+                exercise.RepetitionsColor = repetitionscolor;
                 if (imgRatingHeartFull5.IsVisible)
                 {
-                    exercise["Feeling"] = "5";
+                    exercise.Feeling = "5";
                 }
                 else if (imgRatingHeartFull4.IsVisible)
                 {
-                    exercise["Feeling"] = "4";
+                    exercise.Feeling = "4";
                 }
                 else if (imgRatingHeartFull3.IsVisible)
                 {
-                    exercise["Feeling"] = "3";
+                    exercise.Feeling = "3";
                 }
                 else if (imgRatingHeartFull2.IsVisible)
                 {
-                    exercise["Feeling"] = "2";
+                    exercise.Feeling = "2";
                 }
                 else
                 {
-                    exercise["Feeling"] = "1";
+                    exercise.Feeling = "1";
                 }
-
 
                 //if (Preferences.Get("API", "") == "FitBit")
                 //{
@@ -488,7 +485,6 @@ namespace StreetWorkoutV2.View
                 //}
 
 
-                //---Klaargemaakte data posten naar de Database en navgeren naar pagina---//
                 await DBManager.PostExerciseData(exercise);
                 JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);

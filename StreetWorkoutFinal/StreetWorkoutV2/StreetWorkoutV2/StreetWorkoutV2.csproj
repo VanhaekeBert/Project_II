@@ -17,21 +17,25 @@
     <None Remove="Asset\BackgroundDashboard.png" />
     <None Remove="Asset\BackgroundDashboard_2x.png" />
     <None Remove="Asset\BackgroundDashboard_alt.png" />
+    <None Remove="Asset\BackgroundExercise.png" />
+    <None Remove="Asset\BackgroundExerciseComplete.png" />
+    <None Remove="Asset\BackgroundForgotPassword.png" />
+    <None Remove="Asset\BackgroundLogin.png" />
+    <None Remove="Asset\BackgroundPicker.png" />
     <None Remove="Asset\BackgroundProfile.png" />
     <None Remove="Asset\BackgroundSettings.png" />
-    <None Remove="Asset\BackgroundSettings_2x.png" />
-    <None Remove="Asset\Beker.png" />
-    <None Remove="Asset\connection.png" />
-    <None Remove="Asset\energy_empty.png" />
-    <None Remove="Asset\energy_fill.png" />
-    <None Remove="Asset\eye-off.png" />
-    <None Remove="Asset\eye.png" />
+    <None Remove="Asset\ButtonPause.png" />
+    <None Remove="Asset\ButtonPlay.png" />
+    <None Remove="Asset\Connection.png" />
+    <None Remove="Asset\Device.png" />
+    <None Remove="Asset\ExerciseCover.png" />
+    <None Remove="Asset\Eye.png" />
+    <None Remove="Asset\EyeOff.png" />
     <None Remove="Asset\Forgot-Password_Background.png" />
-    <None Remove="Asset\Frame_Background.png" />
     <None Remove="Asset\Glass_1.png" />
     <None Remove="Asset\Glass_2.png" />
     <None Remove="Asset\Glass_4.png" />
-    <None Remove="Asset\Go_To_Button.png" />
+    <None Remove="Asset\GoToButton.png" />
     <None Remove="Asset\Heart.png" />
     <None Remove="Asset\Hearts_1.png" />
     <None Remove="Asset\Hearts_2.png" />
@@ -43,14 +47,12 @@
     <None Remove="Asset\Heart_Uncolored.png" />
     <None Remove="Asset\ImageSelect.png" />
     <None Remove="Asset\LogIcon.png" />
-    <None Remove="Asset\Login_Background.png" />
+    <None Remove="Asset\Muscle.png" />
     <None Remove="Asset\notification.wav" />
     <None Remove="Asset\oefeningen.json" />
     <None Remove="Asset\oefeningenV2.json" />
-    <None Remove="Asset\Oefeningen_Background.png" />
     <None Remove="Asset\Oefening_Background.png" />
     <None Remove="Asset\Oefening_Complete_Background.png" />
-    <None Remove="Asset\Oefening_Cover.png" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />
@@ -176,19 +178,13 @@
     <None Remove="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <None Remove="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
     <None Remove="Asset\Parallel_Bars.png" />
-    <None Remove="Asset\PauseButton.png" />
-    <None Remove="Asset\pencil.png" />
-    <None Remove="Asset\Picker_Background.png" />
-    <None Remove="Asset\PlayButton.png" />
-    <None Remove="Asset\Profile_BackCover.png" />
+    <None Remove="Asset\Pencil.png" />
+    <None Remove="Asset\ProfilePicture.jpg" />
     <None Remove="Asset\profile_pic.png" />
-    <None Remove="Asset\Profile_Picture.jpg" />
     <None Remove="Asset\Profile_Picture.png" />
     <None Remove="Asset\qr.png" />
-    <None Remove="Asset\qrcode.png" />
-    <None Remove="Asset\Slideshow_Pause.png" />
-    <None Remove="Asset\Slideshow_Play.png" />
-    <None Remove="Asset\spier.png" />
+    <None Remove="Asset\SlideshowPause.png" />
+    <None Remove="Asset\SlideshowPlay.png" />
     <None Remove="Asset\MuscleGroup_Afbeeldingen\Biceps.png" />
     <None Remove="Asset\MuscleGroup_Afbeeldingen\Billen.png" />
     <None Remove="Asset\MuscleGroup_Afbeeldingen\Borst.png" />
@@ -202,8 +198,7 @@
     <None Remove="Asset\MuscleGroup_Afbeeldingen\Schuine_Buikspieren.png" />
     <None Remove="Asset\MuscleGroup_Afbeeldingen\Triceps.png" />
     <None Remove="Asset\StartWorkout.png" />
-    <None Remove="Asset\StartWorkout_Cover.png" />
-    <None Remove="Asset\toestel.png" />
+    <None Remove="Asset\StartWorkoutCover.png" />
     <None Remove="Asset\Device_Afbeeldingen\Decline_Bench.png" />
     <None Remove="Asset\Device_Afbeeldingen\Grond.png" />
     <None Remove="Asset\Device_Afbeeldingen\Incline_Press.png" />
@@ -211,13 +206,16 @@
     <None Remove="Asset\Device_Afbeeldingen\Parallel_Bars.png" />
     <None Remove="Asset\Device_Afbeeldingen\Pull_Up_Station.png" />
     <None Remove="Asset\Device_Afbeeldingen\Push_Up_Bars.png" />
-    <None Remove="Asset\Vuur.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Asset\BackgroundAccount.png" />
     <EmbeddedResource Include="Asset\BackgroundDashboard_alt.png" />
-    <EmbeddedResource Include="Asset\connection.png" />
+    <EmbeddedResource Include="Asset\BackgroundExercise.png" />
+    <EmbeddedResource Include="Asset\BackgroundExerciseComplete.png" />
+    <EmbeddedResource Include="Asset\BackgroundForgotPassword.png" />
+    <EmbeddedResource Include="Asset\BackgroundSettings.png" />
+    <EmbeddedResource Include="Asset\Connection.png" />
     <EmbeddedResource Include="Asset\Glass_1.png" />
     <EmbeddedResource Include="Asset\Glass_2.png" />
     <EmbeddedResource Include="Asset\Glass_4.png" />
@@ -231,31 +229,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Asset\BackgroundAccount_2x.png" />
-    <EmbeddedResource Include="Asset\BackgroundDashboard_2x.png" />
-    <EmbeddedResource Include="Asset\BackgroundSettings_2x.png" />
-    <EmbeddedResource Include="Asset\energy_empty.png" />
-    <EmbeddedResource Include="Asset\energy_fill.png" />
     <EmbeddedResource Include="Asset\Heart_Uncolored.png" />
     <EmbeddedResource Include="Asset\ImageSelect.png" />
     <EmbeddedResource Include="Asset\LogIcon.png" />
     <EmbeddedResource Include="Asset\notification.wav" />
     <EmbeddedResource Include="Asset\oefeningenV2.json" />
-    <EmbeddedResource Include="Asset\Oefeningen_Background.png" />
-    <EmbeddedResource Include="Asset\Oefening_Background.png" />
-    <EmbeddedResource Include="Asset\Oefening_Complete_Background.png" />
-    <EmbeddedResource Include="Asset\Oefening_Cover.png" />
+    <EmbeddedResource Include="Asset\ExerciseCover.png" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_hard_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_hard_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\Hamstring_lowering_medium_2.jpg" />
-    <EmbeddedResource Include="Asset\PauseButton.png" />
-    <EmbeddedResource Include="Asset\pencil.png" />
-    <EmbeddedResource Include="Asset\Picker_Background.png" />
-    <EmbeddedResource Include="Asset\PlayButton.png" />
-    <EmbeddedResource Include="Asset\Profile_BackCover.png" />
+    <EmbeddedResource Include="Asset\ButtonPause.png" />
+    <EmbeddedResource Include="Asset\Pencil.png" />
+    <EmbeddedResource Include="Asset\BackgroundPicker.png" />
+    <EmbeddedResource Include="Asset\ButtonPlay.png" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_easy_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\4_point_leg_extention_hard_1.jpg" />
@@ -368,9 +357,9 @@
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_1.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\twisted_crunches_medium_2.jpg" />
     <EmbeddedResource Include="Asset\Oef_Afbeeldingen\uneven_plank_medium_1.jpg" />
-    <EmbeddedResource Include="Asset\Profile_Picture.jpg" />
-    <EmbeddedResource Include="Asset\Slideshow_Pause.png" />
-    <EmbeddedResource Include="Asset\Slideshow_Play.png" />
+    <EmbeddedResource Include="Asset\ProfilePicture.jpg" />
+    <EmbeddedResource Include="Asset\SlideshowPause.png" />
+    <EmbeddedResource Include="Asset\SlideshowPlay.png" />
     <EmbeddedResource Include="Asset\MuscleGroup_Afbeeldingen\Biceps.png" />
     <EmbeddedResource Include="Asset\MuscleGroup_Afbeeldingen\Billen.png" />
     <EmbeddedResource Include="Asset\MuscleGroup_Afbeeldingen\Borst.png" />
@@ -383,28 +372,20 @@
     <EmbeddedResource Include="Asset\MuscleGroup_Afbeeldingen\Schouders.png" />
     <EmbeddedResource Include="Asset\MuscleGroup_Afbeeldingen\Schuine_buikspieren.png" />
     <EmbeddedResource Include="Asset\MuscleGroup_Afbeeldingen\Triceps.png" />
-    <EmbeddedResource Include="Asset\StartWorkout_Cover.png" />
+    <EmbeddedResource Include="Asset\StartWorkoutCover.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Asset\backbutton.png" />
-    <EmbeddedResource Include="Asset\Background.png" />
-    <EmbeddedResource Include="Asset\BackgroundDashboard.png" />
-    <EmbeddedResource Include="Asset\BackgroundProfile.png" />
-    <EmbeddedResource Include="Asset\BackgroundSettings.png" />
-    <EmbeddedResource Include="Asset\Beker.png" />
-    <EmbeddedResource Include="Asset\eye-off.png" />
-    <EmbeddedResource Include="Asset\eye.png" />
-    <EmbeddedResource Include="Asset\Forgot-Password_Background.png" />
-    <EmbeddedResource Include="Asset\Frame_Background.png" />
-    <EmbeddedResource Include="Asset\Go_To_Button.png" />
+    <EmbeddedResource Include="Asset\EyeOff.png" />
+    <EmbeddedResource Include="Asset\Eye.png" />
+    <EmbeddedResource Include="Asset\GoToButton.png" />
     <EmbeddedResource Include="Asset\Heart.png" />
-    <EmbeddedResource Include="Asset\Login_Background.png" />
-    <EmbeddedResource Include="Asset\Parallel_Bars.png" />
-    <EmbeddedResource Include="Asset\qrcode.png" />
-    <EmbeddedResource Include="Asset\spier.png" />
+    <EmbeddedResource Include="Asset\BackgroundLogin.png" />
+    <EmbeddedResource Include="Asset\QR.png" />
+    <EmbeddedResource Include="Asset\Muscle.png" />
     <EmbeddedResource Include="Asset\StartWorkout.png" />
-    <EmbeddedResource Include="Asset\toestel.png" />
+    <EmbeddedResource Include="Asset\Device.png" />
     <EmbeddedResource Include="Asset\Device_Afbeeldingen\Decline_Bench.png" />
     <EmbeddedResource Include="Asset\Device_Afbeeldingen\Grond.png" />
     <EmbeddedResource Include="Asset\Device_Afbeeldingen\Incline_Press.png" />
@@ -412,7 +393,6 @@
     <EmbeddedResource Include="Asset\Device_Afbeeldingen\Parallel_Bars.png" />
     <EmbeddedResource Include="Asset\Device_Afbeeldingen\Pull_Up_Station.png" />
     <EmbeddedResource Include="Asset\Device_Afbeeldingen\Push_Up_Bars.png" />
-    <EmbeddedResource Include="Asset\Vuur.png" />
   </ItemGroup>
 
   <ItemGroup>

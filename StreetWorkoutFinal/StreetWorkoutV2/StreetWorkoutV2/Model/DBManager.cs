@@ -14,8 +14,13 @@ using System.Threading.Tasks;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //-----------------------Alles wat temaken heeft met onze database-----------------------//
+    //---------------------------------------------------------------------------------------//
+
     public static class DBManager
     {
+        //---Encryptreren van wachtwoorden---//
         public static string Encrypt(string raw)
         {
             try
@@ -38,6 +43,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---mailservice aanroepen---//
         public static async Task<string> MailService(string email, string name)
         {
             try
@@ -61,6 +67,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Registreren van personen---//
         public static async Task<bool> Register(string email, string name, string password)
         {
             try
@@ -85,6 +92,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Login van persoon---//
         public static async Task<bool> Login(string name, string password)
         {
             try
@@ -110,7 +118,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-
+        //---Checken ofdat de userdata overeenkomt---//
         public static async Task<bool> CheckUserData(string value, string reference)
         {
             try
@@ -141,6 +149,7 @@ namespace StreetWorkoutV2.Model
             throw new NotImplementedException();
         }
 
+        //---ophalen van user data---//
         public static async Task<JObject> GetUserData(string value, string reference)
         {
             try
@@ -160,6 +169,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---updaten van user data---//
         public static async Task PutUserData(string value, string reference, JObject data)
         {
             try
@@ -180,6 +190,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---verwijderen van user data---//
         public static async Task DeleteUserData(string name)
         {
             try
@@ -196,7 +207,8 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> PostExerciseData(JObject data)
+        //---Aanmaken van exercise---//
+        public static async Task<bool> PostExerciseData(ExerciseDB data)
         {
             try
             {
@@ -215,6 +227,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Ophalen van exercises---//
         public static async Task<JArray> GetExerciseData(string name)
         {
             try
@@ -234,6 +247,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Verwijderen van Exercises---//
         public static async Task DeleteExerciseData(string name)
         {
             try
@@ -250,6 +264,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Aanmaken water data---//
         public static async Task<bool> PostWaterData(string name, int watergoal, int waterdrunk)
         {
             try
@@ -284,6 +299,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Ophalen water data---//
         public static async Task<JArray> GetWaterData(string name)
         {
             try
@@ -303,6 +319,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Ophalen laatste water data---//
         public static async Task<JObject> GetLatestWaterData(string name)
         {
             try
@@ -322,6 +339,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Verwijderen water data---//
         public static async Task DeleteWaterData(string name)
         {
             try
@@ -338,6 +356,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Updaten water data---//
         public static async Task PutWaterData(JObject data)
         {
             try
@@ -358,7 +377,8 @@ namespace StreetWorkoutV2.Model
             }
         }
 
-        public static async Task<bool> PostProfilePicture(string name, Stream content)
+        //---Opslaan/updaten van de profielfoto---//
+        public static async Task<byte[]> PostProfilePicture(string name, Stream content)
         {
             try
             {
@@ -380,7 +400,7 @@ namespace StreetWorkoutV2.Model
                 var httpContent = new StringContent(request, Encoding.UTF8, "application/json");
                 string url = "https://streetworkout.azurewebsites.net/api/PostProfilePicture";
                 var message = await client.PostAsync(url, httpContent);
-                return message.IsSuccessStatusCode;
+                return bytes;
             }
             catch (Exception ex)
             {
@@ -389,6 +409,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---Ophalen van de profiel foto---//
         public static async Task<Uri> GetProfilePicture(string name)
         {
             try
@@ -408,6 +429,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---verwijderen van de profielfoto---//
         public static async Task DeleteProfilePicture(string name)
         {
             try

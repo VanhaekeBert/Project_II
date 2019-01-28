@@ -37,10 +37,10 @@ namespace StreetWorkoutV2.View
             //---------------------------------Diverse Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            imgNoConnectionSave.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
-            imgNoConnectionProfile.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnectionSave.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Connection.png");
+            imgNoConnectionProfile.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Connection.png");
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundAccount.png");
-            imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.pencil.png");
+            imgPencil.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Pencil.png");
             imgSelector.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ImageSelect.png");
             lblUsername.Text = Preferences.Get("ApiName", "");
             entryNameChange.Placeholder = Preferences.Get("ApiName", "");

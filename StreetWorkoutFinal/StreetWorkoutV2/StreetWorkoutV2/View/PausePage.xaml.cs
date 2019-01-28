@@ -30,8 +30,8 @@ namespace StreetWorkoutV2.View
             //----------------------------------Several Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
             _OnPage = true;
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
-            imgContinue.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundExerciseComplete.png");
+            imgContinue.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.GoToButton.png");
             imgExercise.Source = Exercise.ImageResource[Difficulty][0];
 
             _CurrentExercise = Exercise;

@@ -24,7 +24,7 @@ namespace StreetWorkoutV2
             imgGlassOne.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_1.png");
             imgGlassTwo.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_2.png");
             imgGlassFour.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Glass_4.png");
-            imgNoConnectionWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
+            imgNoConnectionWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Connection.png");
 
             // lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
 

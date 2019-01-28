@@ -43,7 +43,7 @@ namespace StreetWorkoutV2.View
             //----------------------------------Diverse Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Picker_Background.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundPicker.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 
 

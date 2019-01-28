@@ -5,8 +5,13 @@ using System.Text;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //---------------------------ExerciseDb object met parameters----------------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class ExerciseDB
     {
+        public string Name { get; set; }
         public string Workout { get; set; }
         public string Difficulty { get; set; }
         public string Feeling { get; set; }

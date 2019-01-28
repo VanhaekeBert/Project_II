@@ -5,6 +5,10 @@ using System.Text;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //----------------------PolarAcces Object, Polar gebruiker gegevens----------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class PolarAcces
     {
         [JsonProperty(PropertyName = "access_token")]

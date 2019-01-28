@@ -5,6 +5,10 @@ using System.Text;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //-------------------------------Polar gebruikersgegevens--------------------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class PolarUser
     {
         [JsonProperty(propertyName: "first-name")]
@@ -34,7 +38,7 @@ namespace StreetWorkoutV2.Model
             }
             set { _name = value; }
         }
-        public string Age { get { return ((DateTime.Now - DateTime.Parse(BirthDate)).TotalDays/365.24).ToString().Split(',')[0]; } }
+        public string Age { get { return ((DateTime.Now - DateTime.Parse(BirthDate)).TotalDays / 365.24).ToString().Split(',')[0]; } }
         public string API { get; set; }
     }
 }

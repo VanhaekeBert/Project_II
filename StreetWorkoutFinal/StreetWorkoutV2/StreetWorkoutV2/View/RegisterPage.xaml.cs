@@ -24,9 +24,9 @@ namespace StreetWorkoutV2.View
             //---------------------------------Diverse Assignments----------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Login_Background.png");
-            imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
-            imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundLogin.png");
+            imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.EyeOff.png");
+            imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.EyeOff.png");
             entryPasswordRepeat.IsPassword = true;
             entryPassword.IsPassword = true;
 
@@ -41,12 +41,12 @@ namespace StreetWorkoutV2.View
                     if (entryPassword.IsPassword == true)
                     {
                         entryPassword.IsPassword = false;
-                        imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Eye.png");
                     }
                     else
                     {
                         entryPassword.IsPassword = true;
-                        imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        imgEye.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.EyeOff.png");
                     }
                 })
             });
@@ -58,12 +58,12 @@ namespace StreetWorkoutV2.View
                     if (entryPasswordRepeat.IsPassword == true)
                     {
                         entryPasswordRepeat.IsPassword = false;
-                        imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye.png");
+                        imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Eye.png");
                     }
                     else
                     {
                         entryPasswordRepeat.IsPassword = true;
-                        imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.eye-off.png");
+                        imgEyeRepeat.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.EyeOff.png");
                     }
                 })
             });

@@ -9,11 +9,16 @@ using Xamarin.Auth;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //--------------------PolarManager classe, alle acties op polar api----------------------//
+    //---------------------------------------------------------------------------------------//
+
     public class PolarManager
     {
         const string ClientId = "ea578976-f76f-48a4-b2c1-fce5d8b5446b";
         const string ClientSecret = "9763ab20-59ce-4bf7-a32d-dd7229c77f20";
 
+        //---polar authenticatie---//
         public static void PolarAsync()
         {
             try
@@ -37,6 +42,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---openenen van polar redirect scherm om authorizatie toetestaan---//
         public static OAuth2Authenticator GetPolarAuth()
         {
             try
@@ -58,6 +64,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---ophalen van de polar token---//
         public static async Task<PolarUser> GetPolarToken()
         {
             try
@@ -83,6 +90,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---opslaan van polar user in authorized users voor ons---//
         public static async Task PostUserAuthorize(PolarAcces acces)
         {
             try
@@ -103,6 +111,7 @@ namespace StreetWorkoutV2.Model
             }
         }
 
+        //---ophalen van gebruikers gegevens van polar gebruiker---//
         public static async Task<PolarUser> GetUserData(PolarAcces acces)
         {
             try

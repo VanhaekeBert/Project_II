@@ -26,7 +26,7 @@ namespace StreetWorkoutV2.View
             //---------------------------------Diverse Assignments-----------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Forgot-Password_Background.png");
+            imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.BackgroundForgotPassword.png");
             imgBtnBack.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.backbutton.png");
 
 

@@ -6,6 +6,10 @@ using System.Text;
 
 namespace StreetWorkoutV2.Model
 {
+    //---------------------------------------------------------------------------------------//
+    //--------------Object FitBit user met alle gegevens die wij nodig hebben----------------//
+    //---------------------------------------------------------------------------------------//
+
     public class FitBitUser
     {
         [JsonProperty(propertyName: "user")]
@@ -39,7 +43,8 @@ namespace StreetWorkoutV2.Model
                 else
                 {
                     return _name;
-                }; }
+                };
+            }
             set { _name = value; }
         }
         private string _length;
