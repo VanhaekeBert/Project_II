@@ -26,9 +26,10 @@ namespace StreetWorkoutV2.View
         {
             InitializeComponent();
 
-
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Several Assignments----------------------------------//
+            //---------------------------------------------------------------------------------------//
             _OnPage = true;
-
             imgBackground.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Oefening_Complete_Background.png");
             imgContinue.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.Go_To_Button.png");
             imgExercise.Source = Exercise.ImageResource[Difficulty][0];
@@ -39,7 +40,9 @@ namespace StreetWorkoutV2.View
             _Repetitions = Repetitions;
 
 
-
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Check Current Repeats----------------------------------//
+            //---------------------------------------------------------------------------------------//
             if (_CurrentProgress == "1/3")
             {
                 _CurrentProgress = "2/3";
@@ -65,6 +68,10 @@ namespace StreetWorkoutV2.View
                 lblRepetitions.Text = _CurrentExercise.Repeats[Repetitions].ToString() + " Repeats";
             }
 
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Gesture Recognisers-----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             frameNextExercise.GestureRecognizers.Add(
             new TapGestureRecognizer()
             {
@@ -72,12 +79,14 @@ namespace StreetWorkoutV2.View
                 {
                     if (inputRepetitions.Text != "")
                     {
+                        //---Checken als input ongeldig is
                         if (inputRepetitions.Text.Contains("-") || inputRepetitions.Text.Contains(".") || inputRepetitions.Text.Contains(","))
                         {
                             await frameNextExercise.FadeTo(0.3, 75);
                             frameNextExercise.FadeTo(1, 75);
                             lblCheckEntry.Text = "Ongeldige input";
                         }
+                        //---Kleur meegeven aan database
                         else
                         {
                             if (int.Parse(inputRepetitions.Text) >= int.Parse(inputRepetitions.Placeholder))
@@ -108,6 +117,11 @@ namespace StreetWorkoutV2.View
                     }
                 })
             });
+
+            //---------------------------------------------------------------------------------------//
+            //---------------------------------Timer-------------------------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             int TimeKeeper = 0;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -117,6 +131,7 @@ namespace StreetWorkoutV2.View
                     lblTimerText.Text = (TimeKeeper / 60).ToString("00") + " : " + (TimeKeeper % 60).ToString("00") + " /  01 : 00 ";
                     TimerBarInner.Progress = ((100.0 / 60.0) * TimeKeeper) / 100.0;
                 });
+                //--- Als tijd >60 speelt geluid af
                 if (TimeKeeper == 60)
                 {
                     if (_OnPage)
@@ -138,6 +153,11 @@ namespace StreetWorkoutV2.View
             });
 
         }
+
+        //---------------------------------------------------------------------------------------//
+        //---------------------------------Backbutton--------------------------------------------//
+        //---------------------------------------------------------------------------------------//
+
         protected override bool OnBackButtonPressed()
         {
             return true;
