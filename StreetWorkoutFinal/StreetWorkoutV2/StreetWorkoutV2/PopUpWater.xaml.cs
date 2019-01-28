@@ -27,6 +27,11 @@ namespace StreetWorkoutV2
             imgNoConnectionWater.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.connection.png");
 
             // lblWaterGedronken.Text = Preferences.Get("WaterDrunk", 0).ToString();
+
+            //---------------------------------------------------------------------------------------//
+            //----------------------------------Gesture Recognizors----------------------------------//
+            //---------------------------------------------------------------------------------------//
+
             stackGlassOne.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(async () =>
@@ -73,6 +78,11 @@ namespace StreetWorkoutV2
                 })
             });
         }
+
+        //---------------------------------------------------------------------------------------//
+        //----------------------------------Stuur aantal water naar database---------------------//
+        //---------------------------------------------------------------------------------------//
+
         private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
         {
            LoadingIndicator.IsRunning = true;
