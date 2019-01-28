@@ -113,7 +113,8 @@ namespace StreetWorkoutV2.View
                             }
                             else
                             {
-                                DBManager.PostWaterData(entryUserName.Text.Replace(" ", ""), int.Parse(latestWater["waterGoal"].ToString()), 0);
+                                await DBManager.PostWaterData(entryUserName.Text.Replace(" ", ""), int.Parse(latestWater["waterGoal"].ToString()), 0);
+                                water = await DBManager.GetWaterData(entryUserName.Text.Replace(" ", ""));
                                 Preferences.Set("WaterGoal", int.Parse(latestWater["waterGoal"].ToString()));
                                 Preferences.Set("WaterDrunk", 0);
                             }

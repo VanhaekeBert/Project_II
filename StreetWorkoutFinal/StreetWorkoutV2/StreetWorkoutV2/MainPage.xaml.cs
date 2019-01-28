@@ -56,16 +56,17 @@ namespace StreetWorkoutV2
             var latestWater = await DBManager.GetLatestWaterData(Preferences.Get("Name", ""));
             if (latestWater != null)
             {
-                DateTime date = (DateTime)latestWater["Date"];
+                DateTime date = (DateTime)latestWater["date"];
                 if (date.ToString("MM-dd-yyyy") == DateTime.Now.ToString("MM-dd-yyyy"))
                 {
-                    Preferences.Set("WaterGoal", int.Parse(latestWater["WaterGoal"].ToString()));
-                    Preferences.Set("WaterDrunk", int.Parse(latestWater["WaterDrunk"].ToString()));
+                    Preferences.Set("WaterGoal", int.Parse(latestWater["waterGoal"].ToString()));
+                    Preferences.Set("WaterDrunk", int.Parse(latestWater["waterDrunk"].ToString()));
                 }
                 else
                 {
-                    DBManager.PostWaterData(Preferences.Get("Name", ""), int.Parse(latestWater["WaterGoal"].ToString()), 0);
-                    Preferences.Set("WaterGoal", int.Parse(latestWater["WaterGoal"].ToString()));
+                    await DBManager.PostWaterData(Preferences.Get("Name", ""), int.Parse(latestWater["waterGoal"].ToString()), 0);
+                    water = await DBManager.GetWaterData(Preferences.Get("Name", ""));
+                    Preferences.Set("WaterGoal", int.Parse(latestWater["waterGoal"].ToString()));
                     Preferences.Set("WaterDrunk", 0);
                 }
             }
@@ -77,15 +78,14 @@ namespace StreetWorkoutV2
             }
             var waterTojson = JsonConvert.SerializeObject(water);
             var jsonToSaveValue = JsonConvert.SerializeObject(exercises);
-            Preferences.Set("Name", user["Name"].ToString());
-            Preferences.Set("ApiName", user["ApiName"].ToString());
-            Preferences.Set("Email", user["Email"].ToString());
-            Preferences.Set("Age", user["Age"].ToString());
-            Preferences.Set("Length", user["Length"].ToString());
-            Preferences.Set("Weight", user["Weight"].ToString());
+            Preferences.Set("Name", user["name"].ToString());
+            Preferences.Set("ApiName", user["apiName"].ToString());
+            Preferences.Set("Email", user["email"].ToString());
+            Preferences.Set("Age", user["age"].ToString());
+            Preferences.Set("Length", user["length"].ToString());
+            Preferences.Set("Weight", user["weight"].ToString());
             Preferences.Set("Exercises", jsonToSaveValue.ToString());
             Preferences.Set("Water", waterTojson.ToString());
         }
-
     }
 }
