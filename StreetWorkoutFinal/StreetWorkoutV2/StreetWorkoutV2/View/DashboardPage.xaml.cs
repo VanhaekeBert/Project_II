@@ -64,33 +64,13 @@ namespace StreetWorkoutV2.View
 
             MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExercise", (sender, arg) =>
             {
-                List<ExerciseDB> weekExercise = new List<ExerciseDB>();
-                if (arg != "[]")
-                {
-                    var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
-                    List<ExerciseDB> exercises = new List<ExerciseDB>();
-                    for (int i = 0; i < exercisesRaw.Count(); i++)
-                    {
-                        if (i == 0)
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
-                        }
-                        else if (i != (exercisesRaw.Count() - 1))
-                        {
-                            exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
-                        }
-                    }
-                    foreach (ExerciseDB exercise in exercises)
-                    {
-                        if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
-                        {
-                            weekExercise.Add(exercise);
-                        }
-                    }
-                }
-                lblLogs.Text = weekExercise.Count().ToString();
+                PassExercise(arg);
             });
-
+            MessagingCenter.Subscribe<ExerciseCompletePage, string>(this, "PassExerciseMore", (sender, arg) =>
+            {
+                PassExercise(arg);
+            });
+           
 
             //---------------------------------------------------------------------------------------//
             //------------------------------Lijst vullen van oefening--------------------------------//
@@ -192,6 +172,40 @@ namespace StreetWorkoutV2.View
                     await Navigation.PushAsync(new LogbookPage());
                 })
             });
+        }
+
+        //---------------------------------------------------------------------------------------//
+        //------------------PassExercise functie voor MessagingCenter calls----------------------//
+        //---------------------------------------------------------------------------------------//
+
+        private void PassExercise(string arg)
+        {
+            List<ExerciseDB> weekExercise = new List<ExerciseDB>();
+            if (arg != "[]")
+            {
+                var exercisesRaw = Preferences.Get("Exercises", "").ToString().Replace("[", "").Replace("]", "").Split('}');
+                List<ExerciseDB> exercises = new List<ExerciseDB>();
+                for (int i = 0; i < exercisesRaw.Count(); i++)
+                {
+                    if (i == 0)
+                    {
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString() + "}"));
+                    }
+                    else if (i != (exercisesRaw.Count() - 1))
+                    {
+                        exercises.Add(JsonConvert.DeserializeObject<ExerciseDB>(exercisesRaw[i].ToString().Remove(0, 1) + "}"));
+                    }
+                }
+                foreach (ExerciseDB exercise in exercises)
+                {
+                    if (Enumerable.Range((int.Parse(DateTime.Now.ToString("dd")) - 6), (int.Parse(DateTime.Now.ToString("dd")) + 1)).Contains(exercise.Date.Day))
+                    {
+                        weekExercise.Add(exercise);
+                    }
+                }
+            }
+            lblLogs.Text = weekExercise.Count().ToString();
+
         }
 
 

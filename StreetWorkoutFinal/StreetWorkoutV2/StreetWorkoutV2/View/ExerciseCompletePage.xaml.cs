@@ -493,7 +493,7 @@ namespace StreetWorkoutV2.View
                 JArray exercises = await DBManager.GetExerciseData(Preferences.Get("Name", ""));
                 var exercisesTojson = JsonConvert.SerializeObject(exercises);
                 Preferences.Set("Exercises", exercisesTojson.ToString());
-                MessagingCenter.Send(this, "PassExercises", Preferences.Get("Exercises", ""));
+                MessagingCenter.Send(this, "PassExerciseMore", Preferences.Get("Exercises", ""));
                 LoadingIndicator.IsRunning = false;
                 await btnMoreEx.FadeTo(0.3, 75);
                 btnMoreEx.FadeTo(1, 75);

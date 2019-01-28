@@ -80,7 +80,7 @@ namespace StreetWorkoutV2
         }
 
         //---------------------------------------------------------------------------------------//
-        //----------------------------------Stuur aantal water naar database---------------------//
+        //-----------------------------Stuur aantal water naar database--------------------------//
         //---------------------------------------------------------------------------------------//
 
         private async void SubmitWaterInput_Clicked(object sender, EventArgs e)
