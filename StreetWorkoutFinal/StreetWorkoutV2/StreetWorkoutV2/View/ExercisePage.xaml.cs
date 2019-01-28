@@ -100,7 +100,7 @@ namespace StreetWorkoutV2.View
             //----------------------------------Play / Pauze Logic-----------------------------------//
             //---------------------------------------------------------------------------------------//
 
-            RunTimer();
+            
             Pause_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ButtonPause.png");
             Play_Button.Source = FileImageSource.FromResource("StreetWorkoutV2.Asset.ButtonPlay.png");
 
