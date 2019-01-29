@@ -20,6 +20,7 @@ namespace StreetWorkoutV2.View
         private int TimeKeeper = -1;
         private bool _isRunning = false;
         private bool _isSlideshowRunning = false;
+        private bool _OnPage = true;
         Oefening _CurrentExercise;
         string _CurrentProgress;
         int _Repetitions;
@@ -27,7 +28,7 @@ namespace StreetWorkoutV2.View
         public ExercisePage(Oefening Exercise, int Repetitions, int Difficulty, string Progress)
         {
             InitializeComponent();
-
+            _OnPage = true;
 
             //---------------------------------------------------------------------------------------//
             //---------------------Zetten van startdatum bij eerste doorloop-------------------------//
@@ -188,12 +189,16 @@ namespace StreetWorkoutV2.View
                     {
                         if (TimeKeeper == _CurrentExercise.Duration[_Repetitions])
                         {
-                            TimerText.TextColor = Color.FromHex("#EE4444");
-                            var assembly = typeof(App).GetTypeInfo().Assembly;
-                            Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
-                            var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-                            player.Load(audioStream);
-                            player.Play();
+                            if (_OnPage)
+                            {
+                                TimerText.TextColor = Color.FromHex("#EE4444");
+                                var assembly = typeof(App).GetTypeInfo().Assembly;
+                                Stream audioStream = assembly.GetManifestResourceStream("StreetWorkoutV2.Asset.notification.wav");
+                                var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                                player.Load(audioStream);
+                                player.Play();
+                            }
+                           
                         }
                     }
                 });
@@ -236,6 +241,7 @@ namespace StreetWorkoutV2.View
 
         private async void btnDone_Clicked(object sender, EventArgs e)
         {
+            _OnPage = false;
             if (_CurrentProgress == "1/3")
             {
                 await btnDone.FadeTo(0.3, 75);
