@@ -101,7 +101,6 @@ namespace StreetWorkoutV2
                 JArray waterlist = await DBManager.GetWaterData(Preferences.Get("Name", ""));
                 var waterTojson = JsonConvert.SerializeObject(waterlist);
                 Preferences.Set("Water", waterTojson.ToString());
-                Debug.WriteLine(Preferences.Get("Water", ""));
 
                 MessagingCenter.Send(this, "PassWaterDrunk", Preferences.Get("Water", ""));
                 LoadingIndicator.IsRunning = false;
